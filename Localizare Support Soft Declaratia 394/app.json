@@ -2,7 +2,7 @@
   "id": "ab20b61e-2ac8-456d-b6d1-35121b3aed4b",
   "name": "Localizare Support Soft Declaratia 394",
   "publisher": "Support-Soft SRL",
-  "version": "21.0.0.0",
+  "version": "22.0.0.0",
   "brief": "",
   "description": "",
   "privacyStatement": "",
@@ -15,12 +15,12 @@
       "id": "c0c676db-b6cb-47be-b4cd-128de938af52",
       "name": "Localizare Support Soft Contabilitate de Baza",
       "publisher": "Support-Soft SRL",
-      "version": "21.0.0.0"
+      "version": "22.0.0.0"
       }
   ],
   "screenshots": [],
-  "platform": "21.0.0.0",
-  "application": "21.0.0.0",
+  "platform": "22.0.0.0",
+  "application": "22.0.0.0",
   "idRanges": [
     {
       "from": 71700,
@@ -28,8 +28,12 @@
     }
   ],
   "contextSensitiveHelpUrl": "https://SSA14ContabilitateBaza.com/help/",
-  "showMyCode": true,
-  "runtime": "10.0",
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": false,
+    "includeSourceInSymbolFile": false
+  },
+  "runtime": "11.0",
   "features": ["TranslationFile"],
   "supportedLocales": ["en-US","ro-RO"],
   "target": "OnPrem"
