@@ -1,0 +1,28 @@
+{
+  "id": "eec225fc-05e5-4fb5-887e-96430c40b08e",
+  "name": "Localizare Support Soft Contabilitate de Baza",
+  "publisher": "Support-Soft SRL",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "19.0.0.0",
+  "idRanges": [
+    {
+      "from": 70000,
+      "to": 70499
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": false,
+    "includeSourceInSymbolFile": false
+  }
+}
