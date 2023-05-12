@@ -1,0 +1,428 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="Account_Type">
+          <DataField>Account_Type</DataField>
+        </Field>
+        <Field Name="ShowACY">
+          <DataField>ShowACY</DataField>
+        </Field>
+        <Field Name="all">
+          <DataField>all</DataField>
+        </Field>
+        <Field Name="Period______PeriodText">
+          <DataField>Period______PeriodText</DataField>
+        </Field>
+        <Field Name="G_L_Account__TABLECAPTION______________GLFilter">
+          <DataField>G_L_Account__TABLECAPTION______________GLFilter</DataField>
+        </Field>
+        <Field Name="Text000___BalanceType">
+          <DataField>Text000___BalanceType</DataField>
+        </Field>
+        <Field Name="COMPANYNAME">
+          <DataField>COMPANYNAME</DataField>
+        </Field>
+        <Field Name="FORMAT_TODAY_0_4_">
+          <DataField>FORMAT_TODAY_0_4_</DataField>
+        </Field>
+        <Field Name="USERID">
+          <DataField>USERID</DataField>
+        </Field>
+        <Field Name="CurrReport_PAGENO">
+          <DataField>CurrReport_PAGENO</DataField>
+        </Field>
+        <Field Name="TotalInitDebitBalance">
+          <DataField>TotalInitDebitBalance</DataField>
+        </Field>
+        <Field Name="TotalInitDebitBalanceFormat">
+          <DataField>TotalInitDebitBalanceFormat</DataField>
+        </Field>
+        <Field Name="TotalInitCreditBalance">
+          <DataField>TotalInitCreditBalance</DataField>
+        </Field>
+        <Field Name="TotalInitCreditBalanceFormat">
+          <DataField>TotalInitCreditBalanceFormat</DataField>
+        </Field>
+        <Field Name="TotalDebitBalance">
+          <DataField>TotalDebitBalance</DataField>
+        </Field>
+        <Field Name="TotalDebitBalanceFormat">
+          <DataField>TotalDebitBalanceFormat</DataField>
+        </Field>
+        <Field Name="TotalCreditBalance">
+          <DataField>TotalCreditBalance</DataField>
+        </Field>
+        <Field Name="TotalCreditBalanceFormat">
+          <DataField>TotalCreditBalanceFormat</DataField>
+        </Field>
+        <Field Name="G_L_Trial_Balance___Initial_AmountsCaption">
+          <DataField>G_L_Trial_Balance___Initial_AmountsCaption</DataField>
+        </Field>
+        <Field Name="CurrReport_PAGENOCaption">
+          <DataField>CurrReport_PAGENOCaption</DataField>
+        </Field>
+        <Field Name="Ending_BalanceCaption">
+          <DataField>Ending_BalanceCaption</DataField>
+        </Field>
+        <Field Name="Account_No_Caption">
+          <DataField>Account_No_Caption</DataField>
+        </Field>
+        <Field Name="Account_NameCaption">
+          <DataField>Account_NameCaption</DataField>
+        </Field>
+        <Field Name="DebitCaption">
+          <DataField>DebitCaption</DataField>
+        </Field>
+        <Field Name="CreditCaption">
+          <DataField>CreditCaption</DataField>
+        </Field>
+        <Field Name="DebitCaption_Control7">
+          <DataField>DebitCaption_Control7</DataField>
+        </Field>
+        <Field Name="CreditCaption_Control32">
+          <DataField>CreditCaption_Control32</DataField>
+        </Field>
+        <Field Name="DebitCaption_Control33">
+          <DataField>DebitCaption_Control33</DataField>
+        </Field>
+        <Field Name="CreditCaption_Control34">
+          <DataField>CreditCaption_Control34</DataField>
+        </Field>
+        <Field Name="DebitCaption_Control35">
+          <DataField>DebitCaption_Control35</DataField>
+        </Field>
+        <Field Name="CreditCaption_Control36">
+          <DataField>CreditCaption_Control36</DataField>
+        </Field>
+        <Field Name="Total_AmountsCaption">
+          <DataField>Total_AmountsCaption</DataField>
+        </Field>
+        <Field Name="Current_Month_MovementsCaption">
+          <DataField>Current_Month_MovementsCaption</DataField>
+        </Field>
+        <Field Name="Initial_BalanceCaption">
+          <DataField>Initial_BalanceCaption</DataField>
+        </Field>
+        <Field Name="TotalCaption">
+          <DataField>TotalCaption</DataField>
+        </Field>
+        <Field Name="G_L_Account_No_">
+          <DataField>G_L_Account_No_</DataField>
+        </Field>
+        <Field Name="BoldLine">
+          <DataField>BoldLine</DataField>
+        </Field>
+        <Field Name="PADSTR_____G_L_Account__Indentation___2___G_L_Account__Name">
+          <DataField>PADSTR_____G_L_Account__Indentation___2___G_L_Account__Name</DataField>
+        </Field>
+        <Field Name="InitialDebitBalance">
+          <DataField>InitialDebitBalance</DataField>
+        </Field>
+        <Field Name="InitialDebitBalanceFormat">
+          <DataField>InitialDebitBalanceFormat</DataField>
+        </Field>
+        <Field Name="InitialCreditBalance">
+          <DataField>InitialCreditBalance</DataField>
+        </Field>
+        <Field Name="InitialCreditBalanceFormat">
+          <DataField>InitialCreditBalanceFormat</DataField>
+        </Field>
+        <Field Name="DebitAmount">
+          <DataField>DebitAmount</DataField>
+        </Field>
+        <Field Name="DebitAmountFormat">
+          <DataField>DebitAmountFormat</DataField>
+        </Field>
+        <Field Name="CreditAmount">
+          <DataField>CreditAmount</DataField>
+        </Field>
+        <Field Name="CreditAmountFormat">
+          <DataField>CreditAmountFormat</DataField>
+        </Field>
+        <Field Name="TotalDebit">
+          <DataField>TotalDebit</DataField>
+        </Field>
+        <Field Name="TotalDebitFormat">
+          <DataField>TotalDebitFormat</DataField>
+        </Field>
+        <Field Name="TotalCredit">
+          <DataField>TotalCredit</DataField>
+        </Field>
+        <Field Name="TotalCreditFormat">
+          <DataField>TotalCreditFormat</DataField>
+        </Field>
+        <Field Name="TotalInitDebitBalance_TotalDebit">
+          <DataField>TotalInitDebitBalance_TotalDebit</DataField>
+        </Field>
+        <Field Name="TotalInitDebitBalance_TotalDebitFormat">
+          <DataField>TotalInitDebitBalance_TotalDebitFormat</DataField>
+        </Field>
+        <Field Name="TotalInitCreditBalance_TotalCredit">
+          <DataField>TotalInitCreditBalance_TotalCredit</DataField>
+        </Field>
+        <Field Name="TotalInitCreditBalance_TotalCreditFormat">
+          <DataField>TotalInitCreditBalance_TotalCreditFormat</DataField>
+        </Field>
+        <Field Name="InitialDebitBalance__G_L_Account___Debit_Amount_">
+          <DataField>InitialDebitBalance__G_L_Account___Debit_Amount_</DataField>
+        </Field>
+        <Field Name="InitialDebitBalance__G_L_Account___Debit_Amount_Format">
+          <DataField>InitialDebitBalance__G_L_Account___Debit_Amount_Format</DataField>
+        </Field>
+        <Field Name="InitialCreditBalance__G_L_Account___Credit_Amount_">
+          <DataField>InitialCreditBalance__G_L_Account___Credit_Amount_</DataField>
+        </Field>
+        <Field Name="InitialCreditBalance__G_L_Account___Credit_Amount_Format">
+          <DataField>InitialCreditBalance__G_L_Account___Credit_Amount_Format</DataField>
+        </Field>
+        <Field Name="DebitBalance">
+          <DataField>DebitBalance</DataField>
+        </Field>
+        <Field Name="DebitBalanceFormat">
+          <DataField>DebitBalanceFormat</DataField>
+        </Field>
+        <Field Name="CreditBAlance">
+          <DataField>CreditBAlance</DataField>
+        </Field>
+        <Field Name="CreditBAlanceFormat">
+          <DataField>CreditBAlanceFormat</DataField>
+        </Field>
+        <Field Name="AccountNo">
+          <DataField>AccountNo</DataField>
+        </Field>
+        <Field Name="AccountNo_Control1000000000">
+          <DataField>AccountNo_Control1000000000</DataField>
+        </Field>
+        <Field Name="PADSTR_____G_L_Account__Indentation___2___G_L_Account__Name_Control1000000001">
+          <DataField>PADSTR_____G_L_Account__Indentation___2___G_L_Account__Name_Control1000000001</DataField>
+        </Field>
+        <Field Name="InitialDebitBalance_Control1000000002">
+          <DataField>InitialDebitBalance_Control1000000002</DataField>
+        </Field>
+        <Field Name="InitialDebitBalance_Control1000000002Format">
+          <DataField>InitialDebitBalance_Control1000000002Format</DataField>
+        </Field>
+        <Field Name="InitialCreditBalance_Control1000000003">
+          <DataField>InitialCreditBalance_Control1000000003</DataField>
+        </Field>
+        <Field Name="InitialCreditBalance_Control1000000003Format">
+          <DataField>InitialCreditBalance_Control1000000003Format</DataField>
+        </Field>
+        <Field Name="DebitAmount_Control1000000004">
+          <DataField>DebitAmount_Control1000000004</DataField>
+        </Field>
+        <Field Name="DebitAmount_Control1000000004Format">
+          <DataField>DebitAmount_Control1000000004Format</DataField>
+        </Field>
+        <Field Name="CreditAmount_Control1000000005">
+          <DataField>CreditAmount_Control1000000005</DataField>
+        </Field>
+        <Field Name="CreditAmount_Control1000000005Format">
+          <DataField>CreditAmount_Control1000000005Format</DataField>
+        </Field>
+        <Field Name="InitialDebitBalance__G_L_Account___Add__Currency_Debit_Amount_">
+          <DataField>InitialDebitBalance__G_L_Account___Add__Currency_Debit_Amount_</DataField>
+        </Field>
+        <Field Name="InitialDebitBalance__G_L_Account___Add__Currency_Debit_Amount_Format">
+          <DataField>InitialDebitBalance__G_L_Account___Add__Currency_Debit_Amount_Format</DataField>
+        </Field>
+        <Field Name="InitialCreditBalance__G_L_Account___Add__Currency_Credit_Amount_">
+          <DataField>InitialCreditBalance__G_L_Account___Add__Currency_Credit_Amount_</DataField>
+        </Field>
+        <Field Name="InitialCreditBalance__G_L_Account___Add__Currency_Credit_Amount_Format">
+          <DataField>InitialCreditBalance__G_L_Account___Add__Currency_Credit_Amount_Format</DataField>
+        </Field>
+        <Field Name="DebitBalance_Control1000000008">
+          <DataField>DebitBalance_Control1000000008</DataField>
+        </Field>
+        <Field Name="DebitBalance_Control1000000008Format">
+          <DataField>DebitBalance_Control1000000008Format</DataField>
+        </Field>
+        <Field Name="CreditBAlance_Control1000000009">
+          <DataField>CreditBAlance_Control1000000009</DataField>
+        </Field>
+        <Field Name="CreditBAlance_Control1000000009Format">
+          <DataField>CreditBAlance_Control1000000009Format</DataField>
+        </Field>
+        <Field Name="PADSTR_____G_L_Account__Indentation___2___G_L_Account__Name_Control26">
+          <DataField>PADSTR_____G_L_Account__Indentation___2___G_L_Account__Name_Control26</DataField>
+        </Field>
+        <Field Name="InitialDebitBalance__G_L_Account___Debit_Amount__Control17">
+          <DataField>InitialDebitBalance__G_L_Account___Debit_Amount__Control17</DataField>
+        </Field>
+        <Field Name="InitialDebitBalance__G_L_Account___Debit_Amount__Control17Format">
+          <DataField>InitialDebitBalance__G_L_Account___Debit_Amount__Control17Format</DataField>
+        </Field>
+        <Field Name="InitialCreditBalance__G_L_Account___Credit_Amount__Control18">
+          <DataField>InitialCreditBalance__G_L_Account___Credit_Amount__Control18</DataField>
+        </Field>
+        <Field Name="InitialCreditBalance__G_L_Account___Credit_Amount__Control18Format">
+          <DataField>InitialCreditBalance__G_L_Account___Credit_Amount__Control18Format</DataField>
+        </Field>
+        <Field Name="DebitBalance_Control21">
+          <DataField>DebitBalance_Control21</DataField>
+        </Field>
+        <Field Name="DebitBalance_Control21Format">
+          <DataField>DebitBalance_Control21Format</DataField>
+        </Field>
+        <Field Name="CreditBAlance_Control22">
+          <DataField>CreditBAlance_Control22</DataField>
+        </Field>
+        <Field Name="CreditBAlance_Control22Format">
+          <DataField>CreditBAlance_Control22Format</DataField>
+        </Field>
+        <Field Name="InitialDebitBalance_Control27">
+          <DataField>InitialDebitBalance_Control27</DataField>
+        </Field>
+        <Field Name="InitialDebitBalance_Control27Format">
+          <DataField>InitialDebitBalance_Control27Format</DataField>
+        </Field>
+        <Field Name="InitialCreditBalance_Control28">
+          <DataField>InitialCreditBalance_Control28</DataField>
+        </Field>
+        <Field Name="InitialCreditBalance_Control28Format">
+          <DataField>InitialCreditBalance_Control28Format</DataField>
+        </Field>
+        <Field Name="DebitAmount_Control29">
+          <DataField>DebitAmount_Control29</DataField>
+        </Field>
+        <Field Name="DebitAmount_Control29Format">
+          <DataField>DebitAmount_Control29Format</DataField>
+        </Field>
+        <Field Name="CreditAmount_Control30">
+          <DataField>CreditAmount_Control30</DataField>
+        </Field>
+        <Field Name="CreditAmount_Control30Format">
+          <DataField>CreditAmount_Control30Format</DataField>
+        </Field>
+        <Field Name="AccountNo_Control41">
+          <DataField>AccountNo_Control41</DataField>
+        </Field>
+        <Field Name="AccountNo_Control1000000010">
+          <DataField>AccountNo_Control1000000010</DataField>
+        </Field>
+        <Field Name="PADSTR_____G_L_Account__Indentation___2___G_L_Account__Name_Control1000000011">
+          <DataField>PADSTR_____G_L_Account__Indentation___2___G_L_Account__Name_Control1000000011</DataField>
+        </Field>
+        <Field Name="InitialDebitBalance__G_L_Account___Add__Currency_Debit_Amount__Control1000000012">
+          <DataField>InitialDebitBalance__G_L_Account___Add__Currency_Debit_Amount__Control1000000012</DataField>
+        </Field>
+        <Field Name="InitialDebitBalance__G_L_Account___Add__Currency_Debit_Amount__Control1000000012Format">
+          <DataField>InitialDebitBalance__G_L_Account___Add__Currency_Debit_Amount__Control1000000012Format</DataField>
+        </Field>
+        <Field Name="InitialCreditBalance__G_L_Account___Add__Currency_Credit_Amount__Control1000000013">
+          <DataField>InitialCreditBalance__G_L_Account___Add__Currency_Credit_Amount__Control1000000013</DataField>
+        </Field>
+        <Field Name="InitialCreditBalance__G_L_Account___Add__Currency_Credit_Amount__Control1000000013Format">
+          <DataField>InitialCreditBalance__G_L_Account___Add__Currency_Credit_Amount__Control1000000013Format</DataField>
+        </Field>
+        <Field Name="DebitBalance_Control1000000014">
+          <DataField>DebitBalance_Control1000000014</DataField>
+        </Field>
+        <Field Name="DebitBalance_Control1000000014Format">
+          <DataField>DebitBalance_Control1000000014Format</DataField>
+        </Field>
+        <Field Name="CreditBAlance_Control1000000015">
+          <DataField>CreditBAlance_Control1000000015</DataField>
+        </Field>
+        <Field Name="CreditBAlance_Control1000000015Format">
+          <DataField>CreditBAlance_Control1000000015Format</DataField>
+        </Field>
+        <Field Name="InitialDebitBalance_Control1000000016">
+          <DataField>InitialDebitBalance_Control1000000016</DataField>
+        </Field>
+        <Field Name="InitialDebitBalance_Control1000000016Format">
+          <DataField>InitialDebitBalance_Control1000000016Format</DataField>
+        </Field>
+        <Field Name="InitialCreditBalance_Control1000000017">
+          <DataField>InitialCreditBalance_Control1000000017</DataField>
+        </Field>
+        <Field Name="InitialCreditBalance_Control1000000017Format">
+          <DataField>InitialCreditBalance_Control1000000017Format</DataField>
+        </Field>
+        <Field Name="DebitAmount_Control1000000018">
+          <DataField>DebitAmount_Control1000000018</DataField>
+        </Field>
+        <Field Name="DebitAmount_Control1000000018Format">
+          <DataField>DebitAmount_Control1000000018Format</DataField>
+        </Field>
+        <Field Name="CreditAmount_Control1000000019">
+          <DataField>CreditAmount_Control1000000019</DataField>
+        </Field>
+        <Field Name="CreditAmount_Control1000000019Format">
+          <DataField>CreditAmount_Control1000000019Format</DataField>
+        </Field>
+        <Field Name="Integer_Number">
+          <DataField>Integer_Number</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

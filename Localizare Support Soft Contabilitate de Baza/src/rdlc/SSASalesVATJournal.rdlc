@@ -1,0 +1,527 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="CrtNo_VUnreal">
+          <DataField>CrtNo_VUnreal</DataField>
+        </Field>
+        <Field Name="DocumentNo_VUnreal">
+          <DataField>DocumentNo_VUnreal</DataField>
+        </Field>
+        <Field Name="PostingDate_VUnreal">
+          <DataField>PostingDate_VUnreal</DataField>
+        </Field>
+        <Field Name="BilltoPaytoNo_VUnreal">
+          <DataField>BilltoPaytoNo_VUnreal</DataField>
+        </Field>
+        <Field Name="gTxtPayNo_VUnreal">
+          <DataField>gTxtPayNo_VUnreal</DataField>
+        </Field>
+        <Field Name="gTxtCustomerName_VUnreal">
+          <DataField>gTxtCustomerName_VUnreal</DataField>
+        </Field>
+        <Field Name="gTxtFiscalCode_VUnreal">
+          <DataField>gTxtFiscalCode_VUnreal</DataField>
+        </Field>
+        <Field Name="gDecTotalAmount_VUnreal">
+          <DataField>gDecTotalAmount_VUnreal</DataField>
+        </Field>
+        <Field Name="gDecTotalAmount_VUnrealFormat">
+          <DataField>gDecTotalAmount_VUnrealFormat</DataField>
+        </Field>
+        <Field Name="gDecBaseAmount_1_VUnreal">
+          <DataField>gDecBaseAmount_1_VUnreal</DataField>
+        </Field>
+        <Field Name="gDecBaseAmount_1_VUnrealFormat">
+          <DataField>gDecBaseAmount_1_VUnrealFormat</DataField>
+        </Field>
+        <Field Name="gDecVATAmount_1_VUnreal">
+          <DataField>gDecVATAmount_1_VUnreal</DataField>
+        </Field>
+        <Field Name="gDecVATAmount_1_VUnrealFormat">
+          <DataField>gDecVATAmount_1_VUnrealFormat</DataField>
+        </Field>
+        <Field Name="gDecBaseAmount_2_VUnreal">
+          <DataField>gDecBaseAmount_2_VUnreal</DataField>
+        </Field>
+        <Field Name="gDecBaseAmount_2_VUnrealFormat">
+          <DataField>gDecBaseAmount_2_VUnrealFormat</DataField>
+        </Field>
+        <Field Name="gDecVATAmount_2_VUnreal">
+          <DataField>gDecVATAmount_2_VUnreal</DataField>
+        </Field>
+        <Field Name="gDecVATAmount_2_VUnrealFormat">
+          <DataField>gDecVATAmount_2_VUnrealFormat</DataField>
+        </Field>
+        <Field Name="gDecBaseAmount_4_VUnreal">
+          <DataField>gDecBaseAmount_4_VUnreal</DataField>
+        </Field>
+        <Field Name="gDecBaseAmount_4_VUnrealFormat">
+          <DataField>gDecBaseAmount_4_VUnrealFormat</DataField>
+        </Field>
+        <Field Name="gDecBaseAmount_3_VUnreal">
+          <DataField>gDecBaseAmount_3_VUnreal</DataField>
+        </Field>
+        <Field Name="gDecBaseAmount_3_VUnrealFormat">
+          <DataField>gDecBaseAmount_3_VUnrealFormat</DataField>
+        </Field>
+        <Field Name="gDecBaseAmount_22_VUnreal">
+          <DataField>gDecBaseAmount_22_VUnreal</DataField>
+        </Field>
+        <Field Name="gDecBaseAmount_22_VUnrealFormat">
+          <DataField>gDecBaseAmount_22_VUnrealFormat</DataField>
+        </Field>
+        <Field Name="gDecVATAmount_22_VUnreal">
+          <DataField>gDecVATAmount_22_VUnreal</DataField>
+        </Field>
+        <Field Name="gDecVATAmount_22_VUnrealFormat">
+          <DataField>gDecVATAmount_22_VUnrealFormat</DataField>
+        </Field>
+        <Field Name="gDecBaseAmount_21_VUnreal">
+          <DataField>gDecBaseAmount_21_VUnreal</DataField>
+        </Field>
+        <Field Name="gDecBaseAmount_21_VUnrealFormat">
+          <DataField>gDecBaseAmount_21_VUnrealFormat</DataField>
+        </Field>
+        <Field Name="gDecVATAmount_21_VUnreal">
+          <DataField>gDecVATAmount_21_VUnreal</DataField>
+        </Field>
+        <Field Name="gDecVATAmount_21_VUnrealFormat">
+          <DataField>gDecVATAmount_21_VUnrealFormat</DataField>
+        </Field>
+        <Field Name="gDecBaseAmount_5_VUnreal">
+          <DataField>gDecBaseAmount_5_VUnreal</DataField>
+        </Field>
+        <Field Name="gDecBaseAmount_5_VUnrealFormat">
+          <DataField>gDecBaseAmount_5_VUnrealFormat</DataField>
+        </Field>
+        <Field Name="gDecBaseAmount_6_VUnreal">
+          <DataField>gDecBaseAmount_6_VUnreal</DataField>
+        </Field>
+        <Field Name="gDecBaseAmount_6_VUnrealFormat">
+          <DataField>gDecBaseAmount_6_VUnrealFormat</DataField>
+        </Field>
+        <Field Name="gDecBaseAmount_7_VUnreal">
+          <DataField>gDecBaseAmount_7_VUnreal</DataField>
+        </Field>
+        <Field Name="gDecBaseAmount_7_VUnrealFormat">
+          <DataField>gDecBaseAmount_7_VUnrealFormat</DataField>
+        </Field>
+        <Field Name="gDecBaseAmount_8_VUnreal">
+          <DataField>gDecBaseAmount_8_VUnreal</DataField>
+        </Field>
+        <Field Name="gDecBaseAmount_8_VUnrealFormat">
+          <DataField>gDecBaseAmount_8_VUnrealFormat</DataField>
+        </Field>
+        <Field Name="gDecBaseAmount_9_VUnreal">
+          <DataField>gDecBaseAmount_9_VUnreal</DataField>
+        </Field>
+        <Field Name="gDecBaseAmount_9_VUnrealFormat">
+          <DataField>gDecBaseAmount_9_VUnrealFormat</DataField>
+        </Field>
+        <Field Name="gDecBaseAmount_10_VUnreal">
+          <DataField>gDecBaseAmount_10_VUnreal</DataField>
+        </Field>
+        <Field Name="gDecBaseAmount_10_VUnrealFormat">
+          <DataField>gDecBaseAmount_10_VUnrealFormat</DataField>
+        </Field>
+        <Field Name="gDecBaseAmount_11_VUnreal">
+          <DataField>gDecBaseAmount_11_VUnreal</DataField>
+        </Field>
+        <Field Name="gDecBaseAmount_11_VUnrealFormat">
+          <DataField>gDecBaseAmount_11_VUnrealFormat</DataField>
+        </Field>
+        <Field Name="gDecBaseAmount_12_VUnreal">
+          <DataField>gDecBaseAmount_12_VUnreal</DataField>
+        </Field>
+        <Field Name="gDecBaseAmount_12_VUnrealFormat">
+          <DataField>gDecBaseAmount_12_VUnrealFormat</DataField>
+        </Field>
+        <Field Name="gDecBaseAmount_13_VUnreal">
+          <DataField>gDecBaseAmount_13_VUnreal</DataField>
+        </Field>
+        <Field Name="gDecBaseAmount_13_VUnrealFormat">
+          <DataField>gDecBaseAmount_13_VUnrealFormat</DataField>
+        </Field>
+        <Field Name="gDecVATAmount_13_VUnreal">
+          <DataField>gDecVATAmount_13_VUnreal</DataField>
+        </Field>
+        <Field Name="gDecVATAmount_13_VUnrealFormat">
+          <DataField>gDecVATAmount_13_VUnrealFormat</DataField>
+        </Field>
+        <Field Name="gDecBaseAmount_14_VUnreal">
+          <DataField>gDecBaseAmount_14_VUnreal</DataField>
+        </Field>
+        <Field Name="gDecBaseAmount_14_VUnrealFormat">
+          <DataField>gDecBaseAmount_14_VUnrealFormat</DataField>
+        </Field>
+        <Field Name="gDecVATAmount_14_VUnreal">
+          <DataField>gDecVATAmount_14_VUnreal</DataField>
+        </Field>
+        <Field Name="gDecVATAmount_14_VUnrealFormat">
+          <DataField>gDecVATAmount_14_VUnrealFormat</DataField>
+        </Field>
+        <Field Name="gDecBaseAmount_15_VUnreal">
+          <DataField>gDecBaseAmount_15_VUnreal</DataField>
+        </Field>
+        <Field Name="gDecBaseAmount_15_VUnrealFormat">
+          <DataField>gDecBaseAmount_15_VUnrealFormat</DataField>
+        </Field>
+        <Field Name="gDecVATAmount_15_VUnreal">
+          <DataField>gDecVATAmount_15_VUnreal</DataField>
+        </Field>
+        <Field Name="gDecVATAmount_15_VUnrealFormat">
+          <DataField>gDecVATAmount_15_VUnrealFormat</DataField>
+        </Field>
+        <Field Name="gDecTotalAmountEx_VUnreal">
+          <DataField>gDecTotalAmountEx_VUnreal</DataField>
+        </Field>
+        <Field Name="gDecTotalAmountEx_VUnrealFormat">
+          <DataField>gDecTotalAmountEx_VUnrealFormat</DataField>
+        </Field>
+        <Field Name="CrtNo">
+          <DataField>CrtNo</DataField>
+        </Field>
+        <Field Name="DocumentNo">
+          <DataField>DocumentNo</DataField>
+        </Field>
+        <Field Name="PostingDate">
+          <DataField>PostingDate</DataField>
+        </Field>
+        <Field Name="BilltoPaytoNo_VATEntry">
+          <DataField>BilltoPaytoNo_VATEntry</DataField>
+        </Field>
+        <Field Name="gTxtPayNo_VATEntry">
+          <DataField>gTxtPayNo_VATEntry</DataField>
+        </Field>
+        <Field Name="gTxtCustomerName">
+          <DataField>gTxtCustomerName</DataField>
+        </Field>
+        <Field Name="gTxtFiscalCode">
+          <DataField>gTxtFiscalCode</DataField>
+        </Field>
+        <Field Name="gDecTotalAmount">
+          <DataField>gDecTotalAmount</DataField>
+        </Field>
+        <Field Name="gDecTotalAmountFormat">
+          <DataField>gDecTotalAmountFormat</DataField>
+        </Field>
+        <Field Name="basea1">
+          <DataField>basea1</DataField>
+        </Field>
+        <Field Name="basea1Format">
+          <DataField>basea1Format</DataField>
+        </Field>
+        <Field Name="vata1">
+          <DataField>vata1</DataField>
+        </Field>
+        <Field Name="vata1Format">
+          <DataField>vata1Format</DataField>
+        </Field>
+        <Field Name="basea2">
+          <DataField>basea2</DataField>
+        </Field>
+        <Field Name="basea2Format">
+          <DataField>basea2Format</DataField>
+        </Field>
+        <Field Name="vata2">
+          <DataField>vata2</DataField>
+        </Field>
+        <Field Name="vata2Format">
+          <DataField>vata2Format</DataField>
+        </Field>
+        <Field Name="basea4">
+          <DataField>basea4</DataField>
+        </Field>
+        <Field Name="basea4Format">
+          <DataField>basea4Format</DataField>
+        </Field>
+        <Field Name="vata3">
+          <DataField>vata3</DataField>
+        </Field>
+        <Field Name="vata3Format">
+          <DataField>vata3Format</DataField>
+        </Field>
+        <Field Name="basea5">
+          <DataField>basea5</DataField>
+        </Field>
+        <Field Name="basea5Format">
+          <DataField>basea5Format</DataField>
+        </Field>
+        <Field Name="basea6">
+          <DataField>basea6</DataField>
+        </Field>
+        <Field Name="basea6Format">
+          <DataField>basea6Format</DataField>
+        </Field>
+        <Field Name="basea7">
+          <DataField>basea7</DataField>
+        </Field>
+        <Field Name="basea7Format">
+          <DataField>basea7Format</DataField>
+        </Field>
+        <Field Name="basea8">
+          <DataField>basea8</DataField>
+        </Field>
+        <Field Name="basea8Format">
+          <DataField>basea8Format</DataField>
+        </Field>
+        <Field Name="basea9">
+          <DataField>basea9</DataField>
+        </Field>
+        <Field Name="basea9Format">
+          <DataField>basea9Format</DataField>
+        </Field>
+        <Field Name="basea10">
+          <DataField>basea10</DataField>
+        </Field>
+        <Field Name="basea10Format">
+          <DataField>basea10Format</DataField>
+        </Field>
+        <Field Name="basea11">
+          <DataField>basea11</DataField>
+        </Field>
+        <Field Name="basea11Format">
+          <DataField>basea11Format</DataField>
+        </Field>
+        <Field Name="basea12">
+          <DataField>basea12</DataField>
+        </Field>
+        <Field Name="basea12Format">
+          <DataField>basea12Format</DataField>
+        </Field>
+        <Field Name="basea13">
+          <DataField>basea13</DataField>
+        </Field>
+        <Field Name="basea13Format">
+          <DataField>basea13Format</DataField>
+        </Field>
+        <Field Name="vata13">
+          <DataField>vata13</DataField>
+        </Field>
+        <Field Name="vata13Format">
+          <DataField>vata13Format</DataField>
+        </Field>
+        <Field Name="basea14">
+          <DataField>basea14</DataField>
+        </Field>
+        <Field Name="basea14Format">
+          <DataField>basea14Format</DataField>
+        </Field>
+        <Field Name="vata14">
+          <DataField>vata14</DataField>
+        </Field>
+        <Field Name="vata14Format">
+          <DataField>vata14Format</DataField>
+        </Field>
+        <Field Name="basea15">
+          <DataField>basea15</DataField>
+        </Field>
+        <Field Name="basea15Format">
+          <DataField>basea15Format</DataField>
+        </Field>
+        <Field Name="vata15">
+          <DataField>vata15</DataField>
+        </Field>
+        <Field Name="vata15Format">
+          <DataField>vata15Format</DataField>
+        </Field>
+        <Field Name="gDecBaseAmount_22_VATEntry">
+          <DataField>gDecBaseAmount_22_VATEntry</DataField>
+        </Field>
+        <Field Name="gDecBaseAmount_22_VATEntryFormat">
+          <DataField>gDecBaseAmount_22_VATEntryFormat</DataField>
+        </Field>
+        <Field Name="gDecVATAmount_22_VATEntry">
+          <DataField>gDecVATAmount_22_VATEntry</DataField>
+        </Field>
+        <Field Name="gDecVATAmount_22_VATEntryFormat">
+          <DataField>gDecVATAmount_22_VATEntryFormat</DataField>
+        </Field>
+        <Field Name="gDecBaseAmount_21_VATEntry">
+          <DataField>gDecBaseAmount_21_VATEntry</DataField>
+        </Field>
+        <Field Name="gDecBaseAmount_21_VATEntryFormat">
+          <DataField>gDecBaseAmount_21_VATEntryFormat</DataField>
+        </Field>
+        <Field Name="gDecVATAmount_21_VATEntry">
+          <DataField>gDecVATAmount_21_VATEntry</DataField>
+        </Field>
+        <Field Name="gDecVATAmount_21_VATEntryFormat">
+          <DataField>gDecVATAmount_21_VATEntryFormat</DataField>
+        </Field>
+        <Field Name="gTxcCrtNo">
+          <DataField>gTxcCrtNo</DataField>
+        </Field>
+        <Field Name="gTxcOrderNo">
+          <DataField>gTxcOrderNo</DataField>
+        </Field>
+        <Field Name="gTxcDate">
+          <DataField>gTxcDate</DataField>
+        </Field>
+        <Field Name="gTxcCust">
+          <DataField>gTxcCust</DataField>
+        </Field>
+        <Field Name="gTxcRegNo">
+          <DataField>gTxcRegNo</DataField>
+        </Field>
+        <Field Name="gTxcVAT24">
+          <DataField>gTxcVAT24</DataField>
+        </Field>
+        <Field Name="gTxcVAT9">
+          <DataField>gTxcVAT9</DataField>
+        </Field>
+        <Field Name="VAT20">
+          <DataField>VAT20</DataField>
+        </Field>
+        <Field Name="VAT19">
+          <DataField>VAT19</DataField>
+        </Field>
+        <Field Name="gTxcBaseAmount">
+          <DataField>gTxcBaseAmount</DataField>
+        </Field>
+        <Field Name="gTxcVATAmount">
+          <DataField>gTxcVATAmount</DataField>
+        </Field>
+        <Field Name="gTxcDocumentAmount">
+          <DataField>gTxcDocumentAmount</DataField>
+        </Field>
+        <Field Name="gTxcSalesVAT">
+          <DataField>gTxcSalesVAT</DataField>
+        </Field>
+        <Field Name="gTxcDocument">
+          <DataField>gTxcDocument</DataField>
+        </Field>
+        <Field Name="gTxcDeliveryHM">
+          <DataField>gTxcDeliveryHM</DataField>
+        </Field>
+        <Field Name="gTxcDeliveryNO">
+          <DataField>gTxcDeliveryNO</DataField>
+        </Field>
+        <Field Name="gTxcDeliveryPR">
+          <DataField>gTxcDeliveryPR</DataField>
+        </Field>
+        <Field Name="gTxcDeliveryS">
+          <DataField>gTxcDeliveryS</DataField>
+        </Field>
+        <Field Name="gTxcOperFreeVAT">
+          <DataField>gTxcOperFreeVAT</DataField>
+        </Field>
+        <Field Name="gTxcGoodsServRevCharge">
+          <DataField>gTxcGoodsServRevCharge</DataField>
+        </Field>
+        <Field Name="gTxcIntracomDelivery">
+          <DataField>gTxcIntracomDelivery</DataField>
+        </Field>
+        <Field Name="gTxcOtherDelivery">
+          <DataField>gTxcOtherDelivery</DataField>
+        </Field>
+        <Field Name="gTxcExemptP">
+          <DataField>gTxcExemptP</DataField>
+        </Field>
+        <Field Name="gTxcExemptQ">
+          <DataField>gTxcExemptQ</DataField>
+        </Field>
+        <Field Name="gTxcValue">
+          <DataField>gTxcValue</DataField>
+        </Field>
+        <Field Name="gTxcIntracomAquisition">
+          <DataField>gTxcIntracomAquisition</DataField>
+        </Field>
+        <Field Name="gTxcWDedRights">
+          <DataField>gTxcWDedRights</DataField>
+        </Field>
+        <Field Name="gTxcWODedRights">
+          <DataField>gTxcWODedRights</DataField>
+        </Field>
+        <Field Name="gTxcValue1">
+          <DataField>gTxcValue1</DataField>
+        </Field>
+        <Field Name="gTxcICServ">
+          <DataField>gTxcICServ</DataField>
+        </Field>
+        <Field Name="gTxcICAquiz">
+          <DataField>gTxcICAquiz</DataField>
+        </Field>
+        <Field Name="gTxtVATFilter">
+          <DataField>gTxtVATFilter</DataField>
+        </Field>
+        <Field Name="COMPANYNAME">
+          <DataField>COMPANYNAME</DataField>
+        </Field>
+        <Field Name="gDecTotalAmountEx_VATEntry">
+          <DataField>gDecTotalAmountEx_VATEntry</DataField>
+        </Field>
+        <Field Name="gDecTotalAmountEx_VATEntryFormat">
+          <DataField>gDecTotalAmountEx_VATEntryFormat</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

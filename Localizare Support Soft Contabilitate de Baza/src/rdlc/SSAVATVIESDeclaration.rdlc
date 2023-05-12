@@ -1,0 +1,563 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="VIES_Declaration_Header_No_">
+          <DataField>VIES_Declaration_Header_No_</DataField>
+        </Field>
+        <Field Name="total">
+          <DataField>total</DataField>
+        </Field>
+        <Field Name="totalFormat">
+          <DataField>totalFormat</DataField>
+        </Field>
+        <Field Name="RECAPITULATIVECaption">
+          <DataField>RECAPITULATIVECaption</DataField>
+        </Field>
+        <Field Name="STATEMENT_FOR_INTRA_COMMUNITYCaption">
+          <DataField>STATEMENT_FOR_INTRA_COMMUNITYCaption</DataField>
+        </Field>
+        <Field Name="SUPPLIES_ACQUISITIONSCaption">
+          <DataField>SUPPLIES_ACQUISITIONSCaption</DataField>
+        </Field>
+        <Field Name="VIESCaption">
+          <DataField>VIESCaption</DataField>
+        </Field>
+        <Field Name="V390Caption">
+          <DataField>V390Caption</DataField>
+        </Field>
+        <Field Name="VIES_Declaration_Header___Period_No__">
+          <DataField>VIES_Declaration_Header___Period_No__</DataField>
+        </Field>
+        <Field Name="CurrReport_PAGENO">
+          <DataField>CurrReport_PAGENO</DataField>
+        </Field>
+        <Field Name="VIES_Declaration_Header__Year">
+          <DataField>VIES_Declaration_Header__Year</DataField>
+        </Field>
+        <Field Name="CompanyInfo__Country_Region_Code_">
+          <DataField>CompanyInfo__Country_Region_Code_</DataField>
+        </Field>
+        <Field Name="CVATRegNo">
+          <DataField>CVATRegNo</DataField>
+        </Field>
+        <Field Name="CurrReport_PAGENO_Control1000000021">
+          <DataField>CurrReport_PAGENO_Control1000000021</DataField>
+        </Field>
+        <Field Name="CompanyInfo__Country_Region_Code__Control1000000022">
+          <DataField>CompanyInfo__Country_Region_Code__Control1000000022</DataField>
+        </Field>
+        <Field Name="CVATRegNo_Control1000000024">
+          <DataField>CVATRegNo_Control1000000024</DataField>
+        </Field>
+        <Field Name="VIES_Declaration_Header__Year_Control1000000026">
+          <DataField>VIES_Declaration_Header__Year_Control1000000026</DataField>
+        </Field>
+        <Field Name="VIES_Declaration_Header___Period_No___Control1000000028">
+          <DataField>VIES_Declaration_Header___Period_No___Control1000000028</DataField>
+        </Field>
+        <Field Name="FORMAT_SaleToEUCust_0_2_">
+          <DataField>FORMAT_SaleToEUCust_0_2_</DataField>
+        </Field>
+        <Field Name="VIES_Declaration_Line__Country_Region_Code_">
+          <DataField>VIES_Declaration_Line__Country_Region_Code_</DataField>
+        </Field>
+        <Field Name="VATRegNo">
+          <DataField>VATRegNo</DataField>
+        </Field>
+        <Field Name="FORMAT_SaleToEUCust3Party_0_2_">
+          <DataField>FORMAT_SaleToEUCust3Party_0_2_</DataField>
+        </Field>
+        <Field Name="VATRegNo_Control1000000045">
+          <DataField>VATRegNo_Control1000000045</DataField>
+        </Field>
+        <Field Name="VIES_Declaration_Line__Country_Region_Code__Control1000000046">
+          <DataField>VIES_Declaration_Line__Country_Region_Code__Control1000000046</DataField>
+        </Field>
+        <Field Name="FORMAT_PurchEuVend_0_2_">
+          <DataField>FORMAT_PurchEuVend_0_2_</DataField>
+        </Field>
+        <Field Name="VATRegNo_Control1000000051">
+          <DataField>VATRegNo_Control1000000051</DataField>
+        </Field>
+        <Field Name="VIES_Declaration_Line__Country_Region_Code__Control1000000052">
+          <DataField>VIES_Declaration_Line__Country_Region_Code__Control1000000052</DataField>
+        </Field>
+        <Field Name="VATRegNo_Control1000000055">
+          <DataField>VATRegNo_Control1000000055</DataField>
+        </Field>
+        <Field Name="VIES_Declaration_Line__Country_Region_Code__Control1000000056">
+          <DataField>VIES_Declaration_Line__Country_Region_Code__Control1000000056</DataField>
+        </Field>
+        <Field Name="FORMAT_SaleServiceToEUCust_0_2_">
+          <DataField>FORMAT_SaleServiceToEUCust_0_2_</DataField>
+        </Field>
+        <Field Name="VATRegNo_Control1000000061">
+          <DataField>VATRegNo_Control1000000061</DataField>
+        </Field>
+        <Field Name="VIES_Declaration_Line__Country_Region_Code__Control1000000062">
+          <DataField>VIES_Declaration_Line__Country_Region_Code__Control1000000062</DataField>
+        </Field>
+        <Field Name="FORMAT_PurchServiceEUVend_0_2_">
+          <DataField>FORMAT_PurchServiceEUVend_0_2_</DataField>
+        </Field>
+        <Field Name="FORMAT_PageTotal_0_2_">
+          <DataField>FORMAT_PageTotal_0_2_</DataField>
+        </Field>
+        <Field Name="FORMAT_PageTotal_0_2__Control1000000069">
+          <DataField>FORMAT_PageTotal_0_2__Control1000000069</DataField>
+        </Field>
+        <Field Name="FORMAT_GenTotal_0_2_">
+          <DataField>FORMAT_GenTotal_0_2_</DataField>
+        </Field>
+        <Field Name="LIST_OF_INTRA_COMMUNITY_TRANSACTIONSCaption">
+          <DataField>LIST_OF_INTRA_COMMUNITY_TRANSACTIONSCaption</DataField>
+        </Field>
+        <Field Name="MONTHCaption">
+          <DataField>MONTHCaption</DataField>
+        </Field>
+        <Field Name="YEARCaption">
+          <DataField>YEARCaption</DataField>
+        </Field>
+        <Field Name="APPENDIX_TO_THE_STATEMENTCaption">
+          <DataField>APPENDIX_TO_THE_STATEMENTCaption</DataField>
+        </Field>
+        <Field Name="CODECaption">
+          <DataField>CODECaption</DataField>
+        </Field>
+        <Field Name="COMPANYCaption">
+          <DataField>COMPANYCaption</DataField>
+        </Field>
+        <Field Name="PAGECaption">
+          <DataField>PAGECaption</DataField>
+        </Field>
+        <Field Name="COUNTRY_CODECaption">
+          <DataField>COUNTRY_CODECaption</DataField>
+        </Field>
+        <Field Name="VAT_REGISTRATION_NOCaption">
+          <DataField>VAT_REGISTRATION_NOCaption</DataField>
+        </Field>
+        <Field Name="NAME_OF_INTRA_COMMUNITY_OPERATORCaption">
+          <DataField>NAME_OF_INTRA_COMMUNITY_OPERATORCaption</DataField>
+        </Field>
+        <Field Name="TRANSACTION_CODECaption">
+          <DataField>TRANSACTION_CODECaption</DataField>
+        </Field>
+        <Field Name="AMOUNTCaption">
+          <DataField>AMOUNTCaption</DataField>
+        </Field>
+        <Field Name="COMPANYCaption_Control1000000019">
+          <DataField>COMPANYCaption_Control1000000019</DataField>
+        </Field>
+        <Field Name="PAGECaption_Control1000000020">
+          <DataField>PAGECaption_Control1000000020</DataField>
+        </Field>
+        <Field Name="CODECaption_Control1000000023">
+          <DataField>CODECaption_Control1000000023</DataField>
+        </Field>
+        <Field Name="YEARCaption_Control1000000025">
+          <DataField>YEARCaption_Control1000000025</DataField>
+        </Field>
+        <Field Name="MONTHCaption_Control1000000027">
+          <DataField>MONTHCaption_Control1000000027</DataField>
+        </Field>
+        <Field Name="AMOUNTCaption_Control1000000031">
+          <DataField>AMOUNTCaption_Control1000000031</DataField>
+        </Field>
+        <Field Name="TRANSACTION_CODECaption_Control1000000032">
+          <DataField>TRANSACTION_CODECaption_Control1000000032</DataField>
+        </Field>
+        <Field Name="NAME_OF_INTRA_COMMUNITY_OPERATORCaption_Control1000000033">
+          <DataField>NAME_OF_INTRA_COMMUNITY_OPERATORCaption_Control1000000033</DataField>
+        </Field>
+        <Field Name="VAT_REGISTRATION_NOCaption_Control1000000034">
+          <DataField>VAT_REGISTRATION_NOCaption_Control1000000034</DataField>
+        </Field>
+        <Field Name="COUNTRY_CODECaption_Control1000000035">
+          <DataField>COUNTRY_CODECaption_Control1000000035</DataField>
+        </Field>
+        <Field Name="LCaption">
+          <DataField>LCaption</DataField>
+        </Field>
+        <Field Name="TCaption">
+          <DataField>TCaption</DataField>
+        </Field>
+        <Field Name="ACaption">
+          <DataField>ACaption</DataField>
+        </Field>
+        <Field Name="PCaption">
+          <DataField>PCaption</DataField>
+        </Field>
+        <Field Name="SCaption">
+          <DataField>SCaption</DataField>
+        </Field>
+        <Field Name="PAGE_TOTALCaption">
+          <DataField>PAGE_TOTALCaption</DataField>
+        </Field>
+        <Field Name="PAGE_TOTALCaption_Control1000000068">
+          <DataField>PAGE_TOTALCaption_Control1000000068</DataField>
+        </Field>
+        <Field Name="GENERAL_TOTALCaption">
+          <DataField>GENERAL_TOTALCaption</DataField>
+        </Field>
+        <Field Name="VIES_Declaration_Line_VIES_Declaration_No_">
+          <DataField>VIES_Declaration_Line_VIES_Declaration_No_</DataField>
+        </Field>
+        <Field Name="VIES_Declaration_Line_Line_No_">
+          <DataField>VIES_Declaration_Line_Line_No_</DataField>
+        </Field>
+        <Field Name="custvendname">
+          <DataField>custvendname</DataField>
+        </Field>
+        <Field Name="custvendnamebun">
+          <DataField>custvendnamebun</DataField>
+        </Field>
+        <Field Name="transtype">
+          <DataField>transtype</DataField>
+        </Field>
+        <Field Name="suma">
+          <DataField>suma</DataField>
+        </Field>
+        <Field Name="sumaFormat">
+          <DataField>sumaFormat</DataField>
+        </Field>
+        <Field Name="T_P">
+          <DataField>T_P</DataField>
+        </Field>
+        <Field Name="T_PFormat">
+          <DataField>T_PFormat</DataField>
+        </Field>
+        <Field Name="T_S">
+          <DataField>T_S</DataField>
+        </Field>
+        <Field Name="T_SFormat">
+          <DataField>T_SFormat</DataField>
+        </Field>
+        <Field Name="T_T">
+          <DataField>T_T</DataField>
+        </Field>
+        <Field Name="T_TFormat">
+          <DataField>T_TFormat</DataField>
+        </Field>
+        <Field Name="T_L">
+          <DataField>T_L</DataField>
+        </Field>
+        <Field Name="T_LFormat">
+          <DataField>T_LFormat</DataField>
+        </Field>
+        <Field Name="T_A">
+          <DataField>T_A</DataField>
+        </Field>
+        <Field Name="T_AFormat">
+          <DataField>T_AFormat</DataField>
+        </Field>
+        <Field Name="total_general">
+          <DataField>total_general</DataField>
+        </Field>
+        <Field Name="total_generalFormat">
+          <DataField>total_generalFormat</DataField>
+        </Field>
+        <Field Name="Nume_companie">
+          <DataField>Nume_companie</DataField>
+        </Field>
+        <Field Name="CompanyInfo__Fax_No__">
+          <DataField>CompanyInfo__Fax_No__</DataField>
+        </Field>
+        <Field Name="CompanyInfo__E_Mail_">
+          <DataField>CompanyInfo__E_Mail_</DataField>
+        </Field>
+        <Field Name="CompsnyInfo_Anaflogo">
+          <DataField>CompsnyInfo_Anaflogo</DataField>
+        </Field>
+        <Field Name="StatReportingSetup__House_No__">
+          <DataField>StatReportingSetup__House_No__</DataField>
+        </Field>
+        <Field Name="StatReportingSetup_Street">
+          <DataField>StatReportingSetup_Street</DataField>
+        </Field>
+        <Field Name="CompanyInfo_City">
+          <DataField>CompanyInfo_City</DataField>
+        </Field>
+        <Field Name="CompanyInfo__Phone_No__">
+          <DataField>CompanyInfo__Phone_No__</DataField>
+        </Field>
+        <Field Name="StatReportingSetup_Sector">
+          <DataField>StatReportingSetup_Sector</DataField>
+        </Field>
+        <Field Name="CompanyInfo_County">
+          <DataField>CompanyInfo_County</DataField>
+        </Field>
+        <Field Name="CompanyInfo__Post_Code_">
+          <DataField>CompanyInfo__Post_Code_</DataField>
+        </Field>
+        <Field Name="CompanyInfo_Name">
+          <DataField>CompanyInfo_Name</DataField>
+        </Field>
+        <Field Name="VIES_Declaration_Header__Year_Control1000000093">
+          <DataField>VIES_Declaration_Header__Year_Control1000000093</DataField>
+        </Field>
+        <Field Name="VIES_Declaration_Header___Period_No___Control1000000095">
+          <DataField>VIES_Declaration_Header___Period_No___Control1000000095</DataField>
+        </Field>
+        <Field Name="CurrReport_PAGENO_1">
+          <DataField>CurrReport_PAGENO_1</DataField>
+        </Field>
+        <Field Name="FORMAT_Acquis_0_2_">
+          <DataField>FORMAT_Acquis_0_2_</DataField>
+        </Field>
+        <Field Name="VIES_Declaration_Header___Number_of_Lines_">
+          <DataField>VIES_Declaration_Header___Number_of_Lines_</DataField>
+        </Field>
+        <Field Name="FORMAT_Supplies_0_2_">
+          <DataField>FORMAT_Supplies_0_2_</DataField>
+        </Field>
+        <Field Name="FORMAT_Supplies3Party_0_2_">
+          <DataField>FORMAT_Supplies3Party_0_2_</DataField>
+        </Field>
+        <Field Name="StatReportingSetup_Building">
+          <DataField>StatReportingSetup_Building</DataField>
+        </Field>
+        <Field Name="StatReportingSetup__Apartment_No__">
+          <DataField>StatReportingSetup__Apartment_No__</DataField>
+        </Field>
+        <Field Name="StatReportingSetup_Floor">
+          <DataField>StatReportingSetup_Floor</DataField>
+        </Field>
+        <Field Name="StatReportingSetup_Unit">
+          <DataField>StatReportingSetup_Unit</DataField>
+        </Field>
+        <Field Name="FORMAT__VIES_Declaration_Header___Number_of_Supplies__0_2_">
+          <DataField>FORMAT__VIES_Declaration_Header___Number_of_Supplies__0_2_</DataField>
+        </Field>
+        <Field Name="CVATRegNo_Control1000000142">
+          <DataField>CVATRegNo_Control1000000142</DataField>
+        </Field>
+        <Field Name="CompanyInfo__Country_Region_Code__Control1000000143">
+          <DataField>CompanyInfo__Country_Region_Code__Control1000000143</DataField>
+        </Field>
+        <Field Name="FORMAT_SuppliesService_0_2_">
+          <DataField>FORMAT_SuppliesService_0_2_</DataField>
+        </Field>
+        <Field Name="FORMAT_AcquisService_0_2_">
+          <DataField>FORMAT_AcquisService_0_2_</DataField>
+        </Field>
+        <Field Name="DeclarationNormal">
+          <DataField>DeclarationNormal</DataField>
+        </Field>
+        <Field Name="DeclarationCorrective">
+          <DataField>DeclarationCorrective</DataField>
+        </Field>
+        <Field Name="APCaption">
+          <DataField>APCaption</DataField>
+        </Field>
+        <Field Name="BLCaption">
+          <DataField>BLCaption</DataField>
+        </Field>
+        <Field Name="FAXCaption">
+          <DataField>FAXCaption</DataField>
+        </Field>
+        <Field Name="NOCaption">
+          <DataField>NOCaption</DataField>
+        </Field>
+        <Field Name="SECTORCaption">
+          <DataField>SECTORCaption</DataField>
+        </Field>
+        <Field Name="ETCaption">
+          <DataField>ETCaption</DataField>
+        </Field>
+        <Field Name="VAT_REGISTRATION_NOCaption_Control1000000088">
+          <DataField>VAT_REGISTRATION_NOCaption_Control1000000088</DataField>
+        </Field>
+        <Field Name="INITIAL_DECLARATIONCaption">
+          <DataField>INITIAL_DECLARATIONCaption</DataField>
+        </Field>
+        <Field Name="CORRECTIVE_DECLARATIONCaption">
+          <DataField>CORRECTIVE_DECLARATIONCaption</DataField>
+        </Field>
+        <Field Name="DECLARATION_TYPECaption">
+          <DataField>DECLARATION_TYPECaption</DataField>
+        </Field>
+        <Field Name="MONTHCaption_Control1000000094">
+          <DataField>MONTHCaption_Control1000000094</DataField>
+        </Field>
+        <Field Name="FISCAL_ADDRESSCaption">
+          <DataField>FISCAL_ADDRESSCaption</DataField>
+        </Field>
+        <Field Name="COUNTYCaption">
+          <DataField>COUNTYCaption</DataField>
+        </Field>
+        <Field Name="CITY_TOWNCaption">
+          <DataField>CITY_TOWNCaption</DataField>
+        </Field>
+        <Field Name="POST_CODECaption">
+          <DataField>POST_CODECaption</DataField>
+        </Field>
+        <Field Name="STREETCaption">
+          <DataField>STREETCaption</DataField>
+        </Field>
+        <Field Name="SCCaption">
+          <DataField>SCCaption</DataField>
+        </Field>
+        <Field Name="PHONECaption">
+          <DataField>PHONECaption</DataField>
+        </Field>
+        <Field Name="E_MAILCaption">
+          <DataField>E_MAILCaption</DataField>
+        </Field>
+        <Field Name="REPORTING_PERIODCaption">
+          <DataField>REPORTING_PERIODCaption</DataField>
+        </Field>
+        <Field Name="YEARCaption_Control1000000107">
+          <DataField>YEARCaption_Control1000000107</DataField>
+        </Field>
+        <Field Name="NAMECaption">
+          <DataField>NAMECaption</DataField>
+        </Field>
+        <Field Name="IDENTIFICATION_DATACaption">
+          <DataField>IDENTIFICATION_DATACaption</DataField>
+        </Field>
+        <Field Name="SUMMARY_OF_STATEMENTCaption">
+          <DataField>SUMMARY_OF_STATEMENTCaption</DataField>
+        </Field>
+        <Field Name="TOTAL_NO_OF_ANNEXES_TO_THE_DECLARATIONCaption">
+          <DataField>TOTAL_NO_OF_ANNEXES_TO_THE_DECLARATIONCaption</DataField>
+        </Field>
+        <Field Name="TOTAL_NUMBER_OF_INTRA_COMMUNITY_OPERATORSCaption">
+          <DataField>TOTAL_NUMBER_OF_INTRA_COMMUNITY_OPERATORSCaption</DataField>
+        </Field>
+        <Field Name="TOTAL_OF_INTRA_COMMUNITY_SUPPLIES_ACQUISITIONS_OF_GOODS_SERVICECaption">
+          <DataField>TOTAL_OF_INTRA_COMMUNITY_SUPPLIES_ACQUISITIONS_OF_GOODS_SERVICECaption</DataField>
+        </Field>
+        <Field Name="SUPPLIES_OF_GOODSCaption">
+          <DataField>SUPPLIES_OF_GOODSCaption</DataField>
+        </Field>
+        <Field Name="ACQUISITIONS_OF_GOODSCaption">
+          <DataField>ACQUISITIONS_OF_GOODSCaption</DataField>
+        </Field>
+        <Field Name="SUPPLIES_OF_GOODS_IN_A_TRIANGULATION_SCHEMECaption">
+          <DataField>SUPPLIES_OF_GOODS_IN_A_TRIANGULATION_SCHEMECaption</DataField>
+        </Field>
+        <Field Name="Under_the_penalties_of_law__I_declare_that_the_data_in_this_form_are_correct_and_completeCaption">
+          <DataField>Under_the_penalties_of_law__I_declare_that_the_data_in_this_form_are_correct_and_completeCaption</DataField>
+        </Field>
+        <Field Name="Name_of_the_responsible_personCaption">
+          <DataField>Name_of_the_responsible_personCaption</DataField>
+        </Field>
+        <Field Name="PositionCaption">
+          <DataField>PositionCaption</DataField>
+        </Field>
+        <Field Name="SignatureCaption">
+          <DataField>SignatureCaption</DataField>
+        </Field>
+        <Field Name="For_the_fiscal_authorities_useCaption">
+          <DataField>For_the_fiscal_authorities_useCaption</DataField>
+        </Field>
+        <Field Name="Registration_NoCaption">
+          <DataField>Registration_NoCaption</DataField>
+        </Field>
+        <Field Name="Registration_DateCaption">
+          <DataField>Registration_DateCaption</DataField>
+        </Field>
+        <Field Name="StampCaption">
+          <DataField>StampCaption</DataField>
+        </Field>
+        <Field Name="SUPPLIES_OF_SERVICESCaption">
+          <DataField>SUPPLIES_OF_SERVICESCaption</DataField>
+        </Field>
+        <Field Name="ACQUISITIONS_OF_SERVICESCaption">
+          <DataField>ACQUISITIONS_OF_SERVICESCaption</DataField>
+        </Field>
+        <Field Name="Integer_Number">
+          <DataField>Integer_Number</DataField>
+        </Field>
+        <Field Name="Fiscal_LBL">
+          <DataField>Fiscal_LBL</DataField>
+        </Field>
+        <Field Name="nume_">
+          <DataField>nume_</DataField>
+        </Field>
+        <Field Name="pozitie_">
+          <DataField>pozitie_</DataField>
+        </Field>
+        <Field Name="prenume_">
+          <DataField>prenume_</DataField>
+        </Field>
+        <Field Name="MONTHCaptionn">
+          <DataField>MONTHCaptionn</DataField>
+        </Field>
+        <Field Name="YEARCaptionn">
+          <DataField>YEARCaptionn</DataField>
+        </Field>
+        <Field Name="numarpag">
+          <DataField>numarpag</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

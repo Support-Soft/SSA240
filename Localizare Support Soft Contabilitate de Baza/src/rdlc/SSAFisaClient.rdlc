@@ -1,0 +1,433 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="Name_CustomerCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Name_CustomerCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Name_CustomerCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="No_CustomerCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>No_CustomerCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>No_CustomerCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="PhoneNo_CustomerCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>PhoneNo_CustomerCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>PhoneNo_CustomerCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="DocumentType_CustLedgerEntryCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>DocumentType_CustLedgerEntryCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>DocumentType_CustLedgerEntryCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="EntryNo_CustLedgerEntryCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>EntryNo_CustLedgerEntryCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>EntryNo_CustLedgerEntryCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="DocumentNo_CustLedgerEntryCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>DocumentNo_CustLedgerEntryCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>DocumentNo_CustLedgerEntryCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="PostingDate_CustLedgerEntryCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>PostingDate_CustLedgerEntryCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>PostingDate_CustLedgerEntryCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="DueDate_CustLedgerEntryCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>DueDate_CustLedgerEntryCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>DueDate_CustLedgerEntryCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ExternalDocumentNo_CustLedgerEntryCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>ExternalDocumentNo_CustLedgerEntryCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ExternalDocumentNo_CustLedgerEntryCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CurrencyCode_CustLedgerEntryCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>CurrencyCode_CustLedgerEntryCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>CurrencyCode_CustLedgerEntryCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Amount_CustLedgerEntryCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Amount_CustLedgerEntryCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Amount_CustLedgerEntryCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="AmountLCY_CustLedgerEntryCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>AmountLCY_CustLedgerEntryCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>AmountLCY_CustLedgerEntryCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="DocumentDate_CustLedgerEntryCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>DocumentDate_CustLedgerEntryCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>DocumentDate_CustLedgerEntryCaption</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="Name_Customer">
+          <DataField>Name_Customer</DataField>
+        </Field>
+        <Field Name="No_Customer">
+          <DataField>No_Customer</DataField>
+        </Field>
+        <Field Name="PhoneNo_Customer">
+          <DataField>PhoneNo_Customer</DataField>
+        </Field>
+        <Field Name="ClosingDocCaption">
+          <DataField>ClosingDocCaption</DataField>
+        </Field>
+        <Field Name="SumeDebitCaption">
+          <DataField>SumeDebitCaption</DataField>
+        </Field>
+        <Field Name="SumeCreditCaption">
+          <DataField>SumeCreditCaption</DataField>
+        </Field>
+        <Field Name="SumeDebitMNCaption">
+          <DataField>SumeDebitMNCaption</DataField>
+        </Field>
+        <Field Name="SumeCreditMNCaption">
+          <DataField>SumeCreditMNCaption</DataField>
+        </Field>
+        <Field Name="Title">
+          <DataField>Title</DataField>
+        </Field>
+        <Field Name="AntetCaption">
+          <DataField>AntetCaption</DataField>
+        </Field>
+        <Field Name="TextAjustari">
+          <DataField>TextAjustari</DataField>
+        </Field>
+        <Field Name="TextAjustari2">
+          <DataField>TextAjustari2</DataField>
+        </Field>
+        <Field Name="TextAjustariTotala">
+          <DataField>TextAjustariTotala</DataField>
+        </Field>
+        <Field Name="CustDateFilter">
+          <DataField>CustDateFilter</DataField>
+        </Field>
+        <Field Name="CustFilter">
+          <DataField>CustFilter</DataField>
+        </Field>
+        <Field Name="CustLedgFilter">
+          <DataField>CustLedgFilter</DataField>
+        </Field>
+        <Field Name="Text000">
+          <DataField>Text000</DataField>
+        </Field>
+        <Field Name="CompName">
+          <DataField>CompName</DataField>
+        </Field>
+        <Field Name="SoldCaption">
+          <DataField>SoldCaption</DataField>
+        </Field>
+        <Field Name="StartBalance">
+          <DataField>StartBalance</DataField>
+        </Field>
+        <Field Name="StartBalanceFormat">
+          <DataField>StartBalanceFormat</DataField>
+        </Field>
+        <Field Name="StartBalanceLCY">
+          <DataField>StartBalanceLCY</DataField>
+        </Field>
+        <Field Name="StartBalanceLCYFormat">
+          <DataField>StartBalanceLCYFormat</DataField>
+        </Field>
+        <Field Name="StartBalAdj">
+          <DataField>StartBalAdj</DataField>
+        </Field>
+        <Field Name="StartBalAdjFormat">
+          <DataField>StartBalAdjFormat</DataField>
+        </Field>
+        <Field Name="StartBalAdjLCY">
+          <DataField>StartBalAdjLCY</DataField>
+        </Field>
+        <Field Name="StartBalAdjLCYFormat">
+          <DataField>StartBalAdjLCYFormat</DataField>
+        </Field>
+        <Field Name="StartBalAdjLCYAppl">
+          <DataField>StartBalAdjLCYAppl</DataField>
+        </Field>
+        <Field Name="StartBalAdjLCYApplFormat">
+          <DataField>StartBalAdjLCYApplFormat</DataField>
+        </Field>
+        <Field Name="SoldMNCaption">
+          <DataField>SoldMNCaption</DataField>
+        </Field>
+        <Field Name="ShowForeign">
+          <DataField>ShowForeign</DataField>
+        </Field>
+        <Field Name="RemAmountCaption">
+          <DataField>RemAmountCaption</DataField>
+        </Field>
+        <Field Name="DocumentType_CustLedgerEntry">
+          <DataField>DocumentType_CustLedgerEntry</DataField>
+        </Field>
+        <Field Name="EntryNo_CustLedgerEntry">
+          <DataField>EntryNo_CustLedgerEntry</DataField>
+        </Field>
+        <Field Name="DocumentNo_CustLedgerEntry">
+          <DataField>DocumentNo_CustLedgerEntry</DataField>
+        </Field>
+        <Field Name="PostingDate_CustLedgerEntry">
+          <DataField>PostingDate_CustLedgerEntry</DataField>
+        </Field>
+        <Field Name="DueDate_CustLedgerEntry">
+          <DataField>DueDate_CustLedgerEntry</DataField>
+        </Field>
+        <Field Name="ExternalDocumentNo_CustLedgerEntry">
+          <DataField>ExternalDocumentNo_CustLedgerEntry</DataField>
+        </Field>
+        <Field Name="CurrencyCode_CustLedgerEntry">
+          <DataField>CurrencyCode_CustLedgerEntry</DataField>
+        </Field>
+        <Field Name="Amount_CustLedgerEntry">
+          <DataField>Amount_CustLedgerEntry</DataField>
+        </Field>
+        <Field Name="Amount_CustLedgerEntryFormat">
+          <DataField>Amount_CustLedgerEntryFormat</DataField>
+        </Field>
+        <Field Name="AmountLCY_CustLedgerEntry">
+          <DataField>AmountLCY_CustLedgerEntry</DataField>
+        </Field>
+        <Field Name="AmountLCY_CustLedgerEntryFormat">
+          <DataField>AmountLCY_CustLedgerEntryFormat</DataField>
+        </Field>
+        <Field Name="ClosingDocNo">
+          <DataField>ClosingDocNo</DataField>
+        </Field>
+        <Field Name="DocumentDate_CustLedgerEntry">
+          <DataField>DocumentDate_CustLedgerEntry</DataField>
+        </Field>
+        <Field Name="DebitAmount">
+          <DataField>DebitAmount</DataField>
+        </Field>
+        <Field Name="DebitAmountFormat">
+          <DataField>DebitAmountFormat</DataField>
+        </Field>
+        <Field Name="CreditAmount">
+          <DataField>CreditAmount</DataField>
+        </Field>
+        <Field Name="CreditAmountFormat">
+          <DataField>CreditAmountFormat</DataField>
+        </Field>
+        <Field Name="CustBalance">
+          <DataField>CustBalance</DataField>
+        </Field>
+        <Field Name="CustBalanceFormat">
+          <DataField>CustBalanceFormat</DataField>
+        </Field>
+        <Field Name="CustBalanceLCY">
+          <DataField>CustBalanceLCY</DataField>
+        </Field>
+        <Field Name="CustBalanceLCYFormat">
+          <DataField>CustBalanceLCYFormat</DataField>
+        </Field>
+        <Field Name="DebitAmountLCY">
+          <DataField>DebitAmountLCY</DataField>
+        </Field>
+        <Field Name="DebitAmountLCYFormat">
+          <DataField>DebitAmountLCYFormat</DataField>
+        </Field>
+        <Field Name="CreditAmountLCY">
+          <DataField>CreditAmountLCY</DataField>
+        </Field>
+        <Field Name="CreditAmountLCYFormat">
+          <DataField>CreditAmountLCYFormat</DataField>
+        </Field>
+        <Field Name="TotalDebit">
+          <DataField>TotalDebit</DataField>
+        </Field>
+        <Field Name="TotalDebitFormat">
+          <DataField>TotalDebitFormat</DataField>
+        </Field>
+        <Field Name="TotalCredit">
+          <DataField>TotalCredit</DataField>
+        </Field>
+        <Field Name="TotalCreditFormat">
+          <DataField>TotalCreditFormat</DataField>
+        </Field>
+        <Field Name="TotalDebitLCY">
+          <DataField>TotalDebitLCY</DataField>
+        </Field>
+        <Field Name="TotalDebitLCYFormat">
+          <DataField>TotalDebitLCYFormat</DataField>
+        </Field>
+        <Field Name="TotalCreditLCY">
+          <DataField>TotalCreditLCY</DataField>
+        </Field>
+        <Field Name="TotalCreditLCYFormat">
+          <DataField>TotalCreditLCYFormat</DataField>
+        </Field>
+        <Field Name="TCustBalance">
+          <DataField>TCustBalance</DataField>
+        </Field>
+        <Field Name="TCustBalanceFormat">
+          <DataField>TCustBalanceFormat</DataField>
+        </Field>
+        <Field Name="TCustBalanceLCY">
+          <DataField>TCustBalanceLCY</DataField>
+        </Field>
+        <Field Name="TCustBalanceLCYFormat">
+          <DataField>TCustBalanceLCYFormat</DataField>
+        </Field>
+        <Field Name="Curs">
+          <DataField>Curs</DataField>
+        </Field>
+        <Field Name="CursFormat">
+          <DataField>CursFormat</DataField>
+        </Field>
+        <Field Name="Text50005">
+          <DataField>Text50005</DataField>
+        </Field>
+        <Field Name="StartingDate">
+          <DataField>StartingDate</DataField>
+        </Field>
+        <Field Name="DocDate">
+          <DataField>DocDate</DataField>
+        </Field>
+        <Field Name="DueDate">
+          <DataField>DueDate</DataField>
+        </Field>
+        <Field Name="HideDetails">
+          <DataField>HideDetails</DataField>
+        </Field>
+        <Field Name="RemainingAmount">
+          <DataField>RemainingAmount</DataField>
+        </Field>
+        <Field Name="RemainingAmountFormat">
+          <DataField>RemainingAmountFormat</DataField>
+        </Field>
+        <Field Name="EntryType_DetailedCustLedgEntry">
+          <DataField>EntryType_DetailedCustLedgEntry</DataField>
+        </Field>
+        <Field Name="EntryNo_DetailedCustLedgEntry">
+          <DataField>EntryNo_DetailedCustLedgEntry</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

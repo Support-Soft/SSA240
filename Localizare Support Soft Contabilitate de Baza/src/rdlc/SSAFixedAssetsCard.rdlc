@@ -1,0 +1,392 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="FORMAT_TODAY_0_4_">
+          <DataField>FORMAT_TODAY_0_4_</DataField>
+        </Field>
+        <Field Name="USERID">
+          <DataField>USERID</DataField>
+        </Field>
+        <Field Name="COMPANYNAME">
+          <DataField>COMPANYNAME</DataField>
+        </Field>
+        <Field Name="Fixed_Asset__TABLECAPTION__________FAFilter">
+          <DataField>Fixed_Asset__TABLECAPTION__________FAFilter</DataField>
+        </Field>
+        <Field Name="Text001___DeprBookCode">
+          <DataField>Text001___DeprBookCode</DataField>
+        </Field>
+        <Field Name="Fixed_Asset__FA_Class_Code_">
+          <DataField>Fixed_Asset__FA_Class_Code_</DataField>
+        </Field>
+        <Field Name="Fixed_Asset__FA_Subclass_Code_">
+          <DataField>Fixed_Asset__FA_Subclass_Code_</DataField>
+        </Field>
+        <Field Name="DeprStartingDate">
+          <DataField>DeprStartingDate</DataField>
+        </Field>
+        <Field Name="DeprEndingDate">
+          <DataField>DeprEndingDate</DataField>
+        </Field>
+        <Field Name="DeprNoOfYear">
+          <DataField>DeprNoOfYear</DataField>
+        </Field>
+        <Field Name="DeprNoOfYearFormat">
+          <DataField>DeprNoOfYearFormat</DataField>
+        </Field>
+        <Field Name="DeprPercent">
+          <DataField>DeprPercent</DataField>
+        </Field>
+        <Field Name="DeprPercentFormat">
+          <DataField>DeprPercentFormat</DataField>
+        </Field>
+        <Field Name="Fixed_Asset__No__">
+          <DataField>Fixed_Asset__No__</DataField>
+        </Field>
+        <Field Name="Description____Description_2_">
+          <DataField>Description____Description_2_</DataField>
+        </Field>
+        <Field Name="AcqDocNo">
+          <DataField>AcqDocNo</DataField>
+        </Field>
+        <Field Name="AcquisitionCost">
+          <DataField>AcquisitionCost</DataField>
+        </Field>
+        <Field Name="AcquisitionCostFormat">
+          <DataField>AcquisitionCostFormat</DataField>
+        </Field>
+        <Field Name="MonthlyDepreciation">
+          <DataField>MonthlyDepreciation</DataField>
+        </Field>
+        <Field Name="MonthlyDepreciationFormat">
+          <DataField>MonthlyDepreciationFormat</DataField>
+        </Field>
+        <Field Name="Fixed_Asset__FA_Location_Code_">
+          <DataField>Fixed_Asset__FA_Location_Code_</DataField>
+        </Field>
+        <Field Name="Text002">
+          <DataField>Text002</DataField>
+        </Field>
+        <Field Name="TotalFALocationAfis_1_">
+          <DataField>TotalFALocationAfis_1_</DataField>
+        </Field>
+        <Field Name="TotalFALocationAfis_1_Format">
+          <DataField>TotalFALocationAfis_1_Format</DataField>
+        </Field>
+        <Field Name="TotalFALocationAfis_2_">
+          <DataField>TotalFALocationAfis_2_</DataField>
+        </Field>
+        <Field Name="TotalFALocationAfis_2_Format">
+          <DataField>TotalFALocationAfis_2_Format</DataField>
+        </Field>
+        <Field Name="TotalFALocationAfis_3_">
+          <DataField>TotalFALocationAfis_3_</DataField>
+        </Field>
+        <Field Name="TotalFALocationAfis_3_Format">
+          <DataField>TotalFALocationAfis_3_Format</DataField>
+        </Field>
+        <Field Name="Fixed_Asset__FA_Location_Code__Control66">
+          <DataField>Fixed_Asset__FA_Location_Code__Control66</DataField>
+        </Field>
+        <Field Name="Text003___FIELDCAPTION__Global_Dimension_1_Code__">
+          <DataField>Text003___FIELDCAPTION__Global_Dimension_1_Code__</DataField>
+        </Field>
+        <Field Name="TotalGlobalDim1Afis_1_">
+          <DataField>TotalGlobalDim1Afis_1_</DataField>
+        </Field>
+        <Field Name="TotalGlobalDim1Afis_1_Format">
+          <DataField>TotalGlobalDim1Afis_1_Format</DataField>
+        </Field>
+        <Field Name="TotalGlobalDim1Afis_2_">
+          <DataField>TotalGlobalDim1Afis_2_</DataField>
+        </Field>
+        <Field Name="TotalGlobalDim1Afis_2_Format">
+          <DataField>TotalGlobalDim1Afis_2_Format</DataField>
+        </Field>
+        <Field Name="TotalGlobalDim1Afis_3_">
+          <DataField>TotalGlobalDim1Afis_3_</DataField>
+        </Field>
+        <Field Name="TotalGlobalDim1Afis_3_Format">
+          <DataField>TotalGlobalDim1Afis_3_Format</DataField>
+        </Field>
+        <Field Name="Fixed_Asset__Global_Dimension_1_Code_">
+          <DataField>Fixed_Asset__Global_Dimension_1_Code_</DataField>
+        </Field>
+        <Field Name="Text004">
+          <DataField>Text004</DataField>
+        </Field>
+        <Field Name="TotalClassCodeAfis_1_">
+          <DataField>TotalClassCodeAfis_1_</DataField>
+        </Field>
+        <Field Name="TotalClassCodeAfis_1_Format">
+          <DataField>TotalClassCodeAfis_1_Format</DataField>
+        </Field>
+        <Field Name="TotalClassCodeAfis_2_">
+          <DataField>TotalClassCodeAfis_2_</DataField>
+        </Field>
+        <Field Name="TotalClassCodeAfis_2_Format">
+          <DataField>TotalClassCodeAfis_2_Format</DataField>
+        </Field>
+        <Field Name="TotalClassCodeAfis_3_">
+          <DataField>TotalClassCodeAfis_3_</DataField>
+        </Field>
+        <Field Name="TotalClassCodeAfis_3_Format">
+          <DataField>TotalClassCodeAfis_3_Format</DataField>
+        </Field>
+        <Field Name="Fixed_Asset__FA_Subclass_Code__Control78">
+          <DataField>Fixed_Asset__FA_Subclass_Code__Control78</DataField>
+        </Field>
+        <Field Name="Text005">
+          <DataField>Text005</DataField>
+        </Field>
+        <Field Name="Total_1_">
+          <DataField>Total_1_</DataField>
+        </Field>
+        <Field Name="Total_1_Format">
+          <DataField>Total_1_Format</DataField>
+        </Field>
+        <Field Name="Total_2_">
+          <DataField>Total_2_</DataField>
+        </Field>
+        <Field Name="Total_2_Format">
+          <DataField>Total_2_Format</DataField>
+        </Field>
+        <Field Name="Total_3_">
+          <DataField>Total_3_</DataField>
+        </Field>
+        <Field Name="Total_3_Format">
+          <DataField>Total_3_Format</DataField>
+        </Field>
+        <Field Name="CurrReport_PAGENOCaption">
+          <DataField>CurrReport_PAGENOCaption</DataField>
+        </Field>
+        <Field Name="Fixed_Assets_CardCaption">
+          <DataField>Fixed_Assets_CardCaption</DataField>
+        </Field>
+        <Field Name="Fixed_Asset__FA_Class_Code_Caption">
+          <DataField>Fixed_Asset__FA_Class_Code_Caption</DataField>
+        </Field>
+        <Field Name="Fixed_Asset__FA_Subclass_Code_Caption">
+          <DataField>Fixed_Asset__FA_Subclass_Code_Caption</DataField>
+        </Field>
+        <Field Name="DeprStartingDateCaption">
+          <DataField>DeprStartingDateCaption</DataField>
+        </Field>
+        <Field Name="DeprEndingDateCaption">
+          <DataField>DeprEndingDateCaption</DataField>
+        </Field>
+        <Field Name="DeprNoOfYearCaption">
+          <DataField>DeprNoOfYearCaption</DataField>
+        </Field>
+        <Field Name="DeprPercentCaption">
+          <DataField>DeprPercentCaption</DataField>
+        </Field>
+        <Field Name="Fixed_Asset__No__Caption">
+          <DataField>Fixed_Asset__No__Caption</DataField>
+        </Field>
+        <Field Name="Description____Description_2_Caption">
+          <DataField>Description____Description_2_Caption</DataField>
+        </Field>
+        <Field Name="AcqDocNoCaption">
+          <DataField>AcqDocNoCaption</DataField>
+        </Field>
+        <Field Name="AcquisitionCostCaption">
+          <DataField>AcquisitionCostCaption</DataField>
+        </Field>
+        <Field Name="MonthlyDepreciationCaption">
+          <DataField>MonthlyDepreciationCaption</DataField>
+        </Field>
+        <Field Name="Fixed_Asset__FA_Location_Code_Caption">
+          <DataField>Fixed_Asset__FA_Location_Code_Caption</DataField>
+        </Field>
+        <Field Name="Fixed_Asset_FA_Posting_Date_Filter">
+          <DataField>Fixed_Asset_FA_Posting_Date_Filter</DataField>
+        </Field>
+        <Field Name="Text007">
+          <DataField>Text007</DataField>
+        </Field>
+        <Field Name="FAStartBalanceLCY">
+          <DataField>FAStartBalanceLCY</DataField>
+        </Field>
+        <Field Name="FAStartBalanceLCYFormat">
+          <DataField>FAStartBalanceLCYFormat</DataField>
+        </Field>
+        <Field Name="Text006">
+          <DataField>Text006</DataField>
+        </Field>
+        <Field Name="Balance">
+          <DataField>Balance</DataField>
+        </Field>
+        <Field Name="BalanceFormat">
+          <DataField>BalanceFormat</DataField>
+        </Field>
+        <Field Name="FA_Ledger_Entry__Posting_Date_">
+          <DataField>FA_Ledger_Entry__Posting_Date_</DataField>
+        </Field>
+        <Field Name="FA_Ledger_Entry__Document_Type_">
+          <DataField>FA_Ledger_Entry__Document_Type_</DataField>
+        </Field>
+        <Field Name="FA_Ledger_Entry__FA_Posting_Type_">
+          <DataField>FA_Ledger_Entry__FA_Posting_Type_</DataField>
+        </Field>
+        <Field Name="FA_Ledger_Entry__Document_No__">
+          <DataField>FA_Ledger_Entry__Document_No__</DataField>
+        </Field>
+        <Field Name="FA_Ledger_Entry__Debit_Amount_">
+          <DataField>FA_Ledger_Entry__Debit_Amount_</DataField>
+        </Field>
+        <Field Name="FA_Ledger_Entry__Debit_Amount_Format">
+          <DataField>FA_Ledger_Entry__Debit_Amount_Format</DataField>
+        </Field>
+        <Field Name="FA_Ledger_Entry__Credit_Amount_">
+          <DataField>FA_Ledger_Entry__Credit_Amount_</DataField>
+        </Field>
+        <Field Name="FA_Ledger_Entry__Credit_Amount_Format">
+          <DataField>FA_Ledger_Entry__Credit_Amount_Format</DataField>
+        </Field>
+        <Field Name="Balance_Control60">
+          <DataField>Balance_Control60</DataField>
+        </Field>
+        <Field Name="Balance_Control60Format">
+          <DataField>Balance_Control60Format</DataField>
+        </Field>
+        <Field Name="NrCrt">
+          <DataField>NrCrt</DataField>
+        </Field>
+        <Field Name="FA_Ledger_Entry_Description">
+          <DataField>FA_Ledger_Entry_Description</DataField>
+        </Field>
+        <Field Name="Text006_Control41">
+          <DataField>Text006_Control41</DataField>
+        </Field>
+        <Field Name="Balance_Control42">
+          <DataField>Balance_Control42</DataField>
+        </Field>
+        <Field Name="Balance_Control42Format">
+          <DataField>Balance_Control42Format</DataField>
+        </Field>
+        <Field Name="Text005_Control15">
+          <DataField>Text005_Control15</DataField>
+        </Field>
+        <Field Name="Balance_Control50">
+          <DataField>Balance_Control50</DataField>
+        </Field>
+        <Field Name="Balance_Control50Format">
+          <DataField>Balance_Control50Format</DataField>
+        </Field>
+        <Field Name="FA_Ledger_Entry__Debit_Amount__Control51">
+          <DataField>FA_Ledger_Entry__Debit_Amount__Control51</DataField>
+        </Field>
+        <Field Name="FA_Ledger_Entry__Debit_Amount__Control51Format">
+          <DataField>FA_Ledger_Entry__Debit_Amount__Control51Format</DataField>
+        </Field>
+        <Field Name="FA_Ledger_Entry__Credit_Amount__Control62">
+          <DataField>FA_Ledger_Entry__Credit_Amount__Control62</DataField>
+        </Field>
+        <Field Name="FA_Ledger_Entry__Credit_Amount__Control62Format">
+          <DataField>FA_Ledger_Entry__Credit_Amount__Control62Format</DataField>
+        </Field>
+        <Field Name="No_Caption">
+          <DataField>No_Caption</DataField>
+        </Field>
+        <Field Name="Book_ValueCaption">
+          <DataField>Book_ValueCaption</DataField>
+        </Field>
+        <Field Name="FA_Ledger_Entry__Posting_Date_Caption">
+          <DataField>FA_Ledger_Entry__Posting_Date_Caption</DataField>
+        </Field>
+        <Field Name="FA_Ledger_Entry__Document_No__Caption">
+          <DataField>FA_Ledger_Entry__Document_No__Caption</DataField>
+        </Field>
+        <Field Name="FA_Ledger_Entry__Document_Type_Caption">
+          <DataField>FA_Ledger_Entry__Document_Type_Caption</DataField>
+        </Field>
+        <Field Name="FA_Ledger_Entry__FA_Posting_Type_Caption">
+          <DataField>FA_Ledger_Entry__FA_Posting_Type_Caption</DataField>
+        </Field>
+        <Field Name="FA_Ledger_Entry__Debit_Amount_Caption">
+          <DataField>FA_Ledger_Entry__Debit_Amount_Caption</DataField>
+        </Field>
+        <Field Name="FA_Ledger_Entry__Credit_Amount_Caption">
+          <DataField>FA_Ledger_Entry__Credit_Amount_Caption</DataField>
+        </Field>
+        <Field Name="FA_Ledger_Entry_DescriptionCaption">
+          <DataField>FA_Ledger_Entry_DescriptionCaption</DataField>
+        </Field>
+        <Field Name="FA_Ledger_Entry_Entry_No_">
+          <DataField>FA_Ledger_Entry_Entry_No_</DataField>
+        </Field>
+        <Field Name="FA_Ledger_Entry_FA_No_">
+          <DataField>FA_Ledger_Entry_FA_No_</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

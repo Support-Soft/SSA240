@@ -1,28 +1,22 @@
 {
-  "id": "edcd1f1b-6587-43e4-b20c-61c61dc65d9e",
-  "name": "Localizare Support Soft Limba Romana SysApp",
-  "publisher": "Support-Soft SRL",
-  "version": "1.0.0.0",
-  "brief": "",
-  "description": "",
-  "privacyStatement": "",
-  "EULA": "",
-  "help": "",
-  "url": "",
-  "logo": "",
-  "dependencies": [],
-  "screenshots": [],
-  "platform": "1.0.0.0",
-  "application": "19.0.0.0",
-  "idRanges": [
-    {
-      "from": 50100,
-      "to": 50199
-    }
-  ],
-  "resourceExposurePolicy": {
-    "allowDebugging": true,
-    "allowDownloadingSource": false,
-    "includeSourceInSymbolFile": false
-  }
+    "id":  "c27a8ce0-a6f1-40e2-900c-cbf0964fb1f2",
+    "name":  "Localizare Support Soft Limba Romana SysApp",
+    "publisher":  "Support-Soft SRL",
+    "version":  "21.0.0.0",
+    "dependencies":  [
+
+                     ],
+    "target":  "Cloud",
+    "brief":  "This application adds the Romanian language to Dynamics 365 Business Central",
+    "description":  "Dynamics 365 Business Central is available in many languages. By installing this application you add the capability of showing the base application in the Romanian language",
+    "logo":  "ExtensionLogo.png",
+    "privacyStatement":  "https://go.microsoft.com/fwlink/?LinkId=724009",
+    "EULA":  "https://www.microsoft.com/en-us/download/details.aspx?id=56765",
+    "help":  "https://go.microsoft.com/fwlink/?linkid=2115116",
+    "url":  "https://www.microsoft.com/en-us/dynamics365/contact-us",
+    "application":  "21.0.0.0",
+    "platform": "21.0.0.0",
+    "supportedLocales": ["en-US","ro-RO"],
+    
+    "runtime": "10.0"
 }

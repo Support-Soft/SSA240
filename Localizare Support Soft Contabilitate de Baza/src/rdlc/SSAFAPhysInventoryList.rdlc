@@ -1,0 +1,622 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="lbl_CommitteeMembers">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_CommitteeMembers</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_CommitteeMembers</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_1">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_1</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_2">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_2</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_2</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_3">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_3</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_3</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_StartingDate">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_StartingDate</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_StartingDate</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_EndingDate">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_EndingDate</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_EndingDate</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_Approved">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_Approved</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_Approved</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_Signature">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_Signature</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_Signature</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_Total">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_Total</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_Total</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_LineNo">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_LineNo</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_LineNo</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_Qty">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_Qty</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_Qty</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_Qty_stock">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_Qty_stock</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_Qty_stock</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_Page">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_Page</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_Page</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_FA1_No">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_FA1_No</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_FA1_No</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_FA1_Description">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_FA1_Description</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_FA1_Description</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_FA1_Serial_No">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_FA1_Serial_No</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_FA1_Serial_No</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_FA1_Acquisition_Cost">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_FA1_Acquisition_Cost</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_FA1_Acquisition_Cost</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_FA1_Depreciation">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_FA1_Depreciation</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_FA1_Depreciation</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_FA1_Book_Value">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_FA1_Book_Value</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_FA1_Book_Value</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_No">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_No</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_No</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_Description">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_Description</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_Description</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_FA_Class_Code">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_FA_Class_Code</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_FA_Class_Code</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_FA_Subclass_Code">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_FA_Subclass_Code</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_FA_Subclass_Code</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_FA_Location_Code">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_FA_Location_Code</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_FA_Location_Code</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_Main_Asset_Component">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_Main_Asset_Component</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_Main_Asset_Component</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_Responislbe_Employee">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_Responislbe_Employee</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_Responislbe_Employee</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_Serial_No">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_Serial_No</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_Serial_No</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_Quantity">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_Quantity</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_Quantity</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_ReportTitle">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_ReportTitle</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_ReportTitle</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_ReportDate">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_ReportDate</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_ReportDate</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_Company">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_Company</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_Company</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_CommTradeNo">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_CommTradeNo</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_CommTradeNo</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_Address">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_Address</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_Address</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_ReportDate1">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_ReportDate1</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_ReportDate1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_User">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_User</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_User</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_VATReg">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_VATReg</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_VATReg</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_DocumentNo">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_DocumentNo</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_DocumentNo</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="No_FACaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>No_FACaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>No_FACaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Description_FACaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Description_FACaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Description_FACaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Description2_FACaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Description2_FACaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Description2_FACaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="FAClassCode_FACaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>FAClassCode_FACaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>FAClassCode_FACaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="FASubclassCode_FACaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>FASubclassCode_FACaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>FASubclassCode_FACaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="FALocationCode_FACaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>FALocationCode_FACaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>FALocationCode_FACaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="MainAssetComponent_FACaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>MainAssetComponent_FACaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>MainAssetComponent_FACaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ResponsibleEmployee_FACaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>ResponsibleEmployee_FACaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ResponsibleEmployee_FACaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="SerialNo_FACaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>SerialNo_FACaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>SerialNo_FACaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="AcquisitionCost_FADBCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>AcquisitionCost_FADBCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>AcquisitionCost_FADBCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Depreciation_FADBCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Depreciation_FADBCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Depreciation_FADBCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="BookValue_FADBCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>BookValue_FADBCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>BookValue_FADBCaption</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="CompInfo_Name">
+          <DataField>CompInfo_Name</DataField>
+        </Field>
+        <Field Name="CompInfo_Address">
+          <DataField>CompInfo_Address</DataField>
+        </Field>
+        <Field Name="CompInfo_VAT_Registration_No_">
+          <DataField>CompInfo_VAT_Registration_No_</DataField>
+        </Field>
+        <Field Name="CompInfo_Registration_No_">
+          <DataField>CompInfo_Registration_No_</DataField>
+        </Field>
+        <Field Name="CompInfo_Commerce_Trade_No_">
+          <DataField>CompInfo_Commerce_Trade_No_</DataField>
+        </Field>
+        <Field Name="No_FA">
+          <DataField>No_FA</DataField>
+        </Field>
+        <Field Name="Description_FA">
+          <DataField>Description_FA</DataField>
+        </Field>
+        <Field Name="Description2_FA">
+          <DataField>Description2_FA</DataField>
+        </Field>
+        <Field Name="FAClassCode_FA">
+          <DataField>FAClassCode_FA</DataField>
+        </Field>
+        <Field Name="FASubclassCode_FA">
+          <DataField>FASubclassCode_FA</DataField>
+        </Field>
+        <Field Name="FALocationCode_FA">
+          <DataField>FALocationCode_FA</DataField>
+        </Field>
+        <Field Name="MainAssetComponent_FA">
+          <DataField>MainAssetComponent_FA</DataField>
+        </Field>
+        <Field Name="ResponsibleEmployee_FA">
+          <DataField>ResponsibleEmployee_FA</DataField>
+        </Field>
+        <Field Name="SerialNo_FA">
+          <DataField>SerialNo_FA</DataField>
+        </Field>
+        <Field Name="LineNo">
+          <DataField>LineNo</DataField>
+        </Field>
+        <Field Name="Qty">
+          <DataField>Qty</DataField>
+        </Field>
+        <Field Name="QtyFormat">
+          <DataField>QtyFormat</DataField>
+        </Field>
+        <Field Name="AcquisitionCost_FADB">
+          <DataField>AcquisitionCost_FADB</DataField>
+        </Field>
+        <Field Name="AcquisitionCost_FADBFormat">
+          <DataField>AcquisitionCost_FADBFormat</DataField>
+        </Field>
+        <Field Name="Depreciation_FADB">
+          <DataField>Depreciation_FADB</DataField>
+        </Field>
+        <Field Name="Depreciation_FADBFormat">
+          <DataField>Depreciation_FADBFormat</DataField>
+        </Field>
+        <Field Name="BookValue_FADB">
+          <DataField>BookValue_FADB</DataField>
+        </Field>
+        <Field Name="BookValue_FADBFormat">
+          <DataField>BookValue_FADBFormat</DataField>
+        </Field>
+        <Field Name="GetGroupHeader">
+          <DataField>GetGroupHeader</DataField>
+        </Field>
+        <Field Name="GetGroupFooter">
+          <DataField>GetGroupFooter</DataField>
+        </Field>
+        <Field Name="Member_1_">
+          <DataField>Member_1_</DataField>
+        </Field>
+        <Field Name="Member_2_">
+          <DataField>Member_2_</DataField>
+        </Field>
+        <Field Name="Member_3_">
+          <DataField>Member_3_</DataField>
+        </Field>
+        <Field Name="FA_GETFILTERS">
+          <DataField>FA_GETFILTERS</DataField>
+        </Field>
+        <Field Name="PrintFAValues">
+          <DataField>PrintFAValues</DataField>
+        </Field>
+        <Field Name="ReportFilters">
+          <DataField>ReportFilters</DataField>
+        </Field>
+        <Field Name="GroupByNo">
+          <DataField>GroupByNo</DataField>
+        </Field>
+        <Field Name="Format_DocumentDate">
+          <DataField>Format_DocumentDate</DataField>
+        </Field>
+        <Field Name="Format_TODAY">
+          <DataField>Format_TODAY</DataField>
+        </Field>
+        <Field Name="DocumentNo">
+          <DataField>DocumentNo</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

@@ -1,0 +1,394 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="lbl_Company">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_Company</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_Company</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_ReportTitle">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_ReportTitle</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_ReportTitle</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_ReportDate">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_ReportDate</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_ReportDate</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_Page">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_Page</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_Page</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_User">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_User</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_User</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_UnitOfMeasure">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_UnitOfMeasure</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_UnitOfMeasure</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_Date">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_Date</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_Date</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_DocNo">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_DocNo</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_DocNo</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_DocType">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_DocType</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_DocType</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_SourceDescription">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_SourceDescription</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_SourceDescription</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_Input_Qty">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_Input_Qty</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_Input_Qty</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_Output_Qty">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_Output_Qty</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_Output_Qty</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_InitialStock">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_InitialStock</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_InitialStock</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_Inventory_Qty">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_Inventory_Qty</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_Inventory_Qty</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_Cost">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_Cost</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_Cost</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_TotalItemNo">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_TotalItemNo</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_TotalItemNo</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_PreparedBy">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_PreparedBy</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_PreparedBy</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_CheckedBy">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_CheckedBy</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_CheckedBy</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_Text008">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_Text008</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_Text008</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_Text009">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_Text009</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_Text009</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_Text011">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_Text011</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_Text011</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_Text012">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_Text012</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_Text012</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_Text013">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_Text013</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_Text013</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_GeneralTotalItemNo">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_GeneralTotalItemNo</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_GeneralTotalItemNo</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="Number_IntegerLoop">
+          <DataField>Number_IntegerLoop</DataField>
+        </Field>
+        <Field Name="Name_CompanyInformation">
+          <DataField>Name_CompanyInformation</DataField>
+        </Field>
+        <Field Name="ItemFilter">
+          <DataField>ItemFilter</DataField>
+        </Field>
+        <Field Name="TODAY">
+          <DataField>TODAY</DataField>
+        </Field>
+        <Field Name="USERID">
+          <DataField>USERID</DataField>
+        </Field>
+        <Field Name="LocationName">
+          <DataField>LocationName</DataField>
+        </Field>
+        <Field Name="LocationCode">
+          <DataField>LocationCode</DataField>
+        </Field>
+        <Field Name="HasMovement">
+          <DataField>HasMovement</DataField>
+        </Field>
+        <Field Name="ItemFooter">
+          <DataField>ItemFooter</DataField>
+        </Field>
+        <Field Name="InventoryPostingGroup_Item">
+          <DataField>InventoryPostingGroup_Item</DataField>
+        </Field>
+        <Field Name="No_Item">
+          <DataField>No_Item</DataField>
+        </Field>
+        <Field Name="Description_Item">
+          <DataField>Description_Item</DataField>
+        </Field>
+        <Field Name="BaseUnitofMeasure_Item">
+          <DataField>BaseUnitofMeasure_Item</DataField>
+        </Field>
+        <Field Name="InitialStockQuantityPerItem">
+          <DataField>InitialStockQuantityPerItem</DataField>
+        </Field>
+        <Field Name="InitialStockQuantityPerItemFormat">
+          <DataField>InitialStockQuantityPerItemFormat</DataField>
+        </Field>
+        <Field Name="PostingDate_ItemLedgerEntry">
+          <DataField>PostingDate_ItemLedgerEntry</DataField>
+        </Field>
+        <Field Name="DocumentNo_ItemLedgerEntry">
+          <DataField>DocumentNo_ItemLedgerEntry</DataField>
+        </Field>
+        <Field Name="DocumentType">
+          <DataField>DocumentType</DataField>
+        </Field>
+        <Field Name="Description1">
+          <DataField>Description1</DataField>
+        </Field>
+        <Field Name="InputQuantityPerItem">
+          <DataField>InputQuantityPerItem</DataField>
+        </Field>
+        <Field Name="InputQuantityPerItemFormat">
+          <DataField>InputQuantityPerItemFormat</DataField>
+        </Field>
+        <Field Name="OutputQuantityPerItem">
+          <DataField>OutputQuantityPerItem</DataField>
+        </Field>
+        <Field Name="OutputQuantityPerItemFormat">
+          <DataField>OutputQuantityPerItemFormat</DataField>
+        </Field>
+        <Field Name="StockQuantityPerItem">
+          <DataField>StockQuantityPerItem</DataField>
+        </Field>
+        <Field Name="StockQuantityPerItemFormat">
+          <DataField>StockQuantityPerItemFormat</DataField>
+        </Field>
+        <Field Name="ItemNo_ItemLedgerEntry">
+          <DataField>ItemNo_ItemLedgerEntry</DataField>
+        </Field>
+        <Field Name="TotalInputQuantityPerItem">
+          <DataField>TotalInputQuantityPerItem</DataField>
+        </Field>
+        <Field Name="TotalInputQuantityPerItemFormat">
+          <DataField>TotalInputQuantityPerItemFormat</DataField>
+        </Field>
+        <Field Name="TotalOutputQuantityPerItem">
+          <DataField>TotalOutputQuantityPerItem</DataField>
+        </Field>
+        <Field Name="TotalOutputQuantityPerItemFormat">
+          <DataField>TotalOutputQuantityPerItemFormat</DataField>
+        </Field>
+        <Field Name="StockQuantityPerItem_Integer">
+          <DataField>StockQuantityPerItem_Integer</DataField>
+        </Field>
+        <Field Name="StockQuantityPerItem_IntegerFormat">
+          <DataField>StockQuantityPerItem_IntegerFormat</DataField>
+        </Field>
+        <Field Name="Cost_Integer">
+          <DataField>Cost_Integer</DataField>
+        </Field>
+        <Field Name="Cost_IntegerFormat">
+          <DataField>Cost_IntegerFormat</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

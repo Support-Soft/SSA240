@@ -1,0 +1,1233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="ro-RO" original="Localizare Support Soft Declaratia 390">
+    <body>
+      <group id="body">
+        <trans-unit id="Table 3114861481 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SSA VIES Header</source>
+          <target state="translated">Antet declaraţie VIES</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Header - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3114861481 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Period from %1 till %2 already exists on %3 %4.</source>
+          <target state="translated">Perioada de la %1 până la %2 există deja pe %3 %4.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Header - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Table 3114861481 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
+          <source>%1 should be earlier than %2.</source>
+          <target state="translated">%1 trebuie să fie anterioară faţă de %2.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Header - NamedType Text002</note>
+        </trans-unit>
+        <trans-unit id="Table 3114861481 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You cannot rename a %1.</source>
+          <target state="translated">Imposibil de redenumit un %1.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Header - NamedType Text003</note>
+        </trans-unit>
+        <trans-unit id="Table 3114861481 - NamedType 732759939" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You cannot change %1 because you already have declaration lines.</source>
+          <target state="translated">Nu puteţi modifica %1 deoarece aveţi deja linii de declaraţie.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Header - NamedType Text004</note>
+        </trans-unit>
+        <trans-unit id="Table 3114861481 - NamedType 1370456556" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The permitted values for %1 are from 1 to %2.</source>
+          <target state="translated">Valorile permise pentru %1 sunt de la 1 până la %2.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Header - NamedType Text005</note>
+        </trans-unit>
+        <trans-unit id="Table 3114861481 - Field 592951229 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amount (LCY)</source>
+          <target state="translated">Sumă (MN)</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Header - Field Amount (LCY) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3114861481 - Field 1067181389 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Apartment No.</source>
+          <target state="translated">Ap.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Header - Field Apartment No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3114861481 - Field 66470542 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Authorized Employee No.</source>
+          <target state="translated">Nr. angajat autorizat</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Header - Field Authorized Employee No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3114861481 - Field 714791889 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>City</source>
+          <target state="translated">Localitate</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Header - Field City - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3114861481 - Field 1380089580 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Corrected Declaration No.</source>
+          <target state="translated">Nr. declaraţie rectificată</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Header - Field Corrected Declaration No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3114861481 - Field 284764054 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Country/Region Code</source>
+          <target state="translated">Cod Tara/Regiune</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Header - Field Country/Region Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3114861481 - Field 2908670124 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Country/Region Name</source>
+          <target state="translated">Nume ţară/regiune</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Header - Field Country/Region Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3114861481 - Field 499448942 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>County</source>
+          <target state="translated">Judeţ</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Header - Field County - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3114861481 - Field 905723679 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Declaration Period</source>
+          <target state="translated">Perioadă declaraţie</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Header - Field Declaration Period - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3114861481 - Field 905723679 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quarter,Month</source>
+          <target state="translated">Trimestru,Lună</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Header - Field Declaration Period - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 3114861481 - Field 1005905148 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Declaration Type</source>
+          <target state="translated">Tip declaratie</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Header - Field Declaration Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3114861481 - Field 1005905148 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Normal,Corrective,Corrective-Supplementary</source>
+          <target state="translated">Normală,Rectificativă,Rectificativă-Suplimentară</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Header - Field Declaration Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 3114861481 - Field 580412389 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document Date</source>
+          <target state="translated">Data documentului</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Header - Field Document Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3114861481 - Field 2649176925 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>End Date</source>
+          <target state="translated">Data încheierii</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Header - Field End Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3114861481 - Field 369443211 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>EU Goods/Services</source>
+          <target state="translated">Bunuri/servicii UE</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Header - Field EU Goods/Services - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3114861481 - Field 369443211 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Both,Goods,Services</source>
+          <target state="translated">Ambele,Bunuri,Servicii</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Header - Field EU Goods/Services - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 3114861481 - Field 2068962460 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Filled by Employee No.</source>
+          <target state="translated">Completat de angajat nr.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Header - Field Filled by Employee No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3114861481 - Field 3604869285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>House No.</source>
+          <target state="translated">Nr. clădire</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Header - Field House No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3114861481 - Field 4102133493 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Municipality No.</source>
+          <target state="translated">Nr. municipalitate</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Header - Field Municipality No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3114861481 - Field 2961552353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <target state="translated">Nume</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Header - Field Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3114861481 - Field 966287263 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name 2</source>
+          <target state="translated">Nume 2</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Header - Field Name 2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3114861481 - Field 4200184881 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No.</source>
+          <target state="translated">Nr.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Header - Field No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3114861481 - Field 1351594800 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No. Series</source>
+          <target state="translated">Serie numerică</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Header - Field No. Series - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3114861481 - Field 1993866289 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Number of Lines</source>
+          <target state="translated">Număr de linii</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Header - Field Number of Lines - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3114861481 - Field 2089215798 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Number of Pages</source>
+          <target state="translated">Număr de pagini</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Header - Field Number of Pages - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3114861481 - Field 3427068001 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Number of Supplies</source>
+          <target state="translated">Număr de livrări</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Header - Field Number of Supplies - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3114861481 - Field 469475598 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Period No.</source>
+          <target state="translated">Nr. perioadă</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Header - Field Period No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3114861481 - Field 3660300303 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Post Code</source>
+          <target state="translated">Cod poştal</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Header - Field Post Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3114861481 - Field 1770676612 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Purchase Amount (LCY)</source>
+          <target state="translated">Sumă cumpărări (MN)</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Header - Field Purchase Amount (LCY) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3114861481 - Field 1447790309 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sales Amount (LCY)</source>
+          <target state="translated">Sumă vânzări (MN)</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Header - Field Sales Amount (LCY) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3114861481 - Field 1372317871 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sign-off Date</source>
+          <target state="translated">Data semnării</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Header - Field Sign-off Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3114861481 - Field 4096171742 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sign-off Place</source>
+          <target state="translated">Locul semnării</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Header - Field Sign-off Place - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3114861481 - Field 1677978505 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tax Office Number</source>
+          <target state="translated">Număr administraţie financiară</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Header - Field SSA Tax Office Number - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3114861481 - Field 474480784 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Start Date</source>
+          <target state="translated">Data de început</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Header - Field Start Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3114861481 - Field 513339096 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Status</source>
+          <target state="translated">Stare</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Header - Field Status - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3114861481 - Field 513339096 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Open,Released</source>
+          <target state="translated">Deschis,Lansat</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Header - Field Status - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 3114861481 - Field 752586859 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Street</source>
+          <target state="translated">Strada</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Header - Field Street - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3114861481 - Field 3031359178 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Trade Type</source>
+          <target state="translated">Tip comerţ</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Header - Field Trade Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3114861481 - Field 3031359178 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Purchases,Sales,Both</source>
+          <target state="translated">Cumpărări,Vânzări,Ambele</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Header - Field Trade Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 3114861481 - Field 617267791 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Registration No.</source>
+          <target state="translated">Cod unic de identificare</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Header - Field VAT Registration No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3114861481 - Field 2832340769 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Year</source>
+          <target state="translated">An</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Header - Field Year - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3342056226 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SSA VIES Line</source>
+          <target state="translated">Linie declaraţie VIES</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Line - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3342056226 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You cannot change Cancellation line.</source>
+          <target state="translated">Imposibil de modificat linia Revocare.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Line - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Table 3342056226 - Field 592951229 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amount (LCY)</source>
+          <target state="translated">Sumă (MN)</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Line - Field Amount (LCY) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3342056226 - Field 2223985768 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Commerce Trade No.</source>
+          <target state="translated">Nr. Reg. Comert</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Line - Field Commerce Trade No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3342056226 - Field 2489005677 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Corrected Amount</source>
+          <target state="translated">Sumă rectificată</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Line - Field Corrected Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3342056226 - Field 31790714 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Corrected Reg. No.</source>
+          <target state="translated">Nr. înreg. rectificată</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Line - Field Corrected Reg. No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3342056226 - Field 284764054 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Country/Region Code</source>
+          <target state="translated">Cod Tara/Regiune</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Line - Field Country/Region Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3342056226 - Field 3739575324 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer/Vendor Name</source>
+          <target state="translated">Nume client/furnizor</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Line - Field Cust/Vend Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3342056226 - Field 3329509215 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>EU 3-Party Intermediate Role</source>
+          <target state="translated">Rol intermediar terţ UE</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Line - Field EU 3-Party Intermediate Role - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3342056226 - Field 3348534314 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>EU 3-Party Trade</source>
+          <target state="translated">Comerţ terţ UE</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Line - Field EU 3-Party Trade - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3342056226 - Field 1299529991 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>EU Service</source>
+          <target state="translated">Servicii UE</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Line - Field EU Service - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3342056226 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line No.</source>
+          <target state="translated">Nr. Linie</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Line - Field Line No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3342056226 - Field 158172202 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line Type</source>
+          <target state="translated">Tip linie</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Line - Field Line Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3342056226 - Field 158172202 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>New,Cancellation,Correction</source>
+          <target state="translated">Nou,Revocare,Rectificare</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Line - Field Line Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 3342056226 - Field 3427068001 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Number of Supplies</source>
+          <target state="translated">Număr de livrări</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Line - Field Number of Supplies - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3342056226 - Field 808217426 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Related Line No.</source>
+          <target state="translated">Nr. linie corelată</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Line - Field Related Line No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3342056226 - Field 3644492301 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Report Line Number</source>
+          <target state="translated">Număr linie raport</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Line - Field Report Line Number - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3342056226 - Field 1403379626 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Report Page Number</source>
+          <target state="translated">Număr pagină raport</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Line - Field Report Page Number - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3342056226 - Field 186775660 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>System-Created</source>
+          <target state="translated">Creat de sistem</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Line - Field System-Created - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3342056226 - Field 2552458873 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tax Group Code</source>
+          <target state="translated">Cod produs D394</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Line - Field Tax Group Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3342056226 - Field 935367078 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Trade Role Type</source>
+          <target state="translated">Tip rol comercial</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Line - Field Trade Role Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3342056226 - Field 935367078 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Direct Trade,Intermediate Trade,Property Movement</source>
+          <target state="translated">Comerţ angro,Comerţ intermediar,Mutări de bunuri</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Line - Field Trade Role Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 3342056226 - Field 3031359178 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Trade Type</source>
+          <target state="translated">Tip comerţ</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Line - Field Trade Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3342056226 - Field 3031359178 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Purchase,Sale</source>
+          <target state="translated">Cumpărare,Vânzare</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Line - Field Trade Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 3342056226 - Field 617267791 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Registration No.</source>
+          <target state="translated">Cod unic de identificare</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Line - Field VAT Registration No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3342056226 - Field 1499100466 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VIES Declaration No.</source>
+          <target state="translated">Nr. declaraţie VIES</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA VIES Line - Field VIES Declaration No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 289395043 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>There is nothing to release for declaration No. %1.</source>
+          <target state="translated">Nu este nimic de lansat pentru declaraţia nr. %1.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSA Release VIES Declaration - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Page 3205564308 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VIES Declaration</source>
+          <target state="translated">Declaraţie VIES</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA VIES Declaration - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3205564308 - Control 3168444338 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Address</source>
+          <target state="translated">Adresă</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA VIES Declaration - Control Address - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3205564308 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General</source>
+          <target state="translated">General</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA VIES Declaration - Control General - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3205564308 - Control 2451810218 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Persons</source>
+          <target state="translated">Persoane</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA VIES Declaration - Control Persons - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3205564308 - Action 1344672713 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>&amp;Print</source>
+          <target state="translated">&amp;Imprimare</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA VIES Declaration - Action &amp;Print - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3205564308 - Action 2021036866 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>&amp;Declaration</source>
+          <target state="translated">&amp;Declaraţie</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA VIES Declaration - Action &amp;Declaration - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3205564308 - Action 3106002577 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>F&amp;unctions</source>
+          <target state="translated">F&amp;uncţii</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA VIES Declaration - Action F&amp;unctions - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3205564308 - Action 417747556 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>&amp;Get Lines for Correction</source>
+          <target state="translated">&amp;Preluare linii pentru rectificare</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA VIES Declaration - Action &amp;Get Lines for Correction - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3205564308 - Action 3138252889 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>&amp;Suggest Lines</source>
+          <target state="translated">&amp;Sugerare linii</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA VIES Declaration - Action &amp;Suggest Lines - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3205564308 - Action 483158641 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Re&amp;lease</source>
+          <target state="translated">Lan&amp;sare</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA VIES Declaration - Action Re&amp;lease - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3205564308 - Action 530829447 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Re&amp;open</source>
+          <target state="translated">Re&amp;deschidere</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA VIES Declaration - Action Re&amp;open - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 191087422 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VIES Declaration Subform</source>
+          <target state="translated">Subformular declaraţie VIES</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA VIES Declaration Subform - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2945177941 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VIES Declarations</source>
+          <target state="translated">Declaraţii VIES</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA VIES Declarations - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2988176335 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SSA VIES Lines</source>
+          <target state="translated">Linii declaraţie VIES</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA VIES Lines - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2736707787 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Suggest SSA VIES Lines</source>
+          <target state="translated">Sugerare linii declaraţie VIES</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Suggest VIES Lines - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2736707787 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quarter/Month #1##</source>
+          <target state="translated">Trimestrul/Luna #1##</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Suggest VIES Lines - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Report 2736707787 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Year #2####</source>
+          <target state="translated">Anul #2####</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Suggest VIES Lines - NamedType Text002</note>
+        </trans-unit>
+        <trans-unit id="Report 2736707787 - NamedType 732759939" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Suggesting lines @3@@@@@@@@@@@@@</source>
+          <target state="translated">Se sugerează liniile @3@@@@@@@@@@@@@</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Suggest VIES Lines - NamedType Text004</note>
+        </trans-unit>
+        <trans-unit id="Report 2736707787 - NamedType 2008153173" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You can process one declaration only.</source>
+          <target state="translated">Puteţi să procesaţi o singură declaraţie.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Suggest VIES Lines - NamedType Text006</note>
+        </trans-unit>
+        <trans-unit id="Report 2736707787 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Options</source>
+          <target state="translated">Opţiuni</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Suggest VIES Lines - Control Options - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2736707787 - Control 4289051840 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Delete Existing Lines</source>
+          <target state="translated">Ştergere linii existente</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Suggest VIES Lines - Control DeleteLines - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT- VIES Declaration</source>
+          <target state="translated">Declaratie VAT- VIES </target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 2016210551" size-unit="char" translate="yes" xml:space="preserve">
+          <source>A</source>
+          <target state="translated">A</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType ACaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 3318310201" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ACQUISITIONS OF GOODS</source>
+          <target state="translated">ACHIZIŢII DE BUNURI</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType ACQUISITIONS_OF_GOODSCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 1400366419" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ACQUISITIONS OF SERVICES</source>
+          <target state="translated">ACHIZIŢII DE SERVICII</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType ACQUISITIONS_OF_SERVICESCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 1764704100" size-unit="char" translate="yes" xml:space="preserve">
+          <source>AMOUNT</source>
+          <target state="translated">SUMĂ</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType AMOUNTCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 797865669" size-unit="char" translate="yes" xml:space="preserve">
+          <source>AMOUNT</source>
+          <target state="translated">SUMĂ</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType AMOUNTCaption_Control1000000031Lbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 4217437607" size-unit="char" translate="yes" xml:space="preserve">
+          <source>AP</source>
+          <target state="translated">AP.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType APCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 3187428541" size-unit="char" translate="yes" xml:space="preserve">
+          <source>APPENDIX TO THE STATEMENT</source>
+          <target state="translated">ANEXĂ LA DECLARAŢIE</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType APPENDIX_TO_THE_STATEMENTCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 956283958" size-unit="char" translate="yes" xml:space="preserve">
+          <source>BL</source>
+          <target state="translated">BL.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType BLCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 2670209026" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CITY/TOWN</source>
+          <target state="translated">ORAŞ</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType CITY_TOWNCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 2234520723" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CODE</source>
+          <target state="translated">COD</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType CODECaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 4147101931" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CODE</source>
+          <target state="translated">COD</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType CODECaption_Control1000000023Lbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 3476455157" size-unit="char" translate="yes" xml:space="preserve">
+          <source>COMPANY</source>
+          <target state="translated">FIRMĂ</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType COMPANYCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 3965024414" size-unit="char" translate="yes" xml:space="preserve">
+          <source>COMPANY</source>
+          <target state="translated">FIRMĂ</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType COMPANYCaption_Control1000000019Lbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 1338009073" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CORRECTIVE DECLARATION</source>
+          <target state="translated">DECLARAŢIE RECTIFICATIVĂ</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType CORRECTIVE_DECLARATIONCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 2100665346" size-unit="char" translate="yes" xml:space="preserve">
+          <source>COUNTRY CODE</source>
+          <target state="translated">COD ŢARĂ</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType COUNTRY_CODECaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 3647520227" size-unit="char" translate="yes" xml:space="preserve">
+          <source>COUNTRY CODE</source>
+          <target state="translated">COD ŢARĂ</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType COUNTRY_CODECaption_Control1000000035Lbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 2685394802" size-unit="char" translate="yes" xml:space="preserve">
+          <source>COUNTY</source>
+          <target state="translated">JUDEŢ</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType COUNTYCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 3691708901" size-unit="char" translate="yes" xml:space="preserve">
+          <source>DECLARATION TYPE</source>
+          <target state="translated">TIP DECLARAŢIE</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType DECLARATION_TYPECaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 4129339886" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Default</source>
+          <target state="translated">Implicit</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType DefaultFileNameTxt</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 3339523335" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ET</source>
+          <target state="translated">ET.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType ETCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 1045340985" size-unit="char" translate="yes" xml:space="preserve">
+          <source>E-MAIL</source>
+          <target state="translated">E-MAIL</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType E_MAILCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 3464143645" size-unit="char" translate="yes" xml:space="preserve">
+          <source>FAX</source>
+          <target state="translated">FAX</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType FAXCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 357916578" size-unit="char" translate="yes" xml:space="preserve">
+          <source>XML Files (*.xml)|*.xml|All Files (*.*)|*.*</source>
+          <target state="translated">Fişiere XML (*.xml)|*.xml|Toate fişierele (*.*)|*.*</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType FileTypeFilterTxt</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 948983673" size-unit="char" translate="yes" xml:space="preserve">
+          <source>FISCAL ADDRESS</source>
+          <target state="translated">DOMICILIU FISCAL</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType FISCAL_ADDRESSCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 3661319708" size-unit="char" translate="yes" xml:space="preserve">
+          <source>For the fiscal authorities use</source>
+          <target state="translated">Loc rezervat organului fiscal</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType For_the_fiscal_authorities_useCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 2777269489" size-unit="char" translate="yes" xml:space="preserve">
+          <source>GENERAL TOTAL</source>
+          <target state="translated">TOTAL GENERAL</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType GENERAL_TOTALCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 3387752939" size-unit="char" translate="yes" xml:space="preserve">
+          <source>IDENTIFICATION DATA</source>
+          <target state="translated">DATE DE IDENTIFICARE</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType IDENTIFICATION_DATACaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 206689223" size-unit="char" translate="yes" xml:space="preserve">
+          <source>INITIAL DECLARATION</source>
+          <target state="translated">DECLARAŢIE INIŢIALĂ</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType INITIAL_DECLARATIONCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 327513196" size-unit="char" translate="yes" xml:space="preserve">
+          <source>L</source>
+          <target state="translated">L</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType LCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 681649189" size-unit="char" translate="yes" xml:space="preserve">
+          <source>LIST OF INTRA-COMMUNITY TRANSACTIONS</source>
+          <target state="translated">LISTĂ DE OPERAŢIUNI INTRACOMUNITARE</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType LIST_OF_INTRA_COMMUNITY_TRANSACTIONSCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 1371617080" size-unit="char" translate="yes" xml:space="preserve">
+          <source>MONTH</source>
+          <target state="translated">LUNĂ</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType MONTHCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 272016420" size-unit="char" translate="yes" xml:space="preserve">
+          <source>MONTH</source>
+          <target state="translated">LUNĂ</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType MONTHCaption_Control1000000027Lbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 3320297124" size-unit="char" translate="yes" xml:space="preserve">
+          <source>MONTH</source>
+          <target state="translated">LUNĂ</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType MONTHCaption_Control1000000094Lbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 4013403517" size-unit="char" translate="yes" xml:space="preserve">
+          <source>NAME</source>
+          <target state="translated">NUME</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType NAMECaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 775363971" size-unit="char" translate="yes" xml:space="preserve">
+          <source>NAME OF INTRA-COMMUNITY OPERATOR</source>
+          <target state="translated">DENUMIRE OPERATOR INTRACOMUNITAR</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType NAME_OF_INTRA_COMMUNITY_OPERATORCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 593011636" size-unit="char" translate="yes" xml:space="preserve">
+          <source>NAME OF INTRA-COMMUNITY OPERATOR</source>
+          <target state="translated">DENUMIRE OPERATOR INTRACOMUNITAR</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType NAME_OF_INTRA_COMMUNITY_OPERATORCaption_Control1000000033Lbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 4175112798" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name of the responsible person</source>
+          <target state="translated">Numele persoanei responsabile</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType Name_of_the_responsible_personCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 3943248207" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No.</source>
+          <target state="translated">Nr.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType NOCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 2724265433" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PAGE</source>
+          <target state="translated">PAGINA</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType PAGECaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 2423835488" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PAGE</source>
+          <target state="translated">PAGINA</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType PAGECaption_Control1000000020Lbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 1318420150" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PAGE TOTAL</source>
+          <target state="translated">TOTAL PAGINĂ</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType PAGE_TOTALCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 1364765823" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PAGE TOTAL</source>
+          <target state="translated">TOTAL PAGINĂ</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType PAGE_TOTALCaption_Control1000000068Lbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 706565152" size-unit="char" translate="yes" xml:space="preserve">
+          <source>P</source>
+          <target state="translated">P</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType PCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 2975538348" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PHONE</source>
+          <target state="translated">TEL.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType PHONECaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 2919953239" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Position</source>
+          <target state="translated">Poziţie</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType PositionCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 3935708538" size-unit="char" translate="yes" xml:space="preserve">
+          <source>POST CODE</source>
+          <target state="translated">COD POŞTAL</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType POST_CODECaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 315461086" size-unit="char" translate="yes" xml:space="preserve">
+          <source>RECAPITULATIVE</source>
+          <target state="translated">DECLARAŢIE RECAPITULATIVĂ</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType RECAPITULATIVECaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 1104455850" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Registration Date</source>
+          <target state="translated">Data înregistrării</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType Registration_DateCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 2863460645" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Registration No</source>
+          <target state="translated">Nr. înregistrare</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType Registration_NoCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 828433204" size-unit="char" translate="yes" xml:space="preserve">
+          <source>REPORTING PERIOD</source>
+          <target state="translated">PERIOADĂ DE RAPORTARE</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType REPORTING_PERIODCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 1620424377" size-unit="char" translate="yes" xml:space="preserve">
+          <source>S</source>
+          <target state="translated">S</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType SCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 3976393424" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SC</source>
+          <target state="translated">SCARA</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType SCCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 1669781644" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SECTOR</source>
+          <target state="translated">SECTOR</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType SECTORCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 4275381484" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Signature</source>
+          <target state="translated">Semnătură</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType SignatureCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 287886457" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Stamp</source>
+          <target state="translated">Semnătura şi ştampila</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType StampCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 216665610" size-unit="char" translate="yes" xml:space="preserve">
+          <source>STATEMENT FOR INTRA-COMMUNITY</source>
+          <target state="translated">PRIVIND LIVRĂRILE/ACHIZIŢIILE/PRESTĂRILE</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType STATEMENT_FOR_INTRA_COMMUNITYCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 2254990575" size-unit="char" translate="yes" xml:space="preserve">
+          <source>STREET</source>
+          <target state="translated">STRADĂ</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType STREETCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 1835098240" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SUMMARY OF STATEMENT</source>
+          <target state="translated">REZUMAT DECLARAŢIE</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType SUMMARY_OF_STATEMENTCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 405782064" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SUPPLIES/ACQUISITIONS</source>
+          <target state="translated">INTRACOMUNITARE</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType SUPPLIES_ACQUISITIONSCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 4124889788" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SUPPLIES OF GOODS</source>
+          <target state="translated">LIVRĂRI DE BUNURI</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType SUPPLIES_OF_GOODSCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 3767051420" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SUPPLIES OF GOODS IN A TRIANGULATION SCHEME</source>
+          <target state="translated">LIVRĂRI DE BUNURI ÎN CADRUL UNEI OPERAŢIUNI TRIUNGHIULARE</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType SUPPLIES_OF_GOODS_IN_A_TRIANGULATION_SCHEMECaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 3874862730" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SUPPLIES OF SERVICES</source>
+          <target state="translated">PRESTĂRI DE SERVICII</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType SUPPLIES_OF_SERVICESCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 1540851780" size-unit="char" translate="yes" xml:space="preserve">
+          <source>T</source>
+          <target state="translated">T</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType TCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 2476940767" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Page %1</source>
+          <target state="translated">Pagina %1</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType Text000</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>M-1M</source>
+          <target state="translated">M-1M</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
+          <source>M-1D</source>
+          <target state="translated">M-1D</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType Text002</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
+          <source>%1 is not filled in for some VAT entries. Do you really want to print?</source>
+          <target state="translated">%1 nu este completat pentru unele intrări de TVA. Sigur imprimaţi?</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType Text003</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 732759939" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Export to Text File</source>
+          <target state="translated">Export în Fişier Text</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType Text004</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 1370456556" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TXT Files (*.txt)|*.txt|All Files (*.*)|*.*</source>
+          <target state="translated">Fişiere TXT (*.txt)|*.txt|Toate fişierele (*.*)|*.*</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType Text005</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 2008153173" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Please enter the file name.</source>
+          <target state="translated">Introduceţi numele fişierului.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType Text006</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 2645849790" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Please enter the year.</source>
+          <target state="translated">Introduceţi anul.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType Text007</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 1664139952" size-unit="char" translate="yes" xml:space="preserve">
+          <source>'</source>
+          <target state="translated">'</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType Text010</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 1026443335" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Export to XML File</source>
+          <target state="translated">Export în fişier XML</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType Text011</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 3057846450" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TOTAL NO OF ANNEXES TO THE DECLARATION</source>
+          <target state="translated">NUMĂR TOTAL PAGINI ANEXĂ LA DECLARAŢIE</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType TOTAL_NO_OF_ANNEXES_TO_THE_DECLARATIONCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 3389905693" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TOTAL NUMBER OF INTRA-COMMUNITY OPERATORS</source>
+          <target state="translated">NUMĂR TOTAL OPERATORI INTRACOMUNITARI</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType TOTAL_NUMBER_OF_INTRA_COMMUNITY_OPERATORSCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 1919978297" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TOTAL OF INTRA-COMMUNITY SUPPLIES/ACQUISITIONS OF GOODS/SERVICE</source>
+          <target state="translated">TOTAL LIVRĂRI/ACHIZIŢII INTRACOMUNITARE DE BUNURI/SERVICII</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType TOTAL_OF_INTRA_COMMUNITY_SUPPLIES_ACQUISITIONS_OF_GOODS_SERVICECaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 1874242950" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TRANSACTION CODE</source>
+          <target state="translated">COD OPERAŢIUNE</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType TRANSACTION_CODECaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 3805560198" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TRANSACTION CODE</source>
+          <target state="translated">COD OPERAŢIUNE</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType TRANSACTION_CODECaption_Control1000000032Lbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 2114819380" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Under the penalties of law, I declare that the data in this form are correct and complete</source>
+          <target state="translated">Sub sancţiunile aplicate faptei de fals în acte publice, declar că datele din această declaraţie sunt corecte şi complete.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType Under_the_penalties_of_law__I_declare_that_the_data_in_this_form_are_correct_and_completeCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 3683169276" size-unit="char" translate="yes" xml:space="preserve">
+          <source>390</source>
+          <target state="translated">390</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType V390CaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 1822760617" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT REGISTRATION NO</source>
+          <target state="translated">COD TVA OPERATOR INTRACOMUNITAR</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType VAT_REGISTRATION_NOCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 4266957611" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT REGISTRATION NO</source>
+          <target state="translated">COD TVA OPERATOR INTRACOMUNITAR</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType VAT_REGISTRATION_NOCaption_Control1000000034Lbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 4163923378" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT REGISTRATION NO</source>
+          <target state="translated">COD TVA OPERATOR INTRACOMUNITAR</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType VAT_REGISTRATION_NOCaption_Control1000000088Lbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 2929949951" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VIES</source>
+          <target state="translated">VIES</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType VIESCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 2229108925" size-unit="char" translate="yes" xml:space="preserve">
+          <source>YEAR</source>
+          <target state="translated">AN</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType YEARCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 1656670687" size-unit="char" translate="yes" xml:space="preserve">
+          <source>YEAR</source>
+          <target state="translated">AN</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType YEARCaption_Control1000000025Lbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - NamedType 1550512608" size-unit="char" translate="yes" xml:space="preserve">
+          <source>YEAR</source>
+          <target state="translated">AN</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - NamedType YEARCaption_Control1000000107Lbl</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Options</source>
+          <target state="translated">Opţiuni</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - Control Options - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - Control 3640067685 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Export to XML File</source>
+          <target state="translated">Export în fişier XML</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - Control CreateXmlFile - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - Control 3973653471 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>First Name</source>
+          <target state="translated">Prenume</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - Control FirstName - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - Control 4082585823 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Last Name</source>
+          <target state="translated">Nume de familie</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - Control LastName - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 435572410 - Control 56735747 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Job Title</source>
+          <target state="translated">Funcţie</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA VAT- VIES Declaration - Control Position - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2418291083 - Action 3935132800 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 842692675">
+          <source>D390</source>
+          <target state="translated">D390</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Closing Page 71503 - Action &lt;Action1000000023&gt; - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 86253041 - Control 4209605332 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 262200983">
+          <source>VIES</source>
+          <target state="translated">VIES</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Localization Setup 71501 - Control SSA VIES - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 723949658 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 262200983">
+          <source>Localization Setup</source>
+          <target state="translated">Parametrizare Localizare</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Localization Setup 71500 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 723949658 - Field 307090558 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 262200983">
+          <source>ANAF Logo</source>
+          <target state="translated">Logo ANAF</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Localization Setup 71500 - Field SSA ANAF Logo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 723949658 - Field 1222115150 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 262200983">
+          <source>Apartment No.</source>
+          <target state="translated">Ap.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Localization Setup 71500 - Field SSA Apartment No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 723949658 - Field 1020899137 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 262200983">
+          <source>Building</source>
+          <target state="translated">Bloc</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Localization Setup 71500 - Field SSA Building - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 723949658 - Field 3187380395 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 262200983">
+          <source>Floor</source>
+          <target state="translated">Etaj</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Localization Setup 71500 - Field SSA Floor - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 723949658 - Field 283291654 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 262200983">
+          <source>House No.</source>
+          <target state="translated">Nr. clădire</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Localization Setup 71500 - Field SSA House No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 723949658 - Field 1601597966 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 262200983">
+          <source>Municipality No.</source>
+          <target state="translated">Nr. municipalitate</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Localization Setup 71500 - Field SSA Municipality No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 723949658 - Field 107665079 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 262200983">
+          <source>Sector</source>
+          <target state="translated">Sector</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Localization Setup 71500 - Field SSA Sector - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 723949658 - Field 2686076932 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 262200983">
+          <source>Street</source>
+          <target state="translated">Strada</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Localization Setup 71500 - Field SSA Street - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 723949658 - Field 1677978505 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 262200983">
+          <source>Tax Office Number</source>
+          <target state="translated">Număr administraţie financiară</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Localization Setup 71500 - Field SSA Tax Office Number - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 723949658 - Field 4057897705 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 262200983">
+          <source>Unit</source>
+          <target state="translated">Unităţi Supl.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Localization Setup 71500 - Field SSA Unit - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 723949658 - Field 2440480552 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 262200983">
+          <source>VIES Declaration Nos.</source>
+          <target state="translated">Numere declaratii VIES</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Localization Setup 71500 - Field SSA VIES Declaration Nos. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3005288013 - Field 836092565 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2005969950">
+          <source>390 Type</source>
+          <target state="translated">Tip 390</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Tax Group - Field SSA 390 Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3005288013 - Field 836092565 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2005969950">
+          <source> ,Special Agriculture 390</source>
+          <target state="translated"> ,Agricultura 390</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Tax Group - Field SSA 390 Type - Property OptionCaption</note>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

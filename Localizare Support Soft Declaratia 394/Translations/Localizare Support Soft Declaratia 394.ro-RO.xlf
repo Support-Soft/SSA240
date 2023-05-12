@@ -1,0 +1,1317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="ro-RO" original="Localizare Support Soft Declaratia 394">
+    <body>
+      <group id="body">
+        <trans-unit id="Table 3201266517 - Field 742467424 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code1</source>
+          <target state="translated">Code1</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Code1 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 1380164041 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code2</source>
+          <target state="translated">Code2</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Code2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 2017860658 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code3</source>
+          <target state="translated">Code3</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Code3 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 2655557275 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code4</source>
+          <target state="translated">Code4</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Code4 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 3293253892 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code5</source>
+          <target state="translated">Code5</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Code5 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 464802189 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dec01</source>
+          <target state="translated">Dec01</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Dec01 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 4122072868 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dec02</source>
+          <target state="translated">Dec02</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Dec02 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 3484376251 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dec03</source>
+          <target state="translated">Dec03</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Dec03 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 2846679634 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dec04</source>
+          <target state="translated">Dec04</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Dec04 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 2208983017 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dec05</source>
+          <target state="translated">Dec05</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Dec05 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 1571286400 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dec06</source>
+          <target state="translated">Dec06</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Dec06 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 933589783 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dec07</source>
+          <target state="translated">Dec07</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Dec07 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 295893166 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dec08</source>
+          <target state="translated">Dec08</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Dec08 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 3953163845 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dec09</source>
+          <target state="translated">Dec09</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Dec09 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 1915299621 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dec10</source>
+          <target state="translated">Dec10</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Dec10 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 2552996238 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dec11</source>
+          <target state="translated">Dec11</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Dec11 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 639906387 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dec12</source>
+          <target state="translated">Dec12</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Dec12 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 1277603004 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dec13</source>
+          <target state="translated">Dec13</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Dec13 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 3659480449 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dec14</source>
+          <target state="translated">Dec14</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Dec14 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 2209770 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dec15</source>
+          <target state="translated">Dec15</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Dec15 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 2384087215 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dec16</source>
+          <target state="translated">Dec16</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Dec16 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 3021783832 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dec17</source>
+          <target state="translated">Dec17</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Dec17 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 2721905261 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dec18</source>
+          <target state="translated">Dec18</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Dec18 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 3359601878 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dec19</source>
+          <target state="translated">Dec19</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Dec19 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 1638767348 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dec20</source>
+          <target state="translated">Dec20</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Dec20 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 1001070731 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dec21</source>
+          <target state="translated">Dec21</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Dec21 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 2914160582 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dec22</source>
+          <target state="translated">Dec22</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Dec22 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 2276463965 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dec23</source>
+          <target state="translated">Dec23</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Dec23 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 3382948176 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dec24</source>
+          <target state="translated">Dec24</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Dec24 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 2745251559 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dec25</source>
+          <target state="translated">Dec25</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Dec25 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 363374114 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dec26</source>
+          <target state="translated">Dec26</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Dec26 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 4020644793 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dec27</source>
+          <target state="translated">Dec27</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Dec27 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 832161708 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dec28</source>
+          <target state="translated">Dec28</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Dec28 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 194465091 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dec29</source>
+          <target state="translated">Dec29</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Dec29 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 2430779811 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dec30</source>
+          <target state="translated">Dec30</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Dec30 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 2313701246 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Int01</source>
+          <target state="translated">Int01</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Int01 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 400611395 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Int02</source>
+          <target state="translated">Int02</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Int02 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 1038308012 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Int03</source>
+          <target state="translated">Int03</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Int03 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 3420185457 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Int04</source>
+          <target state="translated">Int04</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Int04 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 4057882074 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Int05</source>
+          <target state="translated">Int05</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Int05 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 2144792223 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Int06</source>
+          <target state="translated">Int06</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Int06 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 2782488840 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Int07</source>
+          <target state="translated">Int07</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Int07 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 2482610269 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Int08</source>
+          <target state="translated">Int08</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Int08 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 3120306886 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Int09</source>
+          <target state="translated">Int09</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Int09 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 863203814 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Int10</source>
+          <target state="translated">Int10</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Int10 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 1419102638 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pk1</source>
+          <target state="translated">Pk1</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Pk1 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 3800980083 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pk2</source>
+          <target state="translated">Pk2</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Pk2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 143709404 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pk3</source>
+          <target state="translated">Pk3</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Pk3 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 295706049 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PK4</source>
+          <target state="translated">PK4</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field PK4 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 2720410936 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Text01</source>
+          <target state="translated">Text01</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Text01 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 3358107553 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Text02</source>
+          <target state="translated">Text02</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Text02 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 3995804170 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Text03</source>
+          <target state="translated">Text03</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Text03 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 338533491 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Text04</source>
+          <target state="translated">Text04</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Text04 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3201266517 - Field 976230108 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Text05</source>
+          <target state="translated">Text05</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA D394 Buffer - Field Text05 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ending Date cannot be earlier the Starting Date.</source>
+          <target state="translated">Data de sfârşit nu poate fi înaintea datei de început.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Declaration %1=%2, %3=%4 already exists.</source>
+          <target state="translated">Declaratia %1=%2, %3=%4 deja exista.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - NamedType Text002</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You cannot change %1 because you already have declaration lines.</source>
+          <target state="translated">Nu puteţi modifica %1 deoarece aveţi deja linii de declaraţie.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - NamedType Text003</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - NamedType 732759939" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Period must not be more than %1 when type is %2.</source>
+          <target state="translated">Perioada trebuie sa fie cel mult %1 cand tip este %2.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - NamedType Text004</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - NamedType 1370456556" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Do you want to copy infromation form Domestic Declaration %1?</source>
+          <target state="translated">Doriti sa preluati informatiile de la Declaratia nr. %1?</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - NamedType Text005</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 3825776935 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>AchizitiiA</source>
+          <target state="translated">AchizitiiA</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field AchizitiiA - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 889553554 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>AchizitiiB19</source>
+          <target state="translated">AchizitiiB19</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field AchizitiiB19 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 3463686320 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>AchizitiiB20</source>
+          <target state="translated">AchizitiiB20</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field AchizitiiB20 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 1719505492 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>AchizitiiB24</source>
+          <target state="translated">AchizitiiB24</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field AchizitiiB24 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 344295237 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>AchizitiiB5</source>
+          <target state="translated">AchizitiiB5</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field AchizitiiB5 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 2895081705 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>AchizitiiB9</source>
+          <target state="translated">AchizitiiB9</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field AchizitiiB9 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 3856003191 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>AchizitiiCB</source>
+          <target state="translated">AchizitiiCB</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field AchizitiiCB - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 667520106 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>AchizitiiCI</source>
+          <target state="translated">AchizitiiCI</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field AchizitiiCI - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 2242791911 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>AchizitiiCR</source>
+          <target state="translated">AchizitiiCR</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field AchizitiiCR - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 1471625987 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>AchizitiiPE</source>
+          <target state="translated">AchizitiiPE</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field AchizitiiPE - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 2636319385 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>AchizitiiS19</source>
+          <target state="translated">AchizitiiS19</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field AchizitiiS19 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 2727146631 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>AchizitiiS20</source>
+          <target state="translated">AchizitiiS20</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field AchizitiiS20 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 982965803 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>AchizitiiS24</source>
+          <target state="translated">AchizitiiS24</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field AchizitiiS24 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 2478884950 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>AchizitiiS5</source>
+          <target state="translated">AchizitiiS5</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field AchizitiiS5 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 3416460138 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>AchizitiiS9</source>
+          <target state="translated">AchizitiiS9</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field AchizitiiS9 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 2392941154 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>AcINecorp</source>
+          <target state="translated">AcINecorp</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field AcINecorp - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 2201418242 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Adresa Reperzentant</source>
+          <target state="translated">Adresa Reperzentant</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field Adresa Reprezentant - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 2906590867 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bun19</source>
+          <target state="translated">Bun19</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field Bun19 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 311669749 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bun20</source>
+          <target state="translated">Bun20</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field Bun20 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 2055850577 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bun24</source>
+          <target state="translated">Bun24</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field Bun24 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 3531609512 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bun5</source>
+          <target state="translated">Bun5</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field Bun5 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 2594034324 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bun9</source>
+          <target state="translated">Bun9</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field Bun9 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 590230288 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>BunTI</source>
+          <target state="translated">BunTI</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field BunTI - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 2176547672 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Calitate Intocmit</source>
+          <target state="translated">Calitate Intocmit</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field Calitate Intocmit - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 431963309 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CIF Intocmit</source>
+          <target state="translated">CIF Intocmit</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field CIF Intocmit - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 945970005 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CNP Reprezentant</source>
+          <target state="translated">CNP Reprezentant</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field CNP Reprezentant - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code</source>
+          <target state="translated">Cod</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 401023175 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Copy Declaration Info from</source>
+          <target state="translated">Copiere informații declarație din</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field Copy Declaration Info from - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <target state="translated">Descriere</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 1917181525 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>E-Mail Companie</source>
+          <target state="translated">E-Mail Companie</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field E-Mail Companie - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 3767139737 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>E-mail Reprezentant</source>
+          <target state="translated">E-mail Reprezentant</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field E-mail Reprezentant - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 514808099 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Efectuat</source>
+          <target state="translated">Efectuat</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field Efectuat - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 458406397 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ending Date</source>
+          <target state="translated">Data de sfarsit</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field Ending Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 36190024 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Export</source>
+          <target state="translated">Export</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field Export - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 649788863 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fax Companie</source>
+          <target state="translated">Fax Companie</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field Fax Companie - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 2338111787 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fax Reprezentant</source>
+          <target state="translated">Fax Reprezentant</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field Fax Reprezentant - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 3458678414 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Functie Declaratie</source>
+          <target state="translated">Functie Declaratie</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field Functie Declaratie - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 245770323 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Functie Intocmit</source>
+          <target state="translated">Functie Intocmit</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field Functie Intocmit - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 3585345417 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ImportB</source>
+          <target state="translated">ImportB</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field ImportB - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 3988873720 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>LIntra</source>
+          <target state="translated">LIntra</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field LIntra - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 1042659194 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>LivNecorp</source>
+          <target state="translated">LivNecorp</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field LivNecorp - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 3758800148 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>LivrariBI</source>
+          <target state="translated">LivrariBI</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field LivrariBI - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 3465500804 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Lună</source>
+          <target state="translated">Lună</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field Month - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 3465500804 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,01,02,03,04,05,06,07,08,09,10,11,12</source>
+          <target state="translated"> ,01,02,03,04,05,06,07,08,09,10,11,12</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field Month - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 2945734814 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Nr de AMEF</source>
+          <target state="translated">Nr de AMEF</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field Nr de AMEF - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 551797745 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Nume Declaratie</source>
+          <target state="translated">Nume Declaratie</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field Nume Declaratie - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 2414046168 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Nume Intocmit</source>
+          <target state="translated">Nume Intocmit</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field Nume Intocmit - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 1026194999 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Nume Reprezentant</source>
+          <target state="translated">Nume Reprezentant</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field Nume Reprezentant - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 76612646 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Optiune verificare date</source>
+          <target state="translated">Optiune verificare date</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field Optiune verificare date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 886179631 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Perioada</source>
+          <target state="translated">Perioada</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field Perioada - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 912261439 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Period</source>
+          <target state="translated">Perioadă</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field Period - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 2340208604 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prenume Declaratie</source>
+          <target state="translated">Prenume Declaratie</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field Prenume Declaratie - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 4155367252 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prest19</source>
+          <target state="translated">Prest19</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field Prest19 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 1382783990 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prest20</source>
+          <target state="translated">Prest20</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field Prest20 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 3126964818 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prest24</source>
+          <target state="translated">Prest24</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field Prest24 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 953253519 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prest5</source>
+          <target state="translated">Prest5</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field Prest5 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 15678331 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prest9</source>
+          <target state="translated">Prest9</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field Prest9 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 2461053772 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PrestIntra</source>
+          <target state="translated">PrestIntra</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field PrestIntra - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 2064373600 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PrestScutit</source>
+          <target state="translated">PrestScutit</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field PrestScutit - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 3293730985 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reported</source>
+          <target state="translated">Raportat</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field Reported - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 1709009392 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Schimb Optiune verificare date</source>
+          <target state="translated">Schimb Optiune verificare date</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field Schimb Optiune verificare date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 1862981322 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Semester</source>
+          <target state="translated">Semestru</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field Semester - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 1862981322 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,S0,S1,S2</source>
+          <target state="translated"> ,S0,S1,S2</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field Semester - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 568626809 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Solicit</source>
+          <target state="translated">Solicit</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field Solicit - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 460889064 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Starting Date</source>
+          <target state="translated">Data de inceput</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field Starting Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 957821951 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tel. Reprezentant</source>
+          <target state="translated">Tel. Reprezentant</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field Tel. Reprezentant - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 2571981151 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Telefon Companie</source>
+          <target state="translated">Telefon Companie</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field Telefon Companie - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 2399286558 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tip Intocmit</source>
+          <target state="translated">Tip Intocmit</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field Tip Intocmit - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 1148538401 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TipD394</source>
+          <target state="translated">TipD394</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field TipD394 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 1148538401 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,L,T,S,A</source>
+          <target state="translated"> ,L,T,S,A</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field TipD394 - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 1728901745 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tranzactii Persoane Afiliate</source>
+          <target state="translated">Tranzactii Persoane Afiliate</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field Tranzactii Persoane Afiliate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 1878130204 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Type</source>
+          <target state="translated">Tip</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 1878130204 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Monthly,Quarterly,Semester</source>
+          <target state="translated">Lunar,Trimestrial,Semestrial</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 1872342106 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ValoareScutit</source>
+          <target state="translated">ValoareScutit</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field ValoareScutit - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 5477977 - Field 2832340769 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Year</source>
+          <target state="translated">An</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration - Field Year - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>DEFAULT</source>
+          <target state="translated">IMPLICIT</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Default Domestic Declaration</source>
+          <target state="translated">Declaraţie internă implicită</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - NamedType Text002</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You cannot fill in the %1 field when the %2 field is filled in.</source>
+          <target state="translated">Câmpul %1 nu se poate completa dacă este completat câmpul %2.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - NamedType Text003</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - NamedType 732759939" size-unit="char" translate="yes" xml:space="preserve">
+          <source>%1 in Domestic Declaration Code = '%2', Line No. = '%3' is out of the declaration period.\Please correct the value.</source>
+          <target state="translated">%1 în Cod declaraţie internă = '%2', Nr. linie = '%3' este în afara perioadei de declaraţie.\Introduceţi valoarea corectă.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - NamedType Text004</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - NamedType 1370456556" size-unit="char" translate="yes" xml:space="preserve">
+          <source>%1 in Domestic Declaration Code = '%2', Line No. = '%3', Document Type = '%4', Type = '%5' must not be less than 0.</source>
+          <target state="translated">%1 în Cod declaraţie internă = '%2', Nr. linie = '%3', Tip document = '%4', Tip = '%5' nu trebuie să fie mai mic decât 0.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - NamedType Text005</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - NamedType 2008153173" size-unit="char" translate="yes" xml:space="preserve">
+          <source>%1 in Domestic Declaration Code = '%2', Line No. = '%3', Document Type = '%4', Type = '%5' must not be more than 0.</source>
+          <target state="translated">%1 în Cod declaraţie internă = '%2', Nr. linie = '%3', Tip document = '%4', Tip = '%5' nu trebuie să fie mai mare decât 0.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - NamedType Text006</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - Method 1441599427 - NamedType 474897576" size-unit="char" translate="yes" xml:space="preserve">
+          <source>DEFAULT</source>
+          <target state="translated">IMPLICIT</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - Method CheckName - NamedType Text 001</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - Method 1441599427 - NamedType 1112594193" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Default Domestic Declaration</source>
+          <target state="translated">Declaraţie internă implicită</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - Method CheckName - NamedType Text 002</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - Field 636392376 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amount</source>
+          <target state="translated">Sumă</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - Field Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - Field 2587701375 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Base</source>
+          <target state="translated">Bază</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - Field Base - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - Field 3792756061 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bill-to/Pay-to No.</source>
+          <target state="translated">Nr. notă de plată-la/plată-la</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - Field Bill-to/Pay-to No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - Field 1560896195 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cod CAEN</source>
+          <target state="translated">Cod CAEN</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - Field Cod CAEN - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - Field 3318414652 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cod Judet D394</source>
+          <target state="translated">Cod Judet D394</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - Field Cod Judet D394 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - Field 3318414652 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,1-Alba,2-Arad,3-Arges,4-Bacau,5-Bihor,6-Bistrita-Nasaud,7-Botosani,8-Brasov,9-Braila,10-Buzau,11-Caras-Severin,12-Cluj,13-Constanta,14-Covasna,15-Dambovita,16-Dolj,17-Galati,18-Gorj,19-Harghita,20-Hunedoara,21-Ialomita,22-Iasi,23-Ilfov,24-Maramures,25-Mehedinti,26-Mures,27-Neamt,28-Olt,29-Prahova,30-Satu Mare,31-Salaj,32-Sibiu,33-Suceava,34-Teleorman,35-Timis,36-Tulcea,37-Vaslui,38-Valcea,39-Vrancea,40-Municipiul Bucuresti,,,,,,,,,,,51-Calarasi,52-Giurgiu</source>
+          <target state="translated"> ,1-Alba,2-Arad,3-Arges,4-Bacau,5-Bihor,6-Bistrita-Nasaud,7-Botosani,8-Brasov,9-Braila,10-Buzau,11-Caras-Severin,12-Cluj,13-Constanta,14-Covasna,15-Dambovita,16-Dolj,17-Galati,18-Gorj,19-Harghita,20-Hunedoara,21-Ialomita,22-Iasi,23-Ilfov,24-Maramures,25-Mehedinti,26-Mures,27-Neamt,28-Olt,29-Prahova,30-Satu Mare,31-Salaj,32-Sibiu,33-Suceava,34-Teleorman,35-Timis,36-Tulcea,37-Vaslui,38-Valcea,39-Vrancea,40-Municipiul Bucuresti,,,,,,,,,,,51-Calarasi,52-Giurgiu</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - Field Cod Judet D394 - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - Field 1754154794 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No. Series</source>
+          <target state="translated">Serie numerică</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - Field Cod Serie Factura - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - Field 361009464 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cod tara D394</source>
+          <target state="translated">Cod tara D394</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - Field Cod tara D394 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - Field 3083748138 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Correction</source>
+          <target state="translated">Stornare in Rosu</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - Field Correction - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - Field 1307168955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Journals VAT %</source>
+          <target state="translated">% afisare jurnale TVA</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - Field Cota - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - Field 1232518810 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Detailed 394 Decl.</source>
+          <target state="translated">Detaliere decl. 394</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - Field Detailed 394 Decl. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - Field 580412389 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document Date</source>
+          <target state="translated">Data documentului</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - Field Document Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - Field 486908828 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document No.</source>
+          <target state="translated">Nr. document</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - Field Document No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - Field 2363328873 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document Type</source>
+          <target state="translated">Tip Document</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - Field Document Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - Field 2363328873 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Invoice,Credit Memo</source>
+          <target state="translated">Factură,Notă de credit</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - Field Document Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - Field 3511993285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Domestic Declaration Code</source>
+          <target state="translated">Cod declaraţie internă</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - Field Domestic Declaration Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - Field 1527563463 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>External Document No.</source>
+          <target state="translated">Nr. document extern</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - Field External Document No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line No.</source>
+          <target state="translated">Nr. linie</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - Field Line No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - Field 4103795149 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Not Declaration 394</source>
+          <target state="translated">Fără declaraţia 394</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - Field Not Declaration 394 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - Field 1478576917 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Organization type</source>
+          <target state="translated">Forma de organizare</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - Field Organization type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - Field 1478576917 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,Private Legal Person,Natural Person,Authorised Natural Person,Public Legal Person</source>
+          <target state="translated"> ,Persoană juridică privată,Persoană fizică,Persoană fizică autorizata,Persoană juridică de stat</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - Field Organization type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - Field 3473132926 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Persoana Afiliata</source>
+          <target state="translated">Persoana Afiliata</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - Field Persoana Afiliata - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - Field 3710982960 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posting Date</source>
+          <target state="translated">Data Inreg.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - Field Posting Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - Field 57558819 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Postponed VAT Payment</source>
+          <target state="translated">TVA amânat la plată</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - Field Postponed VAT Payment - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - Field 878019083 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Record Document Number</source>
+          <target state="translated">Nr. evidenţă document</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - Field Record Document Number - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - Field 2720485332 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Source Code</source>
+          <target state="translated">Cod sursă</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - Field Source Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - Field 369863103 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Source VAT Entry No.</source>
+          <target state="translated">Nr. înreg. sursă TVA</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - Field Source VAT Entry No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - Field 3441313017 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Stare Factura</source>
+          <target state="translated">Stare Factura</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - Field Stare Factura - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - Field 3441313017 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,0-Factura Emisa,1-Factura Stornata,2-Factura Anulata,3-Autofactura,4-In calidate de beneficiar in numele furnizorului</source>
+          <target state="translated"> ,0-Factura Emisa,1-Factura Stornata,2-Factura Anulata,3-Autofactura,4-In calidate de beneficiar in numele furnizorului</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - Field Stare Factura - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - Field 2552458873 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tax Group Code</source>
+          <target state="translated">Cod produs D394</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - Field Tax Group Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - Field 4003271916 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tip Document D394</source>
+          <target state="translated">Tip document D394</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - Field Tip Document D394 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - Field 4003271916 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,Factura Fiscala,Bon Fiscal,Factura Simplificata,Borderou,File Carnet,Contract,Alte Documente</source>
+          <target state="translated"> ,Factura Fiscala,Bon Fiscal,Factura Simplificata,Borderou,File Carnet,Contract,Alte Documente</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - Field Tip Document D394 - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - Field 1420186248 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tip Operatie</source>
+          <target state="translated">Tip Operatie</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - Field Tip Operatie - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - Field 3159998218 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tip Operatiune CAEN</source>
+          <target state="translated">Tip Operatiune CAEN</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - Field Tip Operatiune CAEN - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - Field 2134464482 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tip Partener</source>
+          <target state="translated">Tip Partener</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - Field Tip Partener - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - Field 2134464482 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,1-CUI Valid din RO si din afara inreg. in scopuri de TVA in RO,2-CNP PFA din RO sau CUI neinregistrat in scopuri de TVA,3-Fara CUI valid din UE fara RO,4-Fara CUI valid din afara UE fara RO</source>
+          <target state="translated"> ,1-CUI Valid din RO si din afara inreg. in scopuri de TVA in RO,2-CNP PFA din RO sau CUI neinregistrat in scopuri de TVA,3-Fara CUI valid din UE fara RO,4-Fara CUI valid din afara UE fara RO</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - Field Tip Partener - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - Field 3319631365 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Transaction No.</source>
+          <target state="translated">Nr. tranzacţie</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - Field Transaction No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - Field 1878130204 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Type</source>
+          <target state="translated">Tip</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - Field Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - Field 1878130204 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sale,Purchase</source>
+          <target state="translated">Vânzare,Cumpărare</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - Field Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - Field 773955941 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unrealized VAT Entry No.</source>
+          <target state="translated">Nr. intrare TVA nerealizată</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - Field Unrealized VAT Entry No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - Field 1844012642 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Bus. Posting Group</source>
+          <target state="translated">Gr. înreg. TVA operaţii ec.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - Field VAT Bus. Posting Group - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - Field 2971014054 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Calculation Type</source>
+          <target state="translated">Tip calcul TVA</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - Field VAT Calculation Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - Field 2971014054 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Normal VAT,Reverse Charge VAT,Full VAT,Sales Tax</source>
+          <target state="translated">TVA normal,TVA inversat,TVA integral,Taxă vânzare</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - Field VAT Calculation Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - Field 236064653 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Prod. Posting Group</source>
+          <target state="translated">Grupa inreg. TVA prod.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - Field VAT Prod. Posting Group - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - Field 617267791 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Registration No.</source>
+          <target state="translated">Cod unic de identificare</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - Field VAT Registration No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - Field 3458098588 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT to pay</source>
+          <target state="translated">TVA de plata</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - Field VAT to pay - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 248516547 - Field 2256826100 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Vendor/Customer Name</source>
+          <target state="translated">Nume furnizor/client</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Domestic Declaration Line - Field Vendor/Customer Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 5477977 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Domestic Declaration</source>
+          <target state="translated">Declaraţie internă</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Domestic Declaration - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 5477977 - Control 520381319 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total VAT Amount</source>
+          <target state="translated">Sumă totală TVA</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Domestic Declaration - Control TotalVATAmount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 5477977 - Control 4282570256 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total VAT Base</source>
+          <target state="translated">Total bază TVA</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Domestic Declaration - Control TotalVATBase - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 5477977 - Control 2779183948 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Domestic Declaration Code</source>
+          <target state="translated">Cod declaraţie internă</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Domestic Declaration - Control CurrentDeclarationNo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 5477977 - Action 2846763215 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Export XML</source>
+          <target state="translated">Export XML</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Domestic Declaration - Action Export XML - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 5477977 - Action 18869832 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Get Entries</source>
+          <target state="translated">Preluare Intrari</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Domestic Declaration - Action Get Entries - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3853054277 - Control 2442254210 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Declarant</source>
+          <target state="translated">Declarant</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Domestic Declaration Card - Control Declarant - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3853054277 - Control 3351914939 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Request</source>
+          <target state="translated">Solicit</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Domestic Declaration Card - Control Request - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1373883215 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Domestic Declarations</source>
+          <target state="translated">Declaratii interne</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Domestic Declaration List - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1373883215 - Action 3347060232 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Edit Declaration</source>
+          <target state="translated">Editare Declaratie</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Domestic Declaration List - Action Edit Declaration - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1660014757 - NamedType 1664139952" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The number %1 cannot be extended to more than 20 characters.</source>
+          <target state="translated">Numărul %1 nu poate fi extins la mai mult de 20 de caractere.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Anulare Serie D394 - NamedType Text010</note>
+        </trans-unit>
+        <trans-unit id="Report 1660014757 - Control 3760933961 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Domestic Declaration Code</source>
+          <target state="translated">Cod declaraţie internă</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Anulare Serie D394 - Control Cod Declaratie interna - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1660014757 - Control 3271638145 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No Series Code</source>
+          <target state="translated">Cod Serie Numerica</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Anulare Serie D394 - Control NoSeriesCode - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3565156014 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Domestic Declaration</source>
+          <target state="translated">Declaraţie internă</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Domestic Declaration 2016 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3565156014 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Export to XML File</source>
+          <target state="translated">Export în fişier XML</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Domestic Declaration 2016 - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Report 3565156014 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
+          <source>XML Files (*.xml)|*.xml|All Files (*.*)|*.*</source>
+          <target state="translated">Fişiere XML (*.xml)|*.xml|Toate fişierele (*.*)|*.*</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Domestic Declaration 2016 - NamedType Text002</note>
+        </trans-unit>
+        <trans-unit id="Report 3565156014 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Please enter the file name.</source>
+          <target state="translated">Introduceţi numele fişierului.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Domestic Declaration 2016 - NamedType Text003</note>
+        </trans-unit>
+        <trans-unit id="Report 3565156014 - NamedType 732759939" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Please select the domestic declaration.</source>
+          <target state="translated">Selectaţi declaraţia internă.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Domestic Declaration 2016 - NamedType Text004</note>
+        </trans-unit>
+        <trans-unit id="Report 3565156014 - NamedType 1370456556" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The domestic declaration cannot be exported in text file for S0 semester.</source>
+          <target state="translated">Imposibil de exportat declaraţia internă în fişier text pentru semestrul S0.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Domestic Declaration 2016 - NamedType Text005</note>
+        </trans-unit>
+        <trans-unit id="Report 3565156014 - NamedType 2008153173" size-unit="char" translate="yes" xml:space="preserve">
+          <source>&amp;</source>
+          <target state="translated">&amp;</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Domestic Declaration 2016 - NamedType Text006</note>
+        </trans-unit>
+        <trans-unit id="Report 3565156014 - NamedType 2645849790" size-unit="char" translate="yes" xml:space="preserve">
+          <source>'</source>
+          <target state="translated">'</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Domestic Declaration 2016 - NamedType Text007</note>
+        </trans-unit>
+        <trans-unit id="Report 3565156014 - NamedType 3283546407" size-unit="char" translate="yes" xml:space="preserve">
+          <source>"</source>
+          <target state="translated">"</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Domestic Declaration 2016 - NamedType Text008</note>
+        </trans-unit>
+        <trans-unit id="Report 3565156014 - NamedType 3921243024" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Processing Lines... @1@@@@@@@@@@</source>
+          <target state="translated">Procesare Linii... @1@@@@@@@@@@</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Domestic Declaration 2016 - NamedType Text009</note>
+        </trans-unit>
+        <trans-unit id="Report 3565156014 - NamedType 1664139952" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The File %1 has been created.</source>
+          <target state="translated">Fisierul %1 a fost creat.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Domestic Declaration 2016 - NamedType Text010</note>
+        </trans-unit>
+        <trans-unit id="Report 3565156014 - Control 2696821940 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>File Name</source>
+          <target state="translated">Nume fişier</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Domestic Declaration 2016 - Control ClientFileName - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2195619392 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>There are no VAT entries within the filter</source>
+          <target state="translated">Nicio intrare TVA în datele filtrate</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Get VAT Entries D394 - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Report 2195619392 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Getting Lines... @1@@@@@@@@</source>
+          <target state="translated">Preluare Linii... @1@@@@@@@@</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Get VAT Entries D394 - NamedType Text002</note>
+        </trans-unit>
+        <trans-unit id="Report 2195619392 - Control 1036665042 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Change POS Transactions</source>
+          <target state="translated">Schimare Tranzactii POS</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Get VAT Entries D394 - Control ChangePOSCustomer - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 252154612 - Action 2045389247 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 842692675">
+          <source>D394</source>
+          <target state="translated">D394</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Closing Page 71700 - Action &lt;Action1000000022&gt; - Property Caption</note>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

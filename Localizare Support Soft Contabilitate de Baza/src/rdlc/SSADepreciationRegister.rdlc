@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="lblCA">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lblCA</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lblCA</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lblAFP">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lblAFP</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lblAFP</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lblAFC">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lblAFC</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lblAFC</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lblAFCUM">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lblAFCUM</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lblAFCUM</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lblVALRAM">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lblVALRAM</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lblVALRAM</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lblFA_Description">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lblFA_Description</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lblFA_Description</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lblFA_PIF">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lblFA_PIF</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lblFA_PIF</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lbl_NoOfDeprMonths">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lbl_NoOfDeprMonths</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lbl_NoOfDeprMonths</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lblPostingGroup">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lblPostingGroup</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lblPostingGroup</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="PostingGroupCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>PostingGroupCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>PostingGroupCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="FADepreciationBook_FANoCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>FADepreciationBook_FANoCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>FADepreciationBook_FANoCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="NoofDepreciationMonths_FADepreciationBookCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>NoofDepreciationMonths_FADepreciationBookCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>NoofDepreciationMonths_FADepreciationBookCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="DepreciationMethod_FADepreciationBookCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>DepreciationMethod_FADepreciationBookCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>DepreciationMethod_FADepreciationBookCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="DepreciationStartingDate_FADepreciationBookCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>DepreciationStartingDate_FADepreciationBookCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>DepreciationStartingDate_FADepreciationBookCaption</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="PostingGroup">
+          <DataField>PostingGroup</DataField>
+        </Field>
+        <Field Name="FADepreciationBook_FANo">
+          <DataField>FADepreciationBook_FANo</DataField>
+        </Field>
+        <Field Name="FA_Description">
+          <DataField>FA_Description</DataField>
+        </Field>
+        <Field Name="NoofDepreciationMonths_FADepreciationBook">
+          <DataField>NoofDepreciationMonths_FADepreciationBook</DataField>
+        </Field>
+        <Field Name="NoofDepreciationMonths_FADepreciationBookFormat">
+          <DataField>NoofDepreciationMonths_FADepreciationBookFormat</DataField>
+        </Field>
+        <Field Name="DepreciationMethod_FADepreciationBook">
+          <DataField>DepreciationMethod_FADepreciationBook</DataField>
+        </Field>
+        <Field Name="Var_CA">
+          <DataField>Var_CA</DataField>
+        </Field>
+        <Field Name="Var_CAFormat">
+          <DataField>Var_CAFormat</DataField>
+        </Field>
+        <Field Name="Var_AFP">
+          <DataField>Var_AFP</DataField>
+        </Field>
+        <Field Name="Var_AFPFormat">
+          <DataField>Var_AFPFormat</DataField>
+        </Field>
+        <Field Name="Var_AFC">
+          <DataField>Var_AFC</DataField>
+        </Field>
+        <Field Name="Var_AFCFormat">
+          <DataField>Var_AFCFormat</DataField>
+        </Field>
+        <Field Name="Var_AFCUM">
+          <DataField>Var_AFCUM</DataField>
+        </Field>
+        <Field Name="Var_AFCUMFormat">
+          <DataField>Var_AFCUMFormat</DataField>
+        </Field>
+        <Field Name="Var_VALRAM">
+          <DataField>Var_VALRAM</DataField>
+        </Field>
+        <Field Name="Var_VALRAMFormat">
+          <DataField>Var_VALRAMFormat</DataField>
+        </Field>
+        <Field Name="CI_Name">
+          <DataField>CI_Name</DataField>
+        </Field>
+        <Field Name="Fil1">
+          <DataField>Fil1</DataField>
+        </Field>
+        <Field Name="Fil2">
+          <DataField>Fil2</DataField>
+        </Field>
+        <Field Name="CI_VAT">
+          <DataField>CI_VAT</DataField>
+        </Field>
+        <Field Name="CI_Comm">
+          <DataField>CI_Comm</DataField>
+        </Field>
+        <Field Name="CI_Address">
+          <DataField>CI_Address</DataField>
+        </Field>
+        <Field Name="Txt_03">
+          <DataField>Txt_03</DataField>
+        </Field>
+        <Field Name="Txt_16">
+          <DataField>Txt_16</DataField>
+        </Field>
+        <Field Name="Txt_10">
+          <DataField>Txt_10</DataField>
+        </Field>
+        <Field Name="Txt_11">
+          <DataField>Txt_11</DataField>
+        </Field>
+        <Field Name="Txt_17">
+          <DataField>Txt_17</DataField>
+        </Field>
+        <Field Name="DataRaport_Formated">
+          <DataField>DataRaport_Formated</DataField>
+        </Field>
+        <Field Name="Today_Formated">
+          <DataField>Today_Formated</DataField>
+        </Field>
+        <Field Name="FA_Inactive">
+          <DataField>FA_Inactive</DataField>
+        </Field>
+        <Field Name="DepreciationStartingDate_FADepreciationBook">
+          <DataField>DepreciationStartingDate_FADepreciationBook</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

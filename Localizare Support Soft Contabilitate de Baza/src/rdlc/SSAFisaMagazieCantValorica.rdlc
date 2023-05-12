@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="Cod_articol_caption">
+          <DataField>Cod_articol_caption</DataField>
+        </Field>
+        <Field Name="Denumire_articol_caption">
+          <DataField>Denumire_articol_caption</DataField>
+        </Field>
+        <Field Name="Gestiune_caption">
+          <DataField>Gestiune_caption</DataField>
+        </Field>
+        <Field Name="NrCrt_caption">
+          <DataField>NrCrt_caption</DataField>
+        </Field>
+        <Field Name="Data_caption">
+          <DataField>Data_caption</DataField>
+        </Field>
+        <Field Name="Tip_doc_caption">
+          <DataField>Tip_doc_caption</DataField>
+        </Field>
+        <Field Name="Nr_doc_caption">
+          <DataField>Nr_doc_caption</DataField>
+        </Field>
+        <Field Name="Nr_doc_extern_caption">
+          <DataField>Nr_doc_extern_caption</DataField>
+        </Field>
+        <Field Name="Furnizor_client_caption">
+          <DataField>Furnizor_client_caption</DataField>
+        </Field>
+        <Field Name="Intrari_caption">
+          <DataField>Intrari_caption</DataField>
+        </Field>
+        <Field Name="IntrariVal_caption">
+          <DataField>IntrariVal_caption</DataField>
+        </Field>
+        <Field Name="Iesiri_caption">
+          <DataField>Iesiri_caption</DataField>
+        </Field>
+        <Field Name="IesiriVal_caption">
+          <DataField>IesiriVal_caption</DataField>
+        </Field>
+        <Field Name="Stoc_caption">
+          <DataField>Stoc_caption</DataField>
+        </Field>
+        <Field Name="StocVal_caption">
+          <DataField>StocVal_caption</DataField>
+        </Field>
+        <Field Name="Total_caption">
+          <DataField>Total_caption</DataField>
+        </Field>
+        <Field Name="Titlu_caption">
+          <DataField>Titlu_caption</DataField>
+        </Field>
+        <Field Name="Stoc_Tot">
+          <DataField>Stoc_Tot</DataField>
+        </Field>
+        <Field Name="Stoc_TotFormat">
+          <DataField>Stoc_TotFormat</DataField>
+        </Field>
+        <Field Name="Filtru_Data">
+          <DataField>Filtru_Data</DataField>
+        </Field>
+        <Field Name="Item_no_">
+          <DataField>Item_no_</DataField>
+        </Field>
+        <Field Name="Loaction_no_">
+          <DataField>Loaction_no_</DataField>
+        </Field>
+        <Field Name="Posting_date_">
+          <DataField>Posting_date_</DataField>
+        </Field>
+        <Field Name="Document_no_">
+          <DataField>Document_no_</DataField>
+        </Field>
+        <Field Name="External_Doc_No_">
+          <DataField>External_Doc_No_</DataField>
+        </Field>
+        <Field Name="Lot_no_">
+          <DataField>Lot_no_</DataField>
+        </Field>
+        <Field Name="Stoc_initial_caption">
+          <DataField>Stoc_initial_caption</DataField>
+        </Field>
+        <Field Name="Quantity_">
+          <DataField>Quantity_</DataField>
+        </Field>
+        <Field Name="Quantity_Format">
+          <DataField>Quantity_Format</DataField>
+        </Field>
+        <Field Name="Lot_Caption">
+          <DataField>Lot_Caption</DataField>
+        </Field>
+        <Field Name="Lcatie_caption">
+          <DataField>Lcatie_caption</DataField>
+        </Field>
+        <Field Name="FiltruItem">
+          <DataField>FiltruItem</DataField>
+        </Field>
+        <Field Name="FiltruItem_Nume">
+          <DataField>FiltruItem_Nume</DataField>
+        </Field>
+        <Field Name="FiltruLocatie">
+          <DataField>FiltruLocatie</DataField>
+        </Field>
+        <Field Name="Intrari_">
+          <DataField>Intrari_</DataField>
+        </Field>
+        <Field Name="Intrari_Format">
+          <DataField>Intrari_Format</DataField>
+        </Field>
+        <Field Name="iesiri_">
+          <DataField>iesiri_</DataField>
+        </Field>
+        <Field Name="iesiri_Format">
+          <DataField>iesiri_Format</DataField>
+        </Field>
+        <Field Name="tip_doc_">
+          <DataField>tip_doc_</DataField>
+        </Field>
+        <Field Name="Stoc_">
+          <DataField>Stoc_</DataField>
+        </Field>
+        <Field Name="Stoc_Format">
+          <DataField>Stoc_Format</DataField>
+        </Field>
+        <Field Name="NumeVendor_Client">
+          <DataField>NumeVendor_Client</DataField>
+        </Field>
+        <Field Name="Ile_SerialNo">
+          <DataField>Ile_SerialNo</DataField>
+        </Field>
+        <Field Name="SerieCPT">
+          <DataField>SerieCPT</DataField>
+        </Field>
+        <Field Name="ValoareInceput">
+          <DataField>ValoareInceput</DataField>
+        </Field>
+        <Field Name="ValoareInceputFormat">
+          <DataField>ValoareInceputFormat</DataField>
+        </Field>
+        <Field Name="IntrariVal">
+          <DataField>IntrariVal</DataField>
+        </Field>
+        <Field Name="IntrariValFormat">
+          <DataField>IntrariValFormat</DataField>
+        </Field>
+        <Field Name="IesiriVal">
+          <DataField>IesiriVal</DataField>
+        </Field>
+        <Field Name="IesiriValFormat">
+          <DataField>IesiriValFormat</DataField>
+        </Field>
+        <Field Name="StocVal">
+          <DataField>StocVal</DataField>
+        </Field>
+        <Field Name="StocValFormat">
+          <DataField>StocValFormat</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

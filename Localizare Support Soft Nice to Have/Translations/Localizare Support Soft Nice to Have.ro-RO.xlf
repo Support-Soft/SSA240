@@ -1,0 +1,789 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="ro-RO" original="Localizare Support Soft Nice to Have">
+    <body>
+      <group id="body">
+        <trans-unit id="Table 817196585 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Purch. Rcpt. Header</source>
+          <target state="translated">Antet receptie cump.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Purch. Rcpt. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 817196585 - Field 1750733095 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Buy-from Contact</source>
+          <target state="translated">Cumparare-de la contact</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Purch. Rcpt. - Field Buy-from Contact - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 817196585 - Field 2931503505 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Buy-from Country/Region Code</source>
+          <target state="translated">Cumparare-de la cod tara/regiune</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Purch. Rcpt. - Field Buy-from Country/Region Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 817196585 - Field 852404356 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Buy-from Post Code</source>
+          <target state="translated">Cumparare-de la cod postal</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Purch. Rcpt. - Field Buy-from Post Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 817196585 - Field 3230600482 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Buy-from Vendor Name</source>
+          <target state="translated">Cumparare-de la nume furnizor</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Purch. Rcpt. - Field Buy-from Vendor Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 817196585 - Field 3792369418 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Buy-from Vendor No.</source>
+          <target state="translated">Cumparare-de la furnizor nr.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Purch. Rcpt. - Field Buy-from Vendor No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 817196585 - Field 2161572060 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Location Code</source>
+          <target state="translated">Cod locaţie</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Purch. Rcpt. - Field Location Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 817196585 - Field 4200184881 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No.</source>
+          <target state="translated">Nr.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Purch. Rcpt. - Field No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 817196585 - Field 3946380207 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Order Address Code</source>
+          <target state="translated">Cod adresa comanda</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Purch. Rcpt. - Field Order Address Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 817196585 - Field 2202932243 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Order No.</source>
+          <target state="translated">Nr. comanda</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Purch. Rcpt. - Field Order No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 817196585 - Field 1970704690 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pay-to Contact</source>
+          <target state="translated">Plata-la contact</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Purch. Rcpt. - Field Pay-to Contact - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 817196585 - Field 4079742056 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pay-to Country/Region Code</source>
+          <target state="translated">Plata-la cod tara/regiune</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Purch. Rcpt. - Field Pay-to Country/Region Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 817196585 - Field 3472859787 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pay-to Name</source>
+          <target state="translated">Plata-la nume</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Purch. Rcpt. - Field Pay-to Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 817196585 - Field 1168556525 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pay-to Post Code</source>
+          <target state="translated">Plata-la cod postal</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Purch. Rcpt. - Field Pay-to Post Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 817196585 - Field 3941277175 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pay-to Vendor No.</source>
+          <target state="translated">Plata-la furnizor nr.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Purch. Rcpt. - Field Pay-to Vendor No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 817196585 - Field 3710982960 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posting Date</source>
+          <target state="translated">Data inreg.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Purch. Rcpt. - Field Posting Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 817196585 - Field 801304080 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Purchaser Code</source>
+          <target state="translated">Cod cumparator</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Purch. Rcpt. - Field Purchaser Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 817196585 - Field 993414011 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ship-to Code</source>
+          <target state="translated">Livrare-la cod</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Purch. Rcpt. - Field Ship-to Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 817196585 - Field 929198632 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ship-to Contact</source>
+          <target state="translated">Livrare-la contact</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Purch. Rcpt. - Field Ship-to Contact - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 817196585 - Field 3354576322 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ship-to Country/Region Code</source>
+          <target state="translated">Livrare-la cod tara/regiune</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Purch. Rcpt. - Field Ship-to Country/Region Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 817196585 - Field 2743501653 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ship-to Name</source>
+          <target state="translated">Livrare-la nume</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Purch. Rcpt. - Field Ship-to Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 817196585 - Field 3172878019 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ship-to Post Code</source>
+          <target state="translated">Livrare-la cod postal</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Purch. Rcpt. - Field Ship-to Post Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 817196585 - Field 1577567912 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 1 Code</source>
+          <target state="translated">Comandă rapidă cod dimens. 1</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Purch. Rcpt. - Field Shortcut Dimension 1 Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 817196585 - Field 1003760969 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 2 Code</source>
+          <target state="translated">Comandă rapidă cod dimens. 2</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Purch. Rcpt. - Field Shortcut Dimension 2 Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 284772200 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Non-Invoiced Sales Shipment</source>
+          <target state="translated">Livrari Vanzari Ne-facturate</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Sales Ship - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 284772200 - Field 4064815791 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bill-to Contact</source>
+          <target state="translated">Nota de plata-la contact</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Sales Ship - Field Bill-to Contact - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 284772200 - Field 2096911897 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bill-to Country/Region Code</source>
+          <target state="translated">Nota de plata-la cod tara/regiune</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Sales Ship - Field Bill-to Country/Region Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 284772200 - Field 2965034906 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bill-to Customer No.</source>
+          <target state="translated">Nota de plata-la client nr.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Sales Ship - Field Bill-to Customer No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 284772200 - Field 240204966 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bill-to Name</source>
+          <target state="translated">Nota de plata-la nume</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Sales Ship - Field Bill-to Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 284772200 - Field 675862156 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bill-to Post Code</source>
+          <target state="translated">Nota de plata-la cod postal</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Sales Ship - Field Bill-to Post Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 284772200 - Field 4198939294 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Currency Code</source>
+          <target state="translated">Cod valută</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Sales Ship - Field Currency Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 284772200 - Field 2161572060 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Location Code</source>
+          <target state="translated">Cod locaţie</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Sales Ship - Field Location Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 284772200 - Field 4200184881 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No.</source>
+          <target state="translated">Nr.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Sales Ship - Field No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 284772200 - Field 2202932243 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Order No.</source>
+          <target state="translated">Nr. comanda</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Sales Ship - Field Order No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 284772200 - Field 3710982960 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posting Date</source>
+          <target state="translated">Data inreg.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Sales Ship - Field Posting Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 284772200 - Field 553464652 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Salesperson Code</source>
+          <target state="translated">Cod agent de vânzări</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Sales Ship - Field Salesperson Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 284772200 - Field 1006519668 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sell-to Contact</source>
+          <target state="translated">Vanzare-la contact</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Sales Ship - Field Sell-to Contact - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 284772200 - Field 3434865006 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sell-to Country/Region Code</source>
+          <target state="translated">Vanzare-la cod tara/regiune</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Sales Ship - Field Sell-to Country/Region Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 284772200 - Field 1474036805 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sell-to Customer Name</source>
+          <target state="translated">Vanzare-la nume client</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Sales Ship - Field Sell-to Customer Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 284772200 - Field 1225278069 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sell-to Customer No.</source>
+          <target state="translated">Vanzare-la client nr.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Sales Ship - Field Sell-to Customer No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 284772200 - Field 709296807 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sell-to Post Code</source>
+          <target state="translated">Vanzare-la cod postal</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Sales Ship - Field Sell-to Post Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 284772200 - Field 993414011 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ship-to Code</source>
+          <target state="translated">Livrare-la cod</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Sales Ship - Field Ship-to Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 284772200 - Field 929198632 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ship-to Contact</source>
+          <target state="translated">Livrare-la contact</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Sales Ship - Field Ship-to Contact - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 284772200 - Field 3354576322 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ship-to Country/Region Code</source>
+          <target state="translated">Livrare-la cod tara/regiune</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Sales Ship - Field Ship-to Country/Region Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 284772200 - Field 2743501653 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ship-to Name</source>
+          <target state="translated">Livrare-la nume</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Sales Ship - Field Ship-to Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 284772200 - Field 3172878019 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ship-to Post Code</source>
+          <target state="translated">Livrare-la cod postal</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Sales Ship - Field Ship-to Post Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 284772200 - Field 1577567912 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 1 Code</source>
+          <target state="translated">Comandă rapidă cod dimens. 1</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Sales Ship - Field Shortcut Dimension 1 Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 284772200 - Field 1003760969 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shortcut Dimension 2 Code</source>
+          <target state="translated">Comandă rapidă cod dimens. 2</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Sales Ship - Field Shortcut Dimension 2 Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3340695887 - NamedType 652464844" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Currency Exchange Rate is missing for: %1</source>
+          <target state="translated">Lipseste cursul de schimb pentru: %1</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSA Actualizare Cursuri BNR - NamedType Text50000</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3340695887 - NamedType 14768227" size-unit="char" translate="yes" xml:space="preserve">
+          <source>BNR Exchange Rates not imported.</source>
+          <target state="translated">Importul Cursului de schimb BNR nu a reusit:</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSA Actualizare Cursuri BNR - NamedType Text50001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2034032412 - NamedType 328726125" size-unit="char" translate="yes" xml:space="preserve">
+          <source>{}"'[]</source>
+          <target state="translated">{}"'[]</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSA Interogare TVA Anaf - NamedType FormatChar</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2034032412 - NamedType 2476940767" size-unit="char" translate="yes" xml:space="preserve">
+          <source>[{"cui":%1,"data":"%2"}]</source>
+          <target state="translated">[{"cui":%1,"data":"%2"}]</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSA Interogare TVA Anaf - NamedType Text000</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2034032412 - NamedType 3869652980" size-unit="char" translate="yes" xml:space="preserve">
+          <source>","</source>
+          <target state="translated">","</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSA Interogare TVA Anaf - NamedType TextSeparator</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2034032412 - NamedType 1481131875" size-unit="char" translate="yes" xml:space="preserve">
+          <source>,"</source>
+          <target state="translated">,"</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSA Interogare TVA Anaf - NamedType TextSeparator1</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1453081613 - NamedType 328726125" size-unit="char" translate="yes" xml:space="preserve">
+          <source>{}"'[]</source>
+          <target state="translated">{}"'[]</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSA VerificareTVA.ro - NamedType FormatChar</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1453081613 - NamedType 1695921936" size-unit="char" translate="yes" xml:space="preserve">
+          <source>nume=%1&amp;pwd=%2&amp;cui=%3&amp;data=%4-%5-%6</source>
+          <target state="translated">nume=%1&amp;pwd=%2&amp;cui=%3&amp;data=%4-%5-%6</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSA VerificareTVA.ro - NamedType RequestStringTemplate</note>
+        </trans-unit>
+        <trans-unit id="Page 817196585 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Non-Invoiced Purch. Rcpt.</source>
+          <target state="translated">Receptii Cumparare Nefacturate</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 817196585 - NamedType 2476940767" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Do you want to post the invoice?</source>
+          <target state="translated">Doriti sa inregistrati factura?</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - NamedType Text000</note>
+        </trans-unit>
+        <trans-unit id="Page 817196585 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CM+15D</source>
+          <target state="translated">CM+15D</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Page 817196585 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
+          <source>There is nothing to post.</source>
+          <target state="translated">Nimic de inregistrat.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - NamedType Text002</note>
+        </trans-unit>
+        <trans-unit id="Page 817196585 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The specified invoice posting date is overdue already. Do you still want to post the invoice?</source>
+          <target state="translated">Data de inregistrare a facturii speciicare are deja data de scadenta depasita. Doriti sa inregistrati in continuare factura?</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - NamedType Text003</note>
+        </trans-unit>
+        <trans-unit id="Page 817196585 - NamedType 732759939" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Please enter the posting date.</source>
+          <target state="translated">Introduceti data de inregistrare.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - NamedType Text004</note>
+        </trans-unit>
+        <trans-unit id="Page 817196585 - Control 1009979295 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Invoice Posting Date</source>
+          <target state="translated">Data inregistrare factura</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Control InvPostingDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 817196585 - Action 76564158 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>&amp;Receipt</source>
+          <target state="translated">&amp;Receptie</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Action &amp;Receipt - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 817196585 - Action 4125097576 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Card</source>
+          <target state="translated">Card</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Action Card - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 817196585 - Action 3000180178 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Co&amp;mments</source>
+          <target state="translated">Co&amp;mentarii</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Action Co&amp;mments - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 817196585 - Action 84074407 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Statistics</source>
+          <target state="translated">Statistica</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Action Statistics - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 817196585 - Action 1193896936 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>P&amp;ost Invoices</source>
+          <target state="translated">Î&amp;nregistrare Facturi</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Action P&amp;ost Invoices - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 817196585 - Action 4236135242 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>P&amp;ost</source>
+          <target state="translated">Î&amp;nregistrare</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Action P&amp;ost - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 817196585 - Action 732253414 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Post &amp;Batch</source>
+          <target state="translated">Inregistrare &amp;Lot</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Action Post &amp;Batch - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 817196585 - Action 1333595352 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Post and &amp;Print</source>
+          <target state="translated">Înregistrare şi &amp;imprimare</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Action Post and &amp;Print - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 817196585 - Action 3106002577 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>F&amp;unctions</source>
+          <target state="translated">F&amp;uncţii</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Action F&amp;unctions - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 817196585 - Action 52730441 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Suggest Lines...</source>
+          <target state="translated">Sugerare linii...</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Action Suggest Lines... - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1118646131 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Search Items</source>
+          <target state="translated">Cautare articole</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Search Items - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1118646131 - Control 4200184881 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No.</source>
+          <target state="translated">Nr.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Search Items - Control No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1118646131 - Control 3638875869 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item Description</source>
+          <target state="translated">Descriere articol</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Search Items - Control SearchFullDescritpion - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1118646131 - Control 3798681774 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Variant Code</source>
+          <target state="translated">Cod variantă</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Search Items - Control VariantCode - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3248229538 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Non-Invoiced Sales Shipment</source>
+          <target state="translated">Livrari Vanzari Ne-facturate</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSANon-Invoiced Sales Shipment - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3248229538 - NamedType 2476940767" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Do you want to post the invoice?</source>
+          <target state="translated">Doriti sa inregistrati factura?</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSANon-Invoiced Sales Shipment - NamedType Text000</note>
+        </trans-unit>
+        <trans-unit id="Page 3248229538 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CM+15D</source>
+          <target state="translated">CM+15D</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSANon-Invoiced Sales Shipment - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Page 3248229538 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
+          <source>There is nothing to post.</source>
+          <target state="translated">Nimic de inregistrat.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSANon-Invoiced Sales Shipment - NamedType Text002</note>
+        </trans-unit>
+        <trans-unit id="Page 3248229538 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The specified invoice posting date is overdue already. Do you still want to post the invoice?</source>
+          <target state="translated">Data de inregistrare a facturii speciicare are deja data de scadenta depasita. Doriti sa inregistrati in continuare factura?</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSANon-Invoiced Sales Shipment - NamedType Text003</note>
+        </trans-unit>
+        <trans-unit id="Page 3248229538 - NamedType 732759939" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Please enter the posting date.</source>
+          <target state="translated">Introduceti data de inregistrare.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSANon-Invoiced Sales Shipment - NamedType Text004</note>
+        </trans-unit>
+        <trans-unit id="Page 3248229538 - Control 1009979295 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Invoice Posting Date</source>
+          <target state="translated">Data inregistrare factura</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSANon-Invoiced Sales Shipment - Control InvPostingDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3248229538 - Action 1603851298 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>&amp;Shipment</source>
+          <target state="translated">&amp;Livrare</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSANon-Invoiced Sales Shipment - Action &amp;Shipment - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3248229538 - Action 4125097576 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Card</source>
+          <target state="translated">Card</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSANon-Invoiced Sales Shipment - Action Card - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3248229538 - Action 3000180178 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Co&amp;mments</source>
+          <target state="translated">Co&amp;mentarii</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSANon-Invoiced Sales Shipment - Action Co&amp;mments - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3248229538 - Action 84074407 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Statistics</source>
+          <target state="translated">Statistica</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSANon-Invoiced Sales Shipment - Action Statistics - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3248229538 - Action 1193896936 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>P&amp;ost Invoices</source>
+          <target state="translated">Î&amp;nregistrare Facturi</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSANon-Invoiced Sales Shipment - Action P&amp;ost Invoices - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3248229538 - Action 4236135242 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>P&amp;ost</source>
+          <target state="translated">Î&amp;nregistrare</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSANon-Invoiced Sales Shipment - Action P&amp;ost - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3248229538 - Action 732253414 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Post &amp;Batch</source>
+          <target state="translated">Inregistrare &amp;Lot</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSANon-Invoiced Sales Shipment - Action Post &amp;Batch - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3248229538 - Action 1333595352 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Post and &amp;Print</source>
+          <target state="translated">Înregistrare şi &amp;imprimare</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSANon-Invoiced Sales Shipment - Action Post and &amp;Print - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3248229538 - Action 3106002577 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>F&amp;unctions</source>
+          <target state="translated">F&amp;uncţii</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSANon-Invoiced Sales Shipment - Action F&amp;unctions - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3248229538 - Action 52730441 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Suggest Lines...</source>
+          <target state="translated">Sugerare linii...</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSANon-Invoiced Sales Shipment - Action Suggest Lines... - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1391927200 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Inv. Non-Invoiced Purch. Rcpt.</source>
+          <target state="translated">Rec. Fact. Cump. Nefact.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inv. Non-Inv Purch. Rcpt. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1391927200 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posting invoices  #1########## @2@@@@@@@@@@@@@</source>
+          <target state="translated">Inregistrare facturi  #1########## @2@@@@@@@@@@@@@</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inv. Non-Inv Purch. Rcpt. - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Report 1391927200 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
+          <source>%1 invoices out of a total of %2 have now been posted.</source>
+          <target state="translated">%1 facturi din totalul de %2 au fost acum inregistrate.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inv. Non-Inv Purch. Rcpt. - NamedType Text002</note>
+        </trans-unit>
+        <trans-unit id="Report 1391927200 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The specified invoice posting date is already overdue for some receipts. Do you still want to post the invoices?</source>
+          <target state="translated">Data de inregistare a facturii este deja cu data de scadenta depasita pentru unele receptii. Doriti sa  inregistrare in continuare facturile?</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inv. Non-Inv Purch. Rcpt. - NamedType Text003</note>
+        </trans-unit>
+        <trans-unit id="Report 1391927200 - NamedType 732759939" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CM+15D</source>
+          <target state="translated">CM+15D</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inv. Non-Inv Purch. Rcpt. - NamedType Text004</note>
+        </trans-unit>
+        <trans-unit id="Report 1391927200 - NamedType 1370456556" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Please enter the posting date.</source>
+          <target state="translated">Introduceti data de inregistrare.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inv. Non-Inv Purch. Rcpt. - NamedType Text005</note>
+        </trans-unit>
+        <trans-unit id="Report 1391927200 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Options</source>
+          <target state="translated">Opţiuni</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inv. Non-Inv Purch. Rcpt. - Control Options - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1391927200 - Control 2780809675 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Calc. Inv. Discount</source>
+          <target state="translated">Calcul reducere fact.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inv. Non-Inv Purch. Rcpt. - Control CalcInvDisc - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1391927200 - Control 1009979295 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posting Date</source>
+          <target state="translated">Data inreg.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inv. Non-Inv Purch. Rcpt. - Control InvPostingDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1391927200 - Control 4126205201 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Replace Document Date</source>
+          <target state="translated">Inlocuire data document</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inv. Non-Inv Purch. Rcpt. - Control ReplaceDocumentDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3425121640 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Inv. Non-Invoiced Sales Shpt.</source>
+          <target state="translated">Livrare Fact. Vanz. Nefact.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inv. Non-Inv Sales Shpt. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3425121640 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posting invoices  #1########## @2@@@@@@@@@@@@@</source>
+          <target state="translated">Inregistrare facturi  #1########## @2@@@@@@@@@@@@@</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inv. Non-Inv Sales Shpt. - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Report 3425121640 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
+          <source>%1 invoices out of a total of %2 have now been posted.</source>
+          <target state="translated">%1 facturi din totalul de %2 au fost acum inregistrate.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inv. Non-Inv Sales Shpt. - NamedType Text002</note>
+        </trans-unit>
+        <trans-unit id="Report 3425121640 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The specified invoice posting date is already overdue for some shipments. Do you still want to post the invoices?</source>
+          <target state="translated">Data de inregistare a facturii este deja cu data de scadenta depasita pentru unele livrari. Doriti sa  inregistrare in continuare facturile</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inv. Non-Inv Sales Shpt. - NamedType Text003</note>
+        </trans-unit>
+        <trans-unit id="Report 3425121640 - NamedType 732759939" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CM+15D</source>
+          <target state="translated">CM+15D</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inv. Non-Inv Sales Shpt. - NamedType Text004</note>
+        </trans-unit>
+        <trans-unit id="Report 3425121640 - NamedType 1370456556" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Please enter the posting date.</source>
+          <target state="translated">Introduceti data de inregistrare.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inv. Non-Inv Sales Shpt. - NamedType Text005</note>
+        </trans-unit>
+        <trans-unit id="Report 3425121640 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Options</source>
+          <target state="translated">Opţiuni</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inv. Non-Inv Sales Shpt. - Control Options - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3425121640 - Control 2780809675 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Calc. Inv. Discount</source>
+          <target state="translated">Calcul reducere fact.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inv. Non-Inv Sales Shpt. - Control CalcInvDisc - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3425121640 - Control 1009979295 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posting Date</source>
+          <target state="translated">Data inreg.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inv. Non-Inv Sales Shpt. - Control InvPostingDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3425121640 - Control 4126205201 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Replace Document Date</source>
+          <target state="translated">Inlocuire data document</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inv. Non-Inv Sales Shpt. - Control ReplaceDocumentDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 984538696 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sug. Non-Invoiced Purch. Rcpt.</source>
+          <target state="translated">Sug. Rec. Cump. Nefact.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Sug. Non-Inv Purch. Rcpt. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 984538696 - NamedType 2476940767" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CM+15D</source>
+          <target state="translated">CM+15D</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Sug. Non-Inv Purch. Rcpt. - NamedType Text000</note>
+        </trans-unit>
+        <trans-unit id="Report 27010832 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sug. Non-Invoiced Sales Shpt.</source>
+          <target state="translated">Sug. Livr. Vanzare Nefact.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Sug. Non-Inv Sales Shpt. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3429708249 - Action 2126435341 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
+          <source>Verificare ANAF</source>
+          <target state="translated">Verificare ANAF</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Customer Card 71101 - Action SSA Verificare ANAF - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3429708249 - Action 3413280856 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
+          <source>Verificare CUI</source>
+          <target state="translated">Verificare CUI</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Customer Card 71101 - Action SSA Verificare CUI - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 663633022 - Action 1445301238 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 262200983">
+          <source>Import BNR</source>
+          <target state="translated">Import BNR</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Localization Setup 71100 - Action SSA ImportBNR - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 663633022 - Control 1054337158 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 262200983">
+          <source>VAT API</source>
+          <target state="translated">API Verificare TVA</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Localization Setup 71100 - Control SSA VAT API - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 958700371 - Action 3538042150 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
+          <source>Search Items</source>
+          <target state="translated">Cautare articole</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Sales Order Subform 71103 - Action SSA Search Item - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3673113758 - Action 3538042150 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 416138076">
+          <source>Search Items</source>
+          <target state="translated">Cautare articole</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Sales Quote Subform 71104 - Action SSA Search Item - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3857282472 - Action 2126435341 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4055858012">
+          <source>Verificare ANAF</source>
+          <target state="translated">Verificare ANAF</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Vendor Card 71102 - Action SSA Verificare ANAF - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3857282472 - Action 3413280856 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4055858012">
+          <source>Verificare CUI</source>
+          <target state="translated">Verificare CUI</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Vendor Card 71102 - Action SSA Verificare CUI - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 663633022 - Field 583886741 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 262200983">
+          <source>Enable ANAF VAT</source>
+          <target state="translated">Activare Verificare TVA ANAF</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Localization Setup 71100 - Field SSA Enable ANAF VAT - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 663633022 - Field 2473502339 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 262200983">
+          <source>VAT API URL</source>
+          <target state="translated">URL API Verificare TVA</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Localization Setup 71100 - Field SSA VAT API URL - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 663633022 - Field 4122419819 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 262200983">
+          <source>VAT API URL ANAF</source>
+          <target state="translated">URL API Verificare TVA ANAF</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Localization Setup 71100 - Field SSA VAT API URL ANAF - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 663633022 - Field 571798319 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 262200983">
+          <source>VAT Password</source>
+          <target state="translated">Parola VerificareTVA</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Localization Setup 71100 - Field SSA VAT Password - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 663633022 - Field 1837989144 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 262200983">
+          <source>VAT User Name</source>
+          <target state="translated">Nume Utilizator VerificateTVA</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Localization Setup 71100 - Field SSA VAT User Name - Property Caption</note>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

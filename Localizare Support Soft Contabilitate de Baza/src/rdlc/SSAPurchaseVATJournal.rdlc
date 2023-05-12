@@ -1,0 +1,476 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="COMPANYNAME">
+          <DataField>COMPANYNAME</DataField>
+        </Field>
+        <Field Name="DateFilt">
+          <DataField>DateFilt</DataField>
+        </Field>
+        <Field Name="gTxcValPlat">
+          <DataField>gTxcValPlat</DataField>
+        </Field>
+        <Field Name="gtxcOperatEx">
+          <DataField>gtxcOperatEx</DataField>
+        </Field>
+        <Field Name="gtxcOperatNeex">
+          <DataField>gtxcOperatNeex</DataField>
+        </Field>
+        <Field Name="gTxcAquisition">
+          <DataField>gTxcAquisition</DataField>
+        </Field>
+        <Field Name="gTxcIntracomAquisition">
+          <DataField>gTxcIntracomAquisition</DataField>
+        </Field>
+        <Field Name="gTxcForResale">
+          <DataField>gTxcForResale</DataField>
+        </Field>
+        <Field Name="gTxcExempt">
+          <DataField>gTxcExempt</DataField>
+        </Field>
+        <Field Name="gTxcFreeVAT">
+          <DataField>gTxcFreeVAT</DataField>
+        </Field>
+        <Field Name="gTxcGoodsServices150">
+          <DataField>gTxcGoodsServices150</DataField>
+        </Field>
+        <Field Name="gTxcGoodsServices">
+          <DataField>gTxcGoodsServices</DataField>
+        </Field>
+        <Field Name="gTxcAchizitii">
+          <DataField>gTxcAchizitii</DataField>
+        </Field>
+        <Field Name="gTxcCrtNo">
+          <DataField>gTxcCrtNo</DataField>
+        </Field>
+        <Field Name="gTxcOrderNo">
+          <DataField>gTxcOrderNo</DataField>
+        </Field>
+        <Field Name="gTxcDate">
+          <DataField>gTxcDate</DataField>
+        </Field>
+        <Field Name="gTxcVendor">
+          <DataField>gTxcVendor</DataField>
+        </Field>
+        <Field Name="gTxcRegNo">
+          <DataField>gTxcRegNo</DataField>
+        </Field>
+        <Field Name="gTxcDocAmount">
+          <DataField>gTxcDocAmount</DataField>
+        </Field>
+        <Field Name="gTxc19">
+          <DataField>gTxc19</DataField>
+        </Field>
+        <Field Name="gTxc20">
+          <DataField>gTxc20</DataField>
+        </Field>
+        <Field Name="gTxc9">
+          <DataField>gTxc9</DataField>
+        </Field>
+        <Field Name="gTxcBaseAmount">
+          <DataField>gTxcBaseAmount</DataField>
+        </Field>
+        <Field Name="gTxcVATAmount">
+          <DataField>gTxcVATAmount</DataField>
+        </Field>
+        <Field Name="gTxcDocument">
+          <DataField>gTxcDocument</DataField>
+        </Field>
+        <Field Name="gTxcPaymentNo">
+          <DataField>gTxcPaymentNo</DataField>
+        </Field>
+        <Field Name="gTxcPurchaseVAT">
+          <DataField>gTxcPurchaseVAT</DataField>
+        </Field>
+        <Field Name="gTxcAquisition2">
+          <DataField>gTxcAquisition2</DataField>
+        </Field>
+        <Field Name="CrtNo">
+          <DataField>CrtNo</DataField>
+        </Field>
+        <Field Name="DocumentNo">
+          <DataField>DocumentNo</DataField>
+        </Field>
+        <Field Name="PDate">
+          <DataField>PDate</DataField>
+        </Field>
+        <Field Name="BilltoPaytoNo_VUnreal">
+          <DataField>BilltoPaytoNo_VUnreal</DataField>
+        </Field>
+        <Field Name="gTxtVendorName">
+          <DataField>gTxtVendorName</DataField>
+        </Field>
+        <Field Name="gTxtFiscalCode">
+          <DataField>gTxtFiscalCode</DataField>
+        </Field>
+        <Field Name="PayNo">
+          <DataField>PayNo</DataField>
+        </Field>
+        <Field Name="gDecTotalAmount">
+          <DataField>gDecTotalAmount</DataField>
+        </Field>
+        <Field Name="gDecTotalAmountFormat">
+          <DataField>gDecTotalAmountFormat</DataField>
+        </Field>
+        <Field Name="basea1_2_3_15">
+          <DataField>basea1_2_3_15</DataField>
+        </Field>
+        <Field Name="basea1_2_3_15Format">
+          <DataField>basea1_2_3_15Format</DataField>
+        </Field>
+        <Field Name="vata1_2_3_12">
+          <DataField>vata1_2_3_12</DataField>
+        </Field>
+        <Field Name="vata1_2_3_12Format">
+          <DataField>vata1_2_3_12Format</DataField>
+        </Field>
+        <Field Name="BaseA_20">
+          <DataField>BaseA_20</DataField>
+        </Field>
+        <Field Name="BaseA_20Format">
+          <DataField>BaseA_20Format</DataField>
+        </Field>
+        <Field Name="VATA_20">
+          <DataField>VATA_20</DataField>
+        </Field>
+        <Field Name="VATA_20Format">
+          <DataField>VATA_20Format</DataField>
+        </Field>
+        <Field Name="basea4_5_16">
+          <DataField>basea4_5_16</DataField>
+        </Field>
+        <Field Name="basea4_5_16Format">
+          <DataField>basea4_5_16Format</DataField>
+        </Field>
+        <Field Name="vata4_5_16">
+          <DataField>vata4_5_16</DataField>
+        </Field>
+        <Field Name="vata4_5_16Format">
+          <DataField>vata4_5_16Format</DataField>
+        </Field>
+        <Field Name="gDecTotalAmountEx">
+          <DataField>gDecTotalAmountEx</DataField>
+        </Field>
+        <Field Name="gDecTotalAmountExFormat">
+          <DataField>gDecTotalAmountExFormat</DataField>
+        </Field>
+        <Field Name="basea22">
+          <DataField>basea22</DataField>
+        </Field>
+        <Field Name="basea22Format">
+          <DataField>basea22Format</DataField>
+        </Field>
+        <Field Name="vata22">
+          <DataField>vata22</DataField>
+        </Field>
+        <Field Name="vata22Format">
+          <DataField>vata22Format</DataField>
+        </Field>
+        <Field Name="basea21">
+          <DataField>basea21</DataField>
+        </Field>
+        <Field Name="basea21Format">
+          <DataField>basea21Format</DataField>
+        </Field>
+        <Field Name="vata21">
+          <DataField>vata21</DataField>
+        </Field>
+        <Field Name="vata21Format">
+          <DataField>vata21Format</DataField>
+        </Field>
+        <Field Name="basea13">
+          <DataField>basea13</DataField>
+        </Field>
+        <Field Name="basea13Format">
+          <DataField>basea13Format</DataField>
+        </Field>
+        <Field Name="basea6_9">
+          <DataField>basea6_9</DataField>
+        </Field>
+        <Field Name="basea6_9Format">
+          <DataField>basea6_9Format</DataField>
+        </Field>
+        <Field Name="vata7_8">
+          <DataField>vata7_8</DataField>
+        </Field>
+        <Field Name="vata7_8Format">
+          <DataField>vata7_8Format</DataField>
+        </Field>
+        <Field Name="basea7_10">
+          <DataField>basea7_10</DataField>
+        </Field>
+        <Field Name="basea7_10Format">
+          <DataField>basea7_10Format</DataField>
+        </Field>
+        <Field Name="basea8_11">
+          <DataField>basea8_11</DataField>
+        </Field>
+        <Field Name="basea8_11Format">
+          <DataField>basea8_11Format</DataField>
+        </Field>
+        <Field Name="basea14">
+          <DataField>basea14</DataField>
+        </Field>
+        <Field Name="basea14Format">
+          <DataField>basea14Format</DataField>
+        </Field>
+        <Field Name="vata11">
+          <DataField>vata11</DataField>
+        </Field>
+        <Field Name="vata11Format">
+          <DataField>vata11Format</DataField>
+        </Field>
+        <Field Name="basea12">
+          <DataField>basea12</DataField>
+        </Field>
+        <Field Name="basea12Format">
+          <DataField>basea12Format</DataField>
+        </Field>
+        <Field Name="vata9">
+          <DataField>vata9</DataField>
+        </Field>
+        <Field Name="vata9Format">
+          <DataField>vata9Format</DataField>
+        </Field>
+        <Field Name="basea17">
+          <DataField>basea17</DataField>
+        </Field>
+        <Field Name="basea17Format">
+          <DataField>basea17Format</DataField>
+        </Field>
+        <Field Name="vata10">
+          <DataField>vata10</DataField>
+        </Field>
+        <Field Name="vata10Format">
+          <DataField>vata10Format</DataField>
+        </Field>
+        <Field Name="CrtNo1">
+          <DataField>CrtNo1</DataField>
+        </Field>
+        <Field Name="DocumentNo1">
+          <DataField>DocumentNo1</DataField>
+        </Field>
+        <Field Name="Pdate1">
+          <DataField>Pdate1</DataField>
+        </Field>
+        <Field Name="BilltoPaytoNo_VATEntry">
+          <DataField>BilltoPaytoNo_VATEntry</DataField>
+        </Field>
+        <Field Name="gTxtVendorName1">
+          <DataField>gTxtVendorName1</DataField>
+        </Field>
+        <Field Name="gTxtFiscalCode1">
+          <DataField>gTxtFiscalCode1</DataField>
+        </Field>
+        <Field Name="PayNo1">
+          <DataField>PayNo1</DataField>
+        </Field>
+        <Field Name="gDecTotalAmount1">
+          <DataField>gDecTotalAmount1</DataField>
+        </Field>
+        <Field Name="gDecTotalAmount1Format">
+          <DataField>gDecTotalAmount1Format</DataField>
+        </Field>
+        <Field Name="basea1_2_3_15_1">
+          <DataField>basea1_2_3_15_1</DataField>
+        </Field>
+        <Field Name="basea1_2_3_15_1Format">
+          <DataField>basea1_2_3_15_1Format</DataField>
+        </Field>
+        <Field Name="vata1_2_3_12_1">
+          <DataField>vata1_2_3_12_1</DataField>
+        </Field>
+        <Field Name="vata1_2_3_12_1Format">
+          <DataField>vata1_2_3_12_1Format</DataField>
+        </Field>
+        <Field Name="BaseA_20_1">
+          <DataField>BaseA_20_1</DataField>
+        </Field>
+        <Field Name="BaseA_20_1Format">
+          <DataField>BaseA_20_1Format</DataField>
+        </Field>
+        <Field Name="VATA_20_1">
+          <DataField>VATA_20_1</DataField>
+        </Field>
+        <Field Name="VATA_20_1Format">
+          <DataField>VATA_20_1Format</DataField>
+        </Field>
+        <Field Name="basea4_5_16_1">
+          <DataField>basea4_5_16_1</DataField>
+        </Field>
+        <Field Name="basea4_5_16_1Format">
+          <DataField>basea4_5_16_1Format</DataField>
+        </Field>
+        <Field Name="vata4_5_16_1">
+          <DataField>vata4_5_16_1</DataField>
+        </Field>
+        <Field Name="vata4_5_16_1Format">
+          <DataField>vata4_5_16_1Format</DataField>
+        </Field>
+        <Field Name="gDecTotalAmountEx1">
+          <DataField>gDecTotalAmountEx1</DataField>
+        </Field>
+        <Field Name="gDecTotalAmountEx1Format">
+          <DataField>gDecTotalAmountEx1Format</DataField>
+        </Field>
+        <Field Name="basea22_1">
+          <DataField>basea22_1</DataField>
+        </Field>
+        <Field Name="basea22_1Format">
+          <DataField>basea22_1Format</DataField>
+        </Field>
+        <Field Name="vata22_1">
+          <DataField>vata22_1</DataField>
+        </Field>
+        <Field Name="vata22_1Format">
+          <DataField>vata22_1Format</DataField>
+        </Field>
+        <Field Name="basea21_1">
+          <DataField>basea21_1</DataField>
+        </Field>
+        <Field Name="basea21_1Format">
+          <DataField>basea21_1Format</DataField>
+        </Field>
+        <Field Name="vata21_1">
+          <DataField>vata21_1</DataField>
+        </Field>
+        <Field Name="vata21_1Format">
+          <DataField>vata21_1Format</DataField>
+        </Field>
+        <Field Name="basea13_1">
+          <DataField>basea13_1</DataField>
+        </Field>
+        <Field Name="basea13_1Format">
+          <DataField>basea13_1Format</DataField>
+        </Field>
+        <Field Name="basea6_9_1">
+          <DataField>basea6_9_1</DataField>
+        </Field>
+        <Field Name="basea6_9_1Format">
+          <DataField>basea6_9_1Format</DataField>
+        </Field>
+        <Field Name="vata7_8_1">
+          <DataField>vata7_8_1</DataField>
+        </Field>
+        <Field Name="vata7_8_1Format">
+          <DataField>vata7_8_1Format</DataField>
+        </Field>
+        <Field Name="basea7_10_1">
+          <DataField>basea7_10_1</DataField>
+        </Field>
+        <Field Name="basea7_10_1Format">
+          <DataField>basea7_10_1Format</DataField>
+        </Field>
+        <Field Name="basea8_11_1">
+          <DataField>basea8_11_1</DataField>
+        </Field>
+        <Field Name="basea8_11_1Format">
+          <DataField>basea8_11_1Format</DataField>
+        </Field>
+        <Field Name="basea14_1">
+          <DataField>basea14_1</DataField>
+        </Field>
+        <Field Name="basea14_1Format">
+          <DataField>basea14_1Format</DataField>
+        </Field>
+        <Field Name="vata11_1">
+          <DataField>vata11_1</DataField>
+        </Field>
+        <Field Name="vata11_1Format">
+          <DataField>vata11_1Format</DataField>
+        </Field>
+        <Field Name="basea12_1">
+          <DataField>basea12_1</DataField>
+        </Field>
+        <Field Name="basea12_1Format">
+          <DataField>basea12_1Format</DataField>
+        </Field>
+        <Field Name="vata9_1">
+          <DataField>vata9_1</DataField>
+        </Field>
+        <Field Name="vata9_1Format">
+          <DataField>vata9_1Format</DataField>
+        </Field>
+        <Field Name="basea17_1">
+          <DataField>basea17_1</DataField>
+        </Field>
+        <Field Name="basea17_1Format">
+          <DataField>basea17_1Format</DataField>
+        </Field>
+        <Field Name="vata10_1">
+          <DataField>vata10_1</DataField>
+        </Field>
+        <Field Name="vata10_1Format">
+          <DataField>vata10_1Format</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

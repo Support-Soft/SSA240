@@ -1,0 +1,22 @@
+{
+    "name": "Claudiu",
+    "description": "Claudiu's rules",
+    "rules": [
+        {
+            "id": "AA0008",
+            "action": "None",
+            "justification": "Disregarding missing brackets"
+        },
+        {
+            "id": "AA0074",
+            "action": "None",
+            "justification": "No Hungarian Notation, please"
+        },
+        {
+            "id": "AA0021",
+            "action": "None",
+            "justification": "order of var types"
+        }
+
+    ]
+}

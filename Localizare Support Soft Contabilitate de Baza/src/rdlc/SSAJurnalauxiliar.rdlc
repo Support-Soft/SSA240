@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="nrcrt">
+          <DataField>nrcrt</DataField>
+        </Field>
+        <Field Name="PostingDate_GLEntry">
+          <DataField>PostingDate_GLEntry</DataField>
+        </Field>
+        <Field Name="DocumentType_GLEntry">
+          <DataField>DocumentType_GLEntry</DataField>
+        </Field>
+        <Field Name="DocNo">
+          <DataField>DocNo</DataField>
+        </Field>
+        <Field Name="Description_GLEntry">
+          <DataField>Description_GLEntry</DataField>
+        </Field>
+        <Field Name="EntryNo_GLEntry">
+          <DataField>EntryNo_GLEntry</DataField>
+        </Field>
+        <Field Name="DebitAmount_GLEntry">
+          <DataField>DebitAmount_GLEntry</DataField>
+        </Field>
+        <Field Name="DebitAmount_GLEntryFormat">
+          <DataField>DebitAmount_GLEntryFormat</DataField>
+        </Field>
+        <Field Name="CreditAmount_GLEntry">
+          <DataField>CreditAmount_GLEntry</DataField>
+        </Field>
+        <Field Name="CreditAmount_GLEntryFormat">
+          <DataField>CreditAmount_GLEntryFormat</DataField>
+        </Field>
+        <Field Name="SourceCode_GLEntry">
+          <DataField>SourceCode_GLEntry</DataField>
+        </Field>
+        <Field Name="Title">
+          <DataField>Title</DataField>
+        </Field>
+        <Field Name="CompName">
+          <DataField>CompName</DataField>
+        </Field>
+        <Field Name="CompNameCaption">
+          <DataField>CompNameCaption</DataField>
+        </Field>
+        <Field Name="CUI">
+          <DataField>CUI</DataField>
+        </Field>
+        <Field Name="CUICaption">
+          <DataField>CUICaption</DataField>
+        </Field>
+        <Field Name="ComTradeNo">
+          <DataField>ComTradeNo</DataField>
+        </Field>
+        <Field Name="ComTrNoCaption">
+          <DataField>ComTrNoCaption</DataField>
+        </Field>
+        <Field Name="PageCaption">
+          <DataField>PageCaption</DataField>
+        </Field>
+        <Field Name="NrCaption">
+          <DataField>NrCaption</DataField>
+        </Field>
+        <Field Name="DateCaption">
+          <DataField>DateCaption</DataField>
+        </Field>
+        <Field Name="TypeCaption">
+          <DataField>TypeCaption</DataField>
+        </Field>
+        <Field Name="NumarCaption">
+          <DataField>NumarCaption</DataField>
+        </Field>
+        <Field Name="DocCaption">
+          <DataField>DocCaption</DataField>
+        </Field>
+        <Field Name="DescrCaption">
+          <DataField>DescrCaption</DataField>
+        </Field>
+        <Field Name="DebitCaption">
+          <DataField>DebitCaption</DataField>
+        </Field>
+        <Field Name="CreditCaption">
+          <DataField>CreditCaption</DataField>
+        </Field>
+        <Field Name="NreCaption">
+          <DataField>NreCaption</DataField>
+        </Field>
+        <Field Name="SumeCaption">
+          <DataField>SumeCaption</DataField>
+        </Field>
+        <Field Name="IntrareCaption">
+          <DataField>IntrareCaption</DataField>
+        </Field>
+        <Field Name="TotalCaption">
+          <DataField>TotalCaption</DataField>
+        </Field>
+        <Field Name="DebitAccounts1">
+          <DataField>DebitAccounts1</DataField>
+        </Field>
+        <Field Name="CreditAccounts1">
+          <DataField>CreditAccounts1</DataField>
+        </Field>
+        <Field Name="DebitAmounts1">
+          <DataField>DebitAmounts1</DataField>
+        </Field>
+        <Field Name="DebitAmounts1Format">
+          <DataField>DebitAmounts1Format</DataField>
+        </Field>
+        <Field Name="CreditAmounts1">
+          <DataField>CreditAmounts1</DataField>
+        </Field>
+        <Field Name="CreditAmounts1Format">
+          <DataField>CreditAmounts1Format</DataField>
+        </Field>
+        <Field Name="Account">
+          <DataField>Account</DataField>
+        </Field>
+        <Field Name="BalAccount">
+          <DataField>BalAccount</DataField>
+        </Field>
+        <Field Name="Show1">
+          <DataField>Show1</DataField>
+        </Field>
+        <Field Name="DebitMovements">
+          <DataField>DebitMovements</DataField>
+        </Field>
+        <Field Name="DebitMovementsFormat">
+          <DataField>DebitMovementsFormat</DataField>
+        </Field>
+        <Field Name="CreditMovements">
+          <DataField>CreditMovements</DataField>
+        </Field>
+        <Field Name="CreditMovementsFormat">
+          <DataField>CreditMovementsFormat</DataField>
+        </Field>
+        <Field Name="DebitMovements2">
+          <DataField>DebitMovements2</DataField>
+        </Field>
+        <Field Name="DebitMovements2Format">
+          <DataField>DebitMovements2Format</DataField>
+        </Field>
+        <Field Name="CreditMovements2">
+          <DataField>CreditMovements2</DataField>
+        </Field>
+        <Field Name="CreditMovements2Format">
+          <DataField>CreditMovements2Format</DataField>
+        </Field>
+        <Field Name="PostingDate">
+          <DataField>PostingDate</DataField>
+        </Field>
+        <Field Name="show">
+          <DataField>show</DataField>
+        </Field>
+        <Field Name="show3">
+          <DataField>show3</DataField>
+        </Field>
+        <Field Name="n">
+          <DataField>n</DataField>
+        </Field>
+        <Field Name="DebitAmount_GLEntry2">
+          <DataField>DebitAmount_GLEntry2</DataField>
+        </Field>
+        <Field Name="DebitAmount_GLEntry2Format">
+          <DataField>DebitAmount_GLEntry2Format</DataField>
+        </Field>
+        <Field Name="CreditAmount_GLEntry2">
+          <DataField>CreditAmount_GLEntry2</DataField>
+        </Field>
+        <Field Name="CreditAmount_GLEntry2Format">
+          <DataField>CreditAmount_GLEntry2Format</DataField>
+        </Field>
+        <Field Name="EntryNo_GLEntry2">
+          <DataField>EntryNo_GLEntry2</DataField>
+        </Field>
+        <Field Name="Account2">
+          <DataField>Account2</DataField>
+        </Field>
+        <Field Name="BalAccount2">
+          <DataField>BalAccount2</DataField>
+        </Field>
+        <Field Name="number">
+          <DataField>number</DataField>
+        </Field>
+        <Field Name="DebitAccounts2">
+          <DataField>DebitAccounts2</DataField>
+        </Field>
+        <Field Name="CreditAccounts2">
+          <DataField>CreditAccounts2</DataField>
+        </Field>
+        <Field Name="DebitAmounts2">
+          <DataField>DebitAmounts2</DataField>
+        </Field>
+        <Field Name="DebitAmounts2Format">
+          <DataField>DebitAmounts2Format</DataField>
+        </Field>
+        <Field Name="CreditAmounts2">
+          <DataField>CreditAmounts2</DataField>
+        </Field>
+        <Field Name="CreditAmounts2Format">
+          <DataField>CreditAmounts2Format</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

@@ -1,0 +1,358 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="lblFilters">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lblFilters</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lblFilters</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lblShowACY">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lblShowACY</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lblShowACY</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lCol_AccountNo">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lCol_AccountNo</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lCol_AccountNo</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lCol_AccountName">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lCol_AccountName</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lCol_AccountName</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lCol_Debit">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lCol_Debit</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lCol_Debit</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lCol_Credit">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lCol_Credit</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lCol_Credit</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lCol_InitialBalance">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lCol_InitialBalance</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lCol_InitialBalance</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lCol_PrevMovements">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lCol_PrevMovements</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lCol_PrevMovements</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lCol_CurrMonthMov">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lCol_CurrMonthMov</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lCol_CurrMonthMov</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lCol_TotalAmounts">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lCol_TotalAmounts</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lCol_TotalAmounts</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lCol_EndingBalance">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lCol_EndingBalance</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lCol_EndingBalance</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lCol_AccountType">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lCol_AccountType</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lCol_AccountType</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="CompName">
+          <DataField>CompName</DataField>
+        </Field>
+        <Field Name="lblVatRegNo">
+          <DataField>lblVatRegNo</DataField>
+        </Field>
+        <Field Name="lblComTradeNo">
+          <DataField>lblComTradeNo</DataField>
+        </Field>
+        <Field Name="lblAdr">
+          <DataField>lblAdr</DataField>
+        </Field>
+        <Field Name="VatRegNo">
+          <DataField>VatRegNo</DataField>
+        </Field>
+        <Field Name="ComTradeNo">
+          <DataField>ComTradeNo</DataField>
+        </Field>
+        <Field Name="CompAdr">
+          <DataField>CompAdr</DataField>
+        </Field>
+        <Field Name="Today_Formated">
+          <DataField>Today_Formated</DataField>
+        </Field>
+        <Field Name="Txt_10">
+          <DataField>Txt_10</DataField>
+        </Field>
+        <Field Name="Txt_11">
+          <DataField>Txt_11</DataField>
+        </Field>
+        <Field Name="Txt_17">
+          <DataField>Txt_17</DataField>
+        </Field>
+        <Field Name="Filters">
+          <DataField>Filters</DataField>
+        </Field>
+        <Field Name="ReportTitle">
+          <DataField>ReportTitle</DataField>
+        </Field>
+        <Field Name="TitlePer">
+          <DataField>TitlePer</DataField>
+        </Field>
+        <Field Name="TitleBalType">
+          <DataField>TitleBalType</DataField>
+        </Field>
+        <Field Name="WithClosing">
+          <DataField>WithClosing</DataField>
+        </Field>
+        <Field Name="PrintAll">
+          <DataField>PrintAll</DataField>
+        </Field>
+        <Field Name="ShowACY">
+          <DataField>ShowACY</DataField>
+        </Field>
+        <Field Name="Col_Init">
+          <DataField>Col_Init</DataField>
+        </Field>
+        <Field Name="ShowLine">
+          <DataField>ShowLine</DataField>
+        </Field>
+        <Field Name="FontBold">
+          <DataField>FontBold</DataField>
+        </Field>
+        <Field Name="FontItalic">
+          <DataField>FontItalic</DataField>
+        </Field>
+        <Field Name="AccountTrialBalance">
+          <DataField>AccountTrialBalance</DataField>
+        </Field>
+        <Field Name="AccountNo">
+          <DataField>AccountNo</DataField>
+        </Field>
+        <Field Name="AccountName">
+          <DataField>AccountName</DataField>
+        </Field>
+        <Field Name="InitialDebitBalance">
+          <DataField>InitialDebitBalance</DataField>
+        </Field>
+        <Field Name="InitialDebitBalanceFormat">
+          <DataField>InitialDebitBalanceFormat</DataField>
+        </Field>
+        <Field Name="InitialCreditBalance">
+          <DataField>InitialCreditBalance</DataField>
+        </Field>
+        <Field Name="InitialCreditBalanceFormat">
+          <DataField>InitialCreditBalanceFormat</DataField>
+        </Field>
+        <Field Name="DebitAmount">
+          <DataField>DebitAmount</DataField>
+        </Field>
+        <Field Name="DebitAmountFormat">
+          <DataField>DebitAmountFormat</DataField>
+        </Field>
+        <Field Name="CreditAmount">
+          <DataField>CreditAmount</DataField>
+        </Field>
+        <Field Name="CreditAmountFormat">
+          <DataField>CreditAmountFormat</DataField>
+        </Field>
+        <Field Name="TotalAmounts_Debit">
+          <DataField>TotalAmounts_Debit</DataField>
+        </Field>
+        <Field Name="TotalAmounts_DebitFormat">
+          <DataField>TotalAmounts_DebitFormat</DataField>
+        </Field>
+        <Field Name="TotalAmounts_Credit">
+          <DataField>TotalAmounts_Credit</DataField>
+        </Field>
+        <Field Name="TotalAmounts_CreditFormat">
+          <DataField>TotalAmounts_CreditFormat</DataField>
+        </Field>
+        <Field Name="DebitBalance">
+          <DataField>DebitBalance</DataField>
+        </Field>
+        <Field Name="DebitBalanceFormat">
+          <DataField>DebitBalanceFormat</DataField>
+        </Field>
+        <Field Name="CreditBAlance">
+          <DataField>CreditBAlance</DataField>
+        </Field>
+        <Field Name="CreditBAlanceFormat">
+          <DataField>CreditBAlanceFormat</DataField>
+        </Field>
+        <Field Name="TotalInitDebitBalance">
+          <DataField>TotalInitDebitBalance</DataField>
+        </Field>
+        <Field Name="TotalInitDebitBalanceFormat">
+          <DataField>TotalInitDebitBalanceFormat</DataField>
+        </Field>
+        <Field Name="TotalInitCreditBalance">
+          <DataField>TotalInitCreditBalance</DataField>
+        </Field>
+        <Field Name="TotalInitCreditBalanceFormat">
+          <DataField>TotalInitCreditBalanceFormat</DataField>
+        </Field>
+        <Field Name="TotalDebit">
+          <DataField>TotalDebit</DataField>
+        </Field>
+        <Field Name="TotalDebitFormat">
+          <DataField>TotalDebitFormat</DataField>
+        </Field>
+        <Field Name="TotalCredit">
+          <DataField>TotalCredit</DataField>
+        </Field>
+        <Field Name="TotalCreditFormat">
+          <DataField>TotalCreditFormat</DataField>
+        </Field>
+        <Field Name="TotalAmounts_TotalDebit">
+          <DataField>TotalAmounts_TotalDebit</DataField>
+        </Field>
+        <Field Name="TotalAmounts_TotalDebitFormat">
+          <DataField>TotalAmounts_TotalDebitFormat</DataField>
+        </Field>
+        <Field Name="TotalAmounts_TotalCredit">
+          <DataField>TotalAmounts_TotalCredit</DataField>
+        </Field>
+        <Field Name="TotalAmounts_TotalCreditFormat">
+          <DataField>TotalAmounts_TotalCreditFormat</DataField>
+        </Field>
+        <Field Name="TotalDebitBalance">
+          <DataField>TotalDebitBalance</DataField>
+        </Field>
+        <Field Name="TotalDebitBalanceFormat">
+          <DataField>TotalDebitBalanceFormat</DataField>
+        </Field>
+        <Field Name="TotalCreditBalance">
+          <DataField>TotalCreditBalance</DataField>
+        </Field>
+        <Field Name="TotalCreditBalanceFormat">
+          <DataField>TotalCreditBalanceFormat</DataField>
+        </Field>
+        <Field Name="AccountType">
+          <DataField>AccountType</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>
