@@ -1,0 +1,28 @@
+{
+  "id": "3934417b-5c16-405e-bc53-5686d7648a19",
+  "name": "Localizare Support Soft Layouturi Comerciale",
+  "publisher": "Support-Soft SRL",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "19.0.0.0",
+  "idRanges": [
+    {
+      "from": 70900,
+      "to": 71099
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": false,
+    "includeSourceInSymbolFile": false
+  }
+}
