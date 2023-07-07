@@ -532,16 +532,6 @@ codeunit 70020 "SSA Item-Check Avail."
             CurrentQuantity2, CurrentReservedQty2, TotalQuantity2, EarliestAvailDate2, RecordId, ItemLocationCode);
     end;
 
-
-    procedure ShowNotificationDetails(AvailabilityCheckNotification: Notification)
-    var
-        ItemAvailabilityCheck: Page "Item Availability Check";
-    begin
-        ItemAvailabilityCheck.InitializeFromNotification(AvailabilityCheckNotification);
-        ItemAvailabilityCheck.SetHeading(AvailabilityCheckNotification.Message);
-        ItemAvailabilityCheck.RunModal;
-    end;
-
     local procedure CreateAndSendNotification(UnitOfMeasureCode: Code[20]; InventoryQty: Decimal; GrossReq: Decimal; ReservedReq: Decimal; SchedRcpt: Decimal; ReservedRcpt: Decimal; CurrentQuantity: Decimal; CurrentReservedQty: Decimal; TotalQuantity: Decimal; EarliestAvailDate: Date; RecordId: RecordID; LocationCode: Code[10]): Boolean
     var
         ItemAvailabilityCheck: Page "Item Availability Check";

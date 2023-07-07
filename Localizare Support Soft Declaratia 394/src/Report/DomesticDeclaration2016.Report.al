@@ -178,16 +178,17 @@ report 71701 "SSA Domestic Declaration 2016"
     end;
 
     trigger OnPostReport()
+    var
+        FileMgt: Codeunit "File Management";
+        FileName: Text;
     begin
-        OutFileXML.TextMode(true);
         WriteLine('</declaratie394>');
 
-        OutFileXML.Close;
-
-        LocalFileName := FileManagement.DownloadTempFile(TempServerTextFileName);
+        TempBlob.CreateInStream(XMLInStr);
+        DownloadFromStream(XMLInStr, Text001, '', FileMgt.GetToFilterText(Text002, FileName), FileName);
 
         w.Close;
-        Message(Text010, LocalFileName);
+        Message(Text010, FileName);
     end;
 
     trigger OnPreReport()
@@ -199,8 +200,6 @@ report 71701 "SSA Domestic Declaration 2016"
     var
         CompanyInfo: Record "Company Information";
         SSASetup: Record "SSA Localization Setup";
-        Customer: Record Customer;
-        Vendor: Record Vendor;
         DomesticDeclarations: Record "SSA Domestic Declaration";
         R1Buffer: Record "SSA D394 Buffer" temporary;
         R1Detaliu: Record "SSA D394 Buffer" temporary;
@@ -216,20 +215,12 @@ report 71701 "SSA Domestic Declaration 2016"
         NrFactCountBuff: Record "SSA D394 Buffer" temporary;
         NrBFCount: Record "SSA D394 Buffer" temporary;
         InfoDocBuff: Record "SSA D394 Buffer" temporary;
-        DateRec: Record Date;
-        FileManagement: Codeunit "File Management";
-        OutFileXML: File;
         StringLine: Text[1024];
         StartingDate: Date;
         EndingDate: Date;
         TotalPlataA: Integer;
         Text001: Label 'Export to XML File';
         Text002: Label 'XML Files (*.xml)|*.xml|All Files (*.*)|*.*';
-        Text003: Label 'Please enter the file name.';
-        Text004: Label 'Please select the domestic declaration.';
-        Text005: Label 'The domestic declaration cannot be exported in text file for S0 semester.';
-        LocalFileName: Text;
-        TempServerTextFileName: Text[250];
         Text006: Label '&';
         Text007: Label '''';
         Text008: Label '"';
@@ -238,17 +229,18 @@ report 71701 "SSA Domestic Declaration 2016"
         TotalRecNo: Integer;
         Text009: Label 'Processing Lines... @1@@@@@@@@@@';
         Text010: Label 'The File %1 has been created.';
+        TempBlob: Codeunit "Temp Blob";
+        XMLOutStr: OutStream;
+        XMLInStr: InStream;
 
     local
     procedure CreateDeclaration394()
     var
         OpEfectuate: Text[30];
     begin
-        //CreateDeclaration394
-        TempServerTextFileName := FileManagement.ServerTempFileName('xml');
 
-        OutFileXML.Create(TempServerTextFileName, TEXTENCODING::UTF8);
-        OutFileXML.TextMode(true);
+        //CreateDeclaration394
+        TempBlob.CreateOutStream(XMLOutStr);
         WriteLine('<?xml version="1.0"?>');
 
         AddElement(StringLine, 'declaratie394');
@@ -331,7 +323,7 @@ report 71701 "SSA Domestic Declaration 2016"
     begin
         //WriteLine
 
-        OutFileXML.Write(_StringToFile);
+        XMLOutStr.WriteText(_StringToFile);
     end;
 
     local
@@ -806,29 +798,29 @@ report 71701 "SSA Domestic Declaration 2016"
                         end;
                     end;
                 else begin
-                        if (_TipOperatie in ['L', 'V']) then begin
-                            Dec19 += _NrFact; //
-                            Dec20 += _Base; //bazaL
-                            Dec21 += _Amount;
-                        end;
-                        if (_TipOperatie in ['A', 'C']) then begin
-                            Dec22 += _NrFact; //
-                            Dec23 += _Base; //bazaA
-                            Dec24 += _Amount;
-                        end;
-                        if (_TipOperatie = 'AI') then begin
-                            Dec25 += _NrFact; //
-                            Dec26 += _Base; //bazaAI
-                            Dec27 += _Amount;
-                        end;
-                        if StartingDate < 20170101D then
-                            if _TipPartener = 2 then
-                                if (_TipOperatie = 'L') then begin
-                                    Dec28 += _NrFact; //
-                                    Dec29 += _Base; //bazaL_PF
-                                    Dec30 += _Amount;
-                                end;
+                    if (_TipOperatie in ['L', 'V']) then begin
+                        Dec19 += _NrFact; //
+                        Dec20 += _Base; //bazaL
+                        Dec21 += _Amount;
                     end;
+                    if (_TipOperatie in ['A', 'C']) then begin
+                        Dec22 += _NrFact; //
+                        Dec23 += _Base; //bazaA
+                        Dec24 += _Amount;
+                    end;
+                    if (_TipOperatie = 'AI') then begin
+                        Dec25 += _NrFact; //
+                        Dec26 += _Base; //bazaAI
+                        Dec27 += _Amount;
+                    end;
+                    if StartingDate < 20170101D then
+                        if _TipPartener = 2 then
+                            if (_TipOperatie = 'L') then begin
+                                Dec28 += _NrFact; //
+                                Dec29 += _Base; //bazaL_PF
+                                Dec30 += _Amount;
+                            end;
+                end;
             end;
             Modify;
         end;
@@ -1755,7 +1747,7 @@ report 71701 "SSA Domestic Declaration 2016"
                     AddAttribute(StringLine, 'serie', GetNoSeriesCodeText(FacturiBuffer."Document No."));
                 AddAttribute(StringLine, 'nr', GetNoSeriesNoText(FacturiBuffer."Document No."));
 
-                if "Stare Factura" = "Stare Factura"::"3-Autofactura" then begin
+                if "Stare Factura" = "Stare Factura"::"3-Autofactura" then
                     case Cota of
                         24:
                             begin
@@ -1825,7 +1817,6 @@ report 71701 "SSA Domestic Declaration 2016"
                             end;
 
                     end;
-                end;
                 WriteLine(StringLine);
                 Clear(StringLine);
                 WriteLine('</facturi>');
@@ -2023,24 +2014,19 @@ report 71701 "SSA Domestic Declaration 2016"
     local
     procedure ExportTempToTextFile(var _Intemp: Record "SSA D394 Buffer" temporary)
     var
-        OutFile: File;
-        Filename: Text;
-        ServerFileName: Text;
+        TempBlob: Codeunit "Temp Blob";
+        OutStr: Outstream;
+        InStr: InStream;
+        FileName: Text;
     begin
-        //Testing Purpose Only
-        ServerFileName := FileManagement.ServerTempFileName('txt');
-
-        OutFile.Create(ServerFileName);
-        OutFile.TextMode(true);
-
-        OutFile.Write('Tip Operatie' + ';' + 'Cota' + ';' + 'Nr. Partener' + ';' + 'Document No.' + ';' + 'Total' + ';' + 'Tip D394' + ';' + 'Tip Partener');
+        TempBlob.CreateOutStream(OutStr);
+        OutStr.WriteText('Tip Operatie' + ';' + 'Cota' + ';' + 'Nr. Partener' + ';' + 'Document No.' + ';' + 'Total' + ';' + 'Tip D394' + ';' + 'Tip Partener');
         if _Intemp.FindSet then
             repeat
-                OutFile.Write(Format(_Intemp.Pk1) + ';' + Format(_Intemp.Pk2) + ';' + _Intemp.Pk3 + ';' + _Intemp.PK4 + ';' + Format(_Intemp.Dec02) + ';' + _Intemp.Text04 + ';' + Format(_Intemp.Int01));
+                OutStr.WriteText(Format(_Intemp.Pk1) + ';' + Format(_Intemp.Pk2) + ';' + _Intemp.Pk3 + ';' + _Intemp.PK4 + ';' + Format(_Intemp.Dec02) + ';' + _Intemp.Text04 + ';' + Format(_Intemp.Int01));
             until _Intemp.Next = 0;
-
-        OutFile.Close;
-        FileManagement.DownloadTempFile(ServerFileName);
+        TempBlob.CreateInStream(InStr);
+        DownloadFromStream(InStr, Text001, '', '', FileName);
     end;
 
     local

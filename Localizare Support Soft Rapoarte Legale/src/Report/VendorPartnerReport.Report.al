@@ -9,7 +9,7 @@ report 71306 "SSA Vendor - Partner Report"
     {
         dataitem(Vendor; Vendor)
         {
-            DataItemTableView = SORTING ("No.");
+            DataItemTableView = SORTING("No.");
             PrintOnlyIfDetail = false;
             RequestFilterFields = "No.", "Search Name", "Date Filter";
             column(No_Vendor; Vendor."No.")
@@ -106,8 +106,8 @@ report 71306 "SSA Vendor - Partner Report"
             }
             dataitem("Vendor Ledger Entry"; "Vendor Ledger Entry")
             {
-                DataItemLink = "Vendor No." = FIELD ("No."), "Posting Date" = FIELD ("Date Filter"), "Global Dimension 1 Code" = FIELD ("Global Dimension 1 Filter"), "Global Dimension 2 Code" = FIELD ("Global Dimension 2 Filter"), "Date Filter" = FIELD ("Date Filter");
-                DataItemTableView = SORTING ("Vendor No.", "Posting Date", "Currency Code");
+                DataItemLink = "Vendor No." = FIELD("No."), "Posting Date" = FIELD("Date Filter"), "Global Dimension 1 Code" = FIELD("Global Dimension 1 Filter"), "Global Dimension 2 Code" = FIELD("Global Dimension 2 Filter"), "Date Filter" = FIELD("Date Filter");
+                DataItemTableView = SORTING("Vendor No.", "Posting Date", "Currency Code");
                 RequestFilterFields = "Vendor Posting Group", Open, "Currency Code";
                 column(EntryNo_VendorLedgerEntry; "Vendor Ledger Entry"."Entry No.")
                 {
@@ -212,8 +212,8 @@ report 71306 "SSA Vendor - Partner Report"
                 }
                 dataitem("Detailed Vendor Ledg. Entry"; "Detailed Vendor Ledg. Entry")
                 {
-                    DataItemLink = "Vendor Ledger Entry No." = FIELD ("Entry No.");
-                    DataItemTableView = SORTING ("Vendor Ledger Entry No.", "Entry Type", "Posting Date") WHERE ("Entry Type" = CONST ("Correction of Remaining Amount"));
+                    DataItemLink = "Vendor Ledger Entry No." = FIELD("Entry No.");
+                    DataItemTableView = SORTING("Vendor Ledger Entry No.", "Entry Type", "Posting Date") WHERE("Entry Type" = CONST("Correction of Remaining Amount"));
                     column(EntryNo_DetailedVendorLedgEntry; "Detailed Vendor Ledg. Entry"."Entry No.")
                     {
                     }
@@ -584,7 +584,7 @@ report 71306 "SSA Vendor - Partner Report"
         HideLine: Boolean;
         CompanyInfo: Record "Company Information";
 
-    [Scope('Internal')]
+
     procedure FindApplnEntriesDtldtLedgEntry()
     var
         DtldVendLedgEntry1: Record "Detailed Vendor Ledg. Entry";
@@ -626,7 +626,7 @@ report 71306 "SSA Vendor - Partner Report"
         end;
     end;
 
-    [Scope('Internal')]
+
     procedure MarkVendLedgerEntry()
     begin
         MarkedVendLedgerEntry.ClearMarks;

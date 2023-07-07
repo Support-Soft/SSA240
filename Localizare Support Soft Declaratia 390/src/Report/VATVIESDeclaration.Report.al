@@ -387,13 +387,12 @@ report 71501 "SSA VAT- VIES Declaration"
 
                         end;
 
-                        if (transtype <> '') and (suma <> 0) and (Country."EU Country/Region Code" <> '') then begin
+                        if (transtype <> '') and (suma <> 0) and (Country."EU Country/Region Code" <> '') then
                             if CreateXmlFile then begin
                                 StringToFile := '<operatie tip="' + Format(transtype) + '" tara="' + Format(Country."EU Country/Region Code") + '" codO="' +
                                              Format(VATRegNo) + '" denO="' + Format(VrCrName) + '" baza="' + Format(suma, 0, 2) + '" />';
-                                TempFile.Write(StringToFile);
+                                OutStr1.WriteText(StringToFile);
                             end;
-                        end;
                         oldvatregno := VATRegNo;
                         OldTransType := TransType;
                     end;
@@ -723,7 +722,7 @@ report 71501 "SSA VAT- VIES Declaration"
     begin
 
         nrOPI := 0;
-        if ItemTemp.FindFirst then begin
+        if ItemTemp.FindFirst then
             repeat
                 if (ItemTemp."Unit Price" <> 0) then begin
                     nrOPI := nrOPI + 1;
@@ -757,25 +756,18 @@ report 71501 "SSA VAT- VIES Declaration"
 
             until ItemTemp.Next = 0;
 
-        end;
         totalbaza := BazaA + BazaT + BazaL + BazaP + BazaS + BazaR;
         totalA := totalbaza + nrOPI;
 
         CustomOper.Reset;
         TotalNoOper1 := CustomOper.Count;
         if CreateXmlFile then begin
-
-            OutFile.Create(FileName);
-            OutFile.TextMode(true);
-
             StringToFile := '<?xml version="1.0" ?>';
-            OutFile.Write(StringToFile);
-            if drec then begin
-                drecc := 1;
-            end else begin
+            OutStr.WriteText(StringToFile);
+            if drec then
+                drecc := 1
+            else
                 drecc := 0;
-            end;
-
 
             StringToFile := '<declaratie390 luna="' + Format("SSA VIES Header"."Period No.") + '" an="' + Format("SSA VIES Header".Year) + '" d_rec="' + Format(drecc) + '"' + ' nume_declar="' +
                            Format(LastName) + '"' + ' prenume_declar="' + Format(FirstName) + '"' + ' functie_declar="' + Format(Position) + '"' + ' cui="' +
@@ -785,7 +777,7 @@ report 71501 "SSA VAT- VIES Declaration"
                            ' xsi:schemaLocation="mfp:anaf:dgti:d390:declaratie:v3 D390.xsd"' +
                            ' xmlns="mfp:anaf:dgti:d390:declaratie:v3">';
 
-            OutFile.Write(StringToFile);
+            OutStr.WriteText(StringToFile);
 
 
             StringToFile := '<rezumat nr_pag="' + Format(nrpag) + '" nrOPI="' + Format(nrOPI, 0, 2) + '" bazaL="' +
@@ -794,28 +786,21 @@ report 71501 "SSA VAT- VIES Declaration"
                               '" bazaS="' + Format(BazaS, 0, 2) +
                               '" bazaR="' + Format(BazaR, 0, 2) +
                               '" total_baza="' + Format(totalbaza, 0, 2) + '" />';
-            OutFile.Write(StringToFile);
+            OutStr.WriteText(StringToFile);
 
-            TempFile.Seek(0);
-            TempFile.TextMode(true);
-            FileLength := TempFile.Len;
+            TempBlob1.CreateInStream(InStr1);
 
-            while FileLength > TempFile.Pos do begin
-                TempFile.Read(StringToFile);
-                OutFile.Write(StringToFile)
+            while not InStr1.EOS do begin
+
+                InStr1.ReadText(StringToFile);
+                OutStr.WriteText(StringToFile)
             end;
             StringToFile := '</declaratie390>';
-            OutFile.Write(StringToFile);
+            OutStr.WriteText(StringToFile);
+            TempBlob.CreateInStream(InStr);
 
-            TempFile.Close;
-            Erase(FileName + 'temp');
-            OutFile.Close;
+            DownloadFromStream(InStr, 'Save File...', '', '', FileName);
 
-        end;
-
-        if CreateXmlFile then begin
-            ToFile := DefaultFileNameTxt + '.xml';
-            Download(FileName, Text011, '', FileTypeFilterTxt, ToFile);
         end;
     end;
 
@@ -827,18 +812,8 @@ report 71501 "SSA VAT- VIES Declaration"
         PurchEuVend := 0;
         PurchServiceEUVend := 0;
         if CreateXmlFile then begin
-            FileName := TierMgt.ServerTempFileName('');
-
-            OutFile.Create(FileName);
-            OutFile.Close;
-            OutFile.WriteMode := true;
-            OutFile.TextMode := true;
-
-            TempFile.Create(FileName + 'temp');
-            TempFile.Close;
-            TempFile.WriteMode := true;
-            TempFile.TextMode(true);
-            TempFile.Open(FileName + 'temp');
+            TempBlob.CreateOutStream(OutStr);
+            TempBlob1.CreateOutStream(OutStr1);
         end;
     end;
 
@@ -847,19 +822,10 @@ report 71501 "SSA VAT- VIES Declaration"
         CompanyInfo: Record "Company Information";
         StatReportingSetup: Record "SSA Localization Setup";
         Country: Record "Country/Region";
-        Text001: Label '<M-1M>';
-        Text002: Label '<M-1D>';
-        Text003: Label '%1 is not filled in for some VAT entries. Do you really want to print?';
         FormatAddr: Codeunit "Format Address";
-        ErrorText: Text[100];
         CVATRegNo: Text[30];
         VATRegNo: Text[30];
-        Text004: Label 'Export to Text File';
-        Text005: Label 'TXT Files (*.txt)|*.txt|All Files (*.*)|*.*';
-        Text006: Label 'Please enter the file name.';
-        Text007: Label 'Please enter the year.';
         ViesDeclAddr: array[8] of Text[50];
-        Text000: Label 'Page %1';
         SaleToEUCust: Decimal;
         SaleToEUCust3Party: Decimal;
         SaleServiceToEUCust: Decimal;
@@ -952,19 +918,12 @@ report 71501 "SSA VAT- VIES Declaration"
         custvendname: Text[250];
         transtype: Text[30];
         suma: Decimal;
-        TierMgt: Codeunit "File Management";
-        ToFile: Text[1024];
         CreateXmlFile: Boolean;
         FirstName: Text[50];
         LastName: Text[50];
         Position: Text[100];
-        FileName: Text[250];
-        OutFile: File;
-        TempFile: File;
+        FileName: Text;
         StringToFile: Text;
-        DefaultFileNameTxt: Label 'Default';
-        Text011: Label 'Export to XML File';
-        FileTypeFilterTxt: Label 'XML Files (*.xml)|*.xml|All Files (*.*)|*.*';
         ItemTemp: Record Item temporary;
         VrCrName: Text[300];
         Position0: Integer;
@@ -984,7 +943,6 @@ report 71501 "SSA VAT- VIES Declaration"
         drec: Boolean;
         drecc: Integer;
         nrpag: Integer;
-        FileLength: Decimal;
         oldvatregno: Code[30];
         Total_A: Decimal;
         Total_L: Decimal;
@@ -995,6 +953,12 @@ report 71501 "SSA VAT- VIES Declaration"
         BazaR: Decimal;
         SalesR: Decimal;
         Total_R: Decimal;
+        TempBlob: Codeunit "Temp Blob";
+        InStr: InStream;
+        OutStr: OutStream;
+        TempBlob1: Codeunit "Temp Blob";
+        InStr1: InStream;
+        OutStr1: OutStream;
 
     local
     procedure DelCountryCode(CountryCode: Text[10]; VATRegNo: Text[30]): Text[30]

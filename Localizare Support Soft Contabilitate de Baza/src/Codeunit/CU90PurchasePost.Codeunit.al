@@ -36,7 +36,7 @@ codeunit 70015 "SSA CU90 Purchase-Post"
         //SSA958<<
     end;
 
-    local procedure IsIntrastatTransaction(_PurchaseHeader: Record "Purchase Header") IsIntrastat: Boolean
+    local procedure IsIntrastatTransaction(_PurchaseHeader: Record "Purchase Header"): Boolean
     var
         SSAIntrastat: Codeunit "SSA Intrastat";
     begin
@@ -60,7 +60,7 @@ codeunit 70015 "SSA CU90 Purchase-Post"
     end;
 
     [EventSubscriber(ObjectType::Codeunit, 90, 'OnAfterPostInvPostBuffer', '', false, false)]
-    local procedure OnAfterPostInvPostBuffer(var GenJnlLine: Record "Gen. Journal Line"; var InvoicePostBuffer: Record "Invoice Post. Buffer"; PurchHeader: Record "Purchase Header"; GLEntryNo: Integer; CommitIsSupressed: Boolean; var GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line")
+    local procedure OnAfterPostInvPostBuffer(var GenJnlLine: Record "Gen. Journal Line"; var InvoicePostBuffer: Record "Invoice Post. Buffer" temporary; PurchHeader: Record "Purchase Header"; GLEntryNo: Integer; CommitIsSupressed: Boolean; var GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line")
     var
         OldGenJnlLine: Record "Gen. Journal Line";
         VATPostingSetup: Record "VAT Posting Setup";

@@ -2,7 +2,7 @@ table 71100 "SSA Non-Invoiced Sales Ship"
 {
     Caption = 'Non-Invoiced Sales Shipment';
     DataCaptionFields = "No.", "Sell-to Customer Name";
-    LookupPageID = "SSANon-Invoiced Sales Shipment";
+    LookupPageID = "SSA Non-Inv Sales Shipment";
 
     fields
     {

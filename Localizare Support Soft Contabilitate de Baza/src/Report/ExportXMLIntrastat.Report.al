@@ -1,3 +1,4 @@
+/*
 report 70001 "SSA Export XML Intrastat"
 {
     // SSA953 SSCAT 05.07.2019 19.Funct. intrastat
@@ -104,22 +105,6 @@ report 70001 "SSA Export XML Intrastat"
                     XMLDOMMgt.AddElement(XMLCurrNode, 'NatureOfTransactionBCode', InsStr("Transaction Type", '.', 2), XMLRootNode.NamespaceURI, XMLReturnedNode);
                     XMLDOMMgt.AddElement(XMLCurrNode, 'DeliveryTermsCode', "Shpt. Method Code", XMLRootNode.NamespaceURI, XMLReturnedNode);
                     XMLDOMMgt.AddElement(XMLCurrNode, 'ModeOfTransportCode', "Transport Method", XMLRootNode.NamespaceURI, XMLReturnedNode);
-                    /*
-                     IF ("Base Unit of Measure" <> '') AND (Quantity <> 0)
-                     THEN BEGIN
-                       XMLDOMMgt.AddElement(XMLCurrNode,'InsSupplUnitsInfo','',XMLRootNode.NamespaceURI,XMLReturnedNode);
-                       XMLDOMMgt.AddElement(XMLReturnedNode,'SupplUnitCode',"Base Unit of Measure",XMLRootNode.NamespaceURI,XMLReturnedNode2);
-                       XMLDOMMgt.AddElement(XMLReturnedNode,'QtyInSupplUnits',FORMAT(Quantity),XMLRootNode.NamespaceURI,XMLReturnedNode2);
-                     END;
-                    */
-                    /*
-                     IF ("Supplem. UoM Code" <> '') AND (Quantity <> 0)
-                     THEN BEGIN
-                       XMLDOMMgt.AddElement(XMLCurrNode,'InsSupplUnitsInfo','',XMLRootNode.NamespaceURI,XMLReturnedNode);
-                       XMLDOMMgt.AddElement(XMLReturnedNode,'SupplUnitCode',"Supplem. UoM Code",XMLRootNode.NamespaceURI,XMLReturnedNode2);
-                       XMLDOMMgt.AddElement(XMLReturnedNode,'QtyInSupplUnits',FORMAT(Quantity),XMLRootNode.NamespaceURI,XMLReturnedNode2);
-                     END;
-                     */
 
                     case Type of
                         Type::Receipt:
@@ -430,43 +415,43 @@ report 70001 "SSA Export XML Intrastat"
         FileMgt: Codeunit "File Management";
         XMLDOMMgt: Codeunit "XML DOM Management";
         XMLResultDoc: DotNet XmlDocument;
-        XMLCreateNode: DotNet XmlNode;
-        XMLRootNode: DotNet XmlNode;
-        XMLCurrNode: DotNet XmlNode;
-        XMLReturnedNode: DotNet XmlNode;
-        XMLReturnedNode2: DotNet XmlNode;
-        Template: Code[20];
-        Batch: Code[20];
-        TmpTemplate: Code[10];
-        TmpBatch: Code[10];
-        DocumentType: Option Receipt,Shipment;
-        CreateDate: DateTime;
-        VATNr: Text[20];
-        Year: Text[30];
-        Month: Text[30];
-        MonthWzero: Text[30];
-        RespPrsnFirstName: Text[30];
-        RespPrsnLastName: Text[30];
-        RespPrsnPhoneNo: Text[30];
-        RespPrsnFax: Text[30];
-        RespPrsnEmail: Text[30];
-        RespPrsnPosition: Text[30];
-        ApplicationName: Text[50];
-        XMLNameSpace: Text;
-        VerCountry: Text[30];
-        VerEuCountry: Text[30];
-        VerCn: Text[30];
-        VerModeOfTransport: Text[30];
-        VerDeliveryTerms: Text[30];
-        VerNatureOfTransactionA: Text[30];
-        VerNatureOfTransactionB: Text[30];
-        VerCounty: Text[30];
-        VerLocality: Text[30];
-        VerUnit: Text[30];
-        DeclarationType: Option New,Corrective,Nill;
-        OrderNr: Integer;
-        NetMass: Integer;
-        Text001: Label 'Export to XML File';
+                          XMLCreateNode: DotNet XmlNode;
+                          XMLRootNode: DotNet XmlNode;
+                          XMLCurrNode: DotNet XmlNode;
+                          XMLReturnedNode: DotNet XmlNode;
+                          XMLReturnedNode2: DotNet XmlNode;
+                          Template: Code[20];
+                          Batch: Code[20];
+                          TmpTemplate: Code[10];
+                          TmpBatch: Code[10];
+                          DocumentType: Option Receipt,Shipment;
+                          CreateDate: DateTime;
+                          VATNr: Text[20];
+                          Year: Text[30];
+                          Month: Text[30];
+                          MonthWzero: Text[30];
+                          RespPrsnFirstName: Text[30];
+                          RespPrsnLastName: Text[30];
+                          RespPrsnPhoneNo: Text[30];
+                          RespPrsnFax: Text[30];
+                          RespPrsnEmail: Text[30];
+                          RespPrsnPosition: Text[30];
+                          ApplicationName: Text[50];
+                          XMLNameSpace: Text;
+                          VerCountry: Text[30];
+                          VerEuCountry: Text[30];
+                          VerCn: Text[30];
+                          VerModeOfTransport: Text[30];
+                          VerDeliveryTerms: Text[30];
+                          VerNatureOfTransactionA: Text[30];
+                          VerNatureOfTransactionB: Text[30];
+                          VerCounty: Text[30];
+                          VerLocality: Text[30];
+                          VerUnit: Text[30];
+                          DeclarationType: Option New,Corrective,Nill;
+                          OrderNr: Integer;
+                          NetMass: Integer;
+                          Text001: Label 'Export to XML File';
         Text002: Label 'XML Files (*.xml)|*.xml|All Files (*.*)|*.*';
         Text003: Label 'Microsoft Dynamics NAV';
         Text004: Label 'Please select the correct %1 %2 or %3.';
@@ -552,3 +537,4 @@ report 70001 "SSA Export XML Intrastat"
     end;
 }
 
+*/

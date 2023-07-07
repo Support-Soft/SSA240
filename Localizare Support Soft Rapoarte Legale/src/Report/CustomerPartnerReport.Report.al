@@ -582,7 +582,6 @@ report 71305 "SSA Customer Partner Report"
         HideLine: Boolean;
         CompanyInfo: Record "Company Information";
 
-    [Scope('Internal')]
     procedure FindApplnEntriesDtldtLedgEntry()
     var
         DtldCustLedgEntry1: Record "Detailed Cust. Ledg. Entry";
@@ -624,7 +623,7 @@ report 71305 "SSA Customer Partner Report"
         end;
     end;
 
-    [Scope('Internal')]
+
     procedure MarkCustLedgerEntry()
     begin
         MarkedCustLedgerEntry.ClearMarks;

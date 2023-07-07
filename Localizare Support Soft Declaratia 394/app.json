@@ -36,5 +36,5 @@
   "runtime": "11.0",
   "features": ["TranslationFile"],
   "supportedLocales": ["en-US","ro-RO"],
-  "target": "OnPrem"
+  "target": "Cloud"
 }

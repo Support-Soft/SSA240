@@ -40,6 +40,7 @@ pageextension 71102 "SSA Vendor Card 71102" extends "Vendor Card"
         }
     }
 
+
     trigger OnOpenPage()
     begin
         SSASetup.GET;

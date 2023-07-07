@@ -98,8 +98,10 @@ page 70022 "SSA Pretty Cash Journal"
                     Visible = IsSimplePage;
 
                     trigger OnValidate()
+                    var
+                        Currency: Record Currency;
                     begin
-                        GenJnlManagement.CheckCurrencyCode(CurrentCurrencyCode);
+                        Currency.Get(CurrentCurrencyCode);
                         UpdateCurrencyFactor(FieldNo("Currency Code"));
                     end;
                 }

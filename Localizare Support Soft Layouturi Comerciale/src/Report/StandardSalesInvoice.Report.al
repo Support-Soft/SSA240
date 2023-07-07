@@ -1142,9 +1142,6 @@ report 70901 "SSA Standard Sales - Invoice"
                 CalcFields("Work Description");
                 ShowWorkDescription := "Work Description".HasValue;
 
-                Clear(PaymentInstructionsTxt);
-                //todoPaymentInstructionsTxt := O365SalesInvoiceMgmt.GetPaymentInstructionsName(Header.paymen); .GetPaymentInstructionsFromPostedInvoice(Header);
-
                 ChecksPayableText := StrSubstNo(ChecksPayableLbl, CompanyInfo.Name);
 
                 FormatAddressFields(Header);

@@ -10,7 +10,14 @@
   "help": "",
   "url": "",
   "logo": "./logo/logo.png",
-  "dependencies": [],
+  "dependencies": [
+    {
+      "id": "70912191-3c4c-49fc-a1de-bc6ea1ac9da6",
+      "name": "Intrastat Core",
+      "publisher": "Microsoft",
+      "version": "22.0.54157.55195"
+    }
+  ],
   "screenshots": [],
   "platform": "22.0.0.0",
   "application": "22.0.0.0",
@@ -34,5 +41,5 @@
     "en-US",
     "ro-RO"
   ],
-  "target": "OnPrem"
+  "target": "Cloud"
 }

@@ -287,7 +287,6 @@ report 71304 "SSA FA Phys. Inventory List"
         GroupByNo: Integer;
         Text26504: Label 'You must fill in the Document Date.';
 
-    [Scope('Internal')]
     procedure GetGroupHeader(): Text[100]
     begin
         case GroupBy of
@@ -314,7 +313,7 @@ report 71304 "SSA FA Phys. Inventory List"
         end;
     end;
 
-    [Scope('Internal')]
+
     procedure GetGroupFooter(): Text[100]
     begin
         case GroupBy of

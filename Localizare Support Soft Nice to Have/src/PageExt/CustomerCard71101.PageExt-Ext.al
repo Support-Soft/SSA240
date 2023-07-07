@@ -34,7 +34,7 @@ pageextension 71101 "SSA Customer Card 71101" extends "Customer Card"
                 var
                     InterogareTVAAnaf: Codeunit "SSA Interogare TVA Anaf";
                 begin
-                    InterogareTVAAnaf.ValidatePartner("No.","VAT Registration No.",Database::Customer);
+                    InterogareTVAAnaf.ValidatePartner("No.", "VAT Registration No.", Database::Customer);
                 end;
             }
         }

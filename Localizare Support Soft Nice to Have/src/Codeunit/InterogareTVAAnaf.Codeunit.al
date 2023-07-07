@@ -1,6 +1,7 @@
+
 codeunit 71102 "SSA Interogare TVA Anaf"
 {
-    // //https://webservicesp.anaf.ro/PlatitorTvaRest/api/v3/ws/tva
+    // //https://webservicesp.anaf.ro/PlatitorTvaRest/api/v8/ws/tva
     // SSA966 SSCAT 03.10.2019 32.Funct. verificare TVA (ANAF, verificaretva.ro) - TVA la plata, split TVA
 
 
@@ -11,7 +12,6 @@ codeunit 71102 "SSA Interogare TVA Anaf"
     var
         Text000: Label '[{"cui":%1,"data":"%2"}]';
         HideDialog: Boolean;
-        SendRequestError: Label 'Send Request failed %1';
         Text002: Label '"cod":200,';
         Text003: Label '"message":"SUCCESS",';
 
@@ -218,42 +218,19 @@ codeunit 71102 "SSA Interogare TVA Anaf"
 
     end;
 
-    local procedure ParseResponseJSON(var _TempBlob: Codeunit "Temp Blob"; var _JSONBuffer: Record "JSON Buffer" temporary)
+    local procedure ParseResponseJSON(_ResponseText: Text; var _JSONBuffer: Record "JSON Buffer" temporary)
     var
         JsonTextReaderWriter: Codeunit "Json Text Reader/Writer";
-        FileName: Text;
-        TestFile: File;
-        TestOutStream: OutStream;
-        InStr: InStream;
-        RespBodyText: Text;
         ErrorText: Text;
     begin
         //SSM2160>>
         _JSONBuffer.Reset;
         _JSONBuffer.DeleteAll;
-
-        _TempBlob.CreateInStream(InStr, TEXTENCODING::UTF8);
-        InStr.ReadText(RespBodyText);
-        if (StrPos(RespBodyText, Text002) = 0) or (StrPos(RespBodyText, Text003) = 0) then begin
-            Error('Eroare:\\%1', RespBodyText);
+        if (StrPos(_ResponseText, Text002) = 0) or (StrPos(_ResponseText, Text003) = 0) then begin
+            Error('Eroare:\\%1', _ResponseText);
         end;
 
-        JsonTextReaderWriter.ReadJSonToJSonBuffer(RespBodyText, _JSONBuffer);
-
-        //Test file
-        /*
-        FileName := STRSUBSTNO('c:\temp\Blade\VAT\Response_%1.txt',_BatchNo);
-        IF EXISTS(FileName) THEN
-          ERASE(FileName);
-        
-        TestFile.CREATE(FileName,TEXTENCODING::UTF8);
-        TestFile.CREATEOUTSTREAM(TestOutStream);
-        _TempBlob.Blob.CREATEINSTREAM(InStr);
-        COPYSTREAM(TestOutStream,InStr);
-        TestFile.CLOSE;
-        */
-        //PAGE.RUNMODAL(PAGE::"JSON Buffer",JSONBuffer);
-        //End Test
+        JsonTextReaderWriter.ReadJSonToJSonBuffer(_ResponseText, _JSONBuffer);
         //SSM2160<<
 
     end;
@@ -262,21 +239,7 @@ codeunit 71102 "SSA Interogare TVA Anaf"
     var
         MessageText: Text;
     begin
-        //SSM2160>>
-        /*//OC
-        //SSM1966>>
-        IF Confirmed THEN
-          EXIT;
-        //SSM1966<<
-        MessageText := 'Actualizati?\\';
-        i := 1;
-        WHILE (TextArray[i][1] <> '') OR (TextArray[i][2] <> '') DO BEGIN
-          MessageText += '\' + TextArray[i][1] + ':' + TextArray[i][2];
-          i += 1;
-        END;
-        IF NOT CONFIRM(MessageText) THEN
-          ERROR('Partenerul nu a fost actualizat!');
-        */
+
         if HideDialog then
             exit;
 
@@ -350,21 +313,29 @@ codeunit 71102 "SSA Interogare TVA Anaf"
     [TryFunction]
     procedure SendRequest(_CUI: Text; var _JSONBuffer: Record "JSON Buffer" temporary)
     var
+        Client: HttpClient;
+        ResponseMessage: HttpResponseMessage;
+        RequestHeaders: HttpHeaders;
+        Content: HttpContent;
+        ResponseText: Text;
         SSASetup: Record "SSA Localization Setup";
-        TempBlob: Codeunit "Temp Blob";
-        WebRequestHelper: Codeunit "Web Request Helper";
-        SSAHttpWebRequest: DotNet HttpWebRequest;
-        SSAHttpWebResponse: DotNet SSAHttpWebResponse;
-        SSAHttpStatusCode: DotNet SSAHttpStatusCode;
-        SSAHttpResponseHeaders: DotNet SSAHttpResponseHeader;
-        SSAResponseHeaders: DotNet SSAResponseHeader;
-        OStream: OutStream;
-        ResponseInStream: InStream;
-        ErrorText: Text;
     begin
 
         SSASetup.Get;
         SSASetup.TestField("SSA VAT API URL ANAF");
+
+        Content.Clear();
+        Content.WriteFrom(StrSubstNo(Text000, _CUI, Format(Today, 0, '<Year4>-<Month,2>-<Day,2>')));
+        Content.GetHeaders(RequestHeaders);
+        RequestHeaders.Remove('Content-Type');
+        RequestHeaders.Add('Content-Type', 'application/json');
+        Client.Post(SSASetup."SSA VAT API URL ANAF", Content, ResponseMessage);
+
+        ResponseMessage.Content.ReadAs(ResponseText);
+
+        ParseResponseJSON(ResponseText, _JSONBuffer);
+
+        /*
 
         SSAHttpWebRequest := SSAHttpWebRequest.Create(SSASetup."SSA VAT API URL ANAF");
         SSAHttpWebRequest.Method := 'POST';
@@ -389,29 +360,31 @@ codeunit 71102 "SSA Interogare TVA Anaf"
                 Error('Connection Failed Error\%1', ErrorText);
 
         ParseResponseJSON(TempBlob, _JSONBuffer);
+        */
     end;
 
-    local procedure TryProcessFaultXMLResponse(SupportInfo: Text; NodePath: Text; Prefix: Text; NameSpace: Text)
-    var
-        WebRequestHelper: Codeunit "Web Request Helper";
-        XMLDOMMgt: Codeunit "XML DOM Management";
-        WebException: DotNet SSAWebException;
-        XmlDoc: DotNet SSAXmlDocument;
-        ResponseInputStream: InStream;
-        ErrorText: Text;
-        ServiceURL: Text;
-    begin
-        ErrorText := WebRequestHelper.GetWebResponseError(WebException, ServiceURL);
+    /*
+        local procedure TryProcessFaultXMLResponse(SupportInfo: Text; NodePath: Text; Prefix: Text; NameSpace: Text)
+        var
+            WebRequestHelper: Codeunit "Web Request Helper";
+            XMLDOMMgt: Codeunit "XML DOM Management";
+            WebException: DotNet SSAWebException;
+            XmlDoc: DotNet SSAXmlDocument;
+            ResponseInputStream: InStream;
+            ErrorText: Text;
+            ServiceURL: Text;
+        begin
+            ErrorText := WebRequestHelper.GetWebResponseError(WebException, ServiceURL);
 
-        if ErrorText = '' then
-            ErrorText := WebException.Message;
+            if ErrorText = '' then
+                ErrorText := WebException.Message;
 
-        if SupportInfo <> '' then
-            ErrorText += '\\' + SupportInfo;
-        if not HideDialog then
-            Error(ErrorText);
-    end;
-
+            if SupportInfo <> '' then
+                ErrorText += '\\' + SupportInfo;
+            if not HideDialog then
+                Error(ErrorText);
+        end;
+    */
     procedure GetJudet(_Judet: Text): Integer
     begin
         case _Judet of

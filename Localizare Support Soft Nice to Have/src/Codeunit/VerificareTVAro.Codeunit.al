@@ -1,3 +1,4 @@
+
 codeunit 71101 "SSA VerificareTVA.ro"
 {
     // SSA966 SSCAT 05.11.2019 32.Funct. verificare TVA (ANAF, verificaretva.ro) - TVA la plata, split TVA
@@ -9,16 +10,15 @@ codeunit 71101 "SSA VerificareTVA.ro"
 
     var
         RequestStringTemplate: Label 'nume=%1&pwd=%2&cui=%3&data=%4-%5-%6';
-        FormatChar: Label '{}"''[]';
         CountryRegion: Record "Country/Region";
-        G_Raspuns: Text[6];
-        G_Nume: Text[255];
-        G_CUI: Code[20];
-        G_NrInmtr: Text[15];
-        G_Judet: Text[75];
-        G_Localitate: Text[75];
-        G_Adresa: Text[360];
-        G_Stare: Text[255];
+        G_Raspuns: Text;
+        G_Nume: Text;
+        G_CUI: Text;
+        G_NrInmtr: Text;
+        G_Judet: Text;
+        G_Localitate: Text;
+        G_Adresa: Text;
+        G_Stare: Text;
         G_Actualizat: Date;
         G_TVA: Boolean;
         G_TVAIncasare: Boolean;
@@ -154,14 +154,12 @@ codeunit 71101 "SSA VerificareTVA.ro"
 
     local procedure SendRequest(_CUI: Code[20]; _RequestDate: Date)
     var
+        Client: HttpClient;
+        ResponseMessage: HttpResponseMessage;
+        RequestHeaders: HttpHeaders;
+        Content: HttpContent;
+        ResponseText: Text;
         SSASetup: Record "SSA Localization Setup";
-        SSAHttpWebRequest: DotNet SSASSAHttpWebRequest;
-        HttpWebResponse: DotNet SSAHttpWebResponse;
-        IStream: InStream;
-        OStream: OutStream;
-        f: File;
-        RequestString: Text[250];
-        FileName: Text[250];
     begin
         //SendRequest
         if (_CUI = '') or (_RequestDate = 0D) then
@@ -172,60 +170,42 @@ codeunit 71101 "SSA VerificareTVA.ro"
         SSASetup.TestField("SSA VAT User Name");
         SSASetup.TestField("SSA VAT Password");
 
-        SSAHttpWebRequest := SSAHttpWebRequest.Create(SSASetup."SSA VAT API URL");
-        SSAHttpWebRequest.Timeout := 30000;
-
-        SSAHttpWebRequest.Method := 'POST';
-
-        SSAHttpWebRequest.ContentType('application/x-www-form-urlencoded');
-
-        OStream := SSAHttpWebRequest.GetRequestStream;
-
-        RequestString := StrSubstNo(
+        Content.Clear();
+        Content.WriteFrom(StrSubstNo(
           RequestStringTemplate, SSASetup."SSA VAT User Name", SSASetup."SSA VAT Password", _CUI,
-          Date2DMY(_RequestDate, 3), Date2DMY(_RequestDate, 2), Date2DMY(_RequestDate, 1));
+          Date2DMY(_RequestDate, 3), Date2DMY(_RequestDate, 2), Date2DMY(_RequestDate, 1)));
+        Content.GetHeaders(RequestHeaders);
+        RequestHeaders.Remove('Content-Type');
+        RequestHeaders.Add('Content-Type', 'application/x-www-form-urlencoded');
+        Client.Post(SSASetup."SSA VAT API URL", Content, ResponseMessage);
 
-        OStream.WriteText(RequestString);
+        ResponseMessage.Content.ReadAs(ResponseText);
+        ParseResponseJSON(ResponseText);
 
-        HttpWebResponse := SSAHttpWebRequest.GetResponse();
-        IStream := HttpWebResponse.GetResponseStream;
-
-        //test
-        FileName := TemporaryPath + '\' + _CUI + '.txt';
-        //FileName := 'C:\Temp\a.txt';
-        if Exists(FileName) then
-            Erase(FileName);
-
-        f.Create(FileName);
-
-        f.TextMode(true);
-        f.CreateOutStream(OStream);
-        CopyStream(OStream, IStream);
-        f.Close;
-
-        ParseResponseJSON(FileName);
     end;
 
-    local procedure ParseResponseJSON(_FileName: Text[250])
+    local procedure ParseResponseJSON(_ResponseText: Text)
     var
-        fw: File;
-        TextLine: Text[1024];
-        CurrentObject: Text[50];
-        ValuePair: Text[255];
-        CurrentElement: Text[255];
-        CurrentValue: Text[255];
-        ElementName: Text[255];
-        ElementValue: Text[255];
-        NewSting: Text[255];
-        tmpDate: Date;
-        IntLen: Integer;
-        x: Integer;
-        l: Integer;
-        p: Integer;
-        Tip: Text[50];
-        Nr: Text[50];
-        Adresa: Text[255];
+        JsonBuffer: Record "JSON Buffer" temporary;
+        JsonTextReaderWriter: Codeunit "Json Text Reader/Writer";
+        FoundLabel: Label 'found[%1]*', Locked = true;
+        IndexCui: Integer;
+        Tip: Text;
+        Nr: Text;
+        Adresa: Text;
+        ActualizatDate: Text;
+        TVA: Text;
+        TVAIncasare: Text;
+        DataTVA: Text;
+        TVASplit: Text;
+        DataTVAIncasare: Text;
+        DataTVASplit: Text;
+
     begin
+        JsonBuffer.reset;
+        JsonBuffer.DeleteAll();
+        JsonTextReaderWriter.ReadJSonToJSonBuffer(_ResponseText, JsonBuffer);
+
         Clear(G_Raspuns);
         Clear(G_Nume);
         Clear(G_CUI);
@@ -238,92 +218,47 @@ codeunit 71101 "SSA VerificareTVA.ro"
         Clear(G_TVA);
         Clear(G_TVAIncasare);
         Clear(G_DataTVA);
-        Clear(Tip);
-        Clear(Adresa);
-        Clear(Nr);
-
-        fw.TextMode(true);
-        fw.WriteMode(false);
-        fw.Open(_FileName);
-        IntLen := fw.Len;
-
-        while fw.Pos < IntLen do begin
-            p := 0;
-            x := 1;
-
-            fw.Read(TextLine);
-
-            if StrPos(TextLine, 'ERROR') > 0 then
-                Error(TextLine); // error
 
 
-            TextLine := DelChr(TextLine, '=', '{}');
-            l := StrLen(TextLine);
+        if StrPos(_ResponseText, 'ERROR') > 0 then
+            Error(_ResponseText); // error
 
-            while p < l do begin
-                ValuePair := SelectStr(x, TextLine);  // get comma separated pairs of values and element names
+        if JSONBuffer.GetPropertyValueAtPath(G_Raspuns, 'Raspuns', StrSubstNo(FoundLabel, IndexCui)) then;
+        if JsonBuffer.GetPropertyValueAtPath(G_Nume, 'Nume', StrSubstNo(FoundLabel, IndexCui)) then;
+        if JsonBuffer.GetPropertyValueAtPath(G_CUI, 'CUI', StrSubstNo(FoundLabel, IndexCui)) then;
+        if JsonBuffer.GetPropertyValueAtPath(G_NrInmtr, 'NrInmatr', StrSubstNo(FoundLabel, IndexCui)) then;
+        if JsonBuffer.GetPropertyValueAtPath(G_Judet, 'Judet', StrSubstNo(FoundLabel, IndexCui)) then;
+        if JsonBuffer.GetPropertyValueAtPath(G_Localitate, 'Localitate', StrSubstNo(FoundLabel, IndexCui)) then;
+        if JsonBuffer.GetPropertyValueAtPath(Adresa, 'Adresa', StrSubstNo(FoundLabel, IndexCui)) then;
+        if JsonBuffer.GetPropertyValueAtPath(Nr, 'Nr', StrSubstNo(FoundLabel, IndexCui)) then;
+        if JsonBuffer.GetPropertyValueAtPath(Tip, 'Tip', StrSubstNo(FoundLabel, IndexCui)) then;
+        if JsonBuffer.GetPropertyValueAtPath(G_Stare, 'Stare', StrSubstNo(FoundLabel, IndexCui)) then;
 
-                p := StrPos(TextLine, ValuePair) + StrLen(ValuePair); // move pointer to the end of the current pair in Value
+        if JsonBuffer.GetPropertyValueAtPath(ActualizatDate, 'Actualizat', StrSubstNo(FoundLabel, IndexCui)) then
+            G_Actualizat := ConvertJsonDateToDate(ActualizatDate);
 
-                ValuePair := DelChr(ValuePair, '=', FormatChar);
+        if JsonBuffer.GetPropertyValueAtPath(TVA, 'TVA', StrSubstNo(FoundLabel, IndexCui)) then
+            Evaluate(G_TVA, TVA);
 
-                if StrPos(ValuePair, ':') = 0 then begin
-                    CurrentValue := CurrentValue + ',' + ValuePair;
+        if JsonBuffer.GetPropertyValueAtPath(DataTVA, 'TVA_data', StrSubstNo(FoundLabel, IndexCui)) then
+            G_DataTVA := ConvertJsonDateToDate(DataTVA);
 
-                end else begin
-                    CurrentElement := CopyStr(ValuePair, 1, StrPos(ValuePair, ':'));
-                    CurrentElement := DelChr(CurrentElement, '=', ':');
+        if JsonBuffer.GetPropertyValueAtPath(TVAIncasare, 'TVAincasare', StrSubstNo(FoundLabel, IndexCui)) then
+            Evaluate(G_TVAIncasare, TVAIncasare);
 
-                    CurrentValue := CopyStr(ValuePair, StrPos(ValuePair, ':'));
-                    CurrentValue := DelChr(CurrentValue, '=', ':');
-                end;
+        if JsonBuffer.GetPropertyValueAtPath(DataTVAIncasare, 'TVAincasare_data', StrSubstNo(FoundLabel, IndexCui)) then
+            G_DataTVAIncasare := ConvertJsonDateToDate(DataTVAIncasare);
 
-                case CurrentElement of
-                    'Raspuns':
-                        Evaluate(G_Raspuns, CurrentValue);
-                    'Nume':
-                        Evaluate(G_Nume, CurrentValue);
-                    'CUI':
-                        Evaluate(G_CUI, CurrentValue);
-                    'NrInmatr':
-                        Evaluate(G_NrInmtr, CurrentValue);
-                    'Judet':
-                        Evaluate(G_Judet, CurrentValue);
-                    'Localitate':
-                        Evaluate(G_Localitate, CurrentValue);
-                    'Tip':
-                        Evaluate(Tip, CurrentValue);
-                    'Adresa':
-                        Evaluate(Adresa, CurrentValue);
-                    'Nr':
-                        begin
-                            Evaluate(Nr, CurrentValue);
-                            G_Adresa := Tip + ' ' + Adresa + ' ' + Nr;
-                        end;
-                    'Stare':
-                        Evaluate(G_Stare, CurrentValue);
-                    'Actualizat':
-                        G_Actualizat := ConvertJsonDateToDate(CurrentValue);
-                    'TVA':
-                        Evaluate(G_TVA, CurrentValue);
-                    'TVA_data':
-                        G_DataTVA := ConvertJsonDateToDate(CurrentValue);
-                    'TVAincasare':
-                        Evaluate(G_TVAIncasare, CurrentValue);
-                    'TVAincasare_data':
-                        G_DataTVAIncasare := ConvertJsonDateToDate(CurrentValue);
-                    'DataTVA':
-                        G_DataTVA := ConvertJsonDateToDate(CurrentValue);
-                    'TVAsplit':
-                        Evaluate(G_TVASplit, CurrentValue);
-                    'TVAsplit_data':
-                        G_DataTVASplit := ConvertJsonDateToDate(CurrentValue);
-                end;
 
-                x := x + 1; // next pair
-            end;
-        end;
-        fw.Close;
+
+        if JsonBuffer.GetPropertyValueAtPath(TVASplit, 'TVAsplit', StrSubstNo(FoundLabel, IndexCui)) then
+            Evaluate(G_TVASplit, TVASplit);
+
+        if JsonBuffer.GetPropertyValueAtPath(DataTVASplit, 'TVAsplit_data', StrSubstNo(FoundLabel, IndexCui)) then
+            G_DataTVASplit := ConvertJsonDateToDate(DataTVASplit);
+
+        G_Adresa := Tip + ' ' + Adresa + ' ' + Nr;
+
     end;
 
     procedure ShowConfirmationMessage()
@@ -471,4 +406,3 @@ codeunit 71101 "SSA VerificareTVA.ro"
         exit(true);
     end;
 }
-

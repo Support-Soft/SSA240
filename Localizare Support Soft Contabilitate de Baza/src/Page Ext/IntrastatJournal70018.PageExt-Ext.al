@@ -59,10 +59,9 @@ pageextension 70018 "SSA Intrastat Journal 70018" extends "Intrastat Journal"
                 Promoted = true;
                 PromotedCategory = Process;
                 PromotedIsBig = true;
-
                 trigger OnAction()
                 var
-                    ExportIntrastatXML: Report "SSA Export XML Intrastat";
+                    ExportIntrastatXML: XmlPort "SSAExport Intrast Jnl to XML";
                 begin
                     //SSA953>>
                     Clear(ExportIntrastatXML);
@@ -70,6 +69,7 @@ pageextension 70018 "SSA Intrastat Journal 70018" extends "Intrastat Journal"
                     ExportIntrastatXML.Run;
                     //SSA953<<
                 end;
+
             }
         }
     }

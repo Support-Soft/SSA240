@@ -28,9 +28,13 @@
     }
   ],
   "contextSensitiveHelpUrl": "https://SSA14ContabilitateBaza.com/help/",
-  "showMyCode": false,
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": false,
+    "includeSourceInSymbolFile": false
+  },
   "runtime": "11.0",
   "features": ["TranslationFile"],
   "supportedLocales": ["ro-RO"],
-  "target": "OnPrem"
+  "target": "Cloud"
 }

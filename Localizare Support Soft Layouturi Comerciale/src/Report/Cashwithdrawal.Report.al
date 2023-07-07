@@ -382,7 +382,6 @@ report 70903 "SSA Cash withdrawal."
         VizaControl: Label 'Viza de control financiar preventiv';
         Compartim: Label 'Compartiment financiar contabil';
 
-    [Scope('Internal')]
     procedure FindApplnEntriesDtldtLedgEntry(var ELE: Record "Employee Ledger Entry"; CreateEmployeeLedgEntry: Record "Employee Ledger Entry")
     var
         DtldEmployeeLedgEntry1: Record "Detailed Employee Ledger Entry";
