@@ -22,12 +22,12 @@ table 70503 "SSA Payment Step"
         field(4; "Previous Status"; Integer)
         {
             Caption = 'Previous Status';
-            TableRelation = "SSA Payment Status".Line WHERE("Payment Class" = FIELD("Payment Class"));
+            TableRelation = "SSA Payment Status".Line where("Payment Class" = field("Payment Class"));
         }
         field(5; "Next Status"; Integer)
         {
             Caption = 'Next Status';
-            TableRelation = "SSA Payment Status".Line WHERE("Payment Class" = FIELD("Payment Class"));
+            TableRelation = "SSA Payment Status".Line where("Payment Class" = field("Payment Class"));
         }
         field(6; "Action Type"; Option)
         {
@@ -38,7 +38,7 @@ table 70503 "SSA Payment Step"
         field(7; "Report No."; Integer)
         {
             Caption = 'Report No.';
-            TableRelation = IF ("Action Type" = CONST(Report)) AllObj."Object ID" WHERE("Object Type" = CONST(Report));
+            TableRelation = if ("Action Type" = const(Report)) AllObj."Object ID" where("Object Type" = const(Report));
         }
         field(8; "Dataport No."; Integer)
         {
@@ -48,11 +48,11 @@ table 70503 "SSA Payment Step"
         {
             Caption = 'Previous Status Name';
             FieldClass = FlowField;
-            CalcFormula = Lookup("SSA Payment Status".Name WHERE("Payment Class" = FIELD("Payment Class"), Line = FIELD("Previous Status")));
+            CalcFormula = lookup("SSA Payment Status".Name where("Payment Class" = field("Payment Class"), Line = field("Previous Status")));
         }
         field(10; "Next Status Name"; Text[50])
         {
-            CalcFormula = Lookup("SSA Payment Status".Name WHERE("Payment Class" = FIELD("Payment Class"), Line = FIELD("Next Status")));
+            CalcFormula = lookup("SSA Payment Status".Name where("Payment Class" = field("Payment Class"), Line = field("Next Status")));
             Caption = 'Next Status Name';
             FieldClass = FlowField;
         }
@@ -69,12 +69,12 @@ table 70503 "SSA Payment Step"
             var
                 NoSeriesLine: Record "No. Series Line";
             begin
-                IF "Header Nos. Series" <> '' THEN BEGIN
+                if "Header Nos. Series" <> '' then begin
                     NoSeriesLine.SETRANGE("Series Code", "Header Nos. Series");
-                    IF NoSeriesLine.FIND('+') THEN
-                        IF (STRLEN(NoSeriesLine."Starting No.") > 10) OR (STRLEN(NoSeriesLine."Ending No.") > 10) THEN
+                    if NoSeriesLine.FIND('+') then
+                        if (STRLEN(NoSeriesLine."Starting No.") > 10) or (STRLEN(NoSeriesLine."Ending No.") > 10) then
                             ERROR(Text001);
-                END;
+                end;
             end;
         }
         field(13; "Reason Code"; Code[10])
@@ -128,7 +128,7 @@ table 70503 "SSA Payment Step"
 
     trigger OnDelete()
     begin
-        IF Line = 0 THEN ERROR(Text000);
+        if Line = 0 then ERROR(Text000);
     end;
 
     var

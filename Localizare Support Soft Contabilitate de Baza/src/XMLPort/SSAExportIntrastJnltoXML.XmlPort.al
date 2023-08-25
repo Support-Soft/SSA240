@@ -167,7 +167,7 @@ xmlport 70001 "SSAExport Intrast Jnl to XML"
             tableelement("Intrastat Jnl. Line"; "Intrastat Jnl. Line")
             {
                 XmlName = 'InsDispatchItem';
-                SourceTableView = SORTING("Journal Template Name", "Journal Batch Name", "Line No.") WHERE("Journal Template Name" = FILTER('TEMPLATE'), "Journal Batch Name" = FILTER('BATCH'));
+                SourceTableView = sorting("Journal Template Name", "Journal Batch Name", "Line No.") where("Journal Template Name" = filter('TEMPLATE'), "Journal Batch Name" = filter('BATCH'));
                 textelement(OrderNr)
                 {
 

@@ -43,11 +43,11 @@ table 70504 "SSA Payment Step Ledger"
         field(10; "Account No."; Code[20])
         {
             Caption = 'Account No.';
-            TableRelation = IF ("Account Type" = CONST ("G/L Account")) "G/L Account" ELSE
-            IF ("Account Type" = CONST (Customer)) Customer ELSE
-            IF ("Account Type" = CONST (Vendor)) Vendor ELSE
-            IF ("Account Type" = CONST ("Bank Account")) "Bank Account" ELSE
-            IF ("Account Type" = CONST ("Fixed Asset")) "Fixed Asset";
+            TableRelation = if ("Account Type" = const("G/L Account")) "G/L Account" else
+            if ("Account Type" = const(Customer)) Customer else
+            if ("Account Type" = const(Vendor)) Vendor else
+            if ("Account Type" = const("Bank Account")) "Bank Account" else
+            if ("Account Type" = const("Fixed Asset")) "Fixed Asset";
             //This property is currently not supported
             //TestTableRelation = true;
             ValidateTableRelation = true;

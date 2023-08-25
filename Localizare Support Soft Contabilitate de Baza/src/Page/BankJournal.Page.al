@@ -115,7 +115,7 @@ page 70023 "SSA Bank Journal"
                     ApplicationArea = All;
                     StyleExpr = StyleTxt;
                     ToolTip = 'Specifies the entry''s posting date.';
-                    Visible = NOT IsSimplePage;
+                    Visible = not IsSimplePage;
                 }
                 field("Document Date"; "Document Date")
                 {
@@ -135,7 +135,7 @@ page 70023 "SSA Bank Journal"
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies a document number for the journal line.';
-                    Visible = NOT IsSimplePage;
+                    Visible = not IsSimplePage;
                 }
                 field("Incoming Document Entry No."; "Incoming Document Entry No.")
                 {
@@ -245,7 +245,7 @@ page 70023 "SSA Bank Journal"
                     ApplicationArea = All;
                     AssistEdit = true;
                     ToolTip = 'Specifies the code of the currency for the amounts on the journal line.';
-                    Visible = NOT IsSimplePage;
+                    Visible = not IsSimplePage;
 
                     trigger OnAssistEdit()
                     begin
@@ -260,25 +260,25 @@ page 70023 "SSA Bank Journal"
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies whether the entry was part of a 3-party trade. If it was, there is a check mark in the field.';
-                    Visible = NOT IsSimplePage;
+                    Visible = not IsSimplePage;
                 }
                 field("Gen. Posting Type"; "Gen. Posting Type")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the general posting type that will be used when you post the entry on this journal line.';
-                    Visible = NOT IsSimplePage;
+                    Visible = not IsSimplePage;
                 }
                 field("Gen. Bus. Posting Group"; "Gen. Bus. Posting Group")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the vendor''s or customer''s trade type to link transactions made for this business partner with the appropriate general ledger account according to the general posting setup.';
-                    Visible = NOT IsSimplePage;
+                    Visible = not IsSimplePage;
                 }
                 field("Gen. Prod. Posting Group"; "Gen. Prod. Posting Group")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the item''s product type to link transactions made for this item with the appropriate general ledger account according to the general posting setup.';
-                    Visible = NOT IsSimplePage;
+                    Visible = not IsSimplePage;
                 }
                 field("VAT Bus. Posting Group"; "VAT Bus. Posting Group")
                 {
@@ -352,7 +352,7 @@ page 70023 "SSA Bank Journal"
                     ApplicationArea = All;
                     StyleExpr = StyleTxt;
                     ToolTip = 'Specifies the code for the balancing account type that should be used in this journal line.';
-                    Visible = NOT IsSimplePage;
+                    Visible = not IsSimplePage;
 
                     trigger OnValidate()
                     begin
@@ -364,7 +364,7 @@ page 70023 "SSA Bank Journal"
                     ApplicationArea = All;
                     StyleExpr = StyleTxt;
                     ToolTip = 'Specifies the number of the general ledger, customer, vendor, or bank account to which a balancing entry for the journal line will posted (for example, a cash account for cash purchases).';
-                    Visible = NOT IsSimplePage;
+                    Visible = not IsSimplePage;
 
                     trigger OnValidate()
                     begin
@@ -376,25 +376,25 @@ page 70023 "SSA Bank Journal"
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the general posting type associated with the balancing account that will be used when you post the entry on the journal line.';
-                    Visible = NOT IsSimplePage;
+                    Visible = not IsSimplePage;
                 }
                 field("Bal. Gen. Bus. Posting Group"; "Bal. Gen. Bus. Posting Group")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the general business posting group code associated with the balancing account that will be used when you post the entry.';
-                    Visible = NOT IsSimplePage;
+                    Visible = not IsSimplePage;
                 }
                 field("Bal. Gen. Prod. Posting Group"; "Bal. Gen. Prod. Posting Group")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the general product posting group code associated with the balancing account that will be used when you post the entry.';
-                    Visible = NOT IsSimplePage;
+                    Visible = not IsSimplePage;
                 }
                 field("Deferral Code"; "Deferral Code")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the deferral template that governs how expenses or revenue are deferred to the different accounting periods when the expenses or revenue were incurred.';
-                    Visible = NOT IsSimplePage;
+                    Visible = not IsSimplePage;
 
                     trigger OnAssistEdit()
                     begin
@@ -485,13 +485,13 @@ page 70023 "SSA Bank Journal"
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the entry as a corrective entry. You can use the field if you need to post a corrective entry to an account.';
-                    Visible = NOT IsSimplePage;
+                    Visible = not IsSimplePage;
                 }
                 field(Control7; Comment)
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies a comment about the activity on the journal line. Note that the comment is not carried forward to posted entries.';
-                    Visible = NOT IsSimplePage;
+                    Visible = not IsSimplePage;
                 }
                 field("Direct Debit Mandate ID"; "Direct Debit Mandate ID")
                 {
@@ -515,9 +515,9 @@ page 70023 "SSA Bank Journal"
                 {
                     ApplicationArea = All;
                     CaptionClass = '1,2,3';
-                    TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(3),
-                                                                  "Dimension Value Type" = CONST(Standard),
-                                                                  Blocked = CONST(false));
+                    TableRelation = "Dimension Value".Code where("Global Dimension No." = const(3),
+                                                                  "Dimension Value Type" = const(Standard),
+                                                                  Blocked = const(false));
                     Visible = DimVisible3;
 
                     trigger OnValidate()
@@ -529,9 +529,9 @@ page 70023 "SSA Bank Journal"
                 {
                     ApplicationArea = All;
                     CaptionClass = '1,2,4';
-                    TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(4),
-                                                                  "Dimension Value Type" = CONST(Standard),
-                                                                  Blocked = CONST(false));
+                    TableRelation = "Dimension Value".Code where("Global Dimension No." = const(4),
+                                                                  "Dimension Value Type" = const(Standard),
+                                                                  Blocked = const(false));
                     Visible = DimVisible4;
 
                     trigger OnValidate()
@@ -543,9 +543,9 @@ page 70023 "SSA Bank Journal"
                 {
                     ApplicationArea = All;
                     CaptionClass = '1,2,5';
-                    TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(5),
-                                                                  "Dimension Value Type" = CONST(Standard),
-                                                                  Blocked = CONST(false));
+                    TableRelation = "Dimension Value".Code where("Global Dimension No." = const(5),
+                                                                  "Dimension Value Type" = const(Standard),
+                                                                  Blocked = const(false));
                     Visible = DimVisible5;
 
                     trigger OnValidate()
@@ -557,9 +557,9 @@ page 70023 "SSA Bank Journal"
                 {
                     ApplicationArea = All;
                     CaptionClass = '1,2,6';
-                    TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(6),
-                                                                  "Dimension Value Type" = CONST(Standard),
-                                                                  Blocked = CONST(false));
+                    TableRelation = "Dimension Value".Code where("Global Dimension No." = const(6),
+                                                                  "Dimension Value Type" = const(Standard),
+                                                                  Blocked = const(false));
                     Visible = DimVisible6;
 
                     trigger OnValidate()
@@ -571,9 +571,9 @@ page 70023 "SSA Bank Journal"
                 {
                     ApplicationArea = All;
                     CaptionClass = '1,2,7';
-                    TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(7),
-                                                                  "Dimension Value Type" = CONST(Standard),
-                                                                  Blocked = CONST(false));
+                    TableRelation = "Dimension Value".Code where("Global Dimension No." = const(7),
+                                                                  "Dimension Value Type" = const(Standard),
+                                                                  Blocked = const(false));
                     Visible = DimVisible7;
 
                     trigger OnValidate()
@@ -585,9 +585,9 @@ page 70023 "SSA Bank Journal"
                 {
                     ApplicationArea = All;
                     CaptionClass = '1,2,8';
-                    TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(8),
-                                                                  "Dimension Value Type" = CONST(Standard),
-                                                                  Blocked = CONST(false));
+                    TableRelation = "Dimension Value".Code where("Global Dimension No." = const(8),
+                                                                  "Dimension Value Type" = const(Standard),
+                                                                  Blocked = const(false));
                     Visible = DimVisible8;
 
                     trigger OnValidate()
@@ -746,7 +746,7 @@ page 70023 "SSA Bank Journal"
             part(Control1900919607; "Dimension Set Entries FactBox")
             {
                 ApplicationArea = All;
-                SubPageLink = "Dimension Set ID" = FIELD("Dimension Set ID");
+                SubPageLink = "Dimension Set ID" = field("Dimension Set ID");
             }
             part(IncomingDocAttachFactBox; "Incoming Doc. Attach. FactBox")
             {
@@ -869,7 +869,7 @@ page 70023 "SSA Bank Journal"
                     Caption = 'Renumber Document Numbers';
                     Image = EditLines;
                     ToolTip = 'Resort the numbers in the Document No. column to avoid posting errors because the document numbers are not in sequence. Entry applications and line groupings are preserved.';
-                    Visible = NOT IsSimplePage;
+                    Visible = not IsSimplePage;
 
                     trigger OnAction()
                     begin
@@ -1068,7 +1068,7 @@ page 70023 "SSA Bank Journal"
                         ApplicationArea = All;
                         Caption = 'Create Incoming Document from File';
                         Ellipsis = true;
-                        Enabled = NOT HasIncomingDocument;
+                        Enabled = not HasIncomingDocument;
                         Image = Attach;
                         ToolTip = 'Create an incoming document record by selecting a file to attach, and then link the incoming document record to the entry or document.';
 
@@ -1128,8 +1128,8 @@ page 70023 "SSA Bank Journal"
                     PromotedCategory = Category4;
                     PromotedIsBig = true;
                     RunObject = Page "Bank Statement Line Details";
-                    RunPageLink = "Data Exch. No." = FIELD("Data Exch. Entry No."),
-                                  "Line No." = FIELD("Data Exch. Line No.");
+                    RunPageLink = "Data Exch. No." = field("Data Exch. Entry No."),
+                                  "Line No." = field("Data Exch. Line No.");
                     ToolTip = 'View the content of the imported bank statement file, such as account number, posting date, and amounts.';
                     Visible = false;
                 }
@@ -1252,7 +1252,7 @@ page 70023 "SSA Bank Journal"
                     {
                         ApplicationArea = All;
                         Caption = 'Journal Batch';
-                        Enabled = NOT OpenApprovalEntriesOnBatchOrAnyJnlLineExist AND CanRequestFlowApprovalForBatchAndAllLines;
+                        Enabled = not OpenApprovalEntriesOnBatchOrAnyJnlLineExist and CanRequestFlowApprovalForBatchAndAllLines;
                         Image = SendApprovalRequest;
                         ToolTip = 'Send all journal lines for approval, also those that you may not see because of filters.';
 
@@ -1269,7 +1269,7 @@ page 70023 "SSA Bank Journal"
                     {
                         ApplicationArea = All;
                         Caption = 'Selected Journal Lines';
-                        Enabled = NOT OpenApprovalEntriesOnBatchOrCurrJnlLineExist AND CanRequestFlowApprovalForBatchAndCurrentLine;
+                        Enabled = not OpenApprovalEntriesOnBatchOrCurrJnlLineExist and CanRequestFlowApprovalForBatchAndCurrentLine;
                         Image = SendApprovalRequest;
                         ToolTip = 'Send selected journal lines for approval.';
 
@@ -1292,7 +1292,7 @@ page 70023 "SSA Bank Journal"
                     {
                         ApplicationArea = All;
                         Caption = 'Journal Batch';
-                        Enabled = CanCancelApprovalForJnlBatch OR CanCancelFlowApprovalForBatch;
+                        Enabled = CanCancelApprovalForJnlBatch or CanCancelFlowApprovalForBatch;
                         Image = CancelApprovalRequest;
                         ToolTip = 'Cancel sending all journal lines for approval, also those that you may not see because of filters.';
 
@@ -1309,7 +1309,7 @@ page 70023 "SSA Bank Journal"
                     {
                         ApplicationArea = All;
                         Caption = 'Selected Journal Lines';
-                        Enabled = CanCancelApprovalForJnlLine OR CanCancelFlowApprovalForLine;
+                        Enabled = CanCancelApprovalForJnlLine or CanCancelFlowApprovalForLine;
                         Image = CancelApprovalRequest;
                         ToolTip = 'Cancel sending selected journal lines for approval.';
 
@@ -1598,7 +1598,7 @@ page 70023 "SSA Bank Journal"
                     PromotedIsBig = true;
                     PromotedOnly = true;
                     ToolTip = 'Hide fields that are not frequently used.';
-                    Visible = NOT IsSimplePage;
+                    Visible = not IsSimplePage;
 
                     trigger OnAction()
                     begin

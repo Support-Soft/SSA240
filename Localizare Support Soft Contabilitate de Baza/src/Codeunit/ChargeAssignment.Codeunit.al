@@ -16,8 +16,8 @@ codeunit 70027 "SSA Charge Assignment"
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", 'OnBeforePostItemJnlLine', '', true, false)]
-    local procedure SalesOnBeforePostItemJnlLine(SalesHeader: Record "Sales Header"; VAR SalesLine: Record "Sales Line"; VAR QtyToBeShipped: Decimal;
-        VAR QtyToBeShippedBase: Decimal; VAR QtyToBeInvoiced: Decimal; VAR QtyToBeInvoicedBase: Decimal; VAR ItemLedgShptEntryNo: Integer;
+    local procedure SalesOnBeforePostItemJnlLine(SalesHeader: Record "Sales Header"; var SalesLine: Record "Sales Line"; var QtyToBeShipped: Decimal;
+        var QtyToBeShippedBase: Decimal; var QtyToBeInvoiced: Decimal; var QtyToBeInvoicedBase: Decimal; var ItemLedgShptEntryNo: Integer;
         var ItemChargeNo: Code[20]; var TrackingSpecification: Record "Tracking Specification"; var IsATO: Boolean; CommitIsSuppressed: Boolean)
     var
         ILE: Record "Item Ledger Entry";

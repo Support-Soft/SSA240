@@ -5,8 +5,8 @@ page 71101 "SSA Non-Inv Sales Shipment"
     PageType = Worksheet;
     RefreshOnActivate = true;
     SourceTable = "SSA Non-Invoiced Sales Ship";
-    SourceTableView = SORTING("Posting Date")
-                      ORDER(Descending);
+    SourceTableView = sorting("Posting Date")
+                      order(descending);
     ApplicationArea = All;
     UsageCategory = Tasks;
     layout
@@ -169,7 +169,7 @@ page 71101 "SSA Non-Inv Sales Shipment"
                     Caption = 'Card';
                     Image = EditLines;
                     RunObject = Page "Posted Sales Shipment";
-                    RunPageLink = "No." = FIELD("No.");
+                    RunPageLink = "No." = field("No.");
                     ShortCutKey = 'Shift+F7';
                 }
                 action(Statistics)
@@ -180,7 +180,7 @@ page 71101 "SSA Non-Inv Sales Shipment"
                     Promoted = true;
                     PromotedCategory = Process;
                     RunObject = Page "Sales Shipment Statistics";
-                    RunPageLink = "No." = FIELD("No.");
+                    RunPageLink = "No." = field("No.");
                     ShortCutKey = 'F7';
                 }
                 action("Co&mments")
@@ -189,8 +189,8 @@ page 71101 "SSA Non-Inv Sales Shipment"
                     Caption = 'Co&mments';
                     Image = ViewComments;
                     RunObject = Page "Sales Comment Sheet";
-                    RunPageLink = "Document Type" = CONST(Shipment),
-                                  "No." = FIELD("No.");
+                    RunPageLink = "Document Type" = const(Shipment),
+                                  "No." = field("No.");
                 }
             }
             group("P&ost Invoices")

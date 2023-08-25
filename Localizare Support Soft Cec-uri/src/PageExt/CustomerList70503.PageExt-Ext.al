@@ -17,8 +17,8 @@ pageextension 70503 "SSA Customer List 70503" extends "Customer List" //22
                 PromotedCategory = Process;
                 PromotedIsBig = true;
                 RunObject = page "SSA CEC & BO Customer";
-                RunPageView = SORTING("Entry No.") ORDER(Ascending) WHERE(Open = FILTER(true));
-                RunPageLink = "Customer No." = FIELD("No."), "Document Type" = FILTER(Invoice);
+                RunPageView = sorting("Entry No.") order(ascending) where(Open = filter(true));
+                RunPageLink = "Customer No." = field("No."), "Document Type" = filter(Invoice);
             }
         }
     }

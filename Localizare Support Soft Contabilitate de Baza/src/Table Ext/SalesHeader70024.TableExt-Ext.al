@@ -30,9 +30,9 @@ tableextension 70024 "SSA Sales Header70024" extends "Sales Header"
                 else
                     if "SSA Stare Factura" = "SSA Stare Factura"::"0-Factura Emisa" then begin
                         SalesSetup.Get;
-                        IF IsCreditDocType THEN
+                        if IsCreditDocType then
                             "Posting No. Series" := SalesSetup."Posted Credit Memo Nos."
-                        ELSE
+                        else
                             "Posting No. Series" := SalesSetup."Posted Invoice Nos.";
                     end;
 

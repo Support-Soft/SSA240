@@ -17,11 +17,11 @@ table 70506 "SSA Payment Header"
 
             trigger OnValidate()
             begin
-                IF "No." <> xRec."No." THEN BEGIN
+                if "No." <> xRec."No." then begin
                     Process := GetProcess;
                     NoSeriesMgt.TestManual(Process."Header No. Series");
                     "No. Series" := '';
-                END;
+                end;
             end;
         }
         field(2; "Currency Code"; Code[10])
@@ -34,32 +34,32 @@ table 70506 "SSA Payment Header"
                 PaymentLine: Record "SSA Payment Line";
                 CompanyBank: Record "Bank Account";
             begin
-                IF "Account Type" = "Account Type"::"Bank Account" THEN
-                    IF CompanyBank.GET("Account No.") THEN
-                        IF CompanyBank."Currency Code" <> '' THEN
+                if "Account Type" = "Account Type"::"Bank Account" then
+                    if CompanyBank.GET("Account No.") then
+                        if CompanyBank."Currency Code" <> '' then
                             ERROR(Text008, CompanyBank."Currency Code");
 
-                IF CurrFieldNo <> FIELDNO("Currency Code") THEN
+                if CurrFieldNo <> FIELDNO("Currency Code") then
                     UpdateCurrencyFactor
-                ELSE BEGIN
-                    IF "Currency Code" <> xRec."Currency Code" THEN BEGIN
+                else begin
+                    if "Currency Code" <> xRec."Currency Code" then begin
                         PaymentLine.SETRANGE("No.", "No.");
-                        IF PaymentLine.FIND('-') THEN
+                        if PaymentLine.FIND('-') then
                             ERROR(Text002);
                         UpdateCurrencyFactor;
-                    END ELSE
-                        IF "Currency Code" <> '' THEN BEGIN
+                    end else
+                        if "Currency Code" <> '' then begin
                             UpdateCurrencyFactor;
-                            IF "Currency Factor" <> xRec."Currency Factor" THEN
+                            if "Currency Factor" <> xRec."Currency Factor" then
                                 ConfirmUpdateCurrencyFactor;
-                        END;
-                END;
-                IF "Currency Code" <> xRec."Currency Code" THEN BEGIN
+                        end;
+                end;
+                if "Currency Code" <> xRec."Currency Code" then begin
                     PaymentLine.INIT;
                     PaymentLine.SETRANGE("No.", "No.");
                     PaymentLine.MODIFYALL("Currency Code", "Currency Code");
                     PaymentLine.MODIFYALL("Currency Factor", "Currency Factor");
-                END;
+                end;
             end;
         }
         field(3; "Currency Factor"; Decimal)
@@ -81,11 +81,11 @@ table 70506 "SSA Payment Header"
 
             trigger OnValidate()
             begin
-                IF "Posting Date" <> xRec."Posting Date" THEN BEGIN
+                if "Posting Date" <> xRec."Posting Date" then begin
                     CLEAR(RegLine);
                     RegLine.SETRANGE("No.", "No.");
                     RegLine.MODIFYALL("Posting Date", "Posting Date");
-                END;
+                end;
             end;
         }
         field(5; "Document Date"; Date)
@@ -94,14 +94,14 @@ table 70506 "SSA Payment Header"
 
             trigger OnValidate()
             begin
-                IF "Document Date" <> xRec."Document Date" THEN BEGIN
+                if "Document Date" <> xRec."Document Date" then begin
                     CLEAR(RegLine);
                     RegLine.SETRANGE("No.", "No.");
-                    IF RegLine.FIND('-') THEN
-                        REPEAT
+                    if RegLine.FIND('-') then
+                        repeat
                             RegLine.UpdateDueDate("Document Date");
-                        UNTIL RegLine.NEXT = 0;
-                END;
+                        until RegLine.NEXT = 0;
+                end;
             end;
         }
         field(6; "Payment Class"; Text[30])
@@ -117,7 +117,7 @@ table 70506 "SSA Payment Header"
         field(7; "Status No."; Integer)
         {
             Caption = 'Status';
-            TableRelation = "SSA Payment Status".Line WHERE("Payment Class" = FIELD("Payment Class"));
+            TableRelation = "SSA Payment Status".Line where("Payment Class" = field("Payment Class"));
 
             trigger OnValidate()
             var
@@ -127,7 +127,7 @@ table 70506 "SSA Payment Header"
                 PaymentStep.SETRANGE("Payment Class", "Payment Class");
                 PaymentStep.SETFILTER("Next Status", '>%1', "Status No.");
                 PaymentStep.SETRANGE(PaymentStep."Action Type", PaymentStep."Action Type"::Ledger);
-                IF PaymentStep.FIND('-') THEN
+                if PaymentStep.FIND('-') then
                     "Source Code" := PaymentStep."Source Code";
                 PaymentStatus.GET("Payment Class", "Status No.");
                 "Archiving authorized" := PaymentStatus."Archiving authorized";
@@ -135,7 +135,7 @@ table 70506 "SSA Payment Header"
         }
         field(8; "Status Name"; Text[50])
         {
-            CalcFormula = Lookup("SSA Payment Status".Name WHERE("Payment Class" = FIELD("Payment Class"), Line = FIELD("Status No.")));
+            CalcFormula = lookup("SSA Payment Status".Name where("Payment Class" = field("Payment Class"), Line = field("Status No.")));
             Caption = 'Status Name';
             Editable = false;
             FieldClass = FlowField;
@@ -144,7 +144,7 @@ table 70506 "SSA Payment Header"
         {
             CaptionClass = '1,2,1';
             Caption = 'Shortcut Dimension 1 Code';
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(1));
 
             trigger OnLookup()
             begin
@@ -161,7 +161,7 @@ table 70506 "SSA Payment Header"
         {
             CaptionClass = '1,2,2';
             Caption = 'Shortcut Dimension 2 Code';
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(2));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(2));
 
             trigger OnLookup()
             begin
@@ -176,7 +176,7 @@ table 70506 "SSA Payment Header"
         }
         field(11; "Payment Class Name"; Text[50])
         {
-            CalcFormula = Lookup("SSA Payment Class".Name WHERE(Code = FIELD("Payment Class")));
+            CalcFormula = lookup("SSA Payment Class".Name where(Code = field("Payment Class")));
             Caption = 'Payment Class Name';
             Editable = false;
             FieldClass = FlowField;
@@ -198,35 +198,35 @@ table 70506 "SSA Payment Header"
 
             trigger OnValidate()
             begin
-                IF "Account Type" <> xRec."Account Type" THEN BEGIN
+                if "Account Type" <> xRec."Account Type" then begin
                     VALIDATE("Account No.", '');
                     DimensionDelete;
-                END;
+                end;
             end;
         }
         field(15; "Account No."; Code[20])
         {
             Caption = 'Account No.';
-            TableRelation = IF ("Account Type" = CONST("G/L Account")) "G/L Account" ELSE
-            IF ("Account Type" = CONST(Customer)) Customer ELSE
-            IF ("Account Type" = CONST(Vendor)) Vendor ELSE
-            IF ("Account Type" = CONST("Bank Account")) "Bank Account" ELSE
-            IF ("Account Type" = CONST("Fixed Asset")) "Fixed Asset";
+            TableRelation = if ("Account Type" = const("G/L Account")) "G/L Account" else
+            if ("Account Type" = const(Customer)) Customer else
+            if ("Account Type" = const(Vendor)) Vendor else
+            if ("Account Type" = const("Bank Account")) "Bank Account" else
+            if ("Account Type" = const("Fixed Asset")) "Fixed Asset";
 
             trigger OnValidate()
             begin
-                IF "Account No." <> xRec."Account No." THEN BEGIN
+                if "Account No." <> xRec."Account No." then begin
                     DimensionDelete;
-                    IF "Account No." <> '' THEN
+                    if "Account No." <> '' then
                         DimensionSetup;
-                END;
-                IF "Account Type" = "Account Type"::"Bank Account" THEN BEGIN
-                    IF CompanyBank.GET("Account No.") THEN BEGIN
-                        IF "Currency Code" = '' THEN
-                            IF CompanyBank."Currency Code" <> '' THEN
+                end;
+                if "Account Type" = "Account Type"::"Bank Account" then begin
+                    if CompanyBank.GET("Account No.") then begin
+                        if "Currency Code" = '' then
+                            if CompanyBank."Currency Code" <> '' then
                                 ERROR(Text006);
-                        IF "Currency Code" <> '' THEN
-                            IF (CompanyBank."Currency Code" <> "Currency Code") AND (CompanyBank."Currency Code" <> '') THEN
+                        if "Currency Code" <> '' then
+                            if (CompanyBank."Currency Code" <> "Currency Code") and (CompanyBank."Currency Code" <> '') then
                                 ERROR(Text007, "Currency Code");
                         "Bank Branch No." := CompanyBank."Bank Branch No.";
                         "Bank Account No." := CompanyBank."Bank Account No.";
@@ -241,14 +241,14 @@ table 70506 "SSA Payment Header"
                         "Bank Address" := CompanyBank.Address;
                         "Bank Address 2" := CompanyBank."Address 2";
                         "From payment No." := CompanyBank."SSA From Payment No.";
-                    END ELSE
+                    end else
                         InitBankAccount;
-                END ELSE
+                end else
                     InitBankAccount;
 
 
                 //SSM729>>
-                CASE "Account Type" OF
+                case "Account Type" of
                     "Account Type"::Customer:
                         CreateDim(
                           DATABASE::Customer, "Account No.");
@@ -264,21 +264,21 @@ table 70506 "SSA Payment Header"
                     "Account Type"::"Bank Account":
                         CreateDim(
                           DATABASE::"Bank Account", "Account No.");
-                END;
+                end;
                 //SSM729<<
             end;
         }
         field(16; "Amount (LCY)"; Decimal)
         {
             FieldClass = FlowField;
-            CalcFormula = Sum("SSA Payment Line"."Amount (LCY)" WHERE("No." = FIELD("No.")));
+            CalcFormula = sum("SSA Payment Line"."Amount (LCY)" where("No." = field("No.")));
             Caption = 'Total Amount (LCY)';
             Editable = false;
 
         }
         field(17; Amount; Decimal)
         {
-            CalcFormula = Sum("SSA Payment Line".Amount WHERE("No." = FIELD("No.")));
+            CalcFormula = sum("SSA Payment Line".Amount where("No." = field("No.")));
             Caption = 'Amount';
             Editable = false;
             FieldClass = FlowField;
@@ -397,21 +397,21 @@ table 70506 "SSA Payment Header"
         }
         field(41; "Nb of lines"; Integer)
         {
-            CalcFormula = Count("SSA Payment Line" WHERE("No." = FIELD("No.")));
+            CalcFormula = count("SSA Payment Line" where("No." = field("No.")));
             Caption = 'Nb of lines';
             Editable = false;
             FieldClass = FlowField;
         }
         field(42; "Lines not Posted"; Integer)
         {
-            CalcFormula = Count("SSA Payment Line" WHERE("No." = FIELD("No."), Posted = CONST(false)));
+            CalcFormula = count("SSA Payment Line" where("No." = field("No."), Posted = const(false)));
             Caption = 'Lines not Posted';
             Editable = false;
             FieldClass = FlowField;
         }
         field(43; "Archiving authorized"; Boolean)
         {
-            CalcFormula = Lookup("SSA Payment Status"."Archiving authorized" WHERE("Payment Class" = FIELD("Payment Class"), Line = FIELD("Status No.")));
+            CalcFormula = lookup("SSA Payment Status"."Archiving authorized" where("Payment Class" = field("Payment Class"), Line = field("Status No.")));
             Caption = 'Archiving authorized';
             Editable = false;
             FieldClass = FlowField;
@@ -435,21 +435,21 @@ table 70506 "SSA Payment Header"
         }
         field(50040; "Status Aplicare Neaplicat"; Boolean)
         {
-            CalcFormula = Exist("SSA Payment Line" WHERE("No." = FIELD("No."), "Status Aplicare" = FILTER(Neaplicat | ' ')));
+            CalcFormula = exist("SSA Payment Line" where("No." = field("No."), "Status Aplicare" = filter(Neaplicat | ' ')));
             Description = 'SSM729';
             Editable = false;
             FieldClass = FlowField;
         }
         field(50050; "Suma Aplicata"; Decimal)
         {
-            CalcFormula = Sum("SSA Pmt. Tools AppLedg. Entry".Amount WHERE("Payment Document No." = FIELD("No.")));
+            CalcFormula = sum("SSA Pmt. Tools AppLedg. Entry".Amount where("Payment Document No." = field("No.")));
             Description = 'SSM729';
             Editable = false;
             FieldClass = FlowField;
         }
         field(50060; "Line Account No."; Code[20])
         {
-            CalcFormula = Lookup("SSA Payment Line"."Account No." WHERE("No." = FIELD("No.")));
+            CalcFormula = lookup("SSA Payment Line"."Account No." where("No." = field("No.")));
             Caption = 'Line Account No.';
             Description = 'SSM729';
             Editable = false;
@@ -457,7 +457,7 @@ table 70506 "SSA Payment Header"
         }
         field(50070; "Line Account Type"; Option)
         {
-            CalcFormula = Lookup("SSA Payment Line"."Account Type" WHERE("No." = FIELD("No.")));
+            CalcFormula = lookup("SSA Payment Line"."Account Type" where("No." = field("No.")));
             Caption = 'Line Account Type';
             Description = 'SSM729';
             Editable = false;
@@ -467,15 +467,15 @@ table 70506 "SSA Payment Header"
 
             trigger OnValidate()
             begin
-                IF "Account Type" <> xRec."Account Type" THEN BEGIN
+                if "Account Type" <> xRec."Account Type" then begin
                     VALIDATE("Account No.", '');
                     DimensionDelete;
-                END;
+                end;
             end;
         }
         field(50080; "Customer Name"; Text[100])
         {
-            CalcFormula = Lookup(Customer.Name WHERE("No." = FIELD("Line Account No.")));
+            CalcFormula = lookup(Customer.Name where("No." = field("Line Account No.")));
             Caption = 'Customer Name';
             Description = 'SSM845';
             Editable = false;
@@ -483,7 +483,7 @@ table 70506 "SSA Payment Header"
         }
         field(50090; "Vendor Name"; Text[100])
         {
-            CalcFormula = Lookup(Vendor.Name WHERE("No." = FIELD("Line Account No.")));
+            CalcFormula = lookup(Vendor.Name where("No." = field("Line Account No.")));
             Caption = 'Vendor Name';
             Description = 'SSM845';
             Editable = false;
@@ -491,7 +491,7 @@ table 70506 "SSA Payment Header"
         }
         field(50100; "Due Date"; Date)
         {
-            CalcFormula = Min("SSA Payment Line"."Due Date" WHERE("No." = FIELD("No.")));
+            CalcFormula = min("SSA Payment Line"."Due Date" where("No." = field("No.")));
             Caption = 'Due Date';
             Description = 'HD819';
             Editable = false;
@@ -503,7 +503,7 @@ table 70506 "SSA Payment Header"
         }
         field(45007655; "Cashed Amount"; Decimal)
         {
-            CalcFormula = Sum("SSA Payment Line"."Cashed Amount" WHERE("No." = FIELD("No.")));
+            CalcFormula = sum("SSA Payment Line"."Cashed Amount" where("No." = field("No.")));
             Caption = 'Cashed Amount';
             Editable = false;
             FieldClass = FlowField;
@@ -532,26 +532,26 @@ table 70506 "SSA Payment Header"
 
     trigger OnDelete()
     begin
-        IF "Status No." > 0 THEN
+        if "Status No." > 0 then
             ERROR(Text000);
 
         RegLine.SETRANGE(RegLine."No.", "No.");
         RegLine.SETFILTER("Copied To No.", '<>''''');
-        IF RegLine.FIND('-') THEN
+        if RegLine.FIND('-') then
             ERROR(Text000);
         RegLine.SETRANGE("Copied To No.");
-        RegLine.DELETEALL(TRUE);
+        RegLine.DELETEALL(true);
     end;
 
     trigger OnInsert()
     begin
-        IF "No." = '' THEN BEGIN
-            IF PAGE.RUNMODAL(PAGE::"SSA Payment Class List", GetProcess) = ACTION::LookupOK THEN
+        if "No." = '' then begin
+            if PAGE.RUNMODAL(PAGE::"SSA Payment Class List", GetProcess) = ACTION::LookupOK then
                 Process := GetProcess;
             Process.TESTFIELD("Header No. Series");
             NoSeriesMgt.InitSeries(Process."Header No. Series", xRec."No. Series", 0D, "No.", "No. Series");
             VALIDATE("Payment Class", Process.Code);
-        END;
+        end;
         InitHeader;
     end;
 
@@ -603,40 +603,40 @@ table 70506 "SSA Payment Header"
     begin
         OldDimSetID := "Dimension Set ID";
         DimMgt.ValidateShortcutDimValues(FieldNo, ShortcutDimCode, "Dimension Set ID");
-        IF "No." <> '' THEN
+        if "No." <> '' then
             MODIFY;
 
-        IF OldDimSetID <> "Dimension Set ID" THEN BEGIN
+        if OldDimSetID <> "Dimension Set ID" then begin
             MODIFY;
-            IF PaymentLinesExist THEN
+            if PaymentLinesExist then
                 UpdateAllLineDim("Dimension Set ID", OldDimSetID);
-        END;
+        end;
     end;
 
     procedure AssistEdit(OldReglHeader: Record "SSA Payment Header"): Boolean
     begin
-        WITH ReglHeader DO BEGIN
+        with ReglHeader do begin
             ReglHeader := Rec;
             Process := GetProcess;
 
             Process.TESTFIELD("Header No. Series");
-            IF NoSeriesMgt.SelectSeries(Process."Header No. Series", OldReglHeader."No. Series", "No. Series") THEN BEGIN
+            if NoSeriesMgt.SelectSeries(Process."Header No. Series", OldReglHeader."No. Series", "No. Series") then begin
                 Process := GetProcess;
 
                 Process.TESTFIELD("Header No. Series");
                 NoSeriesMgt.SetSeries("No.");
                 Rec := ReglHeader;
-                EXIT(TRUE);
-            END;
-        END;
+                exit(true);
+            end;
+        end;
     end;
 
     local procedure UpdateCurrencyFactor()
     begin
-        IF "Currency Code" <> '' THEN BEGIN
+        if "Currency Code" <> '' then begin
             CurrencyDate := WORKDATE;
             "Currency Factor" := CurrExchRate.ExchangeRate(CurrencyDate, "Currency Code");
-        END ELSE
+        end else
             "Currency Factor" := 1;
     end;
 
@@ -661,7 +661,7 @@ table 70506 "SSA Payment Header"
         "Bank Account No." := '';
         "Agency Code" := '';
         "RIB Key" := 0;
-        "RIB Checked" := FALSE;
+        "RIB Checked" := false;
         "Bank Name" := '';
         "Bank Post Code" := '';
         "Bank City" := '';
@@ -677,7 +677,7 @@ table 70506 "SSA Payment Header"
     procedure TestNbOfLines()
     begin
         CALCFIELDS("Nb of lines");
-        IF "Nb of lines" = 0 THEN
+        if "Nb of lines" = 0 then
             ERROR(Text001);
     end;
 
@@ -802,20 +802,20 @@ table 70506 "SSA Payment Header"
         Index: Integer;
         Remaining: Integer;
     begin
-        IF NOT ((STRLEN(Bank) = 5) AND
-               (STRLEN(Agency) = 5) AND
-               (STRLEN(Account) = 11) AND
-               (RIBKey < 100)) THEN
-            EXIT(FALSE);
+        if not ((STRLEN(Bank) = 5) and
+               (STRLEN(Agency) = 5) and
+               (STRLEN(Account) = 11) and
+               (RIBKey < 100)) then
+            exit(false);
 
         LongAccountNum := Bank + Agency + Account + CONVERTSTR(FORMAT(RIBKey, 2), ' ', '0');
         LongAccountNum := CONVERTSTR(LongAccountNum, Coding, Uncoding);
 
         Remaining := 0;
-        FOR Index := 1 TO 23 DO
-            Remaining := (Remaining * 10 + (LongAccountNum[Index] - '0')) MOD 97;
+        for Index := 1 to 23 do
+            Remaining := (Remaining * 10 + (LongAccountNum[Index] - '0')) mod 97;
 
-        EXIT(Remaining = 0);
+        exit(Remaining = 0);
     end;
 
     procedure CreateDim(Type1: Integer; No1: Code[20])
@@ -838,10 +838,10 @@ table 70506 "SSA Payment Header"
         "Dimension Set ID" :=
           DimMgt.GetDefaultDimID(TableID, No, SourceCodeSetup.Sales, "Shortcut Dimension 1 Code", "Shortcut Dimension 2 Code", 0, 0);
 
-        IF (OldDimSetID <> "Dimension Set ID") AND PaymentLinesExist THEN BEGIN
+        if (OldDimSetID <> "Dimension Set ID") and PaymentLinesExist then begin
             MODIFY;
             UpdateAllLineDim("Dimension Set ID", OldDimSetID);
-        END;
+        end;
         //SSM729<<
     end;
 
@@ -852,7 +852,7 @@ table 70506 "SSA Payment Header"
         //SSM729>>
         PaymentLine.RESET;
         PaymentLine.SETRANGE("No.", "No.");
-        EXIT(PaymentLine.FINDFIRST);
+        exit(PaymentLine.FINDFIRST);
         //SSM729<<
     end;
 
@@ -864,27 +864,27 @@ table 70506 "SSA Payment Header"
         // Update all lines with changed dimensions.
         //SSM729>>
 
-        IF NewParentDimSetID = OldParentDimSetID THEN
-            EXIT;
-        IF GUIALLOWED THEN
-            IF NOT CONFIRM(Text50002) THEN
-                EXIT;
+        if NewParentDimSetID = OldParentDimSetID then
+            exit;
+        if GUIALLOWED then
+            if not CONFIRM(Text50002) then
+                exit;
 
         PaymentLine.RESET;
         PaymentLine.SETRANGE("No.", "No.");
         PaymentLine.LOCKTABLE;
-        IF PaymentLine.FIND('-') THEN
-            REPEAT
+        if PaymentLine.FIND('-') then
+            repeat
                 NewDimSetID := DimMgt.GetDeltaDimSetID(PaymentLine."Dimension Set ID", NewParentDimSetID, OldParentDimSetID);
-                IF PaymentLine."Dimension Set ID" <> NewDimSetID THEN BEGIN
+                if PaymentLine."Dimension Set ID" <> NewDimSetID then begin
                     PaymentLine."Dimension Set ID" := NewDimSetID;
 
                     DimMgt.UpdateGlobalDimFromDimSetID(
                       PaymentLine."Dimension Set ID", PaymentLine."Shortcut Dimension 1 Code", PaymentLine."Shortcut Dimension 2 Code");
 
                     PaymentLine.MODIFY;
-                END;
-            UNTIL PaymentLine.NEXT = 0;
+                end;
+            until PaymentLine.NEXT = 0;
         //SSM729<<
     end;
 
@@ -898,11 +898,11 @@ table 70506 "SSA Payment Header"
           DimMgt.EditDimensionSet(
             "Dimension Set ID", STRSUBSTNO('%1', "No."),
             "Shortcut Dimension 1 Code", "Shortcut Dimension 2 Code");
-        IF OldDimSetID <> "Dimension Set ID" THEN BEGIN
+        if OldDimSetID <> "Dimension Set ID" then begin
             MODIFY;
-            IF PaymentLinesExist THEN
+            if PaymentLinesExist then
                 UpdateAllLineDim("Dimension Set ID", OldDimSetID);
-        END;
+        end;
         //SSM729<<
     end;
 }

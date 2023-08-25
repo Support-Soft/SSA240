@@ -9,56 +9,56 @@ report 70503 "SSA Suggest Vendor Payments"
     {
         dataitem(Vendor; Vendor)
         {
-            DataItemTableView = SORTING("No.");
+            DataItemTableView = sorting("No.");
             RequestFilterFields = "No.", "Payment Method Code";
 
             trigger OnAfterGetRecord()
             begin
-                IF StopPayments THEN
+                if StopPayments then
                     CurrReport.BREAK;
                 Window.UPDATE(1, "No.");
-                GetVendLedgEntries(TRUE, FALSE);
-                GetVendLedgEntries(FALSE, FALSE);
-                CheckAmounts(FALSE);
+                GetVendLedgEntries(true, false);
+                GetVendLedgEntries(false, false);
+                CheckAmounts(false);
             end;
 
             trigger OnPostDataItem()
             begin
-                IF UsePriority AND NOT StopPayments THEN BEGIN
+                if UsePriority and not StopPayments then begin
                     RESET;
                     COPYFILTERS(Vend2);
                     SETCURRENTKEY(Priority);
                     SETRANGE(Priority, 0);
-                    IF FIND('-') THEN
-                        REPEAT
+                    if FIND('-') then
+                        repeat
                             Window.UPDATE(1, "No.");
-                            GetVendLedgEntries(TRUE, FALSE);
-                            GetVendLedgEntries(FALSE, FALSE);
-                            CheckAmounts(FALSE);
-                        UNTIL (NEXT = 0) OR StopPayments;
-                END;
+                            GetVendLedgEntries(true, false);
+                            GetVendLedgEntries(false, false);
+                            CheckAmounts(false);
+                        until (NEXT = 0) or StopPayments;
+                end;
 
-                IF UsePaymentDisc AND NOT StopPayments THEN BEGIN
+                if UsePaymentDisc and not StopPayments then begin
                     RESET;
                     COPYFILTERS(Vend2);
                     Window.OPEN(Text007);
-                    IF FIND('-') THEN
-                        REPEAT
+                    if FIND('-') then
+                        repeat
                             Window.UPDATE(1, "No.");
                             PayableVendLedgEntry.SETRANGE("Vendor No.", "No.");
-                            GetVendLedgEntries(TRUE, TRUE);
-                            GetVendLedgEntries(FALSE, TRUE);
-                            CheckAmounts(TRUE);
-                        UNTIL (NEXT = 0) OR StopPayments;
-                END;
+                            GetVendLedgEntries(true, true);
+                            GetVendLedgEntries(false, true);
+                            CheckAmounts(true);
+                        until (NEXT = 0) or StopPayments;
+                end;
 
                 GenPayLine.LOCKTABLE;
                 GenPayLine.SETRANGE("No.", GenPayLine."No.");
-                IF GenPayLine.FIND('+') THEN BEGIN
+                if GenPayLine.FIND('+') then begin
                     FirstLineNo := GenPayLine."Line No.";
                     LastLineNo := GenPayLine."Line No.";
                     GenPayLine.INIT;
-                END;
+                end;
 
                 Window.OPEN(Text008);
 
@@ -77,32 +77,32 @@ report 70503 "SSA Suggest Vendor Payments"
 
             trigger OnPreDataItem()
             begin
-                IF LastDueDateToPayReq = 0D THEN
+                if LastDueDateToPayReq = 0D then
                     ERROR(Text000);
-                IF PostingDate = 0D THEN
+                if PostingDate = 0D then
                     ERROR(Text001);
 
-                GenPayLineInserted := FALSE;
-                SeveralCurrencies := FALSE;
+                GenPayLineInserted := false;
+                SeveralCurrencies := false;
                 MessageText := '';
 
-                IF UsePaymentDisc AND (LastDueDateToPayReq < WORKDATE) THEN
-                    IF NOT
+                if UsePaymentDisc and (LastDueDateToPayReq < WORKDATE) then
+                    if not
                        CONFIRM(
                          Text003 +
-                         Text004, FALSE,
+                         Text004, false,
                          WORKDATE)
-                    THEN
+                    then
                         ERROR(Text005);
 
                 Vend2.COPYFILTERS(Vendor);
 
                 OriginalAmtAvailable := AmountAvailable;
-                IF AmountAvailable > 0 THEN BEGIN
+                if AmountAvailable > 0 then begin
                     SETCURRENTKEY(Priority);
                     SETRANGE(Priority, 1, 2147483647);
-                    UsePriority := TRUE;
-                END;
+                    UsePriority := true;
+                end;
                 Window.OPEN(Text006);
 
                 NextEntryNo := 1;
@@ -139,7 +139,7 @@ report 70503 "SSA Suggest Vendor Payments"
 
                         trigger OnValidate()
                         begin
-                            IF NOT UsePriority AND (AmountAvailable <> 0) THEN
+                            if not UsePriority and (AmountAvailable <> 0) then
                                 ERROR(Text011);
                         end;
                     }
@@ -240,46 +240,46 @@ report 70503 "SSA Suggest Vendor Payments"
         VendLedgEntry.RESET;
         VendLedgEntry.SETCURRENTKEY("Vendor No.", Open, Positive, "Due Date");
         VendLedgEntry.SETRANGE("Vendor No.", Vendor."No.");
-        VendLedgEntry.SETRANGE(Open, TRUE);
+        VendLedgEntry.SETRANGE(Open, true);
         VendLedgEntry.SETRANGE(Positive, Positive);
         VendLedgEntry.SETRANGE("Currency Code", CurrencyFilter);
         VendLedgEntry.SETRANGE("Applies-to ID", '');
-        IF Future THEN BEGIN
+        if Future then begin
             VendLedgEntry.SETRANGE("Due Date", LastDueDateToPayReq + 1, 99991231D);
             VendLedgEntry.SETRANGE("Pmt. Discount Date", PostingDate, LastDueDateToPayReq);
             VendLedgEntry.SETFILTER("Original Pmt. Disc. Possible", '<0');
-        END ELSE
+        end else
             VendLedgEntry.SETRANGE("Due Date", 0D, LastDueDateToPayReq);
         VendLedgEntry.SETRANGE("On Hold", '');
-        IF VendLedgEntry.FIND('-') THEN
-            REPEAT
+        if VendLedgEntry.FIND('-') then
+            repeat
                 SaveAmount;
-            UNTIL VendLedgEntry.NEXT = 0;
+            until VendLedgEntry.NEXT = 0;
     end;
 
     local procedure SaveAmount()
     begin
-        WITH GenPayLine DO BEGIN
+        with GenPayLine do begin
             "Account Type" := "Account Type"::Vendor;
             VALIDATE("Account No.", VendLedgEntry."Vendor No.");
             "Posting Date" := VendLedgEntry."Posting Date";
             "Currency Factor" := VendLedgEntry."Adjusted Currency Factor";
-            IF "Currency Factor" = 0 THEN
+            if "Currency Factor" = 0 then
                 "Currency Factor" := 1;
             VALIDATE("Currency Code", VendLedgEntry."Currency Code");
             VendLedgEntry.CALCFIELDS("Remaining Amount");
-            IF (VendLedgEntry."Document Type" = VendLedgEntry."Document Type"::Invoice) AND
+            if (VendLedgEntry."Document Type" = VendLedgEntry."Document Type"::Invoice) and
                (PostingDate <= VendLedgEntry."Pmt. Discount Date")
-            THEN
+            then
                 Amount := -(VendLedgEntry."Remaining Amount" - VendLedgEntry."Original Pmt. Disc. Possible")
-            ELSE
+            else
                 Amount := -VendLedgEntry."Remaining Amount";
             VALIDATE(Amount);
-        END;
+        end;
 
-        IF UsePriority THEN
+        if UsePriority then
             PayableVendLedgEntry.Priority := Vendor.Priority
-        ELSE
+        else
             PayableVendLedgEntry.Priority := 0;
         PayableVendLedgEntry."Vendor No." := VendLedgEntry."Vendor No.";
         PayableVendLedgEntry."Entry No." := NextEntryNo;
@@ -300,36 +300,36 @@ report 70503 "SSA Suggest Vendor Payments"
     begin
         PayableVendLedgEntry.SETRANGE("Vendor No.", Vendor."No.");
         PayableVendLedgEntry.SETRANGE(Future, Future);
-        IF PayableVendLedgEntry.FIND('-') THEN BEGIN
+        if PayableVendLedgEntry.FIND('-') then begin
             PrevCurrency := PayableVendLedgEntry."Currency Code";
-            REPEAT
-                IF PayableVendLedgEntry."Currency Code" <> PrevCurrency THEN BEGIN
-                    IF CurrencyBalance < 0 THEN BEGIN
+            repeat
+                if PayableVendLedgEntry."Currency Code" <> PrevCurrency then begin
+                    if CurrencyBalance < 0 then begin
                         PayableVendLedgEntry.SETRANGE("Currency Code", PrevCurrency);
                         PayableVendLedgEntry.DELETEALL;
                         PayableVendLedgEntry.SETRANGE("Currency Code");
-                    END ELSE
+                    end else
                         AmountAvailable := AmountAvailable - CurrencyBalance;
                     CurrencyBalance := 0;
                     PrevCurrency := PayableVendLedgEntry."Currency Code";
-                END;
-                IF (OriginalAmtAvailable = 0) OR
+                end;
+                if (OriginalAmtAvailable = 0) or
                    (AmountAvailable >= CurrencyBalance + PayableVendLedgEntry."Amount (LCY)")
-                THEN
+                then
                     CurrencyBalance := CurrencyBalance + PayableVendLedgEntry."Amount (LCY)"
-                ELSE
+                else
                     PayableVendLedgEntry.DELETE;
-            UNTIL PayableVendLedgEntry.NEXT = 0;
-            IF CurrencyBalance < 0 THEN BEGIN
+            until PayableVendLedgEntry.NEXT = 0;
+            if CurrencyBalance < 0 then begin
                 PayableVendLedgEntry.SETRANGE("Currency Code", PrevCurrency);
                 PayableVendLedgEntry.DELETEALL;
                 PayableVendLedgEntry.SETRANGE("Currency Code");
-            END ELSE
-                IF OriginalAmtAvailable > 0 THEN
+            end else
+                if OriginalAmtAvailable > 0 then
                     AmountAvailable := AmountAvailable - CurrencyBalance;
-            IF (OriginalAmtAvailable > 0) AND (AmountAvailable <= 0) THEN
-                StopPayments := TRUE;
-        END;
+            if (OriginalAmtAvailable > 0) and (AmountAvailable <= 0) then
+                StopPayments := true;
+        end;
         PayableVendLedgEntry.RESET;
     end;
 
@@ -340,44 +340,44 @@ report 70503 "SSA Suggest Vendor Payments"
     begin
         TempPaymentPostBuffer.DELETEALL;
 
-        IF PayableVendLedgEntry.FIND('-') THEN
-            REPEAT
+        if PayableVendLedgEntry.FIND('-') then
+            repeat
                 PayableVendLedgEntry.SETRANGE("Vendor No.", PayableVendLedgEntry."Vendor No.");
                 PayableVendLedgEntry.FIND('-');
-                REPEAT
+                repeat
                     VendLedgEntry.GET(PayableVendLedgEntry."Vendor Ledg. Entry No.");
                     TempPaymentPostBuffer."Account No." := VendLedgEntry."Vendor No.";
                     TempPaymentPostBuffer."Currency Code" := VendLedgEntry."Currency Code";
-                    IF SummarizePer = SummarizePer::"Due date" THEN
+                    if SummarizePer = SummarizePer::"Due date" then
                         TempPaymentPostBuffer."Due Date" := VendLedgEntry."Due Date";
 
                     //TempPaymentPostBuffer."Dimension Set ID" := 0;
                     TempPaymentPostBuffer."Global Dimension 1 Code" := '';
                     TempPaymentPostBuffer."Global Dimension 2 Code" := '';
 
-                    IF SummarizePer IN [SummarizePer::Vendor, SummarizePer::"Due date"] THEN BEGIN
+                    if SummarizePer in [SummarizePer::Vendor, SummarizePer::"Due date"] then begin
                         TempPaymentPostBuffer."Auxiliary Entry No." := 0;
-                        IF TempPaymentPostBuffer.FIND THEN BEGIN
+                        if TempPaymentPostBuffer.FIND then begin
                             TempPaymentPostBuffer.Amount := TempPaymentPostBuffer.Amount + PayableVendLedgEntry.Amount;
                             TempPaymentPostBuffer."Amount (LCY)" := TempPaymentPostBuffer."Amount (LCY)" + PayableVendLedgEntry."Amount (LCY)";
                             TempPaymentPostBuffer.MODIFY;
-                        END ELSE BEGIN
+                        end else begin
                             LastLineNo := LastLineNo + 10000;
                             TempPaymentPostBuffer."Payment Line No." := LastLineNo;
-                            IF PaymentClass."Line No. Series" = '' THEN
+                            if PaymentClass."Line No. Series" = '' then
                                 NextDocNo := GenPayHead."No." + '/' + FORMAT(LastLineNo)
-                            ELSE
-                                NextDocNo := NoSeriesMgt.GetNextNo(PaymentClass."Line No. Series", PostingDate, FALSE);
+                            else
+                                NextDocNo := NoSeriesMgt.GetNextNo(PaymentClass."Line No. Series", PostingDate, false);
                             TempPaymentPostBuffer."Document No." := NextDocNo;
                             NextDocNo := INCSTR(NextDocNo);
                             TempPaymentPostBuffer.Amount := PayableVendLedgEntry.Amount;
                             TempPaymentPostBuffer."Amount (LCY)" := PayableVendLedgEntry."Amount (LCY)";
                             Window.UPDATE(1, VendLedgEntry."Vendor No.");
                             TempPaymentPostBuffer.INSERT;
-                        END;
+                        end;
                         VendLedgEntry."Applies-to ID" := TempPaymentPostBuffer."Document No.";
                         VendEntryEdit.RUN(VendLedgEntry)
-                    END ELSE BEGIN
+                    end else begin
                         GenPayLine3.RESET;
                         GenPayLine3.SETCURRENTKEY(
                           "Account Type", "Account No.", "Applies-to Doc. Type", "Applies-to Doc. No.");
@@ -385,7 +385,7 @@ report 70503 "SSA Suggest Vendor Payments"
                         GenPayLine3.SETRANGE("Account No.", VendLedgEntry."Vendor No.");
                         GenPayLine3.SETRANGE("Applies-to Doc. Type", VendLedgEntry."Document Type");
                         GenPayLine3.SETRANGE("Applies-to Doc. No.", VendLedgEntry."Document No.");
-                        IF GenPayLine3.FIND('-') THEN
+                        if GenPayLine3.FIND('-') then
                             GenPayLine3.FIELDERROR(
                               "Applies-to Doc. No.",
                               STRSUBSTNO(
@@ -403,82 +403,82 @@ report 70503 "SSA Suggest Vendor Payments"
                         TempPaymentPostBuffer."Auxiliary Entry No." := VendLedgEntry."Entry No.";
                         Window.UPDATE(1, VendLedgEntry."Vendor No.");
                         TempPaymentPostBuffer.INSERT;
-                    END;
+                    end;
                     VendLedgEntry.CALCFIELDS(VendLedgEntry."Remaining Amount");
                     VendLedgEntry."Amount to Apply" := VendLedgEntry."Remaining Amount";
                     VendEntryEdit.RUN(VendLedgEntry);
-                UNTIL PayableVendLedgEntry.NEXT = 0;
+                until PayableVendLedgEntry.NEXT = 0;
                 PayableVendLedgEntry.DELETEALL;
                 PayableVendLedgEntry.SETRANGE("Vendor No.");
-            UNTIL NOT PayableVendLedgEntry.FIND('-');
+            until not PayableVendLedgEntry.FIND('-');
 
         CLEAR(OldTempPaymentPostBuffer);
         TempPaymentPostBuffer.SETCURRENTKEY("Document No.");
-        IF TempPaymentPostBuffer.FIND('-') THEN
-            REPEAT
-                WITH GenPayLine DO BEGIN
+        if TempPaymentPostBuffer.FIND('-') then
+            repeat
+                with GenPayLine do begin
                     INIT;
                     Window.UPDATE(1, TempPaymentPostBuffer."Account No.");
-                    IF SummarizePer = SummarizePer::" " THEN BEGIN
+                    if SummarizePer = SummarizePer::" " then begin
                         LastLineNo := LastLineNo + 10000;
                         "Line No." := LastLineNo;
-                        IF PaymentClass."Line No. Series" = '' THEN
+                        if PaymentClass."Line No. Series" = '' then
                             NextDocNo := GenPayHead."No." + '/' + FORMAT(GenPayLine."Line No.")
-                        ELSE
-                            NextDocNo := NoSeriesMgt.GetNextNo(PaymentClass."Line No. Series", PostingDate, FALSE);
-                    END ELSE BEGIN
+                        else
+                            NextDocNo := NoSeriesMgt.GetNextNo(PaymentClass."Line No. Series", PostingDate, false);
+                    end else begin
                         "Line No." := TempPaymentPostBuffer."Payment Line No.";
                         NextDocNo := TempPaymentPostBuffer."Document No.";
-                    END;
+                    end;
                     "Document ID" := NextDocNo;
                     GenPayLine."Applies-to ID" := "Document ID";
                     OldTempPaymentPostBuffer := TempPaymentPostBuffer;
                     OldTempPaymentPostBuffer."Document No." := "Document ID";
-                    IF SummarizePer = SummarizePer::" " THEN BEGIN
+                    if SummarizePer = SummarizePer::" " then begin
                         VendLedgEntry.GET(TempPaymentPostBuffer."Auxiliary Entry No.");
                         VendLedgEntry."Applies-to ID" := NextDocNo;
                         VendLedgEntry.MODIFY;
-                    END;
+                    end;
                     "Account Type" := "Account Type"::Vendor;
                     VALIDATE("Account No.", TempPaymentPostBuffer."Account No.");
                     "Currency Code" := TempPaymentPostBuffer."Currency Code";
                     Amount := TempPaymentPostBuffer.Amount;
-                    IF Amount > 0 THEN
+                    if Amount > 0 then
                         "Debit Amount" := Amount
-                    ELSE
+                    else
                         "Credit Amount" := -Amount;
                     "Amount (LCY)" := TempPaymentPostBuffer."Amount (LCY)";
                     "Currency Factor" := TempPaymentPostBuffer."Currency Factor";
-                    IF ("Currency Factor" = 0) AND (Amount <> 0) THEN
+                    if ("Currency Factor" = 0) and (Amount <> 0) then
                         "Currency Factor" := Amount / "Amount (LCY)";
                     Vend2.GET(GenPayLine."Account No.");
                     VALIDATE(GenPayLine."Bank Account", Vend2."SSA Default Bank Account Code");
                     "Payment Class" := GenPayHead."Payment Class";
-                    IF SummarizePer = SummarizePer::" " THEN BEGIN
+                    if SummarizePer = SummarizePer::" " then begin
                         "Applies-to Doc. Type" := VendLedgEntry."Document Type";
                         "Applies-to Doc. No." := VendLedgEntry."Document No.";
-                    END;
-                    IF SummarizePer IN [SummarizePer::" ", SummarizePer::Vendor] THEN
+                    end;
+                    if SummarizePer in [SummarizePer::" ", SummarizePer::Vendor] then
                         "Due Date" := VendLedgEntry."Due Date"
-                    ELSE
+                    else
                         "Due Date" := TempPaymentPostBuffer."Due Date";
-                    IF Amount <> 0 THEN
+                    if Amount <> 0 then
                         INSERT;
-                    GenPayLineInserted := TRUE;
-                END;
-            UNTIL TempPaymentPostBuffer.NEXT = 0;
+                    GenPayLineInserted := true;
+                end;
+            until TempPaymentPostBuffer.NEXT = 0;
     end;
 
     local procedure ShowMessage(var Text: Text[250])
     begin
-        IF (Text <> '') AND GenPayLineInserted THEN
+        if (Text <> '') and GenPayLineInserted then
             MESSAGE(Text);
     end;
 
     local procedure AmountAvailableOnAfterValidate()
     begin
-        IF AmountAvailable <> 0 THEN
-            UsePriority := TRUE;
+        if AmountAvailable <> 0 then
+            UsePriority := true;
     end;
 }
 

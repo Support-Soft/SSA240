@@ -33,7 +33,7 @@ table 71100 "SSA Non-Invoiced Sales Ship"
         field(12; "Ship-to Code"; Code[10])
         {
             Caption = 'Ship-to Code';
-            TableRelation = "Ship-to Address".Code WHERE("Customer No." = FIELD("Sell-to Customer No."));
+            TableRelation = "Ship-to Address".Code where("Customer No." = field("Sell-to Customer No."));
         }
         field(13; "Ship-to Name"; Text[100])
         {
@@ -50,19 +50,19 @@ table 71100 "SSA Non-Invoiced Sales Ship"
         field(28; "Location Code"; Code[10])
         {
             Caption = 'Location Code';
-            TableRelation = Location WHERE("Use As In-Transit" = CONST(false));
+            TableRelation = Location where("Use As In-Transit" = const(false));
         }
         field(29; "Shortcut Dimension 1 Code"; Code[20])
         {
             CaptionClass = '1,2,1';
             Caption = 'Shortcut Dimension 1 Code';
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(1));
         }
         field(30; "Shortcut Dimension 2 Code"; Code[20])
         {
             CaptionClass = '1,2,2';
             Caption = 'Shortcut Dimension 2 Code';
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(2));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(2));
         }
         field(32; "Currency Code"; Code[10])
         {
@@ -78,7 +78,7 @@ table 71100 "SSA Non-Invoiced Sales Ship"
         field(44; "Order No."; Code[20])
         {
             Caption = 'Order No.';
-            TableRelation = "Sales Header"."No." WHERE("Document Type" = CONST(Order));
+            TableRelation = "Sales Header"."No." where("Document Type" = const(Order));
         }
         field(79; "Sell-to Customer Name"; Text[100])
         {

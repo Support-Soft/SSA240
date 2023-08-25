@@ -2,7 +2,7 @@
   "id": "04860072-c989-4d32-8794-6712657d16b0",
   "name": "Localizare Support Soft Declaratia 390",
   "publisher": "Support-Soft SRL",
-  "version": "22.0.0.0",
+  "version": "22.0.0.1",
   "brief": "",
   "description": "",
   "privacyStatement": "",
@@ -27,7 +27,7 @@
       "to": 71699
     }
   ],
-  "contextSensitiveHelpUrl": "https://SSA14ContabilitateBaza.com/help/",
+  "contextSensitiveHelpUrl": "https://SSA220ContabilitateBaza.com/help/",
   "resourceExposurePolicy": {
     "allowDebugging": true,
     "allowDownloadingSource": false,

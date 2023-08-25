@@ -2,7 +2,7 @@
   "id": "1b3d96e6-7372-4880-8ee3-0fcbf19c87f0",
   "name": "Localizare Support Soft Nice to Have",
   "publisher": "Support-Soft SRL",
-  "version": "22.0.0.0",
+  "version": "22.0.0.1",
   "brief": "",
   "description": "",
   "privacyStatement": "",
@@ -27,7 +27,7 @@
       "to": 71299
     }
   ],
-  "contextSensitiveHelpUrl": "https://SSA14ContabilitateBaza.com/help/",
+  "contextSensitiveHelpUrl": "https://SSA220ContabilitateBaza.com/help/",
   "resourceExposurePolicy": {
     "allowDebugging": true,
     "allowDownloadingSource": false,

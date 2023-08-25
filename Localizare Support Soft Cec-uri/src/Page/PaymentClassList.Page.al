@@ -4,7 +4,7 @@ page 70504 "SSA Payment Class List"
     Editable = false;
     PageType = List;
     SourceTable = "SSA Payment Class";
-    SourceTableView = WHERE(Enable = CONST(true));
+    SourceTableView = where(Enable = const(true));
 
     layout
     {

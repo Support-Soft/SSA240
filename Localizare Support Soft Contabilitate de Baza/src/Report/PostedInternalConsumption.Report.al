@@ -10,17 +10,17 @@ report 70000 "SSAPosted Internal Consumption"
     {
         dataitem(PstdIntConsHeader; "SSA Pstd. Int. Cons. Header")
         {
-            DataItemTableView = SORTING("No.");
+            DataItemTableView = sorting("No.");
             RequestFilterFields = "No.";
             column(No_PstdIntConsHeader; PstdIntConsHeader."No.")
             {
             }
             dataitem(CopyLoop; "Integer")
             {
-                DataItemTableView = SORTING(Number);
+                DataItemTableView = sorting(Number);
                 dataitem(PageLoop; "Integer")
                 {
-                    DataItemTableView = SORTING(Number) WHERE(Number = CONST(1));
+                    DataItemTableView = sorting(Number) where(Number = const(1));
                     column(PageCaptionCap; PageCaptionCap)
                     {
                     }
@@ -65,9 +65,9 @@ report 70000 "SSAPosted Internal Consumption"
                     }
                     dataitem(PstdIntConsumptionLine; "SSAPstd. Int. Consumption Line")
                     {
-                        DataItemLink = "Document No." = FIELD("No.");
+                        DataItemLink = "Document No." = field("No.");
                         DataItemLinkReference = PstdIntConsHeader;
-                        DataItemTableView = SORTING("Document No.", "Line No.");
+                        DataItemTableView = sorting("Document No.", "Line No.");
                         column(NrCrtCpt; NrCrtCpt)
                         {
                         }

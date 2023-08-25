@@ -4,7 +4,7 @@ page 70505 "SSA Look/Edit Payment Line"
     Editable = false;
     PageType = List;
     SourceTable = "SSA Payment Status";
-    SourceTableView = WHERE(Look = CONST(true));
+    SourceTableView = where(Look = const(true));
 
     layout
     {

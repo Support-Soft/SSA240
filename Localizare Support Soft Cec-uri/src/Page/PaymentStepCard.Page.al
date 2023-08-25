@@ -136,8 +136,8 @@ page 70511 "SSA Payment Step Card"
                 Promoted = true;
                 PromotedCategory = Process;
                 RunObject = Page "SSA Payment Step Ledger";
-                RunPageLink = "Payment Class" = FIELD("Payment Class"),
-                              Line = FIELD(Line);
+                RunPageLink = "Payment Class" = field("Payment Class"),
+                              Line = field(Line);
             }
         }
     }

@@ -8,7 +8,7 @@ report 70004 "SSA Pstd Int. Cons."
     {
         dataitem("SSA Pstd. Int. Cons. Header"; "SSA Pstd. Int. Cons. Header")
         {
-            DataItemTableView = SORTING("No.");
+            DataItemTableView = sorting("No.");
             RequestFilterFields = "No.";
             column(CompanyName; CompanyName)
             {
@@ -66,8 +66,8 @@ report 70004 "SSA Pstd Int. Cons."
             }
             dataitem("SSAPstd. Int. Consumption Line"; "SSAPstd. Int. Consumption Line")
             {
-                DataItemLink = "Document No." = FIELD("No.");
-                DataItemTableView = SORTING("Document No.", "Line No.") ORDER(Ascending);
+                DataItemLink = "Document No." = field("No.");
+                DataItemTableView = sorting("Document No.", "Line No.") order(ascending);
                 column(Posted_Int__Consumption_Line_Quantity; Quantity)
                 {
                 }

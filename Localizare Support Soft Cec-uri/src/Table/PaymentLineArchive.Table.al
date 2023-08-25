@@ -28,19 +28,19 @@ table 70509 "SSA Payment Line Archive"
         field(5; "Account No."; Code[20])
         {
             Caption = 'Account No.';
-            TableRelation = IF ("Account Type" = CONST("G/L Account")) "G/L Account" ELSE
-            IF ("Account Type" = CONST(Customer)) Customer ELSE
-            IF ("Account Type" = CONST(Vendor)) Vendor ELSE
-            IF ("Account Type" = CONST("Bank Account")) "Bank Account" ELSE
-            IF ("Account Type" = CONST("Fixed Asset")) "Fixed Asset";
+            TableRelation = if ("Account Type" = const("G/L Account")) "G/L Account" else
+            if ("Account Type" = const(Customer)) Customer else
+            if ("Account Type" = const(Vendor)) Vendor else
+            if ("Account Type" = const("Bank Account")) "Bank Account" else
+            if ("Account Type" = const("Fixed Asset")) "Fixed Asset";
         }
         field(6; "Posting Group"; Code[10])
         {
             Caption = 'Posting Group';
             Editable = true;
-            TableRelation = IF ("Account Type" = CONST(Customer)) "Customer Posting Group" ELSE
-            IF ("Account Type" = CONST(Vendor)) "Vendor Posting Group" ELSE
-            IF ("Account Type" = CONST("Fixed Asset")) "FA Posting Group";
+            TableRelation = if ("Account Type" = const(Customer)) "Customer Posting Group" else
+            if ("Account Type" = const(Vendor)) "Vendor Posting Group" else
+            if ("Account Type" = const("Fixed Asset")) "FA Posting Group";
         }
         field(7; "Copied To No."; Code[10])
         {
@@ -65,11 +65,11 @@ table 70509 "SSA Payment Line Archive"
         {
             Caption = 'Acc. No. Last entry Debit';
             Editable = false;
-            TableRelation = IF ("Acc. Type last entry Debit" = CONST("G/L Account")) "G/L Account" ELSE
-            IF ("Acc. Type last entry Debit" = CONST(Customer)) Customer ELSE
-            IF ("Acc. Type last entry Debit" = CONST(Vendor)) Vendor ELSE
-            IF ("Acc. Type last entry Debit" = CONST("Bank Account")) "Bank Account" ELSE
-            IF ("Acc. Type last entry Debit" = CONST("Fixed Asset")) "Fixed Asset";
+            TableRelation = if ("Acc. Type last entry Debit" = const("G/L Account")) "G/L Account" else
+            if ("Acc. Type last entry Debit" = const(Customer)) Customer else
+            if ("Acc. Type last entry Debit" = const(Vendor)) Vendor else
+            if ("Acc. Type last entry Debit" = const("Bank Account")) "Bank Account" else
+            if ("Acc. Type last entry Debit" = const("Fixed Asset")) "Fixed Asset";
         }
         field(12; "Acc. Type last entry Credit"; Option)
         {
@@ -82,11 +82,11 @@ table 70509 "SSA Payment Line Archive"
         {
             Caption = 'Acc. No. Last entry Credit';
             Editable = false;
-            TableRelation = IF ("Acc. Type last entry Credit" = CONST("G/L Account")) "G/L Account" ELSE
-            IF ("Acc. Type last entry Credit" = CONST(Customer)) Customer ELSE
-            IF ("Acc. Type last entry Credit" = CONST(Vendor)) Vendor ELSE
-            IF ("Acc. Type last entry Credit" = CONST("Bank Account")) "Bank Account" ELSE
-            IF ("Acc. Type last entry Credit" = CONST("Fixed Asset")) "Fixed Asset";
+            TableRelation = if ("Acc. Type last entry Credit" = const("G/L Account")) "G/L Account" else
+            if ("Acc. Type last entry Credit" = const(Customer)) Customer else
+            if ("Acc. Type last entry Credit" = const(Vendor)) Vendor else
+            if ("Acc. Type last entry Credit" = const("Bank Account")) "Bank Account" else
+            if ("Acc. Type last entry Credit" = const("Fixed Asset")) "Fixed Asset";
         }
         field(14; "P. Group Last Entry Debit"; Code[10])
         {
@@ -107,11 +107,11 @@ table 70509 "SSA Payment Line Archive"
         {
             Caption = 'Status';
             Editable = false;
-            TableRelation = "SSA Payment Status".Line WHERE("Payment Class" = FIELD("Payment Class"));
+            TableRelation = "SSA Payment Status".Line where("Payment Class" = field("Payment Class"));
         }
         field(18; "Status Name"; Text[50])
         {
-            CalcFormula = Lookup("SSA Payment Status".Name WHERE("Payment Class" = FIELD("Payment Class"), Line = FIELD("Status No.")));
+            CalcFormula = lookup("SSA Payment Status".Name where("Payment Class" = field("Payment Class"), Line = field("Status No.")));
             Caption = 'Status Name';
             Editable = false;
             FieldClass = FlowField;
@@ -148,8 +148,8 @@ table 70509 "SSA Payment Line Archive"
         field(25; "Bank Account"; Code[10])
         {
             Caption = 'Bank Account';
-            TableRelation = IF ("Account Type" = CONST(Customer)) "Customer Bank Account".Code WHERE("Customer No." = FIELD("Account No.")) ELSE
-            IF ("Account Type" = CONST(Vendor)) "Vendor Bank Account".Code WHERE("Vendor No." = FIELD("Account No."));
+            TableRelation = if ("Account Type" = const(Customer)) "Customer Bank Account".Code where("Customer No." = field("Account No.")) else
+            if ("Account Type" = const(Vendor)) "Vendor Bank Account".Code where("Vendor No." = field("Account No."));
         }
         field(26; "Bank Branch No."; Text[20])
         {
@@ -221,7 +221,7 @@ table 70509 "SSA Payment Line Archive"
         field(40; "Payment Address Code"; Code[10])
         {
             Caption = 'Payment Address Code';
-            TableRelation = "SSA Payment Address".Code WHERE("Account Type" = FIELD("Account Type"), "Account No." = FIELD("Account No."));
+            TableRelation = "SSA Payment Address".Code where("Account Type" = field("Account Type"), "Account No." = field("Account No."));
         }
         field(41; "Applies-to Doc. Type"; Option)
         {
@@ -272,14 +272,14 @@ table 70509 "SSA Payment Line Archive"
             CaptionClass = '1,2,1';
             Caption = 'Shortcut Dimension 1 Code';
             Description = 'SSM729';
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(1));
         }
         field(50020; "Shortcut Dimension 2 Code"; Code[20])
         {
             CaptionClass = '1,2,2';
             Caption = 'Shortcut Dimension 2 Code';
             Description = 'SSM729';
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(2));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(2));
         }
         field(50030; "Salesperson/Purchaser Code"; Code[10])
         {
@@ -300,7 +300,7 @@ table 70509 "SSA Payment Line Archive"
         }
         field(50050; "Suma Aplicata"; Decimal)
         {
-            CalcFormula = Sum("SSA Pmt. Tools AppLedg. Entry".Amount WHERE("Payment Document No." = FIELD("No."), "Payment Document Line No." = FIELD("Line No.")));
+            CalcFormula = sum("SSA Pmt. Tools AppLedg. Entry".Amount where("Payment Document No." = field("No."), "Payment Document Line No." = field("Line No.")));
             Description = 'SSM729';
             Editable = false;
             FieldClass = FlowField;

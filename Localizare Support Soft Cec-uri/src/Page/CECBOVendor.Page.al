@@ -11,7 +11,7 @@ page 70502 "SSA CEC & BO Vendor"
     Permissions = TableData "Vendor Ledger Entry" = rm;
     SaveValues = true;
     SourceTable = "Vendor Ledger Entry";
-    SourceTableView = SORTING("Vendor No.", "Due Date", "Entry No.") ORDER(Ascending);
+    SourceTableView = sorting("Vendor No.", "Due Date", "Entry No.") order(ascending);
 
     layout
     {
@@ -33,7 +33,7 @@ page 70502 "SSA CEC & BO Vendor"
 
                     trigger OnValidate()
                     begin
-                        CurrPage.UPDATE(FALSE);
+                        CurrPage.UPDATE(false);
                     end;
                 }
                 field(Nr; Numar)
@@ -44,7 +44,7 @@ page 70502 "SSA CEC & BO Vendor"
 
                     trigger OnValidate()
                     begin
-                        CurrPage.UPDATE(FALSE);
+                        CurrPage.UPDATE(false);
                     end;
                 }
                 field(Suma; SumaCECBO)
@@ -57,7 +57,7 @@ page 70502 "SSA CEC & BO Vendor"
                     begin
                         TempVLE.RESET;
                         TempVLE.DELETEALL;
-                        CurrPage.UPDATE(FALSE);
+                        CurrPage.UPDATE(false);
                     end;
                 }
                 field("Data emiterii"; DocDate)
@@ -68,7 +68,7 @@ page 70502 "SSA CEC & BO Vendor"
 
                     trigger OnValidate()
                     begin
-                        CurrPage.UPDATE(FALSE);
+                        CurrPage.UPDATE(false);
                     end;
                 }
                 field("Data scadentei"; DueDate)
@@ -79,7 +79,7 @@ page 70502 "SSA CEC & BO Vendor"
 
                     trigger OnValidate()
                     begin
-                        CurrPage.UPDATE(FALSE);
+                        CurrPage.UPDATE(false);
                     end;
                 }
                 field("Exclude lines with remaining amount payment tool zero"; DontShowLinesWithZero)
@@ -89,20 +89,20 @@ page 70502 "SSA CEC & BO Vendor"
 
                     trigger OnValidate()
                     begin
-                        IF NOT DontShowLinesWithZero THEN
+                        if not DontShowLinesWithZero then
                             CLEARMARKS;
-                        IF FINDFIRST THEN
-                            REPEAT
+                        if FINDFIRST then
+                            repeat
                                 CALCFIELDS("Remaining Amount", "SSA Applied Amount CEC/BO");
-                                IF (-"Remaining Amount" + "SSA Applied Amount CEC/BO") > 0 THEN
-                                    MARK(TRUE);
-                            UNTIL NEXT = 0;
-                        IF DontShowLinesWithZero THEN
-                            MARKEDONLY(TRUE)
-                        ELSE
-                            MARKEDONLY(FALSE);
-                        IF FINDFIRST THEN;
-                        CurrPage.UPDATE(FALSE);
+                                if (-"Remaining Amount" + "SSA Applied Amount CEC/BO") > 0 then
+                                    MARK(true);
+                            until NEXT = 0;
+                        if DontShowLinesWithZero then
+                            MARKEDONLY(true)
+                        else
+                            MARKEDONLY(false);
+                        if FINDFIRST then;
+                        CurrPage.UPDATE(false);
                     end;
                 }
             }
@@ -210,7 +210,7 @@ page 70502 "SSA CEC & BO Vendor"
             part(Control1903096107; "Customer Ledger Entry FactBox")
             {
                 ApplicationArea = All;
-                SubPageLink = "Entry No." = FIELD("Entry No.");
+                SubPageLink = "Entry No." = field("Entry No.");
                 Visible = true;
             }
             systempart(Control1900383207; Links)
@@ -259,8 +259,8 @@ page 70502 "SSA CEC & BO Vendor"
                     Caption = 'Detailed &Ledger Entries';
                     Image = View;
                     RunObject = Page "Detailed Vendor Ledg. Entries";
-                    RunPageLink = "Vendor Ledger Entry No." = FIELD("Entry No."), "Vendor No." = FIELD("Vendor No.");
-                    RunPageView = SORTING("Vendor Ledger Entry No.", "Posting Date");
+                    RunPageLink = "Vendor Ledger Entry No." = field("Entry No."), "Vendor No." = field("Vendor No.");
+                    RunPageView = sorting("Vendor Ledger Entry No.", "Posting Date");
                     ShortCutKey = 'Ctrl+F7';
                 }
             }
@@ -345,9 +345,9 @@ page 70502 "SSA CEC & BO Vendor"
                         ReversalEntry: Record "Reversal Entry";
                     begin
                         CLEAR(ReversalEntry);
-                        IF Reversed THEN
+                        if Reversed then
                             ReversalEntry.AlreadyReversedEntry(TABLECAPTION, "Entry No.");
-                        IF "Journal Batch Name" = '' THEN
+                        if "Journal Batch Name" = '' then
                             ReversalEntry.TestFieldError;
                         TESTFIELD("Transaction No.");
                         ReversalEntry.ReverseTransaction("Transaction No.");
@@ -390,7 +390,7 @@ page 70502 "SSA CEC & BO Vendor"
     trigger OnModifyRecord(): Boolean
     begin
         CODEUNIT.RUN(CODEUNIT::"Vend. Entry-Edit", Rec);
-        EXIT(FALSE);
+        exit(false);
     end;
 
     trigger OnOpenPage()
@@ -431,14 +431,14 @@ page 70502 "SSA CEC & BO Vendor"
         TempVLE.INIT;
         TempVLE.TRANSFERFIELDS(_VLE);
         TempVLE."Purchase (LCY)" := _VLE."SSA Payment Tools Amount";
-        IF NOT TempVLE.INSERT THEN
+        if not TempVLE.INSERT then
             TempVLE.MODIFY;
 
         TempVLE.RESET;
         TempVLE.SETCURRENTKEY("Vendor No.", "Posting Date", "Currency Code");
         TempVLE.CALCSUMS("Purchase (LCY)");
         TotalSumaAplicata := TempVLE."Purchase (LCY)";
-        IF TotalSumaAplicata > SumaCECBO THEN
+        if TotalSumaAplicata > SumaCECBO then
             ERROR(Text001, SumaCECBO, TotalSumaAplicata);
     end;
 
@@ -451,26 +451,26 @@ page 70502 "SSA CEC & BO Vendor"
         NoSeriesMgt: Codeunit NoSeriesManagement;
         LineNo: Integer;
     begin
-        IF _Serie = '' THEN
+        if _Serie = '' then
             ERROR('Completati campurile obligatorii');
-        IF _Numar = '' THEN
+        if _Numar = '' then
             ERROR('Completati campurile obligatorii');
-        IF _DocDate = 0D THEN
+        if _DocDate = 0D then
             ERROR('Completati campurile obligatorii');
-        IF _DueDate = 0D THEN
+        if _DueDate = 0D then
             ERROR('Completati campurile obligatorii');
-        IF SumaCECBO = 0 THEN
+        if SumaCECBO = 0 then
             ERROR('Completati campurile obligatorii');
 
         PaymentClass.RESET;
-        IF _TipInstr = _TipInstr::CEC THEN BEGIN
+        if _TipInstr = _TipInstr::CEC then begin
             PaymentClass.SETRANGE(Suggestions, PaymentClass.Suggestions::Vendor);
             PaymentClass.SETRANGE("Payment Tools", PaymentClass."Payment Tools"::CEC);
-        END;
-        IF _TipInstr = _TipInstr::BO THEN BEGIN
+        end;
+        if _TipInstr = _TipInstr::BO then begin
             PaymentClass.SETRANGE(Suggestions, PaymentClass.Suggestions::Vendor);
             PaymentClass.SETRANGE("Payment Tools", PaymentClass."Payment Tools"::BO);
-        END;
+        end;
         PaymentClass.FINDFIRST;
 
         Vend.GET(_VendorNo);
@@ -479,35 +479,35 @@ page 70502 "SSA CEC & BO Vendor"
         PaymentHeader.RESET;
         PaymentHeader.SETRANGE("Payment Series", _Serie);
         PaymentHeader.SETRANGE("Payment Number", _Numar);
-        IF NOT PaymentHeader.ISEMPTY THEN
+        if not PaymentHeader.ISEMPTY then
             ERROR('Exista deja seria %1 si numar %2', _Serie, _Numar);
 
         PaymentHeader.INIT;
         NoSeriesMgt.InitSeries(PaymentClass."Header No. Series", '', 0D, PaymentHeader."No.", PaymentClass."Header No. Series");
-        PaymentHeader.INSERT(TRUE);
+        PaymentHeader.INSERT(true);
         PaymentHeader.VALIDATE("No. Series", PaymentClass."Header No. Series");
         PaymentHeader.VALIDATE("Payment Class", PaymentClass.Code);
         PaymentHeader."Payment Series" := _Serie;
         PaymentHeader."Payment Number" := _Numar;
         //PaymentHeader.VALIDATE("Responsibility Center",Vend."Responsibility Center");
-        IF _DocDate <> 0D THEN
+        if _DocDate <> 0D then
             PaymentHeader.VALIDATE("Document Date", _DocDate)
-        ELSE
+        else
             PaymentHeader.VALIDATE("Document Date", TODAY);
 
-        PaymentHeader.MODIFY(TRUE);
+        PaymentHeader.MODIFY(true);
 
         //creare linii efect de plata
         LineNo := 0;
         TempVLE.RESET;
         TempVLE.SETFILTER("Purchase (LCY)", '<>%1', 0);
-        IF TempVLE.FINDSET THEN
-            REPEAT
+        if TempVLE.FINDSET then
+            repeat
                 LineNo += 10000;
                 PaymentLine.INIT;
                 PaymentLine.VALIDATE("No.", PaymentHeader."No.");
                 PaymentLine."Line No." := LineNo;
-                PaymentLine.INSERT(TRUE);
+                PaymentLine.INSERT(true);
                 PaymentLine.VALIDATE("Account Type", PaymentLine."Account Type"::Vendor);
                 PaymentLine.VALIDATE("Account No.", _VendorNo);
                 PaymentLine.VALIDATE("Document ID", PaymentHeader."No.");
@@ -518,8 +518,8 @@ page 70502 "SSA CEC & BO Vendor"
                 PaymentLine.VALIDATE("Applies-to Doc. No.", TempVLE."Document No.");
                 PaymentLine.VALIDATE("Debit Amount", TempVLE."Purchase (LCY)");
                 PaymentLine.VALIDATE("Salesperson/Purchaser Code", TempVLE."Purchaser Code");
-                PaymentLine.MODIFY(TRUE);
-            UNTIL TempVLE.NEXT = 0;
+                PaymentLine.MODIFY(true);
+            until TempVLE.NEXT = 0;
 
         PAGE.RUN(PAGE::"SSA Payment Headers", PaymentHeader);
     end;
@@ -535,37 +535,37 @@ page 70502 "SSA CEC & BO Vendor"
         SumaAplicata := 0;
         SumaDeAplicat := 0;
 
-        IF DontShowLinesWithZero THEN
-            _VLE.MARKEDONLY(TRUE)
-        ELSE
-            _VLE.MARKEDONLY(FALSE);
+        if DontShowLinesWithZero then
+            _VLE.MARKEDONLY(true)
+        else
+            _VLE.MARKEDONLY(false);
 
-        IF _VLE.FINDSET THEN BEGIN
-            REPEAT
+        if _VLE.FINDSET then begin
+            repeat
                 _VLE.CALCFIELDS("Remaining Amount", "SSA Applied Amount CEC/BO");
                 SumaNeacoperita := (-_VLE."Remaining Amount" + _VLE."SSA Applied Amount CEC/BO");
                 SumaDeAplicat := SumaCECBO - SumaAplicata;
-                IF SumaNeacoperita <> 0 THEN BEGIN
-                    IF SumaNeacoperita < SumaDeAplicat THEN
+                if SumaNeacoperita <> 0 then begin
+                    if SumaNeacoperita < SumaDeAplicat then
                         _VLE.VALIDATE("SSA Payment Tools Amount", SumaNeacoperita)
-                    ELSE
+                    else
                         _VLE.VALIDATE("SSA Payment Tools Amount", SumaDeAplicat);
-                    _VLE.MODIFY(TRUE);
+                    _VLE.MODIFY(true);
                     PaymentToolsAmountOnAfterValidate(_VLE);
                     SumaDeAplicat := SumaDeAplicat - _VLE."SSA Payment Tools Amount";
                     SumaAplicata += _VLE."SSA Payment Tools Amount";
-                END;
-            UNTIL (_VLE.NEXT = 0) OR (SumaDeAplicat = 0);
-        END;
+                end;
+            until (_VLE.NEXT = 0) or (SumaDeAplicat = 0);
+        end;
 
-        IF SumaDeAplicat <> 0 THEN BEGIN
+        if SumaDeAplicat <> 0 then begin
             VLE.RESET;
             VLE.INIT;
             VLE."Entry No." := 0;
             VLE."SSA Payment Tools Amount" := SumaDeAplicat;
             PaymentToolsAmountOnAfterValidate(VLE);
             MESSAGE('Suma distribuita %1 din total %2', SumaAplicata, SumaCECBO);
-        END ELSE
+        end else
             MESSAGE('Suma a fost distribuita in totalitate.');
     end;
 }

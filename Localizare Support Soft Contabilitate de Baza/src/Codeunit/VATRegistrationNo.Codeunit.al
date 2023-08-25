@@ -11,20 +11,20 @@ codeunit 70017 "SSA VAT Registration No."
     begin
         IsHandled := true;
 
-        Check := TRUE;
+        Check := true;
         TextString := '';
         VATRegNo := DelChr(VATRegNo, '=', 'roRO');
         Vend.SETCURRENTKEY("VAT Registration No.");
         Vend.SetFilter("VAT Registration No.", STRSUBSTNO('*%1*', VATRegNo));
         Vend.SETFILTER("No.", '<>%1', Number);
-        IF Vend.FINDSET THEN BEGIN
-            Check := FALSE;
-            Finish := FALSE;
-            REPEAT
+        if Vend.FINDSET then begin
+            Check := false;
+            Finish := false;
+            repeat
                 AppendString(TextString, Finish, Vend."No.");
-            UNTIL (Vend.NEXT = 0) OR Finish;
-        END;
-        IF NOT Check THEN
+            until (Vend.NEXT = 0) or Finish;
+        end;
+        if not Check then
             //SSA964>>
             //OC MESSAGE(STRSUBSTNO(Text003,TextString));
             ERROR(STRSUBSTNO(Text003, TextString));
@@ -33,17 +33,17 @@ codeunit 70017 "SSA VAT Registration No."
 
     local procedure AppendString(var String: Text; var Finish: Boolean; AppendText: Text)
     begin
-        CASE TRUE OF
+        case true of
             Finish:
-                EXIT;
+                exit;
             String = '':
                 String := AppendText;
             STRLEN(String) + STRLEN(AppendText) + 5 <= 250:
                 String += ', ' + AppendText;
-            ELSE BEGIN
-                    String += '...';
-                    Finish := TRUE;
-                END;
-        END;
+            else begin
+                String += '...';
+                Finish := true;
+            end;
+        end;
     end;
 }

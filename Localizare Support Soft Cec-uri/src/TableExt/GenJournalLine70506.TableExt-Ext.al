@@ -9,17 +9,17 @@ tableextension 70506 "SSA Gen. Journal Line 70506" extends "Gen. Journal Line" /
         field(70501; "SSA Applies-to CEC No."; code[20])
         {
             Caption = 'Applies-to CEC No.';
-            TableRelation = IF ("Account Type" = CONST (Customer)) "SSA Payment Header"."No." WHERE ("Status Name" = FILTER ('@*Trimis la banca*|@*Emis*'), "Line Account No." = FIELD ("Account No.")) ELSE
-            IF ("Account Type" = CONST (Vendor)) "SSA Payment Header"."No." WHERE ("Status Name" = FILTER ('@*Trimis la banca*|@*Emis*'), "Line Account No." = FIELD ("Account No."));
+            TableRelation = if ("Account Type" = const(Customer)) "SSA Payment Header"."No." where("Status Name" = filter('@*Trimis la banca*|@*Emis*'), "Line Account No." = field("Account No.")) else
+            if ("Account Type" = const(Vendor)) "SSA Payment Header"."No." where("Status Name" = filter('@*Trimis la banca*|@*Emis*'), "Line Account No." = field("Account No."));
             trigger OnValidate()
             var
                 PaymentHeader: Record "SSA Payment Header";
             begin
-                IF "SSA Applies-to CEC No." <> '' THEN BEGIN
+                if "SSA Applies-to CEC No." <> '' then begin
                     PaymentHeader.GET("SSA Applies-to CEC No.");
                     PaymentHeader.CALCFIELDS(Amount);
                     VALIDATE(Amount, PaymentHeader.Amount);
-                END ELSE
+                end else
                     VALIDATE(Amount, 0);
             end;
         }

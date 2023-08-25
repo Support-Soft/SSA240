@@ -84,7 +84,7 @@ page 70000 "SSA Internal Consumptions"
             {
                 ApplicationArea = All;
                 Caption = 'Lines';
-                SubPageLink = "Document No." = FIELD("No.");
+                SubPageLink = "Document No." = field("No.");
             }
         }
         area(factboxes)
@@ -94,8 +94,8 @@ page 70000 "SSA Internal Consumptions"
                 ApplicationArea = All;
                 Caption = 'Int. Consumption FactBox';
                 Provider = InternalConsumptionLine;
-                SubPageLink = "Document No." = FIELD("Document No."),
-                              "Line No." = FIELD("Line No.");
+                SubPageLink = "Document No." = field("Document No."),
+                              "Line No." = field("Line No.");
                 Visible = true;
             }
         }
@@ -114,8 +114,8 @@ page 70000 "SSA Internal Consumptions"
                     Caption = 'Co&mments';
                     Image = ViewComments;
                     RunObject = Page "SSA Comment Sheet";
-                    RunPageLink = "Document Type" = FILTER("Internal Consumption"),
-                                  "No." = FIELD("No.");
+                    RunPageLink = "Document Type" = filter("Internal Consumption"),
+                                  "No." = field("No.");
                 }
                 action(Dimensions)
                 {
@@ -196,8 +196,8 @@ page 70000 "SSA Internal Consumptions"
                 Promoted = true;
                 PromotedCategory = Process;
                 RunObject = Page "SSA Comment Sheet";
-                RunPageLink = "Document Type" = CONST("Internal Consumption"),
-                              "No." = FIELD("No.");
+                RunPageLink = "Document Type" = const("Internal Consumption"),
+                              "No." = field("No.");
                 ToolTip = 'Comment';
             }
         }
@@ -244,38 +244,38 @@ page 70000 "SSA Internal Consumptions"
         DocumentIsPosted: Boolean;
     begin
         SendToPosting(_PostingCodeunitID);
-        DocumentIsPosted := (NOT IntConsHeader.GET("No."));
-        CurrPage.UPDATE(FALSE);
+        DocumentIsPosted := (not IntConsHeader.GET("No."));
+        CurrPage.UPDATE(false);
 
-        IF _PostingCodeunitID <> CODEUNIT::"SSA Int. Cons-Post (Yes/No)" THEN
-            EXIT;
+        if _PostingCodeunitID <> CODEUNIT::"SSA Int. Cons-Post (Yes/No)" then
+            exit;
 
-        CASE Navigate OF
+        case Navigate of
             NavigateAfterPost::"Posted Document":
-                IF InstructionMgt.IsEnabled(InstructionMgt.ShowPostedConfirmationMessageCode) THEN
+                if InstructionMgt.IsEnabled(InstructionMgt.ShowPostedConfirmationMessageCode) then
                     ShowPostedConfirmationMessage;
             NavigateAfterPost::"New Document":
-                IF DocumentIsPosted THEN BEGIN
+                if DocumentIsPosted then begin
                     IntConsHeader.INIT;
-                    IntConsHeader.INSERT(TRUE);
+                    IntConsHeader.INSERT(true);
                     PAGE.RUN(PAGE::"SSA Internal Consumptions", IntConsHeader);
-                END;
-        END;
+                end;
+        end;
     end;
 
-    LOCAL procedure ShowPostedConfirmationMessage()
+    local procedure ShowPostedConfirmationMessage()
 
     begin
-        IF NOT IntConsHeader.GET("No.") THEN BEGIN
+        if not IntConsHeader.GET("No.") then begin
             PostedIntConsHeader.SETRANGE("No.", "Last Posting No.");
-            IF PostedIntConsHeader.FINDFIRST THEN
-                IF InstructionMgt.ShowConfirm(STRSUBSTNO(OpenPostedSalesOrderQst, PostedIntConsHeader."No."),
+            if PostedIntConsHeader.FINDFIRST then
+                if InstructionMgt.ShowConfirm(STRSUBSTNO(OpenPostedSalesOrderQst, PostedIntConsHeader."No."),
                      InstructionMgt.ShowPostedConfirmationMessageCode)
-                THEN begin
+                then begin
                     PAGE.RUN(PAGE::"SSA Posted Int. Consumptions", PostedIntConsHeader);
                     CurrPage.Close();
                 end;
-        END;
+        end;
     end;
 }
 

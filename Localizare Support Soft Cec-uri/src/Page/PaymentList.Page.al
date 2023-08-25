@@ -73,7 +73,7 @@ page 70514 "SSA Payment List"
             part(Control1907959307; "SSA Payment Header FactBox")
             {
                 ApplicationArea = All;
-                SubPageLink = "No." = FIELD("No.");
+                SubPageLink = "No." = field("No.");
                 Visible = true;
             }
         }

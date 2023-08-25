@@ -9,7 +9,7 @@ report 70500 "SSA Payment List"
     {
         dataitem("Payment Line"; "SSA Payment Line")
         {
-            DataItemTableView = SORTING("Account Type", "Account No.", "Copied To Line", "Payment in progress");
+            DataItemTableView = sorting("Account Type", "Account No.", "Copied To Line", "Payment in progress");
             RequestFilterFields = "No.", "Payment Class", "Status No.";
             column(Titlu; Titlu)
             {
@@ -75,14 +75,14 @@ report 70500 "SSA Payment List"
             trigger OnAfterGetRecord()
             begin
                 CLEAR(AccName);
-                IF "Payment Line"."Account Type" = "Payment Line"."Account Type"::Customer THEN BEGIN
-                    IF Customer.GET("Payment Line"."Account No.") THEN
+                if "Payment Line"."Account Type" = "Payment Line"."Account Type"::Customer then begin
+                    if Customer.GET("Payment Line"."Account No.") then
                         AccName := Customer.Name;
-                END;
-                IF "Payment Line"."Account Type" = "Payment Line"."Account Type"::Vendor THEN BEGIN
-                    IF Vendor.GET("Payment Line"."Account No.") THEN
+                end;
+                if "Payment Line"."Account Type" = "Payment Line"."Account Type"::Vendor then begin
+                    if Vendor.GET("Payment Line"."Account No.") then
                         AccName := Vendor.Name;
-                END;
+                end;
 
                 DueDate := FORMAT("Payment Line"."Due Date");
             end;

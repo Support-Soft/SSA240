@@ -96,23 +96,23 @@ table 70502 "SSA Payment Status"
         PaymentHeader: Record "SSA Payment Header";
         PaymentLine: Record "SSA Payment Line";
     begin
-        IF Line = 0 THEN
+        if Line = 0 then
             ERROR(Text000);
         PaymentStep.SETRANGE("Payment Class", "Payment Class");
         PaymentStep.SETRANGE("Previous Status", Line);
-        IF PaymentStep.FIND('-') THEN
+        if PaymentStep.FIND('-') then
             ERROR(Text001);
         PaymentStep.SETRANGE("Previous Status");
         PaymentStep.SETRANGE("Next Status", Line);
-        IF PaymentStep.FIND('-') THEN
+        if PaymentStep.FIND('-') then
             ERROR(Text001);
         PaymentHeader.SETRANGE("Payment Class", "Payment Class");
         PaymentHeader.SETRANGE("Status No.", Line);
-        IF PaymentHeader.FIND('-') THEN
+        if PaymentHeader.FIND('-') then
             ERROR(Text001);
         PaymentLine.SETRANGE("Payment Class", "Payment Class");
         PaymentLine.SETRANGE("Status No.", Line);
-        IF PaymentLine.FIND('-') THEN
+        if PaymentLine.FIND('-') then
             ERROR(Text001);
     end;
 

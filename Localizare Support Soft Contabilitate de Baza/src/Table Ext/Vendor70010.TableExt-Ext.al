@@ -83,7 +83,7 @@ tableextension 70010 "SSA Vendor70010" extends Vendor
             Caption = 'Split VAT Bank Account No.';
             DataClassification = ToBeClassified;
             Description = 'SSA1197';
-            TableRelation = "Vendor Bank Account".Code WHERE("Vendor No." = FIELD("No."));
+            TableRelation = "Vendor Bank Account".Code where("Vendor No." = field("No."));
 
             trigger OnValidate()
             begin
@@ -102,13 +102,13 @@ tableextension 70010 "SSA Vendor70010" extends Vendor
         {
             Caption = 'SSA Net Change (LCY)';
             FieldClass = FlowField;
-            CalcFormula = Sum ("Detailed Vendor Ledg. Entry"."Amount (LCY)" WHERE("Vendor No." = FIELD("No."), "Initial Entry Global Dim. 1" = FIELD("Global Dimension 1 Filter"), "Initial Entry Global Dim. 2" = FIELD("Global Dimension 2 Filter"), "Posting Date" = FIELD("Date Filter"), "Currency Code" = FIELD("Currency Filter"), "SSA Vendor Posting Group" = field("SSA Vendor Pstg. Grp. Filter")));
+            CalcFormula = sum("Detailed Vendor Ledg. Entry"."Amount (LCY)" where("Vendor No." = field("No."), "Initial Entry Global Dim. 1" = field("Global Dimension 1 Filter"), "Initial Entry Global Dim. 2" = field("Global Dimension 2 Filter"), "Posting Date" = field("Date Filter"), "Currency Code" = field("Currency Filter"), "SSA Vendor Posting Group" = field("SSA Vendor Pstg. Grp. Filter")));
         }
         field(70011; "SSA Net Change"; Decimal)
         {
             Caption = 'SSA Net Change';
             FieldClass = FlowField;
-            CalcFormula = Sum ("Detailed Vendor Ledg. Entry"."Amount" WHERE("Vendor No." = FIELD("No."), "Initial Entry Global Dim. 1" = FIELD("Global Dimension 1 Filter"), "Initial Entry Global Dim. 2" = FIELD("Global Dimension 2 Filter"), "Posting Date" = FIELD("Date Filter"), "Currency Code" = FIELD("Currency Filter"), "SSA Vendor Posting Group" = field("SSA Vendor Pstg. Grp. Filter")));
+            CalcFormula = sum("Detailed Vendor Ledg. Entry"."Amount" where("Vendor No." = field("No."), "Initial Entry Global Dim. 1" = field("Global Dimension 1 Filter"), "Initial Entry Global Dim. 2" = field("Global Dimension 2 Filter"), "Posting Date" = field("Date Filter"), "Currency Code" = field("Currency Filter"), "SSA Vendor Posting Group" = field("SSA Vendor Pstg. Grp. Filter")));
         }
         field(70012; "SSA Persoana Afiliata"; Boolean)
         {

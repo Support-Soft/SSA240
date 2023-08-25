@@ -36,11 +36,11 @@ table 70508 "SSA Payment Header Archive"
         field(7; "Status No."; Integer)
         {
             Caption = 'Status';
-            TableRelation = "SSA Payment Status".Line WHERE ("Payment Class" = FIELD ("Payment Class"));
+            TableRelation = "SSA Payment Status".Line where("Payment Class" = field("Payment Class"));
         }
         field(8; "Status Name"; Text[50])
         {
-            CalcFormula = Lookup ("SSA Payment Status".Name WHERE ("Payment Class" = FIELD ("Payment Class"), Line = FIELD ("Status No.")));
+            CalcFormula = lookup("SSA Payment Status".Name where("Payment Class" = field("Payment Class"), Line = field("Status No.")));
             Caption = 'Status Name';
             Editable = false;
             FieldClass = FlowField;
@@ -57,7 +57,7 @@ table 70508 "SSA Payment Header Archive"
         }
         field(11; "Payment Class Name"; Text[50])
         {
-            CalcFormula = Lookup ("SSA Payment Class".Name WHERE (Code = FIELD ("Payment Class")));
+            CalcFormula = lookup("SSA Payment Class".Name where(Code = field("Payment Class")));
             Caption = 'Payment Class Name';
             Editable = false;
             FieldClass = FlowField;
@@ -80,22 +80,22 @@ table 70508 "SSA Payment Header Archive"
         field(15; "Account No."; Code[20])
         {
             Caption = 'Account No.';
-            TableRelation = IF ("Account Type" = CONST ("G/L Account")) "G/L Account" ELSE
-            IF ("Account Type" = CONST (Customer)) Customer ELSE
-            IF ("Account Type" = CONST (Vendor)) Vendor ELSE
-            IF ("Account Type" = CONST ("Bank Account")) "Bank Account" ELSE
-            IF ("Account Type" = CONST ("Fixed Asset")) "Fixed Asset";
+            TableRelation = if ("Account Type" = const("G/L Account")) "G/L Account" else
+            if ("Account Type" = const(Customer)) Customer else
+            if ("Account Type" = const(Vendor)) Vendor else
+            if ("Account Type" = const("Bank Account")) "Bank Account" else
+            if ("Account Type" = const("Fixed Asset")) "Fixed Asset";
         }
         field(16; "Amount (LCY)"; Decimal)
         {
-            CalcFormula = Sum ("SSA Payment Line Archive"."Amount (LCY)" WHERE ("No." = FIELD ("No.")));
+            CalcFormula = sum("SSA Payment Line Archive"."Amount (LCY)" where("No." = field("No.")));
             Caption = 'Total Amount (LCY)';
             Editable = false;
             FieldClass = FlowField;
         }
         field(17; Amount; Decimal)
         {
-            CalcFormula = Sum ("SSA Payment Line Archive".Amount WHERE ("No." = FIELD ("No.")));
+            CalcFormula = sum("SSA Payment Line Archive".Amount where("No." = field("No.")));
             Caption = 'Amount';
             Editable = false;
             FieldClass = FlowField;
@@ -200,14 +200,14 @@ table 70508 "SSA Payment Header Archive"
         }
         field(50040; "Status Aplicare Neaplicat"; Boolean)
         {
-            CalcFormula = Exist ("SSA Payment Line" WHERE ("No." = FIELD ("No."), "Status Aplicare" = FILTER (Neaplicat | ' ')));
+            CalcFormula = exist("SSA Payment Line" where("No." = field("No."), "Status Aplicare" = filter(Neaplicat | ' ')));
             Description = 'SSM729';
             Editable = false;
             FieldClass = FlowField;
         }
         field(50050; "Suma Aplicata"; Decimal)
         {
-            CalcFormula = Sum ("SSA Pmt. Tools AppLedg. Entry".Amount WHERE ("Payment Document No." = FIELD ("No.")));
+            CalcFormula = sum("SSA Pmt. Tools AppLedg. Entry".Amount where("Payment Document No." = field("No.")));
             Description = 'SSM729';
             Editable = false;
             FieldClass = FlowField;

@@ -162,7 +162,7 @@ codeunit 71100 "SSA Actualizare Cursuri BNR"
 
     end;
 
-    Local procedure WriteExchangeRateAllCompanies(_CurrencyCode: Code[10]; _Multiplier: Decimal; _CurrencyDecimal: Decimal)
+    local procedure WriteExchangeRateAllCompanies(_CurrencyCode: Code[10]; _Multiplier: Decimal; _CurrencyDecimal: Decimal)
     var
         Currencies: Record Currency;
         Company: Record Company;

@@ -52,8 +52,8 @@ tableextension 70012 "SSA VAT Entry70012" extends "VAT Entry"
         field(70006; "SSA Realized Amount"; Decimal)
         {
             AutoFormatType = 1;
-            CalcFormula = Sum("VAT Entry".Amount WHERE("Unrealized VAT Entry No." = FIELD("Entry No."),
-                                                        "Posting Date" = FIELD("SSA Date Filter")));
+            CalcFormula = sum("VAT Entry".Amount where("Unrealized VAT Entry No." = field("Entry No."),
+                                                        "Posting Date" = field("SSA Date Filter")));
             Caption = 'Realized Amount';
             Description = 'SSA1002';
             Editable = false;
@@ -62,8 +62,8 @@ tableextension 70012 "SSA VAT Entry70012" extends "VAT Entry"
         field(70007; "SSA Realized Base"; Decimal)
         {
             AutoFormatType = 1;
-            CalcFormula = Sum("VAT Entry".Base WHERE("Unrealized VAT Entry No." = FIELD("Entry No."),
-                                                      "Posting Date" = FIELD("SSA Date Filter")));
+            CalcFormula = sum("VAT Entry".Base where("Unrealized VAT Entry No." = field("Entry No."),
+                                                      "Posting Date" = field("SSA Date Filter")));
             Caption = 'Realized Base';
             Description = 'SSA1002';
             Editable = false;
@@ -77,7 +77,7 @@ tableextension 70012 "SSA VAT Entry70012" extends "VAT Entry"
         }
         field(70009; "SSA Unrealized Purch. Doc. No."; Code[35])
         {
-            CalcFormula = Lookup("VAT Entry"."External Document No." WHERE("Entry No." = FIELD("Unrealized VAT Entry No.")));
+            CalcFormula = lookup("VAT Entry"."External Document No." where("Entry No." = field("Unrealized VAT Entry No.")));
             Caption = 'Unrealized Purchase Document No.';
             Description = 'SSA1002';
             Editable = false;
@@ -85,7 +85,7 @@ tableextension 70012 "SSA VAT Entry70012" extends "VAT Entry"
         }
         field(70010; "SSA Unrealized Document Date"; Date)
         {
-            CalcFormula = Lookup("VAT Entry"."Posting Date" WHERE("Entry No." = FIELD("Unrealized VAT Entry No.")));
+            CalcFormula = lookup("VAT Entry"."Posting Date" where("Entry No." = field("Unrealized VAT Entry No.")));
             Caption = 'Unrealized Document Date';
             Description = 'SSA1003';
             Editable = false;
@@ -93,7 +93,7 @@ tableextension 70012 "SSA VAT Entry70012" extends "VAT Entry"
         }
         field(70011; "SSA Unrealized Sales Doc. No."; Code[20])
         {
-            CalcFormula = Lookup("VAT Entry"."Document No." WHERE("Entry No." = FIELD("Unrealized VAT Entry No.")));
+            CalcFormula = lookup("VAT Entry"."Document No." where("Entry No." = field("Unrealized VAT Entry No.")));
             Caption = 'Unrealized Sales Document No.';
             Description = 'SSA1002';
             Editable = false;

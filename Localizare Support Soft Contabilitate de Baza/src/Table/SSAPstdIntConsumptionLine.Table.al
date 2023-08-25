@@ -26,7 +26,7 @@ table 70003 "SSAPstd. Int. Consumption Line"
         {
             Caption = 'Location Code';
             DataClassification = ToBeClassified;
-            TableRelation = Location WHERE("Use As In-Transit" = CONST(false));
+            TableRelation = Location where("Use As In-Transit" = const(false));
         }
         field(6; "Posting Group"; Code[10])
         {
@@ -95,14 +95,14 @@ table 70003 "SSAPstd. Int. Consumption Line"
             CaptionClass = '1,2,1';
             Caption = 'Shortcut Dimension 1 Code';
             DataClassification = ToBeClassified;
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(1));
         }
         field(15; "Shortcut Dimension 2 Code"; Code[20])
         {
             CaptionClass = '1,2,2';
             Caption = 'Shortcut Dimension 2 Code';
             DataClassification = ToBeClassified;
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(2));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(2));
         }
         field(16; "Gen. Bus. Posting Group"; Code[10])
         {
@@ -121,7 +121,7 @@ table 70003 "SSAPstd. Int. Consumption Line"
             Caption = 'Attached to Line No.';
             DataClassification = ToBeClassified;
             Editable = false;
-            TableRelation = "SSAPstd. Int. Consumption Line"."Line No." WHERE("Document No." = FIELD("Document No."));
+            TableRelation = "SSAPstd. Int. Consumption Line"."Line No." where("Document No." = field("Document No."));
         }
         field(19; "Unit Cost"; Decimal)
         {
@@ -140,7 +140,7 @@ table 70003 "SSAPstd. Int. Consumption Line"
         {
             Caption = 'Bin Code';
             DataClassification = ToBeClassified;
-            TableRelation = bin.Code WHERE("Location Code" = FIELD("Location Code"));
+            TableRelation = bin.Code where("Location Code" = field("Location Code"));
         }
         field(22; "Qty. per Unit of Measure"; Decimal)
         {
@@ -160,7 +160,7 @@ table 70003 "SSAPstd. Int. Consumption Line"
         {
             Caption = 'Unit of Measure Code';
             DataClassification = ToBeClassified;
-            TableRelation = "Item Unit of Measure".Code WHERE("Item No." = FIELD("Item No."));
+            TableRelation = "Item Unit of Measure".Code where("Item No." = field("Item No."));
 
             trigger OnValidate()
             var
@@ -189,9 +189,9 @@ table 70003 "SSAPstd. Int. Consumption Line"
         }
         field(28; "Substitution Available"; Boolean)
         {
-            CalcFormula = Exist("Item Substitution" WHERE(Type = CONST(Item),
-                                                           "No." = FIELD("Item No."),
-                                                           "Substitute Type" = CONST(Item)));
+            CalcFormula = exist("Item Substitution" where(Type = const(Item),
+                                                           "No." = field("Item No."),
+                                                           "Substitute Type" = const(Item)));
             Caption = 'Substitution Available';
             Editable = false;
             FieldClass = FlowField;
@@ -204,11 +204,11 @@ table 70003 "SSAPstd. Int. Consumption Line"
         }
         field(31; "Whse. Outstanding Qty."; Decimal)
         {
-            CalcFormula = Sum("Warehouse Activity Line"."Qty. Outstanding" WHERE("Activity Type" = FILTER(<> Pick),
-                                                                                  "Source Type" = CONST(1),
-                                                                                  "Source Subtype" = CONST("0"),
-                                                                                  "Source No." = FIELD("Document No."),
-                                                                                  "Source Line No." = FIELD("Line No.")));
+            CalcFormula = sum("Warehouse Activity Line"."Qty. Outstanding" where("Activity Type" = filter(<> Pick),
+                                                                                  "Source Type" = const(1),
+                                                                                  "Source Subtype" = const("0"),
+                                                                                  "Source No." = field("Document No."),
+                                                                                  "Source Line No." = field("Line No.")));
             Caption = 'Whse. Outstanding Qty.';
             DecimalPlaces = 0 : 5;
             Editable = false;

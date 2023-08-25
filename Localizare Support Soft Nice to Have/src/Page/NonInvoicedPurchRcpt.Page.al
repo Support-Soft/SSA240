@@ -5,8 +5,8 @@ page 71102 "SSA Non-Invoiced Purch. Rcpt."
     PageType = Worksheet;
     RefreshOnActivate = true;
     SourceTable = "SSA Non-Invoiced Purch. Rcpt.";
-    SourceTableView = SORTING("Posting Date")
-                      ORDER(Descending);
+    SourceTableView = sorting("Posting Date")
+                      order(descending);
     ApplicationArea = All;
     UsageCategory = Tasks;
 
@@ -172,7 +172,7 @@ page 71102 "SSA Non-Invoiced Purch. Rcpt."
                     Caption = 'Card';
                     Image = EditLines;
                     RunObject = Page "Posted Purchase Receipt";
-                    RunPageLink = "No." = FIELD("No.");
+                    RunPageLink = "No." = field("No.");
                     ShortCutKey = 'Shift+F7';
                 }
                 action(Statistics)
@@ -183,7 +183,7 @@ page 71102 "SSA Non-Invoiced Purch. Rcpt."
                     Promoted = true;
                     PromotedCategory = Process;
                     RunObject = Page "Purchase Receipt Statistics";
-                    RunPageLink = "No." = FIELD("No.");
+                    RunPageLink = "No." = field("No.");
                     ShortCutKey = 'F7';
                 }
                 action("Co&mments")
@@ -192,8 +192,8 @@ page 71102 "SSA Non-Invoiced Purch. Rcpt."
                     Caption = 'Co&mments';
                     Image = ViewComments;
                     RunObject = Page "Purch. Comment Sheet";
-                    RunPageLink = "Document Type" = CONST(Receipt),
-                                  "No." = FIELD("No.");
+                    RunPageLink = "Document Type" = const(Receipt),
+                                  "No." = field("No.");
                 }
             }
             group("P&ost Invoices")

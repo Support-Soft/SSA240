@@ -64,12 +64,12 @@ page 70508 "SSA Payment Class"
                         PaymentClass: Record "SSA Payment Class";
                         DuplicateParameter: Report "SSA Duplicate parameter";
                     begin
-                        IF Code <> '' THEN BEGIN
+                        if Code <> '' then begin
                             PaymentClass.SETRANGE(Code, Code);
                             DuplicateParameter.SETTABLEVIEW(PaymentClass);
                             DuplicateParameter.InitParameter(Code);
                             DuplicateParameter.RUNMODAL;
-                        END;
+                        end;
                     end;
                 }
             }
@@ -80,7 +80,7 @@ page 70508 "SSA Payment Class"
                 Promoted = true;
                 PromotedCategory = Process;
                 RunObject = Page "SSA Payment Status";
-                RunPageLink = "Payment Class" = FIELD(Code);
+                RunPageLink = "Payment Class" = field(Code);
             }
             action(Steps)
             {
@@ -89,7 +89,7 @@ page 70508 "SSA Payment Class"
                 Promoted = true;
                 PromotedCategory = Process;
                 RunObject = Page "SSA Payment Steps";
-                RunPageLink = "Payment Class" = FIELD(Code);
+                RunPageLink = "Payment Class" = field(Code);
             }
         }
     }

@@ -76,7 +76,7 @@ tableextension 70009 "SSA Customer 70009" extends Customer
             Caption = 'Split VAT Bank Account No.';
             DataClassification = ToBeClassified;
             Description = 'SSA1197';
-            TableRelation = "Customer Bank Account".Code WHERE("Customer No." = FIELD("No."));
+            TableRelation = "Customer Bank Account".Code where("Customer No." = field("No."));
         }
         field(70007; "SSA Customer Pstg. Grp. Filter"; code[20])
         {
@@ -88,13 +88,13 @@ tableextension 70009 "SSA Customer 70009" extends Customer
         {
             Caption = 'SSA Net Change (LCY)';
             FieldClass = FlowField;
-            CalcFormula = Sum ("Detailed Cust. Ledg. Entry"."Amount (LCY)" WHERE("Customer No." = FIELD("No."), "Initial Entry Global Dim. 1" = FIELD("Global Dimension 1 Filter"), "Initial Entry Global Dim. 2" = FIELD("Global Dimension 2 Filter"), "Posting Date" = FIELD("Date Filter"), "Currency Code" = FIELD("Currency Filter"), "SSA Customer Posting Group" = field("SSA Customer Pstg. Grp. Filter")));
+            CalcFormula = sum("Detailed Cust. Ledg. Entry"."Amount (LCY)" where("Customer No." = field("No."), "Initial Entry Global Dim. 1" = field("Global Dimension 1 Filter"), "Initial Entry Global Dim. 2" = field("Global Dimension 2 Filter"), "Posting Date" = field("Date Filter"), "Currency Code" = field("Currency Filter"), "SSA Customer Posting Group" = field("SSA Customer Pstg. Grp. Filter")));
         }
         field(70009; "SSA Net Change"; Decimal)
         {
             Caption = 'SSA Net Change';
             FieldClass = FlowField;
-            CalcFormula = Sum ("Detailed Cust. Ledg. Entry"."Amount" WHERE("Customer No." = FIELD("No."), "Initial Entry Global Dim. 1" = FIELD("Global Dimension 1 Filter"), "Initial Entry Global Dim. 2" = FIELD("Global Dimension 2 Filter"), "Posting Date" = FIELD("Date Filter"), "Currency Code" = FIELD("Currency Filter"), "SSA Customer Posting Group" = field("SSA Customer Pstg. Grp. Filter")));
+            CalcFormula = sum("Detailed Cust. Ledg. Entry"."Amount" where("Customer No." = field("No."), "Initial Entry Global Dim. 1" = field("Global Dimension 1 Filter"), "Initial Entry Global Dim. 2" = field("Global Dimension 2 Filter"), "Posting Date" = field("Date Filter"), "Currency Code" = field("Currency Filter"), "SSA Customer Posting Group" = field("SSA Customer Pstg. Grp. Filter")));
         }
         field(70010; "SSA Persoana Afiliata"; Boolean)
         {

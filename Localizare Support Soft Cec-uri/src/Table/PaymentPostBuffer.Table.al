@@ -15,11 +15,11 @@ table 70505 "SSA Payment Post. Buffer"
         field(2; "Account No."; Code[20])
         {
             Caption = 'G/L Account';
-            TableRelation = IF ("Account Type" = CONST("G/L Account")) "G/L Account" ELSE
-            IF ("Account Type" = CONST(Customer)) Customer ELSE
-            IF ("Account Type" = CONST(Vendor)) Vendor ELSE
-            IF ("Account Type" = CONST("Bank Account")) "Bank Account" ELSE
-            IF ("Account Type" = CONST("Fixed Asset")) "Fixed Asset";
+            TableRelation = if ("Account Type" = const("G/L Account")) "G/L Account" else
+            if ("Account Type" = const(Customer)) Customer else
+            if ("Account Type" = const(Vendor)) Vendor else
+            if ("Account Type" = const("Bank Account")) "Bank Account" else
+            if ("Account Type" = const("Fixed Asset")) "Fixed Asset";
         }
         field(4; "Global Dimension 1 Code"; Code[20])
         {
@@ -42,9 +42,9 @@ table 70505 "SSA Payment Post. Buffer"
 
             trigger OnValidate()
             begin
-                IF Amount < 0 THEN
+                if Amount < 0 then
                     Sens := Sens::Negative
-                ELSE
+                else
                     Sens := Sens::Positive;
             end;
         }
@@ -209,10 +209,10 @@ table 70505 "SSA Payment Post. Buffer"
         field(79; "Source No."; Code[20])
         {
             Caption = 'Source No.';
-            TableRelation = IF ("Source Type" = CONST(Customer)) Customer ELSE
-            IF ("Source Type" = CONST(Vendor)) Vendor ELSE
-            IF ("Source Type" = CONST("Bank Account")) "Bank Account" ELSE
-            IF ("Source Type" = CONST("Fixed Asset")) "Fixed Asset";
+            TableRelation = if ("Source Type" = const(Customer)) Customer else
+            if ("Source Type" = const(Vendor)) Vendor else
+            if ("Source Type" = const("Bank Account")) "Bank Account" else
+            if ("Source Type" = const("Fixed Asset")) "Fixed Asset";
         }
         field(90; "Auxiliary Entry No."; Integer)
         {
@@ -351,14 +351,14 @@ table 70505 "SSA Payment Post. Buffer"
             CaptionClass = '1,2,1';
             Caption = 'Shortcut Dimension 1 Code';
             Description = 'SSM729';
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(1));
         }
         field(50030; "Shortcut Dimension 2 Code"; Code[20])
         {
             CaptionClass = '1,2,2';
             Caption = 'Shortcut Dimension 2 Code';
             Description = 'SSM729';
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(2));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(2));
         }
     }
 

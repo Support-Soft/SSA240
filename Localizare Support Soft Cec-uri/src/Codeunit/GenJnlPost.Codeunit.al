@@ -5,48 +5,48 @@ codeunit 70503 "SSA Gen. Jnl.-Post"
     var
         GenJnlTemplate: Record "Gen. Journal Template";
     begin
-        IF GenJournalLine.FINDFIRST THEN
-            REPEAT
+        if GenJournalLine.FINDFIRST then
+            repeat
                 PostCheckApplication(GenJournalLine);
-            UNTIL GenJournalLine.NEXT = 0;
-        IF GenJnlTemplate.Type IN [GenJnlTemplate.Type::"Cash Receipts", GenJnlTemplate.Type::General] THEN
+            until GenJournalLine.NEXT = 0;
+        if GenJnlTemplate.Type in [GenJnlTemplate.Type::"Cash Receipts", GenJnlTemplate.Type::General] then
             CheckApplicationExist(GenJournalLine);
     end;
 
-    local procedure CheckApplicationExist(VAR GenJnlLine: Record "Gen. Journal Line")
+    local procedure CheckApplicationExist(var GenJnlLine: Record "Gen. Journal Line")
     var
         CustLE: Record "Cust. Ledger Entry";
         Text50000: Label 'The document %1 is not applied to any invoice.Do you want to continue?';
     begin
         GenJnlLine.SETRANGE("Document Type", GenJnlLine."Document Type"::Payment);
-        IF GenJnlLine.FINDFIRST THEN
-            REPEAT
-                IF (GenJnlLine."Applies-to Doc. No." = '') THEN BEGIN
+        if GenJnlLine.FINDFIRST then
+            repeat
+                if (GenJnlLine."Applies-to Doc. No." = '') then begin
                     CustLE.SETCURRENTKEY("Applies-to ID");
                     CustLE.SETRANGE("Applies-to ID", GenJnlLine."Document No.");
-                    IF CustLE.ISEMPTY THEN
-                        IF NOT CONFIRM(STRSUBSTNO(Text50000, GenJnlLine."Document No.")) THEN
+                    if CustLE.ISEMPTY then
+                        if not CONFIRM(STRSUBSTNO(Text50000, GenJnlLine."Document No.")) then
                             ERROR('')
-                        ELSE
-                            EXIT;
-                END;
-            UNTIL GenJnlLine.NEXT = 0;
+                        else
+                            exit;
+                end;
+            until GenJnlLine.NEXT = 0;
         GenJnlLine.SETRANGE("Document Type");
     end;
 
-    LOCAL procedure PostCheckApplication(VAR _GenJnlLine: Record "Gen. Journal Line")
+    local procedure PostCheckApplication(var _GenJnlLine: Record "Gen. Journal Line")
     var
         PaymentHeader: Record "SSA Payment Header";
         PaymentLine: Record "SSA Payment Line";
         PaymentStep: Record "SSA Payment Step";
         PaymentMgt: Codeunit "SSA Payment Management";
     begin
-        WITH _GenJnlLine DO BEGIN
-            IF "SSA Applies-to CEC No." = '' THEN
-                EXIT;
+        with _GenJnlLine do begin
+            if "SSA Applies-to CEC No." = '' then
+                exit;
 
-            IF NOT PaymentHeader.GET("SSA Applies-to CEC No.") THEN
-                EXIT;
+            if not PaymentHeader.GET("SSA Applies-to CEC No.") then
+                exit;
 
             TESTFIELD("Posting Date");
             TESTFIELD("Document No.");
@@ -55,21 +55,21 @@ codeunit 70503 "SSA Gen. Jnl.-Post"
             TESTFIELD("Bal. Account No.");
 
             PaymentHeader.CALCFIELDS(Amount);
-            IF Amount <> PaymentHeader.Amount THEN
+            if Amount <> PaymentHeader.Amount then
                 ERROR('Suma introdusa difera de suma din CEC = %1', PaymentHeader.Amount);
 
             PaymentLine.RESET;
             PaymentLine.SETRANGE("No.", PaymentHeader."No.");
-            IF PaymentLine.FINDFIRST THEN BEGIN
-                IF "Account Type" <> PaymentLine."Account Type" THEN
+            if PaymentLine.FINDFIRST then begin
+                if "Account Type" <> PaymentLine."Account Type" then
                     ERROR('Tip cont introdus este diferit de cel din CEC = %1.', PaymentLine."Account Type");
-                IF "Account No." <> PaymentLine."Account No." THEN
+                if "Account No." <> PaymentLine."Account No." then
                     ERROR('Nr. cont introdus este diferit de cel din CEC = %1.', PaymentLine."Account No.");
-                REPEAT
+                repeat
                     PaymentLine."External Document No." := "Document No.";
                     PaymentLine.MODIFY
-                UNTIL PaymentLine.NEXT = 0;
-            END;
+                until PaymentLine.NEXT = 0;
+            end;
             PaymentHeader."Account No." := "Bal. Account No.";
             PaymentHeader.VALIDATE("Posting Date", "Posting Date");
             PaymentHeader.MODIFY;
@@ -85,6 +85,6 @@ codeunit 70503 "SSA Gen. Jnl.-Post"
             PaymentStep.FINDFIRST;
             PaymentMgt.Valbord(PaymentHeader, PaymentStep);
             DELETE;
-        END;
+        end;
     end;
 }

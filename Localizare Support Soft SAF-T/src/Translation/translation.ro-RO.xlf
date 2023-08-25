@@ -1,0 +1,831 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="ro-RO" original="Please update this value">
+    <body>
+      <group id="body">
+        <trans-unit id="Table 4038062374 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SAFT Mapping Range</source>
+          <target>Interval Mapare SAFT</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Mapping Range - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4038062374 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code</source>
+          <target>Cod</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Mapping Range - Field Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4038062374 - Field 460889064 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Starting Date</source>
+          <target>Data Inceput</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Mapping Range - Field Starting Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4038062374 - Field 458406397 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ending Date</source>
+          <target>Data Sfarsit</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Mapping Range - Field Ending Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4038062374 - Field 948037281 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Range Type</source>
+          <target>Tip Interval</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Mapping Range - Field Range Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4038062374 - Field 948037281 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,Accounting Period,Date Range</source>
+          <target> ,Perioada Contabila,Interval Date</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Mapping Range - Field Range Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 4038062374 - Field 2327360480 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Accounting Period</source>
+          <target>Perioada Contabila</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Mapping Range - Field Accounting Period - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4038062374 - Field 1682196980 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Chart of Account NFT</source>
+          <target>Tip Mapare Plan Conturi</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Mapping Range - Field Chart of Account NFT - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4038062374 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <target>Descriere</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Mapping Range - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4038062374 - Field 2064636180 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Source Code Inchidere TVA</source>
+          <target>Cod Sursa Inchidere de TVA</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Mapping Range - Field Source Code Inchidere TVA - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4038062374 - Field 2165103452 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Inchidere TVA Tax Code</source>
+          <target>Cod Taxa TVA Inchidere TVA</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Mapping Range - Field Inchidere TVA Tax Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4038062374 - NamedType 2715514529" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Starting date cannot be before ending date.</source>
+          <target>Data Inceput nu poate fi inainte de data sfarsit.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Mapping Range - NamedType DatesAreNotCorrectErr</note>
+        </trans-unit>
+        <trans-unit id="Table 4038062374 - NamedType 2862659481" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You cannot select the accounting period that does not have the ending date.</source>
+          <target>Nu puteti selecta perioada contabila fara data de sfarsit.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Mapping Range - NamedType CannotSelectAccPeriodWithoutEndingDateErr</note>
+        </trans-unit>
+        <trans-unit id="Table 2696433971 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SSAFTSAFT-NAV Mapping</source>
+          <target>Mapare SAFT-NAV</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT-NAV Mapping - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2696433971 - Field 2747192818 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Mapping Range Code</source>
+          <target>Cod Interval Mapare</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT-NAV Mapping - Field Mapping Range Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2696433971 - Field 726393392 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>NFT Type</source>
+          <target>Tip NFT</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT-NAV Mapping - Field NFT Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2696433971 - Field 3830601223 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SAFT Code</source>
+          <target>Cod SAFT</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT-NAV Mapping - Field SAFT Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2696433971 - Field 3135334477 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Table ID</source>
+          <target>ID Tabel</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT-NAV Mapping - Field Table ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2696433971 - Field 138199512 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>NAV Code</source>
+          <target>Cod NAV</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT-NAV Mapping - Field NAV Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2696433971 - Field 3018246346 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SAFT Description</source>
+          <target>Descriere SAFT</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT-NAV Mapping - Field SAFT Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2696433971 - Field 1629832945 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>NAV Description</source>
+          <target>Descriere NAV</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT-NAV Mapping - Field NAV Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2696433971 - Field 869342929 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Field ID</source>
+          <target>ID Camp</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT-NAV Mapping - Field Field ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2696433971 - Field 3070320983 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Field Name</source>
+          <target>Nume Camp</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT-NAV Mapping - Field Field Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2696433971 - Field 3521453183 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>WHT Tax Percent</source>
+          <target>Procent Taxa WHT</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT-NAV Mapping - Field WHT Tax Percent - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2696433971 - Field 3379764274 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>G/L Entries Exists</source>
+          <target>Exita Intr. Reg. Contabilitate</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT-NAV Mapping - Field G/L Entries Exists - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4125296079 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SSAFTSAFT Mapping Values</source>
+          <target>Mapare Valori SAFT</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Mapping Values - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4125296079 - Field 726393392 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>NFT Type</source>
+          <target>Tip NFT</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Mapping Values - Field NFT Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4125296079 - Field 3830601223 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SAFT Code</source>
+          <target>Cod SAFT</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Mapping Values - Field SAFT Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4125296079 - Field 3018246346 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SAFT Description</source>
+          <target>Descriere SAFT</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Mapping Values - Field SAFT Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2947572958 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SAFT Export Header</source>
+          <target>Antet Export SAFT</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Export Header - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2947572958 - Field 3641927271 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ID</source>
+          <target>ID</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Export Header - Field ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2947572958 - Field 2747192818 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Mapping Range Code</source>
+          <target>Cod Interval Mapare</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Export Header - Field Mapping Range Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2947572958 - Field 460889064 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Starting Date</source>
+          <target>Data Inceput</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Export Header - Field Starting Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2947572958 - Field 458406397 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ending Date</source>
+          <target>Data Sfarsit</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Export Header - Field Ending Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2947572958 - Field 1045836580 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parallel Processing</source>
+          <target>Procesare Paralela</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Export Header - Field Parallel Processing - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2947572958 - Field 18210474 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Max No. Of Jobs</source>
+          <target>Nr. Maxim Lucrari</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Export Header - Field Max No. Of Jobs - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2947572958 - Field 6461729 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Earliest Start Date/Time</source>
+          <target>Prima Data/Ora Incepere</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Export Header - Field Earliest Start Date/Time - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2947572958 - Field 2681143077 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Folder Path</source>
+          <target>Cale Folder</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Export Header - Field Folder Path - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2947572958 - Field 513339096 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Status</source>
+          <target>Stare</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Export Header - Field Status - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2947572958 - Field 513339096 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Not Started,In Progress,Failed,Completed</source>
+          <target>Nou,In Procesare,Eroare,Finalizat</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Export Header - Field Status - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 2947572958 - Field 1871831672 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Header Comment SAFT Type</source>
+          <target>Tip Declaratie SAFT</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Export Header - Field Header Comment SAFT Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2947572958 - Field 1871831672 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,L - pentru declaratii lunare,T - pentru declaratii trimestriale,A - pentru declaratii anuale,C - pentru declaratii la cerere,NL - nerezidenti lunar,NT - nerezidenti trimestrial</source>
+          <target> ,L - pentru declaratii lunare,T - pentru declaratii trimestriale,A - pentru declaratii anuale,C - pentru declaratii la cerere,NL - nerezidenti lunar,NT - nerezidenti trimestrial</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Export Header - Field Header Comment SAFT Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 2947572958 - Field 707229288 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Execution Start Date/Time</source>
+          <target>Data/Ora Incepere Executie</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Export Header - Field Execution Start Date/Time - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2947572958 - Field 1753067149 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Execution End Date/Time</source>
+          <target>Data/Ora Finalizare Executie</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Export Header - Field Execution End Date/Time - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2947572958 - Field 382888509 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SAF-T File</source>
+          <target>Fisier SAFT</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Export Header - Field SAF-T File - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2947572958 - Field 1535932298 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tax Accounting Basis</source>
+          <target>Baza Contabila Fiscala</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Export Header - Field Tax Accounting Basis - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1367418245 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SAFT Export Line</source>
+          <target>Linie Export SAFT</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Export Line - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1367418245 - Field 3641927271 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ID</source>
+          <target>ID</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Export Line - Field ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1367418245 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line No.</source>
+          <target>Nr. Linie</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Export Line - Field Line No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1367418245 - Field 3958072724 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Task ID</source>
+          <target>ID Task</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Export Line - Field Task ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1367418245 - Field 4237402031 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Progress</source>
+          <target>Progres</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Export Line - Field Progress - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1367418245 - Field 513339096 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Status</source>
+          <target>Stare</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Export Line - Field Status - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1367418245 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <target>Descriere</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Export Line - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1367418245 - Field 2934272260 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No. Of Retries</source>
+          <target>Nr. de Incercari</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Export Line - Field No. Of Retries - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1367418245 - Field 460889064 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Starting Date</source>
+          <target>Data Inceput</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Export Line - Field Starting Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1367418245 - Field 458406397 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ending Date</source>
+          <target>Data Sfarsit</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Export Line - Field Ending Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1367418245 - Field 382888509 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SAF-T File</source>
+          <target>Fisier SAFT</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Export Line - Field SAF-T File - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1367418245 - Field 3975658731 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Server Instance ID</source>
+          <target>ID Instanta Server</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Export Line - Field Server Instance ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1367418245 - Field 1829104285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Session ID</source>
+          <target>ID Sesiune</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Export Line - Field Session ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1367418245 - Field 892252506 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Created Date/Time</source>
+          <target>Data/Ora Creare</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Export Line - Field Created Date/Time - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1367418245 - Field 3478032625 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Type of Line</source>
+          <target>Tip Linie</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Export Line - Field Type of Line - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1367418245 - Field 3478032625 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,G/L Accounts,Taxonomies,Customers,Suppliers,Tax Table,UoM Table,Analysis Type Table,Movement Type Table,Products,Physical Stock,Owners,Assets,G/L Entries,Sales Invoices,Purchase Invoices,Payments,Movement of Goods,Asset Transactions,Structures,Simple Types</source>
+          <target> ,Conturi Contabile,Taxonomii,Clienti,Furnizori,Tabela Taxe,Tabela Unitatilor de Masura,Tabela Tipuri Analiza,Tabela Tipuri Miscari,Produse,Stocuri,Proprietati,Active,Inregistrari Contabile,Facturi de Vanzare,Facturi de Achizitie,Plati,Miscari de Bunuri,Tranzactii cu Active,Structuri,Tipuri Simple</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Export Line - Field Type of Line - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 1367418245 - Field 4116145935 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Segment Index</source>
+          <target>Index Segment</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAFTSAFT Export Line - Field Segment Index - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1568973684 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SAFT Copy Mapping</source>
+          <target>Copiere Mapare SAFT</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSAFTSAFT Copy Mapping - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1568973684 - Control 362981690 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Copy From</source>
+          <target>Copiere de la</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSAFTSAFT Copy Mapping - Control MappingRangeID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1568973684 - Control 2700982567 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Copy To</source>
+          <target>Copiere la</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSAFTSAFT Copy Mapping - Control ToMappingRangeCode - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1568973684 - Control 2320886912 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Replace Existing Mapping</source>
+          <target>Inlocuire Mapare Existenta</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSAFTSAFT Copy Mapping - Control Replace - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2965966461 - NamedType 777588163" size-unit="char" translate="yes" xml:space="preserve">
+          <source>A chart of accounts does not exist in the current company.</source>
+          <target>Nu exista un plan de conturi in compania actuala.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Mapping Helper - NamedType ChartOfAccountsDoesNotExistErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2965966461 - NamedType 3683577878" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You must specify a starting date.</source>
+          <target>Trebuie sa specificati o data de inceput.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Mapping Helper - NamedType StartingDateNotFilledErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2965966461 - NamedType 1525031959" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You must specify an ending date.</source>
+          <target>Trebuie sa specificati o data de sfarsit</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Mapping Helper - NamedType EndingDateNotFilledErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2965966461 - NamedType 3003812014" size-unit="char" translate="yes" xml:space="preserve">
+          <source>%1 of %2 standard accounts have been automatically matched to the chart of accounts.</source>
+          <target>%1 din %2 conturi contabile au fost mapate automat.</target>
+          <note from="Developer" annotates="general" priority="2">, Comment='%1,%2 = both integer values'</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Mapping Helper - NamedType StandardAccountsMatchedMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2965966461 - NamedType 1614519160" size-unit="char" translate="yes" xml:space="preserve">
+          <source>It is not possible to copy the mapping due to different mapping types.</source>
+          <target>Nu este posibil copierea maparii din cauza tipului de mapare diferit.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Mapping Helper - NamedType DifferentMappingTypeErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2965966461 - NamedType 243832071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Do you want to match entries with SAF-T codes?</source>
+          <target>Doriti sa mapati intrarile la codul SAFT?</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Mapping Helper - NamedType MatchQst</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2965966461 - NamedType 2992087918" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No G/L account mapping was created for range ID %1.</source>
+          <target>Nu fost mapat nici un cont contabil pentru ID-ul %1.</target>
+          <note from="Developer" annotates="general" priority="2">, Comment='%1 = any integer number'</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Mapping Helper - NamedType NoGLAccountMappingErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2965966461 - NamedType 2981755771" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Mapping for category %1 with mapping code %2 already exists for range ID %3.</source>
+          <target>Maparea pentru categoria %1 si codul %2 exista deja pentru ID-ul %3.</target>
+          <note from="Developer" annotates="general" priority="2">, Comment='%1 = category no., %2 = mapping code, %3 = any integer number'</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Mapping Helper - NamedType MappingExistsErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2965966461 - NamedType 3959011560" size-unit="char" translate="yes" xml:space="preserve">
+          <source>One or more G/L accounts do not have a mapping setup. Open the SAF-T Mapping Setup page for the selected mapping range and map each G/L account either to the  standard account or the grouping code.</source>
+          <target>Unul sau mai multe conturi G/L nu au o configuratie de mapare. Deschideti pagina SAF-T Mapping Setup pentru intervalul de mapare selectat si mapati fiecare cont G/L fie la contul standard, fie la codul de grupare.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Mapping Helper - NamedType MappingNotDoneErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2965966461 - NamedType 3667637739" size-unit="char" translate="yes" xml:space="preserve">
+          <source>One or more G/L accounts already have a mapping setup. Create a new mapping range with another mapping type.</source>
+          <target>Unul sau mai multe conturi G/L au deja o configuratie de mapare. Creati o noua perioada de mapare cu un alt tip de mapare.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Mapping Helper - NamedType MappingDoneErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2965966461 - NamedType 2290190938" size-unit="char" translate="yes" xml:space="preserve">
+          <source>One or more dimensions do not have a SAF-T analysis code. Open the Dimensions page and specify a SAF-T analysis code for each dimension.</source>
+          <target>Una sau mai multe dimensiuni nu au cod de analiza SAF-T. Deschideti pagina Dimensiuni si specificati un cod de analiza SAF-T pentru fiecare dimensiune.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Mapping Helper - NamedType DimensionWithoutAnalysisCodeErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2965966461 - NamedType 1752140215" size-unit="char" translate="yes" xml:space="preserve">
+          <source>One or more VAT posting setup do not have a %1. Open the VAT Posting Setup page and specify %1 for each VAT posting setup combination.</source>
+          <target>Una sau mai multe configuratii de inregistrare TVA nu au un %1. Deschideti pagina de configurare a inregistrarii TVA si specificati %1 pentru fiecare combinatie de configurare a inregistrarii TVA.</target>
+          <note from="Developer" annotates="general" priority="2">, Comment='%1 = field caption'</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Mapping Helper - NamedType VATPostingSetupWithoutTaxCodeErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2965966461 - NamedType 1484253947" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Default</source>
+          <target>Default</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Mapping Helper - NamedType DefaultLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2965966461 - NamedType 1936075235" size-unit="char" translate="yes" xml:space="preserve">
+          <source>%1 is not specified</source>
+          <target>%1 nu este specificat</target>
+          <note from="Developer" annotates="general" priority="2">, Comment='%1 = field caption'</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Mapping Helper - NamedType FieldValueIsNotSpecifiedErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2965966461 - NamedType 3282534358" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Preparring for Mapping...</source>
+          <target>Pregatire Mapare...</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Mapping Helper - NamedType PreparingForMappingMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 200415456 - NamedType 1781017900" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Generating header...</source>
+          <target>Generare Antet...</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Generate File - NamedType GeneratingHeaderMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 200415456 - NamedType 1130277448" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Exporting g/l Accounts...</source>
+          <target>Export Conturi Contabile...</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Generate File - NamedType ExportingGLAccountsMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 200415456 - NamedType 3681729518" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Exporting customers...</source>
+          <target>Export Clienti...</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Generate File - NamedType ExportingCustomersMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 200415456 - NamedType 959703334" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Exporting vendors...</source>
+          <target>Export Furnizori...</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Generate File - NamedType ExportingVendorsMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 200415456 - NamedType 2648739523" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Exporting VAT Posting Setup...</source>
+          <target>Export Param TVA...</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Generate File - NamedType ExportingVATPostingSetupMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 200415456 - NamedType 845075474" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Exporting Dimensions...</source>
+          <target>Export Dimensiuni...</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Generate File - NamedType ExportingDimensionsMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 200415456 - NamedType 2707936680" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Exporting G/L entries...</source>
+          <target>Export intrari Contabilitate...</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Generate File - NamedType ExportingGLEntriesMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 200415456 - NamedType 1570768839" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Exporting products...</source>
+          <target>Export Produse...</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Generate File - NamedType ExportingProductsMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 200415456 - NamedType 582035378" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Exporting assets...</source>
+          <target>Export active...</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Generate File - NamedType ExportingAssetsMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 200415456 - NamedType 955328283" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Exporting Sales Entries...</source>
+          <target>Export Documente Vanzare...</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Generate File - NamedType ExportingSalesDocumentsMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 200415456 - NamedType 957232321" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Exporting Movement of Goods...</source>
+          <target>Export Miscari bunuri...</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Generate File - NamedType ExportingMovementOfGoodsMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 200415456 - NamedType 3624595301" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Exporting Asset Transactions...</source>
+          <target>Export tranzactii active...</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Generate File - NamedType ExportingAssetTransactions</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 200415456 - NamedType 2117291001" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Export Movement</source>
+          <target>Export Miscari</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Generate File - NamedType ExportingMovement</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 200415456 - NamedType 3824165195" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Export PhysicalStock</source>
+          <target>Export Stoc Fizic</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Generate File - NamedType ExportingPhysicalStock</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 200415456 - NamedType 444566902" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Exporting Purchase Entries...</source>
+          <target>Export Documente Cumparare...</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Generate File - NamedType ExportingPurchaseDocumentsMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 200415456 - NamedType 3368503912" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Exporting Payments Entries...</source>
+          <target>Export Plati...</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Generate File - NamedType ExportingPaymentsMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1912257786 - NamedType 2669253661" size-unit="char" translate="yes" xml:space="preserve">
+          <source>mfp:anaf:dgti:d406:declaratie:v1</source>
+          <target>mfp:anaf:dgti:d406:declaratie:v1</target>
+          <note from="Developer" annotates="general" priority="2">, Locked=true</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT XML Helper - NamedType SAFTNameSpaceTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1912257786 - NamedType 2929691879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No file generated.</source>
+          <target>Niciun fisier generat.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT XML Helper - NamedType NoFileGeneratedErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 646029455 - NamedType 3489821255" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The export is in progress. Starting a new job cancels the current progress.\</source>
+          <target>Exportul este in curs. Inceperea unei noi lucrari anuleaza progresul curent.\</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Export Mgt. - NamedType ExportIsInProgressMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 646029455 - NamedType 3437776458" size-unit="char" translate="yes" xml:space="preserve">
+          <source>One or more export lines are in progress or completed.\</source>
+          <target>Una sau mai multe linii de export sunt în desfasurare sau finalizate.\</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Export Mgt. - NamedType LinesInProgressOrCompletedMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 646029455 - NamedType 547411560" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Do you want to cancel all export jobs and restart?</source>
+          <target>Doriti sa anulati toate lucrarile de export si sa reporniti?</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Export Mgt. - NamedType CancelExportIsInProgressQst</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 646029455 - NamedType 3732164277" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Do you want to delete the export entry?</source>
+          <target>Doriti sa stergeti intrarea de export?</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Export Mgt. - NamedType DeleteExportIsInProgressQst</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 646029455 - NamedType 4069002805" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Do you want to restart the export for this line?</source>
+          <target>Doriti sa reporniti exportul pentru aceasta linie?</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Export Mgt. - NamedType RestartExportLineQst</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 646029455 - NamedType 251770367" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The export was completed. You can download the export result choosing the Download SAF-T File action.\</source>
+          <target>Exportul a fost finalizat. Puteti descarca rezultatul exportului alegand actiunea Descarcare fisier SAF-T.\</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Export Mgt. - NamedType ExportIsCompletedQst</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 646029455 - NamedType 3884700983" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Do you want to restart the export to get a new SAF-T file?</source>
+          <target>Doriti sa reporniti exportul pentru a obtine un nou fisier SAF-T?</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Export Mgt. - NamedType RestartExportQst</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 646029455 - NamedType 1908741162" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The Earliest Start Date/Time field is not filled in. Do you want to proceed and start the export immediately?</source>
+          <target>Campul pentru cea mai devreme data/ora de incepere nu este completat. Doriti sa continuati si sa incepeti imediat exportul?</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Export Mgt. - NamedType SetStartDateTimeAsCurrentQst</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 646029455 - NamedType 3625992881" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Since you did not schedule the SAF-T file generation, it will be generated immediately which can take a while. Do you want to continue?</source>
+          <target>Deoarece nu ati programat generarea fisierului SAF-T, acesta va fi generat imediat, ceea ce poate dura ceva timp. Doriti sa continuati?</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Export Mgt. - NamedType GenerateSAFTFileImmediatelyQst</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 646029455 - NamedType 1969555425" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The generation of a SAF-T file failed but no error message was logged.</source>
+          <target>Generarea unui fisier SAF-T a esuat, dar nu a fost inregistrat niciun mesaj de eroare.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Export Mgt. - NamedType NoErrorMessageErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 646029455 - NamedType 3709669307" size-unit="char" translate="yes" xml:space="preserve">
+          <source>One or more files exist in the folder that you want to export the SAF-T file to. Specify a folder with no files in it.</source>
+          <target>Unul sau mai multe fisiere exista in folderul in care doriti sa exportati fisierul SAF-T. Specificati un folder fara fisiere in el.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Export Mgt. - NamedType FilesExistsInFolderErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 646029455 - NamedType 3348963083" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SAF-T file generated.</source>
+          <target>Fisierul SAF-T a fost generat.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Export Mgt. - NamedType SAFTFileGeneratedTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 646029455 - NamedType 1661455056" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SAF-T file not generated.</source>
+          <target>Fisierul SAF-T nu a fost generat.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Export Mgt. - NamedType SAFTFileNotGeneratedTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 646029455 - NamedType 212038813" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parallel SAF-T file generation</source>
+          <target>Generare paralela de fisiere SAF-T</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Export Mgt. - NamedType ParallelSAFTFileGenerationTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 646029455 - NamedType 3264033655" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SAF-T Financial.zip</source>
+          <target>SAFT.zip</target>
+          <note from="Developer" annotates="general" priority="2">, Locked=true</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Export Mgt. - NamedType SAFTZipFileTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 646029455 - NamedType 3058423012" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Export SAF-T archive</source>
+          <target>Export SAF-T arhiva.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Export Mgt. - NamedType ZipArchiveSaveDialogTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 646029455 - NamedType 91316143" size-unit="char" translate="yes" xml:space="preserve">
+          <source>MasterData</source>
+          <target>MasterData</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Export Mgt. - NamedType MasterDataMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 646029455 - NamedType 1241378796" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General Ledger Entries from %1 to %2</source>
+          <target>Intrari Reg Contabilitate de la %1 la %2</target>
+          <note from="Developer" annotates="general" priority="2">, Comment='%1,%2 = numbers'</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Export Mgt. - NamedType GLEntriesMsg</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 646029455 - NamedType 3056742058" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No zip file generated.</source>
+          <target>Nu a fost generat niciun fisier zip.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Export Mgt. - NamedType NoZipFileGeneratedErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 646029455 - NamedType 3377795122" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No of jobs in progress: %1</source>
+          <target>Numarul de lucrari in desfasurare: %1</target>
+          <note from="Developer" annotates="general" priority="2">, Comment='%1 = number'</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Export Mgt. - NamedType NoOfJobsInProgressTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 646029455 - NamedType 3230717189" size-unit="char" translate="yes" xml:space="preserve">
+          <source>There are %1 jobs not started or failed</source>
+          <target>Exista %1 lucrari care nu au inceput sau au esuat</target>
+          <note from="Developer" annotates="general" priority="2">, Comment='%1 = number'</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Export Mgt. - NamedType JobsStartedOrFailedTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 646029455 - NamedType 1272624294" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The task for line %1 was lost.</source>
+          <target>Sarcina pentru linia %1 a fost pierduta.</target>
+          <note from="Developer" annotates="general" priority="2">, Comment='%1 = number'</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Export Mgt. - NamedType SessionLostTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 646029455 - NamedType 2948678666" size-unit="char" translate="yes" xml:space="preserve">
+          <source>It is not possible to schedule the task for line %1 because the Max. No. of Jobs field contains %2.</source>
+          <target>Nu este posibil sa programati sarcina pentru linia %1 deoarece Max. Campul Nr. de locuri de munca contine %2.</target>
+          <note from="Developer" annotates="general" priority="2">, Comment='%1,%2 = numbers'</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Export Mgt. - NamedType NotPossibleToScheduleTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 646029455 - NamedType 2582843447" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Schedule a task for line %1.</source>
+          <target>Programati o sarcina pentru linia %1.</target>
+          <note from="Developer" annotates="general" priority="2">, Comment='%1 = number'</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Export Mgt. - NamedType ScheduleTaskForLineTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1346539109 - NamedType 1936075235" size-unit="char" translate="yes" xml:space="preserve">
+          <source>%1 is not specified</source>
+          <target>%1 nu este specificat pentru %2</target>
+          <note from="Developer" annotates="general" priority="2">, Comment='%1 = field caption'</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Export Check - NamedType FieldValueIsNotSpecifiedErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1346539109 - NamedType 2347804705" size-unit="char" translate="yes" xml:space="preserve">
+          <source>%1 are lungimea depasita. Lungimea maxima este %2</source>
+          <target>%1 are lungimea depasita. Lungimea maxima este %2</target>
+          <note from="Developer" annotates="general" priority="2">, Comment='%1 = field caption'</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAFTSAFT Export Check - NamedType FieldValueOversizeErr</note>
+        </trans-unit>
+        <trans-unit id="Page 1571294591 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SAFT Mapping</source>
+          <target>Mapare SAFT</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSAFTSAFT Mapping - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1571294591 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General</source>
+          <target>General</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSAFTSAFT Mapping - Control General - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1571294591 - Control 1457612814 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Range Code Filter</source>
+          <target>Filtru Cod Interval</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSAFTSAFT Mapping - Control RangeCodeFilter - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1571294591 - Control 1223246368 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>NFT Type Filter</source>
+          <target>Filtru Tip NFT</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSAFTSAFT Mapping - Control NFTTypeFilter - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1571294591 - Action 1553741435 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Clear Filter</source>
+          <target>Golire filtru</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSAFTSAFT Mapping - Action ClearFilter - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1571294591 - Action 1553741435 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Clear filter.</source>
+          <target>Golire filtru.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSAFTSAFT Mapping - Action ClearFilter - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1571294591 - NamedType 2476940767" size-unit="char" translate="yes" xml:space="preserve">
+          <source>All Customers</source>
+          <target>Toti clientii</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSAFTSAFT Mapping - NamedType Text000</note>
+        </trans-unit>
+        <trans-unit id="Page 1571294591 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No %1 within the filter %2.</source>
+          <target>Nu este  %1 in cadrul filtrului %2.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSAFTSAFT Mapping - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Page 1571294591 - NamedType 601573949" size-unit="char" translate="yes" xml:space="preserve">
+          <source>More than one customer uses these sales prices. To copy prices, the Sales Code Filter field must contain one customer only.</source>
+          <target>Mai mult de un client utilizeaza aceste preturi de vanzare. Pentru a copia preturile, campul Filtru cod vanzare trebuie sa contina numai un client.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSAFTSAFT Mapping - NamedType MultipleCustomersSelectedErr</note>
+        </trans-unit>
+        <trans-unit id="Page 1571294591 - NamedType 3067181192" size-unit="char" translate="yes" xml:space="preserve">
+          <source>To copy sales prices, The Sales Type Filter field must contain Customer.</source>
+          <target>Pentru a copia preturile de vanzare, campul Filtru tip vanzare trebuie sa contina clientul.</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSAFTSAFT Mapping - NamedType IncorrectSalesTypeToCopyPricesErr</note>
+        </trans-unit>
+        <trans-unit id="Page 817394883 - Action 2317497980 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ExportSingleFile</source>
+          <target>Export Intr-un Fisier</target>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSAFTSAFT Export Card - Action ExportSingleFile - Property Caption</note>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

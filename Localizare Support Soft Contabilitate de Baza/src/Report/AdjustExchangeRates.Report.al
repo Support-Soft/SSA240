@@ -18,7 +18,7 @@ report 70002 "SSA Adjust Exchange Rates"
     {
         dataitem(Currency; Currency)
         {
-            DataItemTableView = SORTING(Code);
+            DataItemTableView = sorting(Code);
             RequestFilterFields = "Code";
             column(COMPANYNAME; CompanyName)
             {
@@ -100,8 +100,8 @@ report 70002 "SSA Adjust Exchange Rates"
             }
             dataitem("Bank Account"; "Bank Account")
             {
-                DataItemLink = "Currency Code" = FIELD(Code);
-                DataItemTableView = SORTING("Bank Acc. Posting Group");
+                DataItemLink = "Currency Code" = field(Code);
+                DataItemTableView = sorting("Bank Acc. Posting Group");
                 RequestFilterFields = "No.";
                 column(Bank_Account_TABLECAPTION; "Bank Account".TableCaption)
                 {
@@ -159,7 +159,7 @@ report 70002 "SSA Adjust Exchange Rates"
                 }
                 dataitem(BankAccountGroupTotal; "Integer")
                 {
-                    DataItemTableView = SORTING(Number);
+                    DataItemTableView = sorting(Number);
                     MaxIteration = 1;
 
                     trigger OnAfterGetRecord()
@@ -383,7 +383,7 @@ report 70002 "SSA Adjust Exchange Rates"
         }
         dataitem(Customer; Customer)
         {
-            DataItemTableView = SORTING("No.");
+            DataItemTableView = sorting("No.");
             RequestFilterFields = "No.", "Customer Posting Group";
             column(CustLedgerEntry_TABLECAPTION; CustLedgerEntry.TableCaption)
             {
@@ -402,7 +402,7 @@ report 70002 "SSA Adjust Exchange Rates"
             }
             dataitem(CustomerLedgerEntryLoop; "Integer")
             {
-                DataItemTableView = SORTING(Number);
+                DataItemTableView = sorting(Number);
                 column(CustLedgerEntry_Currency_Code; CustLedgerEntry."Currency Code")
                 {
                 }
@@ -453,7 +453,7 @@ report 70002 "SSA Adjust Exchange Rates"
                 }
                 dataitem("Detailed Cust. Ledg. Entry"; "Detailed Cust. Ledg. Entry")
                 {
-                    DataItemTableView = SORTING("Cust. Ledger Entry No.", "Posting Date");
+                    DataItemTableView = sorting("Cust. Ledger Entry No.", "Posting Date");
 
                     trigger OnAfterGetRecord()
                     begin
@@ -600,7 +600,7 @@ report 70002 "SSA Adjust Exchange Rates"
         }
         dataitem(Vendor; Vendor)
         {
-            DataItemTableView = SORTING("No.");
+            DataItemTableView = sorting("No.");
             RequestFilterFields = "No.", "Vendor Posting Group";
             column(VendorLedgerEntry_TABLECAPTION; VendorLedgerEntry.TableCaption)
             {
@@ -613,7 +613,7 @@ report 70002 "SSA Adjust Exchange Rates"
             }
             dataitem(VendorLedgerEntryLoop; "Integer")
             {
-                DataItemTableView = SORTING(Number);
+                DataItemTableView = sorting(Number);
                 column(VendorLedgerEntry_Currency_Code; VendorLedgerEntry."Currency Code")
                 {
                 }
@@ -670,7 +670,7 @@ report 70002 "SSA Adjust Exchange Rates"
                 }
                 dataitem("Detailed Vendor Ledg. Entry"; "Detailed Vendor Ledg. Entry")
                 {
-                    DataItemTableView = SORTING("Vendor Ledger Entry No.", "Posting Date");
+                    DataItemTableView = sorting("Vendor Ledger Entry No.", "Posting Date");
 
                     trigger OnAfterGetRecord()
                     begin
@@ -815,7 +815,7 @@ report 70002 "SSA Adjust Exchange Rates"
         }
         dataitem("VAT Posting Setup"; "VAT Posting Setup")
         {
-            DataItemTableView = SORTING("VAT Bus. Posting Group", "VAT Prod. Posting Group");
+            DataItemTableView = sorting("VAT Bus. Posting Group", "VAT Prod. Posting Group");
 
             trigger OnAfterGetRecord()
             begin
@@ -914,7 +914,7 @@ report 70002 "SSA Adjust Exchange Rates"
         }
         dataitem("G/L Account"; "G/L Account")
         {
-            DataItemTableView = SORTING("No.") WHERE("Exchange Rate Adjustment" = FILTER("Adjust Amount" .. "Adjust Additional-Currency Amount"));
+            DataItemTableView = sorting("No.") where("Exchange Rate Adjustment" = filter("Adjust Amount" .. "Adjust Additional-Currency Amount"));
 
             trigger OnAfterGetRecord()
             begin
@@ -2482,7 +2482,7 @@ report 70002 "SSA Adjust Exchange Rates"
         TempDtldVendLedgEntrySums.Modify;
     end;
 
-    [IntegrationEvent(TRUE, false)]
+    [IntegrationEvent(true, false)]
     local procedure OnBeforeOnInitReport(var IsHandled: Boolean)
     begin
     end;

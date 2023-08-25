@@ -36,8 +36,8 @@ page 70510 "SSA Payment Steps"
                 Promoted = true;
                 PromotedCategory = Process;
                 RunObject = Page "SSA Payment Step Card";
-                RunPageLink = "Payment Class" = FIELD("Payment Class"),
-                              Line = FIELD(Line);
+                RunPageLink = "Payment Class" = field("Payment Class"),
+                              Line = field(Line);
             }
         }
     }

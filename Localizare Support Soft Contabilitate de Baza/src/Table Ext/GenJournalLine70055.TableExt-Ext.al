@@ -93,8 +93,8 @@ tableextension 70055 "SSA Gen. Journal Line70055" extends "Gen. Journal Line"
         }
         field(70012; "SSA Bal Acc Balance (LCY)"; Decimal)
         {
-            CalcFormula = Sum("Bank Account Ledger Entry"."Amount (LCY)" WHERE("Bank Account No." = FIELD("Bal. Account No."),
-                                                                                "Posting Date" = FIELD("SSA Date Filter")));
+            CalcFormula = sum("Bank Account Ledger Entry"."Amount (LCY)" where("Bank Account No." = field("Bal. Account No."),
+                                                                                "Posting Date" = field("SSA Date Filter")));
             Caption = 'Bal Acc Balance (LCY)';
             Description = 'SSA1199';
             Editable = false;
@@ -102,8 +102,8 @@ tableextension 70055 "SSA Gen. Journal Line70055" extends "Gen. Journal Line"
         }
         field(70013; "SSA Bal Acc Balance -1D (LCY)"; Decimal)
         {
-            CalcFormula = Sum("Bank Account Ledger Entry"."Amount (LCY)" WHERE("Bank Account No." = FIELD("Bal. Account No."),
-                                                                                "Posting Date" = FIELD("SSA Date Filter -1D")));
+            CalcFormula = sum("Bank Account Ledger Entry"."Amount (LCY)" where("Bank Account No." = field("Bal. Account No."),
+                                                                                "Posting Date" = field("SSA Date Filter -1D")));
             Caption = 'Bal Acc Balance -1D (LCY)';
             Description = 'SSA1199';
             Editable = false;
@@ -111,8 +111,8 @@ tableextension 70055 "SSA Gen. Journal Line70055" extends "Gen. Journal Line"
         }
         field(70014; "SSA Total Amount (LCY)"; Decimal)
         {
-            CalcFormula = Sum("Gen. Journal Line"."Amount (LCY)" WHERE("Bal. Account No." = FIELD("Bal. Account No."),
-                                                                        "Posting Date" = FIELD("SSA Date Filter"),
+            CalcFormula = sum("Gen. Journal Line"."Amount (LCY)" where("Bal. Account No." = field("Bal. Account No."),
+                                                                        "Posting Date" = field("SSA Date Filter"),
                                                                         "Journal Template Name" = field("Journal Template Name"),
                                                                         "Journal Batch Name" = field("Journal Batch Name")));
             Caption = 'Total Amount (LCY)';
@@ -122,8 +122,8 @@ tableextension 70055 "SSA Gen. Journal Line70055" extends "Gen. Journal Line"
         }
         field(70016; "SSA Debit Amount (LCY)"; Decimal)
         {
-            CalcFormula = Sum("Bank Account Ledger Entry"."Debit Amount (LCY)" WHERE("Bank Account No." = FIELD("Bal. Account No."),
-                                                                                "Posting Date" = FIELD("SSA Date Filter")));
+            CalcFormula = sum("Bank Account Ledger Entry"."Debit Amount (LCY)" where("Bank Account No." = field("Bal. Account No."),
+                                                                                "Posting Date" = field("SSA Date Filter")));
             Caption = 'Debit Amount (LCY)';
             Description = 'SSA1199';
             Editable = false;
@@ -131,8 +131,8 @@ tableextension 70055 "SSA Gen. Journal Line70055" extends "Gen. Journal Line"
         }
         field(70017; "SSA Debit Amount -1D (LCY)"; Decimal)
         {
-            CalcFormula = Sum("Bank Account Ledger Entry"."Debit Amount (LCY)" WHERE("Bank Account No." = FIELD("Bal. Account No."),
-                                                                                "Posting Date" = FIELD("SSA Date Filter -1D")));
+            CalcFormula = sum("Bank Account Ledger Entry"."Debit Amount (LCY)" where("Bank Account No." = field("Bal. Account No."),
+                                                                                "Posting Date" = field("SSA Date Filter -1D")));
             Caption = 'Debit Amount -1D (LCY)';
             Description = 'SSA1199';
             Editable = false;
@@ -140,8 +140,8 @@ tableextension 70055 "SSA Gen. Journal Line70055" extends "Gen. Journal Line"
         }
         field(70018; "SSA Credit Amount (LCY)"; Decimal)
         {
-            CalcFormula = Sum("Bank Account Ledger Entry"."Credit Amount (LCY)" WHERE("Bank Account No." = FIELD("Bal. Account No."),
-                                                                                 "Posting Date" = FIELD("SSA Date Filter")));
+            CalcFormula = sum("Bank Account Ledger Entry"."Credit Amount (LCY)" where("Bank Account No." = field("Bal. Account No."),
+                                                                                 "Posting Date" = field("SSA Date Filter")));
             Caption = 'Credit Amount (LCY)';
             Description = 'SSA1199';
             Editable = false;
@@ -149,8 +149,8 @@ tableextension 70055 "SSA Gen. Journal Line70055" extends "Gen. Journal Line"
         }
         field(70019; "SSA Credit Amount -1D (LCY)"; Decimal)
         {
-            CalcFormula = Sum("Bank Account Ledger Entry"."Credit Amount (LCY)" WHERE("Bank Account No." = FIELD("Bal. Account No."),
-                                                                                 "Posting Date" = FIELD("SSA Date Filter -1D")));
+            CalcFormula = sum("Bank Account Ledger Entry"."Credit Amount (LCY)" where("Bank Account No." = field("Bal. Account No."),
+                                                                                 "Posting Date" = field("SSA Date Filter -1D")));
             Caption = 'Credit Amount -1D (LCY)';
             Description = 'SSA1199';
             Editable = false;
@@ -159,9 +159,9 @@ tableextension 70055 "SSA Gen. Journal Line70055" extends "Gen. Journal Line"
         field(70020; "SSA Posting Group"; Code[10])
         {
             Caption = 'Custom Posting Group';
-            TableRelation = IF ("Account Type" = CONST(Customer)) "Customer Posting Group" ELSE
-            IF ("Account Type" = CONST(Vendor)) "Vendor Posting Group" ELSE
-            IF ("Account Type" = CONST("Fixed Asset")) "FA Posting Group";
+            TableRelation = if ("Account Type" = const(Customer)) "Customer Posting Group" else
+            if ("Account Type" = const(Vendor)) "Vendor Posting Group" else
+            if ("Account Type" = const("Fixed Asset")) "FA Posting Group";
             trigger OnValidate()
             begin
                 Validate("Posting Group", "SSA Posting Group");
@@ -169,8 +169,8 @@ tableextension 70055 "SSA Gen. Journal Line70055" extends "Gen. Journal Line"
         }
         field(70021; "SSA Total Amount"; Decimal)
         {
-            CalcFormula = Sum("Gen. Journal Line"."Amount" WHERE("Bal. Account No." = FIELD("Bal. Account No."),
-                                                                        "Posting Date" = FIELD("SSA Date Filter"),
+            CalcFormula = sum("Gen. Journal Line"."Amount" where("Bal. Account No." = field("Bal. Account No."),
+                                                                        "Posting Date" = field("SSA Date Filter"),
                                                                         "Journal Template Name" = field("Journal Template Name"),
                                                                         "Journal Batch Name" = field("Journal Batch Name")));
             Caption = 'Total Amount';
@@ -179,16 +179,16 @@ tableextension 70055 "SSA Gen. Journal Line70055" extends "Gen. Journal Line"
         }
         field(70023; "SSA Debit Amount"; Decimal)
         {
-            CalcFormula = Sum("Bank Account Ledger Entry"."Debit Amount" WHERE("Bank Account No." = FIELD("Bal. Account No."),
-                                                                                "Posting Date" = FIELD("SSA Date Filter")));
+            CalcFormula = sum("Bank Account Ledger Entry"."Debit Amount" where("Bank Account No." = field("Bal. Account No."),
+                                                                                "Posting Date" = field("SSA Date Filter")));
             Caption = 'Debit Amount';
             Editable = false;
             FieldClass = FlowField;
         }
         field(70024; "SSA Debit Amount -1D"; Decimal)
         {
-            CalcFormula = Sum("Bank Account Ledger Entry"."Debit Amount" WHERE("Bank Account No." = FIELD("Bal. Account No."),
-                                                                                "Posting Date" = FIELD("SSA Date Filter -1D")));
+            CalcFormula = sum("Bank Account Ledger Entry"."Debit Amount" where("Bank Account No." = field("Bal. Account No."),
+                                                                                "Posting Date" = field("SSA Date Filter -1D")));
             Caption = 'Debit Amount -1D';
             Description = 'SSA1199';
             Editable = false;
@@ -196,16 +196,16 @@ tableextension 70055 "SSA Gen. Journal Line70055" extends "Gen. Journal Line"
         }
         field(70025; "SSA Credit Amount"; Decimal)
         {
-            CalcFormula = Sum("Bank Account Ledger Entry"."Credit Amount" WHERE("Bank Account No." = FIELD("Bal. Account No."),
-                                                                                 "Posting Date" = FIELD("SSA Date Filter")));
+            CalcFormula = sum("Bank Account Ledger Entry"."Credit Amount" where("Bank Account No." = field("Bal. Account No."),
+                                                                                 "Posting Date" = field("SSA Date Filter")));
             Caption = 'Credit Amount';
             Editable = false;
             FieldClass = FlowField;
         }
         field(70026; "SSA Credit Amount -1D"; Decimal)
         {
-            CalcFormula = Sum("Bank Account Ledger Entry"."Credit Amount" WHERE("Bank Account No." = FIELD("Bal. Account No."),
-                                                                                 "Posting Date" = FIELD("SSA Date Filter -1D")));
+            CalcFormula = sum("Bank Account Ledger Entry"."Credit Amount" where("Bank Account No." = field("Bal. Account No."),
+                                                                                 "Posting Date" = field("SSA Date Filter -1D")));
             Caption = 'Credit Amount -1D';
             Editable = false;
             FieldClass = FlowField;

@@ -22,7 +22,7 @@ page 70512 "SSA Payment Headers"
 
                     trigger OnAssistEdit()
                     begin
-                        IF AssistEdit(xRec) THEN
+                        if AssistEdit(xRec) then
                             CurrPage.UPDATE;
                     end;
                 }
@@ -50,10 +50,10 @@ page 70512 "SSA Payment Headers"
                     trigger OnAssistEdit()
                     begin
                         ChangeExchangeRate.SetParameter("Currency Code", "Currency Factor", "Posting Date");
-                        IF ChangeExchangeRate.RUNMODAL = ACTION::OK THEN BEGIN
+                        if ChangeExchangeRate.RUNMODAL = ACTION::OK then begin
                             VALIDATE("Currency Factor", ChangeExchangeRate.GetParameter);
                             CurrPage.UPDATE;
-                        END;
+                        end;
                         CLEAR(ChangeExchangeRate);
                     end;
                 }
@@ -104,7 +104,7 @@ page 70512 "SSA Payment Headers"
             part(Lines; "SSA Payment Lines")
             {
                 ApplicationArea = All;
-                SubPageLink = "No." = FIELD("No.");
+                SubPageLink = "No." = field("No.");
                 UpdatePropagation = Both;
             }
             group(Posting)
@@ -166,7 +166,7 @@ page 70512 "SSA Payment Headers"
                     Caption = 'Header RIB';
                     Image = CopyBOMHeader;
                     RunObject = Page "SSA Payment Bank";
-                    RunPageLink = "No." = FIELD("No.");
+                    RunPageLink = "No." = field("No.");
                 }
             }
             group("&Line")
@@ -222,15 +222,15 @@ page 70512 "SSA Payment Headers"
                         PaymentClass: Record "SSA Payment Class";
                         CreateVendorPmtSuggestion: Report "SSA Suggest Vendor Payments";
                     begin
-                        IF "Status No." <> 0 THEN
+                        if "Status No." <> 0 then
                             MESSAGE(Text003)
-                        ELSE
-                            IF PaymentClass.GET("Payment Class") THEN
-                                IF PaymentClass.Suggestions = PaymentClass.Suggestions::Vendor THEN BEGIN
+                        else
+                            if PaymentClass.GET("Payment Class") then
+                                if PaymentClass.Suggestions = PaymentClass.Suggestions::Vendor then begin
                                     CreateVendorPmtSuggestion.SetGenPayLine(Rec);
                                     CreateVendorPmtSuggestion.RUNMODAL;
                                     CLEAR(CreateVendorPmtSuggestion);
-                                END ELSE
+                                end else
                                     MESSAGE(Text001);
                     end;
                 }
@@ -245,15 +245,15 @@ page 70512 "SSA Payment Headers"
                         PaymentClass: Record "SSA Payment Class";
                         CreateCustomerPmtSuggestion: Report "SSA Suggest Customer Payments";
                     begin
-                        IF "Status No." <> 0 THEN
+                        if "Status No." <> 0 then
                             MESSAGE(Text003)
-                        ELSE
-                            IF PaymentClass.GET("Payment Class") THEN
-                                IF PaymentClass.Suggestions = PaymentClass.Suggestions::Customer THEN BEGIN
+                        else
+                            if PaymentClass.GET("Payment Class") then
+                                if PaymentClass.Suggestions = PaymentClass.Suggestions::Customer then begin
                                     CreateCustomerPmtSuggestion.SetGenPayLine(Rec);
                                     CreateCustomerPmtSuggestion.RUNMODAL;
                                     CLEAR(CreateCustomerPmtSuggestion);
-                                END ELSE
+                                end else
                                     MESSAGE(Text002);
                     end;
                 }
@@ -265,9 +265,9 @@ page 70512 "SSA Payment Headers"
 
                     trigger OnAction()
                     begin
-                        IF "Status No." <> 0 THEN
+                        if "Status No." <> 0 then
                             MESSAGE(Text004)
-                        ELSE
+                        else
                             CurrPage.Lines.PAGE.SetDocumentID;
                     end;
                 }
@@ -285,10 +285,10 @@ page 70512 "SSA Payment Headers"
                         Archive: Boolean;
                         PaymtManagt: Codeunit "SSA Payment Management";
                     begin
-                        IF "No." = '' THEN
-                            EXIT;
-                        IF NOT CONFIRM(Text009) THEN
-                            EXIT;
+                        if "No." = '' then
+                            exit;
+                        if not CONFIRM(Text009) then
+                            exit;
                         /*
                         CALCFIELDS("Nb of lines");
                         IF "Nb of lines" = 0 THEN
@@ -321,10 +321,10 @@ page 70512 "SSA Payment Headers"
                         Steps.TESTFIELD("Permite Reaplicari");
 
                         CALCFIELDS("Suma Aplicata");
-                        IF "Suma Aplicata" <> 0 THEN
+                        if "Suma Aplicata" <> 0 then
                             ERROR('Trebuie dezaplicare pentru a fi reaplicat');
 
-                        PaymentManagement.CreazaLiniiAplicare(Rec, TRUE, 0);
+                        PaymentManagement.CreazaLiniiAplicare(Rec, true, 0);
                         MESSAGE('Aplicat');
                         //SSM729<<
                     end;
@@ -347,13 +347,13 @@ page 70512 "SSA Payment Headers"
 
                         PaymentLine.RESET;
                         PaymentLine.SETRANGE("No.", "No.");
-                        IF PaymentLine.FINDSET THEN
-                            REPEAT
+                        if PaymentLine.FINDSET then
+                            repeat
                                 PaymentLine.CALCFIELDS("Suma Aplicata");
-                                IF PaymentLine."Suma Aplicata" <> 0 THEN
-                                    PaymentManagement.CreazaLiniiAplicare(Rec, FALSE, PaymentLine."Line No.");
+                                if PaymentLine."Suma Aplicata" <> 0 then
+                                    PaymentManagement.CreazaLiniiAplicare(Rec, false, PaymentLine."Line No.");
 
-                            UNTIL PaymentLine.NEXT = 0;
+                            until PaymentLine.NEXT = 0;
                         MESSAGE('Dezaplicat');
                         //SSM729<<
                     end;
@@ -466,37 +466,37 @@ page 70512 "SSA Payment Headers"
         I: Integer;
     begin
         I := Steps.COUNT;
-        Ok := FALSE;
-        IF I = 1 THEN BEGIN
+        Ok := false;
+        if I = 1 then begin
             Steps.FIND('-');
-            Ok := CONFIRM(Steps.Name, TRUE);
-        END ELSE
-            IF I > 1 THEN BEGIN
-                IF Steps.FIND('-') THEN BEGIN
-                    REPEAT
-                        IF Options = '' THEN
+            Ok := CONFIRM(Steps.Name, true);
+        end else
+            if I > 1 then begin
+                if Steps.FIND('-') then begin
+                    repeat
+                        if Options = '' then
                             Options := Steps.Name
-                        ELSE
+                        else
                             Options := Options + ',' + Steps.Name;
-                    UNTIL Steps.NEXT = 0;
+                    until Steps.NEXT = 0;
 
                     Choice := STRMENU(Options, 1);
 
                     I := 1;
-                    IF Choice > 0 THEN BEGIN
-                        Ok := TRUE;
+                    if Choice > 0 then begin
+                        Ok := true;
                         Steps.FIND('-');
-                        WHILE Choice > I DO BEGIN
+                        while Choice > I do begin
                             I += 1;
                             Steps.NEXT;
-                        END;
-                    END;
-                END;
-            END;
-        IF Ok THEN
+                        end;
+                    end;
+                end;
+            end;
+        if Ok then
             PostingStatement.Valbord(Rec, Steps)
-        ELSE
-            IF I = 0 THEN
+        else
+            if I = 0 then
                 ERROR(Text010);
     end;
 

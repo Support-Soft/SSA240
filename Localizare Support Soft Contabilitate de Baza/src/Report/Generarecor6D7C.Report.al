@@ -10,12 +10,12 @@ report 70008 "SSA Generare cor 6D 7C"
     {
         dataitem("G/L Account"; "G/L Account")
         {
-            DataItemTableView = SORTING("No.") WHERE("SSA Check Posting Debit/Credit" = CONST(true));
+            DataItemTableView = sorting("No.") where("SSA Check Posting Debit/Credit" = const(true));
             RequestFilterFields = "No.", "Date Filter";
             dataitem("G/L Entry"; "G/L Entry")
             {
-                DataItemLink = "G/L Account No." = FIELD("No."), "Posting Date" = FIELD("Date Filter");
-                DataItemTableView = SORTING("G/L Account No.", "Posting Date");
+                DataItemLink = "G/L Account No." = field("No."), "Posting Date" = field("Date Filter");
+                DataItemTableView = sorting("G/L Account No.", "Posting Date");
 
                 trigger OnAfterGetRecord()
                 var

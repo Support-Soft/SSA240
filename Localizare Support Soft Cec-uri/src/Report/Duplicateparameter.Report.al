@@ -8,7 +8,7 @@ report 70501 "SSA Duplicate parameter"
     {
         dataitem(PaymentClass; "SSA Payment Class")
         {
-            DataItemTableView = SORTING(Code);
+            DataItemTableView = sorting(Code);
 
             trigger OnAfterGetRecord()
             var
@@ -27,7 +27,7 @@ report 70501 "SSA Duplicate parameter"
         }
         dataitem("Payment Status"; "SSA Payment Status")
         {
-            DataItemTableView = SORTING("Payment Class", Line);
+            DataItemTableView = sorting("Payment Class", Line);
 
             trigger OnAfterGetRecord()
             var
@@ -45,7 +45,7 @@ report 70501 "SSA Duplicate parameter"
         }
         dataitem("Payment Step"; "SSA Payment Step")
         {
-            DataItemTableView = SORTING("Payment Class", Line);
+            DataItemTableView = sorting("Payment Class", Line);
 
             trigger OnAfterGetRecord()
             var
@@ -63,7 +63,7 @@ report 70501 "SSA Duplicate parameter"
         }
         dataitem("Payment Step Ledger"; "SSA Payment Step Ledger")
         {
-            DataItemTableView = SORTING("Payment Class", Line, Sign);
+            DataItemTableView = sorting("Payment Class", Line, Sign);
 
             trigger OnAfterGetRecord()
             var
@@ -132,9 +132,9 @@ report 70501 "SSA Duplicate parameter"
         Text001: Label 'The name you have put (';
         Text002: Label ') does already exist. Please put another name.';
     begin
-        IF NewName = '' THEN
+        if NewName = '' then
             ERROR(Text000);
-        IF PaymtClass.GET(NewName) THEN
+        if PaymtClass.GET(NewName) then
             ERROR(Text001 + NewName + Text002);
     end;
 }

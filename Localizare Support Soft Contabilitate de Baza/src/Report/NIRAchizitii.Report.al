@@ -9,7 +9,7 @@ report 70005 "SSA NIR Achizitii"
     {
         dataitem("Purch. Rcpt. Header"; "Purch. Rcpt. Header")
         {
-            DataItemTableView = SORTING ("No.");
+            DataItemTableView = sorting("No.");
             RequestFilterFields = "No.", "Buy-from Vendor No.", "Posting Date";
             column(PaginaCaption; Pagelbl)
             {
@@ -124,8 +124,8 @@ report 70005 "SSA NIR Achizitii"
             }
             dataitem("Purch. Rcpt. Line"; "Purch. Rcpt. Line")
             {
-                DataItemLink = "Document No." = FIELD ("No.");
-                DataItemTableView = SORTING ("Document No.", "Line No.");
+                DataItemLink = "Document No." = field("No.");
+                DataItemTableView = sorting("Document No.", "Line No.");
                 column(NocrtCaption; Nocrtlbl)
                 {
                 }
@@ -171,8 +171,8 @@ report 70005 "SSA NIR Achizitii"
                 dataitem("Item Ledger Entry"; "Item Ledger Entry")
                 {
                     CalcFields = "Cost Amount (Actual)", "Cost Amount (Expected)";
-                    DataItemLink = "Document No." = FIELD ("Document No."), "Document Line No." = FIELD ("Line No.");
-                    DataItemTableView = SORTING ("Document No.", "Document Type", "Document Line No.", "Item No.", "Lot No.", "Serial No.");
+                    DataItemLink = "Document No." = field("Document No."), "Document Line No." = field("Line No.");
+                    DataItemTableView = sorting("Document No.", "Document Type", "Document Line No.", "Item No.", "Lot No.", "Serial No.");
                     column(NrCrt; NrCrt)
                     {
                     }
@@ -296,7 +296,7 @@ report 70005 "SSA NIR Achizitii"
                     InventoryPostingSetup.SetRange("Invt. Posting Group Code", "Purch. Rcpt. Line"."Posting Group");
                     if InventoryPostingSetup.Find('-') then; //Cont debitor
                     CalcFields("Purch. Rcpt. Line"."Currency Code");
-                    if not (Type IN [Type::Item, Type::"Fixed Asset"]) then
+                    if not (Type in [Type::Item, Type::"Fixed Asset"]) then
                         CurrReport.Skip;
                 end;
             }

@@ -301,12 +301,12 @@ codeunit 70030 "SSA Leasing Mgt."
         VATPostingSetup: Record "VAT Posting Setup";
     begin
 
-        IF GenJnlLine."SSA Leasing" THEN BEGIN
+        if GenJnlLine."SSA Leasing" then begin
             GenJnlPostLine.InitVAT(GenJnlLine, GLEntry, VATPostingSetup);
-            GenJnlPostLine.InsertGLEntry(GenJnlLine, GLEntry, TRUE);
+            GenJnlPostLine.InsertGLEntry(GenJnlLine, GLEntry, true);
             GenJnlPostLine.PostVAT(GenJnlLine, GLEntry, VATPostingSetup);
-        END ELSE
-            GenJnlPostLine.InsertGLEntry(GenJnlLine, GLEntry, TRUE);
+        end else
+            GenJnlPostLine.InsertGLEntry(GenJnlLine, GLEntry, true);
     end;
 
     [EventSubscriber(ObjectType::Table, 383, 'OnAfterCopyFromGenJnlLine', '', false, false)]

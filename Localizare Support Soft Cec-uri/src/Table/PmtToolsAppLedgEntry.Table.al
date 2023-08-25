@@ -21,8 +21,8 @@ table 70500 "SSA Pmt. Tools AppLedg. Entry"
         field(20; "Document No."; Code[20])
         {
             Caption = 'Document No.';
-            TableRelation = IF ("Document Type" = CONST ("Sales Invoice")) "Sales Invoice Header" ELSE
-            IF ("Document Type" = CONST ("Purchase Invoice")) "Purch. Inv. Header";
+            TableRelation = if ("Document Type" = const("Sales Invoice")) "Sales Invoice Header" else
+            if ("Document Type" = const("Purchase Invoice")) "Purch. Inv. Header";
             //This property is currently not supported
             //TestTableRelation = false;
             ValidateTableRelation = false;
@@ -39,7 +39,7 @@ table 70500 "SSA Pmt. Tools AppLedg. Entry"
         field(45; "Payment Document Line No."; Integer)
         {
             Caption = 'Payment Document Line No.';
-            TableRelation = "SSA Payment Line"."Line No." WHERE ("No." = FIELD ("Payment Document No."));
+            TableRelation = "SSA Payment Line"."Line No." where("No." = field("Payment Document No."));
         }
         field(50; "Payment Series"; Code[20])
         {
@@ -57,8 +57,8 @@ table 70500 "SSA Pmt. Tools AppLedg. Entry"
         field(80; "Source No."; Code[20])
         {
             Caption = 'Source No.';
-            TableRelation = IF ("Source Type" = CONST (Customer)) Customer ELSE
-            IF ("Source Type" = CONST (Vendor)) Vendor;
+            TableRelation = if ("Source Type" = const(Customer)) Customer else
+            if ("Source Type" = const(Vendor)) Vendor;
         }
         field(100; "Payment Class"; Text[30])
         {
@@ -68,7 +68,7 @@ table 70500 "SSA Pmt. Tools AppLedg. Entry"
         field(110; "Status No."; Integer)
         {
             Caption = 'Status';
-            TableRelation = "SSA Payment Status".Line WHERE ("Payment Class" = FIELD ("Payment Class"));
+            TableRelation = "SSA Payment Status".Line where("Payment Class" = field("Payment Class"));
 
             trigger OnValidate()
             var
@@ -79,7 +79,7 @@ table 70500 "SSA Pmt. Tools AppLedg. Entry"
         }
         field(120; "Status Name"; Text[50])
         {
-            CalcFormula = Lookup ("SSA Payment Status".Name WHERE ("Payment Class" = FIELD ("Payment Class"), Line = FIELD ("Status No.")));
+            CalcFormula = lookup("SSA Payment Status".Name where("Payment Class" = field("Payment Class"), Line = field("Status No.")));
             Caption = 'Status Name';
             Editable = false;
             FieldClass = FlowField;

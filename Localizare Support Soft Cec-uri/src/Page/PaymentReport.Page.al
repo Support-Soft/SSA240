@@ -4,7 +4,7 @@ page 70507 "SSA Payment Report"
     Editable = false;
     PageType = List;
     SourceTable = "SSA Payment Status";
-    SourceTableView = WHERE(ReportMenu = CONST(true));
+    SourceTableView = where(ReportMenu = const(true));
 
     layout
     {

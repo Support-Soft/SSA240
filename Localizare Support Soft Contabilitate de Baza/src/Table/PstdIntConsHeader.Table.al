@@ -38,26 +38,26 @@ table 70002 "SSA Pstd. Int. Cons. Header"
         {
             Caption = 'Location Code';
             DataClassification = ToBeClassified;
-            TableRelation = Location WHERE("Use As In-Transit" = CONST(false));
+            TableRelation = Location where("Use As In-Transit" = const(false));
         }
         field(8; "Shortcut Dimension 1 Code"; Code[20])
         {
             CaptionClass = '1,2,1';
             Caption = 'Shortcut Dimension 1 Code';
             DataClassification = ToBeClassified;
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(1));
         }
         field(9; "Shortcut Dimension 2 Code"; Code[20])
         {
             CaptionClass = '1,2,2';
             Caption = 'Shortcut Dimension 2 Code';
             DataClassification = ToBeClassified;
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(2));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(2));
         }
         field(10; Comment; Boolean)
         {
-            CalcFormula = Exist("SSA Comment Line" WHERE("Document Type" = FILTER("Internal Consumption"),
-                                                          "No." = FIELD("No.")));
+            CalcFormula = exist("SSA Comment Line" where("Document Type" = filter("Internal Consumption"),
+                                                          "No." = field("No.")));
             Caption = 'Comment';
             Editable = false;
             FieldClass = FlowField;

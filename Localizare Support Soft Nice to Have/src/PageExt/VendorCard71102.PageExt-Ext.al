@@ -9,7 +9,7 @@ pageextension 71102 "SSA Vendor Card 71102" extends "Vendor Card"
             {
                 ApplicationArea = All;
                 Caption = 'Verificare CUI';
-                Visible = NOT ANAFVATVisible;
+                Visible = not ANAFVATVisible;
                 Promoted = true;
                 PromotedCategory = Process;
                 PromotedIsBig = true;

@@ -11,7 +11,7 @@ tableextension 70507 "SSA Vendor Ledger Entry 70507" extends "Vendor Ledger Entr
             Caption = 'Applied Amount CEC/BO';
             FieldClass = FlowField;
             Editable = false;
-            CalcFormula = Sum ("SSA Pmt. Tools AppLedg. Entry".Amount WHERE ("Document Type" = CONST ("Purchase Invoice"), "Document No." = FIELD ("Document No.")));
+            CalcFormula = sum("SSA Pmt. Tools AppLedg. Entry".Amount where("Document Type" = const("Purchase Invoice"), "Document No." = field("Document No.")));
         }
     }
 

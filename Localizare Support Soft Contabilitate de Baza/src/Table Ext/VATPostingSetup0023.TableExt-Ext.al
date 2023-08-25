@@ -51,7 +51,7 @@ tableextension 70023 "SSA VAT Posting Setup0023" extends "VAT Posting Setup"
         }
         field(70007; "SSA Non-Deductible VAT Prod."; Boolean)
         {
-            CalcFormula = Lookup ("VAT Product Posting Group"."SSA Non-Deductible VAT" WHERE (Code = FIELD ("VAT Prod. Posting Group")));
+            CalcFormula = lookup("VAT Product Posting Group"."SSA Non-Deductible VAT" where(Code = field("VAT Prod. Posting Group")));
             Caption = 'Non-Deductible VAT Prod.';
             Description = 'SSA948';
             Editable = false;

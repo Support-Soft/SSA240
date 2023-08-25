@@ -9,8 +9,8 @@ page 70013 "SSA Fixed Asset Inventory List"
     Editable = false;
     PageType = List;
     SourceTable = "Fixed Asset";
-    SourceTableView = SORTING("No.")
-                      WHERE("SSA Type" = CONST(Inventory));
+    SourceTableView = sorting("No.")
+                      where("SSA Type" = const(Inventory));
     UsageCategory = Lists;
 
     layout
@@ -108,7 +108,7 @@ page 70013 "SSA Fixed Asset Inventory List"
                     Caption = 'Depreciation &Books';
                     Image = DepreciationBooks;
                     RunObject = Page "FA Depreciation Books";
-                    RunPageLink = "FA No." = FIELD("No.");
+                    RunPageLink = "FA No." = field("No.");
                     ToolTip = 'View or edit the depreciation book or books that must be used for each of the fixed assets. Here you also specify the way depreciation must be calculated.';
                 }
                 action(Statistics)
@@ -119,7 +119,7 @@ page 70013 "SSA Fixed Asset Inventory List"
                     Promoted = true;
                     PromotedCategory = Process;
                     RunObject = Page "Fixed Asset Statistics";
-                    RunPageLink = "FA No." = FIELD("No.");
+                    RunPageLink = "FA No." = field("No.");
                     ShortCutKey = 'F7';
                     ToolTip = 'View detailed historical information about the fixed asset.';
                 }
@@ -135,8 +135,8 @@ page 70013 "SSA Fixed Asset Inventory List"
                         Promoted = true;
                         PromotedCategory = Process;
                         RunObject = Page "Default Dimensions";
-                        RunPageLink = "Table ID" = CONST(5600),
-                                      "No." = FIELD("No.");
+                        RunPageLink = "Table ID" = const(5600),
+                                      "No." = field("No.");
                         ShortCutKey = 'Shift+Ctrl+D';
                         ToolTip = 'View or edit the single set of dimensions that are set up for the selected record.';
                     }
@@ -167,8 +167,8 @@ page 70013 "SSA Fixed Asset Inventory List"
                     Caption = 'Main&tenance Ledger Entries';
                     Image = MaintenanceLedgerEntries;
                     RunObject = Page "Maintenance Ledger Entries";
-                    RunPageLink = "FA No." = FIELD("No.");
-                    RunPageView = SORTING("FA No.");
+                    RunPageLink = "FA No." = field("No.");
+                    RunPageView = sorting("FA No.");
                     ToolTip = 'View all the maintenance ledger entries for a fixed asset. ';
                 }
                 action(Picture)
@@ -177,7 +177,7 @@ page 70013 "SSA Fixed Asset Inventory List"
                     Caption = 'Picture';
                     Image = Picture;
                     RunObject = Page "Fixed Asset Picture";
-                    RunPageLink = "No." = FIELD("No.");
+                    RunPageLink = "No." = field("No.");
                     ToolTip = 'Add or view a picture of the fixed asset.';
                 }
                 action("FA Posting Types Overview")
@@ -196,8 +196,8 @@ page 70013 "SSA Fixed Asset Inventory List"
                     Caption = 'Co&mments';
                     Image = ViewComments;
                     RunObject = Page "Comment Sheet";
-                    RunPageLink = "Table Name" = CONST("Fixed Asset"),
-                                  "No." = FIELD("No.");
+                    RunPageLink = "Table Name" = const("Fixed Asset"),
+                                  "No." = field("No.");
                     ToolTip = 'View or add comments for the record.';
                 }
             }
@@ -211,7 +211,7 @@ page 70013 "SSA Fixed Asset Inventory List"
                     Caption = 'M&ain Asset Components';
                     Image = Components;
                     RunObject = Page "Main Asset Components";
-                    RunPageLink = "Main Asset No." = FIELD("No.");
+                    RunPageLink = "Main Asset No." = field("No.");
                     ToolTip = 'View or edit fixed asset components of the main fixed asset that is represented by the fixed asset card.';
                 }
                 action("Ma&in Asset Statistics")
@@ -220,7 +220,7 @@ page 70013 "SSA Fixed Asset Inventory List"
                     Caption = 'Ma&in Asset Statistics';
                     Image = StatisticsDocument;
                     RunObject = Page "Main Asset Statistics";
-                    RunPageLink = "FA No." = FIELD("No.");
+                    RunPageLink = "FA No." = field("No.");
                     ToolTip = 'View detailed historical information about all the components that make up the main asset.';
                 }
                 separator(Separator45)
@@ -238,9 +238,9 @@ page 70013 "SSA Fixed Asset Inventory List"
                     Caption = 'Ledger E&ntries';
                     Image = FixedAssetLedger;
                     RunObject = Page "FA Ledger Entries";
-                    RunPageLink = "FA No." = FIELD("No.");
-                    RunPageView = SORTING("FA No.")
-                                  ORDER(Descending);
+                    RunPageLink = "FA No." = field("No.");
+                    RunPageView = sorting("FA No.")
+                                  order(descending);
                     ShortCutKey = 'Ctrl+F7';
                     ToolTip = 'View the history of transactions that have been posted for the selected record.';
                 }
@@ -250,9 +250,9 @@ page 70013 "SSA Fixed Asset Inventory List"
                     Caption = 'Error Ledger Entries';
                     Image = ErrorFALedgerEntries;
                     RunObject = Page "FA Error Ledger Entries";
-                    RunPageLink = "Canceled from FA No." = FIELD("No.");
-                    RunPageView = SORTING("Canceled from FA No.")
-                                  ORDER(Descending);
+                    RunPageLink = "Canceled from FA No." = field("No.");
+                    RunPageView = sorting("Canceled from FA No.")
+                                  order(descending);
                     ToolTip = 'View the entries that have been posted as a result of you using the Cancel function to cancel an entry.';
                 }
                 action("Maintenance &Registration")
@@ -261,7 +261,7 @@ page 70013 "SSA Fixed Asset Inventory List"
                     Caption = 'Maintenance &Registration';
                     Image = MaintenanceRegistrations;
                     RunObject = Page "Maintenance Registration";
-                    RunPageLink = "FA No." = FIELD("No.");
+                    RunPageLink = "FA No." = field("No.");
                     ToolTip = 'View or edit maintenance codes for the various types of maintenance, repairs, and services performed on your fixed assets. You can then enter the code in the Maintenance Code field on journals.';
                 }
             }

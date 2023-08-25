@@ -20,7 +20,7 @@ table 70005 "SSA Report Selections"
         field(3; "Report ID"; Integer)
         {
             Caption = 'Report ID';
-            TableRelation = AllObjWithCaption."Object ID" WHERE("Object Type" = CONST(Report));
+            TableRelation = AllObjWithCaption."Object ID" where("Object Type" = const(Report));
 
             trigger OnValidate()
             begin
@@ -30,8 +30,8 @@ table 70005 "SSA Report Selections"
         }
         field(4; "Report Caption"; Text[250])
         {
-            CalcFormula = Lookup (AllObjWithCaption."Object Caption" WHERE("Object Type" = CONST(Report),
-                                                                           "Object ID" = FIELD("Report ID")));
+            CalcFormula = lookup(AllObjWithCaption."Object Caption" where("Object Type" = const(Report),
+                                                                           "Object ID" = field("Report ID")));
             Caption = 'Report Caption';
             Editable = false;
             FieldClass = FlowField;
@@ -40,7 +40,7 @@ table 70005 "SSA Report Selections"
         {
             Caption = 'Custom Report Layout Code';
             Editable = false;
-            TableRelation = "Custom Report Layout".Code WHERE(Code = FIELD("Custom Report Layout Code"));
+            TableRelation = "Custom Report Layout".Code where(Code = field("Custom Report Layout Code"));
         }
         field(19; "Use for Email Attachment"; Boolean)
         {
@@ -66,10 +66,10 @@ table 70005 "SSA Report Selections"
         field(21; "Email Body Layout Code"; Code[20])
         {
             Caption = 'Email Body Layout Code';
-            TableRelation = IF ("Email Body Layout Type" = CONST("Custom Report Layout")) "Custom Report Layout".Code WHERE(Code = FIELD("Email Body Layout Code"),
-                                                                                                                           "Report ID" = FIELD("Report ID"))
-            ELSE
-            IF ("Email Body Layout Type" = CONST("HTML Layout")) "O365 HTML Template".Code;
+            TableRelation = if ("Email Body Layout Type" = const("Custom Report Layout")) "Custom Report Layout".Code where(Code = field("Email Body Layout Code"),
+                                                                                                                           "Report ID" = field("Report ID"))
+            else
+            if ("Email Body Layout Type" = const("HTML Layout")) "O365 HTML Template".Code;
 
             trigger OnValidate()
             begin
@@ -80,7 +80,7 @@ table 70005 "SSA Report Selections"
         }
         field(22; "Email Body Layout Description"; Text[250])
         {
-            CalcFormula = Lookup ("Custom Report Layout".Description WHERE(Code = FIELD("Email Body Layout Code")));
+            CalcFormula = lookup("Custom Report Layout".Description where(Code = field("Email Body Layout Code")));
             Caption = 'Email Body Layout Description';
             Editable = false;
             FieldClass = FlowField;

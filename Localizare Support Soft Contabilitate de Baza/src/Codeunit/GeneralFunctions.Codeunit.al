@@ -15,8 +15,8 @@ codeunit 70010 "SSA General Functions"
         OK: Integer;
     begin
         EVALUATE(x, DelChr(FORMAT(_Number * 100), '=', '.,'));
-        zec := x MOD 100;
-        x := (x - (x MOD 100)) / 100;
+        zec := x mod 100;
+        x := (x - (x mod 100)) / 100;
         cifre[20] := ' doi';
         cifre[1] := ' o';
         cifre[2] := ' doua';
@@ -40,148 +40,148 @@ codeunit 70010 "SSA General Functions"
 
         ok := 1;
 
-        IF (x >= 1000000) THEN BEGIN
-            i := (x - (x MOD 1000000)) / 1000000;
+        if (x >= 1000000) then begin
+            i := (x - (x mod 1000000)) / 1000000;
             c := c + cifre[i];
-            IF (i = 1) THEN
+            if (i = 1) then
                 c := c + ' milion'
-            ELSE
+            else
                 c := c + ' milioane';
-            IF (((x - (x MOD 100000)) / 100000) MOD 100 = 0) THEN
+            if (((x - (x mod 100000)) / 100000) mod 100 = 0) then
                 c := c + ' de mii';
-            IF (((x - (x MOD 100000)) / 100000) MOD 10 = 1) THEN BEGIN
+            if (((x - (x mod 100000)) / 100000) mod 10 = 1) then begin
                 ok := 0;
                 c := c + ' unu';
-            END;
-            x := x MOD 1000000;
-        END;
+            end;
+            x := x mod 1000000;
+        end;
 
-        IF (x >= 100000) THEN BEGIN
-            i := (x - (x MOD 100000)) / 100000;
+        if (x >= 100000) then begin
+            i := (x - (x mod 100000)) / 100000;
             c := c + cifre[i];
-            IF (i = 1) THEN
+            if (i = 1) then
                 c := c + ' suta'
-            ELSE
+            else
                 c := c + ' sute';
-            IF (((x - (x MOD 1000)) / 1000) MOD 100 = 0) THEN
+            if (((x - (x mod 1000)) / 1000) mod 100 = 0) then
                 c := c + ' de mii';
-            IF (((x - (x MOD 10000)) / 10000) MOD 10 = 1) THEN BEGIN
+            if (((x - (x mod 10000)) / 10000) mod 10 = 1) then begin
                 ok := 0;
                 c := c + ' unu';
-            END;
-            x := x MOD 100000;
-        END;
+            end;
+            x := x mod 100000;
+        end;
 
-        IF (x >= 10000) THEN BEGIN
-            i := (x - (x MOD 10000)) / 10000;
-            IF (i <> 1) THEN BEGIN
+        if (x >= 10000) then begin
+            i := (x - (x mod 10000)) / 10000;
+            if (i <> 1) then begin
                 c := c + cifre[i];
                 c := c + 'zeci';
-                x := x MOD 10000;
-                IF (x >= 1000) THEN BEGIN
+                x := x mod 10000;
+                if (x >= 1000) then begin
                     c := c + ' si';
-                    IF ((x - (x MOD 1000)) / 1000 = 1) THEN
+                    if ((x - (x mod 1000)) / 1000 = 1) then
                         c := c + ' una'
-                    ELSE
-                        c := c + cifre[(x - (x MOD 1000)) / 1000];
-                END;
+                    else
+                        c := c + cifre[(x - (x mod 1000)) / 1000];
+                end;
                 c := c + ' de mii';
-            END
-            ELSE BEGIN
-                i := (x - (x MOD 1000)) / 1000;
+            end
+            else begin
+                i := (x - (x mod 1000)) / 1000;
                 c := c + cifre[i];
                 c := c + ' mii';
-            END;
-            x := x MOD 1000;
-        END;
+            end;
+            x := x mod 1000;
+        end;
 
-        IF (x >= 1000) THEN BEGIN
-            i := (x - (x MOD 1000)) / 1000;
-            IF (i = 1) THEN
-                IF (ok = 1) THEN
+        if (x >= 1000) then begin
+            i := (x - (x mod 1000)) / 1000;
+            if (i = 1) then
+                if (ok = 1) then
                     c := c + ' o mie'
-                ELSE BEGIN
+                else begin
                     c := c + ' mii';
-                END
-            ELSE BEGIN
+                end
+            else begin
                 c := c + cifre[i];
                 c := c + ' mii';
-            END;
-            x := x MOD 1000;
-        END;
+            end;
+            x := x mod 1000;
+        end;
 
-        IF (x >= 100) THEN BEGIN
-            i := (x - (x MOD 100)) / 100;
+        if (x >= 100) then begin
+            i := (x - (x mod 100)) / 100;
             c := c + cifre[i];
-            IF (i = 1) THEN
+            if (i = 1) then
                 c := c + ' suta'
-            ELSE
+            else
                 c := c + ' sute';
-            x := x MOD 100;
-        END;
+            x := x mod 100;
+        end;
 
-        IF (x >= 20) THEN BEGIN
-            i := (x - (x MOD 10)) / 10;
+        if (x >= 20) then begin
+            i := (x - (x mod 10)) / 10;
             c := c + cifre[i];
             c := c + 'zeci';
-            x := x MOD 10;
-            IF (x <> 0) THEN BEGIN
+            x := x mod 10;
+            if (x <> 0) then begin
                 c := c + ' si';
-                IF (x = 1) THEN
+                if (x = 1) then
                     c := c + ' unu'
-                ELSE
-                    IF (x = 2) THEN
+                else
+                    if (x = 2) then
                         c := c + ' doi'
-                    ELSE
+                    else
                         c := c + cifre[x];
-            END;
-        END
+            end;
+        end
 
-        ELSE BEGIN
-            IF (x = 1) THEN
+        else begin
+            if (x = 1) then
                 c := c + ' unu'
-            ELSE
-                IF (x = 2) THEN
+            else
+                if (x = 2) then
                     c := c + ' doi'
-                ELSE
-                    IF (x <> 0) THEN
+                else
+                    if (x <> 0) then
                         c := c + cifre[x];
-        END;
+        end;
 
         c := c + ' lei';
-        IF (zec > 0) THEN BEGIN
+        if (zec > 0) then begin
             c := c + ' si ';
 
-            IF (zec >= 20) THEN BEGIN
-                i := (zec - (zec MOD 10)) / 10;
+            if (zec >= 20) then begin
+                i := (zec - (zec mod 10)) / 10;
                 c := c + cifre[i];
                 c := c + 'zeci';
-                zec := zec MOD 10;
-                IF (zec <> 0) THEN BEGIN
+                zec := zec mod 10;
+                if (zec <> 0) then begin
                     c := c + ' si';
-                    IF (zec = 1) THEN
+                    if (zec = 1) then
                         c := c + ' unu'
-                    ELSE
-                        IF (zec = 2) THEN
+                    else
+                        if (zec = 2) then
                             c := c + ' doi'
-                        ELSE
+                        else
                             c := c + cifre[zec];
-                END;
-            END
+                end;
+            end
 
-            ELSE BEGIN
-                IF (zec = 1) THEN
+            else begin
+                if (zec = 1) then
                     c := c + ' unu'
-                ELSE
-                    IF (zec = 2) THEN
+                else
+                    if (zec = 2) then
                         c := c + ' doi'
-                    ELSE
-                        IF (zec <> 0) THEN
+                    else
+                        if (zec <> 0) then
                             c := c + cifre[zec];
-            END;
+            end;
             c := c + ' bani';
-        END;
-        EXIT(c);
+        end;
+        exit(c);
     end;
 
     procedure ReplaceDiacriticeCHR(TotalString: Text): Text;
@@ -281,7 +281,7 @@ codeunit 70010 "SSA General Functions"
         finalString := ReplacechrASCII(finalString, 145, 'o');
         finalString := Replacechr(finalString, '‹', 'i');
 
-        EXIT(finalString);
+        exit(finalString);
 
     end;
 
@@ -293,13 +293,13 @@ codeunit 70010 "SSA General Functions"
     begin
         finalString := TotalString;
         remainingstr := TotalString;
-        WHILE (STRPOS(remainingstr, FromChr) <> 0) DO BEGIN
+        while (STRPOS(remainingstr, FromChr) <> 0) do begin
             poz := STRPOS(finalString, FromChr);
             finalString := DELSTR(finalString, poz, STRLEN(FromChr));
             remainingstr := COPYSTR(finalString, poz + 1, STRLEN(finalString) - poz + 1);
             finalString := INSSTR(finalString, WithChr, poz);
-        END;
-        EXIT(finalString);
+        end;
+        exit(finalString);
     end;
 
     local procedure ReplacechrASCII(InputStr: Text; FromChr: Char; WithChr: Char): Text
@@ -308,14 +308,14 @@ codeunit 70010 "SSA General Functions"
         i: Integer;
     begin
         i := 1;
-        WHILE i <= STRLEN(InputStr) DO BEGIN
-            IF InputStr[i] = FromChr THEN
+        while i <= STRLEN(InputStr) do begin
+            if InputStr[i] = FromChr then
                 OutputString[i] := WithChr
-            ELSE BEGIN
+            else begin
                 OutputString[i] := InputStr[i];
-            END;
+            end;
             i += 1
-        END;
-        EXIT(OutputString);
+        end;
+        exit(OutputString);
     end;
 }

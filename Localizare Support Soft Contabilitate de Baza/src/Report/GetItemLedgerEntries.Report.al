@@ -10,10 +10,10 @@ report 70007 "SSA Get Item Ledger Entries"
     {
         dataitem("Country/Region"; "Country/Region")
         {
-            DataItemTableView = SORTING("Intrastat Code") WHERE("Intrastat Code" = FILTER(<> ''));
+            DataItemTableView = sorting("Intrastat Code") where("Intrastat Code" = filter(<> ''));
             dataitem("Item Ledger Entry"; "Item Ledger Entry")
             {
-                DataItemTableView = SORTING("Country/Region Code", "Entry Type", "Posting Date") WHERE("Entry Type" = FILTER(Purchase | Sale | Transfer), Correction = CONST(false));
+                DataItemTableView = sorting("Country/Region Code", "Entry Type", "Posting Date") where("Entry Type" = filter(Purchase | Sale | Transfer), Correction = const(false));
 
                 trigger OnAfterGetRecord()
                 var
@@ -80,8 +80,8 @@ report 70007 "SSA Get Item Ledger Entries"
             }
             dataitem("Job Ledger Entry"; "Job Ledger Entry")
             {
-                DataItemLink = "Country/Region Code" = FIELD(Code);
-                DataItemTableView = SORTING(Type, "Entry Type", "Country/Region Code", "Source Code", "Posting Date") WHERE(Type = CONST(Item), "Source Code" = FILTER(<> ''), "Entry Type" = CONST(Usage));
+                DataItemLink = "Country/Region Code" = field(Code);
+                DataItemTableView = sorting(Type, "Entry Type", "Country/Region Code", "Source Code", "Posting Date") where(Type = const(Item), "Source Code" = filter(<> ''), "Entry Type" = const(Usage));
 
                 trigger OnAfterGetRecord()
                 begin
@@ -104,8 +104,8 @@ report 70007 "SSA Get Item Ledger Entries"
             }
             dataitem("FA Ledger Entry"; "FA Ledger Entry")
             {
-                DataItemLink = "SSA Country/Region Code" = FIELD(Code);
-                DataItemTableView = SORTING("FA No.", "Depreciation Book Code", "FA Posting Category", "FA Posting Type", "Posting Date") WHERE("Document Type" = FILTER(Invoice | "Credit Memo"), "FA Posting Type" = FILTER("Acquisition Cost" | "Proceeds on Disposal"), "FA Posting Category" = CONST(" "));
+                DataItemLink = "SSA Country/Region Code" = field(Code);
+                DataItemTableView = sorting("FA No.", "Depreciation Book Code", "FA Posting Category", "FA Posting Type", "Posting Date") where("Document Type" = filter(Invoice | "Credit Memo"), "FA Posting Type" = filter("Acquisition Cost" | "Proceeds on Disposal"), "FA Posting Category" = const(" "));
 
                 trigger OnAfterGetRecord()
                 begin
@@ -126,7 +126,7 @@ report 70007 "SSA Get Item Ledger Entries"
         }
         dataitem("Value Entry"; "Value Entry")
         {
-            DataItemTableView = SORTING("Entry No.");
+            DataItemTableView = sorting("Entry No.");
 
             trigger OnAfterGetRecord()
             begin
@@ -501,13 +501,13 @@ report 70007 "SSA Get Item Ledger Entries"
                             exit(false);
                     end;
                 else begin
-                        if "Entry Type" = "Entry Type"::Purchase then
-                            if not CountryOfOrigin(CompanyInfo."Ship-to Country/Region Code") then
-                                exit(false);
-                        if "Entry Type" = "Entry Type"::Sale then
-                            if not CountryOfOrigin(CompanyInfo."Country/Region Code") then
-                                exit(false);
-                    end;
+                    if "Entry Type" = "Entry Type"::Purchase then
+                        if not CountryOfOrigin(CompanyInfo."Ship-to Country/Region Code") then
+                            exit(false);
+                    if "Entry Type" = "Entry Type"::Sale then
+                        if not CountryOfOrigin(CompanyInfo."Country/Region Code") then
+                            exit(false);
+                end;
             end;
         exit(true);
     end;

@@ -15,7 +15,7 @@ table 70501 "SSA Payment Class"
 
             trigger OnValidate()
             begin
-                IF Name = '' THEN
+                if Name = '' then
                     Name := Code;
             end;
         }
@@ -32,12 +32,12 @@ table 70501 "SSA Payment Class"
             var
                 NoSeriesLine: Record "No. Series Line";
             begin
-                IF "Header No. Series" <> '' THEN BEGIN
+                if "Header No. Series" <> '' then begin
                     NoSeriesLine.SETRANGE("Series Code", "Header No. Series");
-                    IF NoSeriesLine.FIND('+') THEN
-                        IF (STRLEN(NoSeriesLine."Starting No.") > 10) OR (STRLEN(NoSeriesLine."Ending No.") > 10) THEN
+                    if NoSeriesLine.FIND('+') then
+                        if (STRLEN(NoSeriesLine."Starting No.") > 10) or (STRLEN(NoSeriesLine."Ending No.") > 10) then
                             ERROR(Text002);
-                END;
+                end;
             end;
         }
         field(4; Enable; Boolean)
@@ -54,12 +54,12 @@ table 70501 "SSA Payment Class"
             var
                 NoSeriesLine: Record "No. Series Line";
             begin
-                IF "Line No. Series" <> '' THEN BEGIN
+                if "Line No. Series" <> '' then begin
                     NoSeriesLine.SETRANGE("Series Code", "Line No. Series");
-                    IF NoSeriesLine.FIND('+') THEN
-                        IF (STRLEN(NoSeriesLine."Starting No.") > 10) OR (STRLEN(NoSeriesLine."Ending No.") > 10) THEN
+                    if NoSeriesLine.FIND('+') then
+                        if (STRLEN(NoSeriesLine."Starting No.") > 10) or (STRLEN(NoSeriesLine."Ending No.") > 10) then
                             ERROR(Text002);
-                END;
+                end;
             end;
         }
         field(6; Suggestions; Option)
@@ -70,7 +70,7 @@ table 70501 "SSA Payment Class"
         }
         field(10; "Is create document"; Boolean)
         {
-            CalcFormula = Exist ("SSA Payment Step" WHERE ("Payment Class" = FIELD (Code), "Action Type" = CONST ("Create new Document")));
+            CalcFormula = exist("SSA Payment Step" where("Payment Class" = field(Code), "Action Type" = const("Create new Document")));
             Caption = 'Is create document';
             Editable = false;
             FieldClass = FlowField;
@@ -105,9 +105,9 @@ table 70501 "SSA Payment Class"
     begin
         PaymentHeader.SETRANGE("Payment Class", Code);
         PaymentLine.SETRANGE("Payment Class", Code);
-        IF PaymentHeader.FIND('-') THEN
+        if PaymentHeader.FIND('-') then
             ERROR(Text001);
-        IF PaymentLine.FIND('-') THEN
+        if PaymentLine.FIND('-') then
             ERROR(Text001);
         Status.SETRANGE("Payment Class", Code);
         Status.DELETEALL;

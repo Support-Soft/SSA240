@@ -9,40 +9,40 @@ report 70504 "SSA Suggest Customer Payments"
     {
         dataitem(Customer; Customer)
         {
-            DataItemTableView = SORTING("No.");
+            DataItemTableView = sorting("No.");
             RequestFilterFields = "No.", "Payment Method Code";
 
             trigger OnAfterGetRecord()
             begin
                 Window.UPDATE(1, "No.");
-                GetCustLedgEntries(TRUE, FALSE);
-                GetCustLedgEntries(FALSE, FALSE);
-                CheckAmounts(FALSE);
+                GetCustLedgEntries(true, false);
+                GetCustLedgEntries(false, false);
+                CheckAmounts(false);
             end;
 
             trigger OnPostDataItem()
             begin
-                IF UsePaymentDisc THEN BEGIN
+                if UsePaymentDisc then begin
                     RESET;
                     COPYFILTERS(Cust2);
                     Window.OPEN(Text007);
-                    IF FIND('-') THEN
-                        REPEAT
+                    if FIND('-') then
+                        repeat
                             Window.UPDATE(1, "No.");
                             PayableCustLedgEntry.SETRANGE("Vendor No.", "No.");
-                            GetCustLedgEntries(TRUE, TRUE);
-                            GetCustLedgEntries(FALSE, TRUE);
-                            CheckAmounts(TRUE);
-                        UNTIL NEXT = 0;
-                END;
+                            GetCustLedgEntries(true, true);
+                            GetCustLedgEntries(false, true);
+                            CheckAmounts(true);
+                        until NEXT = 0;
+                end;
 
                 GenPayLine.LOCKTABLE;
                 GenPayLine.SETRANGE("No.", GenPayLine."No.");
-                IF GenPayLine.FIND('+') THEN BEGIN
+                if GenPayLine.FIND('+') then begin
                     FirstLineNo := GenPayLine."Line No.";
                     LastLineNo := GenPayLine."Line No.";
                     GenPayLine.INIT;
-                END;
+                end;
 
                 Window.OPEN(Text008);
 
@@ -61,22 +61,22 @@ report 70504 "SSA Suggest Customer Payments"
 
             trigger OnPreDataItem()
             begin
-                IF LastDueDateToPayReq = 0D THEN
+                if LastDueDateToPayReq = 0D then
                     ERROR(Text000);
-                IF PostingDate = 0D THEN
+                if PostingDate = 0D then
                     ERROR(Text001);
 
-                GenPayLineInserted := FALSE;
-                SeveralCurrencies := FALSE;
+                GenPayLineInserted := false;
+                SeveralCurrencies := false;
                 MessageText := '';
 
-                IF UsePaymentDisc AND (LastDueDateToPayReq < WORKDATE) THEN
-                    IF NOT
+                if UsePaymentDisc and (LastDueDateToPayReq < WORKDATE) then
+                    if not
                        CONFIRM(
                          Text003 +
-                         Text004, FALSE,
+                         Text004, false,
                          WORKDATE)
-                    THEN
+                    then
                         ERROR(Text005);
 
                 Cust2.COPYFILTERS(Customer);
@@ -195,42 +195,42 @@ report 70504 "SSA Suggest Customer Payments"
         CustLedgEntry.RESET;
         CustLedgEntry.SETCURRENTKEY("Customer No.", Open, Positive, "Due Date");
         CustLedgEntry.SETRANGE("Customer No.", Customer."No.");
-        CustLedgEntry.SETRANGE(Open, TRUE);
+        CustLedgEntry.SETRANGE(Open, true);
         CustLedgEntry.SETRANGE(Positive, Positive);
         CustLedgEntry.SETRANGE("Currency Code", CurrencyFilter);
         CustLedgEntry.SETRANGE("Applies-to ID", '');
-        IF Future THEN BEGIN
+        if Future then begin
             CustLedgEntry.SETRANGE("Due Date", LastDueDateToPayReq + 1, 99991231D);
             CustLedgEntry.SETRANGE("Pmt. Discount Date", PostingDate, LastDueDateToPayReq);
             CustLedgEntry.SETFILTER("Original Pmt. Disc. Possible", '<0');
-        END ELSE
+        end else
             CustLedgEntry.SETRANGE("Due Date", 0D, LastDueDateToPayReq);
         CustLedgEntry.SETRANGE("On Hold", '');
-        IF CustLedgEntry.FIND('-') THEN
-            REPEAT
+        if CustLedgEntry.FIND('-') then
+            repeat
                 SaveAmount;
-            UNTIL CustLedgEntry.NEXT = 0;
+            until CustLedgEntry.NEXT = 0;
     end;
 
     local procedure SaveAmount()
     begin
-        WITH GenPayLine DO BEGIN
+        with GenPayLine do begin
             "Account Type" := "Account Type"::Customer;
             VALIDATE("Account No.", CustLedgEntry."Customer No.");
             "Posting Date" := CustLedgEntry."Posting Date";
             "Currency Factor" := CustLedgEntry."Adjusted Currency Factor";
-            IF "Currency Factor" = 0 THEN
+            if "Currency Factor" = 0 then
                 "Currency Factor" := 1;
             VALIDATE("Currency Code", CustLedgEntry."Currency Code");
             CustLedgEntry.CALCFIELDS("Remaining Amount");
-            IF (CustLedgEntry."Document Type" = CustLedgEntry."Document Type"::Invoice) AND
+            if (CustLedgEntry."Document Type" = CustLedgEntry."Document Type"::Invoice) and
                (PostingDate <= CustLedgEntry."Pmt. Discount Date")
-            THEN
+            then
                 Amount := -(CustLedgEntry."Remaining Amount" - CustLedgEntry."Original Pmt. Disc. Possible")
-            ELSE
+            else
                 Amount := -CustLedgEntry."Remaining Amount";
             VALIDATE(Amount);
-        END;
+        end;
 
         PayableCustLedgEntry."Vendor No." := CustLedgEntry."Customer No.";
         PayableCustLedgEntry."Entry No." := NextEntryNo;
@@ -251,26 +251,26 @@ report 70504 "SSA Suggest Customer Payments"
     begin
         PayableCustLedgEntry.SETRANGE("Vendor No.", Customer."No.");
         PayableCustLedgEntry.SETRANGE(Future, Future);
-        IF PayableCustLedgEntry.FIND('-') THEN BEGIN
+        if PayableCustLedgEntry.FIND('-') then begin
             PrevCurrency := PayableCustLedgEntry."Currency Code";
-            REPEAT
-                IF PayableCustLedgEntry."Currency Code" <> PrevCurrency THEN BEGIN
-                    IF CurrencyBalance < 0 THEN BEGIN
+            repeat
+                if PayableCustLedgEntry."Currency Code" <> PrevCurrency then begin
+                    if CurrencyBalance < 0 then begin
                         PayableCustLedgEntry.SETRANGE("Currency Code", PrevCurrency);
                         PayableCustLedgEntry.DELETEALL;
                         PayableCustLedgEntry.SETRANGE("Currency Code");
-                    END;
+                    end;
                     CurrencyBalance := 0;
                     PrevCurrency := PayableCustLedgEntry."Currency Code";
-                END;
+                end;
                 CurrencyBalance := CurrencyBalance + PayableCustLedgEntry."Amount (LCY)"
-            UNTIL PayableCustLedgEntry.NEXT = 0;
-            IF CurrencyBalance > 0 THEN BEGIN
+            until PayableCustLedgEntry.NEXT = 0;
+            if CurrencyBalance > 0 then begin
                 PayableCustLedgEntry.SETRANGE("Currency Code", PrevCurrency);
                 PayableCustLedgEntry.DELETEALL;
                 PayableCustLedgEntry.SETRANGE("Currency Code");
-            END;
-        END;
+            end;
+        end;
         PayableCustLedgEntry.RESET;
     end;
 
@@ -281,44 +281,44 @@ report 70504 "SSA Suggest Customer Payments"
     begin
         TempPaymentPostBuffer.DELETEALL;
 
-        IF PayableCustLedgEntry.FIND('-') THEN
-            REPEAT
+        if PayableCustLedgEntry.FIND('-') then
+            repeat
                 PayableCustLedgEntry.SETRANGE("Vendor No.", PayableCustLedgEntry."Vendor No.");
                 PayableCustLedgEntry.FIND('-');
-                REPEAT
+                repeat
                     CustLedgEntry.GET(PayableCustLedgEntry."Vendor Ledg. Entry No.");
                     TempPaymentPostBuffer."Account No." := CustLedgEntry."Customer No.";
                     TempPaymentPostBuffer."Currency Code" := CustLedgEntry."Currency Code";
-                    IF SummarizePer = SummarizePer::"Due date" THEN
+                    if SummarizePer = SummarizePer::"Due date" then
                         TempPaymentPostBuffer."Due Date" := CustLedgEntry."Due Date";
 
                     //TempPaymentPostBuffer."Dimension Set ID" := 0;
                     TempPaymentPostBuffer."Global Dimension 1 Code" := '';
                     TempPaymentPostBuffer."Global Dimension 2 Code" := '';
 
-                    IF SummarizePer IN [SummarizePer::Customer, SummarizePer::"Due date"] THEN BEGIN
+                    if SummarizePer in [SummarizePer::Customer, SummarizePer::"Due date"] then begin
                         TempPaymentPostBuffer."Auxiliary Entry No." := 0;
-                        IF TempPaymentPostBuffer.FIND THEN BEGIN
+                        if TempPaymentPostBuffer.FIND then begin
                             TempPaymentPostBuffer.Amount := TempPaymentPostBuffer.Amount + PayableCustLedgEntry.Amount;
                             TempPaymentPostBuffer."Amount (LCY)" := TempPaymentPostBuffer."Amount (LCY)" + PayableCustLedgEntry."Amount (LCY)";
                             TempPaymentPostBuffer.MODIFY;
-                        END ELSE BEGIN
+                        end else begin
                             LastLineNo := LastLineNo + 10000;
                             TempPaymentPostBuffer."Payment Line No." := LastLineNo;
-                            IF PaymentClass."Line No. Series" = '' THEN
+                            if PaymentClass."Line No. Series" = '' then
                                 NextDocNo := GenPayHead."No." + '/' + FORMAT(LastLineNo)
-                            ELSE
-                                NextDocNo := NoSeriesMgt.GetNextNo(PaymentClass."Line No. Series", PostingDate, FALSE);
+                            else
+                                NextDocNo := NoSeriesMgt.GetNextNo(PaymentClass."Line No. Series", PostingDate, false);
                             TempPaymentPostBuffer."Document No." := NextDocNo;
                             NextDocNo := INCSTR(NextDocNo);
                             TempPaymentPostBuffer.Amount := PayableCustLedgEntry.Amount;
                             TempPaymentPostBuffer."Amount (LCY)" := PayableCustLedgEntry."Amount (LCY)";
                             Window.UPDATE(1, CustLedgEntry."Customer No.");
                             TempPaymentPostBuffer.INSERT;
-                        END;
+                        end;
                         CustLedgEntry."Applies-to ID" := TempPaymentPostBuffer."Document No.";
                         CustEntryEdit.RUN(CustLedgEntry)
-                    END ELSE BEGIN
+                    end else begin
                         GenPayLine3.RESET;
                         GenPayLine3.SETCURRENTKEY(
                           "Account Type", "Account No.", "Applies-to Doc. Type", "Applies-to Doc. No.");
@@ -326,7 +326,7 @@ report 70504 "SSA Suggest Customer Payments"
                         GenPayLine3.SETRANGE("Account No.", CustLedgEntry."Customer No.");
                         GenPayLine3.SETRANGE("Applies-to Doc. Type", CustLedgEntry."Document Type");
                         GenPayLine3.SETRANGE("Applies-to Doc. No.", CustLedgEntry."Document No.");
-                        IF GenPayLine3.FIND('-') THEN
+                        if GenPayLine3.FIND('-') then
                             GenPayLine3.FIELDERROR(
                               "Applies-to Doc. No.",
                               STRSUBSTNO(
@@ -344,75 +344,75 @@ report 70504 "SSA Suggest Customer Payments"
                         TempPaymentPostBuffer."Auxiliary Entry No." := CustLedgEntry."Entry No.";
                         Window.UPDATE(1, CustLedgEntry."Customer No.");
                         TempPaymentPostBuffer.INSERT;
-                    END;
+                    end;
                     CustLedgEntry.CALCFIELDS(CustLedgEntry."Remaining Amount");
                     CustLedgEntry."Amount to Apply" := CustLedgEntry."Remaining Amount";
                     CustEntryEdit.RUN(CustLedgEntry);
-                UNTIL PayableCustLedgEntry.NEXT = 0;
+                until PayableCustLedgEntry.NEXT = 0;
                 PayableCustLedgEntry.DELETEALL;
                 PayableCustLedgEntry.SETRANGE("Vendor No.");
-            UNTIL NOT PayableCustLedgEntry.FIND('-');
+            until not PayableCustLedgEntry.FIND('-');
 
         CLEAR(OldTempPaymentPostBuffer);
         TempPaymentPostBuffer.SETCURRENTKEY("Document No.");
-        IF TempPaymentPostBuffer.FIND('-') THEN
-            REPEAT
-                WITH GenPayLine DO BEGIN
+        if TempPaymentPostBuffer.FIND('-') then
+            repeat
+                with GenPayLine do begin
                     INIT;
                     Window.UPDATE(1, TempPaymentPostBuffer."Account No.");
-                    IF SummarizePer = SummarizePer::" " THEN BEGIN
+                    if SummarizePer = SummarizePer::" " then begin
                         LastLineNo := LastLineNo + 10000;
                         "Line No." := LastLineNo;
-                        IF PaymentClass."Line No. Series" = '' THEN
+                        if PaymentClass."Line No. Series" = '' then
                             NextDocNo := GenPayHead."No." + '/' + FORMAT(GenPayLine."Line No.")
-                        ELSE
-                            NextDocNo := NoSeriesMgt.GetNextNo(PaymentClass."Line No. Series", PostingDate, FALSE);
-                    END ELSE BEGIN
+                        else
+                            NextDocNo := NoSeriesMgt.GetNextNo(PaymentClass."Line No. Series", PostingDate, false);
+                    end else begin
                         "Line No." := TempPaymentPostBuffer."Payment Line No.";
                         NextDocNo := TempPaymentPostBuffer."Document No.";
-                    END;
+                    end;
                     "Document ID" := NextDocNo;
                     GenPayLine."Applies-to ID" := "Document ID";
                     OldTempPaymentPostBuffer := TempPaymentPostBuffer;
                     OldTempPaymentPostBuffer."Document No." := "Document ID";
-                    IF SummarizePer = SummarizePer::" " THEN BEGIN
+                    if SummarizePer = SummarizePer::" " then begin
                         CustLedgEntry.GET(TempPaymentPostBuffer."Auxiliary Entry No.");
                         CustLedgEntry."Applies-to ID" := NextDocNo;
                         CustLedgEntry.MODIFY;
-                    END;
+                    end;
                     "Account Type" := "Account Type"::Customer;
                     VALIDATE("Account No.", TempPaymentPostBuffer."Account No.");
                     "Currency Code" := TempPaymentPostBuffer."Currency Code";
                     Amount := TempPaymentPostBuffer.Amount;
-                    IF Amount > 0 THEN
+                    if Amount > 0 then
                         "Debit Amount" := Amount
-                    ELSE
+                    else
                         "Credit Amount" := -Amount;
                     "Amount (LCY)" := TempPaymentPostBuffer."Amount (LCY)";
                     "Currency Factor" := TempPaymentPostBuffer."Currency Factor";
-                    IF ("Currency Factor" = 0) AND (Amount <> 0) THEN
+                    if ("Currency Factor" = 0) and (Amount <> 0) then
                         "Currency Factor" := Amount / "Amount (LCY)";
                     Cust2.GET(GenPayLine."Account No.");
                     VALIDATE(GenPayLine."Bank Account", Cust2."SSA Default Bank Account Code");
                     "Payment Class" := GenPayHead."Payment Class";
-                    IF SummarizePer = SummarizePer::" " THEN BEGIN
+                    if SummarizePer = SummarizePer::" " then begin
                         "Applies-to Doc. Type" := CustLedgEntry."Document Type";
                         "Applies-to Doc. No." := CustLedgEntry."Document No.";
-                    END;
-                    IF SummarizePer IN [SummarizePer::" ", SummarizePer::Customer] THEN
+                    end;
+                    if SummarizePer in [SummarizePer::" ", SummarizePer::Customer] then
                         "Due Date" := CustLedgEntry."Due Date"
-                    ELSE
+                    else
                         "Due Date" := TempPaymentPostBuffer."Due Date";
-                    IF Amount <> 0 THEN
+                    if Amount <> 0 then
                         INSERT;
-                    GenPayLineInserted := TRUE;
-                END;
-            UNTIL TempPaymentPostBuffer.NEXT = 0;
+                    GenPayLineInserted := true;
+                end;
+            until TempPaymentPostBuffer.NEXT = 0;
     end;
 
     local procedure ShowMessage(var Text: Text[250])
     begin
-        IF (Text <> '') AND GenPayLineInserted THEN
+        if (Text <> '') and GenPayLineInserted then
             MESSAGE(Text);
     end;
 }

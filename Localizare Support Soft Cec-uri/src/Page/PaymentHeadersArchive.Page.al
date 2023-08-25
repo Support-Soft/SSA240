@@ -56,7 +56,7 @@ page 70521 "SSA Payment Headers Archive"
             part(Lines; "SSA Payment Lines Archive")
             {
                 ApplicationArea = All;
-                SubPageLink = "No." = FIELD("No.");
+                SubPageLink = "No." = field("No.");
             }
             group(Posting)
             {
@@ -103,7 +103,7 @@ page 70521 "SSA Payment Headers Archive"
                     ApplicationArea = All;
                     Caption = 'Header RIB';
                     RunObject = Page "SSA Payment Bank Archive";
-                    RunPageLink = "No." = FIELD("No.");
+                    RunPageLink = "No." = field("No.");
                 }
             }
             group("&Navigate")

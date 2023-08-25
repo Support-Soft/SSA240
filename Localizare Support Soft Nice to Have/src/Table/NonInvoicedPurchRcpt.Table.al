@@ -49,19 +49,19 @@ table 71101 "SSA Non-Invoiced Purch. Rcpt."
         field(28; "Location Code"; Code[10])
         {
             Caption = 'Location Code';
-            TableRelation = Location WHERE("Use As In-Transit" = CONST(false));
+            TableRelation = Location where("Use As In-Transit" = const(false));
         }
         field(29; "Shortcut Dimension 1 Code"; Code[20])
         {
             CaptionClass = '1,2,1';
             Caption = 'Shortcut Dimension 1 Code';
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(1));
         }
         field(30; "Shortcut Dimension 2 Code"; Code[20])
         {
             CaptionClass = '1,2,2';
             Caption = 'Shortcut Dimension 2 Code';
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(2));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(2));
         }
         field(43; "Purchaser Code"; Code[10])
         {
@@ -71,7 +71,7 @@ table 71101 "SSA Non-Invoiced Purch. Rcpt."
         field(44; "Order No."; Code[20])
         {
             Caption = 'Order No.';
-            TableRelation = "Purchase Header"."No." WHERE("Document Type" = CONST(Order));
+            TableRelation = "Purchase Header"."No." where("Document Type" = const(Order));
         }
         field(79; "Buy-from Vendor Name"; Text[100])
         {
@@ -123,7 +123,7 @@ table 71101 "SSA Non-Invoiced Purch. Rcpt."
         field(95; "Order Address Code"; Code[10])
         {
             Caption = 'Order Address Code';
-            TableRelation = "Order Address".Code WHERE("Vendor No." = FIELD("Buy-from Vendor No."));
+            TableRelation = "Order Address".Code where("Vendor No." = field("Buy-from Vendor No."));
         }
     }
 

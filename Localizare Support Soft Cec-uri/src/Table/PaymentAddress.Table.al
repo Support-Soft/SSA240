@@ -13,8 +13,8 @@ table 70510 "SSA Payment Address"
         field(2; "Account No."; Code[20])
         {
             Caption = 'Account No.';
-            TableRelation = IF ("Account Type" = CONST (Customer)) Customer ELSE
-            IF ("Account Type" = CONST (Vendor)) Vendor;
+            TableRelation = if ("Account Type" = const(Customer)) Customer else
+            if ("Account Type" = const(Vendor)) Vendor;
         }
         field(3; "Code"; Code[10])
         {
@@ -26,7 +26,7 @@ table 70510 "SSA Payment Address"
 
             trigger OnValidate()
             begin
-                IF ("Search Name" = UPPERCASE(xRec.Name)) OR ("Search Name" = '') THEN
+                if ("Search Name" = UPPERCASE(xRec.Name)) or ("Search Name" = '') then
                     "Search Name" := Name;
             end;
         }
@@ -99,12 +99,12 @@ table 70510 "SSA Payment Address"
             var
                 PaymentAddress: Record "SSA Payment Address";
             begin
-                IF "Default value" THEN BEGIN
+                if "Default value" then begin
                     PaymentAddress.SETRANGE("Account Type", "Account Type");
                     PaymentAddress.SETRANGE("Account No.", "Account No.");
                     PaymentAddress.SETFILTER(Code, '<>%1', Code);
-                    PaymentAddress.MODIFYALL("Default value", FALSE, FALSE);
-                END;
+                    PaymentAddress.MODIFYALL("Default value", false, false);
+                end;
             end;
         }
     }

@@ -26,20 +26,20 @@ table 70507 "SSA Payment Line"
             begin
                 //SSM729>>
                 CALCFIELDS("Suma Aplicata");
-                IF "Suma Aplicata" <> 0 THEN
+                if "Suma Aplicata" <> 0 then
                     ERROR('Acest IP trebuie dezaplicat');
                 //SM729<<
-                IF ((Amount > 0) AND (NOT Correction)) OR
-                   ((Amount < 0) AND Correction) THEN BEGIN
+                if ((Amount > 0) and (not Correction)) or
+                   ((Amount < 0) and Correction) then begin
                     "Debit Amount" := Amount;
                     "Credit Amount" := 0
-                END ELSE BEGIN
+                end else begin
                     "Debit Amount" := 0;
                     "Credit Amount" := -Amount;
-                END;
-                IF "Currency Code" = '' THEN
+                end;
+                if "Currency Code" = '' then
                     "Amount (LCY)" := Amount
-                ELSE
+                else
                     "Amount (LCY)" := ROUND(
                       CurrExchRate.ExchangeAmtFCYToLCY(
                         "Posting Date", "Currency Code",
@@ -66,11 +66,11 @@ table 70507 "SSA Payment Line"
         field(5; "Account No."; Code[20])
         {
             Caption = 'Account No.';
-            TableRelation = IF ("Account Type" = CONST("G/L Account")) "G/L Account" ELSE
-            IF ("Account Type" = CONST(Customer)) Customer ELSE
-            IF ("Account Type" = CONST(Vendor)) Vendor ELSE
-            IF ("Account Type" = CONST("Bank Account")) "Bank Account" ELSE
-            IF ("Account Type" = CONST("Fixed Asset")) "Fixed Asset";
+            TableRelation = if ("Account Type" = const("G/L Account")) "G/L Account" else
+            if ("Account Type" = const(Customer)) Customer else
+            if ("Account Type" = const(Vendor)) Vendor else
+            if ("Account Type" = const("Bank Account")) "Bank Account" else
+            if ("Account Type" = const("Fixed Asset")) "Fixed Asset";
 
             trigger OnValidate()
             begin
@@ -82,9 +82,9 @@ table 70507 "SSA Payment Line"
         {
             Caption = 'Posting Group';
             Editable = false;
-            TableRelation = IF ("Account Type" = CONST(Customer)) "Customer Posting Group" ELSE
-            IF ("Account Type" = CONST(Vendor)) "Vendor Posting Group" ELSE
-            IF ("Account Type" = CONST("Fixed Asset")) "FA Posting Group";
+            TableRelation = if ("Account Type" = const(Customer)) "Customer Posting Group" else
+            if ("Account Type" = const(Vendor)) "Vendor Posting Group" else
+            if ("Account Type" = const("Fixed Asset")) "FA Posting Group";
         }
         field(7; "Copied To No."; Code[20])
         {
@@ -109,11 +109,11 @@ table 70507 "SSA Payment Line"
         {
             Caption = 'Acc. No. Last entry Debit';
             Editable = false;
-            TableRelation = IF ("Acc. Type last entry Debit" = CONST("G/L Account")) "G/L Account" ELSE
-            IF ("Acc. Type last entry Debit" = CONST(Customer)) Customer ELSE
-            IF ("Acc. Type last entry Debit" = CONST(Vendor)) Vendor ELSE
-            IF ("Acc. Type last entry Debit" = CONST("Bank Account")) "Bank Account" ELSE
-            IF ("Acc. Type last entry Debit" = CONST("Fixed Asset")) "Fixed Asset";
+            TableRelation = if ("Acc. Type last entry Debit" = const("G/L Account")) "G/L Account" else
+            if ("Acc. Type last entry Debit" = const(Customer)) Customer else
+            if ("Acc. Type last entry Debit" = const(Vendor)) Vendor else
+            if ("Acc. Type last entry Debit" = const("Bank Account")) "Bank Account" else
+            if ("Acc. Type last entry Debit" = const("Fixed Asset")) "Fixed Asset";
         }
         field(12; "Acc. Type last entry Credit"; Option)
         {
@@ -126,11 +126,11 @@ table 70507 "SSA Payment Line"
         {
             Caption = 'Acc. No. Last entry Credit';
             Editable = false;
-            TableRelation = IF ("Acc. Type last entry Credit" = CONST("G/L Account")) "G/L Account" ELSE
-            IF ("Acc. Type last entry Credit" = CONST(Customer)) Customer ELSE
-            IF ("Acc. Type last entry Credit" = CONST(Vendor)) Vendor ELSE
-            IF ("Acc. Type last entry Credit" = CONST("Bank Account")) "Bank Account" ELSE
-            IF ("Acc. Type last entry Credit" = CONST("Fixed Asset")) "Fixed Asset";
+            TableRelation = if ("Acc. Type last entry Credit" = const("G/L Account")) "G/L Account" else
+            if ("Acc. Type last entry Credit" = const(Customer)) Customer else
+            if ("Acc. Type last entry Credit" = const(Vendor)) Vendor else
+            if ("Acc. Type last entry Credit" = const("Bank Account")) "Bank Account" else
+            if ("Acc. Type last entry Credit" = const("Fixed Asset")) "Fixed Asset";
         }
         field(14; "P. Group Last Entry Debit"; Code[20])
         {
@@ -151,7 +151,7 @@ table 70507 "SSA Payment Line"
         {
             Caption = 'Status';
             Editable = false;
-            TableRelation = "SSA Payment Status".Line WHERE("Payment Class" = FIELD("Payment Class"));
+            TableRelation = "SSA Payment Status".Line where("Payment Class" = field("Payment Class"));
 
             trigger OnValidate()
             var
@@ -160,7 +160,7 @@ table 70507 "SSA Payment Line"
                 PaymentStatus.GET("Payment Class", "Status No.");
                 "Payment in progress" := PaymentStatus."Payment in progress";
                 "Payment Finished" := PaymentStatus."Payment Finished";
-                IF PaymentStatus."Payment Finished" THEN
+                if PaymentStatus."Payment Finished" then
                     "Payment Date" := "Posting Date";
                 "Payment Finished" := PaymentStatus."Canceled/Refused";
                 "Canceled/Refused" := PaymentStatus."Canceled/Refused";
@@ -168,7 +168,7 @@ table 70507 "SSA Payment Line"
         }
         field(18; "Status Name"; Text[50])
         {
-            CalcFormula = Lookup("SSA Payment Status".Name WHERE("Payment Class" = FIELD("Payment Class"), Line = FIELD("Status No.")));
+            CalcFormula = lookup("SSA Payment Status".Name where("Payment Class" = field("Payment Class"), Line = field("Status No.")));
             Caption = 'Status Name';
             Editable = false;
             FieldClass = FlowField;
@@ -205,13 +205,13 @@ table 70507 "SSA Payment Line"
         field(25; "Bank Account"; Code[10])
         {
             Caption = 'Bank Account';
-            TableRelation = IF ("Account Type" = CONST(Customer)) "Customer Bank Account".Code WHERE("Customer No." = FIELD("Account No.")) ELSE
-            IF ("Account Type" = CONST(Vendor)) "Vendor Bank Account".Code WHERE("Vendor No." = FIELD("Account No."));
+            TableRelation = if ("Account Type" = const(Customer)) "Customer Bank Account".Code where("Customer No." = field("Account No.")) else
+            if ("Account Type" = const(Vendor)) "Vendor Bank Account".Code where("Vendor No." = field("Account No."));
 
             trigger OnValidate()
             begin
-                IF "Bank Account" <> '' THEN BEGIN
-                    IF "Account Type" = "Account Type"::Customer THEN BEGIN
+                if "Bank Account" <> '' then begin
+                    if "Account Type" = "Account Type"::Customer then begin
                         CustomerBank.GET("Account No.", "Bank Account");
                         "Bank Branch No." := CustomerBank."Bank Branch No.";
                         "Bank Account No." := CustomerBank."Bank Account No.";
@@ -221,8 +221,8 @@ table 70507 "SSA Payment Line"
                         "RIB Key" := CustomerBank."SSA RIB Key";
                         "RIB Checked" := Check("Bank Branch No.", "Agency Code", "Bank Account No.", "RIB Key");
                         "Bank City" := CustomerBank.City;
-                    END ELSE
-                        IF "Account Type" = "Account Type"::Vendor THEN BEGIN
+                    end else
+                        if "Account Type" = "Account Type"::Vendor then begin
                             VendorBank.GET("Account No.", "Bank Account");
                             "Bank Branch No." := VendorBank."Bank Branch No.";
                             "Bank Account No." := VendorBank."Bank Account No.";
@@ -232,8 +232,8 @@ table 70507 "SSA Payment Line"
                             "RIB Key" := VendorBank."SSA RIB Key";
                             "RIB Checked" := Check("Bank Branch No.", "Agency Code", "Bank Account No.", "RIB Key");
                             "Bank City" := VendorBank.City;
-                        END;
-                END ELSE
+                        end;
+                end else
                     InitBankAccount;
             end;
         }
@@ -350,7 +350,7 @@ table 70507 "SSA Payment Line"
         field(40; "Payment Address Code"; Code[10])
         {
             Caption = 'Payment Address Code';
-            TableRelation = "SSA Payment Address".Code WHERE("Account Type" = FIELD("Account Type"), "Account No." = FIELD("Account No."));
+            TableRelation = "SSA Payment Address".Code where("Account Type" = field("Account Type"), "Account No." = field("Account No."));
         }
         field(41; "Applies-to Doc. Type"; Option)
         {
@@ -360,7 +360,7 @@ table 70507 "SSA Payment Line"
 
             trigger OnValidate()
             begin
-                IF "Applies-to Doc. Type" <> xRec."Applies-to Doc. Type" THEN
+                if "Applies-to Doc. Type" <> xRec."Applies-to Doc. Type" then
                     VALIDATE("Applies-to Doc. No.", '');
             end;
         }
@@ -378,12 +378,12 @@ table 70507 "SSA Payment Line"
                 CLEAR(CustLedgEntry);
                 CLEAR(VendLedgEntry);
 
-                CASE "Account Type" OF
+                case "Account Type" of
                     "Account Type"::Customer:
                         LookUpAppliesToDocCust("Account No.");
                     "Account Type"::Vendor:
                         LookUpAppliesToDocVend("Account No.");
-                END;
+                end;
                 //SetJournalLineFieldsFromApplication;
 
                 //IF xRec.Amount <> 0 THEN
@@ -397,29 +397,29 @@ table 70507 "SSA Payment Line"
             begin
                 //SSM729>>
                 CALCFIELDS("Suma Aplicata");
-                IF "Suma Aplicata" <> 0 THEN
+                if "Suma Aplicata" <> 0 then
                     ERROR('Acest IP trebuie dezaplicat');
-                IF "Applies-to Doc. No." <> '' THEN BEGIN
+                if "Applies-to Doc. No." <> '' then begin
                     PaymentLine.RESET;
                     PaymentLine.SETRANGE("No.", "No.");
                     PaymentLine.SETFILTER("Line No.", '<>%1', "Line No.");
                     PaymentLine.SETRANGE("Applies-to Doc. No.", "Applies-to Doc. No.");
-                    IF NOT PaymentLine.ISEMPTY THEN
+                    if not PaymentLine.ISEMPTY then
                         ERROR('Exista documentul aplicat pe alta linie');
 
                     CLE.SETCURRENTKEY("Document No.");
                     CLE.SETRANGE("Document No.", "Applies-to Doc. No.");
                     CLE.SETRANGE("Document Type", "Applies-to Doc. Type");
                     CLE.SETRANGE("Customer No.", "Account No.");
-                    CLE.SETRANGE(Open, TRUE);
-                    IF CLE.FINDFIRST THEN BEGIN
+                    CLE.SETRANGE(Open, true);
+                    if CLE.FINDFIRST then begin
                         CLE.CALCFIELDS("Remaining Amount", "SSA Applied Amount CEC/BO");
-                        IF ((CLE."Remaining Amount" - CLE."SSA Applied Amount CEC/BO") < (-Amount)) THEN
+                        if ((CLE."Remaining Amount" - CLE."SSA Applied Amount CEC/BO") < (-Amount)) then
                             ERROR('Suma de aplicat este mai mare decat suma neacoperita');
-                    END;
-                END;
+                    end;
+                end;
                 //SSM729<<
-                IF "Applies-to Doc. No." <> xRec."Applies-to Doc. No." THEN
+                if "Applies-to Doc. No." <> xRec."Applies-to Doc. No." then
                     ClearCustVendApplnEntry;
 
                 //IF ("Applies-to Doc. No." = '') AND (xRec."Applies-to Doc. No." <> '') THEN BEGIN
@@ -427,56 +427,56 @@ table 70507 "SSA Payment Line"
 
                 // TempGenJnlLine := Rec;
 
-                IF "Account Type" = "Account Type"::Customer THEN BEGIN
+                if "Account Type" = "Account Type"::Customer then begin
                     CustLedgEntry.SETCURRENTKEY("Document No.");
                     CustLedgEntry.SETRANGE("Document No.", xRec."Applies-to Doc. No.");
                     // IF NOT (xRec."Applies-to Doc. Type" = "Document Type"::" ") THEN
                     CustLedgEntry.SETRANGE("Document Type", "Applies-to Doc. Type");
                     CustLedgEntry.SETRANGE("Customer No.", "Account No.");
-                    CustLedgEntry.SETRANGE(Open, TRUE);
-                    IF CustLedgEntry.FINDFIRST THEN BEGIN
+                    CustLedgEntry.SETRANGE(Open, true);
+                    if CustLedgEntry.FINDFIRST then begin
                         //SSM729>>
                         CustLedgEntry.CALCFIELDS("Remaining Amount", "SSA Applied Amount CEC/BO");
-                        IF ((CustLedgEntry."Remaining Amount" - CustLedgEntry."SSA Applied Amount CEC/BO") < (-Amount)) AND
+                        if ((CustLedgEntry."Remaining Amount" - CustLedgEntry."SSA Applied Amount CEC/BO") < (-Amount)) and
                           ("Applies-to Doc. No." <> '')
-                        THEN
+                        then
                             ERROR('Suma de aplicat este mai mare decat suma neacoperita');
                         //SSM729<<
-                        IF CustLedgEntry."Amount to Apply" <> 0 THEN BEGIN
+                        if CustLedgEntry."Amount to Apply" <> 0 then begin
                             CustLedgEntry."Amount to Apply" := 0;
                             CODEUNIT.RUN(CODEUNIT::"Cust. Entry-Edit", CustLedgEntry);
-                        END;
-                    END;
-                END ELSE
-                    IF "Account Type" = "Account Type"::Vendor THEN BEGIN
+                        end;
+                    end;
+                end else
+                    if "Account Type" = "Account Type"::Vendor then begin
                         VendLedgEntry.SETCURRENTKEY("Document No.");
                         VendLedgEntry.SETRANGE("Document No.", xRec."Applies-to Doc. No.");
                         //IF NOT (xRec."Applies-to Doc. Type" = "Document Type"::" ") THEN
                         VendLedgEntry.SETRANGE("Document Type", Rec."Applies-to Doc. Type");
                         VendLedgEntry.SETRANGE("Vendor No.", "Account No.");
-                        VendLedgEntry.SETRANGE(Open, TRUE);
-                        IF VendLedgEntry.FINDFIRST THEN BEGIN
-                            IF VendLedgEntry."Amount to Apply" <> 0 THEN BEGIN
+                        VendLedgEntry.SETRANGE(Open, true);
+                        if VendLedgEntry.FINDFIRST then begin
+                            if VendLedgEntry."Amount to Apply" <> 0 then begin
                                 VendLedgEntry."Amount to Apply" := 0;
                                 CODEUNIT.RUN(CODEUNIT::"Vend. Entry-Edit", VendLedgEntry);
-                            END;
-                        END;
-                    END;
+                            end;
+                        end;
+                    end;
 
-                IF ("Applies-to Doc. No." <> xRec."Applies-to Doc. No.") AND (Amount <> 0) THEN BEGIN
+                if ("Applies-to Doc. No." <> xRec."Applies-to Doc. No.") and (Amount <> 0) then begin
                     // IF xRec."Applies-to Doc. No." <> '' THEN
                     //  PaymentToleranceMgt.DelPmtTolApllnDocNo(Rec,xRec."Applies-to Doc. No.");
                     //SetApplyToAmount;
                     //PaymentToleranceMgt.PmtTolGenJnl(Rec);
                     //xRec.ClearAppliedGenJnlLine;
-                END;
+                end;
 
-                CASE "Account Type" OF
+                case "Account Type" of
                     "Account Type"::Customer:
                         GetCustLedgerEntry;
                     "Account Type"::Vendor:
                         GetVendLedgerEntry;
-                END;
+                end;
 
                 ValidateApplyRequirements(Rec);
 
@@ -526,14 +526,14 @@ table 70507 "SSA Payment Line"
             CaptionClass = '1,2,1';
             Caption = 'Shortcut Dimension 1 Code';
             Description = 'SSM729';
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(1));
         }
         field(50020; "Shortcut Dimension 2 Code"; Code[20])
         {
             CaptionClass = '1,2,2';
             Caption = 'Shortcut Dimension 2 Code';
             Description = 'SSM729';
-            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(2));
+            TableRelation = "Dimension Value".Code where("Global Dimension No." = const(2));
         }
         field(50030; "Salesperson/Purchaser Code"; Code[10])
         {
@@ -555,14 +555,14 @@ table 70507 "SSA Payment Line"
         }
         field(50050; "Suma Aplicata"; Decimal)
         {
-            CalcFormula = Sum("SSA Pmt. Tools AppLedg. Entry".Amount WHERE("Payment Document No." = FIELD("No."), "Payment Document Line No." = FIELD("Line No.")));
+            CalcFormula = sum("SSA Pmt. Tools AppLedg. Entry".Amount where("Payment Document No." = field("No."), "Payment Document Line No." = field("Line No.")));
             Description = 'SSM729';
             Editable = false;
             FieldClass = FlowField;
         }
         field(50060; "Vendor Name"; Text[100])
         {
-            CalcFormula = Lookup(Vendor.Name WHERE("No." = FIELD("Account No.")));
+            CalcFormula = lookup(Vendor.Name where("No." = field("Account No.")));
             Caption = 'Nume Furnizor';
             Description = 'SSM845';
             Editable = false;
@@ -578,7 +578,7 @@ table 70507 "SSA Payment Line"
         }
         field(45007654; "Customer Name"; Text[100])
         {
-            CalcFormula = Lookup(Customer.Name WHERE("No." = FIELD("Account No.")));
+            CalcFormula = lookup(Customer.Name where("No." = field("Account No.")));
             Caption = 'Customer Name';
             Editable = false;
             FieldClass = FlowField;
@@ -597,12 +597,12 @@ table 70507 "SSA Payment Line"
         }
         field(45007658; Girat; Boolean)
         {
-            CalcFormula = Lookup("SSA Payment Header".Girat WHERE("No." = FIELD("No.")));
+            CalcFormula = lookup("SSA Payment Header".Girat where("No." = field("No.")));
             FieldClass = FlowField;
         }
         field(45007659; "Centru Responsabilitate fisa"; Code[20])
         {
-            CalcFormula = Lookup(Customer."Responsibility Center" WHERE("No." = FIELD("Account No.")));
+            CalcFormula = lookup(Customer."Responsibility Center" where("No." = field("Account No.")));
             FieldClass = FlowField;
         }
         field(45007660; "Nume Emitent (Girat)"; Text[50])
@@ -627,17 +627,17 @@ table 70507 "SSA Payment Line"
             var
                 CurrExchRate: Record "Currency Exchange Rate";
             begin
-                IF ((Amount > 0) AND (NOT Correction)) OR
-                   ((Amount < 0) AND Correction) THEN BEGIN
+                if ((Amount > 0) and (not Correction)) or
+                   ((Amount < 0) and Correction) then begin
                     "Debit Amount" := Amount;
                     "Credit Amount" := 0
-                END ELSE BEGIN
+                end else begin
                     "Debit Amount" := 0;
                     "Credit Amount" := -Amount;
-                END;
-                IF "Currency Code" = '' THEN
+                end;
+                if "Currency Code" = '' then
                     "Amount (LCY)" := Amount
-                ELSE
+                else
                     "Amount (LCY)" := ROUND(
                       CurrExchRate.ExchangeAmtFCYToLCY(
                         "Posting Date", "Currency Code",
@@ -690,7 +690,7 @@ table 70507 "SSA Payment Line"
         PaymentHeader: Record "SSA Payment Header";
         PaymentApply: Codeunit "SSA Payment-Apply";
     begin
-        IF "Copied To No." <> '' THEN
+        if "Copied To No." <> '' then
             ERROR(Text001);
         DimensionDelete;
         PaymentApply.DeleteApply(Rec);
@@ -698,12 +698,12 @@ table 70507 "SSA Payment Line"
         //SSM729>>
         PaymentHeader.GET("No.");
         PaymentHeader.CALCFIELDS("Suma Aplicata");
-        IF (PaymentHeader."Suma Aplicata" <> 0) OR (Amount <> 0) THEN
+        if (PaymentHeader."Suma Aplicata" <> 0) or (Amount <> 0) then
             ERROR(Text50002);
         //SSM729<<
 
-        IF PaymentHeader."Status No." > 0 THEN
-            PaymentManagement.CreazaLiniiAplicare(PaymentHeader, FALSE, "Line No.");
+        if PaymentHeader."Status No." > 0 then
+            PaymentManagement.CreazaLiniiAplicare(PaymentHeader, false, "Line No.");
     end;
 
     trigger OnInsert()
@@ -712,7 +712,7 @@ table 70507 "SSA Payment Line"
     begin
         Statement.GET("No.");
         "Payment Class" := Statement."Payment Class";
-        IF (Statement."Currency Code" <> "Currency Code") AND IsCopy THEN
+        if (Statement."Currency Code" <> "Currency Code") and IsCopy then
             ERROR(Text000);
         "Currency Code" := Statement."Currency Code";
         "Currency Factor" := Statement."Currency Factor";
@@ -762,18 +762,18 @@ table 70507 "SSA Payment Line"
         Statement: Record "SSA Payment Header";
     begin
         "Account Type" := LastGenJnlLine."Account Type";
-        IF "No." <> '' THEN BEGIN
+        if "No." <> '' then begin
             Statement.GET("No.");
             PaymentClass.GET(Statement."Payment Class");
-            IF PaymentClass."Line No. Series" = '' THEN
+            if PaymentClass."Line No. Series" = '' then
                 "Document ID" := Statement."No."
-            ELSE
-                IF "Document ID" = '' THEN
-                    IF BottomLine THEN
+            else
+                if "Document ID" = '' then
+                    if BottomLine then
                         "Document ID" := INCSTR(LastGenJnlLine."Document ID")
-                    ELSE
-                        "Document ID" := NoSeriesMgt.GetNextNo(PaymentClass."Line No. Series", "Posting Date", FALSE);
-        END;
+                    else
+                        "Document ID" := NoSeriesMgt.GetNextNo(PaymentClass."Line No. Series", "Posting Date", false);
+        end;
         "Due Date" := Statement."Posting Date";
     end;
 
@@ -796,12 +796,12 @@ table 70507 "SSA Payment Line"
         Header: Record "SSA Payment Header";
     begin
         Header.GET("No.");
-        IF Header."Currency Code" = '' THEN BEGIN
+        if Header."Currency Code" = '' then begin
             CLEAR(Currency);
             Currency.InitRoundingPrecision;
-        END ELSE BEGIN
+        end else begin
             Currency.GET(Header."Currency Code");
-        END;
+        end;
     end;
 
     procedure InitBankAccount()
@@ -811,7 +811,7 @@ table 70507 "SSA Payment Line"
         "Bank Account No." := '';
         "Agency Code" := '';
         "RIB Key" := 0;
-        "RIB Checked" := FALSE;
+        "RIB Checked" := false;
         "Bank Account Name" := '';
         "Bank City" := '';
     end;
@@ -883,30 +883,30 @@ table 70507 "SSA Payment Line"
         PaymentTerms: Record "Payment Terms";
         PaymentHeader: Record "SSA Payment Header";
     begin
-        IF "Status No." > 0 THEN
-            EXIT;
-        IF DocumentDate = 0D THEN BEGIN
+        if "Status No." > 0 then
+            exit;
+        if DocumentDate = 0D then begin
             PaymentHeader.GET("No.");
             DocumentDate := PaymentHeader."Posting Date";
-            IF DocumentDate = 0D THEN
-                EXIT;
-        END;
+            if DocumentDate = 0D then
+                exit;
+        end;
         CLEAR(PaymentTerms);
-        IF "Account Type" = "Account Type"::Customer THEN BEGIN
-            IF "Account No." <> '' THEN BEGIN
+        if "Account Type" = "Account Type"::Customer then begin
+            if "Account No." <> '' then begin
                 Customer.GET("Account No.");
                 /*IF NOT PaymentTerms.GET(Customer."Payment Terms Code") THEN
                   "Due Date" := PaymentHeader."Posting Date";*/
-            END
-        END ELSE
-            IF "Account Type" = "Account Type"::Vendor THEN BEGIN
-                IF "Account No." <> '' THEN BEGIN
+            end
+        end else
+            if "Account Type" = "Account Type"::Vendor then begin
+                if "Account No." <> '' then begin
                     Vendor.GET("Account No.");
                     /*IF NOT PaymentTerms.GET(Vendor."Payment Terms Code") THEN
                       "Due Date" := PaymentHeader."Posting Date";*/
-                END;
-            END;
-        IF PaymentTerms.Code <> '' THEN
+                end;
+            end;
+        if PaymentTerms.Code <> '' then
             "Due Date" := CALCDATE(PaymentTerms."Due Date Calculation", DocumentDate);
 
     end;
@@ -918,67 +918,67 @@ table 70507 "SSA Payment Line"
         BankAccount: Record "Bank Account";
         FixedAsset: Record "Fixed Asset";
     begin
-        IF (xRec."Line No." <> 0) AND ("Account Type" <> xRec."Account Type") THEN BEGIN
+        if (xRec."Line No." <> 0) and ("Account Type" <> xRec."Account Type") then begin
             "Account No." := '';
             InitBankAccount;
             "Due Date" := 0D;
             DimensionDelete;
-        END;
-        IF "Account No." = '' THEN
-            EXIT;
-        IF (xRec."Line No." = "Line No.") AND (xRec."Account No." <> '') AND ("Account No." <> xRec."Account No.") THEN BEGIN
+        end;
+        if "Account No." = '' then
+            exit;
+        if (xRec."Line No." = "Line No.") and (xRec."Account No." <> '') and ("Account No." <> xRec."Account No.") then begin
             InitBankAccount;
             DimensionDelete;
-        END;
-        IF (xRec."Line No." = "Line No.") AND (xRec."Account Type" = "Account Type") AND (xRec."Account No." = "Account No.") THEN
-            EXIT;
-        CASE "Account Type" OF
+        end;
+        if (xRec."Line No." = "Line No.") and (xRec."Account Type" = "Account Type") and (xRec."Account No." = "Account No.") then
+            exit;
+        case "Account Type" of
             "Account Type"::"G/L Account":
-                BEGIN
+                begin
                     GLAccount.GET("Account No.");
                     GLAccount.TESTFIELD("Account Type", GLAccount."Account Type"::Posting);
-                    GLAccount.TESTFIELD(Blocked, FALSE);
-                END;
+                    GLAccount.TESTFIELD(Blocked, false);
+                end;
             "Account Type"::Customer:
-                BEGIN
+                begin
                     Customer.GET("Account No.");
                     //SSM729 Customer.TESTFIELD(Blocked, Customer.Blocked ::" ");
-                    IF Customer."SSA Default Bank Account Code" <> '' THEN
+                    if Customer."SSA Default Bank Account Code" <> '' then
                         VALIDATE("Bank Account", Customer."SSA Default Bank Account Code");
                     //SSM729>>
                     VALIDATE("Salesperson/Purchaser Code", Customer."Salesperson Code");
                     //SSM729<<
                     UpdateDueDate(0D);
-                END;
+                end;
             "Account Type"::Vendor:
-                BEGIN
+                begin
                     Vendor.GET("Account No.");
                     Vendor.TESTFIELD(Blocked, Vendor.Blocked::" ");
-                    IF Vendor."SSA Default Bank Account Code" <> '' THEN
+                    if Vendor."SSA Default Bank Account Code" <> '' then
                         VALIDATE("Bank Account", Vendor."SSA Default Bank Account Code");
                     //SSM729>>
                     VALIDATE("Salesperson/Purchaser Code", Vendor."Purchaser Code");
                     //SSM729<<
                     UpdateDueDate(0D);
-                END;
+                end;
             "Account Type"::"Bank Account":
-                BEGIN
+                begin
                     BankAccount.GET("Account No.");
-                    BankAccount.TESTFIELD(Blocked, FALSE);
-                END;
+                    BankAccount.TESTFIELD(Blocked, false);
+                end;
             "Account Type"::"Fixed Asset":
-                BEGIN
+                begin
                     FixedAsset.GET("Account No.");
-                    FixedAsset.TESTFIELD(Blocked, FALSE);
-                END;
-        END;
+                    FixedAsset.TESTFIELD(Blocked, false);
+                end;
+        end;
         DimensionSetup;
         PaymentAddress.SETRANGE("Account Type", "Account Type");
         PaymentAddress.SETRANGE("Account No.", "Account No.");
-        PaymentAddress.SETRANGE("Default value", TRUE);
-        IF PaymentAddress.FIND('-') THEN
+        PaymentAddress.SETRANGE("Default value", true);
+        if PaymentAddress.FIND('-') then
             "Payment Address Code" := PaymentAddress.Code
-        ELSE
+        else
             "Payment Address Code" := '';
     end;
 
@@ -988,20 +988,20 @@ table 70507 "SSA Payment Line"
         Index: Integer;
         Remaining: Integer;
     begin
-        IF NOT ((STRLEN(Bank) = 5) AND
-               (STRLEN(Agency) = 5) AND
-               (STRLEN(Account) = 11) AND
-               (RIBKey < 100)) THEN
-            EXIT(FALSE);
+        if not ((STRLEN(Bank) = 5) and
+               (STRLEN(Agency) = 5) and
+               (STRLEN(Account) = 11) and
+               (RIBKey < 100)) then
+            exit(false);
 
         LongAccountNum := Bank + Agency + Account + CONVERTSTR(FORMAT(RIBKey, 2), ' ', '0');
         LongAccountNum := CONVERTSTR(LongAccountNum, Coding, Uncoding);
 
         Remaining := 0;
-        FOR Index := 1 TO 23 DO
-            Remaining := (Remaining * 10 + (LongAccountNum[Index] - '0')) MOD 97;
+        for Index := 1 to 23 do
+            Remaining := (Remaining * 10 + (LongAccountNum[Index] - '0')) mod 97;
 
-        EXIT(Remaining = 0);
+        exit(Remaining = 0);
     end;
 
     procedure ClearCustVendApplnEntry()
@@ -1013,32 +1013,32 @@ table 70507 "SSA Payment Line"
         AccType: Option "G/L Account",Customer,Vendor,"Bank Account","Fixed Asset";
         AccNo: Code[20];
     begin
-        CASE "Account Type" OF
+        case "Account Type" of
             "Account Type"::Customer:
-                IF xRec."Applies-to ID" <> '' THEN BEGIN
-                    IF FindFirstCustLedgEntryWithAppliesToID(AccNo, xRec."Applies-to ID") THEN BEGIN
+                if xRec."Applies-to ID" <> '' then begin
+                    if FindFirstCustLedgEntryWithAppliesToID(AccNo, xRec."Applies-to ID") then begin
                         ClearCustApplnEntryFields;
                         CustEntrySetApplID.SetApplId(CustLedgEntry, TempCustLedgEntry, '');
-                    END
-                END ELSE
-                    IF xRec."Applies-to Doc. No." <> '' THEN
-                        IF FindFirstCustLedgEntryWithAppliesToDocNo(AccNo, xRec."Applies-to Doc. No.") THEN BEGIN
+                    end
+                end else
+                    if xRec."Applies-to Doc. No." <> '' then
+                        if FindFirstCustLedgEntryWithAppliesToDocNo(AccNo, xRec."Applies-to Doc. No.") then begin
                             ClearCustApplnEntryFields;
                             CustEntryEdit.RUN(CustLedgEntry);
-                        END;
+                        end;
             "Account Type"::Vendor:
-                IF xRec."Applies-to ID" <> '' THEN BEGIN
-                    IF FindFirstVendLedgEntryWithAppliesToID(AccNo, xRec."Applies-to ID") THEN BEGIN
+                if xRec."Applies-to ID" <> '' then begin
+                    if FindFirstVendLedgEntryWithAppliesToID(AccNo, xRec."Applies-to ID") then begin
                         ClearVendApplnEntryFields;
                         VendEntrySetApplID.SetApplId(VendLedgEntry, TempVendLedgEntry, '');
-                    END
-                END ELSE
-                    IF xRec."Applies-to Doc. No." <> '' THEN
-                        IF FindFirstVendLedgEntryWithAppliesToDocNo(AccNo, xRec."Applies-to Doc. No.") THEN BEGIN
+                    end
+                end else
+                    if xRec."Applies-to Doc. No." <> '' then
+                        if FindFirstVendLedgEntryWithAppliesToDocNo(AccNo, xRec."Applies-to Doc. No.") then begin
                             ClearVendApplnEntryFields;
                             VendEntryEdit.RUN(VendLedgEntry);
-                        END;
-        END;
+                        end;
+        end;
     end;
 
     local procedure FindFirstCustLedgEntryWithAppliesToID(AccNo: Code[20]; AppliesToID: Code[50]): Boolean
@@ -1047,20 +1047,20 @@ table 70507 "SSA Payment Line"
         CustLedgEntry.SETCURRENTKEY("Customer No.", "Applies-to ID", Open);
         CustLedgEntry.SETRANGE("Customer No.", AccNo);
         CustLedgEntry.SETRANGE("Applies-to ID", AppliesToID);
-        CustLedgEntry.SETRANGE(Open, TRUE);
-        EXIT(CustLedgEntry.FINDFIRST)
+        CustLedgEntry.SETRANGE(Open, true);
+        exit(CustLedgEntry.FINDFIRST)
     end;
 
     local procedure ClearCustApplnEntryFields()
     begin
-        CustLedgEntry."Accepted Pmt. Disc. Tolerance" := FALSE;
+        CustLedgEntry."Accepted Pmt. Disc. Tolerance" := false;
         CustLedgEntry."Accepted Payment Tolerance" := 0;
         CustLedgEntry."Amount to Apply" := 0;
     end;
 
     local procedure ClearVendApplnEntryFields()
     begin
-        VendLedgEntry."Accepted Pmt. Disc. Tolerance" := FALSE;
+        VendLedgEntry."Accepted Pmt. Disc. Tolerance" := false;
         VendLedgEntry."Accepted Payment Tolerance" := 0;
         VendLedgEntry."Amount to Apply" := 0;
     end;
@@ -1072,8 +1072,8 @@ table 70507 "SSA Payment Line"
         CustLedgEntry.SETRANGE("Document No.", AppliestoDocNo);
         CustLedgEntry.SETRANGE("Document Type", "Applies-to Doc. Type");
         CustLedgEntry.SETRANGE("Customer No.", AccNo);
-        CustLedgEntry.SETRANGE(Open, TRUE);
-        EXIT(CustLedgEntry.FINDFIRST)
+        CustLedgEntry.SETRANGE(Open, true);
+        exit(CustLedgEntry.FINDFIRST)
     end;
 
     local procedure FindFirstVendLedgEntryWithAppliesToID(AccNo: Code[20]; AppliesToID: Code[50]): Boolean
@@ -1082,8 +1082,8 @@ table 70507 "SSA Payment Line"
         VendLedgEntry.SETCURRENTKEY("Vendor No.", "Applies-to ID", Open);
         VendLedgEntry.SETRANGE("Vendor No.", AccNo);
         VendLedgEntry.SETRANGE("Applies-to ID", AppliesToID);
-        VendLedgEntry.SETRANGE(Open, TRUE);
-        EXIT(VendLedgEntry.FINDFIRST)
+        VendLedgEntry.SETRANGE(Open, true);
+        exit(VendLedgEntry.FINDFIRST)
     end;
 
     local procedure FindFirstVendLedgEntryWithAppliesToDocNo(AccNo: Code[20]; AppliestoDocNo: Code[20]): Boolean
@@ -1093,47 +1093,47 @@ table 70507 "SSA Payment Line"
         VendLedgEntry.SETRANGE("Document No.", AppliestoDocNo);
         VendLedgEntry.SETRANGE("Document Type", "Applies-to Doc. Type");
         VendLedgEntry.SETRANGE("Vendor No.", AccNo);
-        VendLedgEntry.SETRANGE(Open, TRUE);
-        EXIT(VendLedgEntry.FINDFIRST)
+        VendLedgEntry.SETRANGE(Open, true);
+        exit(VendLedgEntry.FINDFIRST)
     end;
 
     procedure GetCustLedgerEntry()
     begin
-        IF ("Account Type" = "Account Type"::Customer) AND ("Account No." = '') AND
-           ("Applies-to Doc. No." <> '') AND (Amount = 0)
-        THEN BEGIN
+        if ("Account Type" = "Account Type"::Customer) and ("Account No." = '') and
+           ("Applies-to Doc. No." <> '') and (Amount = 0)
+        then begin
             CustLedgEntry.RESET;
             CustLedgEntry.SETRANGE("Document No.", "Applies-to Doc. No.");
-            CustLedgEntry.SETRANGE(Open, TRUE);
-            IF NOT CustLedgEntry.FINDFIRST THEN
+            CustLedgEntry.SETRANGE(Open, true);
+            if not CustLedgEntry.FINDFIRST then
                 ERROR(NotExistErr, "Applies-to Doc. No.");
 
             VALIDATE("Account No.", CustLedgEntry."Customer No.");
             CustLedgEntry.CALCFIELDS("Remaining Amount");
 
-            IF "Posting Date" <= CustLedgEntry."Pmt. Discount Date" THEN
+            if "Posting Date" <= CustLedgEntry."Pmt. Discount Date" then
                 Amount := -(CustLedgEntry."Remaining Amount" - CustLedgEntry."Remaining Pmt. Disc. Possible")
-            ELSE
+            else
                 Amount := -CustLedgEntry."Remaining Amount";
 
-            IF "Currency Code" <> CustLedgEntry."Currency Code" THEN BEGIN
+            if "Currency Code" <> CustLedgEntry."Currency Code" then begin
                 FromCurrencyCode := GetShowCurrencyCode("Currency Code");
                 ToCurrencyCode := GetShowCurrencyCode(CustLedgEntry."Currency Code");
-                IF NOT
+                if not
                    CONFIRM(
-                     Text003, TRUE,
+                     Text003, true,
                      FIELDCAPTION("Currency Code"), TABLECAPTION, FromCurrencyCode,
                      ToCurrencyCode)
-                THEN
+                then
                     ERROR(Text005);
                 VALIDATE("Currency Code", CustLedgEntry."Currency Code");
-            END;
+            end;
 
             "Applies-to Doc. Type" := CustLedgEntry."Document Type";
             "Applies-to Doc. No." := CustLedgEntry."Document No.";
             "Applies-to ID" := '';
-            IF ("Applies-to Doc. Type" = "Applies-to Doc. Type"::Invoice)
-            THEN
+            if ("Applies-to Doc. Type" = "Applies-to Doc. Type"::Invoice)
+            then
                 "External Document No." := CustLedgEntry."External Document No.";
 
             /*GenJnlBatch.GET("Journal Template Name","Journal Batch Name");
@@ -1142,46 +1142,46 @@ table 70507 "SSA Payment Line"
               VALIDATE("Bal. Account No.",GenJnlBatch."Bal. Account No.");
             END ELSE*/
             VALIDATE(Amount);
-        END;
+        end;
 
     end;
 
     procedure GetVendLedgerEntry()
     begin
-        IF ("Account Type" = "Account Type"::Vendor) AND ("Account No." = '') AND
-           ("Applies-to Doc. No." <> '') AND (Amount = 0)
-        THEN BEGIN
+        if ("Account Type" = "Account Type"::Vendor) and ("Account No." = '') and
+           ("Applies-to Doc. No." <> '') and (Amount = 0)
+        then begin
             VendLedgEntry.RESET;
             VendLedgEntry.SETRANGE("Document No.", "Applies-to Doc. No.");
-            VendLedgEntry.SETRANGE(Open, TRUE);
-            IF NOT VendLedgEntry.FINDFIRST THEN
+            VendLedgEntry.SETRANGE(Open, true);
+            if not VendLedgEntry.FINDFIRST then
                 ERROR(NotExistErr, "Applies-to Doc. No.");
 
             VALIDATE("Account No.", VendLedgEntry."Vendor No.");
             VendLedgEntry.CALCFIELDS("Remaining Amount");
 
-            IF "Posting Date" <= VendLedgEntry."Pmt. Discount Date" THEN
+            if "Posting Date" <= VendLedgEntry."Pmt. Discount Date" then
                 Amount := -(CustLedgEntry."Remaining Amount" - VendLedgEntry."Remaining Pmt. Disc. Possible")
-            ELSE
+            else
                 Amount := -VendLedgEntry."Remaining Amount";
 
-            IF "Currency Code" <> VendLedgEntry."Currency Code" THEN BEGIN
+            if "Currency Code" <> VendLedgEntry."Currency Code" then begin
                 FromCurrencyCode := GetShowCurrencyCode("Currency Code");
                 ToCurrencyCode := GetShowCurrencyCode(CustLedgEntry."Currency Code");
-                IF NOT
+                if not
                    CONFIRM(
                      Text003,
-                     TRUE, FIELDCAPTION("Currency Code"), TABLECAPTION, FromCurrencyCode, ToCurrencyCode)
-                THEN
+                     true, FIELDCAPTION("Currency Code"), TABLECAPTION, FromCurrencyCode, ToCurrencyCode)
+                then
                     ERROR(Text005);
                 VALIDATE("Currency Code", VendLedgEntry."Currency Code");
-            END;
+            end;
 
             "Applies-to Doc. Type" := VendLedgEntry."Document Type";
             "Applies-to Doc. No." := VendLedgEntry."Document No.";
             "Applies-to ID" := '';
-            IF ("Applies-to Doc. Type" = "Applies-to Doc. Type"::Invoice)
-            THEN
+            if ("Applies-to Doc. Type" = "Applies-to Doc. Type"::Invoice)
+            then
                 "External Document No." := VendLedgEntry."External Document No.";
 
             /* GenJnlBatch.GET("Journal Template Name","Journal Batch Name");
@@ -1190,16 +1190,16 @@ table 70507 "SSA Payment Line"
                VALIDATE("Bal. Account No.",GenJnlBatch."Bal. Account No.");
              END ELSE      */
             VALIDATE(Amount);
-        END;
+        end;
 
     end;
 
     procedure GetShowCurrencyCode(CurrencyCode: Code[10]): Code[10]
     begin
-        IF CurrencyCode <> '' THEN
-            EXIT(CurrencyCode);
+        if CurrencyCode <> '' then
+            exit(CurrencyCode);
 
-        EXIT(Text009);
+        exit(Text009);
     end;
 
     procedure ValidateApplyRequirements(TempGenJnlLine: Record "SSA Payment Line" temporary)
@@ -1207,81 +1207,81 @@ table 70507 "SSA Payment Line"
         ExchAccGLJnlLine: Codeunit "Exchange Acc. G/L Journal Line";
     begin
 
-        IF TempGenJnlLine."Account Type" = TempGenJnlLine."Account Type"::Customer THEN BEGIN
-            IF TempGenJnlLine."Applies-to ID" <> '' THEN BEGIN
+        if TempGenJnlLine."Account Type" = TempGenJnlLine."Account Type"::Customer then begin
+            if TempGenJnlLine."Applies-to ID" <> '' then begin
                 CustLedgEntry.SETCURRENTKEY("Customer No.", "Applies-to ID", Open);
                 CustLedgEntry.SETRANGE("Customer No.", TempGenJnlLine."Account No.");
                 CustLedgEntry.SETRANGE("Applies-to ID", TempGenJnlLine."Applies-to ID");
-                CustLedgEntry.SETRANGE(Open, TRUE);
-                IF CustLedgEntry.FIND('-') THEN
-                    REPEAT
-                        IF TempGenJnlLine."Posting Date" < CustLedgEntry."Posting Date" THEN
+                CustLedgEntry.SETRANGE(Open, true);
+                if CustLedgEntry.FIND('-') then
+                    repeat
+                        if TempGenJnlLine."Posting Date" < CustLedgEntry."Posting Date" then
                             ERROR(
                               Text015, '', TempGenJnlLine."No.",
                               CustLedgEntry."Document Type", CustLedgEntry."Document No.");
                         //ma>> verificare intre grupe diferite
-                        IF (CustLedgEntry."Customer Posting Group" <> TempGenJnlLine."Posting Group") AND (CustLedgEntry."Customer Posting Group" <> '') THEN
+                        if (CustLedgEntry."Customer Posting Group" <> TempGenJnlLine."Posting Group") and (CustLedgEntry."Customer Posting Group" <> '') then
                             ERROR(Text50001, TempGenJnlLine."Posting Group", CustLedgEntry."Customer Posting Group", "Line No.");
                     //ma<<
-                    UNTIL CustLedgEntry.NEXT = 0;
-            END ELSE
-                IF TempGenJnlLine."Applies-to Doc. No." <> '' THEN BEGIN
+                    until CustLedgEntry.NEXT = 0;
+            end else
+                if TempGenJnlLine."Applies-to Doc. No." <> '' then begin
                     CustLedgEntry.SETCURRENTKEY("Document No.");
                     CustLedgEntry.SETRANGE("Document No.", TempGenJnlLine."Applies-to Doc. No.");
-                    IF TempGenJnlLine."Applies-to Doc. Type" <> TempGenJnlLine."Applies-to Doc. Type"::" " THEN
+                    if TempGenJnlLine."Applies-to Doc. Type" <> TempGenJnlLine."Applies-to Doc. Type"::" " then
                         CustLedgEntry.SETRANGE("Document Type", TempGenJnlLine."Applies-to Doc. Type");
                     CustLedgEntry.SETRANGE("Customer No.", TempGenJnlLine."Account No.");
-                    CustLedgEntry.SETRANGE(Open, TRUE);
-                    IF CustLedgEntry.FIND('-') THEN BEGIN
-                        IF TempGenJnlLine."Posting Date" < CustLedgEntry."Posting Date" THEN
+                    CustLedgEntry.SETRANGE(Open, true);
+                    if CustLedgEntry.FIND('-') then begin
+                        if TempGenJnlLine."Posting Date" < CustLedgEntry."Posting Date" then
                             ERROR(
                               Text015, '', TempGenJnlLine."No.",
                               CustLedgEntry."Document Type", CustLedgEntry."Document No.");
                         //ma>> verificare intre grupe diferite
-                        IF TempGenJnlLine."Posting Group" <> '' THEN //SSM729
-                            IF (CustLedgEntry."Customer Posting Group" <> TempGenJnlLine."Posting Group") AND (CustLedgEntry."Customer Posting Group" <> '') THEN
+                        if TempGenJnlLine."Posting Group" <> '' then //SSM729
+                            if (CustLedgEntry."Customer Posting Group" <> TempGenJnlLine."Posting Group") and (CustLedgEntry."Customer Posting Group" <> '') then
                                 ERROR(Text50001, TempGenJnlLine."Posting Group", CustLedgEntry."Customer Posting Group", "Line No.");
                         //ma<<
-                    END;
-                END;
-        END ELSE
-            IF TempGenJnlLine."Account Type" = TempGenJnlLine."Account Type"::Vendor THEN
-                IF TempGenJnlLine."Applies-to ID" <> '' THEN BEGIN
+                    end;
+                end;
+        end else
+            if TempGenJnlLine."Account Type" = TempGenJnlLine."Account Type"::Vendor then
+                if TempGenJnlLine."Applies-to ID" <> '' then begin
                     VendLedgEntry.SETCURRENTKEY("Vendor No.", "Applies-to ID", Open);
                     VendLedgEntry.SETRANGE("Vendor No.", TempGenJnlLine."Account No.");
                     VendLedgEntry.SETRANGE("Applies-to ID", TempGenJnlLine."Applies-to ID");
-                    VendLedgEntry.SETRANGE(Open, TRUE);
-                    REPEAT
-                        IF TempGenJnlLine."Posting Date" < VendLedgEntry."Posting Date" THEN
+                    VendLedgEntry.SETRANGE(Open, true);
+                    repeat
+                        if TempGenJnlLine."Posting Date" < VendLedgEntry."Posting Date" then
                             ERROR(
                               Text015, '', TempGenJnlLine."No.",
                               VendLedgEntry."Document Type", VendLedgEntry."Document No.");
                         //ma>> verificare intre grupe diferite
-                        IF (VendLedgEntry."Vendor Posting Group" <> TempGenJnlLine."Posting Group") AND (VendLedgEntry."Vendor Posting Group" <> '') THEN
+                        if (VendLedgEntry."Vendor Posting Group" <> TempGenJnlLine."Posting Group") and (VendLedgEntry."Vendor Posting Group" <> '') then
                             ERROR(Text50001, TempGenJnlLine."Posting Group", VendLedgEntry."Vendor Posting Group", "Line No.");
                     //ma<<
-                    UNTIL VendLedgEntry.NEXT = 0;
-                    IF VendLedgEntry.FIND('-') THEN
+                    until VendLedgEntry.NEXT = 0;
+                    if VendLedgEntry.FIND('-') then
                         ;
-                END ELSE
-                    IF TempGenJnlLine."Applies-to Doc. No." <> '' THEN BEGIN
+                end else
+                    if TempGenJnlLine."Applies-to Doc. No." <> '' then begin
                         VendLedgEntry.SETCURRENTKEY("Document No.");
                         VendLedgEntry.SETRANGE("Document No.", TempGenJnlLine."Applies-to Doc. No.");
-                        IF TempGenJnlLine."Applies-to Doc. Type" <> TempGenJnlLine."Applies-to Doc. Type"::" " THEN
+                        if TempGenJnlLine."Applies-to Doc. Type" <> TempGenJnlLine."Applies-to Doc. Type"::" " then
                             VendLedgEntry.SETRANGE("Document Type", TempGenJnlLine."Applies-to Doc. Type");
                         VendLedgEntry.SETRANGE("Vendor No.", TempGenJnlLine."Account No.");
-                        VendLedgEntry.SETRANGE(Open, TRUE);
-                        IF VendLedgEntry.FIND('-') THEN BEGIN
-                            IF TempGenJnlLine."Posting Date" < VendLedgEntry."Posting Date" THEN
+                        VendLedgEntry.SETRANGE(Open, true);
+                        if VendLedgEntry.FIND('-') then begin
+                            if TempGenJnlLine."Posting Date" < VendLedgEntry."Posting Date" then
                                 ERROR(
                                   Text015, '', TempGenJnlLine."No.",
                                   VendLedgEntry."Document Type", VendLedgEntry."Document No.");
                             //ma>> verificare intre grupe diferite
-                            IF (VendLedgEntry."Vendor Posting Group" <> TempGenJnlLine."Posting Group") AND (VendLedgEntry."Vendor Posting Group" <> '') THEN
+                            if (VendLedgEntry."Vendor Posting Group" <> TempGenJnlLine."Posting Group") and (VendLedgEntry."Vendor Posting Group" <> '') then
                                 ERROR(Text50001, TempGenJnlLine."Posting Group", VendLedgEntry."Vendor Posting Group", "Line No.");
                             //ma<<
-                        END;
-                    END;
+                        end;
+                    end;
     end;
 
     procedure LookUpAppliesToDocCust(AccNo: Code[20])
@@ -1291,32 +1291,32 @@ table 70507 "SSA Payment Line"
     begin
         CLEAR(CustLedgEntry);
         CustLedgEntry.SETCURRENTKEY("Customer No.", Open, Positive, "Due Date");
-        IF AccNo <> '' THEN
+        if AccNo <> '' then
             CustLedgEntry.SETRANGE("Customer No.", AccNo);
-        CustLedgEntry.SETRANGE(Open, TRUE);
-        IF "Applies-to Doc. No." <> '' THEN BEGIN
+        CustLedgEntry.SETRANGE(Open, true);
+        if "Applies-to Doc. No." <> '' then begin
             CustLedgEntry.SETRANGE("Document Type", "Applies-to Doc. Type");
             CustLedgEntry.SETRANGE("Document No.", "Applies-to Doc. No.");
-            IF CustLedgEntry.ISEMPTY THEN BEGIN
+            if CustLedgEntry.ISEMPTY then begin
                 CustLedgEntry.SETRANGE("Document Type");
                 CustLedgEntry.SETRANGE("Document No.");
-            END;
-        END;
-        IF "Applies-to ID" <> '' THEN BEGIN
+            end;
+        end;
+        if "Applies-to ID" <> '' then begin
             CustLedgEntry.SETRANGE("Applies-to ID", "Applies-to ID");
-            IF CustLedgEntry.ISEMPTY THEN
+            if CustLedgEntry.ISEMPTY then
                 CustLedgEntry.SETRANGE("Applies-to ID");
-        END;
-        IF "Applies-to Doc. Type" <> "Applies-to Doc. Type"::" " THEN BEGIN
+        end;
+        if "Applies-to Doc. Type" <> "Applies-to Doc. Type"::" " then begin
             CustLedgEntry.SETRANGE("Document Type", "Applies-to Doc. Type");
-            IF CustLedgEntry.ISEMPTY THEN
+            if CustLedgEntry.ISEMPTY then
                 CustLedgEntry.SETRANGE("Document Type");
-        END;
-        IF Amount <> 0 THEN BEGIN
+        end;
+        if Amount <> 0 then begin
             CustLedgEntry.SETRANGE(Positive, Amount < 0);
-            IF CustLedgEntry.ISEMPTY THEN
+            if CustLedgEntry.ISEMPTY then
                 CustLedgEntry.SETRANGE(Positive);
-        END;
+        end;
         GenJnlLine.INIT;
         GenJnlLine.VALIDATE("Document Type", GenJnlLine."Document Type"::Payment);
         GenJnlLine.VALIDATE("Posting Date", "Due Date");
@@ -1326,8 +1326,8 @@ table 70507 "SSA Payment Line"
         ApplyCustEntries.SetGenJnlLine(GenJnlLine, GenJnlLine.FIELDNO("Applies-to Doc. No."));
         ApplyCustEntries.SETTABLEVIEW(CustLedgEntry);
         ApplyCustEntries.SETRECORD(CustLedgEntry);
-        ApplyCustEntries.LOOKUPMODE(TRUE);
-        IF ApplyCustEntries.RUNMODAL = ACTION::LookupOK THEN BEGIN
+        ApplyCustEntries.LOOKUPMODE(true);
+        if ApplyCustEntries.RUNMODAL = ACTION::LookupOK then begin
             ApplyCustEntries.GETRECORD(CustLedgEntry);
             //SetAmountWithCustLedgEntry;
             "Applies-to Doc. Type" := CustLedgEntry."Document Type";
@@ -1337,7 +1337,7 @@ table 70507 "SSA Payment Line"
             //SSM729<<
             "Posting Group" := CustLedgEntry."Customer Posting Group"; //ma copiaza grupa de pe factura
             "Applies-to ID" := '';
-        END;
+        end;
     end;
 
     procedure LookUpAppliesToDocVend(AccNo: Code[20])
@@ -1347,37 +1347,37 @@ table 70507 "SSA Payment Line"
     begin
         CLEAR(VendLedgEntry);
         VendLedgEntry.SETCURRENTKEY("Vendor No.", Open, Positive, "Due Date");
-        IF AccNo <> '' THEN
+        if AccNo <> '' then
             VendLedgEntry.SETRANGE("Vendor No.", AccNo);
-        VendLedgEntry.SETRANGE(Open, TRUE);
-        IF "Applies-to Doc. No." <> '' THEN BEGIN
+        VendLedgEntry.SETRANGE(Open, true);
+        if "Applies-to Doc. No." <> '' then begin
             VendLedgEntry.SETRANGE("Document Type", "Applies-to Doc. Type");
             VendLedgEntry.SETRANGE("Document No.", "Applies-to Doc. No.");
-            IF VendLedgEntry.ISEMPTY THEN BEGIN
+            if VendLedgEntry.ISEMPTY then begin
                 VendLedgEntry.SETRANGE("Document Type");
                 VendLedgEntry.SETRANGE("Document No.");
-            END;
-        END;
-        IF "Applies-to ID" <> '' THEN BEGIN
+            end;
+        end;
+        if "Applies-to ID" <> '' then begin
             VendLedgEntry.SETRANGE("Applies-to ID", "Applies-to ID");
-            IF VendLedgEntry.ISEMPTY THEN
+            if VendLedgEntry.ISEMPTY then
                 VendLedgEntry.SETRANGE("Applies-to ID");
-        END;
-        IF "Applies-to Doc. Type" <> "Applies-to Doc. Type"::" " THEN BEGIN
+        end;
+        if "Applies-to Doc. Type" <> "Applies-to Doc. Type"::" " then begin
             VendLedgEntry.SETRANGE("Document Type", "Applies-to Doc. Type");
-            IF VendLedgEntry.ISEMPTY THEN
+            if VendLedgEntry.ISEMPTY then
                 VendLedgEntry.SETRANGE("Document Type");
-        END;
-        IF "Applies-to Doc. No." <> '' THEN BEGIN
+        end;
+        if "Applies-to Doc. No." <> '' then begin
             VendLedgEntry.SETRANGE("Document No.", "Applies-to Doc. No.");
-            IF VendLedgEntry.ISEMPTY THEN
+            if VendLedgEntry.ISEMPTY then
                 VendLedgEntry.SETRANGE("Document No.");
-        END;
-        IF Amount <> 0 THEN BEGIN
+        end;
+        if Amount <> 0 then begin
             VendLedgEntry.SETRANGE(Positive, Amount < 0);
-            IF VendLedgEntry.ISEMPTY THEN;
+            if VendLedgEntry.ISEMPTY then;
             VendLedgEntry.SETRANGE(Positive);
-        END;
+        end;
         GenJnlLine.INIT;
         GenJnlLine.VALIDATE("Document Type", GenJnlLine."Document Type"::Payment);
         GenJnlLine.VALIDATE("Posting Date", "Due Date");
@@ -1388,8 +1388,8 @@ table 70507 "SSA Payment Line"
         ApplyVendEntries.SetGenJnlLine(GenJnlLine, GenJnlLine.FIELDNO("Applies-to Doc. No."));
         ApplyVendEntries.SETTABLEVIEW(VendLedgEntry);
         ApplyVendEntries.SETRECORD(VendLedgEntry);
-        ApplyVendEntries.LOOKUPMODE(TRUE);
-        IF ApplyVendEntries.RUNMODAL = ACTION::LookupOK THEN BEGIN
+        ApplyVendEntries.LOOKUPMODE(true);
+        if ApplyVendEntries.RUNMODAL = ACTION::LookupOK then begin
             ApplyVendEntries.GETRECORD(VendLedgEntry);
             //SetAmountWithVendLedgEntry;
             "Applies-to Doc. Type" := VendLedgEntry."Document Type";
@@ -1399,7 +1399,7 @@ table 70507 "SSA Payment Line"
             //SSM729<<
             "Posting Group" := VendLedgEntry."Vendor Posting Group"; //ma copiaza grupa de pe facturas
             "Applies-to ID" := '';
-        END;
+        end;
     end;
 
     procedure CreateDim(Type1: Integer; No1: Code[20]; Type2: Integer; No2: Code[20])
@@ -1429,12 +1429,12 @@ table 70507 "SSA Payment Line"
         PaymentManagement: Codeunit "SSA Payment Management";
     begin
         //SSM729>>
-        IF PaymentHeader.GET(PaymentLine."No.") THEN BEGIN
-            IF PaymentHeader."Source Code" <> '' THEN BEGIN
+        if PaymentHeader.GET(PaymentLine."No.") then begin
+            if PaymentHeader."Source Code" <> '' then begin
                 PaymentManagement.TestSourceCode(PaymentHeader."Source Code");
                 SourceCode_Local := PaymentHeader."Source Code";
-            END
-        END;
+            end
+        end;
         //SSM729<<
     end;
 }

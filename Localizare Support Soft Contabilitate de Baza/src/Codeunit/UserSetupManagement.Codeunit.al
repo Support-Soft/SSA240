@@ -8,16 +8,16 @@ codeunit 70021 "SSA User Setup Management"
     procedure GetIntConsumptionFilter(): Code[10]
     begin
         //SSA937>>
-        IF NOT HasGotSalesUserSetup THEN BEGIN
+        if not HasGotSalesUserSetup then begin
             CompanyInfo.GET;
             UserRespCenter := CompanyInfo."Responsibility Center";
             UserLocation := CompanyInfo."Location Code";
-            IF (UserSetup.GET(USERID)) AND (USERID <> '') THEN
-                IF UserSetup."Sales Resp. Ctr. Filter" <> '' THEN
+            if (UserSetup.GET(USERID)) and (USERID <> '') then
+                if UserSetup."Sales Resp. Ctr. Filter" <> '' then
                     UserRespCenter := UserSetup."Sales Resp. Ctr. Filter";
-            HasGotSalesUserSetup := TRUE;
-        END;
-        EXIT(UserRespCenter);
+            HasGotSalesUserSetup := true;
+        end;
+        exit(UserRespCenter);
         //SSA937<<"
     end;
 

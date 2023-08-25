@@ -47,7 +47,7 @@ codeunit 70023 "SSA General Subscribers"
             "Ship-to/Order Address Code" := GenJournalLine."Ship-to/Order Address Code";
             "Salespers./Purch. Code" := GenJournalLine."Salespers./Purch. Code";
             "On Hold" := GenJournalLine."On Hold";
-            IF "Account Type" = "Account Type"::Vendor THEN
+            if "Account Type" = "Account Type"::Vendor then
                 "Posting Group" := GenJournalLine."Posting Group";
 
             "Account No." := GenJournalLine."Account No.";
@@ -119,7 +119,7 @@ codeunit 70023 "SSA General Subscribers"
             "Ship-to/Order Address Code" := GenJournalLine."Ship-to/Order Address Code";
             "Salespers./Purch. Code" := GenJournalLine."Salespers./Purch. Code";
             "On Hold" := GenJournalLine."On Hold";
-            IF "Account Type" = "Account Type"::Vendor THEN
+            if "Account Type" = "Account Type"::Vendor then
                 "Posting Group" := GenJournalLine."Posting Group";
 
             "Account No." := GenJournalLine."Account No.";

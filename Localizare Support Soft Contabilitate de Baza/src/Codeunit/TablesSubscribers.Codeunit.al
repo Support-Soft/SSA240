@@ -208,7 +208,7 @@ codeunit 70025 "SSA Tables Subscribers"
         if GenJournalLine."SSA Leasing" then
             CheckIfFieldIsEmpty := false;
 
-        IF GenJournalLine."Gen. Posting Type" = GenJournalLine."Gen. Posting Type"::Purchase THEN
+        if GenJournalLine."Gen. Posting Type" = GenJournalLine."Gen. Posting Type"::Purchase then
             GenJournalLine."SSA Stare Factura" := GenJournalLine."SSA Stare Factura"::"0-Factura Emisa";
     end;
 
@@ -389,7 +389,7 @@ codeunit 70025 "SSA Tables Subscribers"
         PurchaseHeader: Record "Purchase Header";
     begin
         PurchaseHeader.Get(PurchaseLine."Document Type", PurchaseLine."Document No.");
-        DeferralPostingBuffer."SSA Correction" := NOT PurchaseHeader.Correction;
+        DeferralPostingBuffer."SSA Correction" := not PurchaseHeader.Correction;
     end;
 }
 

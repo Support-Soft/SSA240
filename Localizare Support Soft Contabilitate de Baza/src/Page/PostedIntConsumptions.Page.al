@@ -54,7 +54,7 @@ page 70003 "SSA Posted Int. Consumptions"
             part(PostedIntConsumptionLines; "SSAPstd. Int. Cons. Subform")
             {
                 Caption = 'Lines';
-                SubPageLink = "Document No." = FIELD("No.");
+                SubPageLink = "Document No." = field("No.");
                 ApplicationArea = All;
             }
         }
@@ -73,9 +73,9 @@ page 70003 "SSA Posted Int. Consumptions"
                     Caption = 'Co&mments';
                     Image = ViewComments;
                     RunObject = Page "SSA Comment Sheet";
-                    RunPageLink = "No." = FIELD("No.");
-                    RunPageView = SORTING("Document Type", "No.", "Document Line No.", "Line No.")
-                                  WHERE("Document Type" = CONST("Internal Consumption"));
+                    RunPageLink = "No." = field("No.");
+                    RunPageView = sorting("Document Type", "No.", "Document Line No.", "Line No.")
+                                  where("Document Type" = const("Internal Consumption"));
                 }
                 action(Dimensions)
                 {

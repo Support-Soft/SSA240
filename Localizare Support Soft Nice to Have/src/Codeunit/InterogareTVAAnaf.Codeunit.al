@@ -104,21 +104,21 @@ codeunit 71102 "SSA Interogare TVA Anaf"
             _Customer.Validate("SSA Commerce Trade No.", CopyStr(_PnrRegCom, 1, MaxStrLen(_Customer."SSA Commerce Trade No.")));
         end;
 
-        IF _PCity <> '' THEN BEGIN
-            IF STRPOS(UPPERCASE(_PCity), 'MUN. BUCURESTI') <> 0 THEN
+        if _PCity <> '' then begin
+            if STRPOS(UPPERCASE(_PCity), 'MUN. BUCURESTI') <> 0 then
                 _PCity := COPYSTR(_PCity, 1, STRPOS(UPPERCASE(_PCity), 'MUN. BUCURESTI') - 2);
-            IF STRLEN(_PCity) > MAXSTRLEN(_Customer.City) THEN
+            if STRLEN(_PCity) > MAXSTRLEN(_Customer.City) then
                 MESSAGE('Localitatea a fost trunchiata. Va rog verificati.');
             _Customer.VALIDATE(City, COPYSTR(_PCity, 1, MAXSTRLEN(_Customer.City)));
-        END;
+        end;
 
-        IF _PCounty <> '' THEN BEGIN
-            IF STRPOS(UPPERCASE(_PCounty), 'MUNICIPIUL') <> 0 THEN
+        if _PCounty <> '' then begin
+            if STRPOS(UPPERCASE(_PCounty), 'MUNICIPIUL') <> 0 then
                 _PCounty := COPYSTR(_PCounty, STRPOS(UPPERCASE(_PCounty), 'MUNICIPIUL') + STRLEN('MUNICIPIUL') + 1);
-            IF STRLEN(_PCounty) > MAXSTRLEN(_Customer.County) THEN
+            if STRLEN(_PCounty) > MAXSTRLEN(_Customer.County) then
                 MESSAGE('Judetul a fost trunchiat. Va rog verificati.');
             _Customer.VALIDATE(County, COPYSTR(_PCounty, 1, MAXSTRLEN(_Customer.County)));
-        END;
+        end;
 
         SSASetup.TestField("Cust. Neex. VAT Posting Group");
         if SSASetup."Sistem TVA" = SSASetup."Sistem TVA"::"Sistem de TVA la Incasare" then
@@ -192,21 +192,21 @@ codeunit 71102 "SSA Interogare TVA Anaf"
             _Vendor.Validate("SSA Commerce Trade No.", CopyStr(_PnrRegCom, 1, MaxStrLen(_Vendor."SSA Commerce Trade No.")));
         end;
 
-        IF _PCity <> '' THEN BEGIN
-            IF STRPOS(UPPERCASE(_PCity), 'MUN. BUCURESTI') <> 0 THEN
+        if _PCity <> '' then begin
+            if STRPOS(UPPERCASE(_PCity), 'MUN. BUCURESTI') <> 0 then
                 _PCity := COPYSTR(_PCity, 1, STRPOS(UPPERCASE(_PCity), 'MUN. BUCURESTI') - 2);
-            IF STRLEN(_PCity) > MAXSTRLEN(_Vendor.City) THEN
+            if STRLEN(_PCity) > MAXSTRLEN(_Vendor.City) then
                 MESSAGE('Localitatea a fost trunchiata. Va rog verificati.');
             _Vendor.VALIDATE(City, COPYSTR(_PCity, 1, MAXSTRLEN(_Vendor.City)));
-        END;
+        end;
 
-        IF _PCounty <> '' THEN BEGIN
-            IF STRPOS(UPPERCASE(_PCounty), 'MUNICIPIUL') <> 0 THEN
+        if _PCounty <> '' then begin
+            if STRPOS(UPPERCASE(_PCounty), 'MUNICIPIUL') <> 0 then
                 _PCounty := COPYSTR(_PCounty, STRPOS(UPPERCASE(_PCounty), 'MUNICIPIUL') + STRLEN('MUNICIPIUL') + 1);
-            IF STRLEN(_PCounty) > MAXSTRLEN(_Vendor.County) THEN
+            if STRLEN(_PCounty) > MAXSTRLEN(_Vendor.County) then
                 MESSAGE('Judetul a fost trunchiat. Va rog verificati.');
             _Vendor.VALIDATE(County, COPYSTR(_PCounty, 1, MAXSTRLEN(_Vendor.County)));
-        END;
+        end;
 
         if SSASetup."Sistem TVA" = SSASetup."Sistem TVA"::"Sistem de TVA la Incasare" then
             if SSASetup."Vendor Neex. VAT Posting Group" <> _Vendor."VAT Bus. Posting Group" then

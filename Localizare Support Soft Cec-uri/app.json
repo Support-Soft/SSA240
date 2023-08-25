@@ -2,7 +2,7 @@
   "id": "cd959dd8-152b-4550-a3c2-97b942c719de",
   "name": "Localizare Support Soft Cec-uri",
   "publisher": "Support-Soft SRL",
-  "version": "22.0.0.0",
+  "version": "22.0.0.1",
   "brief": "",
   "description": "",
   "privacyStatement": "",
@@ -25,7 +25,7 @@
       "to": 70699
     }
   ],
-  "contextSensitiveHelpUrl": "https://SSA14ContabilitateBaza.com/help/",
+  "contextSensitiveHelpUrl": "https://SSA220ContabilitateBaza.com/help/",
   "resourceExposurePolicy": {
     "allowDebugging": true,
     "allowDownloadingSource": false,

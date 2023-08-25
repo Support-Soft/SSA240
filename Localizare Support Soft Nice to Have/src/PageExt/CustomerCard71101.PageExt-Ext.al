@@ -9,7 +9,7 @@ pageextension 71101 "SSA Customer Card 71101" extends "Customer Card"
             {
                 ApplicationArea = All;
                 Caption = 'Verificare CUI';
-                Visible = NOT ANAFVATVisible;
+                Visible = not ANAFVATVisible;
                 Promoted = true;
                 PromotedCategory = Process;
                 PromotedIsBig = true;

@@ -15,15 +15,15 @@ tableextension 70057 "SSA ExchRateAdjmtReg70057" extends "Exch. Rate Adjmt. Reg.
             Caption = 'Source No.';
             DataClassification = ToBeClassified;
             Description = 'SSA960';
-            TableRelation = IF ("SSA Source Type" = CONST (Customer)) Customer
-            ELSE
-            IF ("SSA Source Type" = CONST (Vendor)) Vendor
-            ELSE
-            IF ("SSA Source Type" = CONST ("Bank Account")) "Bank Account"
-            ELSE
-            IF ("SSA Source Type" = CONST ("Fixed Asset")) "Fixed Asset"
-            ELSE
-            IF ("SSA Source Type" = CONST (Employee)) Employee;
+            TableRelation = if ("SSA Source Type" = const(Customer)) Customer
+            else
+            if ("SSA Source Type" = const(Vendor)) Vendor
+            else
+            if ("SSA Source Type" = const("Bank Account")) "Bank Account"
+            else
+            if ("SSA Source Type" = const("Fixed Asset")) "Fixed Asset"
+            else
+            if ("SSA Source Type" = const(Employee)) Employee;
         }
     }
 }

@@ -11,7 +11,7 @@ page 70500 "SSA CEC & BO Customer"
     Permissions = TableData "Cust. Ledger Entry" = rim;
     SaveValues = true;
     SourceTable = "Cust. Ledger Entry";
-    SourceTableView = SORTING("Customer No.", "Due Date", "Entry No.") ORDER(Ascending);
+    SourceTableView = sorting("Customer No.", "Due Date", "Entry No.") order(ascending);
 
     layout
     {
@@ -33,7 +33,7 @@ page 70500 "SSA CEC & BO Customer"
 
                     trigger OnValidate()
                     begin
-                        CurrPage.UPDATE(FALSE);
+                        CurrPage.UPDATE(false);
                     end;
                 }
                 field(Nr; Numar)
@@ -44,7 +44,7 @@ page 70500 "SSA CEC & BO Customer"
 
                     trigger OnValidate()
                     begin
-                        CurrPage.UPDATE(FALSE);
+                        CurrPage.UPDATE(false);
                     end;
                 }
                 field(Suma; SumaCECBO)
@@ -57,7 +57,7 @@ page 70500 "SSA CEC & BO Customer"
                     begin
                         TempCLE.RESET;
                         TempCLE.DELETEALL;
-                        CurrPage.UPDATE(FALSE);
+                        CurrPage.UPDATE(false);
                     end;
                 }
                 field("Data emiterii"; DocDate)
@@ -68,7 +68,7 @@ page 70500 "SSA CEC & BO Customer"
 
                     trigger OnValidate()
                     begin
-                        CurrPage.UPDATE(FALSE);
+                        CurrPage.UPDATE(false);
                     end;
                 }
                 field("Data scadentei"; DueDate)
@@ -79,7 +79,7 @@ page 70500 "SSA CEC & BO Customer"
 
                     trigger OnValidate()
                     begin
-                        CurrPage.UPDATE(FALSE);
+                        CurrPage.UPDATE(false);
                     end;
                 }
                 field("Exclude lines with remaining amount payment tool zero"; DontShowLinesWithZero)
@@ -89,20 +89,20 @@ page 70500 "SSA CEC & BO Customer"
 
                     trigger OnValidate()
                     begin
-                        IF NOT DontShowLinesWithZero THEN
+                        if not DontShowLinesWithZero then
                             CLEARMARKS;
-                        IF FINDFIRST THEN
-                            REPEAT
+                        if FINDFIRST then
+                            repeat
                                 CALCFIELDS("Remaining Amount", "SSA Applied Amount CEC/BO");
-                                IF ("Remaining Amount" - "SSA Applied Amount CEC/BO") > 0 THEN
-                                    MARK(TRUE);
-                            UNTIL NEXT = 0;
-                        IF DontShowLinesWithZero THEN
-                            MARKEDONLY(TRUE)
-                        ELSE
-                            MARKEDONLY(FALSE);
-                        IF FINDFIRST THEN;
-                        CurrPage.UPDATE(FALSE);
+                                if ("Remaining Amount" - "SSA Applied Amount CEC/BO") > 0 then
+                                    MARK(true);
+                            until NEXT = 0;
+                        if DontShowLinesWithZero then
+                            MARKEDONLY(true)
+                        else
+                            MARKEDONLY(false);
+                        if FINDFIRST then;
+                        CurrPage.UPDATE(false);
                     end;
                 }
             }
@@ -206,7 +206,7 @@ page 70500 "SSA CEC & BO Customer"
             part(Control1903096107; "Customer Ledger Entry FactBox")
             {
                 ApplicationArea = All;
-                SubPageLink = "Entry No." = FIELD("Entry No.");
+                SubPageLink = "Entry No." = field("Entry No.");
                 Visible = true;
             }
             systempart(Control1900383207; Links)
@@ -234,8 +234,8 @@ page 70500 "SSA CEC & BO Customer"
                     Caption = 'Reminder/Fin. Charge Entries';
                     Image = Reminder;
                     RunObject = Page "Reminder/Fin. Charge Entries";
-                    RunPageLink = "Customer Entry No." = FIELD("Entry No.");
-                    RunPageView = SORTING("Customer Entry No.");
+                    RunPageLink = "Customer Entry No." = field("Entry No.");
+                    RunPageView = sorting("Customer Entry No.");
                     Visible = false;
                 }
                 action("Applied E&ntries")
@@ -264,8 +264,8 @@ page 70500 "SSA CEC & BO Customer"
                     Caption = 'Detailed &Ledger Entries';
                     Image = View;
                     RunObject = Page "Detailed Cust. Ledg. Entries";
-                    RunPageLink = "Cust. Ledger Entry No." = FIELD("Entry No."), "Customer No." = FIELD("Customer No.");
-                    RunPageView = SORTING("Cust. Ledger Entry No.", "Posting Date");
+                    RunPageLink = "Cust. Ledger Entry No." = field("Entry No."), "Customer No." = field("Customer No.");
+                    RunPageView = sorting("Cust. Ledger Entry No.", "Posting Date");
                     ShortCutKey = 'Ctrl+F7';
                 }
             }
@@ -350,9 +350,9 @@ page 70500 "SSA CEC & BO Customer"
                         ReversalEntry: Record "Reversal Entry";
                     begin
                         CLEAR(ReversalEntry);
-                        IF Reversed THEN
+                        if Reversed then
                             ReversalEntry.AlreadyReversedEntry(TABLECAPTION, "Entry No.");
-                        IF "Journal Batch Name" = '' THEN
+                        if "Journal Batch Name" = '' then
                             ReversalEntry.TestFieldError;
                         TESTFIELD("Transaction No.");
                         ReversalEntry.ReverseTransaction("Transaction No.");
@@ -397,7 +397,7 @@ page 70500 "SSA CEC & BO Customer"
     trigger OnModifyRecord(): Boolean
     begin
         CODEUNIT.RUN(CODEUNIT::"Cust. Entry-Edit", Rec);
-        EXIT(FALSE);
+        exit(false);
     end;
 
     trigger OnOpenPage()
@@ -437,14 +437,14 @@ page 70500 "SSA CEC & BO Customer"
         TempCLE.INIT;
         TempCLE.TRANSFERFIELDS(_CLE);
         TempCLE."Sales (LCY)" := _CLE."SSA Payment Tools Amount";
-        IF NOT TempCLE.INSERT THEN
+        if not TempCLE.INSERT then
             TempCLE.MODIFY;
 
         TempCLE.RESET;
         TempCLE.SETCURRENTKEY("Customer No.", "Posting Date", "Currency Code");
         TempCLE.CALCSUMS("Sales (LCY)");
         TotalSumaAplicata := TempCLE."Sales (LCY)";
-        IF TotalSumaAplicata > SumaCECBO THEN
+        if TotalSumaAplicata > SumaCECBO then
             ERROR(Text001, SumaCECBO, TotalSumaAplicata);
     end;
 
@@ -457,26 +457,26 @@ page 70500 "SSA CEC & BO Customer"
         NoSeriesMgt: Codeunit NoSeriesManagement;
         LineNo: Integer;
     begin
-        IF _Serie = '' THEN
+        if _Serie = '' then
             ERROR('Completati campurile obligatorii');
-        IF _Numar = '' THEN
+        if _Numar = '' then
             ERROR('Completati campurile obligatorii');
-        IF _DocDate = 0D THEN
+        if _DocDate = 0D then
             ERROR('Completati campurile obligatorii');
-        IF _DueDate = 0D THEN
+        if _DueDate = 0D then
             ERROR('Completati campurile obligatorii');
-        IF SumaCECBO = 0 THEN
+        if SumaCECBO = 0 then
             ERROR('Completati campurile obligatorii');
 
         PaymentClass.RESET;
-        IF _TipInstr = _TipInstr::CEC THEN BEGIN
+        if _TipInstr = _TipInstr::CEC then begin
             PaymentClass.SETRANGE(Suggestions, PaymentClass.Suggestions::Customer);
             PaymentClass.SETRANGE("Payment Tools", PaymentClass."Payment Tools"::CEC);
-        END;
-        IF _TipInstr = _TipInstr::BO THEN BEGIN
+        end;
+        if _TipInstr = _TipInstr::BO then begin
             PaymentClass.SETRANGE(Suggestions, PaymentClass.Suggestions::Customer);
             PaymentClass.SETRANGE("Payment Tools", PaymentClass."Payment Tools"::BO);
-        END;
+        end;
         PaymentClass.FINDFIRST;
 
         Cust.GET(_CustomerNo);
@@ -484,34 +484,34 @@ page 70500 "SSA CEC & BO Customer"
         PaymentHeader.RESET;
         PaymentHeader.SETRANGE("Payment Series", _Serie);
         PaymentHeader.SETRANGE("Payment Number", _Numar);
-        IF NOT PaymentHeader.ISEMPTY THEN
+        if not PaymentHeader.ISEMPTY then
             ERROR('Exista deja seria %1 si numar %2', _Serie, _Numar);
 
         PaymentHeader.INIT;
         NoSeriesMgt.InitSeries(PaymentClass."Header No. Series", '', 0D, PaymentHeader."No.", PaymentClass."Header No. Series");
-        PaymentHeader.INSERT(TRUE);
+        PaymentHeader.INSERT(true);
         PaymentHeader.VALIDATE("No. Series", PaymentClass."Header No. Series");
         PaymentHeader.VALIDATE("Payment Class", PaymentClass.Code);
         PaymentHeader."Payment Series" := _Serie;
         PaymentHeader."Payment Number" := _Numar;
-        IF _DocDate <> 0D THEN
+        if _DocDate <> 0D then
             PaymentHeader.VALIDATE("Document Date", _DocDate)
-        ELSE
+        else
             PaymentHeader.VALIDATE("Document Date", TODAY);
 
-        PaymentHeader.MODIFY(TRUE);
+        PaymentHeader.MODIFY(true);
 
         //creare linii efect de plata
         LineNo := 0;
         TempCLE.RESET;
         TempCLE.SETFILTER("Sales (LCY)", '<>%1', 0);
-        IF TempCLE.FINDSET THEN
-            REPEAT
+        if TempCLE.FINDSET then
+            repeat
                 LineNo += 10000;
                 PaymentLine.INIT;
                 PaymentLine.VALIDATE("No.", PaymentHeader."No.");
                 PaymentLine."Line No." := LineNo;
-                PaymentLine.INSERT(TRUE);
+                PaymentLine.INSERT(true);
                 PaymentLine.VALIDATE("Account Type", PaymentLine."Account Type"::Customer);
                 PaymentLine.VALIDATE("Account No.", _CustomerNo);
                 PaymentLine.VALIDATE("Document ID", PaymentHeader."No.");
@@ -522,8 +522,8 @@ page 70500 "SSA CEC & BO Customer"
                 PaymentLine.VALIDATE("Applies-to Doc. No.", TempCLE."Document No.");
                 PaymentLine.VALIDATE("Credit Amount", TempCLE."Sales (LCY)");
                 PaymentLine.VALIDATE("Salesperson/Purchaser Code", TempCLE."Salesperson Code");
-                PaymentLine.MODIFY(TRUE);
-            UNTIL TempCLE.NEXT = 0;
+                PaymentLine.MODIFY(true);
+            until TempCLE.NEXT = 0;
 
         PAGE.RUN(PAGE::"SSA Payment Headers", PaymentHeader);
     end;
@@ -539,37 +539,37 @@ page 70500 "SSA CEC & BO Customer"
         SumaAplicata := 0;
         SumaDeAplicat := 0;
 
-        IF DontShowLinesWithZero THEN
-            _CLE.MARKEDONLY(TRUE)
-        ELSE
-            _CLE.MARKEDONLY(FALSE);
+        if DontShowLinesWithZero then
+            _CLE.MARKEDONLY(true)
+        else
+            _CLE.MARKEDONLY(false);
 
-        IF _CLE.FINDSET THEN BEGIN
-            REPEAT
+        if _CLE.FINDSET then begin
+            repeat
                 _CLE.CALCFIELDS("Remaining Amount", "SSA Applied Amount CEC/BO");
                 SumaNeacoperita := (_CLE."Remaining Amount" - _CLE."SSA Applied Amount CEC/BO");
                 SumaDeAplicat := SumaCECBO - SumaAplicata;
-                IF SumaNeacoperita <> 0 THEN BEGIN
-                    IF SumaNeacoperita < SumaDeAplicat THEN
+                if SumaNeacoperita <> 0 then begin
+                    if SumaNeacoperita < SumaDeAplicat then
                         _CLE.VALIDATE("SSA Payment Tools Amount", SumaNeacoperita)
-                    ELSE
+                    else
                         _CLE.VALIDATE("SSA Payment Tools Amount", SumaDeAplicat);
-                    _CLE.MODIFY(TRUE);
+                    _CLE.MODIFY(true);
                     PaymentToolsAmountOnAfterValidate(_CLE);
                     SumaDeAplicat := SumaDeAplicat - _CLE."SSA Payment Tools Amount";
                     SumaAplicata += _CLE."SSA Payment Tools Amount";
-                END;
-            UNTIL (_CLE.NEXT = 0) OR (SumaDeAplicat = 0);
-        END;
+                end;
+            until (_CLE.NEXT = 0) or (SumaDeAplicat = 0);
+        end;
 
-        IF SumaDeAplicat <> 0 THEN BEGIN
+        if SumaDeAplicat <> 0 then begin
             CLE.RESET;
             CLE.INIT;
             CLE."Entry No." := 0;
             CLE."SSA Payment Tools Amount" := SumaDeAplicat;
             PaymentToolsAmountOnAfterValidate(CLE);
             MESSAGE('Suma distribuita %1 din total %2', SumaAplicata, SumaCECBO);
-        END ELSE
+        end else
             MESSAGE('Suma a fost distribuita in totalitate.');
     end;
 }
