@@ -2,7 +2,7 @@
 page 71902 "SSAFTSAFT Mapping Values"
 {
     // SSM2101 SSCAT 04.01.2023 SAF-T
-
+    Caption = 'SAFT Mapping Values';
     PageType = List;
     SourceTable = "SSAFTSAFT Mapping Values";
 

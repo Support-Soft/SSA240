@@ -2932,7 +2932,7 @@ codeunit 71903 "SSAFTSAFT Generate File"
     begin
         SAFTExportLine.Get(SAFTExportLine.ID, SAFTExportLine."Line No.");
         SAFTExportLine.LockTable;
-        SafTXmlHelper.ExportXMLDocument(SAFTExportLine, SAFTExportHeader);
+        SafTXmlHelper.WriteXmlDocToAuditLine(SAFTExportLine);
         SAFTExportLine.Validate(Status, SAFTExportLine.Status::Completed);
         SAFTExportLine.Validate(Progress, 10000);
         SAFTExportLine.Validate("Created Date/Time", TypeHelper.GetCurrentDateTimeInUserTimeZone);
@@ -2943,37 +2943,18 @@ codeunit 71903 "SSAFTSAFT Generate File"
         SAFTExportMgt.StartExportLinesNotStartedYet(SAFTExportHeader);
         SAFTExportHeader.Get(SAFTExportHeader.ID);
         if SAFTExportHeader.Status = SAFTExportHeader.Status::Completed then
-            if SAFTExportHeader.AllowedToExportIntoFolder then
-                SAFTExportMgt.GenerateZipFileFromSavedFiles(SAFTExportHeader)
-            else
-                SAFTExportMgt.BuildZipFilesWithAllRelatedXmlFiles(SAFTExportHeader);
+            SAFTExportMgt.BuildZipFilesWithAllRelatedXmlFiles(SAFTExportHeader);
     end;
 
     local procedure FinalizeExportSingleFile(SAFTExportHeader: Record "SSAFTSAFT Export Header")
     var
         SAFTExportMgt: Codeunit "SSAFTSAFT Export Mgt.";
     begin
-        // SAFTExportLine.GET(SAFTExportLine.ID,SAFTExportLine."Line No.");
-        // SAFTExportLine.LOCKTABLE;
-        SafTXmlHelper.ExportXMLSingleDocument(SAFTExportHeader);
+        SafTXmlHelper.WriteXmlDocToAuditHeader(SAFTExportHeader);
+        SAFTExportHeader.Modify(true);
         Commit;
         SAFTExportMgt.UpdateExportStatus(SAFTExportHeader);
-        //SAFTExportMgt.LogSuccess(SAFTExportLine);
         SAFTExportMgt.StartExportLinesNotStartedYet(SAFTExportHeader);
-        // SAFTExportHeader.GET(SAFTExportHeader.ID);
-        // IF SAFTExportHeader.Status = SAFTExportHeader.Status::Completed THEN
-        //  IF SAFTExportHeader.AllowedToExportIntoFolder THEN
-        //    SAFTExportMgt.GenerateZipFileFromSavedFiles(SAFTExportHeader)
-        //  ELSE
-        //    SAFTExportMgt.BuildZipFilesWithAllRelatedXmlFiles(SAFTExportHeader);
-    end;
-
-    local procedure CombineWithSpaceSAFmiddle1textType(FirstString: Text; SecondString: Text) Result: Text
-    begin
-        Result := FirstString;
-        if (Result <> '') and (SecondString <> '') then
-            Result += ' ';
-        exit(CopyStr(Result + SecondString, 1, 35));
     end;
 
     local procedure CombineWithSpaceSAFmiddle2textType(FirstString: Text; SecondString: Text) Result: Text

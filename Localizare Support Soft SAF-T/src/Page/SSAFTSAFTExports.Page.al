@@ -9,6 +9,8 @@ page 71903 "SSAFTSAFT Exports"
     PageType = List;
     RefreshOnActivate = true;
     SourceTable = "SSAFTSAFT Export Header";
+    ApplicationArea = All;
+    UsageCategory = Lists;
 
     layout
     {

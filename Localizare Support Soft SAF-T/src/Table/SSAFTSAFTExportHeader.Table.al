@@ -119,11 +119,5 @@ table 71903 "SSAFTSAFT Export Header"
     begin
         SAFTExportMgt.DeleteExport(Rec);
     end;
-
-
-    procedure AllowedToExportIntoFolder(): Boolean
-    begin
-        exit("Folder Path" <> '');
-    end;
 }
 

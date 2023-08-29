@@ -8,7 +8,8 @@ page 71901 "SSAFTSAFT Mapping"
     PageType = List;
     SaveValues = true;
     SourceTable = "SSAFTSAFT-NAV Mapping";
-
+    ApplicationArea = All;
+    UsageCategory = Tasks;
     layout
     {
         area(content)

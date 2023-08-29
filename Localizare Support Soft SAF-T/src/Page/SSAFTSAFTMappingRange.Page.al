@@ -2,9 +2,11 @@
 page 71900 "SSAFTSAFT Mapping Range"
 {
     // SSM2101 SSCAT 04.01.2023 SAF-T
-
+    Caption = 'SAFT Mapping Range';
     PageType = List;
     SourceTable = "SSAFTSAFT Mapping Range";
+    ApplicationArea = All;
+    UsageCategory = Tasks;
 
     layout
     {

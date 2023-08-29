@@ -41,7 +41,6 @@ codeunit 71907 "SSAFTSAFT Export Check"
         SAFTMappingHelper.VerifyDimensionsHaveAnalysisCode(TempErrorMessage);
         CheckItems(TempErrorMessage, SAFTExportHeader);
         CheckCurrencies(TempErrorMessage, SAFTExportHeader);
-        SAFTExportMgt.CheckNoFilesInFolder(SAFTExportHeader, TempErrorMessage);
         CompanyInformation.Get;
         if CompanyInformation."SSAFTSAFT Contact No." = '' then
             TempErrorMessage.LogMessage(

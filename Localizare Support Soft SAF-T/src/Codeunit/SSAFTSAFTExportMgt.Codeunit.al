@@ -390,36 +390,26 @@ codeunit 71905 "SSAFTSAFT Export Mgt."
     var
         CompanyInformation: Record "Company Information";
         SAFTExportLine: Record "SSAFTSAFT Export Line";
-        FileMgt: Codeunit "File Management";
-        SafTXmlHelper: Codeunit "SSAFTSAFT XML Helper";
-        ServerDestinationFolder: Text;
-        TotalNumberOfFiles: Integer;
+        DataCompression: Codeunit "Data Compression";
+        ZipInstream: InStream;
+        ZipOutStream: OutStream;
     begin
+        DataCompression.CreateZipArchive();
         CompanyInformation.Get;
-        ServerDestinationFolder := FileMgt.ServerCreateTempSubDirectory;
         SAFTExportLine.SetRange(ID, SAFTExportHeader.ID);
         SAFTExportLine.SetRange("Export File", true); //SSM1724
         SAFTExportLine.FindSet;
-        TotalNumberOfFiles := SAFTExportLine.Count;
         repeat
-            SafTXmlHelper.ExportSAFTExportLineBlobToFile(
-              SAFTExportLine,
-              SafTXmlHelper.GetFilePath(
-                ServerDestinationFolder, CompanyInformation."VAT Registration No.", SAFTExportLine."Created Date/Time",
-                SAFTExportLine."Line No.", TotalNumberOfFiles));
+            SAFTExportLine.CalcFields("SAF-T File");
+            SAFTExportLine."SAF-T File".CreateInStream(ZipInstream);
+            DataCompression.AddEntry(ZipInstream, 'SAFT/' + Format(SAFTExportLine."Type of Line") + '.xml');
         until SAFTExportLine.Next = 0;
-        ZipMultipleXMLFilesInServerFolder(SAFTExportHeader, ServerDestinationFolder);
+
+        SAFTExportHeader."SAF-T File".CreateOutStream(ZipOutStream);
+        DataCompression.SaveZipArchive(ZipOutStream);
+        DataCompression.CloseZipArchive();
+        SAFTExportHeader.Modify(true);
     end;
-
-
-    procedure GenerateZipFileFromSavedFiles(SAFTExportHeader: Record "SSAFTSAFT Export Header")
-    begin
-        if not SAFTExportHeader.AllowedToExportIntoFolder then
-            exit;
-
-        SaveZipOfMultipleXMLFiles(SAFTExportHeader);
-    end;
-
 
     procedure DownloadZipFileFromExportHeader(SAFTExportHeader: Record "SSAFTSAFT Export Header")
     var
@@ -433,100 +423,6 @@ codeunit 71905 "SSAFTSAFT Export Mgt."
         FileName := SAFTZipFileTxt;
         DownloadFromStream(ZipFileInStream, ZipArchiveSaveDialogTxt, '', ZipArchiveFilterTxt, FileName);
     end;
-
-
-    procedure ZipMultipleXMLFilesInServerFolder(var SAFTExportHeader: Record "SSAFTSAFT Export Header"; ServerDestinationFolder: Text)
-    var
-        TempNameValueBuffer: Record "Name/Value Buffer" temporary;
-        FileMgt: Codeunit "File Management";
-        ZipArchiveFile: File;
-        ZipOutStream: OutStream;
-        ZipInStream: InStream;
-        ZipArchive: Text;
-    begin
-        FileMgt.GetServerDirectoryFilesListInclSubDirs(TempNameValueBuffer, ServerDestinationFolder);
-        ZipArchive := FileMgt.CreateZipArchiveObject;
-        TempNameValueBuffer.FindSet;
-        repeat
-            FileMgt.AddFileToZipArchive(TempNameValueBuffer.Name, FileMgt.GetFileName(TempNameValueBuffer.Name));
-        until TempNameValueBuffer.Next = 0;
-        FileMgt.CloseZipArchive;
-
-        ZipArchiveFile.Open(ZipArchive);
-        ZipArchiveFile.CreateInStream(ZipInStream);
-        SAFTExportHeader."SAF-T File".CreateOutStream(ZipOutStream);
-        CopyStream(ZipOutStream, ZipInStream);
-        ZipArchiveFile.Close;
-        SAFTExportHeader.Modify(true);
-
-        FileMgt.GetServerDirectoryFilesListInclSubDirs(TempNameValueBuffer, ServerDestinationFolder);
-        repeat
-            FileMgt.DeleteServerFile(TempNameValueBuffer.Name);
-        until TempNameValueBuffer.Next = 0;
-    end;
-
-    local procedure SaveZipOfMultipleXMLFiles(SAFTExportHeader: Record "SSAFTSAFT Export Header")
-    var
-        TempNameValueBuffer: Record "Name/Value Buffer" temporary;
-        FileMgt: Codeunit "File Management";
-        ZipArchiveFile: File;
-        ZipClientFile: File;
-        ZipOutStream: OutStream;
-        ZipInStream: InStream;
-        ZipArchive: Text;
-    begin
-        FileMgt.GetServerDirectoryFilesListInclSubDirs(TempNameValueBuffer, SAFTExportHeader."Folder Path");
-        ZipArchive := FileMgt.CreateZipArchiveObject;
-        TempNameValueBuffer.FindSet;
-        repeat
-            FileMgt.AddFileToZipArchive(TempNameValueBuffer.Name, FileMgt.GetFileName(TempNameValueBuffer.Name));
-        until TempNameValueBuffer.Next = 0;
-        FileMgt.CloseZipArchive;
-
-        ZipArchiveFile.Open(ZipArchive);
-        ZipArchiveFile.CreateInStream(ZipInStream);
-        ZipClientFile.Create(SAFTExportHeader."Folder Path" + '\' + SAFTZipFileTxt);
-        ZipClientFile.CreateOutStream(ZipOutStream);
-        CopyStream(ZipOutStream, ZipInStream);
-        ZipArchiveFile.Close;
-        ZipClientFile.Close;
-    end;
-
-
-    procedure CheckNoFilesInFolder(SAFTExportHeader: Record "SSAFTSAFT Export Header"; var TempErrorMessage: Record "Error Message" temporary)
-    var
-        TempNameValueBuffer: Record "Name/Value Buffer" temporary;
-        FileMgt: Codeunit "File Management";
-    begin
-        if not SAFTExportHeader.AllowedToExportIntoFolder then
-            exit;
-
-        FileMgt.GetServerDirectoryFilesListInclSubDirs(TempNameValueBuffer, SAFTExportHeader."Folder Path");
-        if TempNameValueBuffer.Count <> 0 then
-            TempErrorMessage.LogMessage(SAFTExportHeader, 0, TempErrorMessage."Message Type"::Error, FilesExistsInFolderErr);
-    end;
-
-
-    procedure SaveXMLDocToFolder(SAFTExportHeader: Record "SSAFTSAFT Export Header"; XMLDoc: XmlDocument; FileNumber: Integer): Boolean
-    var
-        SAFTExportLine: Record "SSAFTSAFT Export Line";
-        CompanyInformation: Record "Company Information";
-        SafTXmlHelper: Codeunit "SSAFTSAFT XML Helper";
-        FilePath: Text;
-        TotalNumberOfFiles: Integer;
-    begin
-        if not SAFTExportHeader.AllowedToExportIntoFolder then
-            exit(false);
-        SAFTExportLine.SetRange(ID, SAFTExportHeader.ID);
-        TotalNumberOfFiles := SAFTExportLine.Count;
-        CompanyInformation.Get;
-        FilePath :=
-          SafTXmlHelper.GetFilePath(
-            SAFTExportHeader."Folder Path", CompanyInformation."VAT Registration No.",
-            SAFTExportLine."Created Date/Time", FileNumber, TotalNumberOfFiles);
-        XMLDoc.Save(FilePath);
-    end;
-
 
     procedure GetAmountInfoFromGLEntry(var AmountXMLNode: Text; var Amount: Decimal; GLEntry: Record "G/L Entry")
     begin
@@ -684,47 +580,6 @@ codeunit 71905 "SSAFTSAFT Export Mgt."
     begin
         //SSM1724>>
         SSASAFTGenerateFile.ExportSingleFile(SAFTExportHeader);
-        //SSM1724<<
-    end;
-
-
-    procedure BuildZipFilesWithSingleXmlFile(SAFTExportHeader: Record "SSAFTSAFT Export Header")
-    var
-        CompanyInformation: Record "Company Information";
-        SAFTExportLine: Record "SSAFTSAFT Export Line";
-        FileMgt: Codeunit "File Management";
-        SafTXmlHelper: Codeunit "SSAFTSAFT XML Helper";
-        ServerDestinationFolder: Text;
-        TotalNumberOfFiles: Integer;
-    begin
-        //SSM1724>>
-        CompanyInformation.Get;
-        ServerDestinationFolder := FileMgt.ServerCreateTempSubDirectory;
-        repeat
-            SafTXmlHelper.ExportSAFTExportLineBlobToFile(
-              SAFTExportLine,
-              SafTXmlHelper.GetFilePath(
-                ServerDestinationFolder, CompanyInformation."VAT Registration No.", SAFTExportLine."Created Date/Time",
-                SAFTExportLine."Line No.", TotalNumberOfFiles));
-        until SAFTExportLine.Next = 0;
-        ZipMultipleXMLFilesInServerFolder(SAFTExportHeader, ServerDestinationFolder);
-        //SSM1724<<
-    end;
-
-
-    procedure SaveSingleXMLDocToFolder(SAFTExportHeader: Record "SSAFTSAFT Export Header"; XMLDoc: DotNet SSAXmlDocument): Boolean
-    var
-        CompanyInformation: Record "Company Information";
-        SafTXmlHelper: Codeunit "SSAFTSAFT XML Helper";
-        FilePath: Text;
-    begin
-        //SSM1724>>
-        if not SAFTExportHeader.AllowedToExportIntoFolder then
-            exit(false);
-        CompanyInformation.Get;
-        FilePath :=
-          SafTXmlHelper.GetSingleFilePath(SAFTExportHeader."Folder Path", CompanyInformation."VAT Registration No.");
-        XMLDoc.Save(FilePath);
         //SSM1724<<
     end;
 }
