@@ -1,0 +1,28 @@
+{
+  "id": "5bb109a0-e13d-44a7-afdd-3d484ccab9c0",
+  "name": "Localizare Support Soft E-Documente",
+  "publisher": "Support-Soft SRL",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "19.0.0.0",
+  "idRanges": [
+    {
+      "from": 72000,
+      "to": 72199
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": false,
+    "includeSourceInSymbolFile": false
+  }
+}
