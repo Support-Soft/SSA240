@@ -60,6 +60,7 @@ codeunit 71904 "SSAFTSAFT XML Helper"
         CurrXMLElement[Depth] := XmlElement.Create(RootNodeName, NamespaceUri);
         AddElementNameToXPath(RootNodeName);
         CurrXMLElement[Depth].Add(XmlAttribute.CreateNamespaceDeclaration('nsSAFT', NamespaceUri));
+        CurrXMLElement[Depth].Add(XmlAttribute.CreateNamespaceDeclaration('xsi', 'http://www.w3.org/2001/XMLSchema-instance'));
         XMLDoc.Add(CurrXMLElement[Depth]);
         XMLDoc.GetRoot(CurrXMLElement[Depth]);
     end;

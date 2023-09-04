@@ -468,7 +468,7 @@ report 71318 "SSA Vendor - Detail Trial Bal"
         ExternalDocNoCaptionLbl: Label 'External Doc. No.';
         CompanyInfo: Record "Company Information";
 
-    [Scope('Personalization')]
+    
     procedure InitializeRequest(NewPrintAmountsInLCY: Boolean; NewPrintOnlyOnePerPage: Boolean; NewExcludeBalanceOnly: Boolean)
     begin
         PrintAmountsInLCY := NewPrintAmountsInLCY;

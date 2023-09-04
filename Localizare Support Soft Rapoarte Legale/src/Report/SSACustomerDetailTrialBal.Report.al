@@ -409,7 +409,7 @@ report 71316 "SSACustomer - Detail Trial Bal"
         ExternalDocNoCaptionLbl: Label 'External Doc. No.';
         CompanyInfo: Record "Company Information";
 
-    [Scope('Personalization')]
+    
     procedure InitializeRequest(ShowAmountInLCY: Boolean; SetPrintOnlyOnePerPage: Boolean; SetExcludeBalanceOnly: Boolean)
     begin
         PrintOnlyOnePerPage := SetPrintOnlyOnePerPage;

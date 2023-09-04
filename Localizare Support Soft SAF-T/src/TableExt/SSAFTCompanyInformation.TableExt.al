@@ -6,7 +6,7 @@ tableextension 71901 "SSAFTCompany Information" extends "Company Information"
         {
             Caption = 'SAFT Contact No.';
             DataClassification = CustomerContent;
-            TableRelation = Contact;
+            TableRelation = Employee;
         }
     }
 

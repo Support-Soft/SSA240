@@ -1461,7 +1461,7 @@ report 70901 "SSA Standard Sales - Invoice"
         exit(SalesInvoiceLbl);
     end;
 
-    [Scope('Personalization')]
+    
     procedure InitializeRequest(NewLogInteraction: Boolean; DisplayAsmInfo: Boolean)
     begin
         LogInteraction := NewLogInteraction;

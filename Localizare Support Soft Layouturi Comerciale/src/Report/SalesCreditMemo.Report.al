@@ -1163,7 +1163,7 @@ report 70902 "SSA Sales - Credit Memo"
         exit(SalesCreditMemoNoLbl);
     end;
 
-    [Scope('Personalization')]
+    
     procedure InitializeRequest(NewLogInteraction: Boolean; DisplayAsmInfo: Boolean)
     begin
         LogInteraction := NewLogInteraction;
