@@ -1726,7 +1726,10 @@ codeunit 71903 "SSAFTSAFT Generate File"
               '');
             SafTXmlHelper.FinalizeXMLNode;
 
-            CustomerPostingGroup.Get(Customer."Customer Posting Group");
+            //SSM1724>>
+            //OC CustomerPostingGroup.GET(Customer."Customer Posting Group");
+            CustomerPostingGroup.GET(CLE."Customer Posting Group");
+            //SSM1724<<
             GLAccount.Get(CustomerPostingGroup."Receivables Account");
             SAFTMappingRange.Get(SAFTExportHeader."Mapping Range Code");
             SafTXmlHelper.AppendXMLNode('AccountID', GetTableMapping(SAFTExportHeader."Mapping Range Code", GLAccount, SAFTMappingRange."Chart of Account NFT"));
@@ -2179,7 +2182,10 @@ codeunit 71903 "SSAFTSAFT Generate File"
               '');
             SafTXmlHelper.FinalizeXMLNode;
 
-            VendorPostingGroup.Get(Vendor."Vendor Posting Group");
+            //SSM1724>>
+            //OC VendorPostingGroup.GET(Vendor."Vendor Posting Group");
+            VendorPostingGroup.GET(VLE."Vendor Posting Group");
+            //SSM1724<<
             GLAccount.Get(VendorPostingGroup."Payables Account");
             SAFTMappingRange.Get(SAFTExportHeader."Mapping Range Code");
             SafTXmlHelper.AppendXMLNode('AccountID', GetTableMapping(SAFTExportHeader."Mapping Range Code", GLAccount, SAFTMappingRange."Chart of Account NFT"));
