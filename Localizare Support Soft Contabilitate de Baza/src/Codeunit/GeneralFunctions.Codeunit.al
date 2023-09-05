@@ -318,4 +318,33 @@ codeunit 70010 "SSA General Functions"
         end;
         exit(OutputString);
     end;
+
+    procedure ConvertTextToDecimal(_Text: Text): Decimal
+    var
+        i: Integer;
+        c: Text;
+        ThousandSeparator: Text;
+        DecimalSeparator: Text;
+        DecVar: Decimal;
+    begin
+
+        ThousandSeparator := COPYSTR(FORMAT(1000.01, 0, 0), 2, 1);
+        DecimalSeparator := COPYSTR(FORMAT(1000.01, 0, 0), 6, 1);
+        IF DecimalSeparator = '.' THEN begin
+            Evaluate(DecVar, _Text);
+            EXIT(DecVar);
+        end ELSE BEGIN
+            FOR i := 1 TO STRLEN(_Text) DO BEGIN
+                c := COPYSTR(_Text, i, 1);
+                IF c = ThousandSeparator THEN
+                    _Text := _Text + DecimalSeparator;
+                IF c = DecimalSeparator THEN
+                    _Text := _Text + ThousandSeparator;
+                IF (c <> ThousandSeparator) AND (c <> DecimalSeparator) THEN
+                    _Text := _Text + c;
+            END;
+            Evaluate(DecVar, _Text);
+            EXIT(DecVar);
+        END;
+    end;
 }
