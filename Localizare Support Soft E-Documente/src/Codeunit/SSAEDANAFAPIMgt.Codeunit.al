@@ -45,8 +45,8 @@ codeunit 72007 "SSAEDANAF API Mgt"
     begin
 
         Headers := Client.DefaultRequestHeaders;
-        Headers.Add('Accept', 'application/xml');
-        Headers.Add('Connection', 'Keep-alive');
+        Headers.Add('Accept', '*/*');
+        Headers.Add('Connection', 'keep-alive');
         Headers.Add('Authorization', StrSubstNo('Bearer %1', _Token));
         Headers.Add('Accept-Encoding', 'gzip, deflate, br');
 
@@ -116,8 +116,8 @@ codeunit 72007 "SSAEDANAF API Mgt"
     begin
 
         Headers := Client.DefaultRequestHeaders;
-        Headers.Add('Accept', 'application/xml');
-        Headers.Add('Connection', 'Keep-alive');
+        Headers.Add('Accept', '*/*');
+        Headers.Add('Connection', 'keep-alive');
         Headers.Add('Authorization', StrSubstNo('Bearer %1', _Token));
         Headers.Add('Accept-Encoding', 'gzip, deflate, br');
 
@@ -148,7 +148,7 @@ codeunit 72007 "SSAEDANAF API Mgt"
     end;
 
 
-    procedure DescarcareMesaj(_IDDescarcare: Text; var _TempBlob: codeunit "Temp Blob")
+    procedure DescarcareMesaj(_IDDescarcare: Text; var _TempBlob: Codeunit "Temp Blob")
     var
         EFSetup: Record "SSAEDEDocuments Setup";
         URL: Text;
@@ -168,18 +168,18 @@ codeunit 72007 "SSAEDANAF API Mgt"
         SendRequest_DescarcareMesaj(URL, Parameters, EFSetup."Access Token", _TempBlob);
     end;
 
-    local procedure SendRequest_DescarcareMesaj(_URL: Text; _Param: Text; _Token: Text; var _TempBlob: codeunit "Temp Blob")
+    local procedure SendRequest_DescarcareMesaj(_URL: Text; _Param: Text; _Token: Text; var _TempBlob: Codeunit "Temp Blob")
     var
         Client: HttpClient;
         Headers: HttpHeaders;
         Response: HttpResponseMessage;
         ResponseInStream: InStream;
-        FileName: Text;
+        ResponseOutStream: OutStream;
     begin
 
         Headers := Client.DefaultRequestHeaders;
-        Headers.Add('Accept', 'application/xml');
-        Headers.Add('Connection', 'Keep-alive');
+        Headers.Add('Accept', '*/*');
+        Headers.Add('Connection', 'keep-alive');
         Headers.Add('Authorization', StrSubstNo('Bearer %1', _Token));
         Headers.Add('Accept-Encoding', 'gzip, deflate, br');
 
@@ -188,27 +188,117 @@ codeunit 72007 "SSAEDANAF API Mgt"
 
         _TempBlob.CreateInStream(ResponseInStream, TEXTENCODING::UTF8);
         Response.Content.ReadAs(ResponseInStream);
-
+        _TempBlob.CreateOutStream(ResponseOutStream);
+        CopyStream(ResponseOutStream, ResponseInStream);
     end;
 
-    procedure GetListaMesaje
+    procedure GetListaMesaje()
+    var
+        EFSetup: Record "SSAEDEDocuments Setup";
+        CompanyInfo: Record "Company Information";
+        CountryRegion: Record "Country/Region";
+        URL: Text;
+        Parameters: Text;
     begin
 
         //SSM2210>>
         EFSetup.GET;
-        IF EFSetup."EFactura Mod Test" THEN BEGIN
+        if EFSetup."EFactura Mod Test" then begin
             EFSetup.TESTFIELD(EFSetup."EFactura Test ListaMesaje URL");
             URL := EFSetup."EFactura Test ListaMesaje URL";
-        END ELSE BEGIN
-            EFSetup.TESTFIELD(EFSetup."EFactura Test ListaMesaje URL");
+        end else begin
+            EFSetup.TESTFIELD(EFSetup."EFactura ListaMesaje URL");
             URL := EFSetup."EFactura ListaMesaje URL";
-        END;
+        end;
 
         CompanyInfo.GET;
         CountryRegion.GET(CompanyInfo."Country/Region Code");
 
         Parameters := STRSUBSTNO('?zile=%1&cif=%2', EFSetup."Nr. Zile Preluare ListaMesaje", DELCHR(UPPERCASE(CompanyInfo."VAT Registration No."), '=', CountryRegion."ISO Code"));
         SendRequest_GetListaMesaje(URL, Parameters, EFSetup."Access Token");
+    end;
+
+    local procedure SendRequest_GetListaMesaje(_URL: Text; _Param: Text; _Token: Text)
+    var
+        Client: HttpClient;
+        Headers: HttpHeaders;
+        Response: HttpResponseMessage;
+        ResponseText: Text;
+    begin
+
+        Headers := Client.DefaultRequestHeaders;
+        Headers.Add('Accept', '*/*');
+        Headers.Add('Connection', 'keep-alive');
+        Headers.Add('Authorization', StrSubstNo('Bearer %1', _Token));
+        Headers.Add('Accept-Encoding', 'gzip, deflate, br');
+
+        if not Client.Get(_URL + _Param, Response) or (not Response.IsSuccessStatusCode()) then
+            Error(Response.ReasonPhrase);
+
+        Response.Content.ReadAs(ResponseText);
+
+        ParseXMLResponse_GetListaMesaje(ResponseText);
+
+    end;
+
+    local procedure ParseXMLResponse_GetListaMesaje(_JSonText: Text)
+    var
+        TempJSONBuffer: Record "JSON Buffer" temporary;
+        MessagesCount: Integer;
+        Done: Boolean;
+        IndexIncarcare: Text;
+        DescriptionText: Text;
+        IDDescarcare: Text;
+    begin
+
+        TempJSONBuffer.ReadFromText(_JSonText);
+        CLEAR(MessagesCount);
+        while (not Done) and (MessagesCount < 100) do
+            if TempJSONBuffer.GetPropertyValueAtPath(IndexIncarcare, 'id_solicitare', STRSUBSTNO('mesaje[%1]*', MessagesCount)) then begin
+                CLEAR(DescriptionText);
+                TempJSONBuffer.GetPropertyValueAtPath(DescriptionText, 'detalii', STRSUBSTNO('mesaje[%1]*', MessagesCount));
+                CLEAR(IDDescarcare);
+                TempJSONBuffer.GetPropertyValueAtPath(IDDescarcare, 'id', STRSUBSTNO('mesaje[%1]*', MessagesCount));
+                if STRPOS(DescriptionText, 'cif_emitent=6742610') = 0 then
+                    CreateLogEntry(IndexIncarcare, DescriptionText, IDDescarcare);
+
+                MessagesCount += 1;
+            end else
+                Done := true;
+
+    end;
+
+    local procedure CreateLogEntry(_IndexIncarcare: Text; _DescriptionText: Text; _IDDescarcare: Text)
+    var
+        LogEntry: Record "SSAEDE-Documents Log Entry";
+        EntryNo: Integer;
+    begin
+
+        LogEntry.RESET;
+        if LogEntry.FINDLAST then
+            EntryNo := LogEntry."Entry No."
+        else
+            EntryNo := 0;
+
+
+        LogEntry.SETCURRENTKEY("Entry Type", Status, "Stare Mesaj");
+        LogEntry.SETRANGE("Entry Type", LogEntry."Entry Type"::"Import E-Factura");
+        LogEntry.SETRANGE("Index Incarcare", _IndexIncarcare);
+        if not LogEntry.ISEMPTY then
+            exit;
+
+        CLEAR(LogEntry);
+        EntryNo += 1;
+        LogEntry.INIT;
+        LogEntry."Entry No." := EntryNo;
+        LogEntry.INSERT(true);
+        LogEntry."Entry Type" := LogEntry."Entry Type"::"Import E-Factura";
+        LogEntry."Creation Date" := TODAY;
+        LogEntry."Creation Time" := TIME;
+        LogEntry."Index Incarcare" := _IndexIncarcare;
+        LogEntry.Description := _DescriptionText;
+        LogEntry."ID Descarcare" := _IDDescarcare;
+        LogEntry.MODIFY(true);
     end;
 }
 

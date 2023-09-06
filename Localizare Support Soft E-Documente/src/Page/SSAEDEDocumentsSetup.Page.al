@@ -125,6 +125,10 @@ page 72001 "SSAEDEDocuments Setup"
                 {
                     ToolTip = 'Numarul de cereri de stare mesaj';
                 }
+                field("Nr. Zile Preluare ListaMesaje"; Rec."Nr. Zile Preluare ListaMesaje")
+                {
+                    ToolTip = 'Specifies the value of the Nr. Zile Preluare ListaMesaje field.';
+                }
             }
             group(ETransport)
             {

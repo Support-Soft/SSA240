@@ -76,13 +76,13 @@ table 72000 "SSAEDE-Documents Log Entry"
             Caption = 'ClientFileName';
             DataClassification = CustomerContent;
         }
-        field(120; "Export Type"; Option)
+        field(120; "Entry Type"; Option)
         {
-            Caption = 'Export Type';
+            Caption = 'Entry Type';
             DataClassification = CustomerContent;
             Description = 'SSM1997';
-            OptionCaption = ' ,E-Transport,E-Factura';
-            OptionMembers = " ","E-Transport","E-Factura";
+            OptionCaption = ' ,Export E-Transport,Export E-Factura,Import E-Factura';
+            OptionMembers = " ","Export E-Transport","Export E-Factura","Import E-Factura";
         }
         field(130; DateResponse; Text[30])
         {
@@ -203,9 +203,8 @@ table 72000 "SSAEDE-Documents Log Entry"
         {
             Clustered = true;
         }
-        key(Key2; "Export Type", Status)
+        key(Key2; "Entry Type", Status, "Stare Mesaj")
         {
-
         }
     }
 
@@ -235,7 +234,8 @@ table 72000 "SSAEDE-Documents Log Entry"
             _ETransportLogEntry.ServerFilePath := '';
             _ETransportLogEntry.ClientFileName := '';
             _ETransportLogEntry."Stare Mesaj" := '';
-            _ETransportLogEntry."ID Descarcare" := '';
+            if _ETransportLogEntry."Entry Type" <> _ETransportLogEntry."Entry Type"::"Import E-Factura" then
+                _ETransportLogEntry."ID Descarcare" := '';
             _ETransportLogEntry.Modify(true);
 
         until _ETransportLogEntry.Next = 0;

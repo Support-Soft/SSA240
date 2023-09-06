@@ -1,6 +1,6 @@
-codeunit 72004 "SSAEDJob RO Factura"
+codeunit 72010 "SSAEDJob Import E-Documents"
 {
-
+    TableNo = "Job Queue Entry";
     trigger OnRun()
     begin
         HandleRequest;
@@ -15,7 +15,7 @@ codeunit 72004 "SSAEDJob RO Factura"
         while MoreRequests do begin
             Commit;
             ClearLastError;
-            if CODEUNIT.Run(CODEUNIT::"SSAEDExport EFactura", EFacturaLogEntry) then begin
+            if CODEUNIT.Run(CODEUNIT::"SSAEDProcess Import E-Doc", EFacturaLogEntry) then begin
                 EFacturaLogEntry.Status := EFacturaLogEntry.Status::Completed;
                 EFacturaLogEntry."Error Message" := '';
             end else begin
@@ -32,8 +32,8 @@ codeunit 72004 "SSAEDJob RO Factura"
     local procedure GetNextRequest(var _EFacturaLogEntry: Record "SSAEDE-Documents Log Entry") Found: Boolean
     begin
         _EFacturaLogEntry.LockTable;
-        _EFacturaLogEntry.SetCurrentKey("Export Type", Status);
-        _EFacturaLogEntry.SetRange("Export Type", _EFacturaLogEntry."Export Type"::"E-Factura");
+        _EFacturaLogEntry.SetCurrentKey("Entry Type", Status, "Stare Mesaj");
+        _EFacturaLogEntry.SetRange("Entry Type", _EFacturaLogEntry."Entry Type"::"Import E-Factura");
         _EFacturaLogEntry.SetRange(Status, _EFacturaLogEntry.Status::New);
         Found := _EFacturaLogEntry.FindFirst;
         if Found then begin

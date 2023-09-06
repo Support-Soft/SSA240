@@ -14,11 +14,13 @@ permissionset 72000 SSAEDElectronicDoc
         codeunit "SSAEDExport ETransport" = X,
         codeunit "SSAEDJob EFactura Email" = X,
         codeunit "SSAEDJob EFactura StareMesaj" = X,
-        codeunit "SSAEDJob RO Factura" = X,
         codeunit "SSAEDProcess Import E-Doc" = X,
         xmlport "SSAEDE-Factura" = X,
         xmlport "SSAEDE-Transport" = X,
         page "SSAEDE-Documents Details List" = X,
         page "SSAEDE-Documents Log Entries" = X,
-        page "SSAEDEDocuments Setup" = X;
+        page "SSAEDEDocuments Setup" = X,
+        codeunit "SSAEDJob Export E-Documents" = X,
+        codeunit "SSAEDJob GetListaMesaje" = X,
+        codeunit "SSAEDJob Import E-Documents" = X;
 }

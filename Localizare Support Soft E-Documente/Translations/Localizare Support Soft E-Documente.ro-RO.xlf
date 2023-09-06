@@ -113,9 +113,8 @@
         </trans-unit>
         <trans-unit id="Table 2079753362 - Field 3478032625 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
           <source> ,Invoice Line,PaymentMeans Line</source>
-          <target state="translated"> Linie de Factura,Linie Mijloc Plată</target>
+          <target> ,Linie de Factura,Linie Mijloc Plată</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">source and target has different number of option captions.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSAEDE-Documents Details - Field Type of Line - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="Table 2079753362 - Field 2951275221 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -202,6 +201,18 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSAEDE-Documents Log Entry - Field Entry No. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 3931156184 - Field 149522872 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Entry Type</source>
+          <target>Tip intrare</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAEDE-Documents Log Entry - Field Entry Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3931156184 - Field 149522872 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,Export E-Transport,Export E-Factura,Import E-Factura</source>
+          <target> ,Export E-Transport,Export E-Factura,Import E-Factura</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAEDE-Documents Log Entry - Field Entry Type - Property OptionCaption</note>
+        </trans-unit>
         <trans-unit id="Table 3931156184 - Field 2852966117 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Error Message</source>
           <target>Mesaj Eroare</target>
@@ -213,18 +224,6 @@
           <target>Status Executie</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSAEDE-Documents Log Entry - Field Execution Status - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 3931156184 - Field 1774461192 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Export Type</source>
-          <target>Tip Export</target>
-          <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Table SSAEDE-Documents Log Entry - Field Export Type - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 3931156184 - Field 1774461192 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source> ,E-Transport,E-Factura</source>
-          <target> ,E-Transport,E-Factura</target>
-          <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Table SSAEDE-Documents Log Entry - Field Export Type - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="Table 3931156184 - Field 2669211902 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>ID Descarcare</source>
@@ -348,9 +347,8 @@
         </trans-unit>
         <trans-unit id="Table 1813098594 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>E-Documents Setup</source>
-          <target state="translated">Parametrizare Documente Electronice</target>
+          <target>Parametrizare Documente Electronice</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSAEDEDocuments Setup - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1813098594 - Field 3174535945 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -491,6 +489,12 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSAEDEDocuments Setup - Field No. of StareMesaj Requests - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1813098594 - Field 2253795922 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Nr. Zile Preluare ListaMesaje</source>
+          <target>Nr. Zile Preluare ListaMesaje</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAEDEDocuments Setup - Field Nr. Zile Preluare ListaMesaje - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 1813098594 - Field 2575460289 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Password</source>
           <target>Parola</target>
@@ -589,9 +593,10 @@
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAEDExport ETransport - NamedType UnSupportedTableTypeErr</note>
         </trans-unit>
         <trans-unit id="Codeunit 3466054788 - Method 3004954119 - NamedType 3287470426" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Documentul %1 cu Nr. %2 are un status %3 cu eroarea %4</source>
-          <target>Documentul %1 cu Nr. %2 are un status %3 cu eroarea %4</target>
+          <source>Documentul %1 cu Nr. %2 are un status %3 cu eroarea %4, stare mesaj: %5</source>
+          <target state="translated">Documentul %1 cu Nr. %2 are un status %3 cu eroarea %4, stare mesaj: %5</target>
           <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">The placeholder "%5" was found in source, but not in target.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSAEDJob EFactura Email - Method Code - NamedType BodyLabel</note>
         </trans-unit>
         <trans-unit id="Codeunit 3466054788 - Method 3004954119 - NamedType 1296464462" size-unit="char" translate="yes" xml:space="preserve">
@@ -720,6 +725,12 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Control ClientFileName - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="Page 2154388502 - Control 655446791 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Created Purchase Invoice No. field.</source>
+          <target>Specifică valoarea câmpului Nr. factură de achiziție creată.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Control Created Purchase Invoice No. - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 2154388502 - Control 1407200743 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Creation Date</source>
           <target>Data creare</target>
@@ -744,6 +755,18 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Control DateResponse - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="Page 2154388502 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Description field.</source>
+          <target>Specifică valoarea câmpului Descriere.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Control Description - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2154388502 - Control 2175249711 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Document Currency Code field.</source>
+          <target>Precizează valoarea câmpului Document Currency Code (Cod monedă document).</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Control Document Currency Code - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 2154388502 - Control 486908828 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Document No.</source>
           <target>Nr. document</target>
@@ -762,6 +785,12 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Control Entry No. - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="Page 2154388502 - Control 149522872 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Entry Type field.</source>
+          <target>Specifica valoarea campului Tip Intrare</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Control Entry Type - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 2154388502 - Control 2852966117 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Error Message</source>
           <target>Mesaj de eroare</target>
@@ -773,12 +802,6 @@
           <target>Status Executie</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Control Execution Status - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 2154388502 - Control 1774461192 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Export Type</source>
-          <target>Tip Export</target>
-          <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Control Export Type - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2154388502 - Control 2669211902 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>ID Descarcare</source>
@@ -792,11 +815,53 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Control Index Incarcare - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="Page 2154388502 - Control 219695063 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Issue Date field.</source>
+          <target>Precizează valoarea câmpului Data eliberării.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Control Issue Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2154388502 - Control 2972906702 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the NAV Vendor Name field.</source>
+          <target>Specifică valoarea câmpului NAV Vendor Name (Nume furnizor NAV).</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Control NAV Vendor Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2154388502 - Control 1421428038 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the NAV Vendor No. field.</source>
+          <target>Specifică valoarea câmpului NAV Vendor No.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Control NAV Vendor No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2154388502 - Control 2774920149 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Posted Purch. Credit Memo No. field.</source>
+          <target>Precizează valoarea lui Posted Purch. Credit Memo No.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Control Posted Purch. Credit Memo No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2154388502 - Control 67402392 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Posted Purchase Invoice No. field.</source>
+          <target>Specifică valoarea câmpului Nr. Factura Inregistrata</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Control Posted Purchase Invoice No. - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 2154388502 - Control 1461478126 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Processing DateTime</source>
           <target>DataOra Procesare</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Control Processing DateTime - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2154388502 - Control 3520261335 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Purch.Inv Amount Including VAT field.</source>
+          <target>Specifica suma Incl TVA din factual de achizitie</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Control Purch.Inv Amount Including VAT - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2154388502 - Control 3912045522 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Purchase Invoice Amount field.</source>
+          <target>Specifica suma Excl TVA din factual de achizitie</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Control Purchase Invoice Amount - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2154388502 - Control 3912603091 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Stare Mesaj</source>
@@ -810,36 +875,73 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Control Status - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 2154388502 - Action 1048995595 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Process</source>
-          <target state="translated">Procesare</target>
+        <trans-unit id="Page 2154388502 - Control 3600491619 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Supplier ID field.</source>
+          <target>Specifică valoarea câmpului ID Furnizor.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Control Supplier ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2154388502 - Control 2668178317 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Supplier Name field.</source>
+          <target>Specifică valoarea câmpului Nume Furnizor</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Control Supplier Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2154388502 - Control 1546862013 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Total Tax Amount field.</source>
+          <target>Specifica valoarea campului Suma Taxa.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Control Total Tax Amount - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2154388502 - Control 3657463959 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Total TaxExclusiveAmount field.</source>
+          <target>Specifică valoarea câmpului Suma Taxa Excl. TVA</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Control Total TaxExclusiveAmount - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2154388502 - Control 35962161 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Total TaxInclusiveAmount field.</source>
+          <target>Specifică valoarea câmpului Suma Taxa Incl TVA</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Control Total TaxInclusiveAmount - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2154388502 - Action 36190024 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Export</source>
+          <target state="translated">Export</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Action ActionGroup - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Action Export - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2154388502 - Action 829471597 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Download XML File</source>
-          <target>Descărcați fișierul XML</target>
+        <trans-unit id="Page 2154388502 - Action 853209408 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Upload ANAF XML File</source>
+          <target>Încărcați fișierul ANAF XML</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Action Download XML File - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Action Upload ANAF XML File - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 2154388502 - Action 829471597 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Download XML File</source>
-          <target>Descărcați fișierul XML</target>
+        <trans-unit id="Page 2154388502 - Action 853209408 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Upload ANAF XML File</source>
+          <target>Încărcați fișierul ANAF XML</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Action Download XML File - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Action Upload ANAF XML File - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2154388502 - Action 2546913971 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Download Zip File</source>
-          <target>Descarcati fisier ZIP</target>
+        <trans-unit id="Page 2154388502 - Action 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General</source>
+          <target state="translated">General</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Action Download Zip File - Property ToolTip</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Action General - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2154388502 - Action 2546913971 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Download Zip File</source>
-          <target>Descarcati fisier ZIP</target>
+        <trans-unit id="Page 2154388502 - Action 1912613678 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Download File</source>
+          <target>Descarti fisier</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Action Download Zip File - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Action Download File - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2154388502 - Action 1912613678 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Download File</source>
+          <target>Descarti fisier</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Action Download File - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2154388502 - Action 4076137915 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Reset Status</source>
@@ -853,6 +955,41 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Action Reset Status - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2154388502 - Action 3201496503 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Import</source>
+          <target state="translated">Import</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Action Import - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2154388502 - Action 3647556740 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Get Lista Mesaje</source>
+          <target state="translated">Obțineți Lista Mesaje</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Action GetListaMesaje - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2154388502 - Action 3647556740 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Get Lista Mesaje</source>
+          <target state="translated">Obțineți Lista Mesaje</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Action GetListaMesaje - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2154388502 - Action 925689529 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Process Entry</source>
+          <target state="translated">Procesare Intrare</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Action ProcessEntry - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2154388502 - Action 925689529 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Process Entry</source>
+          <target state="translated">Procesare Intrare</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Action ProcessEntry - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2154388502 - Action 3461750827 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Show Details</source>
           <target>Afişare detalii</target>
@@ -864,18 +1001,6 @@
           <target>Afişare detalii</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Action ShowDetails - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2154388502 - Action 853209408 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Upload ANAF XML File</source>
-          <target>Încărcați fișierul ANAF XML</target>
-          <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Action Upload ANAF XML File - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 2154388502 - Action 853209408 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Upload ANAF XML File</source>
-          <target>Încărcați fișierul ANAF XML</target>
-          <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Action Upload ANAF XML File - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1813098594 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>E-Documents Setup</source>
@@ -1044,6 +1169,13 @@
           <target>Numarul de cereri de stare mesaj</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDEDocuments Setup - Control No. of StareMesaj Requests - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1813098594 - Control 2253795922 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Nr. Zile Preluare ListaMesaje field.</source>
+          <target state="translated">Specifies the value of the Nr. Zile Preluare ListaMesaje field.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDEDocuments Setup - Control Nr. Zile Preluare ListaMesaje - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="XmlPort 901964794 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>E-Factura</source>
@@ -1268,6 +1400,13 @@
           <target>Sector</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSAEDShip-to Address - Control SSAEDSector - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 725727178 - Control 4100913480 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 337631938">
+          <source>Specifies the value of the Allow Edit Posted Sales Doc field.</source>
+          <target state="translated">Specifies the value of the Allow Edit Posted Sales Doc field.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSAEDUser Setup - Control SSAEDAllow Edit PostedSalesDoc - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2695447208 - Control 3231056747 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4132487568">
           <source>Transport</source>

@@ -1,5 +1,6 @@
 codeunit 72006 "SSAEDJob EFactura StareMesaj"
 {
+    TableNo = "Job Queue Entry";
     trigger OnRun()
     begin
         Code();
@@ -21,8 +22,8 @@ codeunit 72006 "SSAEDJob EFactura StareMesaj"
         Clear(i);
 
         EFacturaLogEntry.reset;
-        EFacturaLogEntry.SetCurrentKey("Export Type", Status);
-        EFacturaLogEntry.SetRange("Export Type", EFacturaLogEntry."Export Type"::"E-Factura");
+        EFacturaLogEntry.SetCurrentKey("Entry Type", Status, "Stare Mesaj");
+        EFacturaLogEntry.SetRange("Entry Type", EFacturaLogEntry."Entry Type"::"Export E-Factura");
         EFacturaLogEntry.SetRange(Status, EFacturaLogEntry.Status::Completed);
         EFacturaLogEntry.SetFilter("Index Incarcare", '<>%1', '');
         EFacturaLogEntry.SetFilter("Stare Mesaj", StrSubstNo('<>@%1&<>%2', 'ok', 'nok'));

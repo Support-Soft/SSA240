@@ -1,5 +1,6 @@
 codeunit 72009 "SSAEDJob GetListaMesaje"
 {
+    TableNo = "Job Queue Entry";
     trigger OnRun()
     begin
         Code;

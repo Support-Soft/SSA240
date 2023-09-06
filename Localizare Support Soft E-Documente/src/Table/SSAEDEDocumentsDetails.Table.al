@@ -95,6 +95,11 @@ table 72002 "SSAEDE-Documents Details"
         {
             Caption = 'NAV No.';
             DataClassification = CustomerContent;
+            TableRelation = if ("NAV Type" = const("G/L Account")) "G/L Account" else
+            if ("NAV Type" = const(Item)) Item else
+            if ("NAV Type" = const(Resource)) Resource else
+            if ("NAV Type" = const("Fixed Asset")) "Fixed Asset" else
+            if ("NAV Type" = const("Charge (Item)")) "Item Charge";
         }
 
     }

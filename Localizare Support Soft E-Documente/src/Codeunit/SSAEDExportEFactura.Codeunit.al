@@ -11,7 +11,7 @@ codeunit 72002 "SSAEDExport EFactura"
         ANAFAPIMgt: Codeunit "SSAEDANAF API Mgt";
         TempBlob: Codeunit "Temp Blob";
     begin
-        Rec.TestField("Export Type", Rec."Export Type"::"E-Factura");
+        Rec.TestField("Entry Type", Rec."Entry Type"::"Export E-Factura");
         RecordRef.Get(Rec.RecordID);
         case RecordRef.Number of
             DATABASE::"Sales Invoice Header":
@@ -52,11 +52,13 @@ codeunit 72002 "SSAEDExport EFactura"
                 begin
                     RecordRef.SetTable(SalesInvoiceHeader);
                     GenerateXMLFile(SalesInvoiceHeader, TempBlob);
+                    FileName := SalesInvoiceHeader."No." + '.xml';
                 end;
             DATABASE::"Sales Cr.Memo Header":
                 begin
                     RecordRef.SetTable(SalesCrMemoHeader);
                     GenerateXMLFile(SalesCrMemoHeader, TempBlob);
+                    FileName := SalesCrMemoHeader."No." + '.xml';
                 end;
             else
                 Error('Not allowed %1', RecordRef.Number);
@@ -105,7 +107,7 @@ codeunit 72002 "SSAEDExport EFactura"
                 end;
                 ROFacturaTransportLogEntry."Creation Date" := Today;
                 ROFacturaTransportLogEntry."Creation Time" := Time;
-                ROFacturaTransportLogEntry."Export Type" := ROFacturaTransportLogEntry."Export Type"::"E-Factura";
+                ROFacturaTransportLogEntry."Entry Type" := ROFacturaTransportLogEntry."Entry Type"::"Export E-Factura";
                 ROFacturaTransportLogEntry.Insert(true);
             until RecRef.Next = 0;
     end;
@@ -185,7 +187,7 @@ codeunit 72002 "SSAEDExport EFactura"
     begin
         if SalesHeader."SSA Stare Factura" <> SalesHeader."SSA Stare Factura"::"2-Factura Anulata" then
             exit;
-        ROFacturaTransportLogEntry.SetRange("Export Type", ROFacturaTransportLogEntry."Export Type"::"E-Factura");
+        ROFacturaTransportLogEntry.SetRange("Entry Type", ROFacturaTransportLogEntry."Entry Type"::"Export E-Factura");
         if SalesHeader."Document Type" = SalesHeader."Document Type"::Invoice then
             ROFacturaTransportLogEntry.SetRange("Document Type", ROFacturaTransportLogEntry."Document Type"::"Sales Credit Memo");
         if SalesHeader."Document Type" = SalesHeader."Document Type"::"Credit Memo" then

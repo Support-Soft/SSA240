@@ -18,16 +18,19 @@ codeunit 72000 "SSAEDExport ETransport"
                 begin
                     RecordRef.SetTable(SalesShipmentHeader);
                     GenerateXMLFile(SalesShipmentHeader, TempBlob);
+                    FileName := 'SalesShipment_' + SalesShipmentHeader."No." + '.xml';
                 end;
             DATABASE::"Sales Invoice Header":
                 begin
                     RecordRef.SetTable(SalesInvoiceHeader);
                     GenerateXMLFile(SalesInvoiceHeader, TempBlob);
+                    FileName := 'SalesInvoice_' + SalesInvoiceHeader."No." + '.xml';
                 end;
             DATABASE::"Transfer Shipment Header":
                 begin
                     RecordRef.SetTable(TransferShipmentHeader);
                     GenerateXMLFile(TransferShipmentHeader, TempBlob);
+                    FileName := 'TransferShipment_' + TransferShipmentHeader."No." + '.xml';
                 end;
             else
                 Error('Not allowed %1', RecordRef.Number);
@@ -89,7 +92,7 @@ codeunit 72000 "SSAEDExport ETransport"
                 end;
                 ETransportLogEntry."Creation Date" := Today;
                 ETransportLogEntry."Creation Time" := Time;
-                ETransportLogEntry."Export Type" := ETransportLogEntry."Export Type"::"E-Transport";
+                ETransportLogEntry."Entry Type" := ETransportLogEntry."Entry Type"::"Export E-Transport";
                 ETransportLogEntry.Insert(true);
             until RecRef.Next = 0;
     end;
