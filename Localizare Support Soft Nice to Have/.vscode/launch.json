@@ -16,6 +16,24 @@
             "enableSqlInformationDebugger": true,
             "port": 22079,
             "schemaUpdateMode": "Synchronize"
+        },
+        {
+            "name": "Attach: Your own server",
+            "type": "al",
+            "request": "attach",
+            "environmentType": "OnPrem",
+            "server": "http://192.168.13.201:8080/BC220Localizare",
+            "serverInstance": "BC220Localizare",
+            "authentication": "UserPassword",
+            "breakOnError": "All",
+            "breakOnRecordWrite": "None",
+            "enableSqlInformationDebugger": true,
+            "enableLongRunningSqlStatements": true,
+            "longRunningSqlStatementsThreshold": 500,
+            "numberOfSqlStatements": 10,
+            "breakOnNext": "WebServiceClient",
+            "tenant": "default",
+            "sessionId": 2537
         }
     ]
 }
