@@ -44,6 +44,8 @@ codeunit 72007 "SSAEDANAF API Mgt"
         ResponseInStream: InStream;
     begin
 
+        CheckTokenValidity();
+
         Headers := Client.DefaultRequestHeaders;
         Headers.Add('Accept', '*/*');
         Headers.Add('Connection', 'keep-alive');
@@ -114,6 +116,7 @@ codeunit 72007 "SSAEDANAF API Mgt"
         Response: HttpResponseMessage;
         ResponseInStream: InStream;
     begin
+        CheckTokenValidity();
 
         Headers := Client.DefaultRequestHeaders;
         Headers.Add('Accept', '*/*');
@@ -177,6 +180,8 @@ codeunit 72007 "SSAEDANAF API Mgt"
         ResponseOutStream: OutStream;
     begin
 
+        CheckTokenValidity();
+
         Headers := Client.DefaultRequestHeaders;
         Headers.Add('Accept', '*/*');
         Headers.Add('Connection', 'keep-alive');
@@ -225,6 +230,8 @@ codeunit 72007 "SSAEDANAF API Mgt"
         Response: HttpResponseMessage;
         ResponseText: Text;
     begin
+
+        CheckTokenValidity();
 
         Headers := Client.DefaultRequestHeaders;
         Headers.Add('Accept', '*/*');
@@ -299,6 +306,92 @@ codeunit 72007 "SSAEDANAF API Mgt"
         LogEntry.Description := _DescriptionText;
         LogEntry."ID Descarcare" := _IDDescarcare;
         LogEntry.MODIFY(true);
+    end;
+
+    procedure RefreshToken(var _Rec: Record "SSAEDEDocuments Setup")
+    begin
+        _Rec.TESTFIELD("Access Token URL");
+
+        SendRequest_RefreshToken(_Rec);
+    end;
+
+    local procedure SendRequest_RefreshToken(var _Rec: Record "SSAEDEDocuments Setup")
+    var
+        TempBlobResponse: Codeunit "Temp Blob";
+        ResponseInStream: InStream;
+        BearerToken: Label 'Bearer %1', Locked = true;
+        Client: HttpClient;
+        Headers: HttpHeaders;
+        Response: HttpResponseMessage;
+        RequestContent: HttpContent;
+        ContentHeaders: HttpHeaders;
+        TypeHelper: Codeunit "Type Helper";
+        ResponseText: Text;
+        ContentText: Text;
+    begin
+
+        CheckTokenValidity();
+
+        Headers := Client.DefaultRequestHeaders;
+        Headers.Add('Accept', '*/*');
+        Headers.Add('Connection', 'keep-alive');
+        Headers.Add('Authorization', StrSubstNo(BearerToken, _Rec."Access Token"));
+        Headers.Add('Accept-Encoding', 'gzip, deflate, br');
+
+        ContentText := 'grant_type=refresh_token' +
+            '&refresh_token=' + TypeHelper.UriEscapeDataString(_Rec."Refresh Token") +
+            '&client_id=' + TypeHelper.UriEscapeDataString(_Rec."Client ID") +
+            '&client_secret=' + TypeHelper.UriEscapeDataString(_Rec."Client Secret");
+
+        RequestContent.WriteFrom(contentText);
+        RequestContent.GetHeaders(ContentHeaders);
+        if ContentHeaders.Contains('Content-Type') then
+            ContentHeaders.Remove('Content-Type');
+        ContentHeaders.Add('Content-Type', 'application/x-www-form-urlencoded');
+
+        if not Client.Post(_Rec."Authorization URL", RequestContent, Response) or (not Response.IsSuccessStatusCode()) then
+            Error(Response.ReasonPhrase);
+
+        TempBlobResponse.CreateInStream(ResponseInStream, TEXTENCODING::UTF8);
+        Response.Content.ReadAs(ResponseInStream);
+
+        Response.Content.ReadAs(ResponseText);
+
+        ParseXMLResponse_RefreshToken(ResponseText, _Rec);
+
+    end;
+
+    local procedure ParseXMLResponse_RefreshToken(_JSonText: Text; var _Rec: Record "SSAEDEDocuments Setup")
+    var
+        TempJSONBuffer: Record "JSON Buffer" temporary;
+    begin
+
+        TempJSONBuffer.ReadFromText(_JSonText);
+        TempJSONBuffer.GetPropertyValue(_Rec."Access Token", 'access_token');
+        TempJSONBuffer.GetPropertyValue(_Rec."Refresh Token", 'refresh_token');
+        TempJSONBuffer.GetIntegerPropertyValue(_Rec."Expires In", 'expires_in');
+        _Rec.VALIDATE("Access Token");
+    end;
+
+    local procedure CheckTokenValidity()
+    var
+        EFTSetup: Record "SSAEDEDocuments Setup";
+        DecVar: Decimal;
+        ExpirationDT: DateTime;
+    begin
+        EFTSetup.GET;
+
+        if EFTSetup."Authorization Time" <> 0DT then begin
+            DecVar := EFTSetup."Expires In";
+            DecVar := DecVar * 1000;
+            ExpirationDT := EFTSetup."Authorization Time" + DecVar;
+            if CALCDATE('<1D>', TODAY) < DT2DATE(ExpirationDT) then
+                exit;
+        end;
+
+        RefreshToken(EFTSetup);
+        EFTSetup.Modify();
+        Commit();
     end;
 }
 

@@ -74,6 +74,10 @@ page 72001 "SSAEDEDocuments Setup"
                 {
                     ToolTip = 'Token-ul de acces';
                 }
+                field("Refresh Token"; Rec."Refresh Token")
+                {
+                    ToolTip = 'Specifies the value of the Refresh Token field.';
+                }
             }
             group(EFactura)
             {
@@ -138,6 +142,29 @@ page 72001 "SSAEDEDocuments Setup"
 
     actions
     {
+        area(Processing)
+        {
+            action(RefreshToken)
+            {
+                Caption = 'Refresh Token';
+                Promoted = true;
+                Image = Refresh;
+                ToolTip = 'Update Token using Refresh Token';
+                ApplicationArea = All;
+                trigger OnAction()
+                var
+                    ANAFAPIMgt: Codeunit "SSAEDANAF API Mgt";
+                begin
+                    IF NOT CONFIRM('Update Token using Refresh Token?') THEN
+                        EXIT;
+                    ANAFAPIMgt.RefreshToken(Rec);
+                    CurrPage.UPDATE;
+
+                    MESSAGE('Token has been updated.');
+                end;
+            }
+
+        }
     }
 
     trigger OnOpenPage()

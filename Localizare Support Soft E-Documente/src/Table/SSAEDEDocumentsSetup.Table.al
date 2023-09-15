@@ -66,6 +66,12 @@ table 72001 "SSAEDEDocuments Setup"
         {
             Caption = 'Access Token';
             DataClassification = CustomerContent;
+            trigger OnValidate()
+            begin
+                Validate("Authorization Time", CurrentDateTime);
+                if "Expires In" = 0 then
+                    Validate("Expires In", 7776000);
+            end;
         }
         field(100; "Refresh Token"; Text[250])
         {
