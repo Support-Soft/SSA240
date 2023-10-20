@@ -1,299 +1,327 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en-US" target-language="ro-RO" original="Localizare Support Soft Layouturi Comerciale">
+  <file datatype="xml" source-language="en-US" target-language="ro-RO" original="Localizare Support Soft Layouturi Comerciale.g.xlf">
     <body>
       <group id="body">
         <trans-unit id="Report 3057320000 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Cash Receipt Report</source>
-          <target state="translated">Raport Chitanta</target>
+          <target>Raport Chitanta</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash receipt - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 3057320000 - NamedType 76023724" size-unit="char" translate="yes" xml:space="preserve">
           <source>meaning</source>
-          <target state="translated">adica</target>
+          <target>adica</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash receipt - NamedType adicaCaption</note>
         </trans-unit>
         <trans-unit id="Report 3057320000 - NamedType 3619608386" size-unit="char" translate="yes" xml:space="preserve">
           <source>Address</source>
-          <target state="translated">Adresă</target>
+          <target>Adresă</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash receipt - NamedType AdresaCaption</note>
         </trans-unit>
         <trans-unit id="Report 3057320000 - NamedType 2906978513" size-unit="char" translate="yes" xml:space="preserve">
           <source>Capital Stock</source>
-          <target state="translated">Capital social</target>
+          <target>Capital social</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash receipt - NamedType CapSocialCaption</note>
         </trans-unit>
         <trans-unit id="Report 3057320000 - NamedType 1240670659" size-unit="char" translate="yes" xml:space="preserve">
           <source>Cashier person</source>
-          <target state="translated">Casier</target>
+          <target>Casier</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash receipt - NamedType casierCaption</note>
         </trans-unit>
         <trans-unit id="Report 3057320000 - NamedType 512754568" size-unit="char" translate="yes" xml:space="preserve">
           <source>Cash receipt no.</source>
-          <target state="translated">Chitanta nr.</target>
+          <target>Chitanta nr.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash receipt - NamedType ChitNrCaption</note>
         </trans-unit>
         <trans-unit id="Report 3057320000 - NamedType 2488382548" size-unit="char" translate="yes" xml:space="preserve">
           <source>Commerce Trade No</source>
-          <target state="translated">Nr. inreg. Reg. Comertului</target>
+          <target>Nr. inreg. Reg. Comertului</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash receipt - NamedType ComTradeNoCaption</note>
         </trans-unit>
         <trans-unit id="Report 3057320000 - NamedType 1198353586" size-unit="char" translate="yes" xml:space="preserve">
           <source>Date</source>
-          <target state="translated">Data</target>
+          <target>Data</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash receipt - NamedType DataCaption</note>
         </trans-unit>
         <trans-unit id="Report 3057320000 - NamedType 1321683047" size-unit="char" translate="yes" xml:space="preserve">
           <source>Received from</source>
-          <target state="translated">Am primit de la</target>
+          <target>Am primit de la</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash receipt - NamedType PrimitCaption</note>
         </trans-unit>
         <trans-unit id="Report 3057320000 - NamedType 734784473" size-unit="char" translate="yes" xml:space="preserve">
           <source>Work Address</source>
-          <target state="translated">Punct de lucru</target>
+          <target>Punct de lucru</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash receipt - NamedType PunctLucruCaption</note>
         </trans-unit>
         <trans-unit id="Report 3057320000 - NamedType 2988341632" size-unit="char" translate="yes" xml:space="preserve">
           <source>Representing</source>
-          <target state="translated">reprezentand</target>
+          <target>reprezentand</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash receipt - NamedType reprezCaption</note>
         </trans-unit>
         <trans-unit id="Report 3057320000 - NamedType 1733256585" size-unit="char" translate="yes" xml:space="preserve">
           <source>Documents:</source>
-          <target state="translated">Documentele:</target>
+          <target>Documentele:</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash receipt - NamedType Reprezentand1</note>
         </trans-unit>
         <trans-unit id="Report 3057320000 - NamedType 1240982385" size-unit="char" translate="yes" xml:space="preserve">
           <source>Social Address</source>
-          <target state="translated">Sediu social</target>
+          <target>Sediu social</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash receipt - NamedType SedSocialCaption</note>
         </trans-unit>
         <trans-unit id="Report 3057320000 - NamedType 3933760952" size-unit="char" translate="yes" xml:space="preserve">
           <source>Amount</source>
-          <target state="translated">Sumă</target>
+          <target>Sumă</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash receipt - NamedType SumaCaption</note>
         </trans-unit>
         <trans-unit id="Report 3057320000 - NamedType 3833844008" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT REg. No.</source>
-          <target state="translated">Cod unic de indentificare</target>
+          <target>Cod unic de indentificare</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash receipt - NamedType VATRegNoCaption</note>
         </trans-unit>
+        <trans-unit id="Report 3057320000 - Control 105728556 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Document Date field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash receipt - Control Data plata - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Report 3057320000 - Control 105728556 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Document Date</source>
-          <target state="translated">Data documentului</target>
+          <target>Data documentului</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash receipt - Control Data plata - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 3057320000 - Control 1555365197 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Document No. field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash receipt - Control Nr document plata - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Report 3057320000 - Control 1555365197 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Document No.</source>
-          <target state="translated">Nr. document</target>
+          <target>Nr. document</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash receipt - Control Nr document plata - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 4217313267 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Cash withdrawal</source>
-          <target state="translated">Dispozitie plata/incasare&lt;</target>
+          <target>Dispozitie plata/incasare&lt;</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash withdrawal. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 4217313267 - NamedType 76023724" size-unit="char" translate="yes" xml:space="preserve">
           <source>meaning</source>
-          <target state="translated">adica</target>
+          <target>adica</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash withdrawal. - NamedType adicaCaption</note>
         </trans-unit>
         <trans-unit id="Report 4217313267 - NamedType 3619608386" size-unit="char" translate="yes" xml:space="preserve">
           <source>Address</source>
-          <target state="translated">Adresă</target>
+          <target>Adresă</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash withdrawal. - NamedType AdresaCaption</note>
         </trans-unit>
         <trans-unit id="Report 4217313267 - NamedType 2906978513" size-unit="char" translate="yes" xml:space="preserve">
           <source>Capital Stock</source>
-          <target state="translated">Capital social</target>
+          <target>Capital social</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash withdrawal. - NamedType CapSocialCaption</note>
         </trans-unit>
         <trans-unit id="Report 4217313267 - NamedType 1240670659" size-unit="char" translate="yes" xml:space="preserve">
           <source>Casier</source>
-          <target state="translated">Casier</target>
+          <target>Casier</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash withdrawal. - NamedType casierCaption</note>
         </trans-unit>
         <trans-unit id="Report 4217313267 - NamedType 512754568" size-unit="char" translate="yes" xml:space="preserve">
           <source>Cash receipt no.</source>
-          <target state="translated">Chitanta nr.</target>
+          <target>Chitanta nr.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash withdrawal. - NamedType ChitNrCaption</note>
         </trans-unit>
         <trans-unit id="Report 4217313267 - NamedType 3951992030" size-unit="char" translate="yes" xml:space="preserve">
           <source>Compartiment financiar contabil</source>
-          <target state="translated">Compartiment financiar contabil</target>
+          <target>Compartiment financiar contabil</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash withdrawal. - NamedType Compartim</note>
         </trans-unit>
         <trans-unit id="Report 4217313267 - NamedType 2488382548" size-unit="char" translate="yes" xml:space="preserve">
           <source>Commerce Trade No</source>
-          <target state="translated">Nr. inreg. Reg. Comertului</target>
+          <target>Nr. inreg. Reg. Comertului</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash withdrawal. - NamedType ComTradeNoCaption</note>
         </trans-unit>
         <trans-unit id="Report 4217313267 - NamedType 2816927052" size-unit="char" translate="yes" xml:space="preserve">
           <source>Conducatorul Unitatii</source>
-          <target state="translated">Conducatorul Unitatii</target>
+          <target>Conducatorul Unitatii</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash withdrawal. - NamedType Conducator</note>
         </trans-unit>
         <trans-unit id="Report 4217313267 - NamedType 1447994436" size-unit="char" translate="yes" xml:space="preserve">
           <source>Data</source>
-          <target state="translated">Date</target>
+          <target>Date</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash withdrawal. - NamedType Data</note>
         </trans-unit>
         <trans-unit id="Report 4217313267 - NamedType 1198353586" size-unit="char" translate="yes" xml:space="preserve">
           <source>Date</source>
-          <target state="translated">Data</target>
+          <target>Data</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash withdrawal. - NamedType DataCaption</note>
         </trans-unit>
         <trans-unit id="Report 4217313267 - NamedType 1804362909" size-unit="char" translate="yes" xml:space="preserve">
           <source>Din</source>
-          <target state="translated">Din</target>
+          <target>Din</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash withdrawal. - NamedType Din</note>
         </trans-unit>
         <trans-unit id="Report 4217313267 - NamedType 3412949637" size-unit="char" translate="yes" xml:space="preserve">
           <source>Dispozitie De</source>
-          <target state="translated">Dispozitie De</target>
+          <target>Dispozitie De</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash withdrawal. - NamedType DispozitieDe</note>
         </trans-unit>
         <trans-unit id="Report 4217313267 - NamedType 3707269026" size-unit="char" translate="yes" xml:space="preserve">
           <source>Functie(Calitate)</source>
-          <target state="translated">Functie(Calitate)</target>
+          <target>Functie(Calitate)</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash withdrawal. - NamedType Functie</note>
         </trans-unit>
         <trans-unit id="Report 4217313267 - NamedType 2287081202" size-unit="char" translate="yes" xml:space="preserve">
           <source>Incasat</source>
-          <target state="translated">Incasat</target>
+          <target>Incasat</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash withdrawal. - NamedType IncasatCpn</note>
         </trans-unit>
         <trans-unit id="Report 4217313267 - NamedType 2175480917" size-unit="char" translate="yes" xml:space="preserve">
           <source>Nume si Prenume</source>
-          <target state="translated">Nume si Prenume</target>
+          <target>Nume si Prenume</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash withdrawal. - NamedType Nume</note>
         </trans-unit>
         <trans-unit id="Report 4217313267 - NamedType 1552661595" size-unit="char" translate="yes" xml:space="preserve">
           <source>Platit</source>
-          <target state="translated">Platit</target>
+          <target>Platit</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash withdrawal. - NamedType PlatitCpn</note>
         </trans-unit>
         <trans-unit id="Report 4217313267 - NamedType 1321683047" size-unit="char" translate="yes" xml:space="preserve">
           <source>Received from</source>
-          <target state="translated">Am primit de la</target>
+          <target>Am primit de la</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash withdrawal. - NamedType PrimitCaption</note>
         </trans-unit>
         <trans-unit id="Report 4217313267 - NamedType 734784473" size-unit="char" translate="yes" xml:space="preserve">
           <source>Work Address</source>
-          <target state="translated">Punct de lucru</target>
+          <target>Punct de lucru</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash withdrawal. - NamedType PunctLucruCaption</note>
         </trans-unit>
         <trans-unit id="Report 4217313267 - NamedType 2988341632" size-unit="char" translate="yes" xml:space="preserve">
           <source>representing</source>
-          <target state="translated">reprezentand</target>
+          <target>reprezentand</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash withdrawal. - NamedType reprezCaption</note>
         </trans-unit>
         <trans-unit id="Report 4217313267 - NamedType 2132725405" size-unit="char" translate="yes" xml:space="preserve">
           <source>RON</source>
-          <target state="translated">RON</target>
+          <target>RON</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash withdrawal. - NamedType RON</note>
         </trans-unit>
         <trans-unit id="Report 4217313267 - NamedType 78657113" size-unit="char" translate="yes" xml:space="preserve">
           <source>Scopul Platii</source>
-          <target state="translated">Scopul Platii</target>
+          <target>Scopul Platii</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash withdrawal. - NamedType ScopulPlatii</note>
         </trans-unit>
         <trans-unit id="Report 4217313267 - NamedType 1240982385" size-unit="char" translate="yes" xml:space="preserve">
           <source>Social Address</source>
-          <target state="translated">Sediu social</target>
+          <target>Sediu social</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash withdrawal. - NamedType SedSocialCaption</note>
         </trans-unit>
         <trans-unit id="Report 4217313267 - NamedType 4125122450" size-unit="char" translate="yes" xml:space="preserve">
           <source>Semnatura</source>
-          <target state="translated">Semnatura</target>
+          <target>Semnatura</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash withdrawal. - NamedType Semnatura</note>
         </trans-unit>
         <trans-unit id="Report 4217313267 - NamedType 3820424590" size-unit="char" translate="yes" xml:space="preserve">
           <source>Suma</source>
-          <target state="translated">Suma</target>
+          <target>Suma</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash withdrawal. - NamedType suma</note>
         </trans-unit>
         <trans-unit id="Report 4217313267 - NamedType 3933760952" size-unit="char" translate="yes" xml:space="preserve">
           <source>Amount</source>
-          <target state="translated">Sumă</target>
+          <target>Sumă</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash withdrawal. - NamedType SumaCaption</note>
         </trans-unit>
         <trans-unit id="Report 4217313267 - NamedType 2568108405" size-unit="char" translate="yes" xml:space="preserve">
           <source>suma de</source>
-          <target state="translated">suma de</target>
+          <target>suma de</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash withdrawal. - NamedType SumaDe</note>
         </trans-unit>
         <trans-unit id="Report 4217313267 - NamedType 2492529962" size-unit="char" translate="yes" xml:space="preserve">
           <source>Unitate</source>
-          <target state="translated">Unitate</target>
+          <target>Unitate</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash withdrawal. - NamedType Unitate</note>
         </trans-unit>
         <trans-unit id="Report 4217313267 - NamedType 3833844008" size-unit="char" translate="yes" xml:space="preserve">
           <source>Cod unic de indentificare</source>
-          <target state="translated">Cod unic de indentificare</target>
+          <target>Cod unic de indentificare</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash withdrawal. - NamedType VATRegNoCaption</note>
         </trans-unit>
         <trans-unit id="Report 4217313267 - NamedType 529961589" size-unit="char" translate="yes" xml:space="preserve">
           <source>Viza de control financiar preventiv</source>
-          <target state="translated">Viza de control financiar preventiv</target>
+          <target>Viza de control financiar preventiv</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash withdrawal. - NamedType VizaControl</note>
         </trans-unit>
+        <trans-unit id="Report 4217313267 - Control 105728556 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Data plata field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash withdrawal. - Control Data plata - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Report 4217313267 - Control 105728556 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Data plata</source>
-          <target state="translated">Data plata</target>
+          <target>Data plata</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash withdrawal. - Control Data plata - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 4217313267 - Control 1555365197 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Nr document plata field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash withdrawal. - Control Nr document plata - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Report 4217313267 - Control 1555365197 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Nr document plata</source>
-          <target state="translated">Nr document plata</target>
+          <target>Nr document plata</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash withdrawal. - Control Nr document plata - Property Caption</note>
         </trans-unit>
@@ -353,7 +381,7 @@
         </trans-unit>
         <trans-unit id="Report 2087204317 - NamedType 1542941690" size-unit="char" translate="yes" xml:space="preserve">
           <source>Date (dd.mm.yyyy)</source>
-          <target state="translated">Data (zz.ll.aaaa)</target>
+          <target>Data (zz.ll.aaaa)</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Sales - Credit Memo - NamedType DateLbl</note>
         </trans-unit>
@@ -419,7 +447,7 @@
         </trans-unit>
         <trans-unit id="Report 2087204317 - NamedType 3672075533" size-unit="char" translate="yes" xml:space="preserve">
           <source>Nr. Crt.</source>
-          <target state="translated">Nr. Crt.</target>
+          <target>Nr. Crt.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Sales - Credit Memo - NamedType NrCrtLbl</note>
         </trans-unit>
@@ -449,7 +477,7 @@
         </trans-unit>
         <trans-unit id="Report 2087204317 - NamedType 730897359" size-unit="char" translate="yes" xml:space="preserve">
           <source>Storno Fiscal Invoice</source>
-          <target state="translated">Factura Fiscala Storno</target>
+          <target>Factura Fiscala Storno</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Sales - Credit Memo - NamedType SalesCreditMemoLbl</note>
         </trans-unit>
@@ -497,7 +525,7 @@
         </trans-unit>
         <trans-unit id="Report 2087204317 - NamedType 4270536756" size-unit="char" translate="yes" xml:space="preserve">
           <source>Storno Invoice</source>
-          <target state="translated">Factură Storno</target>
+          <target>Factură Storno</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Sales - Credit Memo - NamedType StornoInvoiceLbl</note>
         </trans-unit>
@@ -515,7 +543,7 @@
         </trans-unit>
         <trans-unit id="Report 2087204317 - NamedType 2996307807" size-unit="char" translate="yes" xml:space="preserve">
           <source>Unit of Measure</source>
-          <target state="translated">Unitate de masura</target>
+          <target>Unitate de masura</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Sales - Credit Memo - NamedType UnitofMeasureLbl</note>
         </trans-unit>
@@ -683,7 +711,7 @@
         </trans-unit>
         <trans-unit id="Report 3327960714 - NamedType 1542941690" size-unit="char" translate="yes" xml:space="preserve">
           <source>Date (dd.mm.yyyy)</source>
-          <target state="translated">Data (zz.ll.aaaa)</target>
+          <target>Data (zz.ll.aaaa)</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Standard Sales - Invoice - NamedType DateLbl</note>
         </trans-unit>
@@ -731,7 +759,7 @@
         </trans-unit>
         <trans-unit id="Report 3327960714 - NamedType 259914550" size-unit="char" translate="yes" xml:space="preserve">
           <source>Fiscal Invoice No.</source>
-          <target state="translated">Factura fiscala nr.</target>
+          <target>Factura fiscala nr.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Standard Sales - Invoice - NamedType InvNoLbl</note>
         </trans-unit>
@@ -773,7 +801,7 @@
         </trans-unit>
         <trans-unit id="Report 3327960714 - NamedType 3672075533" size-unit="char" translate="yes" xml:space="preserve">
           <source>Nr. Crt.</source>
-          <target state="translated">Nr. Crt.</target>
+          <target>Nr. Crt.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Standard Sales - Invoice - NamedType NrCrtLbl</note>
         </trans-unit>
@@ -845,7 +873,7 @@
         </trans-unit>
         <trans-unit id="Report 3327960714 - NamedType 1989518965" size-unit="char" translate="yes" xml:space="preserve">
           <source>Fiscal Invoice</source>
-          <target state="translated">Factura fiscala</target>
+          <target>Factura fiscala</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Standard Sales - Invoice - NamedType SalesInvoiceLbl</note>
         </trans-unit>
@@ -899,7 +927,7 @@
         </trans-unit>
         <trans-unit id="Report 3327960714 - NamedType 2996307807" size-unit="char" translate="yes" xml:space="preserve">
           <source>Unit of Measure</source>
-          <target state="translated">Unitate de masura</target>
+          <target>Unitate de masura</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Standard Sales - Invoice - NamedType UnitofMeasureLbl</note>
         </trans-unit>

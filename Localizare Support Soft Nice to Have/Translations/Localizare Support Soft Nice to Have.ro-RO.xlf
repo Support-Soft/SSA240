@@ -1,785 +1,1433 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en-US" target-language="ro-RO" original="Localizare Support Soft Nice to Have">
+  <file datatype="xml" source-language="en-US" target-language="ro-RO" original="Localizare Support Soft Nice to Have.g.xlf">
     <body>
       <group id="body">
         <trans-unit id="Table 817196585 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Purch. Rcpt. Header</source>
-          <target state="translated">Antet receptie cump.</target>
+          <target>Antet receptie cump.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Purch. Rcpt. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 817196585 - Field 1750733095 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Buy-from Contact</source>
-          <target state="translated">Cumparare-de la contact</target>
+          <target>Cumparare-de la contact</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Purch. Rcpt. - Field Buy-from Contact - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 817196585 - Field 2931503505 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Buy-from Country/Region Code</source>
-          <target state="translated">Cumparare-de la cod tara/regiune</target>
+          <target>Cumparare-de la cod tara/regiune</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Purch. Rcpt. - Field Buy-from Country/Region Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 817196585 - Field 852404356 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Buy-from Post Code</source>
-          <target state="translated">Cumparare-de la cod postal</target>
+          <target>Cumparare-de la cod postal</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Purch. Rcpt. - Field Buy-from Post Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 817196585 - Field 3230600482 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Buy-from Vendor Name</source>
-          <target state="translated">Cumparare-de la nume furnizor</target>
+          <target>Cumparare-de la nume furnizor</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Purch. Rcpt. - Field Buy-from Vendor Name - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 817196585 - Field 3792369418 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Buy-from Vendor No.</source>
-          <target state="translated">Cumparare-de la furnizor nr.</target>
+          <target>Cumparare-de la furnizor nr.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Purch. Rcpt. - Field Buy-from Vendor No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 817196585 - Field 2161572060 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Location Code</source>
-          <target state="translated">Cod locaţie</target>
+          <target>Cod locaţie</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Purch. Rcpt. - Field Location Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 817196585 - Field 4200184881 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No.</source>
-          <target state="translated">Nr.</target>
+          <target>Nr.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Purch. Rcpt. - Field No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 817196585 - Field 3946380207 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Order Address Code</source>
-          <target state="translated">Cod adresa comanda</target>
+          <target>Cod adresa comanda</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Purch. Rcpt. - Field Order Address Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 817196585 - Field 2202932243 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Order No.</source>
-          <target state="translated">Nr. comanda</target>
+          <target>Nr. comanda</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Purch. Rcpt. - Field Order No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 817196585 - Field 1970704690 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Pay-to Contact</source>
-          <target state="translated">Plata-la contact</target>
+          <target>Plata-la contact</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Purch. Rcpt. - Field Pay-to Contact - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 817196585 - Field 4079742056 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Pay-to Country/Region Code</source>
-          <target state="translated">Plata-la cod tara/regiune</target>
+          <target>Plata-la cod tara/regiune</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Purch. Rcpt. - Field Pay-to Country/Region Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 817196585 - Field 3472859787 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Pay-to Name</source>
-          <target state="translated">Plata-la nume</target>
+          <target>Plata-la nume</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Purch. Rcpt. - Field Pay-to Name - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 817196585 - Field 1168556525 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Pay-to Post Code</source>
-          <target state="translated">Plata-la cod postal</target>
+          <target>Plata-la cod postal</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Purch. Rcpt. - Field Pay-to Post Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 817196585 - Field 3941277175 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Pay-to Vendor No.</source>
-          <target state="translated">Plata-la furnizor nr.</target>
+          <target>Plata-la furnizor nr.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Purch. Rcpt. - Field Pay-to Vendor No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 817196585 - Field 3710982960 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Posting Date</source>
-          <target state="translated">Data inreg.</target>
+          <target>Data inreg.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Purch. Rcpt. - Field Posting Date - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 817196585 - Field 801304080 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Purchaser Code</source>
-          <target state="translated">Cod cumparator</target>
+          <target>Cod cumparator</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Purch. Rcpt. - Field Purchaser Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 817196585 - Field 993414011 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Ship-to Code</source>
-          <target state="translated">Livrare-la cod</target>
+          <target>Livrare-la cod</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Purch. Rcpt. - Field Ship-to Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 817196585 - Field 929198632 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Ship-to Contact</source>
-          <target state="translated">Livrare-la contact</target>
+          <target>Livrare-la contact</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Purch. Rcpt. - Field Ship-to Contact - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 817196585 - Field 3354576322 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Ship-to Country/Region Code</source>
-          <target state="translated">Livrare-la cod tara/regiune</target>
+          <target>Livrare-la cod tara/regiune</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Purch. Rcpt. - Field Ship-to Country/Region Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 817196585 - Field 2743501653 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Ship-to Name</source>
-          <target state="translated">Livrare-la nume</target>
+          <target>Livrare-la nume</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Purch. Rcpt. - Field Ship-to Name - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 817196585 - Field 3172878019 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Ship-to Post Code</source>
-          <target state="translated">Livrare-la cod postal</target>
+          <target>Livrare-la cod postal</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Purch. Rcpt. - Field Ship-to Post Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 817196585 - Field 1577567912 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shortcut Dimension 1 Code</source>
-          <target state="translated">Comandă rapidă cod dimens. 1</target>
+          <target>Comandă rapidă cod dimens. 1</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Purch. Rcpt. - Field Shortcut Dimension 1 Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 817196585 - Field 1003760969 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shortcut Dimension 2 Code</source>
-          <target state="translated">Comandă rapidă cod dimens. 2</target>
+          <target>Comandă rapidă cod dimens. 2</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Purch. Rcpt. - Field Shortcut Dimension 2 Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 284772200 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Non-Invoiced Sales Shipment</source>
-          <target state="translated">Livrari Vanzari Ne-facturate</target>
+          <target>Livrari Vanzari Ne-facturate</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Sales Ship - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 284772200 - Field 4064815791 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bill-to Contact</source>
-          <target state="translated">Nota de plata-la contact</target>
+          <target>Nota de plata-la contact</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Sales Ship - Field Bill-to Contact - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 284772200 - Field 2096911897 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bill-to Country/Region Code</source>
-          <target state="translated">Nota de plata-la cod tara/regiune</target>
+          <target>Nota de plata-la cod tara/regiune</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Sales Ship - Field Bill-to Country/Region Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 284772200 - Field 2965034906 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bill-to Customer No.</source>
-          <target state="translated">Nota de plata-la client nr.</target>
+          <target>Nota de plata-la client nr.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Sales Ship - Field Bill-to Customer No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 284772200 - Field 240204966 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bill-to Name</source>
-          <target state="translated">Nota de plata-la nume</target>
+          <target>Nota de plata-la nume</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Sales Ship - Field Bill-to Name - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 284772200 - Field 675862156 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bill-to Post Code</source>
-          <target state="translated">Nota de plata-la cod postal</target>
+          <target>Nota de plata-la cod postal</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Sales Ship - Field Bill-to Post Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 284772200 - Field 4198939294 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Currency Code</source>
-          <target state="translated">Cod valută</target>
+          <target>Cod valută</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Sales Ship - Field Currency Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 284772200 - Field 2161572060 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Location Code</source>
-          <target state="translated">Cod locaţie</target>
+          <target>Cod locaţie</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Sales Ship - Field Location Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 284772200 - Field 4200184881 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No.</source>
-          <target state="translated">Nr.</target>
+          <target>Nr.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Sales Ship - Field No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 284772200 - Field 2202932243 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Order No.</source>
-          <target state="translated">Nr. comanda</target>
+          <target>Nr. comanda</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Sales Ship - Field Order No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 284772200 - Field 3710982960 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Posting Date</source>
-          <target state="translated">Data inreg.</target>
+          <target>Data inreg.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Sales Ship - Field Posting Date - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 284772200 - Field 553464652 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Salesperson Code</source>
-          <target state="translated">Cod agent de vânzări</target>
+          <target>Cod agent de vânzări</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Sales Ship - Field Salesperson Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 284772200 - Field 1006519668 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Sell-to Contact</source>
-          <target state="translated">Vanzare-la contact</target>
+          <target>Vanzare-la contact</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Sales Ship - Field Sell-to Contact - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 284772200 - Field 3434865006 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Sell-to Country/Region Code</source>
-          <target state="translated">Vanzare-la cod tara/regiune</target>
+          <target>Vanzare-la cod tara/regiune</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Sales Ship - Field Sell-to Country/Region Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 284772200 - Field 1474036805 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Sell-to Customer Name</source>
-          <target state="translated">Vanzare-la nume client</target>
+          <target>Vanzare-la nume client</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Sales Ship - Field Sell-to Customer Name - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 284772200 - Field 1225278069 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Sell-to Customer No.</source>
-          <target state="translated">Vanzare-la client nr.</target>
+          <target>Vanzare-la client nr.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Sales Ship - Field Sell-to Customer No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 284772200 - Field 709296807 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Sell-to Post Code</source>
-          <target state="translated">Vanzare-la cod postal</target>
+          <target>Vanzare-la cod postal</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Sales Ship - Field Sell-to Post Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 284772200 - Field 993414011 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Ship-to Code</source>
-          <target state="translated">Livrare-la cod</target>
+          <target>Livrare-la cod</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Sales Ship - Field Ship-to Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 284772200 - Field 929198632 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Ship-to Contact</source>
-          <target state="translated">Livrare-la contact</target>
+          <target>Livrare-la contact</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Sales Ship - Field Ship-to Contact - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 284772200 - Field 3354576322 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Ship-to Country/Region Code</source>
-          <target state="translated">Livrare-la cod tara/regiune</target>
+          <target>Livrare-la cod tara/regiune</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Sales Ship - Field Ship-to Country/Region Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 284772200 - Field 2743501653 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Ship-to Name</source>
-          <target state="translated">Livrare-la nume</target>
+          <target>Livrare-la nume</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Sales Ship - Field Ship-to Name - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 284772200 - Field 3172878019 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Ship-to Post Code</source>
-          <target state="translated">Livrare-la cod postal</target>
+          <target>Livrare-la cod postal</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Sales Ship - Field Ship-to Post Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 284772200 - Field 1577567912 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shortcut Dimension 1 Code</source>
-          <target state="translated">Comandă rapidă cod dimens. 1</target>
+          <target>Comandă rapidă cod dimens. 1</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Sales Ship - Field Shortcut Dimension 1 Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 284772200 - Field 1003760969 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shortcut Dimension 2 Code</source>
-          <target state="translated">Comandă rapidă cod dimens. 2</target>
+          <target>Comandă rapidă cod dimens. 2</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSA Non-Invoiced Sales Ship - Field Shortcut Dimension 2 Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Codeunit 3340695887 - NamedType 652464844" size-unit="char" translate="yes" xml:space="preserve">
           <source>Currency Exchange Rate is missing for: %1</source>
-          <target state="translated">Lipseste cursul de schimb pentru: %1</target>
+          <target>Lipseste cursul de schimb pentru: %1</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSA Actualizare Cursuri BNR - NamedType Text50000</note>
         </trans-unit>
         <trans-unit id="Codeunit 3340695887 - NamedType 14768227" size-unit="char" translate="yes" xml:space="preserve">
           <source>BNR Exchange Rates not imported.</source>
-          <target state="translated">Importul Cursului de schimb BNR nu a reusit:</target>
+          <target>Importul Cursului de schimb BNR nu a reusit:</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSA Actualizare Cursuri BNR - NamedType Text50001</note>
         </trans-unit>
-        <trans-unit id="Codeunit 2034032412 - NamedType 328726125" size-unit="char" translate="yes" xml:space="preserve">
-          <source>{}"'[]</source>
-          <target state="translated">{}"'[]</target>
+        <trans-unit id="Codeunit 3340695887 - Method 3890320205 - NamedType 982552602" size-unit="char" translate="yes" xml:space="preserve">
+          <source>BNR Rates could not be imported.</source>
+          <target/>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSA Interogare TVA Anaf - NamedType FormatChar</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSA Actualizare Cursuri BNR - Method New_ImportCurrencyExchangeRates - NamedType ImportRatesLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3340695887 - Method 3890320205 - NamedType 3861790418" size-unit="char" translate="yes" xml:space="preserve">
+          <source>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;DataSet xmlns="http://www.bnr.ro/xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bnr.ro/xsd nbrfxrates.xsd"&gt;&lt;Header&gt;&lt;Publisher&gt;National Bank of Romania&lt;/Publisher&gt;&lt;PublishingDate&gt;2023-05-18&lt;/PublishingDate&gt;&lt;MessageType&gt;DR&lt;/MessageType&gt;&lt;/Header&gt;&lt;Body&gt;&lt;Subject&gt;Reference rates&lt;/Subject&gt;&lt;OrigCurrency&gt;RON&lt;/OrigCurrency&gt;&lt;Cube date="2023-05-18"&gt;&lt;Rate currency="AED"&gt;1.2521&lt;/Rate&gt;&lt;Rate currency="AUD"&gt;3.0515&lt;/Rate&gt;&lt;Rate currency="BGN"&gt;2.5427&lt;/Rate&gt;&lt;Rate currency="BRL"&gt;0.9308&lt;/Rate&gt;&lt;Rate currency="CAD"&gt;3.4124&lt;/Rate&gt;&lt;Rate currency="CHF"&gt;5.1061&lt;/Rate&gt;&lt;Rate currency="CNY"&gt;0.6539&lt;/Rate&gt;&lt;Rate currency="CZK"&gt;0.2098&lt;/Rate&gt;&lt;Rate currency="DKK"&gt;0.6677&lt;/Rate&gt;&lt;Rate currency="EGP"&gt;0.1488&lt;/Rate&gt;&lt;Rate currency="EUR"&gt;4.9731&lt;/Rate&gt;&lt;Rate currency="GBP"&gt;5.7169&lt;/Rate&gt;&lt;Rate currency="HUF" multiplier="100"&gt;1.3335&lt;/Rate&gt;&lt;Rate currency="INR"&gt;0.0557&lt;/Rate&gt;&lt;Rate currency="JPY" multiplier="100"&gt;3.3370&lt;/Rate&gt;&lt;Rate currency="KRW" multiplier="100"&gt;0.3442&lt;/Rate&gt;&lt;Rate currency="MDL"&gt;0.2589&lt;/Rate&gt;&lt;Rate currency="MXN"&gt;0.2598&lt;/Rate&gt;&lt;Rate currency="NOK"&gt;0.4238&lt;/Rate&gt;&lt;Rate currency="NZD"&gt;2.8697&lt;/Rate&gt;&lt;Rate currency="PLN"&gt;1.0958&lt;/Rate&gt;&lt;Rate currency="RSD"&gt;0.0424&lt;/Rate&gt;&lt;Rate currency="RUB"&gt;0.0575&lt;/Rate&gt;&lt;Rate currency="SEK"&gt;0.4382&lt;/Rate&gt;&lt;Rate currency="THB"&gt;0.1338&lt;/Rate&gt;&lt;Rate currency="TRY"&gt;0.2326&lt;/Rate&gt;&lt;Rate currency="UAH"&gt;0.1245&lt;/Rate&gt;&lt;Rate currency="USD"&gt;4.5975&lt;/Rate&gt;&lt;Rate currency="XAU"&gt;292.2952&lt;/Rate&gt;&lt;Rate currency="XDR"&gt;6.1469&lt;/Rate&gt;&lt;Rate currency="ZAR"&gt;0.2371&lt;/Rate&gt;&lt;/Cube&gt;&lt;/Body&gt;&lt;/DataSet&gt;</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSA Actualizare Cursuri BNR - Method New_ImportCurrencyExchangeRates - NamedType TestBNRLabel</note>
         </trans-unit>
         <trans-unit id="Codeunit 2034032412 - NamedType 2476940767" size-unit="char" translate="yes" xml:space="preserve">
           <source>[{"cui":%1,"data":"%2"}]</source>
-          <target state="translated">[{"cui":%1,"data":"%2"}]</target>
+          <target>[{"cui":%1,"data":"%2"}]</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSA Interogare TVA Anaf - NamedType Text000</note>
         </trans-unit>
-        <trans-unit id="Codeunit 2034032412 - NamedType 3869652980" size-unit="char" translate="yes" xml:space="preserve">
-          <source>","</source>
-          <target state="translated">","</target>
+        <trans-unit id="Codeunit 2034032412 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
+          <source>"cod":200,</source>
+          <target/>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSA Interogare TVA Anaf - NamedType TextSeparator</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSA Interogare TVA Anaf - NamedType Text002</note>
         </trans-unit>
-        <trans-unit id="Codeunit 2034032412 - NamedType 1481131875" size-unit="char" translate="yes" xml:space="preserve">
-          <source>,"</source>
-          <target state="translated">,"</target>
+        <trans-unit id="Codeunit 2034032412 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
+          <source>"message":"SUCCESS",</source>
+          <target/>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSA Interogare TVA Anaf - NamedType TextSeparator1</note>
-        </trans-unit>
-        <trans-unit id="Codeunit 1453081613 - NamedType 328726125" size-unit="char" translate="yes" xml:space="preserve">
-          <source>{}"'[]</source>
-          <target state="translated">{}"'[]</target>
-          <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSA VerificareTVA.ro - NamedType FormatChar</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSA Interogare TVA Anaf - NamedType Text003</note>
         </trans-unit>
         <trans-unit id="Codeunit 1453081613 - NamedType 1695921936" size-unit="char" translate="yes" xml:space="preserve">
           <source>nume=%1&amp;pwd=%2&amp;cui=%3&amp;data=%4-%5-%6</source>
-          <target state="translated">nume=%1&amp;pwd=%2&amp;cui=%3&amp;data=%4-%5-%6</target>
+          <target>nume=%1&amp;pwd=%2&amp;cui=%3&amp;data=%4-%5-%6</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit SSA VerificareTVA.ro - NamedType RequestStringTemplate</note>
         </trans-unit>
+        <trans-unit id="Page 3245501198 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Non-Invoiced Sales Shipment</source>
+          <target>Livrari Vanzari Ne-facturate</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Inv Sales Shipment - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3245501198 - NamedType 2476940767" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Do you want to post the invoice?</source>
+          <target>Doriti sa inregistrati factura?</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Inv Sales Shipment - NamedType Text000</note>
+        </trans-unit>
+        <trans-unit id="Page 3245501198 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>&lt;CM+15D&gt;</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Inv Sales Shipment - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Page 3245501198 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
+          <source>There is nothing to post.</source>
+          <target>Nimic de inregistrat.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Inv Sales Shipment - NamedType Text002</note>
+        </trans-unit>
+        <trans-unit id="Page 3245501198 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The specified invoice posting date is overdue already. Do you still want to post the invoice?</source>
+          <target>Data de inregistrare a facturii speciicare are deja data de scadenta depasita. Doriti sa inregistrati in continuare factura?</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Inv Sales Shipment - NamedType Text003</note>
+        </trans-unit>
+        <trans-unit id="Page 3245501198 - NamedType 732759939" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Please enter the posting date.</source>
+          <target>Introduceti data de inregistrare.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Inv Sales Shipment - NamedType Text004</note>
+        </trans-unit>
+        <trans-unit id="Page 3245501198 - Control 4064815791 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Bill-to Contact field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Inv Sales Shipment - Control Bill-to Contact - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3245501198 - Control 2096911897 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Bill-to Country/Region Code field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Inv Sales Shipment - Control Bill-to Country/Region Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3245501198 - Control 2965034906 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Bill-to Customer No. field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Inv Sales Shipment - Control Bill-to Customer No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3245501198 - Control 240204966 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Bill-to Name field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Inv Sales Shipment - Control Bill-to Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3245501198 - Control 675862156 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Bill-to Post Code field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Inv Sales Shipment - Control Bill-to Post Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3245501198 - Control 4198939294 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Currency Code field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Inv Sales Shipment - Control Currency Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3245501198 - Control 2161572060 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Location Code field.</source>
+          <target state="needs-l10n">Specifica valoarea campului Cod Locatie.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Inv Sales Shipment - Control Location Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3245501198 - Control 4200184881 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the No. field.</source>
+          <target state="needs-l10n">Specifica valoarea campului Nr.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Inv Sales Shipment - Control No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3245501198 - Control 2202932243 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Order No. field.</source>
+          <target state="needs-l10n">Specifica valoarea campului Nr. Comanda.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Inv Sales Shipment - Control Order No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3245501198 - Control 3710982960 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Posting Date field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Inv Sales Shipment - Control Posting Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3245501198 - Control 553464652 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Salesperson Code field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Inv Sales Shipment - Control Salesperson Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3245501198 - Control 1006519668 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Sell-to Contact field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Inv Sales Shipment - Control Sell-to Contact - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3245501198 - Control 3434865006 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Sell-to Country/Region Code field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Inv Sales Shipment - Control Sell-to Country/Region Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3245501198 - Control 1474036805 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Sell-to Customer Name field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Inv Sales Shipment - Control Sell-to Customer Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3245501198 - Control 1225278069 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Sell-to Customer No. field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Inv Sales Shipment - Control Sell-to Customer No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3245501198 - Control 709296807 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Sell-to Post Code field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Inv Sales Shipment - Control Sell-to Post Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3245501198 - Control 993414011 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Ship-to Code field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Inv Sales Shipment - Control Ship-to Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3245501198 - Control 929198632 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Ship-to Contact field.</source>
+          <target state="needs-l10n">Specifica valoarea campului Livrare-la Contact.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Inv Sales Shipment - Control Ship-to Contact - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3245501198 - Control 3354576322 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Ship-to Country/Region Code field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Inv Sales Shipment - Control Ship-to Country/Region Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3245501198 - Control 2743501653 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Ship-to Name field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Inv Sales Shipment - Control Ship-to Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3245501198 - Control 3172878019 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Ship-to Post Code field.</source>
+          <target state="needs-l10n">Specifica valoarea campului Livrare-la Cod Postal</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Inv Sales Shipment - Control Ship-to Post Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3245501198 - Control 1577567912 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Shortcut Dimension 1 Code field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Inv Sales Shipment - Control Shortcut Dimension 1 Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3245501198 - Control 1003760969 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Shortcut Dimension 2 Code field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Inv Sales Shipment - Control Shortcut Dimension 2 Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3245501198 - Control 1009979295 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Invoice Posting Date field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Inv Sales Shipment - Control InvPostingDate - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3245501198 - Control 1009979295 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Invoice Posting Date</source>
+          <target>Data inregistrare factura</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Inv Sales Shipment - Control InvPostingDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3245501198 - Action 1603851298 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>&amp;Shipment</source>
+          <target>&amp;Livrare</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Inv Sales Shipment - Action &amp;Shipment - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3245501198 - Action 4125097576 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Executes the Card action.</source>
+          <target state="needs-l10n">Executie actiune Fisa.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Inv Sales Shipment - Action Card - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3245501198 - Action 4125097576 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Card</source>
+          <target>Card</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Inv Sales Shipment - Action Card - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3245501198 - Action 3000180178 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Executes the Co&amp;mments action.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Inv Sales Shipment - Action Co&amp;mments - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3245501198 - Action 3000180178 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Co&amp;mments</source>
+          <target>Co&amp;mentarii</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Inv Sales Shipment - Action Co&amp;mments - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3245501198 - Action 84074407 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Executes the Statistics action.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Inv Sales Shipment - Action Statistics - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3245501198 - Action 84074407 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Statistics</source>
+          <target>Statistica</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Inv Sales Shipment - Action Statistics - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3245501198 - Action 1193896936 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>P&amp;ost Invoices</source>
+          <target>Î&amp;nregistrare Facturi</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Inv Sales Shipment - Action P&amp;ost Invoices - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3245501198 - Action 4236135242 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Executes the P&amp;ost action.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Inv Sales Shipment - Action P&amp;ost - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3245501198 - Action 4236135242 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>P&amp;ost</source>
+          <target>Î&amp;nregistrare</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Inv Sales Shipment - Action P&amp;ost - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3245501198 - Action 732253414 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Executes the Post &amp;Batch action.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Inv Sales Shipment - Action Post &amp;Batch - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3245501198 - Action 732253414 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Post &amp;Batch</source>
+          <target>Inregistrare &amp;Lot</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Inv Sales Shipment - Action Post &amp;Batch - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3245501198 - Action 1333595352 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Executes the Post and &amp;Print action.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Inv Sales Shipment - Action Post and &amp;Print - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3245501198 - Action 1333595352 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Post and &amp;Print</source>
+          <target>Înregistrare şi &amp;imprimare</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Inv Sales Shipment - Action Post and &amp;Print - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3245501198 - Action 3106002577 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>F&amp;unctions</source>
+          <target>F&amp;uncţii</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Inv Sales Shipment - Action F&amp;unctions - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3245501198 - Action 52730441 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Executes the Suggest Lines... action.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Inv Sales Shipment - Action Suggest Lines... - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3245501198 - Action 52730441 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Suggest Lines...</source>
+          <target>Sugerare linii...</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Inv Sales Shipment - Action Suggest Lines... - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 817196585 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Non-Invoiced Purch. Rcpt.</source>
-          <target state="translated">Receptii Cumparare Nefacturate</target>
+          <target>Receptii Cumparare Nefacturate</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 817196585 - NamedType 2476940767" size-unit="char" translate="yes" xml:space="preserve">
           <source>Do you want to post the invoice?</source>
-          <target state="translated">Doriti sa inregistrati factura?</target>
+          <target>Doriti sa inregistrati factura?</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - NamedType Text000</note>
         </trans-unit>
         <trans-unit id="Page 817196585 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
-          <source>CM+15D</source>
-          <target state="translated">CM+15D</target>
+          <source>&lt;CM+15D&gt;</source>
+          <target>CM+15D</target>
           <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - NamedType Text001</note>
         </trans-unit>
         <trans-unit id="Page 817196585 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
           <source>There is nothing to post.</source>
-          <target state="translated">Nimic de inregistrat.</target>
+          <target>Nimic de inregistrat.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - NamedType Text002</note>
         </trans-unit>
         <trans-unit id="Page 817196585 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
           <source>The specified invoice posting date is overdue already. Do you still want to post the invoice?</source>
-          <target state="translated">Data de inregistrare a facturii speciicare are deja data de scadenta depasita. Doriti sa inregistrati in continuare factura?</target>
+          <target>Data de inregistrare a facturii speciicare are deja data de scadenta depasita. Doriti sa inregistrati in continuare factura?</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - NamedType Text003</note>
         </trans-unit>
         <trans-unit id="Page 817196585 - NamedType 732759939" size-unit="char" translate="yes" xml:space="preserve">
           <source>Please enter the posting date.</source>
-          <target state="translated">Introduceti data de inregistrare.</target>
+          <target>Introduceti data de inregistrare.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - NamedType Text004</note>
         </trans-unit>
+        <trans-unit id="Page 817196585 - Control 1750733095 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Buy-from Contact field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Control Buy-from Contact - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 817196585 - Control 2931503505 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Buy-from Country/Region Code field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Control Buy-from Country/Region Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 817196585 - Control 852404356 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Buy-from Post Code field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Control Buy-from Post Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 817196585 - Control 3230600482 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Buy-from Vendor Name field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Control Buy-from Vendor Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 817196585 - Control 3792369418 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Buy-from Vendor No. field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Control Buy-from Vendor No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 817196585 - Control 2161572060 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Location Code field.</source>
+          <target state="needs-l10n">Specifica valoarea campului Cod Locatie.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Control Location Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 817196585 - Control 4200184881 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the No. field.</source>
+          <target state="needs-l10n">Specifica valoarea campului Nr.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Control No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 817196585 - Control 3946380207 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Order Address Code field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Control Order Address Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 817196585 - Control 2202932243 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Order No. field.</source>
+          <target state="needs-l10n">Specifica valoarea campului Nr. Comanda.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Control Order No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 817196585 - Control 1970704690 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Pay-to Contact field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Control Pay-to Contact - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 817196585 - Control 4079742056 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Pay-to Country/Region Code field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Control Pay-to Country/Region Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 817196585 - Control 3472859787 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Pay-to Name field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Control Pay-to Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 817196585 - Control 1168556525 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Pay-to Post Code field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Control Pay-to Post Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 817196585 - Control 3941277175 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Pay-to Vendor No. field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Control Pay-to Vendor No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 817196585 - Control 3710982960 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Posting Date field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Control Posting Date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 817196585 - Control 801304080 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Purchaser Code field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Control Purchaser Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 817196585 - Control 993414011 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Ship-to Code field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Control Ship-to Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 817196585 - Control 929198632 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Ship-to Contact field.</source>
+          <target state="needs-l10n">Specifica valoarea campului Livrare-la Contact.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Control Ship-to Contact - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 817196585 - Control 3354576322 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Ship-to Country/Region Code field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Control Ship-to Country/Region Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 817196585 - Control 2743501653 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Ship-to Name field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Control Ship-to Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 817196585 - Control 3172878019 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Ship-to Post Code field.</source>
+          <target state="needs-l10n">Specifica valoarea campului Livrare-la Cod Postal</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Control Ship-to Post Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 817196585 - Control 1577567912 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Shortcut Dimension 1 Code field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Control Shortcut Dimension 1 Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 817196585 - Control 1003760969 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Shortcut Dimension 2 Code field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Control Shortcut Dimension 2 Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 817196585 - Control 1009979295 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Invoice Posting Date field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Control InvPostingDate - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 817196585 - Control 1009979295 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Invoice Posting Date</source>
-          <target state="translated">Data inregistrare factura</target>
+          <target>Data inregistrare factura</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Control InvPostingDate - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 817196585 - Action 76564158 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>&amp;Receipt</source>
-          <target state="translated">&amp;Receptie</target>
+          <target>&amp;Receptie</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Action &amp;Receipt - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 817196585 - Action 4125097576 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Executes the Card action.</source>
+          <target state="needs-l10n">Executie actiune Fisa.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Action Card - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 817196585 - Action 4125097576 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Card</source>
-          <target state="translated">Card</target>
+          <target>Card</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Action Card - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 817196585 - Action 3000180178 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Executes the Co&amp;mments action.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Action Co&amp;mments - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 817196585 - Action 3000180178 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Co&amp;mments</source>
-          <target state="translated">Co&amp;mentarii</target>
+          <target>Co&amp;mentarii</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Action Co&amp;mments - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 817196585 - Action 84074407 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Executes the Statistics action.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Action Statistics - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 817196585 - Action 84074407 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Statistics</source>
-          <target state="translated">Statistica</target>
+          <target>Statistica</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Action Statistics - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 817196585 - Action 1193896936 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>P&amp;ost Invoices</source>
-          <target state="translated">Î&amp;nregistrare Facturi</target>
+          <target>Î&amp;nregistrare Facturi</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Action P&amp;ost Invoices - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 817196585 - Action 4236135242 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Executes the P&amp;ost action.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Action P&amp;ost - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 817196585 - Action 4236135242 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>P&amp;ost</source>
-          <target state="translated">Î&amp;nregistrare</target>
+          <target>Î&amp;nregistrare</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Action P&amp;ost - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 817196585 - Action 732253414 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Executes the Post &amp;Batch action.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Action Post &amp;Batch - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 817196585 - Action 732253414 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Post &amp;Batch</source>
-          <target state="translated">Inregistrare &amp;Lot</target>
+          <target>Inregistrare &amp;Lot</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Action Post &amp;Batch - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 817196585 - Action 1333595352 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Executes the Post and &amp;Print action.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Action Post and &amp;Print - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 817196585 - Action 1333595352 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Post and &amp;Print</source>
-          <target state="translated">Înregistrare şi &amp;imprimare</target>
+          <target>Înregistrare şi &amp;imprimare</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Action Post and &amp;Print - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 817196585 - Action 3106002577 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>F&amp;unctions</source>
-          <target state="translated">F&amp;uncţii</target>
+          <target>F&amp;uncţii</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Action F&amp;unctions - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 817196585 - Action 52730441 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Executes the Suggest Lines... action.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Action Suggest Lines... - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 817196585 - Action 52730441 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Suggest Lines...</source>
-          <target state="translated">Sugerare linii...</target>
+          <target>Sugerare linii...</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Non-Invoiced Purch. Rcpt. - Action Suggest Lines... - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1118646131 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Search Items</source>
-          <target state="translated">Cautare articole</target>
+          <target>Cautare articole</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Search Items - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 1118646131 - Control 411531942 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the base unit used to measure the item, such as piece, box, or pallet. The base unit of measure also serves as the conversion basis for alternate units of measure.</source>
+          <target state="needs-l10n">Specifica unitatea de baza utilizata pentru masurarea articolului, cum ar fi bucata, cutia sau paletul. Unitatea de masura de baza serveste si ca baza de conversie pentru unitati de masura alternative.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Search Items - Control Base Unit of Measure - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1118646131 - Control 3543129988 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies that the related record is blocked from being posted in transactions, for example an item that is placed in quarantine.</source>
+          <target state="needs-l10n">Specifica faptul ca inregistrarea aferenta este blocata de a fi publicata in tranzactii, de exemplu un articol care este plasat in carantina.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Search Items - Control Blocked - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1118646131 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies a description of the item.</source>
+          <target state="needs-l10n">Specifica o descriere a articolului.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Search Items - Control Description - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1118646131 - Control 4200184881 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the number of the involved entry or record, according to the specified number series.</source>
+          <target state="needs-l10n">Specifică numărul intrării sau înregistrării implicate, în conformitate cu seria numerică specificată.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Search Items - Control No. - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 1118646131 - Control 4200184881 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No.</source>
-          <target state="translated">Nr.</target>
+          <target>Nr.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Search Items - Control No. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 1118646131 - Control 928055456 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Full Description field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Search Items - Control SSA Full Description - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1118646131 - Control 2454573350 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies that a substitute exists for this item.</source>
+          <target state="needs-l10n">Specifica faptul ca exista un inlocuitor pentru acest element.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Search Items - Control Substitutes Exist - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1118646131 - Control 3638875869 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Item Description field.</source>
+          <target state="needs-l10n">Specifica valoarea campului Descriere Articol</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Search Items - Control SearchFullDescritpion - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 1118646131 - Control 3638875869 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Item Description</source>
-          <target state="translated">Descriere articol</target>
+          <target>Descriere articol</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Search Items - Control SearchFullDescritpion - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 1118646131 - Control 3798681774 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Variant Code field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSA Search Items - Control VariantCode - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Page 1118646131 - Control 3798681774 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Variant Code</source>
-          <target state="translated">Cod variantă</target>
+          <target>Cod variantă</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Search Items - Control VariantCode - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 3248229538 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Non-Invoiced Sales Shipment</source>
-          <target state="translated">Livrari Vanzari Ne-facturate</target>
-          <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Page SSANon-Invoiced Sales Shipment - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3248229538 - NamedType 2476940767" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Do you want to post the invoice?</source>
-          <target state="translated">Doriti sa inregistrati factura?</target>
-          <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Page SSANon-Invoiced Sales Shipment - NamedType Text000</note>
-        </trans-unit>
-        <trans-unit id="Page 3248229538 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
-          <source>CM+15D</source>
-          <target state="translated">CM+15D</target>
-          <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Page SSANon-Invoiced Sales Shipment - NamedType Text001</note>
-        </trans-unit>
-        <trans-unit id="Page 3248229538 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
-          <source>There is nothing to post.</source>
-          <target state="translated">Nimic de inregistrat.</target>
-          <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Page SSANon-Invoiced Sales Shipment - NamedType Text002</note>
-        </trans-unit>
-        <trans-unit id="Page 3248229538 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The specified invoice posting date is overdue already. Do you still want to post the invoice?</source>
-          <target state="translated">Data de inregistrare a facturii speciicare are deja data de scadenta depasita. Doriti sa inregistrati in continuare factura?</target>
-          <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Page SSANon-Invoiced Sales Shipment - NamedType Text003</note>
-        </trans-unit>
-        <trans-unit id="Page 3248229538 - NamedType 732759939" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Please enter the posting date.</source>
-          <target state="translated">Introduceti data de inregistrare.</target>
-          <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Page SSANon-Invoiced Sales Shipment - NamedType Text004</note>
-        </trans-unit>
-        <trans-unit id="Page 3248229538 - Control 1009979295 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Invoice Posting Date</source>
-          <target state="translated">Data inregistrare factura</target>
-          <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Page SSANon-Invoiced Sales Shipment - Control InvPostingDate - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3248229538 - Action 1603851298 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>&amp;Shipment</source>
-          <target state="translated">&amp;Livrare</target>
-          <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Page SSANon-Invoiced Sales Shipment - Action &amp;Shipment - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3248229538 - Action 4125097576 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Card</source>
-          <target state="translated">Card</target>
-          <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Page SSANon-Invoiced Sales Shipment - Action Card - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3248229538 - Action 3000180178 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Co&amp;mments</source>
-          <target state="translated">Co&amp;mentarii</target>
-          <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Page SSANon-Invoiced Sales Shipment - Action Co&amp;mments - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3248229538 - Action 84074407 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Statistics</source>
-          <target state="translated">Statistica</target>
-          <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Page SSANon-Invoiced Sales Shipment - Action Statistics - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3248229538 - Action 1193896936 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>P&amp;ost Invoices</source>
-          <target state="translated">Î&amp;nregistrare Facturi</target>
-          <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Page SSANon-Invoiced Sales Shipment - Action P&amp;ost Invoices - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3248229538 - Action 4236135242 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>P&amp;ost</source>
-          <target state="translated">Î&amp;nregistrare</target>
-          <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Page SSANon-Invoiced Sales Shipment - Action P&amp;ost - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3248229538 - Action 732253414 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Post &amp;Batch</source>
-          <target state="translated">Inregistrare &amp;Lot</target>
-          <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Page SSANon-Invoiced Sales Shipment - Action Post &amp;Batch - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3248229538 - Action 1333595352 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Post and &amp;Print</source>
-          <target state="translated">Înregistrare şi &amp;imprimare</target>
-          <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Page SSANon-Invoiced Sales Shipment - Action Post and &amp;Print - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3248229538 - Action 3106002577 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>F&amp;unctions</source>
-          <target state="translated">F&amp;uncţii</target>
-          <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Page SSANon-Invoiced Sales Shipment - Action F&amp;unctions - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3248229538 - Action 52730441 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Suggest Lines...</source>
-          <target state="translated">Sugerare linii...</target>
-          <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Page SSANon-Invoiced Sales Shipment - Action Suggest Lines... - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Report 1391927200 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Inv. Non-Invoiced Purch. Rcpt.</source>
-          <target state="translated">Rec. Fact. Cump. Nefact.</target>
+          <target>Rec. Fact. Cump. Nefact.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inv. Non-Inv Purch. Rcpt. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 1391927200 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
           <source>Posting invoices  #1########## @2@@@@@@@@@@@@@</source>
-          <target state="translated">Inregistrare facturi  #1########## @2@@@@@@@@@@@@@</target>
+          <target>Inregistrare facturi  #1########## @2@@@@@@@@@@@@@</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inv. Non-Inv Purch. Rcpt. - NamedType Text001</note>
         </trans-unit>
         <trans-unit id="Report 1391927200 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
           <source>%1 invoices out of a total of %2 have now been posted.</source>
-          <target state="translated">%1 facturi din totalul de %2 au fost acum inregistrate.</target>
+          <target>%1 facturi din totalul de %2 au fost acum inregistrate.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inv. Non-Inv Purch. Rcpt. - NamedType Text002</note>
         </trans-unit>
         <trans-unit id="Report 1391927200 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
           <source>The specified invoice posting date is already overdue for some receipts. Do you still want to post the invoices?</source>
-          <target state="translated">Data de inregistare a facturii este deja cu data de scadenta depasita pentru unele receptii. Doriti sa  inregistrare in continuare facturile?</target>
+          <target>Data de inregistare a facturii este deja cu data de scadenta depasita pentru unele receptii. Doriti sa  inregistrare in continuare facturile?</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inv. Non-Inv Purch. Rcpt. - NamedType Text003</note>
         </trans-unit>
         <trans-unit id="Report 1391927200 - NamedType 732759939" size-unit="char" translate="yes" xml:space="preserve">
-          <source>CM+15D</source>
-          <target state="translated">CM+15D</target>
+          <source>&lt;CM+15D&gt;</source>
+          <target>CM+15D</target>
           <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inv. Non-Inv Purch. Rcpt. - NamedType Text004</note>
         </trans-unit>
         <trans-unit id="Report 1391927200 - NamedType 1370456556" size-unit="char" translate="yes" xml:space="preserve">
           <source>Please enter the posting date.</source>
-          <target state="translated">Introduceti data de inregistrare.</target>
+          <target>Introduceti data de inregistrare.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inv. Non-Inv Purch. Rcpt. - NamedType Text005</note>
         </trans-unit>
         <trans-unit id="Report 1391927200 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Options</source>
-          <target state="translated">Opţiuni</target>
+          <target>Opţiuni</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inv. Non-Inv Purch. Rcpt. - Control Options - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 1391927200 - Control 2780809675 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Calc. Inv. Discount field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inv. Non-Inv Purch. Rcpt. - Control CalcInvDisc - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Report 1391927200 - Control 2780809675 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Calc. Inv. Discount</source>
-          <target state="translated">Calcul reducere fact.</target>
+          <target>Calcul reducere fact.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inv. Non-Inv Purch. Rcpt. - Control CalcInvDisc - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 1391927200 - Control 1009979295 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Posting Date field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inv. Non-Inv Purch. Rcpt. - Control InvPostingDate - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Report 1391927200 - Control 1009979295 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Posting Date</source>
-          <target state="translated">Data inreg.</target>
+          <target>Data inreg.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inv. Non-Inv Purch. Rcpt. - Control InvPostingDate - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 1391927200 - Control 4126205201 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Replace Document Date field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inv. Non-Inv Purch. Rcpt. - Control ReplaceDocumentDate - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Report 1391927200 - Control 4126205201 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Replace Document Date</source>
-          <target state="translated">Inlocuire data document</target>
+          <target>Inlocuire data document</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inv. Non-Inv Purch. Rcpt. - Control ReplaceDocumentDate - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 3425121640 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Inv. Non-Invoiced Sales Shpt.</source>
-          <target state="translated">Livrare Fact. Vanz. Nefact.</target>
+          <target>Livrare Fact. Vanz. Nefact.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inv. Non-Inv Sales Shpt. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 3425121640 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
           <source>Posting invoices  #1########## @2@@@@@@@@@@@@@</source>
-          <target state="translated">Inregistrare facturi  #1########## @2@@@@@@@@@@@@@</target>
+          <target>Inregistrare facturi  #1########## @2@@@@@@@@@@@@@</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inv. Non-Inv Sales Shpt. - NamedType Text001</note>
         </trans-unit>
         <trans-unit id="Report 3425121640 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
           <source>%1 invoices out of a total of %2 have now been posted.</source>
-          <target state="translated">%1 facturi din totalul de %2 au fost acum inregistrate.</target>
+          <target>%1 facturi din totalul de %2 au fost acum inregistrate.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inv. Non-Inv Sales Shpt. - NamedType Text002</note>
         </trans-unit>
         <trans-unit id="Report 3425121640 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
           <source>The specified invoice posting date is already overdue for some shipments. Do you still want to post the invoices?</source>
-          <target state="translated">Data de inregistare a facturii este deja cu data de scadenta depasita pentru unele livrari. Doriti sa  inregistrare in continuare facturile</target>
+          <target>Data de inregistare a facturii este deja cu data de scadenta depasita pentru unele livrari. Doriti sa  inregistrare in continuare facturile</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inv. Non-Inv Sales Shpt. - NamedType Text003</note>
         </trans-unit>
         <trans-unit id="Report 3425121640 - NamedType 732759939" size-unit="char" translate="yes" xml:space="preserve">
-          <source>CM+15D</source>
-          <target state="translated">CM+15D</target>
+          <source>&lt;CM+15D&gt;</source>
+          <target>CM+15D</target>
           <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inv. Non-Inv Sales Shpt. - NamedType Text004</note>
         </trans-unit>
         <trans-unit id="Report 3425121640 - NamedType 1370456556" size-unit="char" translate="yes" xml:space="preserve">
           <source>Please enter the posting date.</source>
-          <target state="translated">Introduceti data de inregistrare.</target>
+          <target>Introduceti data de inregistrare.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inv. Non-Inv Sales Shpt. - NamedType Text005</note>
         </trans-unit>
         <trans-unit id="Report 3425121640 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Options</source>
-          <target state="translated">Opţiuni</target>
+          <target>Opţiuni</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inv. Non-Inv Sales Shpt. - Control Options - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 3425121640 - Control 2780809675 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Calc. Inv. Discount field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inv. Non-Inv Sales Shpt. - Control CalcInvDisc - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Report 3425121640 - Control 2780809675 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Calc. Inv. Discount</source>
-          <target state="translated">Calcul reducere fact.</target>
+          <target>Calcul reducere fact.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inv. Non-Inv Sales Shpt. - Control CalcInvDisc - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 3425121640 - Control 1009979295 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Posting Date field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inv. Non-Inv Sales Shpt. - Control InvPostingDate - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Report 3425121640 - Control 1009979295 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Posting Date</source>
-          <target state="translated">Data inreg.</target>
+          <target>Data inreg.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inv. Non-Inv Sales Shpt. - Control InvPostingDate - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 3425121640 - Control 4126205201 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Replace Document Date field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inv. Non-Inv Sales Shpt. - Control ReplaceDocumentDate - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="Report 3425121640 - Control 4126205201 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Replace Document Date</source>
-          <target state="translated">Inlocuire data document</target>
+          <target>Inlocuire data document</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inv. Non-Inv Sales Shpt. - Control ReplaceDocumentDate - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 984538696 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Sug. Non-Invoiced Purch. Rcpt.</source>
-          <target state="translated">Sug. Rec. Cump. Nefact.</target>
+          <target>Sug. Rec. Cump. Nefact.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Sug. Non-Inv Purch. Rcpt. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 984538696 - NamedType 2476940767" size-unit="char" translate="yes" xml:space="preserve">
-          <source>CM+15D</source>
-          <target state="translated">CM+15D</target>
+          <source>&lt;CM+15D&gt;</source>
+          <target>CM+15D</target>
           <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Sug. Non-Inv Purch. Rcpt. - NamedType Text000</note>
         </trans-unit>
         <trans-unit id="Report 27010832 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Sug. Non-Invoiced Sales Shpt.</source>
-          <target state="translated">Sug. Livr. Vanzare Nefact.</target>
+          <target>Sug. Livr. Vanzare Nefact.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Sug. Non-Inv Sales Shpt. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 3402957419 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Test BNR</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Test BNR - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3429708249 - Action 2126435341 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
+          <source>Executes the Verificare ANAF action.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Customer Card 71101 - Action SSA Verificare ANAF - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="PageExtension 3429708249 - Action 2126435341 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
           <source>Verificare ANAF</source>
-          <target state="translated">Verificare ANAF</target>
+          <target>Verificare ANAF</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Customer Card 71101 - Action SSA Verificare ANAF - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 3429708249 - Action 3413280856 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
+          <source>Executes the Verificare CUI action.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Customer Card 71101 - Action SSA Verificare CUI - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="PageExtension 3429708249 - Action 3413280856 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
           <source>Verificare CUI</source>
-          <target state="translated">Verificare CUI</target>
+          <target>Verificare CUI</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Customer Card 71101 - Action SSA Verificare CUI - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 663633022 - Action 1445301238 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 262200983">
+          <source>Executes the Import BNR action.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Localization Setup 71100 - Action SSA ImportBNR - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="PageExtension 663633022 - Action 1445301238 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 262200983">
           <source>Import BNR</source>
-          <target state="translated">Import BNR</target>
+          <target>Import BNR</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Localization Setup 71100 - Action SSA ImportBNR - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 663633022 - Control 1054337158 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 262200983">
           <source>VAT API</source>
-          <target state="translated">API Verificare TVA</target>
+          <target>API Verificare TVA</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Localization Setup 71100 - Control SSA VAT API - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 663633022 - Control 583886741 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 262200983">
+          <source>Specifies the value of the Enable ANAF VAT field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Localization Setup 71100 - Control SSA Enable ANAF VAT - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 663633022 - Control 2473502339 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 262200983">
+          <source>Specifies the value of the VAT API URL field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Localization Setup 71100 - Control SSA VAT API URL - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 663633022 - Control 4122419819 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 262200983">
+          <source>Specifies the value of the VAT API URL ANAF field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Localization Setup 71100 - Control SSA VAT API URL ANAF - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 663633022 - Control 571798319 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 262200983">
+          <source>Specifies the value of the VAT Password field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Localization Setup 71100 - Control SSA VAT Password - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 663633022 - Control 1837989144 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 262200983">
+          <source>Specifies the value of the VAT User Name field.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Localization Setup 71100 - Control SSA VAT User Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 958700371 - Action 3538042150 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
+          <source>Executes the Search Items action.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Sales Order Subform 71103 - Action SSA Search Item - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="PageExtension 958700371 - Action 3538042150 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
           <source>Search Items</source>
-          <target state="translated">Cautare articole</target>
+          <target>Cautare articole</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Sales Order Subform 71103 - Action SSA Search Item - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 3673113758 - Action 3538042150 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 416138076">
+          <source>Executes the Search Items action.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Sales Quote Subform 71104 - Action SSA Search Item - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="PageExtension 3673113758 - Action 3538042150 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 416138076">
           <source>Search Items</source>
-          <target state="translated">Cautare articole</target>
+          <target>Cautare articole</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Sales Quote Subform 71104 - Action SSA Search Item - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 3857282472 - Action 2126435341 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4055858012">
+          <source>Executes the Verificare ANAF action.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Vendor Card 71102 - Action SSA Verificare ANAF - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="PageExtension 3857282472 - Action 2126435341 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4055858012">
           <source>Verificare ANAF</source>
-          <target state="translated">Verificare ANAF</target>
+          <target>Verificare ANAF</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Vendor Card 71102 - Action SSA Verificare ANAF - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 3857282472 - Action 3413280856 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4055858012">
+          <source>Executes the Verificare CUI action.</source>
+          <target/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Vendor Card 71102 - Action SSA Verificare CUI - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="PageExtension 3857282472 - Action 3413280856 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4055858012">
           <source>Verificare CUI</source>
-          <target state="translated">Verificare CUI</target>
+          <target>Verificare CUI</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Vendor Card 71102 - Action SSA Verificare CUI - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 663633022 - Field 583886741 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 262200983">
           <source>Enable ANAF VAT</source>
-          <target state="translated">Activare Verificare TVA ANAF</target>
+          <target>Activare Verificare TVA ANAF</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Localization Setup 71100 - Field SSA Enable ANAF VAT - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 663633022 - Field 2473502339 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 262200983">
           <source>VAT API URL</source>
-          <target state="translated">URL API Verificare TVA</target>
+          <target>URL API Verificare TVA</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Localization Setup 71100 - Field SSA VAT API URL - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 663633022 - Field 4122419819 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 262200983">
           <source>VAT API URL ANAF</source>
-          <target state="translated">URL API Verificare TVA ANAF</target>
+          <target>URL API Verificare TVA ANAF</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Localization Setup 71100 - Field SSA VAT API URL ANAF - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 663633022 - Field 571798319 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 262200983">
           <source>VAT Password</source>
-          <target state="translated">Parola VerificareTVA</target>
+          <target>Parola VerificareTVA</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Localization Setup 71100 - Field SSA VAT Password - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 663633022 - Field 1837989144 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 262200983">
           <source>VAT User Name</source>
-          <target state="translated">Nume Utilizator VerificateTVA</target>
+          <target>Nume Utilizator VerificateTVA</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Localization Setup 71100 - Field SSA VAT User Name - Property Caption</note>
         </trans-unit>

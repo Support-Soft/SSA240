@@ -2,7 +2,6 @@
     "CRS.OnSaveAlFileAction": "Rename",
     "CRS.FileNamePattern": "SSAED<ObjectNameShort>.<ObjectTypeShortPascalCase>.al",
     "CRS.FileNamePatternExtensions": "SSAED<ObjectNameShort>.<ObjectTypeShortPascalCase>.al",
-    "CRS.FileNamePatternPageCustomizations": "<ObjectNameShort>.<ObjectTypeShortPascalCase>-PageCust.al",
     "CRS.RemovePrefixFromFilename": true,
     "CRS.ObjectNamePrefix": "SSAED",
     "CRS.RenameWithGit": true,
