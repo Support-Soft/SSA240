@@ -19,5 +19,4 @@ tableextension 70500 "SSA Customer Bank Account70500" extends "Customer Bank Acc
             Caption = 'From Payment No.';
         }
     }
-
 }

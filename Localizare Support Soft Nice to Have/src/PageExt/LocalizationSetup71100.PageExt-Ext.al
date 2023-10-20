@@ -10,25 +10,30 @@ pageextension 71100 "SSA Localization Setup 71100" extends "SSA Localization Set
             {
                 Caption = 'VAT API';
 
-                field("SSA VAT API URL"; "SSA VAT API URL")
+                field("SSA VAT API URL"; Rec."SSA VAT API URL")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the VAT API URL field.';
                 }
-                field("SSA VAT User Name"; "SSA VAT User Name")
+                field("SSA VAT User Name"; Rec."SSA VAT User Name")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the VAT User Name field.';
                 }
-                field("SSA VAT Password"; "SSA VAT Password")
+                field("SSA VAT Password"; Rec."SSA VAT Password")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the VAT Password field.';
                 }
-                field("SSA VAT API URL ANAF"; "SSA VAT API URL ANAF")
+                field("SSA VAT API URL ANAF"; Rec."SSA VAT API URL ANAF")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the VAT API URL ANAF field.';
                 }
-                field("SSA Enable ANAF VAT"; "SSA Enable ANAF VAT")
+                field("SSA Enable ANAF VAT"; Rec."SSA Enable ANAF VAT")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Enable ANAF VAT field.';
                 }
             }
 
@@ -45,6 +50,7 @@ pageextension 71100 "SSA Localization Setup 71100" extends "SSA Localization Set
                 PromotedIsBig = true;
                 PromotedCategory = Report;
                 ApplicationArea = All;
+                ToolTip = 'Executes the Import BNR action.';
                 trigger OnAction()
                 var
                     ImportBNR: Codeunit "SSA Actualizare Cursuri BNR";

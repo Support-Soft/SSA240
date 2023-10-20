@@ -5,17 +5,18 @@ pageextension 70045 "SSA Posted Return Receipt70045" extends "Posted Return Rece
     {
         addafter("Shortcut Dimension 2 Code")
         {
-            field("SSA Tip Document D394"; "SSA Tip Document D394")
+            field("SSA Tip Document D394"; Rec."SSA Tip Document D394")
             {
                 ApplicationArea = All;
                 Editable = false;
+                ToolTip = 'Specifies the value of the Tip Document D394 field.';
             }
-            field("SSA Stare Factura"; "SSA Stare Factura")
+            field("SSA Stare Factura"; Rec."SSA Stare Factura")
             {
                 ApplicationArea = All;
                 Editable = false;
+                ToolTip = 'Specifies the value of the Stare Factura field.';
             }
         }
     }
 }
-

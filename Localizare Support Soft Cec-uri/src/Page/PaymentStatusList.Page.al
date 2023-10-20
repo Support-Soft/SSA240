@@ -13,41 +13,50 @@ page 70506 "SSA Payment Status List"
             repeater(Control1)
             {
                 ShowCaption = false;
-                field(Name; Name)
+                field(Name; Rec.Name)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Name field.';
                 }
-                field(Look; Look)
+                field(Look; Rec.Look)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Look field.';
                 }
-                field(ReportMenu; ReportMenu)
+                field(ReportMenu; Rec.ReportMenu)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Report field.';
                 }
-                field(RIB; RIB)
+                field(RIB; Rec.RIB)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the RIB field.';
                 }
-                field("Acceptation Code"; "Acceptation Code")
+                field("Acceptation Code"; Rec."Acceptation Code")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Acceptation Code field.';
                 }
-                field(Amount; Amount)
+                field(Amount; Rec.Amount)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Amount field.';
                 }
-                field(Debit; Debit)
+                field(Debit; Rec.Debit)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Debit field.';
                 }
-                field(Credit; Credit)
+                field(Credit; Rec.Credit)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Credit field.';
                 }
-                field("Payment in progress"; "Payment in progress")
+                field("Payment in progress"; Rec."Payment in progress")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Payment in progress field.';
                 }
             }
         }
@@ -57,4 +66,3 @@ page 70506 "SSA Payment Status List"
     {
     }
 }
-

@@ -7,23 +7,26 @@ pageextension 70008 "SSA PostedPurchCreditMemo70008" extends "Posted Purchase Cr
     {
         addafter("Vendor Cr. Memo No.")
         {
-            field("SSA Custom Invoice No."; "SSA Custom Invoice No.")
+            field("SSA Custom Invoice No."; Rec."SSA Custom Invoice No.")
             {
                 ApplicationArea = All;
                 Editable = false;
+                ToolTip = 'Specifies the value of the Custom Invoice No. field.';
             }
         }
         addafter("Applies-to Doc. No.")
         {
-            field("SSA Tip Document D394"; "SSA Tip Document D394")
+            field("SSA Tip Document D394"; Rec."SSA Tip Document D394")
             {
                 ApplicationArea = All;
                 Editable = false;
+                ToolTip = 'Specifies the value of the Tip Document D394 field.';
             }
-            field("SSA Stare Factura"; "SSA Stare Factura")
+            field("SSA Stare Factura"; Rec."SSA Stare Factura")
             {
                 ApplicationArea = All;
                 Editable = false;
+                ToolTip = 'Specifies the value of the Stare Factura field.';
             }
         }
     }
@@ -35,7 +38,5 @@ pageextension 70008 "SSA PostedPurchCreditMemo70008" extends "Posted Purchase Cr
             Visible = true;
             Enabled = true;
         }
-
     }
 }
-

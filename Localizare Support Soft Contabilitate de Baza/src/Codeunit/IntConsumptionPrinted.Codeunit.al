@@ -2,16 +2,16 @@ codeunit 70006 "SSA Int. Consumption-Printed"
 {
     // SSA937 SSCAT 16.06.2019 3.Funct. Bonuri de consum-consum intern
 
-    Permissions = TableData "SSA Pstd. Int. Cons. Header" = rm;
+    Permissions = tabledata "SSA Pstd. Int. Cons. Header" = rm;
     TableNo = "SSA Pstd. Int. Cons. Header";
 
     trigger OnRun()
     begin
-        rec.Find;
-        "No. Printed" := "No. Printed" + 1;
+        Rec.Find();
+        Rec."No. Printed" := Rec."No. Printed" + 1;
         OnBeforeModify(Rec);
-        Modify;
-        Commit;
+        Rec.Modify();
+        Commit();
     end;
 
     [IntegrationEvent(false, false)]
@@ -19,4 +19,3 @@ codeunit 70006 "SSA Int. Consumption-Printed"
     begin
     end;
 }
-

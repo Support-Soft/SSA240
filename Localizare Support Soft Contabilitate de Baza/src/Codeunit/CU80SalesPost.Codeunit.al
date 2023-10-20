@@ -1,11 +1,6 @@
 codeunit 70014 "SSA CU80 Sales-Post"
 {
-    // SSA958 SSCAT 23.08.2019 24.Funct. verificare sa nu posteze sell to diferit de bill to
 
-
-    trigger OnRun()
-    begin
-    end;
 
     [EventSubscriber(ObjectType::Codeunit, 80, 'OnBeforePostSalesDoc', '', false, false)]
     local procedure OnBeforePostSalesDoc(var Sender: Codeunit "Sales-Post"; var SalesHeader: Record "Sales Header"; CommitIsSuppressed: Boolean; PreviewMode: Boolean)
@@ -14,7 +9,7 @@ codeunit 70014 "SSA CU80 Sales-Post"
         IntrastatTransaction: Boolean;
     begin
         //SSA954>>
-        SSASetup.Get;
+        SSASetup.Get();
         IntrastatTransaction := IsIntrastatTransaction(SalesHeader);
         if IntrastatTransaction then begin
             if SSASetup."Transaction Type Mandatory" then
@@ -34,7 +29,7 @@ codeunit 70014 "SSA CU80 Sales-Post"
         //SSA958<<
     end;
 
-    local procedure IsIntrastatTransaction(_SalesHeader: Record "Sales Header") IsIntrastat: Boolean
+    local procedure IsIntrastatTransaction(_SalesHeader: Record "Sales Header"): Boolean
     var
         SSAIntrastat: Codeunit "SSA Intrastat";
     begin
@@ -43,4 +38,3 @@ codeunit 70014 "SSA CU80 Sales-Post"
         //SSA954<<
     end;
 }
-

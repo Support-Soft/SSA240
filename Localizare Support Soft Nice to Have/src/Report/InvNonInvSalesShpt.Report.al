@@ -72,15 +72,17 @@ report 71101 "SSA Inv. Non-Inv Sales Shpt."
                     field(InvPostingDate; InvPostingDate)
                     {
                         Caption = 'Posting Date';
+                        ToolTip = 'Specifies the value of the Posting Date field.';
                     }
                     field(ReplaceDocumentDate; ReplaceDocumentDate)
                     {
                         Caption = 'Replace Document Date';
+                        ToolTip = 'Specifies the value of the Replace Document Date field.';
                     }
                     field(CalcInvDisc; CalcInvDisc)
                     {
                         Caption = 'Calc. Inv. Discount';
-
+                        ToolTip = 'Specifies the value of the Calc. Inv. Discount field.';
                         trigger OnValidate()
                         begin
                             SalesSetup.Get;

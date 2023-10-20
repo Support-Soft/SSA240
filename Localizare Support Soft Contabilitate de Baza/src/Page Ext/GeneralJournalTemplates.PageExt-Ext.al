@@ -2,6 +2,6 @@ pageextension 70026 "SSA General Journal Templates" extends "General Journal Tem
 {
     trigger OnNewRecord(BelowxRec: Boolean)
     begin
-        "Copy VAT Setup to Jnl. Lines" := true; //SSA959 InitValue=No from Yes
+        Rec."Copy VAT Setup to Jnl. Lines" := true; //SSA959 InitValue=No from Yes
     end;
 }

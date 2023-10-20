@@ -24,5 +24,4 @@ tableextension 70506 "SSA Gen. Journal Line 70506" extends "Gen. Journal Line" /
             end;
         }
     }
-
 }

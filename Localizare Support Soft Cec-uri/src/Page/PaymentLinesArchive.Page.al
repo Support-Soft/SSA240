@@ -12,87 +12,107 @@ page 70522 "SSA Payment Lines Archive"
             repeater(Control1)
             {
                 ShowCaption = false;
-                field("Account Type"; "Account Type")
+                field("Account Type"; Rec."Account Type")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Account Type field.';
                 }
-                field("Account No."; "Account No.")
+                field("Account No."; Rec."Account No.")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Account No. field.';
                 }
-                field("Document ID"; "Document ID")
+                field("Document ID"; Rec."Document ID")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Document ID field.';
                 }
-                field("External Document No."; "External Document No.")
+                field("External Document No."; Rec."External Document No.")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the External Document No. field.';
                 }
-                field("Drawee Reference"; "Drawee Reference")
+                field("Drawee Reference"; Rec."Drawee Reference")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Drawee Reference field.';
                 }
-                field("Posting Group"; "Posting Group")
+                field("Posting Group"; Rec."Posting Group")
                 {
                     ApplicationArea = All;
                     Visible = false;
+                    ToolTip = 'Specifies the value of the Posting Group field.';
                 }
-                field("Due Date"; "Due Date")
+                field("Due Date"; Rec."Due Date")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Due Date field.';
                 }
-                field("Debit Amount"; "Debit Amount")
+                field("Debit Amount"; Rec."Debit Amount")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Debit Amount field.';
                 }
-                field("Credit Amount"; "Credit Amount")
+                field("Credit Amount"; Rec."Credit Amount")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Credit Amount field.';
                 }
-                field(Amount; Amount)
+                field(Amount; Rec.Amount)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Amount field.';
                 }
-                field("Bank Account"; "Bank Account")
+                field("Bank Account"; Rec."Bank Account")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Bank Account field.';
                 }
-                field("Acceptation Code"; "Acceptation Code")
+                field("Acceptation Code"; Rec."Acceptation Code")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Acceptation Code field.';
                 }
-                field("Payment Address Code"; "Payment Address Code")
+                field("Payment Address Code"; Rec."Payment Address Code")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Payment Address Code field.';
                 }
-                field("Bank Branch No."; "Bank Branch No.")
+                field("Bank Branch No."; Rec."Bank Branch No.")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Bank Branch No. field.';
                 }
-                field("Agency Code"; "Agency Code")
+                field("Agency Code"; Rec."Agency Code")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Agency Code field.';
                 }
-                field("Bank Account No."; "Bank Account No.")
+                field("Bank Account No."; Rec."Bank Account No.")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Bank Account No. field.';
                 }
-                field("Bank Account Name"; "Bank Account Name")
+                field("Bank Account Name"; Rec."Bank Account Name")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Bank Account Name field.';
                 }
-                field("Bank City"; "Bank City")
+                field("Bank City"; Rec."Bank City")
                 {
                     ApplicationArea = All;
                     Visible = false;
+                    ToolTip = 'Specifies the value of the Bank Account City field.';
                 }
-                field("RIB Key"; "RIB Key")
+                field("RIB Key"; Rec."RIB Key")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the RIB Key field.';
                 }
-                field("RIB Checked"; "RIB Checked")
+                field("RIB Checked"; Rec."RIB Checked")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the RIB Checked field.';
                 }
             }
         }
@@ -111,13 +131,12 @@ page 70522 "SSA Payment Lines Archive"
                     Caption = 'Card';
                     Image = EditLines;
                     ShortCutKey = 'Shift+F7';
-
+                    ToolTip = 'Executes the Card action.';
                     trigger OnAction()
                     begin
                         //This functionality was copied from page #45007688. Unsupported part was commented. Please check it.
                         /*CurrPage.Lines.FORM.*/
                         ShowAccount;
-
                     end;
                 }
                 action("Ledger E&ntries")
@@ -125,13 +144,12 @@ page 70522 "SSA Payment Lines Archive"
                     ApplicationArea = All;
                     Caption = 'Ledger E&ntries';
                     ShortCutKey = 'Ctrl+F7';
-
+                    ToolTip = 'Executes the Ledger E&ntries action.';
                     trigger OnAction()
                     begin
                         //This functionality was copied from page #45007688. Unsupported part was commented. Please check it.
                         /*CurrPage.Lines.FORM.*/
                         ShowEntries;
-
                     end;
                 }
             }
@@ -144,13 +162,12 @@ page 70522 "SSA Payment Lines Archive"
                     Caption = 'Dimensions';
                     Image = Dimensions;
                     ShortCutKey = 'Shift+Ctrl+D';
-
+                    ToolTip = 'Executes the Dimensions action.';
                     trigger OnAction()
                     begin
                         //This functionality was copied from page #45007688. Unsupported part was commented. Please check it.
                         /*CurrPage.Lines.FORM.*/
-                        ShowDimensions;
-
+                        Rec.ShowDimensions;
                     end;
                 }
             }
@@ -165,15 +182,15 @@ page 70522 "SSA Payment Lines Archive"
     var
         Header: Record "SSA Payment Header";
         Status: Record "SSA Payment Status";
-        [InDataSet]
+
         "Account No.Emphasize": Boolean;
 
     procedure ShowAccount()
     var
         GenJnlLine: Record "Gen. Journal Line";
     begin
-        GenJnlLine."Account Type" := "Account Type";
-        GenJnlLine."Account No." := "Account No.";
+        GenJnlLine."Account Type" := Rec."Account Type";
+        GenJnlLine."Account No." := Rec."Account No.";
         CODEUNIT.Run(CODEUNIT::"Gen. Jnl.-Show Card", GenJnlLine);
     end;
 
@@ -181,15 +198,14 @@ page 70522 "SSA Payment Lines Archive"
     var
         GenJnlLine: Record "Gen. Journal Line";
     begin
-        GenJnlLine."Account Type" := "Account Type";
-        GenJnlLine."Account No." := "Account No.";
+        GenJnlLine."Account Type" := Rec."Account Type";
+        GenJnlLine."Account No." := Rec."Account No.";
         CODEUNIT.Run(CODEUNIT::"Gen. Jnl.-Show Entries", GenJnlLine);
     end;
 
     local procedure AccountNoOnFormat()
     begin
-        if "Copied To No." <> '' then
+        if Rec."Copied To No." <> '' then
             "Account No.Emphasize" := true;
     end;
 }
-

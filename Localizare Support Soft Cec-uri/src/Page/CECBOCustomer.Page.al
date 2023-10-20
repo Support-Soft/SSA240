@@ -24,13 +24,14 @@ page 70500 "SSA CEC & BO Customer"
                     ApplicationArea = All;
                     Caption = 'Instrument de plata';
                     ShowMandatory = true;
+                    ToolTip = 'Specifies the value of the Instrument de plata field.';
                 }
                 field(Seria; Serie)
                 {
                     ApplicationArea = All;
                     Caption = 'Seria';
                     ShowMandatory = true;
-
+                    ToolTip = 'Specifies the value of the Seria field.';
                     trigger OnValidate()
                     begin
                         CurrPage.UPDATE(false);
@@ -41,7 +42,7 @@ page 70500 "SSA CEC & BO Customer"
                     ApplicationArea = All;
                     Caption = 'Numar';
                     ShowMandatory = true;
-
+                    ToolTip = 'Specifies the value of the Numar field.';
                     trigger OnValidate()
                     begin
                         CurrPage.UPDATE(false);
@@ -52,7 +53,7 @@ page 70500 "SSA CEC & BO Customer"
                     ApplicationArea = All;
                     Caption = 'Amount';
                     ShowMandatory = true;
-
+                    ToolTip = 'Specifies the value of the Amount field.';
                     trigger OnValidate()
                     begin
                         TempCLE.RESET;
@@ -65,7 +66,7 @@ page 70500 "SSA CEC & BO Customer"
                     ApplicationArea = All;
                     Caption = 'Doc. Date';
                     ShowMandatory = true;
-
+                    ToolTip = 'Specifies the value of the Doc. Date field.';
                     trigger OnValidate()
                     begin
                         CurrPage.UPDATE(false);
@@ -76,7 +77,7 @@ page 70500 "SSA CEC & BO Customer"
                     ApplicationArea = All;
                     Caption = 'Due Date';
                     ShowMandatory = true;
-
+                    ToolTip = 'Specifies the value of the Due Date field.';
                     trigger OnValidate()
                     begin
                         CurrPage.UPDATE(false);
@@ -86,22 +87,22 @@ page 70500 "SSA CEC & BO Customer"
                 {
                     ApplicationArea = All;
                     Caption = 'Exclude lines with remaining amount zero';
-
+                    ToolTip = 'Specifies the value of the Exclude lines with remaining amount zero field.';
                     trigger OnValidate()
                     begin
                         if not DontShowLinesWithZero then
-                            CLEARMARKS;
-                        if FINDFIRST then
+                            Rec.CLEARMARKS;
+                        if Rec.FINDFIRST then
                             repeat
-                                CALCFIELDS("Remaining Amount", "SSA Applied Amount CEC/BO");
-                                if ("Remaining Amount" - "SSA Applied Amount CEC/BO") > 0 then
-                                    MARK(true);
-                            until NEXT = 0;
+                                Rec.CALCFIELDS("Remaining Amount", "SSA Applied Amount CEC/BO");
+                                if (Rec."Remaining Amount" - Rec."SSA Applied Amount CEC/BO") > 0 then
+                                    Rec.MARK(true);
+                            until Rec.NEXT = 0;
                         if DontShowLinesWithZero then
-                            MARKEDONLY(true)
+                            Rec.MARKEDONLY(true)
                         else
-                            MARKEDONLY(false);
-                        if FINDFIRST then;
+                            Rec.MARKEDONLY(false);
+                        if Rec.FINDFIRST then;
                         CurrPage.UPDATE(false);
                     end;
                 }
@@ -109,95 +110,110 @@ page 70500 "SSA CEC & BO Customer"
             repeater(Control1)
             {
                 ShowCaption = false;
-                field("Posting Date"; "Posting Date")
+                field("Posting Date"; Rec."Posting Date")
                 {
                     ApplicationArea = All;
                     Caption = 'Document Date';
                     Editable = false;
+                    ToolTip = 'Specifies the customer entry''s posting date.';
                 }
-                field("Document No."; "Document No.")
+                field("Document No."; Rec."Document No.")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     ShowMandatory = true;
+                    ToolTip = 'Specifies the entry''s document number.';
                 }
-                field("Original Amount"; "Original Amount")
+                field("Original Amount"; Rec."Original Amount")
                 {
                     ApplicationArea = All;
                     Editable = false;
+                    ToolTip = 'Specifies the amount of the original entry.';
                 }
-                field("Original Amt. (LCY)"; "Original Amt. (LCY)")
-                {
-                    ApplicationArea = All;
-                    Editable = false;
-                    Visible = false;
-                }
-                field(Amount; Amount)
-                {
-                    ApplicationArea = All;
-                    Editable = false;
-                }
-                field("Amount (LCY)"; "Amount (LCY)")
+                field("Original Amt. (LCY)"; Rec."Original Amt. (LCY)")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     Visible = false;
+                    ToolTip = 'Specifies the amount that the entry originally consisted of, in LCY.';
                 }
-                field("Remaining Amount"; "Remaining Amount")
+                field(Amount; Rec.Amount)
                 {
                     ApplicationArea = All;
                     Editable = false;
+                    ToolTip = 'Specifies the amount of the entry.';
                 }
-                field("Remaining Amt. (LCY)"; "Remaining Amt. (LCY)")
-                {
-                    ApplicationArea = All;
-                    Editable = false;
-                    Visible = false;
-                }
-                field("Due Date"; "Due Date")
-                {
-                    ApplicationArea = All;
-                }
-                field(Open; Open)
+                field("Amount (LCY)"; Rec."Amount (LCY)")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     Visible = false;
+                    ToolTip = 'Specifies the amount of the entry in LCY.';
                 }
-                field("On Hold"; "On Hold")
+                field("Remaining Amount"; Rec."Remaining Amount")
                 {
                     ApplicationArea = All;
-                    Visible = false;
+                    Editable = false;
+                    ToolTip = 'Specifies the amount that remains to be applied to before the entry has been completely applied.';
                 }
-                field("User ID"; "User ID")
+                field("Remaining Amt. (LCY)"; Rec."Remaining Amt. (LCY)")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     Visible = false;
+                    ToolTip = 'Specifies the amount that remains to be applied to before the entry is totally applied to.';
                 }
-                field("Entry No."; "Entry No.")
+                field("Due Date"; Rec."Due Date")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the due date on the entry.';
+                }
+                field(Open; Rec.Open)
                 {
                     ApplicationArea = All;
                     Editable = false;
                     Visible = false;
+                    ToolTip = 'Specifies whether the amount on the entry has been fully paid or there is still a remaining amount that must be applied to.';
+                }
+                field("On Hold"; Rec."On Hold")
+                {
+                    ApplicationArea = All;
+                    Visible = false;
+                    ToolTip = 'Specifies that the related entry represents an unpaid invoice for which either a payment suggestion, a reminder, or a finance charge memo exists.';
+                }
+                field("User ID"; Rec."User ID")
+                {
+                    ApplicationArea = All;
+                    Editable = false;
+                    Visible = false;
+                    ToolTip = 'Specifies the ID of the user who posted the entry, to be used, for example, in the change log.';
+                }
+                field("Entry No."; Rec."Entry No.")
+                {
+                    ApplicationArea = All;
+                    Editable = false;
+                    Visible = false;
+                    ToolTip = 'Specifies the number of the entry, as assigned from the specified number series when the entry was created.';
                 }
                 field(ZileDepasireScadenta; ZileDepasireScadenta)
                 {
                     ApplicationArea = All;
                     Caption = 'Zile depasire scadenta';
+                    ToolTip = 'Specifies the value of the Zile depasire scadenta field.';
                 }
-                field("Payment Tools Amount"; "SSA Payment Tools Amount")
+                field("Payment Tools Amount"; Rec."SSA Payment Tools Amount")
                 {
                     ApplicationArea = All;
-
+                    ToolTip = 'Specifies the value of the Payment Tools Amount field.';
                     trigger OnValidate()
                     begin
                         PaymentToolsAmountOnAfterValidate(Rec);
                     end;
                 }
-                field("SSA Applied Amount CEC/BO"; "SSA Applied Amount CEC/BO")
+                field("SSA Applied Amount CEC/BO"; Rec."SSA Applied Amount CEC/BO")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Applied Amount CEC/BO field.';
                 }
             }
         }
@@ -237,6 +253,7 @@ page 70500 "SSA CEC & BO Customer"
                     RunPageLink = "Customer Entry No." = field("Entry No.");
                     RunPageView = sorting("Customer Entry No.");
                     Visible = false;
+                    ToolTip = 'Executes the Reminder/Fin. Charge Entries action.';
                 }
                 action("Applied E&ntries")
                 {
@@ -245,6 +262,7 @@ page 70500 "SSA CEC & BO Customer"
                     Image = Approve;
                     RunObject = Page "Applied Customer Entries";
                     RunPageOnRec = true;
+                    ToolTip = 'Executes the Applied E&ntries action.';
                 }
                 action(Dimensions)
                 {
@@ -252,10 +270,10 @@ page 70500 "SSA CEC & BO Customer"
                     Caption = 'Dimensions';
                     Image = Dimensions;
                     ShortCutKey = 'Shift+Ctrl+D';
-
+                    ToolTip = 'Executes the Dimensions action.';
                     trigger OnAction()
                     begin
-                        ShowDimensions;
+                        Rec.ShowDimensions;
                     end;
                 }
                 action("Detailed &Ledger Entries")
@@ -267,6 +285,7 @@ page 70500 "SSA CEC & BO Customer"
                     RunPageLink = "Cust. Ledger Entry No." = field("Entry No."), "Customer No." = field("Customer No.");
                     RunPageView = sorting("Cust. Ledger Entry No.", "Posting Date");
                     ShortCutKey = 'Ctrl+F7';
+                    ToolTip = 'Executes the Detailed &Ledger Entries action.';
                 }
             }
         }
@@ -282,7 +301,7 @@ page 70500 "SSA CEC & BO Customer"
                     Caption = 'Apply Entries';
                     Image = ApplyEntries;
                     ShortCutKey = 'Shift+F11';
-
+                    ToolTip = 'Executes the Apply Entries action.';
                     trigger OnAction()
                     var
                         CustLedgEntry: Record "Cust. Ledger Entry";
@@ -297,9 +316,10 @@ page 70500 "SSA CEC & BO Customer"
                 action("Creare CEC/BO")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Executes the Creare CEC/BO action.';
                     trigger OnAction()
                     begin
-                        CreareCEC(TipInstrPlata, Serie, Numar, DocDate, DueDate, "Customer No.");
+                        CreareCEC(TipInstrPlata, Serie, Numar, DocDate, DueDate, Rec."Customer No.");
                     end;
                 }
                 action("Distribuie suma")
@@ -309,12 +329,12 @@ page 70500 "SSA CEC & BO Customer"
                     Image = Start;
                     Promoted = true;
                     PromotedCategory = Process;
-
+                    ToolTip = 'Executes the Distribuie suma action.';
                     trigger OnAction()
                     var
                         Text001_ES: Label 'You need to fill all the fields that are mandatory (*)!';
                     begin
-                        DistribuieSuma(Rec, "Customer No.");
+                        DistribuieSuma(Rec, Rec."Customer No.");
                     end;
                 }
                 separator(Separator45007657)
@@ -326,12 +346,12 @@ page 70500 "SSA CEC & BO Customer"
                     Caption = 'Unapply Entries';
                     Ellipsis = true;
                     Image = UnApply;
-
+                    ToolTip = 'Executes the Unapply Entries action.';
                     trigger OnAction()
                     var
                         CustEntryApplyPostedEntries: Codeunit "CustEntry-Apply Posted Entries";
                     begin
-                        CustEntryApplyPostedEntries.UnApplyCustLedgEntry("Entry No.");
+                        CustEntryApplyPostedEntries.UnApplyCustLedgEntry(Rec."Entry No.");
                     end;
                 }
                 separator(Separator45007655)
@@ -344,18 +364,18 @@ page 70500 "SSA CEC & BO Customer"
                     Ellipsis = true;
                     Image = ReverseRegister;
                     Visible = false;
-
+                    ToolTip = 'Executes the Reverse Transaction action.';
                     trigger OnAction()
                     var
                         ReversalEntry: Record "Reversal Entry";
                     begin
                         CLEAR(ReversalEntry);
-                        if Reversed then
-                            ReversalEntry.AlreadyReversedEntry(TABLECAPTION, "Entry No.");
-                        if "Journal Batch Name" = '' then
+                        if Rec.Reversed then
+                            ReversalEntry.AlreadyReversedEntry(Rec.TABLECAPTION, Rec."Entry No.");
+                        if Rec."Journal Batch Name" = '' then
                             ReversalEntry.TestFieldError;
-                        TESTFIELD("Transaction No.");
-                        ReversalEntry.ReverseTransaction("Transaction No.");
+                        Rec.TESTFIELD("Transaction No.");
+                        ReversalEntry.ReverseTransaction(Rec."Transaction No.");
                     end;
                 }
             }
@@ -366,12 +386,12 @@ page 70500 "SSA CEC & BO Customer"
                 Image = Navigate;
                 Promoted = true;
                 PromotedCategory = Process;
-
+                ToolTip = 'Executes the &NavigateAction action.';
                 trigger OnAction()
                 var
                     NavigatePage: Page Navigate;
                 begin
-                    NavigatePage.SetDoc("Posting Date", "Document No.");
+                    NavigatePage.SetDoc(Rec."Posting Date", Rec."Document No.");
                     NavigatePage.RUN;
                 end;
             }
@@ -383,12 +403,12 @@ page 70500 "SSA CEC & BO Customer"
                 Promoted = true;
                 PromotedCategory = Process;
                 Visible = false;
-
+                ToolTip = 'Executes the Incoming Document action.';
                 trigger OnAction()
                 var
                     IncomingDocument: Record "Incoming Document";
                 begin
-                    IncomingDocument.HyperlinkToDocument("Document No.", "Posting Date");
+                    IncomingDocument.HyperlinkToDocument(Rec."Document No.", Rec."Posting Date");
                 end;
             }
         }
@@ -405,7 +425,7 @@ page 70500 "SSA CEC & BO Customer"
         TempCLE.RESET;
         TempCLE.DELETEALL;
 
-        MODIFYALL("SSA Payment Tools Amount", 0);
+        Rec.MODIFYALL("SSA Payment Tools Amount", 0);
 
         CLEAR(TipInstrPlata);
         CLEAR(Serie);
@@ -573,4 +593,3 @@ page 70500 "SSA CEC & BO Customer"
             MESSAGE('Suma a fost distribuita in totalitate.');
     end;
 }
-

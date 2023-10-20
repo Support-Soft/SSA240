@@ -5,13 +5,15 @@ pageextension 70018 "SSA Intrastat Journal 70018" extends "Intrastat Journal"
     {
         addlast(Control1)
         {
-            field("SSA Country/Region of Origin Code"; "Country/Region of Origin Code")
+            field("SSA Country/Region of Origin Code"; Rec."Country/Region of Origin Code")
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies a code for the country/region where the item was produced or processed.';
             }
-            field("SSA Source Type"; "SSA Source Type")
+            field("SSA Source Type"; Rec."SSA Source Type")
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the SSA Source Type field.';
             }
         }
     }
@@ -42,7 +44,7 @@ pageextension 70018 "SSA Intrastat Journal 70018" extends "Intrastat Journal"
                 begin
                     //SSA953>>
                     SSAGetItemEntries.SetIntrastatJnlLine(Rec);
-                    SSAGetItemEntries.RunModal;
+                    SSAGetItemEntries.RunModal();
                     Clear(SSAGetItemEntries);
                     //SSA953<<
                 end;
@@ -59,19 +61,18 @@ pageextension 70018 "SSA Intrastat Journal 70018" extends "Intrastat Journal"
                 Promoted = true;
                 PromotedCategory = Process;
                 PromotedIsBig = true;
+                ToolTip = 'Executes the Export to XML action.';
                 trigger OnAction()
                 var
                     ExportIntrastatXML: XmlPort "SSAExport Intrast Jnl to XML";
                 begin
                     //SSA953>>
                     Clear(ExportIntrastatXML);
-                    ExportIntrastatXML.SetParam("Journal Template Name", "Journal Batch Name");
-                    ExportIntrastatXML.Run;
+                    ExportIntrastatXML.SetParam(Rec."Journal Template Name", Rec."Journal Batch Name");
+                    ExportIntrastatXML.Run();
                     //SSA953<<
                 end;
-
             }
         }
     }
 }
-

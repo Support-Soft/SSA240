@@ -6,10 +6,9 @@ tableextension 70060 "SSA PostedAssemblyHeader70060" extends "Posted Assembly He
         field(70000; "SSA Gen. Bus. Posting Group"; Code[20])
         {
             Caption = 'Gen. Bus. Posting Group';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA938';
             TableRelation = "Gen. Business Posting Group";
         }
     }
 }
-

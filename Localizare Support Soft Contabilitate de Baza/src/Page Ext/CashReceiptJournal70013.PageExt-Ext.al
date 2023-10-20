@@ -5,11 +5,11 @@ pageextension 70013 "SSA Cash Receipt Journal70013" extends "Cash Receipt Journa
     {
         addafter(ShortcutDimCode8)
         {
-            field("SSA Custom Invoice No."; "SSA Custom Invoice No.")
+            field("SSA Custom Invoice No."; Rec."SSA Custom Invoice No.")
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Custom Invoice No. field.';
             }
         }
     }
 }
-

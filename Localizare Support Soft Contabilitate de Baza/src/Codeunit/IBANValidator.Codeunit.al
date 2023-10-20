@@ -1,9 +1,6 @@
 codeunit 70029 "SSA IBAN Validator"
 {
 
-    trigger OnRun()
-    begin
-    end;
 
     local
     procedure IsIBANValid(_IBAN: Code[50])
@@ -30,7 +27,8 @@ codeunit 70029 "SSA IBAN Validator"
             if not Evaluate(IntVal, CopyStr(TextIban, 1, 1)) then begin
                 Evaluate(IntVal, Format(TextIban[1], 0, '<Number>'));
                 TextIbanDec += Format(IntVal - 55);
-            end else
+            end
+            else
                 TextIbanDec += CopyStr(TextIban, 1, 1);
 
             TextIban := CopyStr(TextIban, 2);
@@ -48,4 +46,3 @@ codeunit 70029 "SSA IBAN Validator"
         exit(true);
     end;
 }
-

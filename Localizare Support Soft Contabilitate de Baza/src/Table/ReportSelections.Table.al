@@ -3,6 +3,7 @@ table 70005 "SSA Report Selections"
     // SSA937 SSCAT 16.06.2019 3.Funct. Bonuri de consum-consum intern
 
     Caption = 'Report Selections';
+    DataClassification = CustomerContent;
 
     fields
     {
@@ -112,6 +113,9 @@ table 70005 "SSA Report Selections"
 
     fieldgroups
     {
+        fieldgroup(DropDown; Usage, Sequence)
+        {
+        }
     }
 
     trigger OnInsert()
@@ -130,10 +134,9 @@ table 70005 "SSA Report Selections"
     procedure NewRecord()
     begin
         SSAReportSelection2.SetRange(Usage, Usage);
-        if SSAReportSelection2.FindLast and (SSAReportSelection2.Sequence <> '') then
+        if SSAReportSelection2.FindLast() and (SSAReportSelection2.Sequence <> '') then
             Sequence := IncStr(SSAReportSelection2.Sequence)
         else
             Sequence := '1';
     end;
 }
-

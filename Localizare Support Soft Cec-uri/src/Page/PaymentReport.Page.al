@@ -13,13 +13,15 @@ page 70507 "SSA Payment Report"
             repeater(Control1)
             {
                 ShowCaption = false;
-                field("Payment Class"; "Payment Class")
+                field("Payment Class"; Rec."Payment Class")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Payment Class field.';
                 }
-                field(Name; Name)
+                field(Name; Rec.Name)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Name field.';
                 }
             }
         }
@@ -36,17 +38,16 @@ page 70507 "SSA Payment Report"
                 Image = Print;
                 Promoted = true;
                 PromotedCategory = Process;
-
+                ToolTip = 'Executes the &Print action.';
                 trigger OnAction()
                 var
                     PaymentLine: Record "SSA Payment Line";
                 begin
-                    PaymentLine.SetRange("Payment Class", "Payment Class");
-                    PaymentLine.SetRange("Status No.", Line);
+                    PaymentLine.SetRange("Payment Class", Rec."Payment Class");
+                    PaymentLine.SetRange("Status No.", Rec.Line);
                     //REPORT.RUNMODAL(REPORT::"Payments Lists",TRUE,TRUE,PaymentLine);
                 end;
             }
         }
     }
 }
-

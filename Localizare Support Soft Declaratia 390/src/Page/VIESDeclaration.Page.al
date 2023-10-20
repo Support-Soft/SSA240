@@ -14,99 +14,99 @@ page 71501 "SSA VIES Declaration"
             group(General)
             {
                 Caption = 'General';
-                field("No."; "No.")
+                field("No."; Rec."No.")
                 {
                     ApplicationArea = All;
                     Importance = Promoted;
 
                     trigger OnAssistEdit()
                     begin
-                        if AssistEdit(xRec) then
+                        if Rec.AssistEdit(xRec) then
                             CurrPage.Update;
                     end;
                 }
-                field("Declaration Period"; "Declaration Period")
+                field("Declaration Period"; Rec."Declaration Period")
                 {
                     ApplicationArea = All;
                     Importance = Promoted;
                 }
-                field("Declaration Type"; "Declaration Type")
+                field("Declaration Type"; Rec."Declaration Type")
                 {
                     ApplicationArea = All;
                     Importance = Promoted;
 
                     trigger OnValidate()
                     begin
-                        if xRec."Declaration Type" <> "Declaration Type" then
-                            if "Declaration Type" <> "Declaration Type"::Corrective then
-                                "Corrected Declaration No." := '';
+                        if xRec."Declaration Type" <> Rec."Declaration Type" then
+                            if Rec."Declaration Type" <> Rec."Declaration Type"::Corrective then
+                                Rec."Corrected Declaration No." := '';
                         DeclarationTypeOnAfterValidate;
                     end;
                 }
-                field("Corrected Declaration No."; "Corrected Declaration No.")
+                field("Corrected Declaration No."; Rec."Corrected Declaration No.")
                 {
                     ApplicationArea = All;
                     Editable = CorrectedDeclarationNoEditable;
                 }
-                field(Name; Name)
+                field(Name; Rec.Name)
                 {
                     ApplicationArea = All;
                     Editable = NameEditable;
                 }
-                field("VAT Registration No."; "VAT Registration No.")
+                field("VAT Registration No."; Rec."VAT Registration No.")
                 {
                     ApplicationArea = All;
                     Editable = "VAT Registration No.Editable";
                 }
-                field("SSA Tax Office Number"; "SSA Tax Office Number")
+                field("SSA Tax Office Number"; Rec."SSA Tax Office Number")
                 {
                     ApplicationArea = All;
                 }
-                field("Trade Type"; "Trade Type")
+                field("Trade Type"; Rec."Trade Type")
                 {
                     ApplicationArea = All;
                     Editable = "Trade TypeEditable";
                 }
-                field("EU Goods/Services"; "EU Goods/Services")
+                field("EU Goods/Services"; Rec."EU Goods/Services")
                 {
                     ApplicationArea = All;
                     Editable = "EU Goods/ServicesEditable";
                 }
-                field("Document Date"; "Document Date")
+                field("Document Date"; Rec."Document Date")
                 {
                     ApplicationArea = All;
                 }
-                field("Period No."; "Period No.")
+                field("Period No."; Rec."Period No.")
                 {
                     ApplicationArea = All;
                     Editable = "Period No.Editable";
                     Importance = Promoted;
                 }
-                field(Year; Year)
+                field(Year; Rec.Year)
                 {
                     ApplicationArea = All;
                     Editable = YearEditable;
                     Importance = Promoted;
                 }
-                field("Start Date"; "Start Date")
+                field("Start Date"; Rec."Start Date")
                 {
                     ApplicationArea = All;
                 }
-                field("End Date"; "End Date")
+                field("End Date"; Rec."End Date")
                 {
                     ApplicationArea = All;
                 }
-                field("Amount (LCY)"; "Amount (LCY)")
-                {
-                    ApplicationArea = All;
-                    DrillDown = false;
-                }
-                field("Number of Supplies"; "Number of Supplies")
+                field("Amount (LCY)"; Rec."Amount (LCY)")
                 {
                     ApplicationArea = All;
                     DrillDown = false;
                 }
-                field(Status; Status)
+                field("Number of Supplies"; Rec."Number of Supplies")
+                {
+                    ApplicationArea = All;
+                    DrillDown = false;
+                }
+                field(Status; Rec.Status)
                 {
                     ApplicationArea = All;
                     Editable = false;
@@ -121,35 +121,35 @@ page 71501 "SSA VIES Declaration"
             group(Address)
             {
                 Caption = 'Address';
-                field("Country/Region Name"; "Country/Region Name")
+                field("Country/Region Name"; Rec."Country/Region Name")
                 {
                     ApplicationArea = All;
                 }
-                field(County; County)
+                field(County; Rec.County)
                 {
                     ApplicationArea = All;
                 }
-                field("Post Code"; "Post Code")
+                field("Post Code"; Rec."Post Code")
                 {
                     ApplicationArea = All;
                 }
-                field(City; City)
+                field(City; Rec.City)
                 {
                     ApplicationArea = All;
                 }
-                field(Street; Street)
+                field(Street; Rec.Street)
                 {
                     ApplicationArea = All;
                 }
-                field("House No."; "House No.")
+                field("House No."; Rec."House No.")
                 {
                     ApplicationArea = All;
                 }
-                field("Municipality No."; "Municipality No.")
+                field("Municipality No."; Rec."Municipality No.")
                 {
                     ApplicationArea = All;
                 }
-                field("Apartment No."; "Apartment No.")
+                field("Apartment No."; Rec."Apartment No.")
                 {
                     ApplicationArea = All;
                 }
@@ -157,11 +157,11 @@ page 71501 "SSA VIES Declaration"
             group(Persons)
             {
                 Caption = 'Persons';
-                field("Authorized Employee No."; "Authorized Employee No.")
+                field("Authorized Employee No."; Rec."Authorized Employee No.")
                 {
                     ApplicationArea = All;
                 }
-                field("Filled by Employee No."; "Filled by Employee No.")
+                field("Filled by Employee No."; Rec."Filled by Employee No.")
                 {
                     ApplicationArea = All;
                     Importance = Promoted;
@@ -188,8 +188,8 @@ page 71501 "SSA VIES Declaration"
 
                     trigger OnAction()
                     begin
-                        TestField(Status, Status::Open);
-                        VIESHeader.SetRange("No.", "No.");
+                        Rec.TestField(Status, Rec.Status::Open);
+                        VIESHeader.SetRange("No.", Rec."No.");
                         REPORT.RunModal(REPORT::"SSA Suggest VIES Lines", true, false, VIESHeader);
                     end;
                 }
@@ -207,8 +207,8 @@ page 71501 "SSA VIES Declaration"
                         VIESDeclarationLine: Record "SSA VIES Line";
                         VIESDeclarationLines: Page "SSA VIES Lines";
                     begin
-                        TestField(Status, Status::Open);
-                        TestField("Corrected Declaration No.");
+                        Rec.TestField(Status, Rec.Status::Open);
+                        Rec.TestField("Corrected Declaration No.");
                         VIESDeclarationLines.SetToDeclaration(Rec);
                         VIESDeclarationLines.LookupMode := true;
                         if VIESDeclarationLines.RunModal = ACTION::LookupOK then
@@ -264,7 +264,7 @@ page 71501 "SSA VIES Declaration"
 
                     trigger OnAction()
                     begin
-                        Print;
+                        Rec.Print;
                     end;
                 }
             }
@@ -295,19 +295,19 @@ page 71501 "SSA VIES Declaration"
         VIESHeader: Record "SSA VIES Header";
         Countries: Page "Countries/Regions";
         Release: Codeunit "SSA Release VIES Declaration";
-        [InDataSet]
+
         CorrectedDeclarationNoEditable: Boolean;
-        [InDataSet]
+
         "Period No.Editable": Boolean;
-        [InDataSet]
+
         YearEditable: Boolean;
-        [InDataSet]
+
         NameEditable: Boolean;
-        [InDataSet]
+
         "VAT Registration No.Editable": Boolean;
-        [InDataSet]
+
         "Trade TypeEditable": Boolean;
-        [InDataSet]
+
         "EU Goods/ServicesEditable": Boolean;
 
     local
@@ -315,8 +315,8 @@ page 71501 "SSA VIES Declaration"
     var
         Corrective: Boolean;
     begin
-        Corrective := "Declaration Type" in ["Declaration Type"::Corrective,
-                                             "Declaration Type"::"Corrective-Supplementary"];
+        Corrective := Rec."Declaration Type" in [Rec."Declaration Type"::Corrective,
+                                             Rec."Declaration Type"::"Corrective-Supplementary"];
         CorrectedDeclarationNoEditable := Corrective;
         "Period No.Editable" := not Corrective;
         YearEditable := not Corrective;

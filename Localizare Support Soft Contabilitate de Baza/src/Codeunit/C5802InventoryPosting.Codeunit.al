@@ -1,11 +1,6 @@
 codeunit 70002 "SSA C5802 Inventory Posting"
 {
-    // SSA935 SSCAT 15.06.2019 1.Funct. anulare stocuri in rosu
 
-
-    trigger OnRun()
-    begin
-    end;
 
     [EventSubscriber(ObjectType::Codeunit, 5802, 'OnAfterInitTempInvtPostBuf', '', false, false)]
     local procedure OnAfterInitTempInvtPostBuf(var Sender: Codeunit "Inventory Posting To G/L"; var TempInvtPostBuf: array[20] of Record "Invt. Posting Buffer" temporary; ValueEntry: Record "Value Entry")
@@ -86,7 +81,6 @@ codeunit 70002 "SSA C5802 Inventory Posting"
                 exit(ValueEntry."SSA Correction Cost");
             if (NewAdjustedCost < 0) and (ValueEntry."Valued Quantity" < 0) then
                 exit(ValueEntry."SSA Correction Cost");
-
         end;
         if ValueEntry."Item Ledger Entry Type" in
           [ValueEntry."Item Ledger Entry Type"::Sale] then begin
@@ -114,4 +108,3 @@ codeunit 70002 "SSA C5802 Inventory Posting"
         //SSA935<<
     end;
 }
-

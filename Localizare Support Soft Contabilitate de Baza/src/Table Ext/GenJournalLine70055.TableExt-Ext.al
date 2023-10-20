@@ -10,7 +10,7 @@ tableextension 70055 "SSA Gen. Journal Line70055" extends "Gen. Journal Line"
         field(70000; "SSA Tip Document D394"; Option)
         {
             Caption = 'Tip Document D394';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA973';
             OptionCaption = ' ,Factura Fiscala,Bon Fiscal,Factura Simplificata,Borderou,File Carnet,Contract,Alte Documente';
             OptionMembers = " ","Factura Fiscala","Bon Fiscal","Factura Simplificata",Borderou,"File Carnet",Contract,"Alte Documente";
@@ -18,7 +18,7 @@ tableextension 70055 "SSA Gen. Journal Line70055" extends "Gen. Journal Line"
         field(70001; "SSA Stare Factura"; Option)
         {
             Caption = 'Stare Factura';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA973';
             OptionCaption = ' ,0-Factura Emisa,1-Factura Stornata,2-Factura Anulata,3-Autofactura,4-In calidate de beneficiar in numele furnizorului';
             OptionMembers = " ","0-Factura Emisa","1-Factura Stornata","2-Factura Anulata","3-Autofactura","4-In calidate de beneficiar in numele furnizorului";
@@ -26,7 +26,7 @@ tableextension 70055 "SSA Gen. Journal Line70055" extends "Gen. Journal Line"
         field(70002; "SSA Tip Partener"; Option)
         {
             Caption = 'Tip Partener';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA973';
             OptionCaption = ' ,1-CUI Valid din RO si din afara inreg. in scopuri de TVA in RO,2-CNP PFA din RO sau CUI neinregistrat in scopuri de TVA,3-Fara CUI valid din UE fara RO,4-Fara CUI valid din afara UE fara RO';
             OptionMembers = " ","1-CUI Valid din RO si din afara inreg. in scopuri de TVA in RO","2-CNP PFA din RO sau CUI neinregistrat in scopuri de TVA","3-Fara CUI valid din UE fara RO","4-Fara CUI valid din afara UE fara RO";
@@ -34,49 +34,49 @@ tableextension 70055 "SSA Gen. Journal Line70055" extends "Gen. Journal Line"
         field(70003; "SSA Transaction Type"; Code[10])
         {
             Caption = 'Transaction Type';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSM953';
             TableRelation = "Transaction Type";
         }
         field(70004; "SSA Transport Method"; Code[10])
         {
             Caption = 'Transport Method';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSM953';
             TableRelation = "Transport Method";
         }
         field(70005; "SSA Entry/Exit Point"; Code[10])
         {
             Caption = 'Entry/Exit Point';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSM953';
             TableRelation = "Entry/Exit Point";
         }
         field(70006; "SSA Area"; Code[10])
         {
             Caption = 'Area';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSM953';
             TableRelation = Area;
         }
         field(70007; "SSA Transaction Specification"; Code[10])
         {
             Caption = 'Transaction Specification';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSM953';
             TableRelation = "Transaction Specification";
         }
         field(70008; "SSA Shpt. Method Code"; Code[10])
         {
             Caption = 'Shpt. Method Code';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSM953';
             TableRelation = "Shipment Method";
         }
         field(70009; "SSA Custom Invoice No."; Code[20])
         {
             Caption = 'Custom Invoice No.';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA946';
         }
         field(70010; "SSA Date Filter"; Date)
@@ -162,6 +162,7 @@ tableextension 70055 "SSA Gen. Journal Line70055" extends "Gen. Journal Line"
             TableRelation = if ("Account Type" = const(Customer)) "Customer Posting Group" else
             if ("Account Type" = const(Vendor)) "Vendor Posting Group" else
             if ("Account Type" = const("Fixed Asset")) "FA Posting Group";
+            DataClassification = CustomerContent;
             trigger OnValidate()
             begin
                 Validate("Posting Group", "SSA Posting Group");
@@ -169,7 +170,7 @@ tableextension 70055 "SSA Gen. Journal Line70055" extends "Gen. Journal Line"
         }
         field(70021; "SSA Total Amount"; Decimal)
         {
-            CalcFormula = sum("Gen. Journal Line"."Amount" where("Bal. Account No." = field("Bal. Account No."),
+            CalcFormula = sum("Gen. Journal Line".Amount where("Bal. Account No." = field("Bal. Account No."),
                                                                         "Posting Date" = field("SSA Date Filter"),
                                                                         "Journal Template Name" = field("Journal Template Name"),
                                                                         "Journal Batch Name" = field("Journal Batch Name")));
@@ -213,7 +214,7 @@ tableextension 70055 "SSA Gen. Journal Line70055" extends "Gen. Journal Line"
         field(70027; "SSA Distribute Non-Ded VAT"; Boolean)
         {
             Caption = 'Distribute Non-Deductible VAT';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA948';
 
             trigger OnValidate()
@@ -224,14 +225,14 @@ tableextension 70055 "SSA Gen. Journal Line70055" extends "Gen. Journal Line"
         field(70028; "SSA Non-Ded VAT Expense Acc 1"; Code[20])
         {
             Caption = 'Non-Ded VAT Expense Account 1';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA948';
             TableRelation = "G/L Account";
         }
         field(70029; "SSA Non-Ded VAT Expense Acc 2"; Code[20])
         {
             Caption = 'Non-Ded VAT Expense Account 2';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA948';
             TableRelation = "G/L Account";
         }
@@ -244,6 +245,7 @@ tableextension 70055 "SSA Gen. Journal Line70055" extends "Gen. Journal Line"
         {
             Caption = 'VAT Bus. Posting Group Leasing';
             TableRelation = "VAT Business Posting Group";
+            DataClassification = CustomerContent;
             trigger OnValidate()
             begin
                 "VAT Bus. Posting Group" := "SSA VAT Bus. Posting Group";
@@ -253,11 +255,11 @@ tableextension 70055 "SSA Gen. Journal Line70055" extends "Gen. Journal Line"
         {
             Caption = 'VAT Prod. Posting Group Leasing';
             TableRelation = "VAT Product Posting Group";
+            DataClassification = CustomerContent;
             trigger OnValidate()
             begin
                 "VAT Prod. Posting Group" := "SSA VAT Prod. Posting Group";
             end;
         }
-
     }
 }

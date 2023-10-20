@@ -120,4 +120,3 @@ table 70502 "SSA Payment Status"
         Text000: Label 'Deleting the first report not allowed';
         Text001: Label 'Deleting is not allowed because this Payment Status is already used.';
 }
-

@@ -10,197 +10,195 @@ codeunit 70501 "SSA Payment-Apply"
     var
         Header: Record "SSA Payment Header";
     begin
-        Header.Get("No.");
+        Header.Get(Rec."No.");
 
-        GenJnlLine."Account Type" := "Account Type";
-        GenJnlLine."Account No." := "Account No.";
-        GenJnlLine.Amount := Amount;
-        GenJnlLine."Amount (LCY)" := "Amount (LCY)";
-        GenJnlLine."Currency Code" := "Currency Code";
+        GenJnlLine."Account Type" := Rec."Account Type";
+        GenJnlLine."Account No." := Rec."Account No.";
+        GenJnlLine.Amount := Rec.Amount;
+        GenJnlLine."Amount (LCY)" := Rec."Amount (LCY)";
+        GenJnlLine."Currency Code" := Rec."Currency Code";
         GenJnlLine."Posting Date" := Header."Posting Date";
 
-        with GenJnlLine do begin
-            GetCurrency;
-            AccType := "Account Type";
-            AccNo := "Account No.";
+        Rec.GetCurrency;
+        AccType := GenJnlLine."Account Type";
+        AccNo := GenJnlLine."Account No.";
 
-            case AccType of
-                AccType::Customer:
-                    begin
-                        CustLedgEntry.SetCurrentKey("Customer No.", Open, Positive);
-                        CustLedgEntry.SetRange("Customer No.", AccNo);
-                        CustLedgEntry.SetRange(Open, true);
-                        if "Applies-to ID" = '' then
-                            "Applies-to ID" := "No." + '/' + Format(Rec."Line No.");
-                        ApplyCustEntries.SetGenJnlLine(GenJnlLine, GenJnlLine.FieldNo("Applies-to ID"));
-                        ApplyCustEntries.SetRecord(CustLedgEntry);
-                        ApplyCustEntries.SetTableView(CustLedgEntry);
-                        ApplyCustEntries.LookupMode(true);
-                        OK := ApplyCustEntries.RunModal = ACTION::LookupOK;
-                        Clear(ApplyCustEntries);
-                        if not OK then
-                            exit;
-                        CustLedgEntry.Reset;
-                        CustLedgEntry.SetCurrentKey("Customer No.", Open, Positive);
-                        CustLedgEntry.SetRange("Customer No.", AccNo);
-                        CustLedgEntry.SetRange(Open, true);
-                        CustLedgEntry.SetRange("Applies-to ID", "Applies-to ID");
-                        if CustLedgEntry.Find('-') then begin
-                            CurrencyCode2 := CustLedgEntry."Currency Code";
-                            if Amount = 0 then begin
-                                repeat
-                                    CheckAgainstApplnCurrency(CurrencyCode2, CustLedgEntry."Currency Code", AccType::Customer, true);
-                                    CustLedgEntry.CalcFields("Remaining Amount");
-                                    CustLedgEntry."Remaining Amount" :=
-                                      ExchAmount(
-                                        CustLedgEntry."Remaining Amount",
-                                        CustLedgEntry."Currency Code", "Currency Code", "Posting Date");
-                                    CustLedgEntry."Remaining Amount" :=
-                                      Round(CustLedgEntry."Remaining Amount", Currency."Amount Rounding Precision");
-                                    CustLedgEntry."Original Pmt. Disc. Possible" :=
-                                      ExchAmount(
-                                        CustLedgEntry."Original Pmt. Disc. Possible",
-                                        CustLedgEntry."Currency Code", "Currency Code", "Posting Date");
-                                    CustLedgEntry."Original Pmt. Disc. Possible" :=
-                                      Round(CustLedgEntry."Original Pmt. Disc. Possible", Currency."Amount Rounding Precision");
-                                    if (CustLedgEntry."Document Type" = CustLedgEntry."Document Type"::Invoice) and
-                                       ("Posting Date" <= CustLedgEntry."Pmt. Discount Date")
-                                    then
-                                        Amount := Amount - (CustLedgEntry."Amount to Apply" - CustLedgEntry."Original Pmt. Disc. Possible")
-                                    else
-                                        Amount := Amount - CustLedgEntry."Amount to Apply";
-                                until CustLedgEntry.Next = 0;
-                                "Amount (LCY)" := Amount;
-                                "Currency Factor" := 1;
-                                if ("Bal. Account Type" = "Bal. Account Type"::Customer) or
-                                   ("Bal. Account Type" = "Bal. Account Type"::Vendor)
-                                then begin
-                                    Amount := -Amount;
-                                    "Amount (LCY)" := -"Amount (LCY)";
-                                end;
-                                Validate(Amount);
-                                Validate("Amount (LCY)");
-                            end else
-                                repeat
-                                    CheckAgainstApplnCurrency(CurrencyCode2, CustLedgEntry."Currency Code", AccType::Customer, true);
-                                until CustLedgEntry.Next = 0;
-                            if "Currency Code" <> CurrencyCode2 then
-                                if Amount = 0 then begin
-                                    if not
-                                       Confirm(
-                                         Text001 +
-                                         Text002, true,
-                                         FieldCaption("Currency Code"), TableCaption, "Currency Code",
-                                         CustLedgEntry."Currency Code")
-                                    then
-                                        Error(Text003);
-                                    "Currency Code" := CustLedgEntry."Currency Code"
-                                end else
-                                    CheckAgainstApplnCurrency("Currency Code", CustLedgEntry."Currency Code", AccType::Customer, true);
-                            "Applies-to Doc. Type" := 0;
-                            "Applies-to Doc. No." := '';
+        case AccType of
+            AccType::Customer:
+                begin
+                    CustLedgEntry.SetCurrentKey("Customer No.", Open, Positive);
+                    CustLedgEntry.SetRange("Customer No.", AccNo);
+                    CustLedgEntry.SetRange(Open, true);
+                    if GenJnlLine."Applies-to ID" = '' then
+                        GenJnlLine."Applies-to ID" := Rec."No." + '/' + Format(Rec."Line No.");
+                    ApplyCustEntries.SetGenJnlLine(GenJnlLine, GenJnlLine.FieldNo("Applies-to ID"));
+                    ApplyCustEntries.SetRecord(CustLedgEntry);
+                    ApplyCustEntries.SetTableView(CustLedgEntry);
+                    ApplyCustEntries.LookupMode(true);
+                    OK := ApplyCustEntries.RunModal = ACTION::LookupOK;
+                    Clear(ApplyCustEntries);
+                    if not OK then
+                        exit;
+                    CustLedgEntry.Reset;
+                    CustLedgEntry.SetCurrentKey("Customer No.", Open, Positive);
+                    CustLedgEntry.SetRange("Customer No.", AccNo);
+                    CustLedgEntry.SetRange(Open, true);
+                    CustLedgEntry.SetRange("Applies-to ID", GenJnlLine."Applies-to ID");
+                    if CustLedgEntry.Find('-') then begin
+                        CurrencyCode2 := CustLedgEntry."Currency Code";
+                        if GenJnlLine.Amount = 0 then begin
+                            repeat
+                                CheckAgainstApplnCurrency(CurrencyCode2, CustLedgEntry."Currency Code", AccType::Customer, true);
+                                CustLedgEntry.CalcFields("Remaining Amount");
+                                CustLedgEntry."Remaining Amount" :=
+                                  ExchAmount(
+                                    CustLedgEntry."Remaining Amount",
+                                    CustLedgEntry."Currency Code", GenJnlLine."Currency Code", GenJnlLine."Posting Date");
+                                CustLedgEntry."Remaining Amount" :=
+                                  Round(CustLedgEntry."Remaining Amount", Currency."Amount Rounding Precision");
+                                CustLedgEntry."Original Pmt. Disc. Possible" :=
+                                  ExchAmount(
+                                    CustLedgEntry."Original Pmt. Disc. Possible",
+                                    CustLedgEntry."Currency Code", GenJnlLine."Currency Code", GenJnlLine."Posting Date");
+                                CustLedgEntry."Original Pmt. Disc. Possible" :=
+                                  Round(CustLedgEntry."Original Pmt. Disc. Possible", Currency."Amount Rounding Precision");
+                                if (CustLedgEntry."Document Type" = CustLedgEntry."Document Type"::Invoice) and
+                                   (GenJnlLine."Posting Date" <= CustLedgEntry."Pmt. Discount Date")
+                                then
+                                    GenJnlLine.Amount := GenJnlLine.Amount - (CustLedgEntry."Amount to Apply" - CustLedgEntry."Original Pmt. Disc. Possible")
+                                else
+                                    GenJnlLine.Amount := GenJnlLine.Amount - CustLedgEntry."Amount to Apply";
+                            until CustLedgEntry.Next = 0;
+                            GenJnlLine."Amount (LCY)" := GenJnlLine.Amount;
+                            GenJnlLine."Currency Factor" := 1;
+                            if (GenJnlLine."Bal. Account Type" = GenJnlLine."Bal. Account Type"::Customer) or
+                               (GenJnlLine."Bal. Account Type" = GenJnlLine."Bal. Account Type"::Vendor)
+                            then begin
+                                GenJnlLine.Amount := -GenJnlLine.Amount;
+                                GenJnlLine."Amount (LCY)" := -GenJnlLine."Amount (LCY)";
+                            end;
+                            GenJnlLine.Validate(Amount);
+                            GenJnlLine.Validate("Amount (LCY)");
                         end else
-                            "Applies-to ID" := '';
-                        "Due Date" := CustLedgEntry."Due Date";
-                    end;
-                AccType::Vendor:
-                    begin
-                        VendLedgEntry.SetCurrentKey("Vendor No.", Open, Positive);
-                        VendLedgEntry.SetRange("Vendor No.", AccNo);
-                        VendLedgEntry.SetRange(Open, true);
-                        if "Applies-to ID" = '' then
-                            "Applies-to ID" := "No." + '/' + Format(Rec."Line No.");
-                        if "Applies-to ID" = '' then
-                            "Applies-to ID" := "Document No.";
-                        if "Applies-to ID" = '' then
-                            Error(
-                              Text000,
-                              FieldCaption("Document No."), FieldCaption("Applies-to ID"));
-                        ApplyVendEntries.SetGenJnlLine(GenJnlLine, GenJnlLine.FieldNo("Applies-to ID"));
-                        ApplyVendEntries.SetRecord(VendLedgEntry);
-                        ApplyVendEntries.SetTableView(VendLedgEntry);
-                        ApplyVendEntries.LookupMode(true);
-                        OK := ApplyVendEntries.RunModal = ACTION::LookupOK;
-                        Clear(ApplyVendEntries);
-                        if not OK then
-                            exit;
-                        VendLedgEntry.Reset;
-                        VendLedgEntry.SetCurrentKey("Vendor No.", Open, Positive);
-                        VendLedgEntry.SetRange("Vendor No.", AccNo);
-                        VendLedgEntry.SetRange(Open, true);
-                        VendLedgEntry.SetRange("Applies-to ID", "Applies-to ID");
-                        if VendLedgEntry.Find('-') then begin
-                            CurrencyCode2 := VendLedgEntry."Currency Code";
-                            if Amount = 0 then begin
-                                repeat
-                                    CheckAgainstApplnCurrency(CurrencyCode2, VendLedgEntry."Currency Code", AccType::Vendor, true);
-                                    VendLedgEntry.CalcFields("Remaining Amount");
-                                    VendLedgEntry."Remaining Amount" :=
-                                      ExchAmount(
-                                        VendLedgEntry."Remaining Amount",
-                                        VendLedgEntry."Currency Code", "Currency Code", "Posting Date");
-                                    VendLedgEntry."Remaining Amount" :=
-                                      Round(VendLedgEntry."Remaining Amount", Currency."Amount Rounding Precision");
-                                    VendLedgEntry."Original Pmt. Disc. Possible" :=
-                                      ExchAmount(
-                                        VendLedgEntry."Original Pmt. Disc. Possible",
-                                        VendLedgEntry."Currency Code", "Currency Code", "Posting Date");
-                                    VendLedgEntry."Original Pmt. Disc. Possible" :=
-                                      Round(VendLedgEntry."Original Pmt. Disc. Possible", Currency."Amount Rounding Precision");
-                                    if (VendLedgEntry."Document Type" = VendLedgEntry."Document Type"::Invoice) and
-                                       ("Posting Date" <= VendLedgEntry."Pmt. Discount Date")
-                                    then
-                                        Amount := Amount - (VendLedgEntry."Amount to Apply" - VendLedgEntry."Original Pmt. Disc. Possible")
-                                    else
-                                        Amount := Amount - VendLedgEntry."Amount to Apply";
-                                until VendLedgEntry.Next = 0;
-                                "Amount (LCY)" := Amount;
-                                "Currency Factor" := 1;
-                                if ("Bal. Account Type" = "Bal. Account Type"::Customer) or
-                                   ("Bal. Account Type" = "Bal. Account Type"::Vendor)
-                                then begin
-                                    Amount := -Amount;
-                                    "Amount (LCY)" := -"Amount (LCY)";
-                                end;
-                                Validate(Amount);
-                                Validate("Amount (LCY)");
+                            repeat
+                                CheckAgainstApplnCurrency(CurrencyCode2, CustLedgEntry."Currency Code", AccType::Customer, true);
+                            until CustLedgEntry.Next = 0;
+                        if GenJnlLine."Currency Code" <> CurrencyCode2 then
+                            if GenJnlLine.Amount = 0 then begin
+                                if not
+                                   Confirm(
+                                     Text001 +
+                                     Text002, true,
+                                     GenJnlLine.FieldCaption("Currency Code"), GenJnlLine.TableCaption, GenJnlLine."Currency Code",
+                                     CustLedgEntry."Currency Code")
+                                then
+                                    Error(Text003);
+                                GenJnlLine."Currency Code" := CustLedgEntry."Currency Code"
                             end else
-                                repeat
-                                    CheckAgainstApplnCurrency(CurrencyCode2, VendLedgEntry."Currency Code", AccType::Vendor, true);
-                                until VendLedgEntry.Next = 0;
-                            if "Currency Code" <> CurrencyCode2 then
-                                if Amount = 0 then begin
-                                    if not
-                                       Confirm(
-                                         Text001 +
-                                         Text002, true,
-                                         FieldCaption("Currency Code"), TableCaption, "Currency Code",
-                                         VendLedgEntry."Currency Code")
-                                    then
-                                        Error(Text003);
-                                    "Currency Code" := VendLedgEntry."Currency Code"
-                                end else
-                                    CheckAgainstApplnCurrency("Currency Code", VendLedgEntry."Currency Code", AccType::Vendor, true);
-                            "Applies-to Doc. Type" := 0;
-                            "Applies-to Doc. No." := '';
+                                CheckAgainstApplnCurrency(GenJnlLine."Currency Code", CustLedgEntry."Currency Code", AccType::Customer, true);
+                        GenJnlLine."Applies-to Doc. Type" := 0;
+                        GenJnlLine."Applies-to Doc. No." := '';
+                    end else
+                        GenJnlLine."Applies-to ID" := '';
+                    GenJnlLine."Due Date" := CustLedgEntry."Due Date";
+                end;
+            AccType::Vendor:
+                begin
+                    VendLedgEntry.SetCurrentKey("Vendor No.", Open, Positive);
+                    VendLedgEntry.SetRange("Vendor No.", AccNo);
+                    VendLedgEntry.SetRange(Open, true);
+                    if GenJnlLine."Applies-to ID" = '' then
+                        GenJnlLine."Applies-to ID" := Rec."No." + '/' + Format(Rec."Line No.");
+                    if GenJnlLine."Applies-to ID" = '' then
+                        GenJnlLine."Applies-to ID" := GenJnlLine."Document No.";
+                    if GenJnlLine."Applies-to ID" = '' then
+                        Error(
+                          Text000,
+                          GenJnlLine.FieldCaption("Document No."), GenJnlLine.FieldCaption("Applies-to ID"));
+                    ApplyVendEntries.SetGenJnlLine(GenJnlLine, GenJnlLine.FieldNo("Applies-to ID"));
+                    ApplyVendEntries.SetRecord(VendLedgEntry);
+                    ApplyVendEntries.SetTableView(VendLedgEntry);
+                    ApplyVendEntries.LookupMode(true);
+                    OK := ApplyVendEntries.RunModal = ACTION::LookupOK;
+                    Clear(ApplyVendEntries);
+                    if not OK then
+                        exit;
+                    VendLedgEntry.Reset;
+                    VendLedgEntry.SetCurrentKey("Vendor No.", Open, Positive);
+                    VendLedgEntry.SetRange("Vendor No.", AccNo);
+                    VendLedgEntry.SetRange(Open, true);
+                    VendLedgEntry.SetRange("Applies-to ID", GenJnlLine."Applies-to ID");
+                    if VendLedgEntry.Find('-') then begin
+                        CurrencyCode2 := VendLedgEntry."Currency Code";
+                        if GenJnlLine.Amount = 0 then begin
+                            repeat
+                                CheckAgainstApplnCurrency(CurrencyCode2, VendLedgEntry."Currency Code", AccType::Vendor, true);
+                                VendLedgEntry.CalcFields("Remaining Amount");
+                                VendLedgEntry."Remaining Amount" :=
+                                  ExchAmount(
+                                    VendLedgEntry."Remaining Amount",
+                                    VendLedgEntry."Currency Code", GenJnlLine."Currency Code", GenJnlLine."Posting Date");
+                                VendLedgEntry."Remaining Amount" :=
+                                  Round(VendLedgEntry."Remaining Amount", Currency."Amount Rounding Precision");
+                                VendLedgEntry."Original Pmt. Disc. Possible" :=
+                                  ExchAmount(
+                                    VendLedgEntry."Original Pmt. Disc. Possible",
+                                    VendLedgEntry."Currency Code", GenJnlLine."Currency Code", GenJnlLine."Posting Date");
+                                VendLedgEntry."Original Pmt. Disc. Possible" :=
+                                  Round(VendLedgEntry."Original Pmt. Disc. Possible", Currency."Amount Rounding Precision");
+                                if (VendLedgEntry."Document Type" = VendLedgEntry."Document Type"::Invoice) and
+                                   (GenJnlLine."Posting Date" <= VendLedgEntry."Pmt. Discount Date")
+                                then
+                                    GenJnlLine.Amount := GenJnlLine.Amount - (VendLedgEntry."Amount to Apply" - VendLedgEntry."Original Pmt. Disc. Possible")
+                                else
+                                    GenJnlLine.Amount := GenJnlLine.Amount - VendLedgEntry."Amount to Apply";
+                            until VendLedgEntry.Next = 0;
+                            GenJnlLine."Amount (LCY)" := GenJnlLine.Amount;
+                            GenJnlLine."Currency Factor" := 1;
+                            if (GenJnlLine."Bal. Account Type" = GenJnlLine."Bal. Account Type"::Customer) or
+                               (GenJnlLine."Bal. Account Type" = GenJnlLine."Bal. Account Type"::Vendor)
+                            then begin
+                                GenJnlLine.Amount := -GenJnlLine.Amount;
+                                GenJnlLine."Amount (LCY)" := -GenJnlLine."Amount (LCY)";
+                            end;
+                            GenJnlLine.Validate(Amount);
+                            GenJnlLine.Validate("Amount (LCY)");
                         end else
-                            "Applies-to ID" := '';
-                        "Due Date" := VendLedgEntry."Due Date";
-                    end;
-                else
-                    Error(
-                      Text005,
-                      FieldCaption("Account Type"), FieldCaption("Bal. Account Type"));
-            end;
+                            repeat
+                                CheckAgainstApplnCurrency(CurrencyCode2, VendLedgEntry."Currency Code", AccType::Vendor, true);
+                            until VendLedgEntry.Next = 0;
+                        if GenJnlLine."Currency Code" <> CurrencyCode2 then
+                            if GenJnlLine.Amount = 0 then begin
+                                if not
+                                   Confirm(
+                                     Text001 +
+                                     Text002, true,
+                                     GenJnlLine.FieldCaption("Currency Code"), GenJnlLine.TableCaption, GenJnlLine."Currency Code",
+                                     VendLedgEntry."Currency Code")
+                                then
+                                    Error(Text003);
+                                GenJnlLine."Currency Code" := VendLedgEntry."Currency Code"
+                            end else
+                                CheckAgainstApplnCurrency(GenJnlLine."Currency Code", VendLedgEntry."Currency Code", AccType::Vendor, true);
+                        GenJnlLine."Applies-to Doc. Type" := 0;
+                        GenJnlLine."Applies-to Doc. No." := '';
+                    end else
+                        GenJnlLine."Applies-to ID" := '';
+                    GenJnlLine."Due Date" := VendLedgEntry."Due Date";
+                end;
+            else
+                Error(
+                  Text005,
+                  GenJnlLine.FieldCaption("Account Type"), GenJnlLine.FieldCaption("Bal. Account Type"));
         end;
-        "Applies-to Doc. Type" := GenJnlLine."Applies-to Doc. Type";
-        "Applies-to Doc. No." := GenJnlLine."Applies-to Doc. No.";
-        "Applies-to ID" := GenJnlLine."Applies-to ID";
-        "Due Date" := GenJnlLine."Due Date";
-        Amount := GenJnlLine.Amount;
-        "Amount (LCY)" := GenJnlLine."Amount (LCY)";
-        Validate(Amount);
-        Validate("Amount (LCY)");
+        Rec."Applies-to Doc. Type" := GenJnlLine."Applies-to Doc. Type";
+        Rec."Applies-to Doc. No." := GenJnlLine."Applies-to Doc. No.";
+        Rec."Applies-to ID" := GenJnlLine."Applies-to ID";
+        Rec."Due Date" := GenJnlLine."Due Date";
+        Rec.Amount := GenJnlLine.Amount;
+        Rec."Amount (LCY)" := GenJnlLine."Amount (LCY)";
+        Rec.Validate(Amount);
+        Rec.Validate("Amount (LCY)");
     end;
 
     var
@@ -298,13 +296,11 @@ codeunit 70501 "SSA Payment-Apply"
 
     procedure GetCurrency()
     begin
-        with GenJnlLine do begin
-            if "Currency Code" = '' then
-                Currency.InitRoundingPrecision
-            else begin
-                Currency.Get("Currency Code");
-                Currency.TestField("Amount Rounding Precision");
-            end;
+        if GenJnlLine."Currency Code" = '' then
+            Currency.InitRoundingPrecision
+        else begin
+            Currency.Get(GenJnlLine."Currency Code");
+            Currency.TestField("Amount Rounding Precision");
         end;
     end;
 
@@ -353,7 +349,6 @@ codeunit 70501 "SSA Payment-Apply"
                     //SSM729<<
                 end;
         end;
-
     end;
 
     procedure ExchAmount(Amount: Decimal; FromCurrencyCode: Code[10]; ToCurrencyCode: Code[10]; UsePostingDate: Date): Decimal
@@ -377,4 +372,3 @@ codeunit 70501 "SSA Payment-Apply"
         exit(Amount);
     end;
 }
-

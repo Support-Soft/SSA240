@@ -1,12 +1,6 @@
 codeunit 70001 "SSA TransferOrder"
 {
-    // SSA935 SSCAT 15.06.2019 1.Funct. anulare stocuri in rosu
-    // SSA938 SSCAT 17.06.2019 4.Funct. business posting group obligatoriu la transferuri si asamblari
 
-
-    trigger OnRun()
-    begin
-    end;
 
     [EventSubscriber(ObjectType::Table, 5740, 'OnBeforeInsertEvent', '', false, false)]
     local procedure OnBeforeInsertEvent(var Rec: Record "Transfer Header"; RunTrigger: Boolean)
@@ -14,7 +8,7 @@ codeunit 70001 "SSA TransferOrder"
         SSASetup: Record "SSA Localization Setup";
     begin
         //SSA938>>
-        SSASetup.Get;
+        SSASetup.Get();
         SSASetup.TestField("Transfer Gen. Bus. Pstg. Group");
         Rec."SSA Gen. Bus. Posting Group" := SSASetup."Transfer Gen. Bus. Pstg. Group";
         //SSA938
@@ -27,7 +21,7 @@ codeunit 70001 "SSA TransferOrder"
         IntrastatTransaction: Boolean;
     begin
         //SSA938>>
-        SSASetup.Get;
+        SSASetup.Get();
         TransferHeader.TestField("SSA Gen. Bus. Posting Group");
         //SSA938<<
 
@@ -53,7 +47,7 @@ codeunit 70001 "SSA TransferOrder"
         IntrastatTransaction: Boolean;
     begin
         //SSA938>>
-        SSASetup.Get;
+        SSASetup.Get();
         TransferHeader.TestField("SSA Gen. Bus. Posting Group");
         //SSA938<<
 
@@ -122,25 +116,21 @@ codeunit 70001 "SSA TransferOrder"
     end;
 
     local
-    procedure IsIntrastatTransaction(var _TransferHeader: Record "Transfer Header") IsIntrastat: Boolean
+    procedure IsIntrastatTransaction(var _TransferHeader: Record "Transfer Header"): Boolean
     var
-        CountryRegion: Record "Country/Region";
         CompanyInfo: Record "Company Information";
         SSAIntrastat: Codeunit "SSA Intrastat";
     begin
         //SSA954>>
-        with _TransferHeader do begin
-            if "Trsf.-from Country/Region Code" = "Trsf.-to Country/Region Code" then
-                exit(false);
-
-            CompanyInfo.Get;
-            if "Trsf.-from Country/Region Code" in ['', CompanyInfo."Country/Region Code"] then
-                exit(SSAIntrastat.IsCountryRegionIntrastat("Trsf.-to Country/Region Code", false));
-            if "Trsf.-to Country/Region Code" in ['', CompanyInfo."Country/Region Code"] then
-                exit(SSAIntrastat.IsCountryRegionIntrastat("Trsf.-from Country/Region Code", false));
+        if _TransferHeader."Trsf.-from Country/Region Code" = _TransferHeader."Trsf.-to Country/Region Code" then
             exit(false);
-        end;
+
+        CompanyInfo.Get();
+        if _TransferHeader."Trsf.-from Country/Region Code" in ['', CompanyInfo."Country/Region Code"] then
+            exit(SSAIntrastat.IsCountryRegionIntrastat(_TransferHeader."Trsf.-to Country/Region Code", false));
+        if _TransferHeader."Trsf.-to Country/Region Code" in ['', CompanyInfo."Country/Region Code"] then
+            exit(SSAIntrastat.IsCountryRegionIntrastat(_TransferHeader."Trsf.-from Country/Region Code", false));
+        exit(false);
         //SSA954<<
     end;
 }
-

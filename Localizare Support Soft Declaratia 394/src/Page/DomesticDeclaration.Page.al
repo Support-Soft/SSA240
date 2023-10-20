@@ -8,6 +8,7 @@ page 71700 "SSA Domestic Declaration"
     PageType = Worksheet;
     SaveValues = false;
     SourceTable = "SSA Domestic Declaration Line";
+    ApplicationArea = All;
 
     layout
     {
@@ -21,7 +22,7 @@ page 71700 "SSA Domestic Declaration"
 
                 trigger OnLookup(var Text: Text): Boolean
                 begin
-                    exit(DomesticDeclarationLine.LookupName(GetRangeMax("Domestic Declaration Code"), Text));
+                    exit(DomesticDeclarationLine.LookupName(Rec.GetRangeMax("Domestic Declaration Code"), Text));
                 end;
 
                 trigger OnValidate()
@@ -33,153 +34,153 @@ page 71700 "SSA Domestic Declaration"
             repeater(Control1390000)
             {
                 ShowCaption = false;
-                field("Posting Date"; "Posting Date")
+                field("Posting Date"; Rec."Posting Date")
                 {
                     ApplicationArea = All;
                 }
-                field("Document Date"; "Document Date")
+                field("Document Date"; Rec."Document Date")
                 {
                     ApplicationArea = All;
                 }
-                field("Document No."; "Document No.")
+                field("Document No."; Rec."Document No.")
                 {
                     ApplicationArea = All;
                 }
-                field("Document Type"; "Document Type")
+                field("Document Type"; Rec."Document Type")
                 {
                     ApplicationArea = All;
                 }
-                field(Type; Type)
+                field(Type; Rec.Type)
                 {
                     ApplicationArea = All;
                 }
-                field(Base; Base)
+                field(Base; Rec.Base)
                 {
                     ApplicationArea = All;
                 }
-                field(Amount; Amount)
+                field(Amount; Rec.Amount)
                 {
                     ApplicationArea = All;
                 }
-                field("VAT Calculation Type"; "VAT Calculation Type")
+                field("VAT Calculation Type"; Rec."VAT Calculation Type")
                 {
                     ApplicationArea = All;
                 }
-                field("Bill-to/Pay-to No."; "Bill-to/Pay-to No.")
+                field("Bill-to/Pay-to No."; Rec."Bill-to/Pay-to No.")
                 {
                     ApplicationArea = All;
                 }
-                field("Detailed 394 Decl."; "Detailed 394 Decl.")
+                field("Detailed 394 Decl."; Rec."Detailed 394 Decl.")
                 {
                     ApplicationArea = All;
                 }
-                field("Source Code"; "Source Code")
+                field("Source Code"; Rec."Source Code")
                 {
                     ApplicationArea = All;
                 }
-                field("Transaction No."; "Transaction No.")
+                field("Transaction No."; Rec."Transaction No.")
                 {
                     ApplicationArea = All;
                 }
-                field("External Document No."; "External Document No.")
+                field("External Document No."; Rec."External Document No.")
                 {
                     ApplicationArea = All;
                 }
-                field("Record Document Number"; "Record Document Number")
+                field("Record Document Number"; Rec."Record Document Number")
                 {
                     ApplicationArea = All;
                 }
-                field("VAT Bus. Posting Group"; "VAT Bus. Posting Group")
+                field("VAT Bus. Posting Group"; Rec."VAT Bus. Posting Group")
                 {
                     ApplicationArea = All;
                 }
-                field("VAT Prod. Posting Group"; "VAT Prod. Posting Group")
+                field("VAT Prod. Posting Group"; Rec."VAT Prod. Posting Group")
                 {
                     ApplicationArea = All;
                 }
-                field("VAT Registration No."; "VAT Registration No.")
+                field("VAT Registration No."; Rec."VAT Registration No.")
                 {
                     ApplicationArea = All;
                 }
-                field("Vendor/Customer Name"; "Vendor/Customer Name")
+                field("Vendor/Customer Name"; Rec."Vendor/Customer Name")
                 {
                     ApplicationArea = All;
                 }
-                field("Source VAT Entry No."; "Source VAT Entry No.")
+                field("Source VAT Entry No."; Rec."Source VAT Entry No.")
                 {
                     ApplicationArea = All;
                 }
-                field("Postponed VAT Payment"; "Postponed VAT Payment")
+                field("Postponed VAT Payment"; Rec."Postponed VAT Payment")
                 {
                     Editable = false;
                     ApplicationArea = All;
                 }
-                field(Correction; Correction)
+                field(Correction; Rec.Correction)
                 {
                     Visible = false;
                     ApplicationArea = All;
                 }
-                field("Unrealized VAT Entry No."; "Unrealized VAT Entry No.")
+                field("Unrealized VAT Entry No."; Rec."Unrealized VAT Entry No.")
                 {
                     ApplicationArea = All;
                 }
-                field("Not Declaration 394"; "Not Declaration 394")
+                field("Not Declaration 394"; Rec."Not Declaration 394")
                 {
                     ApplicationArea = All;
                 }
-                field("Tip Document D394"; "Tip Document D394")
+                field("Tip Document D394"; Rec."Tip Document D394")
                 {
                     ApplicationArea = All;
                 }
-                field("Stare Factura"; "Stare Factura")
+                field("Stare Factura"; Rec."Stare Factura")
                 {
                     ApplicationArea = All;
                 }
-                field("Tip Partener"; "Tip Partener")
+                field("Tip Partener"; Rec."Tip Partener")
                 {
                     ApplicationArea = All;
                 }
-                field("Tip Operatie"; "Tip Operatie")
+                field("Tip Operatie"; Rec."Tip Operatie")
                 {
                     ApplicationArea = All;
                 }
-                field("Cod Serie Factura"; "Cod Serie Factura")
+                field("Cod Serie Factura"; Rec."Cod Serie Factura")
                 {
                     ApplicationArea = All;
                 }
-                field("Cod CAEN"; "Cod CAEN")
+                field("Cod CAEN"; Rec."Cod CAEN")
                 {
                     ApplicationArea = All;
                 }
-                field("Tip Operatiune CAEN"; "Tip Operatiune CAEN")
+                field("Tip Operatiune CAEN"; Rec."Tip Operatiune CAEN")
                 {
                     ApplicationArea = All;
                 }
-                field("Tax Group Code"; "Tax Group Code")
+                field("Tax Group Code"; Rec."Tax Group Code")
                 {
                     ApplicationArea = All;
                 }
-                field("Organization type"; "Organization type")
+                field("Organization type"; Rec."Organization type")
                 {
                     ApplicationArea = All;
                 }
-                field("VAT to pay"; "VAT to pay")
+                field("VAT to pay"; Rec."VAT to pay")
                 {
                     ApplicationArea = All;
                 }
-                field(Cota; Cota)
+                field(Cota; Rec.Cota)
                 {
                     ApplicationArea = All;
                 }
-                field("Cod tara D394"; "Cod tara D394")
+                field("Cod tara D394"; Rec."Cod tara D394")
                 {
                     ApplicationArea = All;
                 }
-                field("Cod Judet D394"; "Cod Judet D394")
+                field("Cod Judet D394"; Rec."Cod Judet D394")
                 {
                     ApplicationArea = All;
                 }
-                field("Persoana Afiliata"; "Persoana Afiliata")
+                field("Persoana Afiliata"; Rec."Persoana Afiliata")
                 {
                     ApplicationArea = All;
                 }
@@ -187,14 +188,14 @@ page 71700 "SSA Domestic Declaration"
             group(Control1390001)
             {
                 ShowCaption = false;
-                field(TotalVATBase; TotalVATBase + Base - xRec.Base)
+                field(TotalVATBase; TotalVATBase + Rec.Base - xRec.Base)
                 {
                     AutoFormatType = 1;
                     Caption = 'Total VAT Base';
                     Editable = false;
                     ApplicationArea = All;
                 }
-                field(TotalVATAmount; TotalVATAmount + Amount - xRec.Amount)
+                field(TotalVATAmount; TotalVATAmount + Rec.Amount - xRec.Amount)
                 {
                     ApplicationArea = All;
                     AutoFormatType = 1;
@@ -277,8 +278,8 @@ page 71700 "SSA Domestic Declaration"
 
     trigger OnOpenPage()
     begin
-        if GetFilter("Domestic Declaration Code") <> '' then
-            CurrentDeclarationCode := GetRangeMax("Domestic Declaration Code");
+        if Rec.GetFilter("Domestic Declaration Code") <> '' then
+            CurrentDeclarationCode := Rec.GetRangeMax("Domestic Declaration Code");
         DomesticDeclarationLine.OpenJnl(CurrentDeclarationCode, Rec);
     end;
 
@@ -298,14 +299,14 @@ page 71700 "SSA Domestic Declaration"
         TempDeclarationLine.CopyFilters(Rec);
 
         if TempDeclarationLine.CalcSums(Base) then begin
-            if "Line No." <> 0 then
+            if Rec."Line No." <> 0 then
                 TotalVATBase := TempDeclarationLine.Base
             else
                 TotalVATBase := TempDeclarationLine.Base + xRec.Base;
         end;
 
         if TempDeclarationLine.CalcSums(Amount) then begin
-            if "Line No." <> 0 then
+            if Rec."Line No." <> 0 then
                 TotalVATAmount := TempDeclarationLine.Amount
             else
                 TotalVATAmount := TempDeclarationLine.Amount + xRec.Amount;

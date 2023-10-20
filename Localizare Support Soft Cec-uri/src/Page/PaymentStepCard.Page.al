@@ -17,111 +17,130 @@ page 70511 "SSA Payment Step Card"
             group(Control1)
             {
                 ShowCaption = false;
-                field("Payment Class"; "Payment Class")
+                field("Payment Class"; Rec."Payment Class")
                 {
                     Editable = false;
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Payment Class field.';
                 }
-                field(Line; Line)
+                field(Line; Rec.Line)
                 {
                     Editable = false;
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Line field.';
                 }
-                field(Name; Name)
+                field(Name; Rec.Name)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Name field.';
                 }
-                field("Previous Status"; "Previous Status")
+                field("Previous Status"; Rec."Previous Status")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Previous Status field.';
                     trigger OnValidate()
                     begin
-                        CalcFields("Previous Status Name");
+                        Rec.CalcFields("Previous Status Name");
                     end;
                 }
-                field("Previous Status Name"; "Previous Status Name")
+                field("Previous Status Name"; Rec."Previous Status Name")
                 {
                     ApplicationArea = All;
                     DrillDown = false;
                     Editable = false;
+                    ToolTip = 'Specifies the value of the Previous Status Name field.';
                 }
-                field("Next Status"; "Next Status")
+                field("Next Status"; Rec."Next Status")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Next Status field.';
                     trigger OnValidate()
                     begin
-                        CalcFields("Next Status Name");
+                        Rec.CalcFields("Next Status Name");
                     end;
                 }
-                field("Next Status Name"; "Next Status Name")
+                field("Next Status Name"; Rec."Next Status Name")
                 {
                     ApplicationArea = All;
                     DrillDown = false;
                     Editable = false;
+                    ToolTip = 'Specifies the value of the Next Status Name field.';
                 }
-                field("Action Type"; "Action Type")
+                field("Action Type"; Rec."Action Type")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Action Type field.';
                     trigger OnValidate()
                     begin
                         DisableFields;
                     end;
                 }
-                field("Report No."; "Report No.")
+                field("Report No."; Rec."Report No.")
                 {
                     ApplicationArea = All;
                     Enabled = "Report No.Enable";
+                    ToolTip = 'Specifies the value of the Report No. field.';
                 }
-                field("Dataport No."; "Dataport No.")
+                field("Dataport No."; Rec."Dataport No.")
                 {
                     ApplicationArea = All;
                     Enabled = "Dataport No.Enable";
+                    ToolTip = 'Specifies the value of the Dataport No. field.';
                 }
-                field("Verify Lines RIB"; "Verify Lines RIB")
+                field("Verify Lines RIB"; Rec."Verify Lines RIB")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Verify Lines RIB field.';
                 }
-                field("Verify Due Date"; "Verify Due Date")
+                field("Verify Due Date"; Rec."Verify Due Date")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Verify Due Date field.';
                 }
-                field("Source Code"; "Source Code")
+                field("Source Code"; Rec."Source Code")
                 {
                     ApplicationArea = All;
                     Enabled = "Source CodeEnable";
+                    ToolTip = 'Specifies the value of the Source Code field.';
                 }
-                field("Reason Code"; "Reason Code")
+                field("Reason Code"; Rec."Reason Code")
                 {
                     ApplicationArea = All;
                     Enabled = "Reason CodeEnable";
+                    ToolTip = 'Specifies the value of the Reason Code field.';
                 }
-                field("Header Nos. Series"; "Header Nos. Series")
+                field("Header Nos. Series"; Rec."Header Nos. Series")
                 {
                     ApplicationArea = All;
                     Enabled = "Header Nos. SeriesEnable";
+                    ToolTip = 'Specifies the value of the Header Nos. Series field.';
                 }
-                field(Correction; Correction)
+                field(Correction; Rec.Correction)
                 {
                     ApplicationArea = All;
                     Enabled = CorrectionEnable;
+                    ToolTip = 'Specifies the value of the Correction field.';
                 }
-                field("Verify Header RIB"; "Verify Header RIB")
+                field("Verify Header RIB"; Rec."Verify Header RIB")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Verify Header RIB field.';
                 }
-                field("Acceptation Code<>No"; "Acceptation Code<>No")
+                field("Acceptation Code<>No"; Rec."Acceptation Code<>No")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Acceptation Code<>No field.';
                 }
-                field("Tip Detalii Aplicari"; "Tip Detalii Aplicari")
+                field("Tip Detalii Aplicari"; Rec."Tip Detalii Aplicari")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Tip Detalii Aplicari field.';
                 }
-                field("Permite Reaplicari"; "Permite Reaplicari")
+                field("Permite Reaplicari"; Rec."Permite Reaplicari")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Permite Reaplicari field.';
                 }
-
             }
         }
     }
@@ -138,6 +157,7 @@ page 70511 "SSA Payment Step Card"
                 RunObject = Page "SSA Payment Step Ledger";
                 RunPageLink = "Payment Class" = field("Payment Class"),
                               Line = field(Line);
+                ToolTip = 'Executes the &Ledger action.';
             }
         }
     }
@@ -158,23 +178,23 @@ page 70511 "SSA Payment Step Card"
     end;
 
     var
-        [InDataSet]
+
         "Report No.Enable": Boolean;
-        [InDataSet]
+
         "Dataport No.Enable": Boolean;
-        [InDataSet]
+
         "Reason CodeEnable": Boolean;
-        [InDataSet]
+
         "Source CodeEnable": Boolean;
-        [InDataSet]
+
         "Header Nos. SeriesEnable": Boolean;
-        [InDataSet]
+
         CorrectionEnable: Boolean;
 
     procedure DisableFields()
     begin
 
-        if "Action Type" = "Action Type"::None then begin
+        if Rec."Action Type" = Rec."Action Type"::None then begin
             "Report No.Enable" := false;
             "Dataport No.Enable" := false;
             "Reason CodeEnable" := false;
@@ -182,7 +202,7 @@ page 70511 "SSA Payment Step Card"
             "Header Nos. SeriesEnable" := false;
             CorrectionEnable := false;
         end else
-            if "Action Type" = "Action Type"::Ledger then begin
+            if Rec."Action Type" = Rec."Action Type"::Ledger then begin
                 "Report No.Enable" := false;
                 "Dataport No.Enable" := false;
                 "Reason CodeEnable" := true;
@@ -190,7 +210,7 @@ page 70511 "SSA Payment Step Card"
                 "Header Nos. SeriesEnable" := false;
                 CorrectionEnable := true;
             end else
-                if "Action Type" = "Action Type"::Report then begin
+                if Rec."Action Type" = Rec."Action Type"::Report then begin
                     "Report No.Enable" := true;
                     "Dataport No.Enable" := false;
                     "Reason CodeEnable" := false;
@@ -198,7 +218,7 @@ page 70511 "SSA Payment Step Card"
                     "Header Nos. SeriesEnable" := false;
                     CorrectionEnable := false;
                 end else
-                    if "Action Type" = "Action Type"::File then begin
+                    if Rec."Action Type" = Rec."Action Type"::File then begin
                         "Report No.Enable" := false;
                         "Dataport No.Enable" := true;
                         "Reason CodeEnable" := false;
@@ -206,7 +226,7 @@ page 70511 "SSA Payment Step Card"
                         "Header Nos. SeriesEnable" := false;
                         CorrectionEnable := false;
                     end else
-                        if "Action Type" = "Action Type"::"Create new Document" then begin
+                        if Rec."Action Type" = Rec."Action Type"::"Create new Document" then begin
                             "Report No.Enable" := false;
                             "Dataport No.Enable" := false;
                             "Reason CodeEnable" := false;
@@ -216,4 +236,3 @@ page 70511 "SSA Payment Step Card"
                         end;
     end;
 }
-

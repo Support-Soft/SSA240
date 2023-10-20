@@ -1,11 +1,6 @@
 codeunit 70025 "SSA Tables Subscribers"
 {
-    // SSA971 SSCAT 07.10.2019 37.Funct. grupe contabilitate, grupe de tva exigibile si nexigibile pe fz. si client
 
-
-    trigger OnRun()
-    begin
-    end;
 
     [EventSubscriber(ObjectType::Table, 18, 'OnAfterValidateEvent', 'Country/Region Code', false, false)]
     local procedure T18OnAfterValidateEventCountry(var Rec: Record Customer; var xRec: Record Customer; CurrFieldNo: Integer)
@@ -14,7 +9,7 @@ codeunit 70025 "SSA Tables Subscribers"
         CountryRegion: Record "Country/Region";
     begin
         //SSA971>>
-        SSASetup.Get;
+        SSASetup.Get();
         if CountryRegion.Get(Rec."Country/Region Code") then begin
             if SSASetup."Sistem TVA" = SSASetup."Sistem TVA"::"Sistem Normal de TVA" then
                 Rec.Validate("VAT Bus. Posting Group", CountryRegion."SSA Cust. Ex. VATPstgGroup")
@@ -23,13 +18,13 @@ codeunit 70025 "SSA Tables Subscribers"
 
             Rec.Validate("Gen. Bus. Posting Group", CountryRegion."SSA Cust. GenBusPostingGroup");
             Rec.Validate("Customer Posting Group", CountryRegion."SSA Customer Posting Group");
-        end else begin
+        end
+        else
 
             if SSASetup."Sistem TVA" = SSASetup."Sistem TVA"::"Sistem Normal de TVA" then
                 Rec.Validate("VAT Bus. Posting Group", SSASetup."Cust. Ex. VAT Posting Group")
             else
                 Rec.Validate("VAT Bus. Posting Group", SSASetup."Cust. Neex. VAT Posting Group");
-        end;
         //SSA971<<
     end;
 
@@ -46,7 +41,7 @@ codeunit 70025 "SSA Tables Subscribers"
         CountryRegion: Record "Country/Region";
     begin
         //SSA971>>
-        SSASetup.Get;
+        SSASetup.Get();
         if CountryRegion.Get(Rec."Country/Region Code") then begin
             if SSASetup."Sistem TVA" = SSASetup."Sistem TVA"::"Sistem Normal de TVA" then
                 Rec.Validate("VAT Bus. Posting Group", CountryRegion."SSA Vendor Ex. VATPstgGroup")
@@ -55,13 +50,13 @@ codeunit 70025 "SSA Tables Subscribers"
 
             Rec.Validate("Gen. Bus. Posting Group", CountryRegion."SSA Vendor GenBusPstgGroup");
             Rec.Validate("Vendor Posting Group", CountryRegion."SSA Vendor Posting Group");
-        end else begin
+        end
+        else
 
             if SSASetup."Sistem TVA" = SSASetup."Sistem TVA"::"Sistem Normal de TVA" then
                 Rec.Validate("VAT Bus. Posting Group", SSASetup."Vendor Ex. VAT Posting Group")
             else
                 Rec.Validate("VAT Bus. Posting Group", SSASetup."Vendor Neex. VAT Posting Group");
-        end;
         //SSA971<<
     end;
 
@@ -78,7 +73,7 @@ codeunit 70025 "SSA Tables Subscribers"
 
     begin
         //SSA962>>
-        if Rec.ExistsItemLedgerEntry then
+        if Rec.ExistsItemLedgerEntry() then
             Error(CannotChangeFieldErr, Rec.FieldCaption("Inventory Posting Group"), Rec.TableCaption, Rec."No.");
         //SSA962<<
     end;
@@ -90,7 +85,7 @@ codeunit 70025 "SSA Tables Subscribers"
 
     begin
         //SSA962>>
-        if Rec.ExistsItemLedgerEntry then
+        if Rec.ExistsItemLedgerEntry() then
             Error(CannotChangeFieldErr, Rec.FieldCaption("Gen. Prod. Posting Group"), Rec.TableCaption, Rec."No.");
         //SSA962<<
     end;
@@ -188,7 +183,7 @@ codeunit 70025 "SSA Tables Subscribers"
         //SSA948<<
     end;
 
-    [EventSubscriber(ObjectType::Report, report::"Calc. and Post VAT Settlement", 'OnBeforePreReport', '', false, false)]
+    [EventSubscriber(ObjectType::Report, Report::"Calc. and Post VAT Settlement", 'OnBeforePreReport', '', false, false)]
     local procedure R20OnBeforePreReport(var VATPostingSetup: Record "VAT Posting Setup")
     var
         Text001: Label 'Filter cannot be applied because filter applied for Non-Deductible VAT is applied automatically.';
@@ -217,7 +212,6 @@ codeunit 70025 "SSA Tables Subscribers"
     begin
         if GenJournalLine."SSA Leasing" then
             CheckIfFieldIsEmpty := false;
-
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", 'OnBeforeValidateGenProdPostingGroup', '', true, false)]
@@ -229,8 +223,6 @@ codeunit 70025 "SSA Tables Subscribers"
 
     [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", 'OnAfterCopyGenJnlLineFromPurchHeader', '', false, false)]
     local procedure OnAfterCopyGenJnlLineFromPurchHeader(PurchaseHeader: Record "Purchase Header"; var GenJournalLine: Record "Gen. Journal Line")
-    var
-        SSASetup: Record "SSA Localization Setup";
     begin
 
         //SSA946>>
@@ -253,8 +245,8 @@ codeunit 70025 "SSA Tables Subscribers"
         SourceCodeSetup: Record "Source Code Setup";
     begin
         //SSA951>>
-        SourceCodeSetup.get;
-        SSASetup.get;
+        SourceCodeSetup.Get();
+        SSASetup.Get();
         if ((GenJournalLine."Source Code" = SourceCodeSetup.Sales) and SSASetup."Sales Negative Line Correction") then begin
             if (GenJournalLine.Amount > 0) and (GenJournalLine."Document Type" = GenJournalLine."Document Type"::Invoice) then
                 GenJournalLine.Correction := not GenJournalLine.Correction;
@@ -273,7 +265,7 @@ codeunit 70025 "SSA Tables Subscribers"
     [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", 'OnAfterValidateEvent', 'Depreciation Book Code', true, false)]
     local procedure OnAfterValidateEvent_DepreciationBookCode(var Rec: Record "Gen. Journal Line")
     begin
-        rec."SSA Posting Group" := rec."Posting Group";
+        Rec."SSA Posting Group" := Rec."Posting Group";
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", 'OnAfterAccountNoOnValidateGetFAAccount', '', true, false)]
@@ -329,7 +321,6 @@ codeunit 70025 "SSA Tables Subscribers"
     begin
         GenJournalLine."SSA Posting Group" := GenJournalLine."Posting Group";
     end;
-
 
     [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", 'OnAfterAccountNoOnValidateGetVendorBalAccount', '', true, false)]
     local procedure OnAfterValidateEvent_OnAfterAccountNoOnValidateGetVendorBalAccount(var GenJournalLine: Record "Gen. Journal Line")
@@ -392,4 +383,3 @@ codeunit 70025 "SSA Tables Subscribers"
         DeferralPostingBuffer."SSA Correction" := not PurchaseHeader.Correction;
     end;
 }
-

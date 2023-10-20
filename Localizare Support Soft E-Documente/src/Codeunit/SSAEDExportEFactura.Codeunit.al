@@ -115,7 +115,7 @@ codeunit 72002 "SSAEDExport EFactura"
 
     procedure GenerateXMLFile(VariantRec: Variant; var _TempBlob: Codeunit "Temp Blob")
     var
-        EFacturaXML: XMLport "SSAEDE-Factura";
+        EFacturaXML: XmlPort "SSAEDE-Factura";
         OutStream: OutStream;
     begin
         _TempBlob.CreateOutStream(OutStream);

@@ -6,10 +6,9 @@ tableextension 70029 "SSA DetailedVendLedgEntry70029" extends "Detailed Vendor L
         field(70000; "SSA Vendor Posting Group"; Code[20])
         {
             Caption = 'Vendor Posting Group';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA960';
             TableRelation = "Vendor Posting Group";
         }
     }
 }
-

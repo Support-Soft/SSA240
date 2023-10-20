@@ -6,9 +6,8 @@ tableextension 70049 "SSA ServiceInvoiceHeader70049" extends "Service Invoice He
         field(70000; "SSA Commerce Trade No."; Code[20])
         {
             Caption = 'Commerce Trade No.';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA968';
         }
     }
 }
-

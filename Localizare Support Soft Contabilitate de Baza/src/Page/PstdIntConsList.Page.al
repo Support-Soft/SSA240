@@ -4,7 +4,7 @@ page 70005 "SSA Pstd Int. Cons. List"
 
     ApplicationArea = All;
     Caption = 'Posted Int. Consumptions List';
-    CardPageID = "SSA Posted Int. Consumptions";
+    CardPageId = "SSA Posted Int. Consumptions";
     Editable = false;
     PageType = List;
     SourceTable = "SSA Pstd. Int. Cons. Header";
@@ -12,42 +12,50 @@ page 70005 "SSA Pstd Int. Cons. List"
 
     layout
     {
-        area(content)
+        area(Content)
         {
             repeater(Control1390000)
             {
                 ShowCaption = false;
-                field("No."; "No.")
+                field("No."; Rec."No.")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the No. field.';
                 }
-                field("Posting Description"; "Posting Description")
+                field("Posting Description"; Rec."Posting Description")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Posting Description field.';
                 }
-                field("Your Reference"; "Your Reference")
+                field("Your Reference"; Rec."Your Reference")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Your Reference field.';
                 }
-                field("Posting Date"; "Posting Date")
+                field("Posting Date"; Rec."Posting Date")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Posting Date field.';
                 }
-                field("Shortcut Dimension 1 Code"; "Shortcut Dimension 1 Code")
+                field("Shortcut Dimension 1 Code"; Rec."Shortcut Dimension 1 Code")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Shortcut Dimension 1 Code field.';
                 }
-                field("Shortcut Dimension 2 Code"; "Shortcut Dimension 2 Code")
+                field("Shortcut Dimension 2 Code"; Rec."Shortcut Dimension 2 Code")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Shortcut Dimension 2 Code field.';
                 }
-                field("Location Code"; "Location Code")
+                field("Location Code"; Rec."Location Code")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Location Code field.';
                 }
-                field("Responsibility Center"; "Responsibility Center")
+                field("Responsibility Center"; Rec."Responsibility Center")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Responsibility Center field.';
                 }
             }
         }
@@ -55,7 +63,7 @@ page 70005 "SSA Pstd Int. Cons. List"
 
     actions
     {
-        area(processing)
+        area(Processing)
         {
             action("&Print")
             {
@@ -64,15 +72,15 @@ page 70005 "SSA Pstd Int. Cons. List"
                 Promoted = true;
                 PromotedCategory = Process;
                 ApplicationArea = All;
-
+                ToolTip = 'Executes the &Print action.';
                 trigger OnAction()
                 var
                     SSAPstdIntConsHeader: Record "SSA Pstd. Int. Cons. Header";
                     SSAReportSelections: Record "SSA Report Selections";
                     IntConsPrint: Codeunit "SSA Int. Cons-Post + Print";
                 begin
-                    SSAPstdIntConsHeader.Get("No.");
-                    SSAPstdIntConsHeader.SetRecFilter;
+                    SSAPstdIntConsHeader.Get(Rec."No.");
+                    SSAPstdIntConsHeader.SetRecFilter();
                     IntConsPrint.PrintReport(SSAPstdIntConsHeader, SSAReportSelections.Usage::"P.I.Cons", true);
                 end;
             }
@@ -83,13 +91,12 @@ page 70005 "SSA Pstd Int. Cons. List"
                 Promoted = true;
                 PromotedCategory = Process;
                 ApplicationArea = All;
-
+                ToolTip = 'Executes the &Navigate action.';
                 trigger OnAction()
                 begin
-                    Navigate;
+                    Rec.Navigate();
                 end;
             }
         }
     }
 }
-

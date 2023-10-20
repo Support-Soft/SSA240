@@ -16,55 +16,67 @@ page 70514 "SSA Payment List"
             repeater(Control1)
             {
                 ShowCaption = false;
-                field("No."; "No.")
+                field("No."; Rec."No.")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the No. field.';
                 }
-                field("Currency Code"; "Currency Code")
+                field("Currency Code"; Rec."Currency Code")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Currency Code field.';
                 }
-                field("Posting Date"; "Posting Date")
+                field("Posting Date"; Rec."Posting Date")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Posting Date field.';
                 }
-                field("Payment Class"; "Payment Class")
+                field("Payment Class"; Rec."Payment Class")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Payment Class field.';
                 }
-                field("Amount (LCY)"; "Amount (LCY)")
+                field("Amount (LCY)"; Rec."Amount (LCY)")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Total Amount (LCY) field.';
                 }
-                field("Suma Aplicata"; "Suma Aplicata")
+                field("Suma Aplicata"; Rec."Suma Aplicata")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Suma Aplicata field.';
                 }
-                field("Status Name"; "Status Name")
+                field("Status Name"; Rec."Status Name")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Status Name field.';
                 }
-                field("Payment Series"; "Payment Series")
+                field("Payment Series"; Rec."Payment Series")
                 {
                     ApplicationArea = All;
                     Editable = PaymentEditable;
+                    ToolTip = 'Specifies the value of the Payment Series field.';
                 }
-                field("Payment Number"; "Payment Number")
+                field("Payment Number"; Rec."Payment Number")
                 {
                     ApplicationArea = All;
                     Editable = PaymentEditable;
+                    ToolTip = 'Specifies the value of the Payment Number field.';
                 }
-                field("Vendor Name"; "Vendor Name")
+                field("Vendor Name"; Rec."Vendor Name")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Vendor Name field.';
                 }
-                field("Customer Name"; "Customer Name")
+                field("Customer Name"; Rec."Customer Name")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Customer Name field.';
                 }
-                field("Due Date"; "Due Date")
+                field("Due Date"; Rec."Due Date")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Due Date field.';
                 }
             }
         }
@@ -90,13 +102,14 @@ page 70514 "SSA Payment List"
                 Promoted = true;
                 PromotedCategory = "Report";
                 RunObject = Report "SSA Payment List";
+                ToolTip = 'Executes the Payments Lists action.';
             }
             action(Borderou)
             {
                 ApplicationArea = All;
                 Promoted = true;
                 PromotedCategory = "Report";
-
+                ToolTip = 'Executes the Borderou action.';
                 trigger OnAction()
                 begin
 
@@ -110,7 +123,7 @@ page 70514 "SSA Payment List"
     var
         PaymentStatus: Record "SSA Payment Status";
     begin
-        if not PaymentStatus.Get("Payment Class", "Status No.") then
+        if not PaymentStatus.Get(Rec."Payment Class", Rec."Status No.") then
             clear(PaymentStep);
         PaymentEditable := PaymentStatus."Allow Edit Payment No.";
     end;
@@ -118,8 +131,6 @@ page 70514 "SSA Payment List"
     var
         PaymentHeader: Record "SSA Payment Header";
         PaymentStep: Record "SSA Payment Step";
-        [InDataSet]
+
         PaymentEditable: Boolean;
-
 }
-

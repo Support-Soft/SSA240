@@ -18,142 +18,166 @@ page 71102 "SSA Non-Invoiced Purch. Rcpt."
             {
                 ApplicationArea = All;
                 Caption = 'Invoice Posting Date';
+                ToolTip = 'Specifies the value of the Invoice Posting Date field.';
             }
             repeater(Control1390052)
             {
                 ShowCaption = false;
-                field("Posting Date"; "Posting Date")
+                field("Posting Date"; Rec."Posting Date")
                 {
                     ApplicationArea = All;
                     Editable = false;
+                    ToolTip = 'Specifies the value of the Posting Date field.';
                 }
-                field("No."; "No.")
+                field("No."; Rec."No.")
                 {
                     ApplicationArea = All;
                     Editable = false;
+                    ToolTip = 'Specifies the value of the No. field.';
                 }
-                field("Order No."; "Order No.")
+                field("Order No."; Rec."Order No.")
                 {
                     ApplicationArea = All;
                     Editable = false;
+                    ToolTip = 'Specifies the value of the Order No. field.';
                 }
-                field("Buy-from Vendor No."; "Buy-from Vendor No.")
+                field("Buy-from Vendor No."; Rec."Buy-from Vendor No.")
                 {
                     ApplicationArea = All;
                     Editable = false;
+                    ToolTip = 'Specifies the value of the Buy-from Vendor No. field.';
                 }
-                field("Order Address Code"; "Order Address Code")
-                {
-                    ApplicationArea = All;
-                    Editable = false;
-                    Visible = false;
-                }
-                field("Buy-from Vendor Name"; "Buy-from Vendor Name")
-                {
-                    ApplicationArea = All;
-                    Editable = false;
-                }
-                field("Buy-from Post Code"; "Buy-from Post Code")
+                field("Order Address Code"; Rec."Order Address Code")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     Visible = false;
+                    ToolTip = 'Specifies the value of the Order Address Code field.';
                 }
-                field("Buy-from Country/Region Code"; "Buy-from Country/Region Code")
+                field("Buy-from Vendor Name"; Rec."Buy-from Vendor Name")
+                {
+                    ApplicationArea = All;
+                    Editable = false;
+                    ToolTip = 'Specifies the value of the Buy-from Vendor Name field.';
+                }
+                field("Buy-from Post Code"; Rec."Buy-from Post Code")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     Visible = false;
+                    ToolTip = 'Specifies the value of the Buy-from Post Code field.';
                 }
-                field("Buy-from Contact"; "Buy-from Contact")
+                field("Buy-from Country/Region Code"; Rec."Buy-from Country/Region Code")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     Visible = false;
+                    ToolTip = 'Specifies the value of the Buy-from Country/Region Code field.';
                 }
-                field("Pay-to Vendor No."; "Pay-to Vendor No.")
+                field("Buy-from Contact"; Rec."Buy-from Contact")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     Visible = false;
+                    ToolTip = 'Specifies the value of the Buy-from Contact field.';
                 }
-                field("Pay-to Name"; "Pay-to Name")
+                field("Pay-to Vendor No."; Rec."Pay-to Vendor No.")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     Visible = false;
+                    ToolTip = 'Specifies the value of the Pay-to Vendor No. field.';
                 }
-                field("Pay-to Post Code"; "Pay-to Post Code")
+                field("Pay-to Name"; Rec."Pay-to Name")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     Visible = false;
+                    ToolTip = 'Specifies the value of the Pay-to Name field.';
                 }
-                field("Pay-to Country/Region Code"; "Pay-to Country/Region Code")
+                field("Pay-to Post Code"; Rec."Pay-to Post Code")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     Visible = false;
+                    ToolTip = 'Specifies the value of the Pay-to Post Code field.';
                 }
-                field("Pay-to Contact"; "Pay-to Contact")
+                field("Pay-to Country/Region Code"; Rec."Pay-to Country/Region Code")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     Visible = false;
+                    ToolTip = 'Specifies the value of the Pay-to Country/Region Code field.';
                 }
-                field("Ship-to Code"; "Ship-to Code")
+                field("Pay-to Contact"; Rec."Pay-to Contact")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     Visible = false;
+                    ToolTip = 'Specifies the value of the Pay-to Contact field.';
                 }
-                field("Ship-to Name"; "Ship-to Name")
+                field("Ship-to Code"; Rec."Ship-to Code")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     Visible = false;
+                    ToolTip = 'Specifies the value of the Ship-to Code field.';
                 }
-                field("Ship-to Post Code"; "Ship-to Post Code")
+                field("Ship-to Name"; Rec."Ship-to Name")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     Visible = false;
+                    ToolTip = 'Specifies the value of the Ship-to Name field.';
                 }
-                field("Ship-to Country/Region Code"; "Ship-to Country/Region Code")
+                field("Ship-to Post Code"; Rec."Ship-to Post Code")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     Visible = false;
+                    ToolTip = 'Specifies the value of the Ship-to Post Code field.';
                 }
-                field("Ship-to Contact"; "Ship-to Contact")
+                field("Ship-to Country/Region Code"; Rec."Ship-to Country/Region Code")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     Visible = false;
+                    ToolTip = 'Specifies the value of the Ship-to Country/Region Code field.';
                 }
-                field("Purchaser Code"; "Purchaser Code")
+                field("Ship-to Contact"; Rec."Ship-to Contact")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     Visible = false;
+                    ToolTip = 'Specifies the value of the Ship-to Contact field.';
                 }
-                field("Shortcut Dimension 1 Code"; "Shortcut Dimension 1 Code")
+                field("Purchaser Code"; Rec."Purchaser Code")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     Visible = false;
+                    ToolTip = 'Specifies the value of the Purchaser Code field.';
                 }
-                field("Shortcut Dimension 2 Code"; "Shortcut Dimension 2 Code")
+                field("Shortcut Dimension 1 Code"; Rec."Shortcut Dimension 1 Code")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     Visible = false;
+                    ToolTip = 'Specifies the value of the Shortcut Dimension 1 Code field.';
                 }
-                field("Location Code"; "Location Code")
+                field("Shortcut Dimension 2 Code"; Rec."Shortcut Dimension 2 Code")
+                {
+                    ApplicationArea = All;
+                    Editable = false;
+                    Visible = false;
+                    ToolTip = 'Specifies the value of the Shortcut Dimension 2 Code field.';
+                }
+                field("Location Code"; Rec."Location Code")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     Visible = true;
+                    ToolTip = 'Specifies the value of the Location Code field.';
                 }
             }
         }
@@ -174,6 +198,7 @@ page 71102 "SSA Non-Invoiced Purch. Rcpt."
                     RunObject = Page "Posted Purchase Receipt";
                     RunPageLink = "No." = field("No.");
                     ShortCutKey = 'Shift+F7';
+                    ToolTip = 'Executes the Card action.';
                 }
                 action(Statistics)
                 {
@@ -185,6 +210,7 @@ page 71102 "SSA Non-Invoiced Purch. Rcpt."
                     RunObject = Page "Purchase Receipt Statistics";
                     RunPageLink = "No." = field("No.");
                     ShortCutKey = 'F7';
+                    ToolTip = 'Executes the Statistics action.';
                 }
                 action("Co&mments")
                 {
@@ -194,6 +220,7 @@ page 71102 "SSA Non-Invoiced Purch. Rcpt."
                     RunObject = Page "Purch. Comment Sheet";
                     RunPageLink = "Document Type" = const(Receipt),
                                   "No." = field("No.");
+                    ToolTip = 'Executes the Co&mments action.';
                 }
             }
             group("P&ost Invoices")
@@ -209,7 +236,7 @@ page 71102 "SSA Non-Invoiced Purch. Rcpt."
                     PromotedCategory = Process;
                     PromotedIsBig = true;
                     ShortCutKey = 'F9';
-
+                    ToolTip = 'Executes the P&ost action.';
                     trigger OnAction()
                     begin
                         PurchSetup.Get;
@@ -223,11 +250,11 @@ page 71102 "SSA Non-Invoiced Purch. Rcpt."
                         if not NonInvoicedPurchRcpt.Find('-') then
                             Error(Text002);
 
-                        if (InvPostingDate > CalcDate(Text001, "Posting Date")) then
-                            if not Confirm(Text003, false, CalcDate(Text001, "Posting Date")) then
+                        if (InvPostingDate > CalcDate(Text001, Rec."Posting Date")) then
+                            if not Confirm(Text003, false, CalcDate(Text001, Rec."Posting Date")) then
                                 exit;
 
-                        PurchRcptLine.SetRange("Document No.", "No.");
+                        PurchRcptLine.SetRange("Document No.", Rec."No.");
                         if PurchRcptLine.Find('-') then
                             repeat
                                 if PurchRcptLine."Qty. Rcd. Not Invoiced" > 0 then begin
@@ -237,14 +264,12 @@ page 71102 "SSA Non-Invoiced Purch. Rcpt."
                                 end;
                             until PurchRcptLine.Next = 0;
 
-                        with PurchHeader do begin
-                            Get(PurchHeader."Document Type"::Order, "Order No.");
-                            Validate("Posting Date", InvPostingDate);
-                            Receive := false;
-                            Invoice := true;
-                            PurchPost.Run(PurchHeader);
-                            Rec.Delete;
-                        end;
+                        PurchHeader.Get(PurchHeader."Document Type"::Order, Rec."Order No.");
+                        PurchHeader.Validate("Posting Date", InvPostingDate);
+                        PurchHeader.Receive := false;
+                        PurchHeader.Invoice := true;
+                        PurchPost.Run(PurchHeader);
+                        Rec.Delete;
                     end;
                 }
                 action("Post and &Print")
@@ -257,7 +282,7 @@ page 71102 "SSA Non-Invoiced Purch. Rcpt."
                     PromotedCategory = Process;
                     PromotedIsBig = true;
                     ShortCutKey = 'Shift+F9';
-
+                    ToolTip = 'Executes the Post and &Print action.';
                     trigger OnAction()
                     begin
                         PurchSetup.Get;
@@ -271,11 +296,11 @@ page 71102 "SSA Non-Invoiced Purch. Rcpt."
                         if not NonInvoicedPurchRcpt.Find('-') then
                             Error(Text002);
 
-                        if (InvPostingDate > CalcDate(Text001, "Posting Date")) then
-                            if not Confirm(Text003, false, CalcDate(Text001, "Posting Date")) then
+                        if (InvPostingDate > CalcDate(Text001, Rec."Posting Date")) then
+                            if not Confirm(Text003, false, CalcDate(Text001, Rec."Posting Date")) then
                                 exit;
 
-                        PurchRcptLine.SetRange("Document No.", "No.");
+                        PurchRcptLine.SetRange("Document No.", Rec."No.");
                         if PurchRcptLine.Find('-') then
                             repeat
                                 if PurchRcptLine."Qty. Rcd. Not Invoiced" > 0 then begin
@@ -285,20 +310,18 @@ page 71102 "SSA Non-Invoiced Purch. Rcpt."
                                 end;
                             until PurchRcptLine.Next = 0;
 
-                        with PurchHeader do begin
-                            Get(PurchHeader."Document Type"::Order, "Order No.");
-                            Validate("Posting Date", InvPostingDate);
-                            Receive := false;
-                            Invoice := true;
-                            PurchPost.Run(PurchHeader);
-                            Rec.Delete;
+                        PurchHeader.Get(PurchHeader."Document Type"::Order, Rec."Order No.");
+                        PurchHeader.Validate("Posting Date", InvPostingDate);
+                        PurchHeader.Receive := false;
+                        PurchHeader.Invoice := true;
+                        PurchPost.Run(PurchHeader);
+                        Rec.Delete;
 
-                            if "Last Posting No." = '' then
-                                PurchInvHeader."No." := "No."
-                            else
-                                PurchInvHeader."No." := "Last Posting No.";
-                            PurchInvHeader.SetRecFilter;
-                        end;
+                        if PurchHeader."Last Posting No." = '' then
+                            PurchInvHeader."No." := PurchHeader."No."
+                        else
+                            PurchInvHeader."No." := PurchHeader."Last Posting No.";
+                        PurchInvHeader.SetRecFilter;
 
                         ReportSelection.Reset;
                         ReportSelection.SetRange(Usage, ReportSelection.Usage::"P.Invoice");
@@ -315,7 +338,7 @@ page 71102 "SSA Non-Invoiced Purch. Rcpt."
                     Caption = 'Post &Batch';
                     Ellipsis = true;
                     Image = PostBatch;
-
+                    ToolTip = 'Executes the Post &Batch action.';
                     trigger OnAction()
                     begin
                         Clear(PostNonInvoicedPurchRcpt);
@@ -336,16 +359,16 @@ page 71102 "SSA Non-Invoiced Purch. Rcpt."
                     ApplicationArea = All;
                     Caption = 'Suggest Lines...';
                     Image = MoveNegativeLines;
-
+                    ToolTip = 'Executes the Suggest Lines... action.';
                     trigger OnAction()
                     begin
                         Clear(SugNonInvPurchRcpt);
                         SugNonInvPurchRcpt.RunModal;
-                        if Find('-') then
-                            if WorkDate < CalcDate(Text001, "Posting Date") then
+                        if Rec.Find('-') then
+                            if WorkDate < CalcDate(Text001, Rec."Posting Date") then
                                 InvPostingDate := WorkDate
                             else
-                                InvPostingDate := CalcDate(Text001, "Posting Date");
+                                InvPostingDate := CalcDate(Text001, Rec."Posting Date");
                     end;
                 }
             }
@@ -354,8 +377,8 @@ page 71102 "SSA Non-Invoiced Purch. Rcpt."
 
     trigger OnOpenPage()
     begin
-        if Find('-') then
-            InvPostingDate := CalcDate(Text001, "Posting Date");
+        if Rec.Find('-') then
+            InvPostingDate := CalcDate(Text001, Rec."Posting Date");
     end;
 
     var

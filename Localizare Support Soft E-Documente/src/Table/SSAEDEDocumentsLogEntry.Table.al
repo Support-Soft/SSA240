@@ -10,7 +10,7 @@ table 72000 "SSAEDE-Documents Log Entry"
             Caption = 'Entry No.';
             DataClassification = SystemMetadata;
         }
-        field(10; "RecordID"; RecordID)
+        field(10; "RecordID"; RecordId)
         {
             Caption = 'RecordID';
             DataClassification = SystemMetadata;

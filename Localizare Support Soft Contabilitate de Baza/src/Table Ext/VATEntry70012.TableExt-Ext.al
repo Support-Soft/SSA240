@@ -9,7 +9,7 @@ tableextension 70012 "SSA VAT Entry70012" extends "VAT Entry"
         field(70000; "SSA Tip Document D394"; Option)
         {
             Caption = 'Tip Document D394';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA973';
             OptionCaption = ' ,Factura Fiscala,Bon Fiscal,Factura Simplificata,Borderou,File Carnet,Contract,Alte Documente';
             OptionMembers = " ","Factura Fiscala","Bon Fiscal","Factura Simplificata",Borderou,"File Carnet",Contract,"Alte Documente";
@@ -17,7 +17,7 @@ tableextension 70012 "SSA VAT Entry70012" extends "VAT Entry"
         field(70001; "SSA Stare Factura"; Option)
         {
             Caption = 'Stare Factura';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA973';
             OptionCaption = ' ,0-Factura Emisa,1-Factura Stornata,2-Factura Anulata,3-Autofactura,4-In calidate de beneficiar in numele furnizorului';
             OptionMembers = " ","0-Factura Emisa","1-Factura Stornata","2-Factura Anulata","3-Autofactura","4-In calidate de beneficiar in numele furnizorului";
@@ -25,7 +25,7 @@ tableextension 70012 "SSA VAT Entry70012" extends "VAT Entry"
         field(70002; "SSA Tip Partener"; Option)
         {
             Caption = 'Tip Partener';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA973';
             OptionCaption = ' ,1-CUI Valid din RO si din afara inreg. in scopuri de TVA in RO,2-CNP PFA din RO sau CUI neinregistrat in scopuri de TVA,3-Fara CUI valid din UE fara RO,4-Fara CUI valid din afara UE fara RO';
             OptionMembers = " ","1-CUI Valid din RO si din afara inreg. in scopuri de TVA in RO","2-CNP PFA din RO sau CUI neinregistrat in scopuri de TVA","3-Fara CUI valid din UE fara RO","4-Fara CUI valid din afara UE fara RO";
@@ -33,20 +33,20 @@ tableextension 70012 "SSA VAT Entry70012" extends "VAT Entry"
         field(70003; "SSA Not Declaration 394"; Boolean)
         {
             Caption = 'Not Declaration 394';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA973';
             Editable = false;
         }
         field(70004; "SSA Vendor/Customer Name"; Text[100])
         {
             Caption = 'Vendor/Customer Name';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA973';
         }
         field(70005; "SSA Custom Invoice No."; Code[20])
         {
             Caption = 'Custom Invoice No.';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA946';
         }
         field(70006; "SSA Realized Amount"; Decimal)
@@ -101,4 +101,3 @@ tableextension 70012 "SSA VAT Entry70012" extends "VAT Entry"
         }
     }
 }
-

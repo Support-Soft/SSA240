@@ -6,22 +6,24 @@ pageextension 70024 "SSA Sales Credit Memo70024" extends "Sales Credit Memo"
     {
         addafter("Applies-to ID")
         {
-            field("SSA Customer Order No."; "SSA Customer Order No.")
+            field("SSA Customer Order No."; Rec."SSA Customer Order No.")
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Customer Order No. field.';
             }
         }
         addafter("EU 3-Party Trade")
         {
-            field("SSA Tip Document D394"; "SSA Tip Document D394")
+            field("SSA Tip Document D394"; Rec."SSA Tip Document D394")
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Tip Document D394 field.';
             }
-            field("SSA Stare Factura"; "SSA Stare Factura")
+            field("SSA Stare Factura"; Rec."SSA Stare Factura")
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Stare Factura field.';
             }
         }
     }
 }
-

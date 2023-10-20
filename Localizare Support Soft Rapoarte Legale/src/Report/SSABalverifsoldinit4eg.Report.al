@@ -619,7 +619,7 @@ report 71301 "SSABal. verif. sold init(4eg)"
         DebitBalance: Decimal;
         all: Boolean;
         WithClosing: Boolean;
-        [InDataSet]
+
         ShowACY: Boolean;
         i: Integer;
         Year: Integer;

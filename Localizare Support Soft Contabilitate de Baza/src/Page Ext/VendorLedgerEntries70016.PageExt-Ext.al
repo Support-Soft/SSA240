@@ -5,15 +5,16 @@ pageextension 70016 "SSA VendorLedgerEntries70016" extends "Vendor Ledger Entrie
     {
         addlast(Control1)
         {
-            field("SSA Custom Invoice No."; "SSA Custom Invoice No.")
+            field("SSA Custom Invoice No."; Rec."SSA Custom Invoice No.")
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Custom Invoice No. field.';
             }
-            field("SSA Stare Factura"; "SSA Stare Factura")
+            field("SSA Stare Factura"; Rec."SSA Stare Factura")
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Stare Factura field.';
             }
         }
     }
 }
-

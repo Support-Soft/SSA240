@@ -3,7 +3,7 @@ report 71314 "SSA Sales VAT Journal"
     // SSA1003 SSCAT 03.11.2019 70.Rapoarte legale- Jurnal vanzari
     DefaultLayout = RDLC;
     RDLCLayout = './src/rdlc/SSASalesVATJournal.rdlc';
-    Caption = 'SSA Sales VAT Journal';
+    Caption = 'Sales VAT Journal';
     PreviewMode = PrintLayout;
     UsageCategory = ReportsAndAnalysis;
 

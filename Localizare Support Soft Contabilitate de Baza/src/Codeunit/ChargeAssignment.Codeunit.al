@@ -41,72 +41,72 @@ codeunit 70027 "SSA Charge Assignment"
 
         ILE.Get(ItemLedgShptEntryNo);
         case ILE."Document Type" of
-            Ile."Document Type"::"Posted Assembly":
+            ILE."Document Type"::"Posted Assembly":
                 begin
                     PAL.Get(ILE."Document No.", ILE."Document Line No.");
                     SalesLine.TestField("Gen. Prod. Posting Group", PAL."Gen. Prod. Posting Group");
                 end;
-            Ile."Document Type"::"Purchase Credit Memo":
+            ILE."Document Type"::"Purchase Credit Memo":
                 begin
                     PCML.Get(ILE."Document No.", ILE."Document Line No.");
                     SalesLine.TestField("Gen. Prod. Posting Group", PCML."Gen. Prod. Posting Group");
                 end;
-            Ile."Document Type"::"Purchase Invoice":
+            ILE."Document Type"::"Purchase Invoice":
                 begin
                     PIL.Get(ILE."Document No.", ILE."Document Line No.");
                     SalesLine.TestField("Gen. Prod. Posting Group", PIL."Gen. Prod. Posting Group");
                 end;
-            Ile."Document Type"::"Purchase Receipt":
+            ILE."Document Type"::"Purchase Receipt":
                 begin
                     PRL.Get(ILE."Document No.", ILE."Document Line No.");
                     SalesLine.TestField("Gen. Prod. Posting Group", PRL."Gen. Prod. Posting Group");
                 end;
-            Ile."Document Type"::"Purchase Return Shipment":
+            ILE."Document Type"::"Purchase Return Shipment":
                 begin
                     RSL.Get(ILE."Document No.", ILE."Document Line No.");
                     SalesLine.TestField("Gen. Prod. Posting Group", RSL."Gen. Prod. Posting Group");
                 end;
-            Ile."Document Type"::"Sales Credit Memo":
+            ILE."Document Type"::"Sales Credit Memo":
                 begin
                     SCML.Get(ILE."Document No.", ILE."Document Line No.");
                     SalesLine.TestField("Gen. Prod. Posting Group", SCML."Gen. Prod. Posting Group");
                 end;
-            Ile."Document Type"::"Sales Invoice":
+            ILE."Document Type"::"Sales Invoice":
                 begin
                     SIL.Get(ILE."Document No.", ILE."Document Line No.");
                     SalesLine.TestField("Gen. Prod. Posting Group", SIL."Gen. Prod. Posting Group");
                 end;
-            Ile."Document Type"::"Sales Return Receipt":
+            ILE."Document Type"::"Sales Return Receipt":
                 begin
                     RRL.Get(ILE."Document No.", ILE."Document Line No.");
                     SalesLine.TestField("Gen. Prod. Posting Group", RRL."Gen. Prod. Posting Group");
                 end;
-            Ile."Document Type"::"Sales Shipment":
+            ILE."Document Type"::"Sales Shipment":
                 begin
                     SSL.Get(ILE."Document No.", ILE."Document Line No.");
                     SalesLine.TestField("Gen. Prod. Posting Group", SSL."Gen. Prod. Posting Group");
                 end;
-            Ile."Document Type"::"Service Credit Memo":
+            ILE."Document Type"::"Service Credit Memo":
                 begin
                     SSCML.Get(ILE."Document No.", ILE."Document Line No.");
                     SalesLine.TestField("Gen. Prod. Posting Group", SSCML."Gen. Prod. Posting Group");
                 end;
-            Ile."Document Type"::"Service Invoice":
+            ILE."Document Type"::"Service Invoice":
                 begin
                     SSIL.Get(ILE."Document No.", ILE."Document Line No.");
                     SalesLine.TestField("Gen. Prod. Posting Group", SSIL."Gen. Prod. Posting Group");
                 end;
-            Ile."Document Type"::"Service Shipment":
+            ILE."Document Type"::"Service Shipment":
                 begin
                     SSSL.Get(ILE."Document No.", ILE."Document Line No.");
                     SalesLine.TestField("Gen. Prod. Posting Group", SSSL."Gen. Prod. Posting Group");
                 end;
-            Ile."Document Type"::"Transfer Receipt":
+            ILE."Document Type"::"Transfer Receipt":
                 begin
                     TRL.Get(ILE."Document No.", ILE."Document Line No.");
                     SalesLine.TestField("Gen. Prod. Posting Group", TRL."Gen. Prod. Posting Group");
                 end;
-            Ile."Document Type"::"Transfer Shipment":
+            ILE."Document Type"::"Transfer Shipment":
                 begin
                     TSL.Get(ILE."Document No.", ILE."Document Line No.");
                     SalesLine.TestField("Gen. Prod. Posting Group", TSL."Gen. Prod. Posting Group");
@@ -138,72 +138,72 @@ codeunit 70027 "SSA Charge Assignment"
 
         ILE.Get(ItemLedgShptEntryNo);
         case ILE."Document Type" of
-            Ile."Document Type"::"Posted Assembly":
+            ILE."Document Type"::"Posted Assembly":
                 begin
                     PAL.Get(ILE."Document No.", ILE."Document Line No.");
                     PurchLine.TestField("Gen. Prod. Posting Group", PAL."Gen. Prod. Posting Group");
                 end;
-            Ile."Document Type"::"Purchase Credit Memo":
+            ILE."Document Type"::"Purchase Credit Memo":
                 begin
                     PCML.Get(ILE."Document No.", ILE."Document Line No.");
                     PurchLine.TestField("Gen. Prod. Posting Group", PCML."Gen. Prod. Posting Group");
                 end;
-            Ile."Document Type"::"Purchase Invoice":
+            ILE."Document Type"::"Purchase Invoice":
                 begin
                     PIL.Get(ILE."Document No.", ILE."Document Line No.");
                     PurchLine.TestField("Gen. Prod. Posting Group", PIL."Gen. Prod. Posting Group");
                 end;
-            Ile."Document Type"::"Purchase Receipt":
+            ILE."Document Type"::"Purchase Receipt":
                 begin
                     PRL.Get(ILE."Document No.", ILE."Document Line No.");
                     PurchLine.TestField("Gen. Prod. Posting Group", PRL."Gen. Prod. Posting Group");
                 end;
-            Ile."Document Type"::"Purchase Return Shipment":
+            ILE."Document Type"::"Purchase Return Shipment":
                 begin
                     RSL.Get(ILE."Document No.", ILE."Document Line No.");
                     PurchLine.TestField("Gen. Prod. Posting Group", RSL."Gen. Prod. Posting Group");
                 end;
-            Ile."Document Type"::"Sales Credit Memo":
+            ILE."Document Type"::"Sales Credit Memo":
                 begin
                     SCML.Get(ILE."Document No.", ILE."Document Line No.");
                     PurchLine.TestField("Gen. Prod. Posting Group", SCML."Gen. Prod. Posting Group");
                 end;
-            Ile."Document Type"::"Sales Invoice":
+            ILE."Document Type"::"Sales Invoice":
                 begin
                     SIL.Get(ILE."Document No.", ILE."Document Line No.");
                     PurchLine.TestField("Gen. Prod. Posting Group", SIL."Gen. Prod. Posting Group");
                 end;
-            Ile."Document Type"::"Sales Return Receipt":
+            ILE."Document Type"::"Sales Return Receipt":
                 begin
                     RRL.Get(ILE."Document No.", ILE."Document Line No.");
                     PurchLine.TestField("Gen. Prod. Posting Group", RRL."Gen. Prod. Posting Group");
                 end;
-            Ile."Document Type"::"Sales Shipment":
+            ILE."Document Type"::"Sales Shipment":
                 begin
                     SSL.Get(ILE."Document No.", ILE."Document Line No.");
                     PurchLine.TestField("Gen. Prod. Posting Group", SSL."Gen. Prod. Posting Group");
                 end;
-            Ile."Document Type"::"Service Credit Memo":
+            ILE."Document Type"::"Service Credit Memo":
                 begin
                     SSCML.Get(ILE."Document No.", ILE."Document Line No.");
                     PurchLine.TestField("Gen. Prod. Posting Group", SSCML."Gen. Prod. Posting Group");
                 end;
-            Ile."Document Type"::"Service Invoice":
+            ILE."Document Type"::"Service Invoice":
                 begin
                     SSIL.Get(ILE."Document No.", ILE."Document Line No.");
                     PurchLine.TestField("Gen. Prod. Posting Group", SSIL."Gen. Prod. Posting Group");
                 end;
-            Ile."Document Type"::"Service Shipment":
+            ILE."Document Type"::"Service Shipment":
                 begin
                     SSSL.Get(ILE."Document No.", ILE."Document Line No.");
                     PurchLine.TestField("Gen. Prod. Posting Group", SSSL."Gen. Prod. Posting Group");
                 end;
-            Ile."Document Type"::"Transfer Receipt":
+            ILE."Document Type"::"Transfer Receipt":
                 begin
                     TRL.Get(ILE."Document No.", ILE."Document Line No.");
                     PurchLine.TestField("Gen. Prod. Posting Group", TRL."Gen. Prod. Posting Group");
                 end;
-            Ile."Document Type"::"Transfer Shipment":
+            ILE."Document Type"::"Transfer Shipment":
                 begin
                     TSL.Get(ILE."Document No.", ILE."Document Line No.");
                     PurchLine.TestField("Gen. Prod. Posting Group", TSL."Gen. Prod. Posting Group");

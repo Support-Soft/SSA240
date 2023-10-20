@@ -107,4 +107,3 @@ table 70504 "SSA Payment Step Ledger"
     {
     }
 }
-

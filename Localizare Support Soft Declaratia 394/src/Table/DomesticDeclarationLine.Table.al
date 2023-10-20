@@ -3,33 +3,30 @@ table 71702 "SSA Domestic Declaration Line"
     // SSA973 SSCAT 06.09.2019 39.Rapoarte legale- Localizare Declaratia 394
 
     LookupPageID = "SSA Domestic Declaration";
+    DataClassification = CustomerContent;
 
     fields
     {
         field(1; "Domestic Declaration Code"; Code[10])
         {
             Caption = 'Domestic Declaration Code';
-            DataClassification = ToBeClassified;
             Editable = false;
             TableRelation = "SSA Domestic Declaration";
         }
         field(2; "Line No."; Integer)
         {
             Caption = 'Line No.';
-            DataClassification = ToBeClassified;
             Editable = false;
         }
         field(3; "Source VAT Entry No."; Integer)
         {
             Caption = 'Source VAT Entry No.';
-            DataClassification = ToBeClassified;
             Editable = false;
             TableRelation = "VAT Entry"."Entry No.";
         }
         field(4; "Posting Date"; Date)
         {
             Caption = 'Posting Date';
-            DataClassification = ToBeClassified;
 
             trigger OnValidate()
             begin
@@ -44,19 +41,16 @@ table 71702 "SSA Domestic Declaration Line"
         field(5; "Document No."; Code[20])
         {
             Caption = 'Document No.';
-            DataClassification = ToBeClassified;
         }
         field(6; "Document Type"; Option)
         {
             Caption = 'Document Type';
-            DataClassification = ToBeClassified;
             OptionCaption = 'Invoice,Credit Memo';
             OptionMembers = Invoice,"Credit Memo";
         }
         field(7; Type; Option)
         {
             Caption = 'Type';
-            DataClassification = ToBeClassified;
             OptionCaption = 'Sale,Purchase';
             OptionMembers = Sale,Purchase;
 
@@ -70,7 +64,6 @@ table 71702 "SSA Domestic Declaration Line"
         {
             AutoFormatType = 1;
             Caption = 'Base';
-            DataClassification = ToBeClassified;
 
             trigger OnValidate()
             begin
@@ -92,7 +85,6 @@ table 71702 "SSA Domestic Declaration Line"
         {
             AutoFormatType = 1;
             Caption = 'Amount';
-            DataClassification = ToBeClassified;
 
             trigger OnValidate()
             begin
@@ -113,14 +105,12 @@ table 71702 "SSA Domestic Declaration Line"
         field(10; "VAT Calculation Type"; Option)
         {
             Caption = 'VAT Calculation Type';
-            DataClassification = ToBeClassified;
             OptionCaption = 'Normal VAT,Reverse Charge VAT,Full VAT,Sales Tax';
             OptionMembers = "Normal VAT","Reverse Charge VAT","Full VAT","Sales Tax";
         }
         field(12; "Bill-to/Pay-to No."; Code[20])
         {
             Caption = 'Bill-to/Pay-to No.';
-            DataClassification = ToBeClassified;
             TableRelation = IF (Type = CONST(Purchase)) Vendor
             ELSE
             IF (Type = CONST(Sale)) Customer;
@@ -148,35 +138,29 @@ table 71702 "SSA Domestic Declaration Line"
         field(15; "Source Code"; Code[10])
         {
             Caption = 'Source Code';
-            DataClassification = ToBeClassified;
             TableRelation = "Source Code";
         }
         field(21; "Transaction No."; Integer)
         {
             Caption = 'Transaction No.';
-            DataClassification = ToBeClassified;
         }
         field(26; "External Document No."; Code[35])
         {
             Caption = 'External Document No.';
-            DataClassification = ToBeClassified;
         }
         field(39; "VAT Bus. Posting Group"; Code[20])
         {
             Caption = 'VAT Bus. Posting Group';
-            DataClassification = ToBeClassified;
             TableRelation = "VAT Business Posting Group";
         }
         field(40; "VAT Prod. Posting Group"; Code[20])
         {
             Caption = 'VAT Prod. Posting Group';
-            DataClassification = ToBeClassified;
             TableRelation = "VAT Product Posting Group";
         }
         field(55; "VAT Registration No."; Text[20])
         {
             Caption = 'VAT Registration No.';
-            DataClassification = ToBeClassified;
 
             trigger OnValidate()
             var
@@ -187,7 +171,6 @@ table 71702 "SSA Domestic Declaration Line"
         field(56; "Vendor/Customer Name"; Text[100])
         {
             Caption = 'Vendor/Customer Name';
-            DataClassification = ToBeClassified;
 
             trigger OnValidate()
             begin
@@ -198,113 +181,93 @@ table 71702 "SSA Domestic Declaration Line"
         field(50000; "Detailed 394 Decl."; Code[20])
         {
             Caption = 'Detailed 394 Decl.';
-            DataClassification = ToBeClassified;
             Editable = false;
         }
         field(50001; "Document Date"; Date)
         {
             Caption = 'Document Date';
-            DataClassification = ToBeClassified;
         }
         field(50200; "Postponed VAT Payment"; Boolean)
         {
             Caption = 'Postponed VAT Payment';
-            DataClassification = ToBeClassified;
         }
         field(50201; "Record Document Number"; Text[40])
         {
             Caption = 'Record Document Number';
-            DataClassification = ToBeClassified;
         }
         field(50202; Correction; Boolean)
         {
             Caption = 'Correction';
-            DataClassification = ToBeClassified;
         }
         field(92200; "Tip Document D394"; Option)
         {
-            DataClassification = ToBeClassified;
             OptionCaption = ' ,Factura Fiscala,Bon Fiscal,Factura Simplificata,Borderou,File Carnet,Contract,Alte Documente';
             OptionMembers = " ","Factura Fiscala","Bon Fiscal","Factura Simplificata",Borderou,"File Carnet",Contract,"Alte Documente";
         }
         field(92201; "Stare Factura"; Option)
         {
-            DataClassification = ToBeClassified;
             OptionCaption = ' ,0-Factura Emisa,1-Factura Stornata,2-Factura Anulata,3-Autofactura,4-In calidate de beneficiar in numele furnizorului';
             OptionMembers = " ","0-Factura Emisa","1-Factura Stornata","2-Factura Anulata","3-Autofactura","4-In calidate de beneficiar in numele furnizorului";
         }
         field(92210; "Tip Partener"; Option)
         {
-            DataClassification = ToBeClassified;
             OptionCaption = ' ,1-CUI Valid din RO si din afara inreg. in scopuri de TVA in RO,2-CNP PFA din RO sau CUI neinregistrat in scopuri de TVA,3-Fara CUI valid din UE fara RO,4-Fara CUI valid din afara UE fara RO';
             OptionMembers = " ","1-CUI Valid din RO si din afara inreg. in scopuri de TVA in RO","2-CNP PFA din RO sau CUI neinregistrat in scopuri de TVA","3-Fara CUI valid din UE fara RO","4-Fara CUI valid din afara UE fara RO";
         }
         field(92220; "Tip Operatie"; Option)
         {
-            DataClassification = ToBeClassified;
             OptionMembers = " ",L,LS,A,AI,AS,ASI,V,C,N;
         }
         field(92240; "Cod Serie Factura"; Code[20])
         {
             Caption = 'No. Series';
-            DataClassification = ToBeClassified;
             Editable = false;
             TableRelation = "No. Series";
         }
         field(92250; "Cod CAEN"; Code[10])
         {
-            DataClassification = ToBeClassified;
         }
         field(92251; "Tip Operatiune CAEN"; Option)
         {
-            DataClassification = ToBeClassified;
             OptionMembers = " ","1-livrari de bunuri","2-prestari servicii";
         }
         field(92260; "Tax Group Code"; Code[10])
         {
             Caption = 'Tax Group Code';
-            DataClassification = ToBeClassified;
             TableRelation = "Tax Group";
         }
         field(92270; "Organization type"; Option)
         {
             Caption = 'Organization type';
-            DataClassification = ToBeClassified;
             OptionCaption = ' ,Private Legal Person,Natural Person,Authorised Natural Person,Public Legal Person';
             OptionMembers = " ","Private Legal Person","Natural Person","Authorised Natural Person","Public Legal Person";
         }
         field(92280; "VAT to pay"; Boolean)
         {
             Caption = 'VAT to pay';
-            DataClassification = ToBeClassified;
         }
         field(92290; Cota; Decimal)
         {
             Caption = 'Journals VAT %';
-            DataClassification = ToBeClassified;
             DecimalPlaces = 0 : 2;
         }
         field(92300; "Cod tara D394"; Text[60])
         {
-            DataClassification = ToBeClassified;
         }
         field(92310; "Cod Judet D394"; Option)
         {
-            DataClassification = ToBeClassified;
             OptionCaption = ' ,1-Alba,2-Arad,3-Arges,4-Bacau,5-Bihor,6-Bistrita-Nasaud,7-Botosani,8-Brasov,9-Braila,10-Buzau,11-Caras-Severin,12-Cluj,13-Constanta,14-Covasna,15-Dambovita,16-Dolj,17-Galati,18-Gorj,19-Harghita,20-Hunedoara,21-Ialomita,22-Iasi,23-Ilfov,24-Maramures,25-Mehedinti,26-Mures,27-Neamt,28-Olt,29-Prahova,30-Satu Mare,31-Salaj,32-Sibiu,33-Suceava,34-Teleorman,35-Timis,36-Tulcea,37-Vaslui,38-Valcea,39-Vrancea,40-Municipiul Bucuresti,,,,,,,,,,,51-Calarasi,52-Giurgiu';
             OptionMembers = " ","1-Alba","2-Arad","3-Arges","4-Bacau","5-Bihor","6-Bistrita-Nasaud","7-Botosani","8-Brasov","9-Braila","10-Buzau","11-Caras-Severin","12-Cluj","13-Constanta","14-Covasna","15-Dambovita","16-Dolj","17-Galati","18-Gorj","19-Harghita","20-Hunedoara","21-Ialomita","22-Iasi","23-Ilfov","24-Maramures","25-Mehedinti","26-Mures","27-Neamt","28-Olt","29-Prahova","30-Satu Mare","31-Salaj","32-Sibiu","33-Suceava","34-Teleorman","35-Timis","36-Tulcea","37-Vaslui","38-Valcea","39-Vrancea","40-Municipiul Bucuresti",,,,,,,,,,,"51-Calarasi","52-Giurgiu";
         }
         field(92320; "Unrealized VAT Entry No."; Integer)
         {
             Caption = 'Unrealized VAT Entry No.';
-            DataClassification = ToBeClassified;
             Editable = false;
             TableRelation = "VAT Entry";
         }
         field(92330; "Not Declaration 394"; Boolean)
         {
             Caption = 'Not Declaration 394';
-            DataClassification = ToBeClassified;
             Editable = true;
         }
         field(92340; "Persoana Afiliata"; Boolean)

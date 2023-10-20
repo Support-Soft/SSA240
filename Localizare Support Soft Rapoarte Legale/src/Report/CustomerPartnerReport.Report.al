@@ -4,7 +4,7 @@ report 71305 "SSA Customer Partner Report"
     DefaultLayout = RDLC;
     RDLCLayout = './src/rdlc/SSACustomerPartnerReport.rdlc';
 
-    Caption = 'SSA Customer Partner Report';
+    Caption = 'Customer Partner Report';
     UsageCategory = ReportsAndAnalysis;
     dataset
     {

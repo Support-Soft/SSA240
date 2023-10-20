@@ -4,6 +4,7 @@ page 71701 "SSA Domestic Declaration Card"
 
     PageType = Card;
     SourceTable = "SSA Domestic Declaration";
+    ApplicationArea = All;
 
     layout
     {
@@ -11,60 +12,60 @@ page 71701 "SSA Domestic Declaration Card"
         {
             group(General)
             {
-                field("Code"; Code)
+                field("Code"; Rec.Code)
                 {
                     ApplicationArea = All;
                 }
-                field(Description; Description)
+                field(Description; Rec.Description)
                 {
                     ApplicationArea = All;
                 }
-                field(Reported; Reported)
+                field(Reported; Rec.Reported)
                 {
                     ApplicationArea = All;
                 }
-                field("Starting Date"; "Starting Date")
-                {
-                    ApplicationArea = All;
-                    Editable = DatesEditable;
-                }
-                field("Ending Date"; "Ending Date")
+                field("Starting Date"; Rec."Starting Date")
                 {
                     ApplicationArea = All;
                     Editable = DatesEditable;
                 }
-                field(TipD394; TipD394)
+                field("Ending Date"; Rec."Ending Date")
+                {
+                    ApplicationArea = All;
+                    Editable = DatesEditable;
+                }
+                field(TipD394; Rec.TipD394)
                 {
                     ApplicationArea = All;
                     trigger OnValidate()
                     begin
-                        if TipD394 = TipD394::L then
+                        if Rec.TipD394 = Rec.TipD394::L then
                             DatesEditable := false
                         else
                             DatesEditable := true;
                     end;
                 }
-                field(Perioada; Perioada)
+                field(Perioada; Rec.Perioada)
                 {
                     ApplicationArea = All;
                 }
-                field("Optiune verificare date"; "Optiune verificare date")
+                field("Optiune verificare date"; Rec."Optiune verificare date")
                 {
                     ApplicationArea = All;
                 }
-                field("Schimb Optiune verificare date"; "Schimb Optiune verificare date")
+                field("Schimb Optiune verificare date"; Rec."Schimb Optiune verificare date")
                 {
                     ApplicationArea = All;
                 }
-                field("Nr de AMEF"; "Nr de AMEF")
+                field("Nr de AMEF"; Rec."Nr de AMEF")
                 {
                     ApplicationArea = All;
                 }
-                field("Tranzactii Persoane Afiliate"; "Tranzactii Persoane Afiliate")
+                field("Tranzactii Persoane Afiliate"; Rec."Tranzactii Persoane Afiliate")
                 {
                     ApplicationArea = All;
                 }
-                field("Copy Declaration Info from"; "Copy Declaration Info from")
+                field("Copy Declaration Info from"; Rec."Copy Declaration Info from")
                 {
                     ApplicationArea = All;
                 }
@@ -74,69 +75,69 @@ page 71701 "SSA Domestic Declaration Card"
                 Caption = 'Declarant';
                 group("Sectiunea A")
                 {
-                    field("Telefon Companie"; "Telefon Companie")
+                    field("Telefon Companie"; Rec."Telefon Companie")
                     {
                         ApplicationArea = All;
                     }
-                    field("Fax Companie"; "Fax Companie")
+                    field("Fax Companie"; Rec."Fax Companie")
                     {
                         ApplicationArea = All;
                     }
-                    field("E-Mail Companie"; "E-Mail Companie")
+                    field("E-Mail Companie"; Rec."E-Mail Companie")
                     {
                         ApplicationArea = All;
                     }
                 }
                 group("Sectiunea B1")
                 {
-                    field("Nume Reprezentant"; "Nume Reprezentant")
+                    field("Nume Reprezentant"; Rec."Nume Reprezentant")
                     {
                         ApplicationArea = All;
                     }
-                    field("CNP Reprezentant"; "CNP Reprezentant")
+                    field("CNP Reprezentant"; Rec."CNP Reprezentant")
                     {
                         ApplicationArea = All;
                     }
-                    field("Functie Declaratie"; "Functie Declaratie")
+                    field("Functie Declaratie"; Rec."Functie Declaratie")
                     {
                         ApplicationArea = All;
                     }
-                    field("Adresa Reprezentant"; "Adresa Reprezentant")
+                    field("Adresa Reprezentant"; Rec."Adresa Reprezentant")
                     {
                         ApplicationArea = All;
                     }
-                    field("Tel. Reprezentant"; "Tel. Reprezentant")
+                    field("Tel. Reprezentant"; Rec."Tel. Reprezentant")
                     {
                         ApplicationArea = All;
                     }
-                    field("E-mail Reprezentant"; "E-mail Reprezentant")
+                    field("E-mail Reprezentant"; Rec."E-mail Reprezentant")
                     {
                         ApplicationArea = All;
                     }
-                    field("Fax Reprezentant"; "Fax Reprezentant")
+                    field("Fax Reprezentant"; Rec."Fax Reprezentant")
                     {
                         ApplicationArea = All;
                     }
                 }
                 group("Sectiunea B2")
                 {
-                    field("Tip Intocmit"; "Tip Intocmit")
+                    field("Tip Intocmit"; Rec."Tip Intocmit")
                     {
                         ApplicationArea = All;
                     }
-                    field("Nume Intocmit"; "Nume Intocmit")
+                    field("Nume Intocmit"; Rec."Nume Intocmit")
                     {
                         ApplicationArea = All;
                     }
-                    field("Functie Intocmit"; "Functie Intocmit")
+                    field("Functie Intocmit"; Rec."Functie Intocmit")
                     {
                         ApplicationArea = All;
                     }
-                    field("Calitate Intocmit"; "Calitate Intocmit")
+                    field("Calitate Intocmit"; Rec."Calitate Intocmit")
                     {
                         ApplicationArea = All;
                     }
-                    field("CIF Intocmit"; "CIF Intocmit")
+                    field("CIF Intocmit"; Rec."CIF Intocmit")
                     {
                         ApplicationArea = All;
                     }
@@ -145,151 +146,151 @@ page 71701 "SSA Domestic Declaration Card"
             group(Request)
             {
                 Caption = 'Request';
-                field(Solicit; Solicit)
+                field(Solicit; Rec.Solicit)
                 {
                     ApplicationArea = All;
                 }
-                field(AchizitiiPE; AchizitiiPE)
+                field(AchizitiiPE; Rec.AchizitiiPE)
                 {
                     ApplicationArea = All;
                 }
-                field(AchizitiiCR; AchizitiiCR)
+                field(AchizitiiCR; Rec.AchizitiiCR)
                 {
                     ApplicationArea = All;
                 }
-                field(AchizitiiCB; AchizitiiCB)
+                field(AchizitiiCB; Rec.AchizitiiCB)
                 {
                     ApplicationArea = All;
                 }
-                field(AchizitiiCI; AchizitiiCI)
+                field(AchizitiiCI; Rec.AchizitiiCI)
                 {
                     ApplicationArea = All;
                 }
-                field(AchizitiiA; AchizitiiA)
+                field(AchizitiiA; Rec.AchizitiiA)
                 {
                     ApplicationArea = All;
                 }
-                field(AchizitiiB24; AchizitiiB24)
+                field(AchizitiiB24; Rec.AchizitiiB24)
                 {
                     ApplicationArea = All;
                 }
-                field(AchizitiiB20; AchizitiiB20)
+                field(AchizitiiB20; Rec.AchizitiiB20)
                 {
                     ApplicationArea = All;
                 }
-                field(AchizitiiB19; AchizitiiB19)
+                field(AchizitiiB19; Rec.AchizitiiB19)
                 {
                     ApplicationArea = All;
                 }
-                field(AchizitiiB9; AchizitiiB9)
+                field(AchizitiiB9; Rec.AchizitiiB9)
                 {
                     ApplicationArea = All;
                 }
-                field(AchizitiiB5; AchizitiiB5)
+                field(AchizitiiB5; Rec.AchizitiiB5)
                 {
                     ApplicationArea = All;
                 }
-                field(AchizitiiS24; AchizitiiS24)
+                field(AchizitiiS24; Rec.AchizitiiS24)
                 {
                     ApplicationArea = All;
                 }
-                field(AchizitiiS20; AchizitiiS20)
+                field(AchizitiiS20; Rec.AchizitiiS20)
                 {
                     ApplicationArea = All;
                 }
-                field(AchizitiiS19; AchizitiiS19)
+                field(AchizitiiS19; Rec.AchizitiiS19)
                 {
                     ApplicationArea = All;
                 }
-                field(AchizitiiS9; AchizitiiS9)
+                field(AchizitiiS9; Rec.AchizitiiS9)
                 {
                     ApplicationArea = All;
                 }
-                field(AchizitiiS5; AchizitiiS5)
+                field(AchizitiiS5; Rec.AchizitiiS5)
                 {
                     ApplicationArea = All;
                 }
-                field(ImportB; ImportB)
+                field(ImportB; Rec.ImportB)
                 {
                     ApplicationArea = All;
                 }
-                field(AcINecorp; AcINecorp)
+                field(AcINecorp; Rec.AcINecorp)
                 {
                     ApplicationArea = All;
                 }
-                field(LivrariBI; LivrariBI)
+                field(LivrariBI; Rec.LivrariBI)
                 {
                     ApplicationArea = All;
                 }
-                field(Bun24; Bun24)
+                field(Bun24; Rec.Bun24)
                 {
                     ApplicationArea = All;
                 }
-                field(Bun20; Bun20)
+                field(Bun20; Rec.Bun20)
                 {
                     ApplicationArea = All;
                 }
-                field(Bun19; Bun19)
+                field(Bun19; Rec.Bun19)
                 {
                     ApplicationArea = All;
                 }
-                field(Bun9; Bun9)
+                field(Bun9; Rec.Bun9)
                 {
                     ApplicationArea = All;
                 }
-                field(Bun5; Bun5)
+                field(Bun5; Rec.Bun5)
                 {
                     ApplicationArea = All;
                 }
-                field(ValoareScutit; ValoareScutit)
+                field(ValoareScutit; Rec.ValoareScutit)
                 {
                     ApplicationArea = All;
                 }
-                field(BunTI; BunTI)
+                field(BunTI; Rec.BunTI)
                 {
                     ApplicationArea = All;
                 }
-                field(Prest24; Prest24)
+                field(Prest24; Rec.Prest24)
                 {
                     ApplicationArea = All;
                 }
-                field(Prest20; Prest20)
+                field(Prest20; Rec.Prest20)
                 {
                     ApplicationArea = All;
                 }
-                field(Prest19; Prest19)
+                field(Prest19; Rec.Prest19)
                 {
                     ApplicationArea = All;
                 }
-                field(Prest9; Prest9)
+                field(Prest9; Rec.Prest9)
                 {
                     ApplicationArea = All;
                 }
-                field(Prest5; Prest5)
+                field(Prest5; Rec.Prest5)
                 {
                     ApplicationArea = All;
                 }
-                field(PrestScutit; PrestScutit)
+                field(PrestScutit; Rec.PrestScutit)
                 {
                     ApplicationArea = All;
                 }
-                field(LIntra; LIntra)
+                field(LIntra; Rec.LIntra)
                 {
                     ApplicationArea = All;
                 }
-                field(PrestIntra; PrestIntra)
+                field(PrestIntra; Rec.PrestIntra)
                 {
                     ApplicationArea = All;
                 }
-                field(Export; Export)
+                field(Export; Rec.Export)
                 {
                     ApplicationArea = All;
                 }
-                field(LivNecorp; LivNecorp)
+                field(LivNecorp; Rec.LivNecorp)
                 {
                     ApplicationArea = All;
                 }
-                field(Efectuat; Efectuat)
+                field(Efectuat; Rec.Efectuat)
                 {
                     ApplicationArea = All;
                 }
@@ -303,14 +304,14 @@ page 71701 "SSA Domestic Declaration Card"
 
     trigger OnAfterGetRecord()
     begin
-        if TipD394 = TipD394::L then
+        if Rec.TipD394 = Rec.TipD394::L then
             DatesEditable := false
         else
             DatesEditable := true;
     end;
 
     var
-        [InDataSet]
+
         DatesEditable: Boolean;
 }
 

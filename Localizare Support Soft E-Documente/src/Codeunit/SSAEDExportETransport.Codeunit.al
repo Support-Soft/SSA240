@@ -100,7 +100,7 @@ codeunit 72000 "SSAEDExport ETransport"
 
     procedure GenerateXMLFile(VariantRec: Variant; var _TempBlob: Codeunit "Temp Blob")
     var
-        ETransportXML: XMLport "SSAEDE-Transport";
+        ETransportXML: XmlPort "SSAEDE-Transport";
         OutStream: OutStream;
     begin
         _TempBlob.CreateOutStream(OutStream);

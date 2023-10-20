@@ -14,5 +14,4 @@ tableextension 70507 "SSA Vendor Ledger Entry 70507" extends "Vendor Ledger Entr
             CalcFormula = sum("SSA Pmt. Tools AppLedg. Entry".Amount where("Document Type" = const("Purchase Invoice"), "Document No." = field("Document No.")));
         }
     }
-
 }

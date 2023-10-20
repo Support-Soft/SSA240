@@ -10,23 +10,25 @@ pageextension 70023 "SSA Sales Invoice70023" extends "Sales Invoice"
             {
                 Caption = 'Localizare SS';
 
-                field("SSA Customer Order No."; "SSA Customer Order No.")
+                field("SSA Customer Order No."; Rec."SSA Customer Order No.")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Customer Order No. field.';
                 }
-
-                field("SSA Tip Document D394"; "SSA Tip Document D394")
+                field("SSA Tip Document D394"; Rec."SSA Tip Document D394")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Tip Document D394 field.';
                 }
-                field("SSA Stare Factura"; "SSA Stare Factura")
+                field("SSA Stare Factura"; Rec."SSA Stare Factura")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Stare Factura field.';
                 }
-
-                field("SSA Delivery Contact No."; "SSA Delivery Contact No.")
+                field("SSA Delivery Contact No."; Rec."SSA Delivery Contact No.")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Delivery Contact No. field.';
                 }
             }
         }

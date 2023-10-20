@@ -246,7 +246,6 @@ table 70506 "SSA Payment Header"
                 end else
                     InitBankAccount;
 
-
                 //SSM729>>
                 case "Account Type" of
                     "Account Type"::Customer:
@@ -274,7 +273,6 @@ table 70506 "SSA Payment Header"
             CalcFormula = sum("SSA Payment Line"."Amount (LCY)" where("No." = field("No.")));
             Caption = 'Total Amount (LCY)';
             Editable = false;
-
         }
         field(17; Amount; Decimal)
         {
@@ -594,7 +592,6 @@ table 70506 "SSA Payment Header"
         ELSE
           DimManagement.SaveTempDim(FieldNo,ShortcutDimCode);
          */
-
     end;
 
     procedure ValidateShortcutDimCode(FieldNo: Integer; var ShortcutDimCode: Code[20])
@@ -615,19 +612,17 @@ table 70506 "SSA Payment Header"
 
     procedure AssistEdit(OldReglHeader: Record "SSA Payment Header"): Boolean
     begin
-        with ReglHeader do begin
-            ReglHeader := Rec;
+        ReglHeader := Rec;
+        Process := GetProcess;
+
+        Process.TESTFIELD("Header No. Series");
+        if NoSeriesMgt.SelectSeries(Process."Header No. Series", OldReglHeader."No. Series", ReglHeader."No. Series") then begin
             Process := GetProcess;
 
             Process.TESTFIELD("Header No. Series");
-            if NoSeriesMgt.SelectSeries(Process."Header No. Series", OldReglHeader."No. Series", "No. Series") then begin
-                Process := GetProcess;
-
-                Process.TESTFIELD("Header No. Series");
-                NoSeriesMgt.SetSeries("No.");
-                Rec := ReglHeader;
-                exit(true);
-            end;
+            NoSeriesMgt.SetSeries(ReglHeader."No.");
+            Rec := ReglHeader;
+            exit(true);
         end;
     end;
 
@@ -645,14 +640,13 @@ table 70506 "SSA Payment Header"
         /*IF HideValidationDialog THEN
           Confirmed := TRUE
         ELSE
-        
+
           Confirmed := CONFIRM(Text021,FALSE);
         IF Confirmed THEN
           VALIDATE("Currency Factor")
         ELSE
         */
         "Currency Factor" := xRec."Currency Factor";
-
     end;
 
     procedure InitBankAccount()
@@ -692,7 +686,6 @@ table 70506 "SSA Payment Header"
         CompanyInformation.GET;
         VALIDATE("Account No.", CompanyInformation."Default Bank Account No.");
         */
-
     end;
 
     procedure DimensionSetup()
@@ -720,7 +713,7 @@ table 70506 "SSA Payment Header"
           DimManagement.UpdateDocDefaultDim(
             DATABASE::"SSA Payment Header",6,"No.",0,
             "Shortcut Dimension 1 Code","Shortcut Dimension 2 Code");
-        
+
         DocumentDimension.SETRANGE("Table ID",DATABASE::"SSA Payment Header");
         DocumentDimension.SETRANGE("Document Type",DocumentDimension."Document Type"::" ");
         DocumentDimension.SETRANGE("Document No.","No.");
@@ -729,7 +722,6 @@ table 70506 "SSA Payment Header"
             UpdateLineDim(DocumentDimension);
             ConfirmDialog := FALSE;
           UNTIL DocumentDimension.NEXT = 0;    */
-
     end;
 
     procedure DimensionDelete()
@@ -750,7 +742,6 @@ table 70506 "SSA Payment Header"
         "Shortcut Dimension 1 Code" := '';
         "Shortcut Dimension 2 Code" := '';
         */
-
     end;
 
     procedure DeleteLineDim()
@@ -768,7 +759,6 @@ table 70506 "SSA Payment Header"
           IF DoOperation AND FIND('-') THEN
             DeleteDocDim.DELETE;
         END;*/
-
     end;
 
     procedure UpdateLineDim()
@@ -793,7 +783,6 @@ table 70506 "SSA Payment Header"
               UNTIL RegLine.NEXT = 0;
           END;
          */
-
     end;
 
     procedure Check(Bank: Text[20]; Agency: Text[20]; Account: Text[30]; RIBKey: Integer): Boolean
@@ -906,4 +895,3 @@ table 70506 "SSA Payment Header"
         //SSM729<<
     end;
 }
-

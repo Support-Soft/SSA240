@@ -14,6 +14,7 @@
     "editor.formatOnSave": true,
     "al.backgroundCodeAnalysis": true,
     "al.enableCodeAnalysis": true,
+    "al.enableCodeActions": true,
     "al.assemblyProbingPaths": [
         "./.netpackages",
         "c:/Windows/assembly/"

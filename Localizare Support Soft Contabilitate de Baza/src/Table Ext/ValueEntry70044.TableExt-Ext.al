@@ -8,21 +8,20 @@ tableextension 70044 "SSA Value Entry70044" extends "Value Entry"
         field(70000; "SSA Correction Cost"; Boolean)
         {
             Caption = 'Correction Cost';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA935';
         }
         field(70001; "SSA Correction Cost Inv. Val."; Boolean)
         {
             Caption = 'Correction Cost Inv. Valuation';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA935';
         }
         field(70002; "SSA Custom Invoice No."; Code[20])
         {
             Caption = 'Custom Invoice No.';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA946';
         }
     }
 }
-

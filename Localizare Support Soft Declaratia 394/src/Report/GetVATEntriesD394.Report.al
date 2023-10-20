@@ -4,6 +4,7 @@ report 71702 "SSA Get VAT Entries D394"
     // SSA947 SSCAT 10.01.2019 13.Funct. “TVA la incasare”
 
     ProcessingOnly = true;
+    ApplicationArea = All;
 
     dataset
     {
@@ -158,6 +159,7 @@ report 71702 "SSA Get VAT Entries D394"
                     field(ChangePOSCustomer; ChangePOSCustomer)
                     {
                         Caption = 'Change POS Transactions';
+                        ApplicationArea = All;
                     }
                 }
             }

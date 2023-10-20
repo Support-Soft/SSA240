@@ -4,21 +4,21 @@ table 70000 "SSAInternal Consumption Header"
     // SSA1097 SSCAT 07.10.2019 Anulare bon consum
 
     Caption = 'Internal Consumption Header';
-    DrillDownPageID = "SSAInternal Consumption List";
-    LookupPageID = "SSAInternal Consumption List";
+    DrillDownPageId = "SSAInternal Consumption List";
+    LookupPageId = "SSAInternal Consumption List";
+    DataClassification = CustomerContent;
 
     fields
     {
         field(2; "No."; Code[20])
         {
             Caption = 'No.';
-            DataClassification = ToBeClassified;
 
             trigger OnValidate()
             begin
                 if "No." <> xRec."No." then begin
-                    SalesSetup.Get;
-                    NoSeriesMgt.TestManual(GetNoSeriesCode);
+                    SalesSetup.Get();
+                    NoSeriesMgt.TestManual(GetNoSeriesCode());
                     "No. Series" := '';
                 end;
             end;
@@ -26,41 +26,36 @@ table 70000 "SSAInternal Consumption Header"
         field(3; "Your Reference"; Text[30])
         {
             Caption = 'Your Reference';
-            DataClassification = ToBeClassified;
         }
         field(4; "Order Date"; Date)
         {
             Caption = 'Order Date';
-            DataClassification = ToBeClassified;
         }
         field(5; "Posting Date"; Date)
         {
             Caption = 'Posting Date';
-            DataClassification = ToBeClassified;
 
             trigger OnValidate()
             begin
                 Validate("Document Date", "Posting Date");
-                if ConsumptionLinesExist then begin
-                    IntConsumptionLine.Reset;
+                if ConsumptionLinesExist() then begin
+                    IntConsumptionLine.Reset();
                     IntConsumptionLine.SetRange("Document No.", "No.");
                     IntConsumptionLine.Find('-');
                     repeat
                         IntConsumptionLine.Validate("Shipment Date", "Posting Date");
-                        IntConsumptionLine.Modify;
-                    until IntConsumptionLine.Next = 0;
+                        IntConsumptionLine.Modify();
+                    until IntConsumptionLine.Next() = 0;
                 end;
             end;
         }
         field(6; "Posting Description"; Text[50])
         {
             Caption = 'Posting Description';
-            DataClassification = ToBeClassified;
         }
         field(7; "Location Code"; Code[10])
         {
             Caption = 'Location Code';
-            DataClassification = ToBeClassified;
             TableRelation = Location where("Use As In-Transit" = const(false));
 
             trigger OnValidate()
@@ -71,36 +66,34 @@ table 70000 "SSAInternal Consumption Header"
                 if "Location Code" <> '' then begin
                     if Location.Get("Location Code") then
                         "Outbound Whse. Handling Time" := Location."Outbound Whse. Handling Time";
-                end else begin
-                    if SSASetup.Get then
+                end
+                else
+                    if SSASetup.Get() then
                         "Outbound Whse. Handling Time" := SSASetup."Outbound Whse. Handling Time";
-                end;
             end;
         }
         field(8; "Shortcut Dimension 1 Code"; Code[20])
         {
             CaptionClass = '1,2,1';
             Caption = 'Shortcut Dimension 1 Code';
-            DataClassification = ToBeClassified;
             TableRelation = "Dimension Value".Code where("Global Dimension No." = const(1));
 
             trigger OnValidate()
             begin
                 ValidateShortcutDimCode(1, "Shortcut Dimension 1 Code");
-                Modify;
+                Modify();
             end;
         }
         field(9; "Shortcut Dimension 2 Code"; Code[20])
         {
             CaptionClass = '1,2,2';
             Caption = 'Shortcut Dimension 2 Code';
-            DataClassification = ToBeClassified;
             TableRelation = "Dimension Value".Code where("Global Dimension No." = const(2));
 
             trigger OnValidate()
             begin
                 ValidateShortcutDimCode(2, "Shortcut Dimension 2 Code");
-                Modify;
+                Modify();
             end;
         }
         field(10; Comment; Boolean)
@@ -114,31 +107,26 @@ table 70000 "SSAInternal Consumption Header"
         field(11; "No. Printed"; Integer)
         {
             Caption = 'No. Printed';
-            DataClassification = ToBeClassified;
             Editable = false;
         }
         field(12; "Posting No."; Code[20])
         {
             Caption = 'Posting No.';
-            DataClassification = ToBeClassified;
         }
         field(13; "Last Posting No."; Code[20])
         {
             Caption = 'Last Posting No.';
-            DataClassification = ToBeClassified;
             Editable = false;
             TableRelation = "SSA Pstd. Int. Cons. Header";
         }
         field(14; "Reason Code"; Code[10])
         {
             Caption = 'Reason Code';
-            DataClassification = ToBeClassified;
             TableRelation = "Reason Code";
         }
         field(15; "Gen. Bus. Posting Group"; Code[10])
         {
             Caption = 'Gen. Bus. Posting Group';
-            DataClassification = ToBeClassified;
             TableRelation = "Gen. Business Posting Group";
 
             trigger OnValidate()
@@ -153,49 +141,42 @@ table 70000 "SSAInternal Consumption Header"
         field(16; Correction; Boolean)
         {
             Caption = 'Correction';
-            DataClassification = ToBeClassified;
         }
         field(17; "Document Date"; Date)
         {
             Caption = 'Document Date';
-            DataClassification = ToBeClassified;
         }
         field(18; "External Document No."; Code[20])
         {
             Caption = 'External Document No.';
-            DataClassification = ToBeClassified;
         }
         field(19; "No. Series"; Code[10])
         {
             Caption = 'No. Series';
-            DataClassification = ToBeClassified;
             Editable = false;
             TableRelation = "No. Series";
         }
         field(20; "Posting No. Series"; Code[10])
         {
             Caption = 'Posting No. Series';
-            DataClassification = ToBeClassified;
             TableRelation = "No. Series";
 
             trigger OnLookup()
             begin
-                with IntConsumptionHeader do begin
-                    IntConsumptionHeader := Rec;
-                    SalesSetup.Get;
-                    TestNoSeries;
-                    if NoSeriesMgt.LookupSeries(GetPostingNoSeriesCode, "Posting No. Series") then
-                        Validate("Posting No. Series");
-                    Rec := IntConsumptionHeader;
-                end;
+                IntConsumptionHeader := Rec;
+                SalesSetup.Get();
+                TestNoSeries();
+                if NoSeriesMgt.LookupSeries(GetPostingNoSeriesCode(), IntConsumptionHeader."Posting No. Series") then
+                    IntConsumptionHeader.Validate("Posting No. Series");
+                Rec := IntConsumptionHeader;
             end;
 
             trigger OnValidate()
             begin
                 if "Posting No. Series" <> '' then begin
-                    SalesSetup.Get;
-                    TestNoSeries;
-                    NoSeriesMgt.TestSeries(GetPostingNoSeriesCode, "Posting No. Series");
+                    SalesSetup.Get();
+                    TestNoSeries();
+                    NoSeriesMgt.TestSeries(GetPostingNoSeriesCode(), "Posting No. Series");
                 end;
                 TestField("Posting No.", '');
             end;
@@ -203,7 +184,6 @@ table 70000 "SSAInternal Consumption Header"
         field(21; "VAT Bus. Posting Group"; Code[10])
         {
             Caption = 'VAT Bus. Posting Group';
-            DataClassification = ToBeClassified;
             TableRelation = "VAT Business Posting Group";
 
             trigger OnValidate()
@@ -215,7 +195,6 @@ table 70000 "SSAInternal Consumption Header"
         field(22; "Responsibility Center"; Code[10])
         {
             Caption = 'Responsibility Center';
-            DataClassification = ToBeClassified;
             TableRelation = "Responsibility Center";
 
             trigger OnValidate()
@@ -229,14 +208,13 @@ table 70000 "SSAInternal Consumption Header"
                 if "Location Code" <> '' then begin
                     if Location.Get("Location Code") then
                         "Outbound Whse. Handling Time" := Location."Outbound Whse. Handling Time";
-                end else begin
-                    if SSASetup.Get then
+                end
+                else
+                    if SSASetup.Get() then
                         "Outbound Whse. Handling Time" := SSASetup."Outbound Whse. Handling Time";
-                end;
 
                 CreateDim(
-                  DATABASE::"Responsibility Center", "Responsibility Center");
-
+                  Database::"Responsibility Center", "Responsibility Center");
 
                 if (xRec."Responsibility Center" <> "Responsibility Center") then
                     RecreateConsumptionLines(FieldCaption("Responsibility Center"));
@@ -251,7 +229,6 @@ table 70000 "SSAInternal Consumption Header"
         field(24; "Shipping Time"; DateFormula)
         {
             Caption = 'Shipping Time';
-            DataClassification = ToBeClassified;
 
             trigger OnValidate()
             begin
@@ -262,7 +239,6 @@ table 70000 "SSAInternal Consumption Header"
         field(25; "Outbound Whse. Handling Time"; DateFormula)
         {
             Caption = 'Outbound Whse. Handling Time';
-            DataClassification = ToBeClassified;
 
             trigger OnValidate()
             begin
@@ -278,18 +254,16 @@ table 70000 "SSAInternal Consumption Header"
         field(30; "Correction Cost"; Boolean)
         {
             Caption = 'Correction Cost';
-            DataClassification = ToBeClassified;
         }
         field(480; "Dimension Set ID"; Integer)
         {
             Caption = 'Dimension Set ID';
-            DataClassification = ToBeClassified;
             Editable = false;
             TableRelation = "Dimension Set Entry";
 
             trigger OnLookup()
             begin
-                ShowDocDim;
+                ShowDocDim();
             end;
 
             trigger OnValidate()
@@ -300,13 +274,11 @@ table 70000 "SSAInternal Consumption Header"
         field(70000; Cancelled; Boolean)
         {
             Caption = 'Cancelled';
-            DataClassification = ToBeClassified;
             Description = 'SSA1097';
         }
         field(70001; "Cancelled from No."; Code[20])
         {
             Caption = 'Cancelled from No.';
-            DataClassification = ToBeClassified;
             Description = 'SSA1097';
             TableRelation = "SSA Pstd. Int. Cons. Header";
         }
@@ -336,23 +308,23 @@ table 70000 "SSAInternal Consumption Header"
 
         IntConsumptionPost.DeleteHeader(Rec, PostedIntConsumptionHeader);
 
-        IntConsumptionLine.LockTable;
+        IntConsumptionLine.LockTable();
         IntConsumptionLine.SetRange("Document No.", "No.");
-        DeleteConsumtionLines;
+        DeleteConsumtionLines();
 
         ConsCommentLine.SetRange("Document Type", ConsCommentLine."Document Type"::"Internal Consumption");
         ConsCommentLine.SetRange("No.", "No.");
-        ConsCommentLine.DeleteAll;
+        ConsCommentLine.DeleteAll();
     end;
 
     trigger OnInsert()
     begin
-        SSASetup.Get;
+        SSASetup.Get();
         if "No." = '' then begin
-            TestNoSeries;
-            NoSeriesMgt.InitSeries(GetNoSeriesCode, xRec."No. Series", "Posting Date", "No.", "No. Series");
+            TestNoSeries();
+            NoSeriesMgt.InitSeries(GetNoSeriesCode(), xRec."No. Series", "Posting Date", "No.", "No. Series");
         end;
-        InitRecord;
+        InitRecord();
     end;
 
     trigger OnRename()
@@ -363,7 +335,6 @@ table 70000 "SSAInternal Consumption Header"
 
     var
         SalesSetup: Record "Sales & Receivables Setup";
-        GLSetup: Record "General Ledger Setup";
         IntConsumptionHeader: Record "SSAInternal Consumption Header";
         IntConsumptionLine: Record "SSAInternal Consumption Line";
         ConsCommentLine: Record "SSA Comment Line";
@@ -372,30 +343,23 @@ table 70000 "SSAInternal Consumption Header"
         RespCenter: Record "Responsibility Center";
         SSASetup: Record "SSA Localization Setup";
         Location: Record Location;
-        WhseRequest: Record "Warehouse Request";
         UserMgt: Codeunit "User Setup Management";
         SSAUserMgt: Codeunit "SSA User Setup Management";
         NoSeriesMgt: Codeunit NoSeriesManagement;
-        TransferExtendedText: Codeunit "Transfer Extended Text";
         DimMgt: Codeunit DimensionManagement;
-        WhseSourceHeader: Codeunit "Whse. Validate Source Header";
         IntConsumptionPost: Codeunit "SSA Internal Consumption Post";
         HideValidationDialog: Boolean;
         Confirmed: Boolean;
-        Text001: Label 'Do you want to print internal consumption doc %1?';
         Text002: Label 'You cannot rename an %1.';
         Text003: Label 'Do you want to change %1?';
         Text004: Label 'Do you want to continue?';
         Text005: Label 'Deleting this document will cause a gap in the number series for posted internal consumption docs. ';
         Text006: Label 'An empty posted internal consumption doc %1 will be created to fill this gap in the number series.\\';
         Text007: Label 'If you change %1, the existing internal consumption lines will have change by user manually.';
-        Text008: Label 'You must delete the existing internal consumption lines before you can change %1.';
         Text009: Label 'You have changed %1 on the internal consumption header, but it has not been changed on the existing internal consumption lines.\';
         Text010: Label 'You must update the existing internal consumption lines manually.';
         Text011: Label 'You cannot delete this document. Your identification is set up to process from %1 %2 only.';
-        Text012: Label 'Do you want to update the %2 field on the lines to reflect the new value of %1?';
         Text013: Label 'Your identification is set up to process from %1 %2 only.';
-        Text014: Label 'You cannot change the %1 when the %2 has been filled in';
         Text015: Label 'You have modified %1.\\';
         Text016: Label 'Do you want to update the lines?';
         Text16100: Label 'Internal Consumption';
@@ -412,34 +376,31 @@ table 70000 "SSAInternal Consumption Header"
         else
             NoSeriesMgt.SetDefaultSeries("Posting No. Series", SSASetup."Posted Int. Consumption Nos.");
 
-        "Order Date" := WorkDate;
+        "Order Date" := WorkDate();
 
         if "Posting Date" = 0D then
-            "Posting Date" := WorkDate;
-        "Document Date" := WorkDate;
+            "Posting Date" := WorkDate();
+        "Document Date" := WorkDate();
 
         Validate("Location Code", UserMgt.GetLocation(0, "Location Code", "Responsibility Center"));
 
         "Posting Description" := Text16100 + ' ' + "Your Reference";
 
-        SSASetup.Get;
+        SSASetup.Get();
         Validate("Outbound Whse. Handling Time", SSASetup."Outbound Whse. Handling Time");
     end;
 
-
     procedure AssistEdit(OldIntConsumptionHeader: Record "SSAInternal Consumption Header"): Boolean
     begin
-        with IntConsumptionHeader do begin
-            IntConsumptionHeader := Rec;
-            SalesSetup.Get;
-            TestNoSeries;
-            if NoSeriesMgt.SelectSeries(GetNoSeriesCode, OldIntConsumptionHeader."No. Series", "No. Series") then begin
-                SalesSetup.Get;
-                TestNoSeries;
-                NoSeriesMgt.SetSeries("No.");
-                Rec := IntConsumptionHeader;
-                exit(true);
-            end;
+        IntConsumptionHeader := Rec;
+        SalesSetup.Get();
+        TestNoSeries();
+        if NoSeriesMgt.SelectSeries(GetNoSeriesCode(), OldIntConsumptionHeader."No. Series", IntConsumptionHeader."No. Series") then begin
+            SalesSetup.Get();
+            TestNoSeries();
+            NoSeriesMgt.SetSeries(IntConsumptionHeader."No.");
+            Rec := IntConsumptionHeader;
+            exit(true);
         end;
     end;
 
@@ -459,7 +420,6 @@ table 70000 "SSAInternal Consumption Header"
         exit(SSASetup."Posted Int. Consumption Nos.");
     end;
 
-
     procedure ConfirmDeletion(): Boolean
     begin
         IntConsumptionPost.TestDeleteHeader(Rec, PostedIntConsumptionHeader);
@@ -477,7 +437,7 @@ table 70000 "SSAInternal Consumption Header"
     local
     procedure ConsumptionLinesExist(): Boolean
     begin
-        IntConsumptionLine.Reset;
+        IntConsumptionLine.Reset();
         IntConsumptionLine.SetRange("Document No.", "No.");
         exit(IntConsumptionLine.Find('-'));
     end;
@@ -486,12 +446,8 @@ table 70000 "SSAInternal Consumption Header"
     procedure RecreateConsumptionLines(ChangedFieldName: Text[30])
     var
         IntConsumptionLineTmp: Record "SSAInternal Consumption Line" temporary;
-        ItemChargeAssgntSales: Record "Item Charge Assignment (Sales)";
-        TempItemChargeAssgntSales: Record "Item Charge Assignment (Sales)" temporary;
-        TempInteger: Record "Integer" temporary;
-        ExtendedTextAdded: Boolean;
     begin
-        if ConsumptionLinesExist then begin
+        if ConsumptionLinesExist() then begin
             if HideValidationDialog then
                 Confirmed := true
             else
@@ -500,17 +456,16 @@ table 70000 "SSAInternal Consumption Header"
                     Text007 +
                     Text003, false, ChangedFieldName);
             if Confirmed then begin
-                IntConsumptionLine.LockTable;
-                Modify;
+                IntConsumptionLine.LockTable();
+                Modify();
 
-                IntConsumptionLine.Reset;
+                IntConsumptionLine.Reset();
                 IntConsumptionLine.SetRange("Document No.", "No.");
-                if IntConsumptionLine.Find('-') then begin
+                if IntConsumptionLine.Find('-') then
                     repeat
                         IntConsumptionLineTmp := IntConsumptionLine;
-                        IntConsumptionLineTmp.Insert;
-                    until IntConsumptionLine.Next = 0;
-                end;
+                        IntConsumptionLineTmp.Insert();
+                    until IntConsumptionLine.Next() = 0;
             end;
         end;
     end;
@@ -518,13 +473,12 @@ table 70000 "SSAInternal Consumption Header"
     local
     procedure MessageIfConsumptionLinesExist(ChangedFieldName: Text[30])
     begin
-        if ConsumptionLinesExist and not HideValidationDialog then
+        if ConsumptionLinesExist() and not HideValidationDialog then
             Message(
               Text009 +
               Text010,
               ChangedFieldName);
     end;
-
 
     procedure SetHideValidationDialog(NewHideValidationDialog: Boolean)
     begin
@@ -537,11 +491,11 @@ table 70000 "SSAInternal Consumption Header"
         Question: Text[250];
         UpdateLines: Boolean;
     begin
-        if ConsumptionLinesExist and AskQuestion then begin
+        if ConsumptionLinesExist() and AskQuestion then begin
             Question := StrSubstNo(
               Text015 +
               Text016, ChangedFieldName);
-            if not DIALOG.Confirm(Question, true) then
+            if not Dialog.Confirm(Question, true) then
                 exit
             else
                 UpdateLines := true;
@@ -555,7 +509,7 @@ table 70000 "SSAInternal Consumption Header"
         No: array[10] of Code[20];
         OldDimSetID: Integer;
     begin
-        SourceCodeSetup.Get;
+        SourceCodeSetup.Get();
         TableID[1] := Type1;
         No[1] := No1;
 
@@ -566,8 +520,8 @@ table 70000 "SSAInternal Consumption Header"
           DimMgt.GetRecDefaultDimID(
             Rec, CurrFieldNo, TableID, No, SourceCodeSetup.Sales, "Shortcut Dimension 1 Code", "Shortcut Dimension 2 Code", 0, 0);
 
-        if (OldDimSetID <> "Dimension Set ID") and ConsumptionLinesExist then begin
-            Modify;
+        if (OldDimSetID <> "Dimension Set ID") and ConsumptionLinesExist() then begin
+            Modify();
             UpdateAllLineDim("Dimension Set ID", OldDimSetID);
         end;
     end;
@@ -579,11 +533,11 @@ table 70000 "SSAInternal Consumption Header"
         OldDimSetID := "Dimension Set ID";
         DimMgt.ValidateShortcutDimValues(FieldNumber, ShortcutDimCode, "Dimension Set ID");
         if "No." <> '' then
-            Modify;
+            Modify();
 
         if OldDimSetID <> "Dimension Set ID" then begin
-            Modify;
-            if ConsumptionLinesExist then
+            Modify();
+            if ConsumptionLinesExist() then
                 UpdateAllLineDim("Dimension Set ID", OldDimSetID);
         end;
     end;
@@ -598,17 +552,15 @@ table 70000 "SSAInternal Consumption Header"
             "Dimension Set ID", StrSubstNo('%1', "No."),
             "Shortcut Dimension 1 Code", "Shortcut Dimension 2 Code");
         if OldDimSetID <> "Dimension Set ID" then begin
-            Modify;
-            if ConsumptionLinesExist then
+            Modify();
+            if ConsumptionLinesExist() then
                 UpdateAllLineDim("Dimension Set ID", OldDimSetID);
         end;
     end;
 
     procedure UpdateAllLineDim(NewParentDimSetID: Integer; OldParentDimSetID: Integer)
     var
-        ATOLink: Record "Assemble-to-Order Link";
         NewDimSetID: Integer;
-        ShippedReceivedItemLineDimChangeConfirmed: Boolean;
     begin
         // Update all lines with changed dimensions.
 
@@ -618,9 +570,9 @@ table 70000 "SSAInternal Consumption Header"
             if not Confirm(Text064) then
                 exit;
 
-        IntConsumptionLine.Reset;
+        IntConsumptionLine.Reset();
         IntConsumptionLine.SetRange("Document No.", "No.");
-        IntConsumptionLine.LockTable;
+        IntConsumptionLine.LockTable();
         if IntConsumptionLine.Find('-') then
             repeat
                 NewDimSetID := DimMgt.GetDeltaDimSetID(IntConsumptionLine."Dimension Set ID", NewParentDimSetID, OldParentDimSetID);
@@ -629,9 +581,9 @@ table 70000 "SSAInternal Consumption Header"
 
                     DimMgt.UpdateGlobalDimFromDimSetID(
                       IntConsumptionLine."Dimension Set ID", IntConsumptionLine."Shortcut Dimension 1 Code", IntConsumptionLine."Shortcut Dimension 2 Code");
-                    IntConsumptionLine.Modify;
+                    IntConsumptionLine.Modify();
                 end;
-            until IntConsumptionLine.Next = 0;
+            until IntConsumptionLine.Next() = 0;
     end;
 
     local procedure DeleteConsumtionLines()
@@ -640,7 +592,7 @@ table 70000 "SSAInternal Consumption Header"
             repeat
                 IntConsumptionLine.SuspendStatusCheck(true);
                 IntConsumptionLine.Delete(true);
-            until IntConsumptionLine.Next = 0;
+            until IntConsumptionLine.Next() = 0;
     end;
 
     procedure StornoFrom()
@@ -648,17 +600,16 @@ table 70000 "SSAInternal Consumption Header"
         PostedIntConsHeader: Record "SSA Pstd. Int. Cons. Header";
         PostedIntConsLine: Record "SSAPstd. Int. Consumption Line";
         NewLine: Record "SSAInternal Consumption Line";
-        DimMgt: Codeunit DimensionManagement;
     begin
         //SSA1097>>
         PostedIntConsHeader.FilterGroup := 2;
         PostedIntConsHeader.SetRange(Cancelled, false);
         PostedIntConsHeader.FilterGroup := 0;
-        if PAGE.RunModal(PAGE::"SSA Pstd Int. Cons. List", PostedIntConsHeader) = ACTION::LookupOK then begin
+        if Page.RunModal(Page::"SSA Pstd Int. Cons. List", PostedIntConsHeader) = Action::LookupOK then begin
             PostedIntConsLine.SetFilter("Document No.", '=%1', PostedIntConsHeader."No.");
             if PostedIntConsLine.Find('-') then
                 repeat
-                    NewLine.Init;
+                    NewLine.Init();
                     NewLine.TransferFields(PostedIntConsLine);
                     NewLine."Document No." := "No.";
                     NewLine."Shipment Date" := "Posting Date";
@@ -667,7 +618,7 @@ table 70000 "SSAInternal Consumption Header"
                         NewLine.Validate(NewLine."Appl.-from Item Entry", PostedIntConsLine."Item Shpt. Entry No.")
                     else
                         NewLine.Validate(NewLine."Appl.-to Item Entry", PostedIntConsLine."Item Shpt. Entry No.");
-                    NewLine.Insert;
+                    NewLine.Insert();
                 until PostedIntConsLine.Next() = 0;
             "Posting Description" := StrSubstNo(Text45013654, PostedIntConsHeader."No.");
             "Shortcut Dimension 1 Code" := PostedIntConsHeader."Shortcut Dimension 1 Code";
@@ -679,8 +630,7 @@ table 70000 "SSAInternal Consumption Header"
             Cancelled := true;
             "Correction Cost" := Cancelled;
             "Cancelled from No." := PostedIntConsHeader."No.";
-            Modify;
-
+            Modify();
         end;
         //SSA1097<<
     end;
@@ -690,11 +640,10 @@ table 70000 "SSAInternal Consumption Header"
         ErrorMessageMgt: Codeunit "Error Message Management";
         ErrorMessageHandler: Codeunit "Error Message Handler";
     begin
-        COMMIT;
+        Commit();
         ErrorMessageMgt.Activate(ErrorMessageHandler);
-        IsSuccess := CODEUNIT.RUN(_PostingCodeunitID, Rec);
-        if not IsSuccess then
-            ErrorMessageHandler.ShowErrors;
+        isSuccess := Codeunit.Run(_PostingCodeunitID, Rec);
+        if not isSuccess then
+            ErrorMessageHandler.ShowErrors();
     end;
 }
-

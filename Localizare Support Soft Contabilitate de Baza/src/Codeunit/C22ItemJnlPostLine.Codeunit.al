@@ -1,16 +1,6 @@
 codeunit 70000 "SSA C22 Item Jnl.-Post Line"
 {
-    // SSA935 SSCAT 15.06.2019 1.Funct. anulare stocuri in rosu
-    // SSA938 SSCAT 17.06.2019 4.Funct. business posting group obligatoriu la transferuri si asamblari
-    // SSA946 SSCAT 26.09.2019 12.Funct. functionalitate DVI la achizitii
 
-
-    trigger OnRun()
-    begin
-    end;
-
-    var
-        Text45013654: Label '%1 is required for Item %2.';
 
     [EventSubscriber(ObjectType::Codeunit, 22, 'OnBeforePostItemJnlLine', '', false, false)]
     local procedure OnBeforePostItemJnlLine(var ItemJournalLine: Record "Item Journal Line")
@@ -54,10 +44,10 @@ codeunit 70000 "SSA C22 Item Jnl.-Post Line"
         if Sign < 0 then begin
             NewValueEntry."SSA Correction Cost" := not OldValueEntry."SSA Correction Cost";
             NewValueEntry."SSA Correction Cost Inv. Val." := not OldValueEntry."SSA Correction Cost Inv. Val.";
-        end else begin
+        end
+        else begin
             NewValueEntry."SSA Correction Cost" := OldValueEntry."SSA Correction Cost";
             NewValueEntry."SSA Correction Cost Inv. Val." := OldValueEntry."SSA Correction Cost Inv. Val.";
         end;
     end;
 }
-

@@ -8,26 +8,26 @@ tableextension 70056 "SSA Item Journal Line 70056" extends "Item Journal Line"
         field(70000; "SSA Correction Cost"; Boolean)
         {
             Caption = 'Correction Cost';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA935';
         }
         field(70001; "SSA Correction Cost Inv. Val."; Boolean)
         {
             Caption = 'Correction Cost Inv. Valuation';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
         }
         field(70002; "SSA Custom Invoice No."; Code[20])
         {
             Caption = 'Custom Invoice No.';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA946';
         }
         field(70003; "SSA Document Type"; Option)
         {
-            Caption = 'SSA Document Type';
+            Caption = 'Document Type';
             OptionMembers = ,"Internal Consumption";
             OptionCaption = ',Internal Consumption';
+            DataClassification = CustomerContent;
         }
     }
 }
-

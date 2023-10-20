@@ -10,7 +10,7 @@ report 71315 "SSA Trial Balance (5 eq.)"
     {
         dataitem("G/L Account"; "G/L Account")
         {
-            DataItemTableView = SORTING ("No.");
+            DataItemTableView = SORTING("No.");
             RequestFilterFields = "No.", "Account Type", "Date Filter", "Global Dimension 1 Filter", "Global Dimension 2 Filter";
             column(CompName; txtSociety + CompanyInfo.Name)
             {
@@ -68,7 +68,7 @@ report 71315 "SSA Trial Balance (5 eq.)"
             }
             dataitem(NrCrtGol; "Integer")
             {
-                DataItemTableView = SORTING (Number);
+                DataItemTableView = SORTING(Number);
 
                 trigger OnPreDataItem()
                 begin
@@ -77,7 +77,7 @@ report 71315 "SSA Trial Balance (5 eq.)"
             }
             dataitem("Integer"; "Integer")
             {
-                DataItemTableView = SORTING (Number) WHERE (Number = CONST (1));
+                DataItemTableView = SORTING(Number) WHERE(Number = CONST(1));
                 column(ShowLine; ShowLine)
                 {
                 }
@@ -791,9 +791,9 @@ report 71315 "SSA Trial Balance (5 eq.)"
         Text19006072: Label 'Analytic / Synthetic1 / Synthetic2';
         Title_Report: Label 'Trial Balance (5 eq.)';
         Text17: Label 'Page:';
-        [InDataSet]
+
         all: Boolean;
-        [InDataSet]
+
         CreateExcel: Boolean;
         txtPrintAll: Label 'Print Chart of Accounts';
         ExcelTemplate: Text[250];

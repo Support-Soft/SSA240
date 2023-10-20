@@ -5,9 +5,9 @@ tableextension 70025 "SSA Item Charge" extends "Item Charge" //5800
         field(70000; "SSA Type"; Option)
         {
             Caption = 'Type';
-            OptionMembers = "","Excise","Freight","Custom Taxes","Custom Commission";
+            OptionMembers = "",Excise,Freight,"Custom Taxes","Custom Commission";
             OptionCaption = '"","Excise","Freight","Custom Taxes","Custom Commission"';
+            DataClassification = CustomerContent;
         }
     }
-
 }

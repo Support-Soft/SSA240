@@ -5,39 +5,46 @@ pageextension 70002 "SSA Countries/Regions 70002" extends "Countries/Regions"
     {
         addafter("VAT Scheme")
         {
-            field("SSA Vendor Neex. VATPstgGroup"; "SSA Vendor Neex. VATPstgGroup")
+            field("SSA Vendor Neex. VATPstgGroup"; Rec."SSA Vendor Neex. VATPstgGroup")
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Vendor Neex. VAT Posting Group field.';
             }
-            field("SSA Vendor Ex. VATPstgGroup"; "SSA Vendor Ex. VATPstgGroup")
+            field("SSA Vendor Ex. VATPstgGroup"; Rec."SSA Vendor Ex. VATPstgGroup")
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Vendor Ex. VAT Posting Group field.';
             }
-            field("SSA Cust. Neex. VATPstgGroup"; "SSA Cust. Neex. VATPstgGroup")
+            field("SSA Cust. Neex. VATPstgGroup"; Rec."SSA Cust. Neex. VATPstgGroup")
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Cust. Neex. VAT Posting Group field.';
             }
-            field("SSA Cust. Ex. VATPstgGroup"; "SSA Cust. Ex. VATPstgGroup")
+            field("SSA Cust. Ex. VATPstgGroup"; Rec."SSA Cust. Ex. VATPstgGroup")
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Cust. Ex. VAT Posting Group field.';
             }
-            field("SSA Vendor Posting Group"; "SSA Vendor Posting Group")
+            field("SSA Vendor Posting Group"; Rec."SSA Vendor Posting Group")
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Vendor Posting Group field.';
             }
-            field("SSA Customer Posting Group"; "SSA Customer Posting Group")
+            field("SSA Customer Posting Group"; Rec."SSA Customer Posting Group")
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Customer Posting Group field.';
             }
-            field("SSA Vendor GenBusPstgGroup"; "SSA Vendor GenBusPstgGroup")
+            field("SSA Vendor GenBusPstgGroup"; Rec."SSA Vendor GenBusPstgGroup")
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Vendor Gen. Bus. Posting Group field.';
             }
-            field("SSA Cust. GenBusPostingGroup"; "SSA Cust. GenBusPostingGroup")
+            field("SSA Cust. GenBusPostingGroup"; Rec."SSA Cust. GenBusPostingGroup")
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Vendor Gen. Bus. Posting Group field.';
             }
         }
     }
 }
-

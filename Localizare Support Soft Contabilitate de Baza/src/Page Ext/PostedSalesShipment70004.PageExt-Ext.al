@@ -5,12 +5,12 @@ pageextension 70004 "SSA Posted Sales Shipment70004" extends "Posted Sales Shipm
     {
         addafter("External Document No.")
         {
-            field("SSA Customer Order No."; "SSA Customer Order No.")
+            field("SSA Customer Order No."; Rec."SSA Customer Order No.")
             {
                 ApplicationArea = All;
                 Editable = false;
+                ToolTip = 'Specifies the value of the Customer Order No. field.';
             }
         }
     }
 }
-

@@ -13,7 +13,6 @@ xmlport 70001 "SSAExport Intrast Jnl to XML"
             {
                 textelement(CountryVer)
                 {
-
                     trigger OnBeforePassVariable()
                     begin
                         CountryVer := VerCountry;
@@ -21,7 +20,6 @@ xmlport 70001 "SSAExport Intrast Jnl to XML"
                 }
                 textelement(EuCountryVer)
                 {
-
                     trigger OnBeforePassVariable()
                     begin
                         EuCountryVer := VerEuCountry
@@ -29,7 +27,6 @@ xmlport 70001 "SSAExport Intrast Jnl to XML"
                 }
                 textelement(CnVer)
                 {
-
                     trigger OnBeforePassVariable()
                     begin
                         CnVer := VerCn
@@ -37,7 +34,6 @@ xmlport 70001 "SSAExport Intrast Jnl to XML"
                 }
                 textelement(ModeOfTransportVer)
                 {
-
                     trigger OnBeforePassVariable()
                     begin
                         ModeOfTransportVer := VerModeOfTransport
@@ -45,7 +41,6 @@ xmlport 70001 "SSAExport Intrast Jnl to XML"
                 }
                 textelement(DeliveryTermsVer)
                 {
-
                     trigger OnBeforePassVariable()
                     begin
                         DeliveryTermsVer := VerDeliveryTerms;
@@ -53,7 +48,6 @@ xmlport 70001 "SSAExport Intrast Jnl to XML"
                 }
                 textelement(NatureOfTransactionAVer)
                 {
-
                     trigger OnBeforePassVariable()
                     begin
                         NatureOfTransactionAVer := VerNatureOfTransactionA;
@@ -61,7 +55,6 @@ xmlport 70001 "SSAExport Intrast Jnl to XML"
                 }
                 textelement(NatureOfTransactionBVer)
                 {
-
                     trigger OnBeforePassVariable()
                     begin
                         NatureOfTransactionBVer := VerNatureOfTransactionB;
@@ -69,7 +62,6 @@ xmlport 70001 "SSAExport Intrast Jnl to XML"
                 }
                 textelement(CountyVer)
                 {
-
                     trigger OnBeforePassVariable()
                     begin
                         CountyVer := VerCounty;
@@ -77,7 +69,6 @@ xmlport 70001 "SSAExport Intrast Jnl to XML"
                 }
                 textelement(LocalityVer)
                 {
-
                     trigger OnBeforePassVariable()
                     begin
                         LocalityVer := VerLocality;
@@ -85,7 +76,6 @@ xmlport 70001 "SSAExport Intrast Jnl to XML"
                 }
                 textelement(UnitVer)
                 {
-
                     trigger OnBeforePassVariable()
                     begin
                         UnitVer := VerUnit;
@@ -114,7 +104,7 @@ xmlport 70001 "SSAExport Intrast Jnl to XML"
                                               IntrastatJnlBatch.Name);
                             Year := CopyStr(IntrastatJnlBatch."Statistics Period", 1, 2);
                             Month := CopyStr(IntrastatJnlBatch."Statistics Period", 3, 2);
-                            RefPeriod := '20' + Year + '-' + Month;
+                            refperiod := '20' + Year + '-' + Month;
                         end;
                     end;
                 }
@@ -124,15 +114,14 @@ xmlport 70001 "SSAExport Intrast Jnl to XML"
 
                     trigger OnBeforePassVariable()
                     begin
-                        CreateDt := Format(CreateDate);
+                        createdt := Format(CreateDate);
                     end;
                 }
                 textelement(ApplicationRef)
                 {
-
                     trigger OnBeforePassVariable()
                     begin
-                        ApplicationRef := Text003 + ' ' + ApplicationManagement.OriginalApplicationVersion;
+                        ApplicationRef := Text003 + ' ' + ApplicationManagement.OriginalApplicationVersion();
                     end;
                 }
                 tableelement(Contact; Contact)
@@ -170,7 +159,6 @@ xmlport 70001 "SSAExport Intrast Jnl to XML"
                 SourceTableView = sorting("Journal Template Name", "Journal Batch Name", "Line No.") where("Journal Template Name" = filter('TEMPLATE'), "Journal Batch Name" = filter('BATCH'));
                 textelement(OrderNr)
                 {
-
                     trigger OnBeforePassVariable()
                     begin
                         NrCrt += 1;
@@ -192,7 +180,6 @@ xmlport 70001 "SSAExport Intrast Jnl to XML"
                 }
                 textelement(NatureOfTransactionACode)
                 {
-
                     trigger OnBeforePassVariable()
                     begin
                         NatureOfTransactionACode := CopyStr("Intrastat Jnl. Line"."Transaction Type", 1, 1);
@@ -200,7 +187,6 @@ xmlport 70001 "SSAExport Intrast Jnl to XML"
                 }
                 textelement(NatureOfTransactionBCode)
                 {
-
                     trigger OnBeforePassVariable()
                     begin
                         NatureOfTransactionBCode := InsStr("Intrastat Jnl. Line"."Transaction Type", '.', 2);
@@ -212,24 +198,21 @@ xmlport 70001 "SSAExport Intrast Jnl to XML"
                 fieldelement(ModeOfTransportCode; "Intrastat Jnl. Line"."Transport Method")
                 {
                 }
-
                 fieldelement(CountryOfOrigin; "Intrastat Jnl. Line"."Country/Region of Origin Code")
                 {
                 }
                 fieldelement(CountryOfDestination; "Intrastat Jnl. Line"."Country/Region Code")
                 {
                 }
-
             }
         }
     }
 
     requestpage
     {
-
         layout
         {
-            area(content)
+            area(Content)
             {
                 group("<Control1900000002>")
                 {
@@ -237,6 +220,8 @@ xmlport 70001 "SSAExport Intrast Jnl to XML"
                     field("<Control11>"; CreateDate)
                     {
                         Caption = 'Creation Date';
+                        ToolTip = 'Specifies the value of the Creation Date field.';
+                        ApplicationArea = All;
                     }
                     group("<Control50>")
                     {
@@ -245,43 +230,61 @@ xmlport 70001 "SSAExport Intrast Jnl to XML"
                         {
                             Caption = 'Intrastat Journal Template';
                             TableRelation = "Intrastat Jnl. Template";
+                            ToolTip = 'Specifies the value of the Intrastat Journal Template field.';
+                            ApplicationArea = All;
                         }
                         field("<Control12>"; Batch)
                         {
                             Caption = 'Intrastat Journal Batch';
+                            ToolTip = 'Specifies the value of the Intrastat Journal Batch field.';
+                            ApplicationArea = All;
                         }
                         field(DocType; DocumentType)
                         {
                             Caption = 'Document Type';
                             OptionCaption = 'Receipt,Shipment';
+                            ToolTip = 'Specifies the value of the Document Type field.';
+                            ApplicationArea = All;
                         }
                     }
                     group("<Control14>")
                     {
                         Caption = 'Responsible Person';
-                        field("<Control18>"; RespPrsnFirstName)
+                        field("<Control18>"; respprsnfirstname)
                         {
                             Caption = 'First Name';
+                            ToolTip = 'Specifies the value of the First Name field.';
+                            ApplicationArea = All;
                         }
-                        field("<Control16>"; RespPrsnLastName)
+                        field("<Control16>"; respprsnlastname)
                         {
                             Caption = 'Last Name';
+                            ToolTip = 'Specifies the value of the Last Name field.';
+                            ApplicationArea = All;
                         }
-                        field("<Control2>"; RespPrsnPhoneNo)
+                        field("<Control2>"; respprsnphoneno)
                         {
                             Caption = 'Phone No.';
+                            ToolTip = 'Specifies the value of the Phone No. field.';
+                            ApplicationArea = All;
                         }
-                        field("<Control4>"; RespPrsnFax)
+                        field("<Control4>"; respprsnfax)
                         {
                             Caption = 'Fax';
+                            ToolTip = 'Specifies the value of the Fax field.';
+                            ApplicationArea = All;
                         }
-                        field("<Control1>"; RespPrsnEmail)
+                        field("<Control1>"; respprsnemail)
                         {
                             Caption = 'E-Mail';
+                            ToolTip = 'Specifies the value of the E-Mail field.';
+                            ApplicationArea = All;
                         }
-                        field("<Control20>"; RespPrsnPosition)
+                        field("<Control20>"; respprsnposition)
                         {
                             Caption = 'Position';
+                            ToolTip = 'Specifies the value of the Position field.';
+                            ApplicationArea = All;
                         }
                     }
                     group("<Control28>")
@@ -290,47 +293,69 @@ xmlport 70001 "SSAExport Intrast Jnl to XML"
                         field("<Control30>"; VerCountry)
                         {
                             Caption = 'Country';
+                            ToolTip = 'Specifies the value of the Country field.';
+                            ApplicationArea = All;
                         }
                         field("<Control34>"; VerEuCountry)
                         {
                             Caption = 'EU Country';
+                            ToolTip = 'Specifies the value of the EU Country field.';
+                            ApplicationArea = All;
                         }
                         field("<Control38>"; VerCn)
                         {
                             Caption = 'Company';
+                            ToolTip = 'Specifies the value of the Company field.';
+                            ApplicationArea = All;
                         }
                         field("<Control42>"; VerModeOfTransport)
                         {
                             Caption = 'Mode of Transport';
+                            ToolTip = 'Specifies the value of the Mode of Transport field.';
+                            ApplicationArea = All;
                         }
                         field("<Control46>"; VerDeliveryTerms)
                         {
                             Caption = 'Delivery Terms';
+                            ToolTip = 'Specifies the value of the Delivery Terms field.';
+                            ApplicationArea = All;
                         }
                         field("<Control32>"; VerNatureOfTransactionA)
                         {
                             Caption = 'Nature of Transaction A';
+                            ToolTip = 'Specifies the value of the Nature of Transaction A field.';
+                            ApplicationArea = All;
                         }
                         field("<Control36>"; VerNatureOfTransactionB)
                         {
                             Caption = 'Nature of Transaction B';
+                            ToolTip = 'Specifies the value of the Nature of Transaction B field.';
+                            ApplicationArea = All;
                         }
                         field("<Control40>"; VerCounty)
                         {
                             Caption = 'County';
+                            ToolTip = 'Specifies the value of the County field.';
+                            ApplicationArea = All;
                         }
                         field("<Control44>"; VerLocality)
                         {
                             Caption = 'City';
+                            ToolTip = 'Specifies the value of the City field.';
+                            ApplicationArea = All;
                         }
                         field("<Control48>"; VerUnit)
                         {
                             Caption = 'Unit';
+                            ToolTip = 'Specifies the value of the Unit field.';
+                            ApplicationArea = All;
                         }
                     }
                     field("<Control22>"; FileName)
                     {
                         Caption = 'File Name';
+                        ToolTip = 'Specifies the value of the File Name field.';
+                        ApplicationArea = All;
                     }
                     group("<Control3>")
                     {
@@ -338,21 +363,16 @@ xmlport 70001 "SSAExport Intrast Jnl to XML"
                         field(DecTypeNew; DeclarationType)
                         {
                             OptionCaption = 'New,Corrective,Nil';
+                            ToolTip = 'Specifies the value of the DeclarationType field.';
+                            ApplicationArea = All;
                         }
                     }
                 }
             }
         }
 
-        actions
-        {
-        }
     }
 
-    trigger OnInitXmlPort()
-    begin
-        //UpdateControls;
-    end;
 
     trigger OnPreXmlPort()
     begin
@@ -360,23 +380,17 @@ xmlport 70001 "SSAExport Intrast Jnl to XML"
     end;
 
     var
-        CompanyInfo: Record "Company Information";
         IntrastatJnlBatch: Record "Intrastat Jnl. Batch";
         IntrastatJnlLine: Record "Intrastat Jnl. Line";
         ApplicationManagement: Codeunit "Application System Constants";
-        IntraJnlManagement: Codeunit IntraJnlManagement;
         Template: Code[20];
         Batch: Code[20];
         TmpTemplate: Code[10];
         TmpBatch: Code[10];
         DocumentType: Option Receipt,Shipment;
         CreateDate: DateTime;
-        VATNr: Text[10];
         Year: Text[30];
         Month: Text[30];
-        MonthWzero: Text[30];
-        ApplicationName: Text[50];
-        XMLNameSpace: Text[250];
         VerCountry: Text[30];
         VerEuCountry: Text[30];
         VerCn: Text[30];
@@ -389,35 +403,16 @@ xmlport 70001 "SSAExport Intrast Jnl to XML"
         VerUnit: Text[30];
         DeclarationType: Option New,Corrective,Nill;
         FileName: Text[200];
-        NetMass: Integer;
-        TestFileName: File;
-        JnlLineAmount: Decimal;
-        JnlLineStatisticalValue: Decimal;
-        JnlLineSupUOMQty: Decimal;
-        NetMassValue: Decimal;
-        xIntrastatJnlLine: Record "Intrastat Jnl. Line";
-        [InDataSet]
+
         DecTypeNewEnable: Boolean;
-        [InDataSet]
+
         DecTypeCorrectiveEnable: Boolean;
-        [InDataSet]
+
         DecTypeNilEnable: Boolean;
-        Text001: Label 'Export to XML File';
-        Text002: Label 'XML Files (*.xml)|*.xml|All Files (*.*)|*.*';
         Text003: Label 'Microsoft Dynamics NAV';
-        Text004: Label 'Please select the correct %1 %2 or %3.';
-        Text005: Label 'You must specify %1.';
-        Text006: Label 'You must specify First Name, Last Name and Phone No. for the responsible person.';
-        Text007: Label 'All code versions must be filled in.';
-        Text008: Label 'Please enter the file name.';
-        Text009: Label '%1 %2 does not exist.';
         Text010: Label 'You must specify %1 for %2 %3';
-        Text011: Label '%1 already exists.\Do you want to replace it?';
-        Text012: Label '%1 in Intrastat Jnl. Line Journal Template Name = ''%2'', Journal Batch Name = ''%3'', Line No. = ''%4''\is out of the statistics period.\Please correct the value.';
         Text666: Label '%1 is not a valid selection.';
         NrCrt: Integer;
-        Customer: Record Customer;
-        Vendor: Record Vendor;
 
     procedure SetParam(TemplateName: Code[10]; BatchName: Code[10])
     begin
@@ -443,4 +438,3 @@ xmlport 70001 "SSAExport Intrast Jnl to XML"
             Error(Text666, DeclarationType);
     end;
 }
-

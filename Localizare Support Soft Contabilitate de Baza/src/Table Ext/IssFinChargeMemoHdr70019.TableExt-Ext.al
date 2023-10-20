@@ -6,9 +6,8 @@ tableextension 70019 "SSA IssFinChargeMemoHdr70019" extends "Issued Fin. Charge 
         field(70000; "SSA Commerce Trade No."; Code[20])
         {
             Caption = 'Commerce Trade No.';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA968';
         }
     }
 }
-

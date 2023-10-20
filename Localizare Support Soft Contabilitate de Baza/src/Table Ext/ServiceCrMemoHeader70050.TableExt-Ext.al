@@ -1,4 +1,4 @@
-tableextension 70050 "SSAServiceCrMemoHeader70050" extends "Service Cr.Memo Header"
+tableextension 70050 SSAServiceCrMemoHeader70050 extends "Service Cr.Memo Header"
 {
     // SSA968 SSCAT 04.10.2019 34.Funct. Operatiuni triunghiulare, delivery, cod registru comertului, numar comanda client
     fields
@@ -6,9 +6,8 @@ tableextension 70050 "SSAServiceCrMemoHeader70050" extends "Service Cr.Memo Head
         field(70000; "SSA Commerce Trade No."; Code[20])
         {
             Caption = 'Commerce Trade No.';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA968';
         }
     }
 }
-

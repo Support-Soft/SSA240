@@ -16,9 +16,10 @@ page 70510 "SSA Payment Steps"
             repeater(Control1)
             {
                 ShowCaption = false;
-                field(Name; Name)
+                field(Name; Rec.Name)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Name field.';
                 }
             }
         }
@@ -38,8 +39,8 @@ page 70510 "SSA Payment Steps"
                 RunObject = Page "SSA Payment Step Card";
                 RunPageLink = "Payment Class" = field("Payment Class"),
                               Line = field(Line);
+                ToolTip = 'Executes the &Card action.';
             }
         }
     }
 }
-

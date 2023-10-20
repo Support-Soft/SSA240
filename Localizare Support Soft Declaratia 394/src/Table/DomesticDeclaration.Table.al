@@ -3,24 +3,22 @@ table 71701 "SSA Domestic Declaration"
     // SSA973 SSCAT 06.09.2019 39.Rapoarte legale- Localizare Declaratia 394
 
     LookupPageID = "SSA Domestic Declaration List";
+    DataClassification = CustomerContent;
 
     fields
     {
         field(1; "Code"; Code[10])
         {
             Caption = 'Code';
-            DataClassification = ToBeClassified;
             NotBlank = true;
         }
         field(2; Description; Text[50])
         {
             Caption = 'Description';
-            DataClassification = ToBeClassified;
         }
         field(3; Type; Option)
         {
             Caption = 'Type';
-            DataClassification = ToBeClassified;
             InitValue = Monthly;
             OptionCaption = 'Monthly,Quarterly,Semester';
             OptionMembers = Monthly,Quarterly,Semester;
@@ -41,7 +39,6 @@ table 71701 "SSA Domestic Declaration"
         field(4; Period; Integer)
         {
             Caption = 'Period';
-            DataClassification = ToBeClassified;
             MaxValue = 12;
             MinValue = 0;
 
@@ -55,7 +52,6 @@ table 71701 "SSA Domestic Declaration"
         field(5; Year; Integer)
         {
             Caption = 'Year';
-            DataClassification = ToBeClassified;
             MaxValue = 9999;
             MinValue = 2000;
 
@@ -69,12 +65,10 @@ table 71701 "SSA Domestic Declaration"
         field(13; Reported; Boolean)
         {
             Caption = 'Reported';
-            DataClassification = ToBeClassified;
         }
         field(14; "Starting Date"; Date)
         {
             Caption = 'Starting Date';
-            DataClassification = ToBeClassified;
 
             trigger OnValidate()
             begin
@@ -101,7 +95,6 @@ table 71701 "SSA Domestic Declaration"
         field(15; "Ending Date"; Date)
         {
             Caption = 'Ending Date';
-            DataClassification = ToBeClassified;
 
             trigger OnValidate()
             begin
@@ -128,7 +121,6 @@ table 71701 "SSA Domestic Declaration"
         field(16; Semester; Option)
         {
             Caption = 'Semester';
-            DataClassification = ToBeClassified;
             Editable = false;
             OptionCaption = ' ,S0,S1,S2';
             OptionMembers = " ",S0,S1,S2;
@@ -136,180 +128,137 @@ table 71701 "SSA Domestic Declaration"
         field(50000; Month; Option)
         {
             Caption = 'Lună';
-            DataClassification = ToBeClassified;
             OptionCaption = ' ,01,02,03,04,05,06,07,08,09,10,11,12';
             OptionMembers = " ","01","02","03","04","05","06","07","08","09","10","11","12";
         }
         field(92200; Solicit; Boolean)
         {
-            DataClassification = ToBeClassified;
         }
         field(92210; AchizitiiPE; Boolean)
         {
-            DataClassification = ToBeClassified;
         }
         field(92220; AchizitiiCR; Boolean)
         {
-            DataClassification = ToBeClassified;
         }
         field(92230; AchizitiiCB; Boolean)
         {
-            DataClassification = ToBeClassified;
         }
         field(92240; AchizitiiCI; Boolean)
         {
-            DataClassification = ToBeClassified;
         }
         field(92250; AchizitiiA; Boolean)
         {
-            DataClassification = ToBeClassified;
         }
         field(92260; AchizitiiB24; Boolean)
         {
-            DataClassification = ToBeClassified;
         }
         field(92270; AchizitiiB20; Boolean)
         {
-            DataClassification = ToBeClassified;
         }
         field(92280; AchizitiiB19; Boolean)
         {
-            DataClassification = ToBeClassified;
         }
         field(92290; AchizitiiB9; Boolean)
         {
-            DataClassification = ToBeClassified;
         }
         field(92300; AchizitiiB5; Boolean)
         {
-            DataClassification = ToBeClassified;
         }
         field(92310; AchizitiiS24; Boolean)
         {
-            DataClassification = ToBeClassified;
         }
         field(92320; AchizitiiS20; Boolean)
         {
-            DataClassification = ToBeClassified;
         }
         field(92330; AchizitiiS19; Boolean)
         {
-            DataClassification = ToBeClassified;
         }
         field(92340; AchizitiiS9; Boolean)
         {
-            DataClassification = ToBeClassified;
         }
         field(92350; AchizitiiS5; Boolean)
         {
-            DataClassification = ToBeClassified;
         }
         field(92360; ImportB; Boolean)
         {
-            DataClassification = ToBeClassified;
         }
         field(92370; AcINecorp; Boolean)
         {
-            DataClassification = ToBeClassified;
         }
         field(92380; LivrariBI; Boolean)
         {
-            DataClassification = ToBeClassified;
         }
         field(92390; Bun24; Boolean)
         {
-            DataClassification = ToBeClassified;
         }
         field(92400; Bun20; Boolean)
         {
-            DataClassification = ToBeClassified;
         }
         field(92410; Bun19; Boolean)
         {
-            DataClassification = ToBeClassified;
         }
         field(92420; Bun9; Boolean)
         {
-            DataClassification = ToBeClassified;
         }
         field(92430; Bun5; Boolean)
         {
-            DataClassification = ToBeClassified;
         }
         field(92440; ValoareScutit; Boolean)
         {
-            DataClassification = ToBeClassified;
         }
         field(92450; BunTI; Boolean)
         {
-            DataClassification = ToBeClassified;
         }
         field(92460; Prest24; Boolean)
         {
-            DataClassification = ToBeClassified;
         }
         field(92470; Prest20; Boolean)
         {
-            DataClassification = ToBeClassified;
         }
         field(92480; Prest19; Boolean)
         {
-            DataClassification = ToBeClassified;
         }
         field(92490; Prest9; Boolean)
         {
-            DataClassification = ToBeClassified;
         }
         field(92500; Prest5; Boolean)
         {
-            DataClassification = ToBeClassified;
         }
         field(92510; PrestScutit; Boolean)
         {
-            DataClassification = ToBeClassified;
         }
         field(92520; LIntra; Boolean)
         {
-            DataClassification = ToBeClassified;
         }
         field(92530; PrestIntra; Boolean)
         {
-            DataClassification = ToBeClassified;
         }
         field(92540; Export; Boolean)
         {
-            DataClassification = ToBeClassified;
         }
         field(92550; LivNecorp; Boolean)
         {
-            DataClassification = ToBeClassified;
         }
         field(92560; Efectuat; Boolean)
         {
-            DataClassification = ToBeClassified;
         }
         field(92570; TipD394; Option)
         {
-            DataClassification = ToBeClassified;
             OptionCaption = ' ,L,T,S,A';
             OptionMembers = " ",L,T,S,A;
         }
         field(92580; "Tip Intocmit"; Option)
         {
-            DataClassification = ToBeClassified;
             OptionMembers = " ","Persoana fizica","Persoana Juridica";
         }
         field(92590; "Calitate Intocmit"; Text[50])
         {
-            DataClassification = ToBeClassified;
         }
         field(92600; "Functie Intocmit"; Text[50])
         {
-            DataClassification = ToBeClassified;
         }
         field(92610; Perioada; Integer)
         {
-            DataClassification = ToBeClassified;
 
             trigger OnValidate()
             var
@@ -376,74 +325,58 @@ table 71701 "SSA Domestic Declaration"
         field(92620; "Nume Reprezentant"; Code[20])
         {
             Caption = 'Nume Reprezentant';
-            DataClassification = ToBeClassified;
         }
         field(92630; "Functie Declaratie"; Text[50])
         {
             Caption = 'Functie Declaratie';
-            DataClassification = ToBeClassified;
         }
         field(92640; "Adresa Reprezentant"; Text[250])
         {
             Caption = 'Adresa Reperzentant';
-            DataClassification = ToBeClassified;
         }
         field(92650; "Nume Declaratie"; Text[50])
         {
             Caption = 'Nume Declaratie';
-            DataClassification = ToBeClassified;
         }
         field(92660; "Prenume Declaratie"; Text[50])
         {
             Caption = 'Prenume Declaratie';
-            DataClassification = ToBeClassified;
         }
         field(92670; "CNP Reprezentant"; Code[20])
         {
             Caption = 'CNP Reprezentant';
-            DataClassification = ToBeClassified;
         }
         field(92680; "Tel. Reprezentant"; Code[20])
         {
             Caption = 'Tel. Reprezentant';
-            DataClassification = ToBeClassified;
         }
         field(92690; "E-mail Reprezentant"; Text[50])
         {
             Caption = 'E-mail Reprezentant';
-            DataClassification = ToBeClassified;
         }
         field(92700; "Telefon Companie"; Text[15])
         {
-            DataClassification = ToBeClassified;
         }
         field(92710; "Fax Companie"; Text[15])
         {
-            DataClassification = ToBeClassified;
         }
         field(92720; "E-Mail Companie"; Text[80])
         {
-            DataClassification = ToBeClassified;
         }
         field(92730; "Fax Reprezentant"; Text[15])
         {
-            DataClassification = ToBeClassified;
         }
         field(92740; "Nume Intocmit"; Code[80])
         {
-            DataClassification = ToBeClassified;
         }
         field(92750; "CIF Intocmit"; Code[20])
         {
-            DataClassification = ToBeClassified;
         }
         field(92760; "Optiune verificare date"; Boolean)
         {
-            DataClassification = ToBeClassified;
         }
         field(92770; "Schimb Optiune verificare date"; Boolean)
         {
-            DataClassification = ToBeClassified;
 
             trigger OnValidate()
             begin
@@ -452,7 +385,6 @@ table 71701 "SSA Domestic Declaration"
         }
         field(92780; "Nr de AMEF"; Integer)
         {
-            DataClassification = ToBeClassified;
         }
         field(92790; "Tranzactii Persoane Afiliate"; Boolean)
         {

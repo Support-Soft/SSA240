@@ -3,6 +3,7 @@ report 70004 "SSA Pstd Int. Cons."
     DefaultLayout = RDLC;
     RDLCLayout = './src/rdlc/SSAPstdIntCons.rdlc';
     Caption = 'Posted Internal Consumption';
+    ApplicationArea = All;
 
     dataset
     {
@@ -154,22 +155,10 @@ report 70004 "SSA Pstd Int. Cons."
                 begin
                     InventoryPostingSetup.SetFilter(InventoryPostingSetup."Location Code", '=%1', "SSAPstd. Int. Consumption Line"."Location Code");
                     InventoryPostingSetup.SetFilter(InventoryPostingSetup."Invt. Posting Group Code", '=%1', "SSAPstd. Int. Consumption Line"."Gen. Prod. Posting Group");
-                    if InventoryPostingSetup.FindFirst then
+                    if InventoryPostingSetup.FindFirst() then
                         CreditAccount := InventoryPostingSetup."Inventory Account";
                 end;
             }
-        }
-    }
-
-    requestpage
-    {
-
-        layout
-        {
-        }
-
-        actions
-        {
         }
     }
 
@@ -181,7 +170,7 @@ report 70004 "SSA Pstd Int. Cons."
     begin
         if not CurrReport.UseRequestPage then;
 
-        ReportFilters := "SSA Pstd. Int. Cons. Header".GETFILTERS + ' ' + "SSAPstd. Int. Consumption Line".GETFILTERS;
+        ReportFilters := "SSA Pstd. Int. Cons. Header".GetFilters + ' ' + "SSAPstd. Int. Consumption Line".GetFilters;
     end;
 
     var
@@ -216,4 +205,3 @@ report 70004 "SSA Pstd Int. Cons."
         MadebyCaption: Label 'Made by';
         Text001: Label 'Head of Financial Accounting Department';
 }
-

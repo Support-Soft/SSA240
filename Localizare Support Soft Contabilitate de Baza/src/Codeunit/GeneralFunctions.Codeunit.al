@@ -1,9 +1,6 @@
 codeunit 70010 "SSA General Functions"
 {
-    trigger OnRun()
-    begin
 
-    end;
 
     procedure FormatNumberToText(_Number: Decimal): Text
     var
@@ -14,35 +11,35 @@ codeunit 70010 "SSA General Functions"
         Zec: Integer;
         OK: Integer;
     begin
-        EVALUATE(x, DelChr(FORMAT(_Number * 100), '=', '.,'));
-        zec := x mod 100;
+        Evaluate(x, DelChr(Format(_Number * 100), '=', '.,'));
+        Zec := x mod 100;
         x := (x - (x mod 100)) / 100;
-        cifre[20] := ' doi';
-        cifre[1] := ' o';
-        cifre[2] := ' doua';
-        cifre[3] := ' trei';
-        cifre[4] := ' patru';
-        cifre[5] := ' cinci';
-        cifre[6] := ' sase';
-        cifre[7] := ' sapte';
-        cifre[8] := ' opt';
-        cifre[9] := ' noua';
-        cifre[10] := ' zece';
-        cifre[11] := ' unsprezece';
-        cifre[12] := ' doisprezece';
-        cifre[13] := ' treisprezece';
-        cifre[14] := ' paisprezece';
-        cifre[15] := ' cincisprezece';
-        cifre[16] := ' saisprezece';
-        cifre[17] := 'saptesprezece';
-        cifre[18] := 'optsprezece';
-        cifre[19] := 'nouasprezece';
+        Cifre[20] := ' doi';
+        Cifre[1] := ' o';
+        Cifre[2] := ' doua';
+        Cifre[3] := ' trei';
+        Cifre[4] := ' patru';
+        Cifre[5] := ' cinci';
+        Cifre[6] := ' sase';
+        Cifre[7] := ' sapte';
+        Cifre[8] := ' opt';
+        Cifre[9] := ' noua';
+        Cifre[10] := ' zece';
+        Cifre[11] := ' unsprezece';
+        Cifre[12] := ' doisprezece';
+        Cifre[13] := ' treisprezece';
+        Cifre[14] := ' paisprezece';
+        Cifre[15] := ' cincisprezece';
+        Cifre[16] := ' saisprezece';
+        Cifre[17] := 'saptesprezece';
+        Cifre[18] := 'optsprezece';
+        Cifre[19] := 'nouasprezece';
 
-        ok := 1;
+        OK := 1;
 
         if (x >= 1000000) then begin
             i := (x - (x mod 1000000)) / 1000000;
-            c := c + cifre[i];
+            c := c + Cifre[i];
             if (i = 1) then
                 c := c + ' milion'
             else
@@ -50,7 +47,7 @@ codeunit 70010 "SSA General Functions"
             if (((x - (x mod 100000)) / 100000) mod 100 = 0) then
                 c := c + ' de mii';
             if (((x - (x mod 100000)) / 100000) mod 10 = 1) then begin
-                ok := 0;
+                OK := 0;
                 c := c + ' unu';
             end;
             x := x mod 1000000;
@@ -58,7 +55,7 @@ codeunit 70010 "SSA General Functions"
 
         if (x >= 100000) then begin
             i := (x - (x mod 100000)) / 100000;
-            c := c + cifre[i];
+            c := c + Cifre[i];
             if (i = 1) then
                 c := c + ' suta'
             else
@@ -66,7 +63,7 @@ codeunit 70010 "SSA General Functions"
             if (((x - (x mod 1000)) / 1000) mod 100 = 0) then
                 c := c + ' de mii';
             if (((x - (x mod 10000)) / 10000) mod 10 = 1) then begin
-                ok := 0;
+                OK := 0;
                 c := c + ' unu';
             end;
             x := x mod 100000;
@@ -75,7 +72,7 @@ codeunit 70010 "SSA General Functions"
         if (x >= 10000) then begin
             i := (x - (x mod 10000)) / 10000;
             if (i <> 1) then begin
-                c := c + cifre[i];
+                c := c + Cifre[i];
                 c := c + 'zeci';
                 x := x mod 10000;
                 if (x >= 1000) then begin
@@ -83,13 +80,13 @@ codeunit 70010 "SSA General Functions"
                     if ((x - (x mod 1000)) / 1000 = 1) then
                         c := c + ' una'
                     else
-                        c := c + cifre[(x - (x mod 1000)) / 1000];
+                        c := c + Cifre[(x - (x mod 1000)) / 1000];
                 end;
                 c := c + ' de mii';
             end
             else begin
                 i := (x - (x mod 1000)) / 1000;
-                c := c + cifre[i];
+                c := c + Cifre[i];
                 c := c + ' mii';
             end;
             x := x mod 1000;
@@ -98,13 +95,13 @@ codeunit 70010 "SSA General Functions"
         if (x >= 1000) then begin
             i := (x - (x mod 1000)) / 1000;
             if (i = 1) then
-                if (ok = 1) then
+                if (OK = 1) then
                     c := c + ' o mie'
                 else begin
                     c := c + ' mii';
                 end
             else begin
-                c := c + cifre[i];
+                c := c + Cifre[i];
                 c := c + ' mii';
             end;
             x := x mod 1000;
@@ -112,7 +109,7 @@ codeunit 70010 "SSA General Functions"
 
         if (x >= 100) then begin
             i := (x - (x mod 100)) / 100;
-            c := c + cifre[i];
+            c := c + Cifre[i];
             if (i = 1) then
                 c := c + ' suta'
             else
@@ -122,7 +119,7 @@ codeunit 70010 "SSA General Functions"
 
         if (x >= 20) then begin
             i := (x - (x mod 10)) / 10;
-            c := c + cifre[i];
+            c := c + Cifre[i];
             c := c + 'zeci';
             x := x mod 10;
             if (x <> 0) then begin
@@ -133,11 +130,11 @@ codeunit 70010 "SSA General Functions"
                     if (x = 2) then
                         c := c + ' doi'
                     else
-                        c := c + cifre[x];
+                        c := c + Cifre[x];
             end;
         end
 
-        else begin
+        else
             if (x = 1) then
                 c := c + ' unu'
             else
@@ -145,40 +142,38 @@ codeunit 70010 "SSA General Functions"
                     c := c + ' doi'
                 else
                     if (x <> 0) then
-                        c := c + cifre[x];
-        end;
+                        c := c + Cifre[x];
 
         c := c + ' lei';
-        if (zec > 0) then begin
+        if (Zec > 0) then begin
             c := c + ' si ';
 
-            if (zec >= 20) then begin
-                i := (zec - (zec mod 10)) / 10;
-                c := c + cifre[i];
+            if (Zec >= 20) then begin
+                i := (Zec - (Zec mod 10)) / 10;
+                c := c + Cifre[i];
                 c := c + 'zeci';
-                zec := zec mod 10;
-                if (zec <> 0) then begin
+                Zec := Zec mod 10;
+                if (Zec <> 0) then begin
                     c := c + ' si';
-                    if (zec = 1) then
+                    if (Zec = 1) then
                         c := c + ' unu'
                     else
-                        if (zec = 2) then
+                        if (Zec = 2) then
                             c := c + ' doi'
                         else
-                            c := c + cifre[zec];
+                            c := c + Cifre[Zec];
                 end;
             end
 
-            else begin
-                if (zec = 1) then
+            else
+                if (Zec = 1) then
                     c := c + ' unu'
                 else
-                    if (zec = 2) then
+                    if (Zec = 2) then
                         c := c + ' doi'
                     else
-                        if (zec <> 0) then
-                            c := c + cifre[zec];
-            end;
+                        if (Zec <> 0) then
+                            c := c + Cifre[Zec];
             c := c + ' bani';
         end;
         exit(c);
@@ -186,10 +181,10 @@ codeunit 70010 "SSA General Functions"
 
     procedure ReplaceDiacriticeCHR(TotalString: Text): Text;
     var
-        finalString: text;
-        spatiudublu: label '  ';
-        spatiusimplu: label ' ';
-        altch: label ' ';
+        finalString: Text;
+        spatiudublu: Label '  ';
+        spatiusimplu: Label ' ';
+        altch: Label ' ';
     begin
 
         finalString := TotalString;
@@ -282,38 +277,36 @@ codeunit 70010 "SSA General Functions"
         finalString := Replacechr(finalString, '‹', 'i');
 
         exit(finalString);
-
     end;
 
     local procedure Replacechr(TotalString: Text; FromChr: Text; WithChr: Text): Text
     var
         poz: Integer;
-        remainingstr: text;
-        finalString: text;
+        remainingstr: Text;
+        finalString: Text;
     begin
         finalString := TotalString;
         remainingstr := TotalString;
-        while (STRPOS(remainingstr, FromChr) <> 0) do begin
-            poz := STRPOS(finalString, FromChr);
-            finalString := DELSTR(finalString, poz, STRLEN(FromChr));
-            remainingstr := COPYSTR(finalString, poz + 1, STRLEN(finalString) - poz + 1);
-            finalString := INSSTR(finalString, WithChr, poz);
+        while (StrPos(remainingstr, FromChr) <> 0) do begin
+            poz := StrPos(finalString, FromChr);
+            finalString := DelStr(finalString, poz, StrLen(FromChr));
+            remainingstr := CopyStr(finalString, poz + 1, StrLen(finalString) - poz + 1);
+            finalString := InsStr(finalString, WithChr, poz);
         end;
         exit(finalString);
     end;
 
     local procedure ReplacechrASCII(InputStr: Text; FromChr: Char; WithChr: Char): Text
     var
-        OutputString: text;
+        OutputString: Text;
         i: Integer;
     begin
         i := 1;
-        while i <= STRLEN(InputStr) do begin
+        while i <= StrLen(InputStr) do begin
             if InputStr[i] = FromChr then
                 OutputString[i] := WithChr
-            else begin
+            else
                 OutputString[i] := InputStr[i];
-            end;
             i += 1
         end;
         exit(OutputString);
@@ -328,14 +321,15 @@ codeunit 70010 "SSA General Functions"
         TextFormatat: Text;
         DecVar: Decimal;
     begin
-        ThousandSeparator := COPYSTR(FORMAT(1000.01, 0, 0), 2, 1);
-        DecimalSeparator := COPYSTR(FORMAT(1000.01, 0, 0), 6, 1);
+        ThousandSeparator := CopyStr(Format(1000.01, 0, 0), 2, 1);
+        DecimalSeparator := CopyStr(Format(1000.01, 0, 0), 6, 1);
         if DecimalSeparator = '.' then begin
             Evaluate(DecVar, _TextNeformatat);
             exit(DecVar);
-        end else begin
-            for i := 1 to STRLEN(_TextNeformatat) do begin
-                c := COPYSTR(_TextNeformatat, i, 1);
+        end
+        else begin
+            for i := 1 to StrLen(_TextNeformatat) do begin
+                c := CopyStr(_TextNeformatat, i, 1);
                 if c = ThousandSeparator then
                     TextFormatat := TextFormatat + DecimalSeparator;
                 if c = DecimalSeparator then

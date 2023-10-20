@@ -7,22 +7,25 @@ pageextension 70006 "SSA PostedSalesCreditMemo70006" extends "Posted Sales Credi
     {
         addafter("No. Printed")
         {
-            field("SSA Customer Order No."; "SSA Customer Order No.")
+            field("SSA Customer Order No."; Rec."SSA Customer Order No.")
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Customer Order No. field.';
             }
         }
         addafter("EU 3-Party Trade")
         {
-            field("SSA Tip Document D394"; "SSA Tip Document D394")
+            field("SSA Tip Document D394"; Rec."SSA Tip Document D394")
             {
                 ApplicationArea = All;
                 Editable = false;
+                ToolTip = 'Specifies the value of the Tip Document D394 field.';
             }
-            field("SSA Stare Factura"; "SSA Stare Factura")
+            field("SSA Stare Factura"; Rec."SSA Stare Factura")
             {
                 ApplicationArea = All;
                 Editable = false;
+                ToolTip = 'Specifies the value of the Stare Factura field.';
             }
         }
     }
@@ -36,4 +39,3 @@ pageextension 70006 "SSA PostedSalesCreditMemo70006" extends "Posted Sales Credi
         }
     }
 }
-

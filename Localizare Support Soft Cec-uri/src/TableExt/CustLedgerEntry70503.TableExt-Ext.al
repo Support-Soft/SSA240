@@ -14,5 +14,4 @@ tableextension 70503 "SSA Cust. Ledger Entry 70503" extends "Cust. Ledger Entry"
             CalcFormula = sum("SSA Pmt. Tools AppLedg. Entry".Amount where("Document Type" = const("Sales Invoice"), "Document No." = field("Document No.")));
         }
     }
-
 }

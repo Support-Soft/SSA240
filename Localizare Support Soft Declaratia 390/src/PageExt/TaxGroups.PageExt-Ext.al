@@ -4,7 +4,7 @@ pageextension 71502 "SSA Tax Groups" extends "Tax Groups" //467
     {
         addlast(Control1)
         {
-            field("SSA 390 Type"; "SSA 390 Type")
+            field("SSA 390 Type"; Rec."SSA 390 Type")
             {
                 ApplicationArea = All;
             }

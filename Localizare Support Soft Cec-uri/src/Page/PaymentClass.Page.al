@@ -13,33 +13,40 @@ page 70508 "SSA Payment Class"
             repeater(Control1)
             {
                 ShowCaption = false;
-                field(Enable; Enable)
+                field(Enable; Rec.Enable)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Enable field.';
                 }
-                field("Code"; Code)
+                field("Code"; Rec.Code)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Code field.';
                 }
-                field(Name; Name)
+                field(Name; Rec.Name)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Name field.';
                 }
-                field("Header No. Series"; "Header No. Series")
+                field("Header No. Series"; Rec."Header No. Series")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Header No. Series field.';
                 }
-                field("Line No. Series"; "Line No. Series")
+                field("Line No. Series"; Rec."Line No. Series")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Line No. Series field.';
                 }
-                field(Suggestions; Suggestions)
+                field(Suggestions; Rec.Suggestions)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Suggestions field.';
                 }
-                field("Payment Tools"; "Payment Tools")
+                field("Payment Tools"; Rec."Payment Tools")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Payment Tools Customer field.';
                 }
             }
         }
@@ -58,16 +65,16 @@ page 70508 "SSA Payment Class"
                     Caption = 'Duplicate parameter';
                     Promoted = true;
                     PromotedCategory = Process;
-
+                    ToolTip = 'Executes the Duplicate parameter action.';
                     trigger OnAction()
                     var
                         PaymentClass: Record "SSA Payment Class";
                         DuplicateParameter: Report "SSA Duplicate parameter";
                     begin
-                        if Code <> '' then begin
-                            PaymentClass.SETRANGE(Code, Code);
+                        if Rec.Code <> '' then begin
+                            PaymentClass.SETRANGE(Code, Rec.Code);
                             DuplicateParameter.SETTABLEVIEW(PaymentClass);
-                            DuplicateParameter.InitParameter(Code);
+                            DuplicateParameter.InitParameter(Rec.Code);
                             DuplicateParameter.RUNMODAL;
                         end;
                     end;
@@ -81,6 +88,7 @@ page 70508 "SSA Payment Class"
                 PromotedCategory = Process;
                 RunObject = Page "SSA Payment Status";
                 RunPageLink = "Payment Class" = field(Code);
+                ToolTip = 'Executes the St&atus action.';
             }
             action(Steps)
             {
@@ -90,8 +98,8 @@ page 70508 "SSA Payment Class"
                 PromotedCategory = Process;
                 RunObject = Page "SSA Payment Steps";
                 RunPageLink = "Payment Class" = field(Code);
+                ToolTip = 'Executes the Ste&ps action.';
             }
         }
     }
 }
-

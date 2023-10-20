@@ -4,8 +4,6 @@ codeunit 70023 "SSA General Subscribers"
     // SSA970 SSCAT 07.10.2019 36.Funct. UOM Mandatory, dimensiuni pe rounding, intercompany, denumire, conturi bancare
     // SSA948 SSCAT 08.10.2019 14.Funct. Functionalitatea deductibilitate cheltuieli 50% /100%
 
-
-
     [EventSubscriber(ObjectType::Codeunit, 13, 'OnAfterPostGenJnlLine', '', false, false)]
     local procedure C13_OnAfterPostGenJnlLine(var GenJournalLine: Record "Gen. Journal Line"; var GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line"; CommitIsSuppressed: Boolean)
     var
@@ -23,148 +21,144 @@ codeunit 70023 "SSA General Subscribers"
         if not VATPostingSetup.Get(GenJournalLine."VAT Bus. Posting Group", GenJournalLine."VAT Prod. Posting Group") then
             Clear(VATPostingSetup);
 
-        with GenJnlLine do begin
-            InitNewLine(
-              GenJournalLine."Posting Date", GenJournalLine."Document Date", GenJournalLine."Description",
-              GenJournalLine."Shortcut Dimension 1 Code", GenJournalLine."Shortcut Dimension 2 Code",
-              GenJournalLine."Dimension Set ID", GenJournalLine."Reason Code");
+        GenJnlLine.InitNewLine(
+  GenJournalLine."Posting Date", GenJournalLine."Document Date", GenJournalLine.Description,
+  GenJournalLine."Shortcut Dimension 1 Code", GenJournalLine."Shortcut Dimension 2 Code",
+  GenJournalLine."Dimension Set ID", GenJournalLine."Reason Code");
 
-            CopyDocumentFields(OldGenJnlLine."Document Type", OldGenJnlLine."Document No.", OldGenJnlLine."External Document No.", OldGenJnlLine."Source Code", '');
-            "Source Currency Code" := GenJournalLine."Currency Code";
-            "Currency Factor" := GenJournalLine."Currency Factor";
-            Correction := GenJournalLine.Correction;
-            "VAT Base Discount %" := GenJournalLine."VAT Base Discount %";
+        GenJnlLine.CopyDocumentFields(OldGenJnlLine."Document Type", OldGenJnlLine."Document No.", OldGenJnlLine."External Document No.", OldGenJnlLine."Source Code", '');
+        GenJnlLine."Source Currency Code" := GenJournalLine."Currency Code";
+        GenJnlLine."Currency Factor" := GenJournalLine."Currency Factor";
+        GenJnlLine.Correction := GenJournalLine.Correction;
+        GenJnlLine."VAT Base Discount %" := GenJournalLine."VAT Base Discount %";
 
-            "Sell-to/Buy-from No." := GenJournalLine."Sell-to/Buy-from No.";
-            "Bill-to/Pay-to No." := GenJournalLine."Bill-to/Pay-to No.";
-            "Country/Region Code" := GenJournalLine."Country/Region Code";
+        GenJnlLine."Sell-to/Buy-from No." := GenJournalLine."Sell-to/Buy-from No.";
+        GenJnlLine."Bill-to/Pay-to No." := GenJournalLine."Bill-to/Pay-to No.";
+        GenJnlLine."Country/Region Code" := GenJournalLine."Country/Region Code";
 
-            "VAT Registration No." := GenJournalLine."VAT Registration No.";
-            "Source Type" := GenJournalLine."Source Type";
-            "Source No." := GenJournalLine."Source No.";
-            "Posting No. Series" := GenJournalLine."Posting No. Series";
-            "IC Partner Code" := GenJournalLine."IC Partner Code";
-            "Ship-to/Order Address Code" := GenJournalLine."Ship-to/Order Address Code";
-            "Salespers./Purch. Code" := GenJournalLine."Salespers./Purch. Code";
-            "On Hold" := GenJournalLine."On Hold";
-            if "Account Type" = "Account Type"::Vendor then
-                "Posting Group" := GenJournalLine."Posting Group";
+        GenJnlLine."VAT Registration No." := GenJournalLine."VAT Registration No.";
+        GenJnlLine."Source Type" := GenJournalLine."Source Type";
+        GenJnlLine."Source No." := GenJournalLine."Source No.";
+        GenJnlLine."Posting No. Series" := GenJournalLine."Posting No. Series";
+        GenJnlLine."IC Partner Code" := GenJournalLine."IC Partner Code";
+        GenJnlLine."Ship-to/Order Address Code" := GenJournalLine."Ship-to/Order Address Code";
+        GenJnlLine."Salespers./Purch. Code" := GenJournalLine."Salespers./Purch. Code";
+        GenJnlLine."On Hold" := GenJournalLine."On Hold";
+        if GenJnlLine."Account Type" = GenJnlLine."Account Type"::Vendor then
+            GenJnlLine."Posting Group" := GenJournalLine."Posting Group";
 
-            "Account No." := GenJournalLine."Account No.";
-            "System-Created Entry" := GenJournalLine."System-Created Entry";
-            "Gen. Bus. Posting Group" := GenJournalLine."Gen. Bus. Posting Group";
-            "Gen. Prod. Posting Group" := GenJournalLine."Gen. Prod. Posting Group";
-            "VAT Bus. Posting Group" := GenJournalLine."VAT Bus. Posting Group";
-            "VAT Prod. Posting Group" := GenJournalLine."VAT Prod. Posting Group";
-            "Tax Area Code" := GenJournalLine."Tax Area Code";
-            "Tax Liable" := GenJournalLine."Tax Liable";
-            "Tax Group Code" := GenJournalLine."Tax Group Code";
-            "Use Tax" := GenJournalLine."Use Tax";
-            Quantity := GenJournalLine.Quantity;
-            "VAT %" := GenJournalLine."VAT %";
-            "VAT Calculation Type" := GenJournalLine."VAT Calculation Type";
-            "VAT Posting" := "VAT Posting"::"Manual VAT Entry";
-            "Job No." := GenJournalLine."Job No.";
-            "Deferral Code" := GenJournalLine."Deferral Code";
-            "Deferral Line No." := GenJournalLine."Deferral Line No.";
-            Amount := GenJournalLine.Amount;
-            "Source Currency Amount" := GenJournalLine."Source Currency Amount";
-            "VAT Base Amount" := GenJournalLine."VAT Base Amount";
-            "Source Curr. VAT Base Amount" := GenJournalLine."Source Curr. VAT Base Amount";
-            "VAT Amount" := GenJournalLine."VAT Amount";
-            "Source Curr. VAT Amount" := GenJournalLine."Source Curr. VAT Amount";
-            "VAT Difference" := GenJournalLine."VAT Difference";
-            "VAT Base Before Pmt. Disc." := GenJournalLine."VAT Base Before Pmt. Disc.";
+        GenJnlLine."Account No." := GenJournalLine."Account No.";
+        GenJnlLine."System-Created Entry" := GenJournalLine."System-Created Entry";
+        GenJnlLine."Gen. Bus. Posting Group" := GenJournalLine."Gen. Bus. Posting Group";
+        GenJnlLine."Gen. Prod. Posting Group" := GenJournalLine."Gen. Prod. Posting Group";
+        GenJnlLine."VAT Bus. Posting Group" := GenJournalLine."VAT Bus. Posting Group";
+        GenJnlLine."VAT Prod. Posting Group" := GenJournalLine."VAT Prod. Posting Group";
+        GenJnlLine."Tax Area Code" := GenJournalLine."Tax Area Code";
+        GenJnlLine."Tax Liable" := GenJournalLine."Tax Liable";
+        GenJnlLine."Tax Group Code" := GenJournalLine."Tax Group Code";
+        GenJnlLine."Use Tax" := GenJournalLine."Use Tax";
+        GenJnlLine.Quantity := GenJournalLine.Quantity;
+        GenJnlLine."VAT %" := GenJournalLine."VAT %";
+        GenJnlLine."VAT Calculation Type" := GenJournalLine."VAT Calculation Type";
+        GenJnlLine."VAT Posting" := GenJnlLine."VAT Posting"::"Manual VAT Entry";
+        GenJnlLine."Job No." := GenJournalLine."Job No.";
+        GenJnlLine."Deferral Code" := GenJournalLine."Deferral Code";
+        GenJnlLine."Deferral Line No." := GenJournalLine."Deferral Line No.";
+        GenJnlLine.Amount := GenJournalLine.Amount;
+        GenJnlLine."Source Currency Amount" := GenJournalLine."Source Currency Amount";
+        GenJnlLine."VAT Base Amount" := GenJournalLine."VAT Base Amount";
+        GenJnlLine."Source Curr. VAT Base Amount" := GenJournalLine."Source Curr. VAT Base Amount";
+        GenJnlLine."VAT Amount" := GenJournalLine."VAT Amount";
+        GenJnlLine."Source Curr. VAT Amount" := GenJournalLine."Source Curr. VAT Amount";
+        GenJnlLine."VAT Difference" := GenJournalLine."VAT Difference";
+        GenJnlLine."VAT Base Before Pmt. Disc." := GenJournalLine."VAT Base Before Pmt. Disc.";
 
-            "Account Type" := GenJnlLine."Account Type"::"G/L Account";
-            "Account No." := GenJournalLine."SSA Non-Ded VAT Expense Acc 1";
-            "Gen. Posting Type" := 0;
-            "Gen. Bus. Posting Group" := '';
-            "Gen. Prod. Posting Group" := '';
-            "VAT Calculation Type" := 0;
-            "VAT Bus. Posting Group" := '';
-            "VAT Prod. Posting Group" := '';
-            "Posting Group" := '';
-            "Bal. Account Type" := "Bal. Account Type"::"G/L Account";
-            "Bal. Account No." := VATPostingSetup."Purchase VAT Account";
-            "Currency Code" := OldGenJnlLine."Currency Code";
-            Amount := Round(GenJournalLine."VAT Amount" / 2, 0.01);
-            FirstLineAmount := Round(GenJournalLine."VAT Amount" / 2, 0.01);
-            "Amount (LCY)" := Round(GenJournalLine."VAT Amount" / 2, 0.01);
-            "Allow Zero-Amount Posting" := true;
-            GenJnlPostLine.RunWithCheck(GenJnlLine);
-        end;
+        GenJnlLine."Account Type" := GenJnlLine."Account Type"::"G/L Account";
+        GenJnlLine."Account No." := GenJournalLine."SSA Non-Ded VAT Expense Acc 1";
+        GenJnlLine."Gen. Posting Type" := 0;
+        GenJnlLine."Gen. Bus. Posting Group" := '';
+        GenJnlLine."Gen. Prod. Posting Group" := '';
+        GenJnlLine."VAT Calculation Type" := 0;
+        GenJnlLine."VAT Bus. Posting Group" := '';
+        GenJnlLine."VAT Prod. Posting Group" := '';
+        GenJnlLine."Posting Group" := '';
+        GenJnlLine."Bal. Account Type" := GenJnlLine."Bal. Account Type"::"G/L Account";
+        GenJnlLine."Bal. Account No." := VATPostingSetup."Purchase VAT Account";
+        GenJnlLine."Currency Code" := OldGenJnlLine."Currency Code";
+        GenJnlLine.Amount := Round(GenJournalLine."VAT Amount" / 2, 0.01);
+        FirstLineAmount := Round(GenJournalLine."VAT Amount" / 2, 0.01);
+        GenJnlLine."Amount (LCY)" := Round(GenJournalLine."VAT Amount" / 2, 0.01);
+        GenJnlLine."Allow Zero-Amount Posting" := true;
+        GenJnlPostLine.RunWithCheck(GenJnlLine);
 
-        with GenJnlLine do begin
-            InitNewLine(
-              GenJournalLine."Posting Date", GenJournalLine."Document Date", GenJournalLine."Description",
-              GenJournalLine."Shortcut Dimension 1 Code", GenJournalLine."Shortcut Dimension 2 Code",
-              GenJournalLine."Dimension Set ID", GenJournalLine."Reason Code");
+        GenJnlLine.InitNewLine(
+  GenJournalLine."Posting Date", GenJournalLine."Document Date", GenJournalLine.Description,
+  GenJournalLine."Shortcut Dimension 1 Code", GenJournalLine."Shortcut Dimension 2 Code",
+  GenJournalLine."Dimension Set ID", GenJournalLine."Reason Code");
 
-            CopyDocumentFields(OldGenJnlLine."Document Type", OldGenJnlLine."Document No.", OldGenJnlLine."External Document No.", OldGenJnlLine."Source Code", '');
-            "Source Currency Code" := GenJournalLine."Currency Code";
-            "Currency Factor" := GenJournalLine."Currency Factor";
-            Correction := GenJournalLine.Correction;
-            "VAT Base Discount %" := GenJournalLine."VAT Base Discount %";
+        GenJnlLine.CopyDocumentFields(OldGenJnlLine."Document Type", OldGenJnlLine."Document No.", OldGenJnlLine."External Document No.", OldGenJnlLine."Source Code", '');
+        GenJnlLine."Source Currency Code" := GenJournalLine."Currency Code";
+        GenJnlLine."Currency Factor" := GenJournalLine."Currency Factor";
+        GenJnlLine.Correction := GenJournalLine.Correction;
+        GenJnlLine."VAT Base Discount %" := GenJournalLine."VAT Base Discount %";
 
-            "Sell-to/Buy-from No." := GenJournalLine."Sell-to/Buy-from No.";
-            "Bill-to/Pay-to No." := GenJournalLine."Bill-to/Pay-to No.";
-            "Country/Region Code" := GenJournalLine."Country/Region Code";
+        GenJnlLine."Sell-to/Buy-from No." := GenJournalLine."Sell-to/Buy-from No.";
+        GenJnlLine."Bill-to/Pay-to No." := GenJournalLine."Bill-to/Pay-to No.";
+        GenJnlLine."Country/Region Code" := GenJournalLine."Country/Region Code";
 
-            "VAT Registration No." := GenJournalLine."VAT Registration No.";
-            "Source Type" := GenJournalLine."Source Type";
-            "Source No." := GenJournalLine."Source No.";
-            "Posting No. Series" := GenJournalLine."Posting No. Series";
-            "IC Partner Code" := GenJournalLine."IC Partner Code";
-            "Ship-to/Order Address Code" := GenJournalLine."Ship-to/Order Address Code";
-            "Salespers./Purch. Code" := GenJournalLine."Salespers./Purch. Code";
-            "On Hold" := GenJournalLine."On Hold";
-            if "Account Type" = "Account Type"::Vendor then
-                "Posting Group" := GenJournalLine."Posting Group";
+        GenJnlLine."VAT Registration No." := GenJournalLine."VAT Registration No.";
+        GenJnlLine."Source Type" := GenJournalLine."Source Type";
+        GenJnlLine."Source No." := GenJournalLine."Source No.";
+        GenJnlLine."Posting No. Series" := GenJournalLine."Posting No. Series";
+        GenJnlLine."IC Partner Code" := GenJournalLine."IC Partner Code";
+        GenJnlLine."Ship-to/Order Address Code" := GenJournalLine."Ship-to/Order Address Code";
+        GenJnlLine."Salespers./Purch. Code" := GenJournalLine."Salespers./Purch. Code";
+        GenJnlLine."On Hold" := GenJournalLine."On Hold";
+        if GenJnlLine."Account Type" = GenJnlLine."Account Type"::Vendor then
+            GenJnlLine."Posting Group" := GenJournalLine."Posting Group";
 
-            "Account No." := GenJournalLine."Account No.";
-            "System-Created Entry" := GenJournalLine."System-Created Entry";
-            "Gen. Bus. Posting Group" := GenJournalLine."Gen. Bus. Posting Group";
-            "Gen. Prod. Posting Group" := GenJournalLine."Gen. Prod. Posting Group";
-            "VAT Bus. Posting Group" := GenJournalLine."VAT Bus. Posting Group";
-            "VAT Prod. Posting Group" := GenJournalLine."VAT Prod. Posting Group";
-            "Tax Area Code" := GenJournalLine."Tax Area Code";
-            "Tax Liable" := GenJournalLine."Tax Liable";
-            "Tax Group Code" := GenJournalLine."Tax Group Code";
-            "Use Tax" := GenJournalLine."Use Tax";
-            Quantity := GenJournalLine.Quantity;
-            "VAT %" := GenJournalLine."VAT %";
-            "VAT Calculation Type" := GenJournalLine."VAT Calculation Type";
-            "VAT Posting" := "VAT Posting"::"Manual VAT Entry";
-            "Job No." := GenJournalLine."Job No.";
-            "Deferral Code" := GenJournalLine."Deferral Code";
-            "Deferral Line No." := GenJournalLine."Deferral Line No.";
-            Amount := GenJournalLine.Amount;
-            "Source Currency Amount" := GenJournalLine."Source Currency Amount";
-            "VAT Base Amount" := GenJournalLine."VAT Base Amount";
-            "Source Curr. VAT Base Amount" := GenJournalLine."Source Curr. VAT Base Amount";
-            "VAT Amount" := GenJournalLine."VAT Amount";
-            "Source Curr. VAT Amount" := GenJournalLine."Source Curr. VAT Amount";
-            "VAT Difference" := GenJournalLine."VAT Difference";
-            "VAT Base Before Pmt. Disc." := GenJournalLine."VAT Base Before Pmt. Disc.";
+        GenJnlLine."Account No." := GenJournalLine."Account No.";
+        GenJnlLine."System-Created Entry" := GenJournalLine."System-Created Entry";
+        GenJnlLine."Gen. Bus. Posting Group" := GenJournalLine."Gen. Bus. Posting Group";
+        GenJnlLine."Gen. Prod. Posting Group" := GenJournalLine."Gen. Prod. Posting Group";
+        GenJnlLine."VAT Bus. Posting Group" := GenJournalLine."VAT Bus. Posting Group";
+        GenJnlLine."VAT Prod. Posting Group" := GenJournalLine."VAT Prod. Posting Group";
+        GenJnlLine."Tax Area Code" := GenJournalLine."Tax Area Code";
+        GenJnlLine."Tax Liable" := GenJournalLine."Tax Liable";
+        GenJnlLine."Tax Group Code" := GenJournalLine."Tax Group Code";
+        GenJnlLine."Use Tax" := GenJournalLine."Use Tax";
+        GenJnlLine.Quantity := GenJournalLine.Quantity;
+        GenJnlLine."VAT %" := GenJournalLine."VAT %";
+        GenJnlLine."VAT Calculation Type" := GenJournalLine."VAT Calculation Type";
+        GenJnlLine."VAT Posting" := GenJnlLine."VAT Posting"::"Manual VAT Entry";
+        GenJnlLine."Job No." := GenJournalLine."Job No.";
+        GenJnlLine."Deferral Code" := GenJournalLine."Deferral Code";
+        GenJnlLine."Deferral Line No." := GenJournalLine."Deferral Line No.";
+        GenJnlLine.Amount := GenJournalLine.Amount;
+        GenJnlLine."Source Currency Amount" := GenJournalLine."Source Currency Amount";
+        GenJnlLine."VAT Base Amount" := GenJournalLine."VAT Base Amount";
+        GenJnlLine."Source Curr. VAT Base Amount" := GenJournalLine."Source Curr. VAT Base Amount";
+        GenJnlLine."VAT Amount" := GenJournalLine."VAT Amount";
+        GenJnlLine."Source Curr. VAT Amount" := GenJournalLine."Source Curr. VAT Amount";
+        GenJnlLine."VAT Difference" := GenJournalLine."VAT Difference";
+        GenJnlLine."VAT Base Before Pmt. Disc." := GenJournalLine."VAT Base Before Pmt. Disc.";
 
-            "Account Type" := GenJnlLine."Account Type"::"G/L Account";
-            "Account No." := GenJournalLine."SSA Non-Ded VAT Expense Acc 2";
-            "Gen. Posting Type" := 0;
-            "Gen. Bus. Posting Group" := '';
-            "Gen. Prod. Posting Group" := '';
-            "VAT Calculation Type" := 0;
-            "VAT Bus. Posting Group" := '';
-            "VAT Prod. Posting Group" := '';
-            "Posting Group" := '';
-            "Bal. Account Type" := "Bal. Account Type"::"G/L Account";
-            "Bal. Account No." := VATPostingSetup."Purchase VAT Account";
-            "Currency Code" := OldGenJnlLine."Currency Code";
-            Amount := GenJournalLine."VAT Amount" - FirstLineAmount;
-            "Amount (LCY)" := GenJournalLine."VAT Amount" - FirstLineAmount;
-            "Allow Zero-Amount Posting" := true;
-            GenJnlPostLine.RunWithCheck(GenJnlLine);
-        end;
+        GenJnlLine."Account Type" := GenJnlLine."Account Type"::"G/L Account";
+        GenJnlLine."Account No." := GenJournalLine."SSA Non-Ded VAT Expense Acc 2";
+        GenJnlLine."Gen. Posting Type" := 0;
+        GenJnlLine."Gen. Bus. Posting Group" := '';
+        GenJnlLine."Gen. Prod. Posting Group" := '';
+        GenJnlLine."VAT Calculation Type" := 0;
+        GenJnlLine."VAT Bus. Posting Group" := '';
+        GenJnlLine."VAT Prod. Posting Group" := '';
+        GenJnlLine."Posting Group" := '';
+        GenJnlLine."Bal. Account Type" := GenJnlLine."Bal. Account Type"::"G/L Account";
+        GenJnlLine."Bal. Account No." := VATPostingSetup."Purchase VAT Account";
+        GenJnlLine."Currency Code" := OldGenJnlLine."Currency Code";
+        GenJnlLine.Amount := GenJournalLine."VAT Amount" - FirstLineAmount;
+        GenJnlLine."Amount (LCY)" := GenJournalLine."VAT Amount" - FirstLineAmount;
+        GenJnlLine."Allow Zero-Amount Posting" := true;
+        GenJnlPostLine.RunWithCheck(GenJnlLine);
         //SSA948<<
     end;
 
@@ -175,7 +169,7 @@ codeunit 70023 "SSA General Subscribers"
     begin
         //SSA970>>
         ItemJnlLine.TestField("Gen. Prod. Posting Group");
-        SSASetup.Get;
+        SSASetup.Get();
         if SSASetup."Unit of Measure Mandatory" and
             (not ItemJnlLine.Adjustment) and
             (ItemJnlLine."Item Charge No." = '') and
@@ -212,7 +206,7 @@ codeunit 70023 "SSA General Subscribers"
         SSASetup: Record "SSA Localization Setup";
     begin
         //SSA970>>
-        SSASetup.Get;
+        SSASetup.Get();
         if ItemJournalLine."Value Entry Type" <> ItemJournalLine."Value Entry Type"::Rounding then
             ItemJournalLine."Dimension Set ID" := ValueEntry."Dimension Set ID"
         else
@@ -238,8 +232,6 @@ codeunit 70023 "SSA General Subscribers"
 
     [EventSubscriber(ObjectType::Report, Report::"Adjust Exchange Rates", 'OnBeforeOnInitReport', '', false, false)]
     local procedure Error_AdjustExchangeRates(var IsHandled: Boolean)
-    var
-        Text001: Label 'Report %1 has been replaced by Report %2 from SS Localization.';
     begin
         //Error(Text001, Report::"Adjust Exchange Rates", report::"SSA Adjust Exchange Rates");
         IsHandled := true;
@@ -250,7 +242,7 @@ codeunit 70023 "SSA General Subscribers"
     var
         Text001: Label 'Report %1 has been replaced by Report %2 from SS Localization.';
     begin
-        Error(Text001, Report::"Close Income Statement", report::"SSA Close Income Statement");
+        Error(Text001, Report::"Close Income Statement", Report::"SSA Close Income Statement");
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::ICInboxOutboxMgt, 'OnBeforeICInboxPurchHeaderInsert', '', true, false)]
@@ -282,6 +274,4 @@ codeunit 70023 "SSA General Subscribers"
         SalesHeader."SSA Stare Factura" := ICInboxSalesHeader."SSA Stare Factura";
         SalesHeader.Modify();
     end;
-
 }
-

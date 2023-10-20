@@ -376,4 +376,3 @@ table 70505 "SSA Payment Post. Buffer"
     {
     }
 }
-

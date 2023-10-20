@@ -8,60 +8,72 @@ page 70001 "SSAInt. Consumption Subform"
     MultipleNewLines = true;
     PageType = ListPart;
     SourceTable = "SSAInternal Consumption Line";
+    ApplicationArea = All;
 
     layout
     {
-        area(content)
+        area(Content)
         {
             repeater(Control1390000)
             {
                 ShowCaption = false;
-                field("Item No."; "Item No.")
+                field("Item No."; Rec."Item No.")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Item No. field.';
                 }
-                field(Description; Description)
+                field(Description; Rec.Description)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Description field.';
                 }
-                field("Posting Group"; "Posting Group")
+                field("Posting Group"; Rec."Posting Group")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Posting Group field.';
                 }
-                field("Gen. Prod. Posting Group"; "Gen. Prod. Posting Group")
+                field("Gen. Prod. Posting Group"; Rec."Gen. Prod. Posting Group")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Gen. Prod. Posting Group field.';
                 }
-                field("Item Category Code"; "Item Category Code")
+                field("Item Category Code"; Rec."Item Category Code")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Item Category Code field.';
                 }
-                field("Location Code"; "Location Code")
+                field("Location Code"; Rec."Location Code")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Location Code field.';
                 }
-                field(Quantity; Quantity)
+                field(Quantity; Rec.Quantity)
                 {
                     Caption = 'Quantity';
                     Editable = true;
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Quantity field.';
                 }
-                field("Appl.-to Item Entry"; "Appl.-to Item Entry")
+                field("Appl.-to Item Entry"; Rec."Appl.-to Item Entry")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Appl.-to Item Entry field.';
                 }
-                field("Appl.-from Item Entry"; "Appl.-from Item Entry")
+                field("Appl.-from Item Entry"; Rec."Appl.-from Item Entry")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Appl.-from Item Entry field.';
                 }
-                field("Shortcut Dimension 1 Code"; "Shortcut Dimension 1 Code")
+                field("Shortcut Dimension 1 Code"; Rec."Shortcut Dimension 1 Code")
                 {
                     Caption = 'Stornare';
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Stornare field.';
                 }
-                field("Shortcut Dimension 2 Code"; "Shortcut Dimension 2 Code")
+                field("Shortcut Dimension 2 Code"; Rec."Shortcut Dimension 2 Code")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Shortcut Dimension 2 Code field.';
                 }
             }
         }
@@ -69,7 +81,7 @@ page 70001 "SSAInt. Consumption Subform"
 
     actions
     {
-        area(processing)
+        area(Processing)
         {
             group("&Line")
             {
@@ -81,36 +93,36 @@ page 70001 "SSAInt. Consumption Subform"
                     {
                         ApplicationArea = All;
                         Caption = 'Period';
+                        ToolTip = 'Executes the Period action.';
                         trigger OnAction()
                         begin
                             //This functionality was copied from page #16100. Unsupported part was commented. Please check it.
                             /*CurrPage.InternalConsumptionLine.FORM.*/
                             _ItemAvailability(0);
-
                         end;
                     }
                     action("Variant")
                     {
                         ApplicationArea = All;
                         Caption = 'Variant';
+                        ToolTip = 'Executes the Variant action.';
                         trigger OnAction()
                         begin
                             //This functionality was copied from page #16100. Unsupported part was commented. Please check it.
                             /*CurrPage.InternalConsumptionLine.FORM.*/
                             _ItemAvailability(1);
-
                         end;
                     }
                     action(Location)
                     {
                         Caption = 'Location';
                         ApplicationArea = All;
+                        ToolTip = 'Executes the Location action.';
                         trigger OnAction()
                         begin
                             //This functionality was copied from page #16100. Unsupported part was commented. Please check it.
                             /*CurrPage.InternalConsumptionLine.FORM.*/
                             _ItemAvailability(2);
-
                         end;
                     }
                 }
@@ -118,14 +130,14 @@ page 70001 "SSAInt. Consumption Subform"
                 {
                     Caption = 'Dimensions';
                     Image = Dimensions;
-                    ShortCutKey = 'Shift+Ctrl+D';
+                    ShortcutKey = 'Shift+Ctrl+D';
                     ApplicationArea = All;
+                    ToolTip = 'Executes the Dimensions action.';
                     trigger OnAction()
                     begin
                         //This functionality was copied from page #16100. Unsupported part was commented. Please check it.
                         /*CurrPage.InternalConsumptionLine.FORM.*/
-                        Rec.ShowDimensions;
-
+                        Rec.ShowDimensions();
                     end;
                 }
             }
@@ -134,7 +146,7 @@ page 70001 "SSAInt. Consumption Subform"
 
     trigger OnAfterGetRecord()
     begin
-        ShowShortcutDimCode(ShortcutDimCode);
+        Rec.ShowShortcutDimCode(ShortcutDimCode);
     end;
 
     trigger OnNewRecord(BelowxRec: Boolean)
@@ -160,13 +172,13 @@ page 70001 "SSAInt. Consumption Subform"
     local
     procedure _ShowDimensions()
     begin
-        Rec.ShowDimensions;
+        Rec.ShowDimensions();
     end;
 
     local
     procedure ShowDimensions()
     begin
-        Rec.ShowDimensions;
+        Rec.ShowDimensions();
     end;
 
     local
@@ -175,4 +187,3 @@ page 70001 "SSAInt. Consumption Subform"
         CurrPage.Update(SetSaveRecord);
     end;
 }
-

@@ -9,6 +9,7 @@ pageextension 71104 "SSA Sales Quote Subform 71104" extends "Sales Quote Subform
             {
                 ApplicationArea = All;
                 Caption = 'Search Items';
+                ToolTip = 'Executes the Search Items action.';
                 trigger OnAction()
                 var
                     TempItem: Record Item temporary;
@@ -17,14 +18,14 @@ pageextension 71104 "SSA Sales Quote Subform 71104" extends "Sales Quote Subform
                 begin
                     //SSA939>>
                     if PAGE.RunModal(PAGE::"SSA Search Items", TempItem) = ACTION::LookupOK then begin
-                        SalesLine.SetRange("Document Type", "Document Type");
-                        SalesLine.SetRange("Document No.", "Document No.");
+                        SalesLine.SetRange("Document Type", Rec."Document Type");
+                        SalesLine.SetRange("Document No.", Rec."Document No.");
                         if SalesLine.FindLast then
                             LastLineNo := SalesLine."Line No.";
 
                         SalesLine.Init;
-                        SalesLine.Validate("Document Type", "Document Type");
-                        SalesLine.Validate("Document No.", "Document No.");
+                        SalesLine.Validate("Document Type", Rec."Document Type");
+                        SalesLine.Validate("Document No.", Rec."Document No.");
                         SalesLine.Validate("Line No.", LastLineNo + 10000);
                         SalesLine.Validate(Type, SalesLine.Type::Item);
                         SalesLine.Validate("No.", TempItem."No.");

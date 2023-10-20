@@ -102,4 +102,3 @@ table 70500 "SSA Pmt. Tools AppLedg. Entry"
     {
     }
 }
-

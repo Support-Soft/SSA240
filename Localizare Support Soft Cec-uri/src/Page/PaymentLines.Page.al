@@ -15,102 +15,122 @@ page 70513 "SSA Payment Lines"
             repeater(Control1)
             {
                 ShowCaption = false;
-                field("Account Type"; "Account Type")
+                field("Account Type"; Rec."Account Type")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Account Type field.';
                 }
-                field("Account No."; "Account No.")
+                field("Account No."; Rec."Account No.")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Account No. field.';
                 }
-                field("Customer Name"; "Customer Name")
+                field("Customer Name"; Rec."Customer Name")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Customer Name field.';
                 }
-                field("Document ID"; "Document ID")
+                field("Document ID"; Rec."Document ID")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Document ID field.';
                 }
-                field("External Document No."; "External Document No.")
+                field("External Document No."; Rec."External Document No.")
                 {
                     Visible = false;
+                    ToolTip = 'Specifies the value of the External Document No. field.';
                 }
-                field("Drawee Reference"; "Drawee Reference")
+                field("Drawee Reference"; Rec."Drawee Reference")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Drawee Reference field.';
                 }
-                field("Posting Group"; "Posting Group")
+                field("Posting Group"; Rec."Posting Group")
                 {
                     Visible = false;
+                    ToolTip = 'Specifies the value of the Posting Group field.';
                 }
-                field("Due Date"; "Due Date")
+                field("Due Date"; Rec."Due Date")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Due Date field.';
                 }
-                field("Debit Amount"; "Debit Amount")
+                field("Debit Amount"; Rec."Debit Amount")
                 {
                     ApplicationArea = All;
                     Visible = "Debit AmountVisible";
+                    ToolTip = 'Specifies the value of the Debit Amount field.';
                     trigger OnValidate()
                     begin
                         CurrPage.Update();
                     end;
                 }
-                field("Credit Amount"; "Credit Amount")
+                field("Credit Amount"; Rec."Credit Amount")
                 {
                     ApplicationArea = All;
                     Visible = "Credit AmountVisible";
+                    ToolTip = 'Specifies the value of the Credit Amount field.';
                     trigger OnValidate()
                     begin
                         CurrPage.Update();
                     end;
                 }
-                field(Amount; Amount)
+                field(Amount; Rec.Amount)
                 {
                     ApplicationArea = All;
                     Visible = AmountVisible;
+                    ToolTip = 'Specifies the value of the Amount field.';
                     trigger OnValidate()
                     begin
                         CurrPage.Update();
                     end;
                 }
-                field("Bank Account"; "Bank Account")
+                field("Bank Account"; Rec."Bank Account")
                 {
                     ApplicationArea = All;
                     Visible = "Bank AccountVisible";
+                    ToolTip = 'Specifies the value of the Bank Account field.';
                 }
-                field("Bank Account Name"; "Bank Account Name")
+                field("Bank Account Name"; Rec."Bank Account Name")
                 {
                     ApplicationArea = All;
                     Visible = "Bank Account NameVisible";
+                    ToolTip = 'Specifies the value of the Bank Account Name field.';
                 }
-                field("Bank Account No."; "Bank Account No.")
+                field("Bank Account No."; Rec."Bank Account No.")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Bank Account No. field.';
                 }
-                field("Nume Emitent (Girat)"; "Nume Emitent (Girat)")
+                field("Nume Emitent (Girat)"; Rec."Nume Emitent (Girat)")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Nume Emitent (Girat) field.';
                 }
-                field("Banca Emitent (Girat)"; "Banca Emitent (Girat)")
+                field("Banca Emitent (Girat)"; Rec."Banca Emitent (Girat)")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Banca Emitent (Girat) field.';
                 }
-                field("IBAN Emitent (Girat)"; "IBAN Emitent (Girat)")
+                field("IBAN Emitent (Girat)"; Rec."IBAN Emitent (Girat)")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the IBAN Emitent (Girat) field.';
                 }
-                field("Applies-to Doc. Type"; "Applies-to Doc. Type")
+                field("Applies-to Doc. Type"; Rec."Applies-to Doc. Type")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Applies-to Doc. Type field.';
                 }
-                field("Applies-to Doc. No."; "Applies-to Doc. No.")
+                field("Applies-to Doc. No."; Rec."Applies-to Doc. No.")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Applies-to Doc. No. field.';
                 }
-                field("Salesperson/Purchaser Code"; "Salesperson/Purchaser Code")
+                field("Salesperson/Purchaser Code"; Rec."Salesperson/Purchaser Code")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Salesperson/Purchaser Code field.';
                 }
             }
         }
@@ -129,13 +149,12 @@ page 70513 "SSA Payment Lines"
                     Caption = 'Dimensions';
                     Image = Dimensions;
                     ShortCutKey = 'Shift+Ctrl+D';
-
+                    ToolTip = 'Executes the Dimensions action.';
                     trigger OnAction()
                     begin
                         //This functionality was copied from page #45007679. Unsupported part was commented. Please check it.
                         /*CurrPage.Lines.FORM.*/
                         _ShowDimensions;
-
                     end;
                 }
                 action(ModifyAction)
@@ -143,26 +162,24 @@ page 70513 "SSA Payment Lines"
                     ApplicationArea = All;
                     Caption = 'Modify';
                     Image = EditFilter;
-
+                    ToolTip = 'Executes the Modify action.';
                     trigger OnAction()
                     begin
                         //This functionality was copied from page #45007679. Unsupported part was commented. Please check it.
                         /*CurrPage.Lines.FORM.*/
                         _Modify;
-
                     end;
                 }
                 action(Remove)
                 {
                     ApplicationArea = All;
                     Caption = 'Remove';
-
+                    ToolTip = 'Executes the Remove action.';
                     trigger OnAction()
                     begin
                         //This functionality was copied from page #45007679. Unsupported part was commented. Please check it.
                         /*CurrPage.Lines.FORM.*/
-                        Delete;
-
+                        Rec.Delete;
                     end;
                 }
                 group("A&ccount")
@@ -174,13 +191,12 @@ page 70513 "SSA Payment Lines"
                         Caption = 'Card';
                         Image = EditLines;
                         ShortCutKey = 'Shift+F7';
-
+                        ToolTip = 'Executes the Card action.';
                         trigger OnAction()
                         begin
                             //This functionality was copied from page #45007679. Unsupported part was commented. Please check it.
                             /*CurrPage.Lines.FORM.*/
                             ShowAccount;
-
                         end;
                     }
                     action("Ledger E&ntries")
@@ -188,13 +204,12 @@ page 70513 "SSA Payment Lines"
                         ApplicationArea = All;
                         Caption = 'Ledger E&ntries';
                         ShortCutKey = 'Ctrl+F7';
-
+                        ToolTip = 'Executes the Ledger E&ntries action.';
                         trigger OnAction()
                         begin
                             //This functionality was copied from page #45007679. Unsupported part was commented. Please check it.
                             /*CurrPage.Lines.FORM.*/
                             ShowEntries;
-
                         end;
                     }
                 }
@@ -226,7 +241,7 @@ page 70513 "SSA Payment Lines"
 
     trigger OnNewRecord(BelowxRec: Boolean)
     begin
-        SetUpNewLine(xRec, BelowxRec);
+        Rec.SetUpNewLine(xRec, BelowxRec);
         OnAfterGetCurrRecordTrigger();
     end;
 
@@ -241,29 +256,29 @@ page 70513 "SSA Payment Lines"
         Status: Record "SSA Payment Status";
         Text001: Label 'There is no line to modify';
         Text002: Label 'A posted line cannot be modified.';
-        [InDataSet]
+
         "Bank Branch No.Visible": Boolean;
-        [InDataSet]
+
         "Agency CodeVisible": Boolean;
-        [InDataSet]
+
         "Bank Account No.Visible": Boolean;
-        [InDataSet]
+
         "Bank Account NameVisible": Boolean;
-        [InDataSet]
+
         "RIB KeyVisible": Boolean;
-        [InDataSet]
+
         "RIB CheckedVisible": Boolean;
-        [InDataSet]
+
         "Acceptation CodeVisible": Boolean;
-        [InDataSet]
+
         AmountVisible: Boolean;
-        [InDataSet]
+
         "Debit AmountVisible": Boolean;
-        [InDataSet]
+
         "Credit AmountVisible": Boolean;
-        [InDataSet]
+
         "Bank AccountVisible": Boolean;
-        [InDataSet]
+
         "Account No.Emphasize": Boolean;
 
     procedure _ShowDimensions()
@@ -273,8 +288,8 @@ page 70513 "SSA Payment Lines"
 
     procedure DisableFields()
     begin
-        if Header.Get("No.") then begin
-            if (Header."Status No." = 0) and ("Copied To No." = '') then begin
+        if Header.Get(Rec."No.") then begin
+            if (Header."Status No." = 0) and (Rec."Copied To No." = '') then begin
                 CurrPage.Editable(true);
             end else begin
                 CurrPage.Editable(false);
@@ -287,13 +302,13 @@ page 70513 "SSA Payment Lines"
         PaymentLine: Record "SSA Payment Line";
         PaymentModification: Page "SSA Payment Line Modification";
     begin
-        if "Line No." = 0 then
+        if Rec."Line No." = 0 then
             Message(Text001)
         else
-            if not Posted then begin
+            if not Rec.Posted then begin
                 PaymentLine.Copy(Rec);
-                PaymentLine.SetRange("No.", "No.");
-                PaymentLine.SetRange("Line No.", "Line No.");
+                PaymentLine.SetRange("No.", Rec."No.");
+                PaymentLine.SetRange("Line No.", Rec."Line No.");
                 PaymentModification.SetTableView(PaymentLine);
                 PaymentModification.RunModal;
             end else
@@ -306,7 +321,7 @@ page 70513 "SSA Payment Lines"
         PostingStatement: Codeunit "SSA Payment Management";
         No: Code[20];
     begin
-        if Confirm(Text000, false, FieldCaption("No.")) then begin
+        if Confirm(Text000, false, Rec.FieldCaption("No.")) then begin
             CurrPage.SetSelectionFilter(StatementLine);
             StatementLine.MarkedOnly(true);
             if not StatementLine.Find('-') then StatementLine.MarkedOnly(false);
@@ -325,8 +340,8 @@ page 70513 "SSA Payment Lines"
     var
         GenJnlLine: Record "Gen. Journal Line";
     begin
-        GenJnlLine."Account Type" := "Account Type";
-        GenJnlLine."Account No." := "Account No.";
+        GenJnlLine."Account Type" := Rec."Account Type";
+        GenJnlLine."Account No." := Rec."Account No.";
         CODEUNIT.Run(CODEUNIT::"Gen. Jnl.-Show Card", GenJnlLine);
     end;
 
@@ -334,11 +349,10 @@ page 70513 "SSA Payment Lines"
     var
         GenJnlLine: Record "Gen. Journal Line";
     begin
-        GenJnlLine."Account Type" := "Account Type";
-        GenJnlLine."Account No." := "Account No.";
+        GenJnlLine."Account Type" := Rec."Account Type";
+        GenJnlLine."Account No." := Rec."Account No.";
         CODEUNIT.Run(CODEUNIT::"Gen. Jnl.-Show Entries", GenJnlLine);
     end;
-
 
     procedure VisibleEditable()
     begin
@@ -354,7 +368,7 @@ page 70513 "SSA Payment Lines"
 
     local procedure OnActivateForm()
     begin
-        if Header.Get("No.") then begin
+        if Header.Get(Rec."No.") then begin
             Status.Get(Header."Payment Class", Header."Status No.");
             if Status.RIB then begin
                 "Bank Branch No.Visible" := true;
@@ -386,8 +400,7 @@ page 70513 "SSA Payment Lines"
 
     local procedure AccountNoOnFormat()
     begin
-        if "Copied To No." <> '' then
+        if Rec."Copied To No." <> '' then
             "Account No.Emphasize" := true;
     end;
 }
-

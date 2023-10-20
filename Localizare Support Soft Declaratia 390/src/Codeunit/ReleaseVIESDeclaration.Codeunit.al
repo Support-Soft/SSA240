@@ -8,19 +8,19 @@ codeunit 71500 "SSA Release VIES Declaration"
     var
         VIESLine: Record "SSA VIES Line";
     begin
-        if Status = Status::Released then
+        if Rec.Status = Rec.Status::Released then
             exit;
 
         SSASetup.Get;
 
-        TestField("VAT Registration No.");
-        TestField("Document Date");
-        if "Declaration Type" <> "Declaration Type"::Normal then
-            TestField("Corrected Declaration No.");
+        Rec.TestField("VAT Registration No.");
+        Rec.TestField("Document Date");
+        if Rec."Declaration Type" <> Rec."Declaration Type"::Normal then
+            Rec.TestField("Corrected Declaration No.");
 
-        VIESLine.SetRange("VIES Declaration No.", "No.");
+        VIESLine.SetRange("VIES Declaration No.", Rec."No.");
         if VIESLine.IsEmpty then
-            Error(Text001, "No.");
+            Error(Text001, Rec."No.");
         VIESLine.FindSet;
         repeat
             VIESLine.TestField("Country/Region Code");
@@ -28,9 +28,9 @@ codeunit 71500 "SSA Release VIES Declaration"
             VIESLine.TestField("Amount (LCY)");
         until VIESLine.Next = 0;
 
-        Status := Status::Released;
+        Rec.Status := Rec.Status::Released;
 
-        Modify(true);
+        Rec.Modify(true);
     end;
 
     var
@@ -39,12 +39,10 @@ codeunit 71500 "SSA Release VIES Declaration"
 
     procedure Reopen(var VIESHeader: Record "SSA VIES Header")
     begin
-        with VIESHeader do begin
-            if Status = Status::Open then
-                exit;
-            Status := Status::Open;
-            Modify(true);
-        end;
+        if VIESHeader.Status = VIESHeader.Status::Open then
+            exit;
+        VIESHeader.Status := VIESHeader.Status::Open;
+        VIESHeader.Modify(true);
     end;
 }
 

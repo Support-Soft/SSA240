@@ -17,140 +17,164 @@ page 71101 "SSA Non-Inv Sales Shipment"
             {
                 ApplicationArea = All;
                 Caption = 'Invoice Posting Date';
+                ToolTip = 'Specifies the value of the Invoice Posting Date field.';
             }
             repeater(Control1390052)
             {
                 ShowCaption = false;
-                field("Posting Date"; "Posting Date")
+                field("Posting Date"; Rec."Posting Date")
                 {
                     ApplicationArea = All;
                     Editable = false;
+                    ToolTip = 'Specifies the value of the Posting Date field.';
                 }
-                field("No."; "No.")
+                field("No."; Rec."No.")
                 {
                     ApplicationArea = All;
                     Editable = false;
+                    ToolTip = 'Specifies the value of the No. field.';
                 }
-                field("Order No."; "Order No.")
+                field("Order No."; Rec."Order No.")
                 {
                     ApplicationArea = All;
                     Editable = false;
+                    ToolTip = 'Specifies the value of the Order No. field.';
                 }
-                field("Sell-to Customer No."; "Sell-to Customer No.")
+                field("Sell-to Customer No."; Rec."Sell-to Customer No.")
                 {
                     ApplicationArea = All;
                     Editable = false;
+                    ToolTip = 'Specifies the value of the Sell-to Customer No. field.';
                 }
-                field("Sell-to Customer Name"; "Sell-to Customer Name")
+                field("Sell-to Customer Name"; Rec."Sell-to Customer Name")
                 {
                     ApplicationArea = All;
                     Editable = false;
+                    ToolTip = 'Specifies the value of the Sell-to Customer Name field.';
                 }
-                field("Sell-to Post Code"; "Sell-to Post Code")
+                field("Sell-to Post Code"; Rec."Sell-to Post Code")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     Visible = false;
+                    ToolTip = 'Specifies the value of the Sell-to Post Code field.';
                 }
-                field("Sell-to Country/Region Code"; "Sell-to Country/Region Code")
+                field("Sell-to Country/Region Code"; Rec."Sell-to Country/Region Code")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     Visible = false;
+                    ToolTip = 'Specifies the value of the Sell-to Country/Region Code field.';
                 }
-                field("Sell-to Contact"; "Sell-to Contact")
+                field("Sell-to Contact"; Rec."Sell-to Contact")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     Visible = false;
+                    ToolTip = 'Specifies the value of the Sell-to Contact field.';
                 }
-                field("Bill-to Customer No."; "Bill-to Customer No.")
+                field("Bill-to Customer No."; Rec."Bill-to Customer No.")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     Visible = false;
+                    ToolTip = 'Specifies the value of the Bill-to Customer No. field.';
                 }
-                field("Bill-to Name"; "Bill-to Name")
+                field("Bill-to Name"; Rec."Bill-to Name")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     Visible = false;
+                    ToolTip = 'Specifies the value of the Bill-to Name field.';
                 }
-                field("Bill-to Post Code"; "Bill-to Post Code")
+                field("Bill-to Post Code"; Rec."Bill-to Post Code")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     Visible = false;
+                    ToolTip = 'Specifies the value of the Bill-to Post Code field.';
                 }
-                field("Bill-to Country/Region Code"; "Bill-to Country/Region Code")
+                field("Bill-to Country/Region Code"; Rec."Bill-to Country/Region Code")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     Visible = false;
+                    ToolTip = 'Specifies the value of the Bill-to Country/Region Code field.';
                 }
-                field("Bill-to Contact"; "Bill-to Contact")
+                field("Bill-to Contact"; Rec."Bill-to Contact")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     Visible = false;
+                    ToolTip = 'Specifies the value of the Bill-to Contact field.';
                 }
-                field("Ship-to Code"; "Ship-to Code")
+                field("Ship-to Code"; Rec."Ship-to Code")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     Visible = false;
+                    ToolTip = 'Specifies the value of the Ship-to Code field.';
                 }
-                field("Ship-to Name"; "Ship-to Name")
+                field("Ship-to Name"; Rec."Ship-to Name")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     Visible = false;
+                    ToolTip = 'Specifies the value of the Ship-to Name field.';
                 }
-                field("Ship-to Post Code"; "Ship-to Post Code")
+                field("Ship-to Post Code"; Rec."Ship-to Post Code")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     Visible = false;
+                    ToolTip = 'Specifies the value of the Ship-to Post Code field.';
                 }
-                field("Ship-to Country/Region Code"; "Ship-to Country/Region Code")
+                field("Ship-to Country/Region Code"; Rec."Ship-to Country/Region Code")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     Visible = false;
+                    ToolTip = 'Specifies the value of the Ship-to Country/Region Code field.';
                 }
-                field("Ship-to Contact"; "Ship-to Contact")
+                field("Ship-to Contact"; Rec."Ship-to Contact")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     Visible = false;
+                    ToolTip = 'Specifies the value of the Ship-to Contact field.';
                 }
-                field("Shortcut Dimension 1 Code"; "Shortcut Dimension 1 Code")
+                field("Shortcut Dimension 1 Code"; Rec."Shortcut Dimension 1 Code")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     Visible = false;
+                    ToolTip = 'Specifies the value of the Shortcut Dimension 1 Code field.';
                 }
-                field("Shortcut Dimension 2 Code"; "Shortcut Dimension 2 Code")
+                field("Shortcut Dimension 2 Code"; Rec."Shortcut Dimension 2 Code")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     Visible = false;
+                    ToolTip = 'Specifies the value of the Shortcut Dimension 2 Code field.';
                 }
-                field("Currency Code"; "Currency Code")
+                field("Currency Code"; Rec."Currency Code")
                 {
                     ApplicationArea = All;
                     Editable = false;
                     Visible = false;
+                    ToolTip = 'Specifies the value of the Currency Code field.';
                 }
-                field("Location Code"; "Location Code")
+                field("Location Code"; Rec."Location Code")
                 {
                     ApplicationArea = All;
                     Editable = false;
+                    ToolTip = 'Specifies the value of the Location Code field.';
                 }
-                field("Salesperson Code"; "Salesperson Code")
+                field("Salesperson Code"; Rec."Salesperson Code")
                 {
                     ApplicationArea = All;
                     Editable = false;
+                    ToolTip = 'Specifies the value of the Salesperson Code field.';
                 }
             }
         }
@@ -171,6 +195,7 @@ page 71101 "SSA Non-Inv Sales Shipment"
                     RunObject = Page "Posted Sales Shipment";
                     RunPageLink = "No." = field("No.");
                     ShortCutKey = 'Shift+F7';
+                    ToolTip = 'Executes the Card action.';
                 }
                 action(Statistics)
                 {
@@ -182,6 +207,7 @@ page 71101 "SSA Non-Inv Sales Shipment"
                     RunObject = Page "Sales Shipment Statistics";
                     RunPageLink = "No." = field("No.");
                     ShortCutKey = 'F7';
+                    ToolTip = 'Executes the Statistics action.';
                 }
                 action("Co&mments")
                 {
@@ -191,6 +217,7 @@ page 71101 "SSA Non-Inv Sales Shipment"
                     RunObject = Page "Sales Comment Sheet";
                     RunPageLink = "Document Type" = const(Shipment),
                                   "No." = field("No.");
+                    ToolTip = 'Executes the Co&mments action.';
                 }
             }
             group("P&ost Invoices")
@@ -206,7 +233,7 @@ page 71101 "SSA Non-Inv Sales Shipment"
                     PromotedCategory = Process;
                     PromotedIsBig = true;
                     ShortCutKey = 'F9';
-
+                    ToolTip = 'Executes the P&ost action.';
                     trigger OnAction()
                     begin
                         if InvPostingDate = 0D then
@@ -218,11 +245,11 @@ page 71101 "SSA Non-Inv Sales Shipment"
                         if not NonInvoicedSalesShipment.Find('-') then
                             Error(Text002);
 
-                        if (InvPostingDate > CalcDate(Text001, "Posting Date")) then
-                            if not Confirm(Text003, false, CalcDate(Text001, "Posting Date")) then
+                        if (InvPostingDate > CalcDate(Text001, Rec."Posting Date")) then
+                            if not Confirm(Text003, false, CalcDate(Text001, Rec."Posting Date")) then
                                 exit;
 
-                        SalesShipmentLine.SetRange("Document No.", "No.");
+                        SalesShipmentLine.SetRange("Document No.", Rec."No.");
                         if SalesShipmentLine.Find('-') then
                             repeat
                                 if SalesShipmentLine."Qty. Shipped Not Invoiced" > 0 then begin
@@ -232,15 +259,13 @@ page 71101 "SSA Non-Inv Sales Shipment"
                                 end;
                             until SalesShipmentLine.Next = 0;
 
-                        with SalesHeader do begin
-                            Get(SalesHeader."Document Type"::Order, "Order No.");
-                            Validate("Posting Date", InvPostingDate);
-                            Ship := false;
-                            Invoice := true;
-                            //SalesPost.SetPostingDate(TRUE,FALSE,"Posting Date");
-                            SalesPost.Run(SalesHeader);
-                            Rec.Delete;
-                        end;
+                        SalesHeader.Get(SalesHeader."Document Type"::Order, Rec."Order No.");
+                        SalesHeader.Validate("Posting Date", InvPostingDate);
+                        SalesHeader.Ship := false;
+                        SalesHeader.Invoice := true;
+                        //SalesPost.SetPostingDate(TRUE,FALSE,"Posting Date");
+                        SalesPost.Run(SalesHeader);
+                        Rec.Delete;
                     end;
                 }
                 action("Post and &Print")
@@ -253,7 +278,7 @@ page 71101 "SSA Non-Inv Sales Shipment"
                     PromotedCategory = Process;
                     PromotedIsBig = true;
                     ShortCutKey = 'Shift+F9';
-
+                    ToolTip = 'Executes the Post and &Print action.';
                     trigger OnAction()
                     begin
                         if InvPostingDate = 0D then
@@ -265,11 +290,11 @@ page 71101 "SSA Non-Inv Sales Shipment"
                         if not NonInvoicedSalesShipment.Find('-') then
                             Error(Text002);
 
-                        if (InvPostingDate > CalcDate(Text001, "Posting Date")) then
-                            if not Confirm(Text003, false, CalcDate(Text001, "Posting Date")) then
+                        if (InvPostingDate > CalcDate(Text001, Rec."Posting Date")) then
+                            if not Confirm(Text003, false, CalcDate(Text001, Rec."Posting Date")) then
                                 exit;
 
-                        SalesShipmentLine.SetRange("Document No.", "No.");
+                        SalesShipmentLine.SetRange("Document No.", Rec."No.");
                         if SalesShipmentLine.Find('-') then
                             repeat
                                 if SalesShipmentLine."Qty. Shipped Not Invoiced" > 0 then begin
@@ -279,20 +304,18 @@ page 71101 "SSA Non-Inv Sales Shipment"
                                 end;
                             until SalesShipmentLine.Next = 0;
 
-                        with SalesHeader do begin
-                            Get(SalesHeader."Document Type"::Order, "Order No.");
-                            Ship := false;
-                            Invoice := true;
-                            Validate("Posting Date", InvPostingDate);
-                            //SalesPost.SetPostingDate(TRUE,FALSE,"Posting Date");
-                            SalesPost.Run(SalesHeader);
-                            Rec.Delete;
-                            if "Last Posting No." = '' then
-                                SalesInvoiceHeader."No." := "No."
-                            else
-                                SalesInvoiceHeader."No." := "Last Posting No.";
-                            SalesInvoiceHeader.SetRecFilter;
-                        end;
+                        SalesHeader.Get(SalesHeader."Document Type"::Order, Rec."Order No.");
+                        SalesHeader.Ship := false;
+                        SalesHeader.Invoice := true;
+                        SalesHeader.Validate("Posting Date", InvPostingDate);
+                        //SalesPost.SetPostingDate(TRUE,FALSE,"Posting Date");
+                        SalesPost.Run(SalesHeader);
+                        Rec.Delete;
+                        if SalesHeader."Last Posting No." = '' then
+                            SalesInvoiceHeader."No." := SalesHeader."No."
+                        else
+                            SalesInvoiceHeader."No." := SalesHeader."Last Posting No.";
+                        SalesInvoiceHeader.SetRecFilter;
 
                         ReportSelection.Reset;
                         ReportSelection.SetRange(Usage, ReportSelection.Usage::"S.Invoice");
@@ -309,7 +332,7 @@ page 71101 "SSA Non-Inv Sales Shipment"
                     Caption = 'Post &Batch';
                     Ellipsis = true;
                     Image = PostBatch;
-
+                    ToolTip = 'Executes the Post &Batch action.';
                     trigger OnAction()
                     begin
                         Clear(PostNonInvSalesShpt);
@@ -330,17 +353,17 @@ page 71101 "SSA Non-Inv Sales Shipment"
                     ApplicationArea = All;
                     Caption = 'Suggest Lines...';
                     Image = MoveNegativeLines;
-
+                    ToolTip = 'Executes the Suggest Lines... action.';
                     trigger OnAction()
                     begin
                         Clear(SuggestSalesShpt);
                         SuggestSalesShpt.RunModal;
 
-                        if Find('-') then
-                            if WorkDate < CalcDate(Text001, "Posting Date") then
+                        if Rec.Find('-') then
+                            if WorkDate < CalcDate(Text001, Rec."Posting Date") then
                                 InvPostingDate := WorkDate
                             else
-                                InvPostingDate := CalcDate(Text001, "Posting Date");
+                                InvPostingDate := CalcDate(Text001, Rec."Posting Date");
                     end;
                 }
             }
@@ -349,8 +372,8 @@ page 71101 "SSA Non-Inv Sales Shipment"
 
     trigger OnOpenPage()
     begin
-        if Find('-') then
-            InvPostingDate := CalcDate(Text001, "Posting Date");
+        if Rec.Find('-') then
+            InvPostingDate := CalcDate(Text001, Rec."Posting Date");
     end;
 
     var

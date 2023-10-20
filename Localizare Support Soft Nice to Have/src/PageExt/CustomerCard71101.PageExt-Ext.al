@@ -14,6 +14,7 @@ pageextension 71101 "SSA Customer Card 71101" extends "Customer Card"
                 PromotedCategory = Process;
                 PromotedIsBig = true;
                 Ellipsis = false;
+                ToolTip = 'Executes the Verificare CUI action.';
                 trigger OnAction()
                 var
                     VerificareTVA: Codeunit "SSA VerificareTVA.ro";
@@ -30,11 +31,12 @@ pageextension 71101 "SSA Customer Card 71101" extends "Customer Card"
                 PromotedCategory = Process;
                 PromotedIsBig = true;
                 Ellipsis = false;
+                ToolTip = 'Executes the Verificare ANAF action.';
                 trigger OnAction()
                 var
                     InterogareTVAAnaf: Codeunit "SSA Interogare TVA Anaf";
                 begin
-                    InterogareTVAAnaf.ValidatePartner("No.", "VAT Registration No.", Database::Customer);
+                    InterogareTVAAnaf.ValidatePartner(Rec."No.", Rec."VAT Registration No.", Database::Customer);
                 end;
             }
         }
@@ -48,7 +50,7 @@ pageextension 71101 "SSA Customer Card 71101" extends "Customer Card"
 
     var
         SSASetup: Record "SSA Localization Setup";
-        [InDataSet]
+
         ANAFVATVisible: Boolean;
 }
 

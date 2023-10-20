@@ -5,11 +5,11 @@ pageextension 70014 "SSA Payment Journal70014" extends "Payment Journal"
     {
         addafter(ShortcutDimCode8)
         {
-            field("SSA Custom Invoice No."; "SSA Custom Invoice No.")
+            field("SSA Custom Invoice No."; Rec."SSA Custom Invoice No.")
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Custom Invoice No. field.';
             }
         }
     }
 }
-

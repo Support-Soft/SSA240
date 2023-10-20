@@ -7,16 +7,15 @@ tableextension 70041 "SSA Transfer Header70041" extends "Transfer Header"
         field(70000; "SSA Correction"; Boolean)
         {
             Caption = 'Correction';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA935';
         }
         field(70001; "SSA Gen. Bus. Posting Group"; Code[20])
         {
             Caption = 'Gen. Bus. Posting Group';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA938';
             TableRelation = "Gen. Business Posting Group";
         }
     }
 }
-

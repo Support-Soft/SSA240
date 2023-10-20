@@ -238,7 +238,6 @@ codeunit 70500 "SSA Payment Management"
             InvPostingBuffer[1]."GL Entry No." := GLEntryNoTmp;
             InvPostingBuffer[1].INSERT;
         end;
-
     end;
 
     procedure CopyLigBor(var FromPaymentLine: Record "SSA Payment Line"; "New Step": Integer; var PayNum: Code[20])
@@ -257,19 +256,18 @@ codeunit 70500 "SSA Payment Management"
         if FromPaymentLine.FIND('-') then begin
             Step.GET(FromPaymentLine."Payment Class", "New Step");
             Process.GET(FromPaymentLine."Payment Class");
-            if PayNum = '' then
-                with ToBord do begin
-                    i := 10000;
-                    NoSeriesMgt.InitSeries(Step."Header Nos. Series", "No. Series", 0D, "No.", "No. Series");
-                    "Payment Class" := FromPaymentLine."Payment Class";
-                    VALIDATE("Status No.", Step."Next Status");
-                    PaymentStatus.GET("Payment Class", "Status No.");
-                    "Archiving authorized" := PaymentStatus."Archiving authorized";
-                    "Currency Code" := FromPaymentLine."Currency Code";
-                    "Currency Factor" := FromPaymentLine."Currency Factor";
-                    InitHeader;
-                    INSERT;
-                end else begin
+            if PayNum = '' then begin
+                i := 10000;
+                NoSeriesMgt.InitSeries(Step."Header Nos. Series", ToBord."No. Series", 0D, ToBord."No.", ToBord."No. Series");
+                ToBord."Payment Class" := FromPaymentLine."Payment Class";
+                ToBord.VALIDATE("Status No.", Step."Next Status");
+                PaymentStatus.GET(ToBord."Payment Class", ToBord."Status No.");
+                ToBord."Archiving authorized" := PaymentStatus."Archiving authorized";
+                ToBord."Currency Code" := FromPaymentLine."Currency Code";
+                ToBord."Currency Factor" := FromPaymentLine."Currency Factor";
+                ToBord.InitHeader;
+                ToBord.INSERT;
+            end else begin
                 ToBord.GET(PayNum);
                 ToPaymentLine.SETRANGE("No.", PayNum);
                 if ToPaymentLine.FIND('+') then
@@ -299,7 +297,6 @@ codeunit 70500 "SSA Payment Management"
             until FromPaymentLine.NEXT = 0;
             PayNum := ToBord."No.";
         end;
-
     end;
 
     procedure DeleteLigBorCopy(var FromPaymentLine: Record "SSA Payment Line")
@@ -429,7 +426,6 @@ codeunit 70500 "SSA Payment Management"
             until StepLedger.NEXT = 0;
             NoSeriesMgt.SaveNoSeries;
         end;
-
     end;
 
     procedure SetPostingGroup()
@@ -618,76 +614,75 @@ codeunit 70500 "SSA Payment Management"
         Text100: Label 'Rounding on ';
     begin
         if InvPostingBuffer[1].FIND('+') then
-            with PaymentHeader do
-                repeat
-                    GenJnlLine.INIT;
-                    GenJnlLine."Posting Date" := "Posting Date";
-                    GenJnlLine."Document Date" := "Document Date";
-                    GenJnlLine.Description := InvPostingBuffer[1].Description;
-                    GenJnlLine."Reason Code" := Step."Reason Code";
-                    GenJnlLine."Document Type" := InvPostingBuffer[1]."Document Type";
-                    GenJnlLine."Document No." := InvPostingBuffer[1]."Document No.";
-                    GenJnlLine."Account Type" := InvPostingBuffer[1]."Account Type";
-                    GenJnlLine."Account No." := InvPostingBuffer[1]."Account No.";
-                    GenJnlLine."System-Created Entry" := InvPostingBuffer[1]."System-Created Entry";
-                    GenJnlLine."Currency Code" := InvPostingBuffer[1]."Currency Code";
-                    GenJnlLine."Currency Factor" := InvPostingBuffer[1]."Currency Factor";
-                    GenJnlLine.VALIDATE(Amount, InvPostingBuffer[1].Amount);
-                    GenJnlLine.Correction := InvPostingBuffer[1].Correction;
-                    if PaymentHeader."Source Code" <> '' then begin
-                        TestSourceCode(PaymentHeader."Source Code");
-                        GenJnlLine."Source Code" := PaymentHeader."Source Code";
-                    end else begin
-                        Step.TESTFIELD("Source Code");
-                        TestSourceCode(Step."Source Code");
-                        GenJnlLine."Source Code" := Step."Source Code";
-                    end;
-                    GenJnlLine."Applies-to Doc. Type" := InvPostingBuffer[1]."Applies-to Doc. Type";
-                    GenJnlLine."Applies-to Doc. No." := InvPostingBuffer[1]."Applies-to Doc. No.";
-                    if GenJnlLine."Applies-to Doc. No." = '' then
-                        GenJnlLine."Applies-to ID" := InvPostingBuffer[1]."Applies-to ID";
-                    GenJnlLine."Posting Group" := InvPostingBuffer[1]."Posting group";
-                    GenJnlLine."Source Type" := InvPostingBuffer[1]."Source Type";
-                    GenJnlLine."Source No." := InvPostingBuffer[1]."Source No.";
-                    GenJnlLine."External Document No." := InvPostingBuffer[1]."External Document No.";
-                    GenJnlLine."Due Date" := InvPostingBuffer[1]."Due Date";
-                    GenJnlLine."Shortcut Dimension 1 Code" := InvPostingBuffer[1]."Global Dimension 1 Code";
-                    GenJnlLine."Shortcut Dimension 2 Code" := InvPostingBuffer[1]."Global Dimension 2 Code";
-                    /*TempJnlLineDim.DELETEALL;
-                    TempDocDim.RESET;
-                    TempDocDim.SETRANGE("Document Type",TempDocDim."Document Type"::" ");
-                    TempDocDim.SETRANGE("Document No.",InvPostingBuffer[1]."Header Document No.");
-                    TempDocDim.SETRANGE("Line No.",InvPostingBuffer[1]."Line No.");
-                    IF InvPostingBuffer[1]."Line No." = 0 THEN
-                      TempDocDim.SETRANGE("Table ID",DATABASE::"SSA Payment Header")
-                    ELSE
-                      TempDocDim.SETRANGE("Table ID",DATABASE::"Payment Line");
-                    DimMgt.CopyDocDimToJnlLineDim(TempDocDim,TempJnlLineDim);*/
+            repeat
+                GenJnlLine.INIT;
+                GenJnlLine."Posting Date" := PaymentHeader."Posting Date";
+                GenJnlLine."Document Date" := PaymentHeader."Document Date";
+                GenJnlLine.Description := InvPostingBuffer[1].Description;
+                GenJnlLine."Reason Code" := Step."Reason Code";
+                GenJnlLine."Document Type" := InvPostingBuffer[1]."Document Type";
+                GenJnlLine."Document No." := InvPostingBuffer[1]."Document No.";
+                GenJnlLine."Account Type" := InvPostingBuffer[1]."Account Type";
+                GenJnlLine."Account No." := InvPostingBuffer[1]."Account No.";
+                GenJnlLine."System-Created Entry" := InvPostingBuffer[1]."System-Created Entry";
+                GenJnlLine."Currency Code" := InvPostingBuffer[1]."Currency Code";
+                GenJnlLine."Currency Factor" := InvPostingBuffer[1]."Currency Factor";
+                GenJnlLine.VALIDATE(Amount, InvPostingBuffer[1].Amount);
+                GenJnlLine.Correction := InvPostingBuffer[1].Correction;
+                if PaymentHeader."Source Code" <> '' then begin
+                    TestSourceCode(PaymentHeader."Source Code");
+                    GenJnlLine."Source Code" := PaymentHeader."Source Code";
+                end else begin
+                    Step.TESTFIELD("Source Code");
+                    TestSourceCode(Step."Source Code");
+                    GenJnlLine."Source Code" := Step."Source Code";
+                end;
+                GenJnlLine."Applies-to Doc. Type" := InvPostingBuffer[1]."Applies-to Doc. Type";
+                GenJnlLine."Applies-to Doc. No." := InvPostingBuffer[1]."Applies-to Doc. No.";
+                if GenJnlLine."Applies-to Doc. No." = '' then
+                    GenJnlLine."Applies-to ID" := InvPostingBuffer[1]."Applies-to ID";
+                GenJnlLine."Posting Group" := InvPostingBuffer[1]."Posting group";
+                GenJnlLine."Source Type" := InvPostingBuffer[1]."Source Type";
+                GenJnlLine."Source No." := InvPostingBuffer[1]."Source No.";
+                GenJnlLine."External Document No." := InvPostingBuffer[1]."External Document No.";
+                GenJnlLine."Due Date" := InvPostingBuffer[1]."Due Date";
+                GenJnlLine."Shortcut Dimension 1 Code" := InvPostingBuffer[1]."Global Dimension 1 Code";
+                GenJnlLine."Shortcut Dimension 2 Code" := InvPostingBuffer[1]."Global Dimension 2 Code";
+                /*TempJnlLineDim.DELETEALL;
+                TempDocDim.RESET;
+                TempDocDim.SETRANGE("Document Type",TempDocDim."Document Type"::" ");
+                TempDocDim.SETRANGE("Document No.",InvPostingBuffer[1]."Header Document No.");
+                TempDocDim.SETRANGE("Line No.",InvPostingBuffer[1]."Line No.");
+                IF InvPostingBuffer[1]."Line No." = 0 THEN
+                  TempDocDim.SETRANGE("Table ID",DATABASE::"SSA Payment Header")
+                ELSE
+                  TempDocDim.SETRANGE("Table ID",DATABASE::"Payment Line");
+                DimMgt.CopyDocDimToJnlLineDim(TempDocDim,TempJnlLineDim);*/
 
-                    //SSM729>>
-                    GenJnlLine."Salespers./Purch. Code" := InvPostingBuffer[1]."Salesperson/Purchaser Code";
-                    GenJnlLine."Dimension Set ID" := InvPostingBuffer[1]."Dimension Set ID";
-                    //SSM729<<
-                    OnBeforePostGenJnlLine(PaymentHeader, InvPostingBuffer[1], GenJnlLine);
-                    GenJnlPostLine.RunWithCheck(GenJnlLine);
+                //SSM729>>
+                GenJnlLine."Salespers./Purch. Code" := InvPostingBuffer[1]."Salesperson/Purchaser Code";
+                GenJnlLine."Dimension Set ID" := InvPostingBuffer[1]."Dimension Set ID";
+                //SSM729<<
+                OnBeforePostGenJnlLine(PaymentHeader, InvPostingBuffer[1], GenJnlLine);
+                GenJnlPostLine.RunWithCheck(GenJnlLine);
 
-                    PaymentLine.RESET;
-                    PaymentLine.SETRANGE("No.", PaymentHeader."No.");
-                    PaymentLine.SETRANGE("Line No.");
-                    if GenJnlLine.Amount >= 0 then begin
-                        PaymentLine.SETRANGE("Entry No. Debit", InvPostingBuffer[1]."GL Entry No.");
-                        StepLedger.GET(Step."Payment Class", Step.Line, StepLedger.Sign::Debit);
-                        if StepLedger."Memorize Entry" then
-                            PaymentLine.MODIFYALL(PaymentLine."Entry No. Debit Memo", GenJnlLine."SSA Entry No.");
-                        PaymentLine.MODIFYALL("Entry No. Debit", GenJnlLine."SSA Entry No.");
-                    end else begin
-                        PaymentLine.SETRANGE("Entry No. Credit", InvPostingBuffer[1]."GL Entry No.");
-                        StepLedger.GET(Step."Payment Class", Step.Line, StepLedger.Sign::Credit);
-                        if StepLedger."Memorize Entry" then
-                            PaymentLine.MODIFYALL(PaymentLine."Entry No. Credit Memo", GenJnlLine."SSA Entry No.");
-                        PaymentLine.MODIFYALL("Entry No. Credit", GenJnlLine."SSA Entry No.");
-                    end;
-                until InvPostingBuffer[1].NEXT(-1) = 0;
+                PaymentLine.RESET;
+                PaymentLine.SETRANGE("No.", PaymentHeader."No.");
+                PaymentLine.SETRANGE("Line No.");
+                if GenJnlLine.Amount >= 0 then begin
+                    PaymentLine.SETRANGE("Entry No. Debit", InvPostingBuffer[1]."GL Entry No.");
+                    StepLedger.GET(Step."Payment Class", Step.Line, StepLedger.Sign::Debit);
+                    if StepLedger."Memorize Entry" then
+                        PaymentLine.MODIFYALL(PaymentLine."Entry No. Debit Memo", GenJnlLine."SSA Entry No.");
+                    PaymentLine.MODIFYALL("Entry No. Debit", GenJnlLine."SSA Entry No.");
+                end else begin
+                    PaymentLine.SETRANGE("Entry No. Credit", InvPostingBuffer[1]."GL Entry No.");
+                    StepLedger.GET(Step."Payment Class", Step.Line, StepLedger.Sign::Credit);
+                    if StepLedger."Memorize Entry" then
+                        PaymentLine.MODIFYALL(PaymentLine."Entry No. Credit Memo", GenJnlLine."SSA Entry No.");
+                    PaymentLine.MODIFYALL("Entry No. Credit", GenJnlLine."SSA Entry No.");
+                end;
+            until InvPostingBuffer[1].NEXT(-1) = 0;
 
         if HeaderAccountUsedGlobally then begin
             PaymentHeader.CALCFIELDS(Amount, "Amount (LCY)");
@@ -724,7 +719,6 @@ codeunit 70500 "SSA Payment Management"
         end;
 
         InvPostingBuffer[1].DELETEALL;
-
     end;
 
     local procedure GetIntegerPos(No: Code[20]; var StartPos: Integer; var EndPos: Integer)
@@ -832,7 +826,6 @@ codeunit 70500 "SSA Payment Management"
                     ERROR(Text004);
             end;
         exit(PayNum);
-
     end;
 
     procedure LinesInsert(HeaderNumber: Code[20])
@@ -864,7 +857,6 @@ codeunit 70500 "SSA Payment Management"
             InserForm.RUNMODAL;
             deletion end PS12301*/
         end;
-
     end;
 
     procedure StepSelect(Process: Text[30]; NextStatus: Integer; var Step: Record "SSA Payment Step"; CreateDocumentFilter: Boolean) OK: Boolean
@@ -944,7 +936,6 @@ codeunit 70500 "SSA Payment Management"
             ERROR(
               Text010,
               PaymentHeader."No.",LineNo,DimMgt.GetDimCombErr);*/
-
     end;
 
     local procedure CheckDimValuePosting(LineNo: Integer)
@@ -980,7 +971,6 @@ codeunit 70500 "SSA Payment Management"
               SalesHeader."Document Type",SalesHeader."No.",LineNo,DimMgt.GetDimValuePostingErr);
         END;
         */
-
     end;
 
     local procedure CopyAndCheckDocDimToTempDocDim()
@@ -1021,7 +1011,6 @@ codeunit 70500 "SSA Payment Management"
           CheckDimValuePosting(CurrLineNo);
         END;
         TempDocDim.RESET;*/
-
     end;
 
     procedure MoveOneDocDimToPostedDocDim(FromTableID: Integer; FromDocType: Integer; FromDocNo: Code[20]; FromLineNo: Integer; ToTableID: Integer; ToDocNo: Code[20]; ToLineNo: Integer)
@@ -1044,7 +1033,6 @@ codeunit 70500 "SSA Payment Management"
               ToDocDim.INSERT;
             UNTIL NEXT = 0;
         END;   */
-
     end;
 
     procedure TestSourceCode("Code": Code[10])
@@ -1059,20 +1047,18 @@ codeunit 70500 "SSA Payment Management"
     var
         FormatAddress: Codeunit "Format Address";
     begin
-        with PaymentAddress do
-            FormatAddress.FormatAddr(
-              AddrArray, Name, "Name 2", Contact, Address, "Address 2",
-              City, "Post Code", County, "Country/Region Code");
+        FormatAddress.FormatAddr(
+  AddrArray, PaymentAddress.Name, PaymentAddress."Name 2", PaymentAddress.Contact, PaymentAddress.Address, PaymentAddress."Address 2",
+  PaymentAddress.City, PaymentAddress."Post Code", PaymentAddress.County, PaymentAddress."Country/Region Code");
     end;
 
     procedure PaymentBankAcc(var AddrArray: array[8] of Text[50]; BankAcc: Record "SSA Payment Header")
     var
         FormatAddress: Codeunit "Format Address";
     begin
-        with BankAcc do
-            FormatAddress.FormatAddr(
-              AddrArray, "Bank Name", "Bank Name 2", "Bank Contact", "Bank Address", "Bank Address 2",
-              "Bank City", "Bank Post Code", "Bank County", "Bank Country/Region Code");
+        FormatAddress.FormatAddr(
+  AddrArray, BankAcc."Bank Name", BankAcc."Bank Name 2", BankAcc."Bank Contact", BankAcc."Bank Address", BankAcc."Bank Address 2",
+  BankAcc."Bank City", BankAcc."Bank Post Code", BankAcc."Bank County", BankAcc."Bank Country/Region Code");
     end;
 
     procedure ArchiveDocument(Document: Record "SSA Payment Header")
@@ -1112,7 +1098,6 @@ codeunit 70500 "SSA Payment Management"
             DimensionManagement.DeleteDocDim(DATABASE::"Payment Line", DocType::" ", Document."No.", PaymentLine."Line No.");
             */
             until PaymentLine.NEXT = 0;
-
     end;
 
     procedure CreazaLiniiAplicare(_PaymentHeader: Record "SSA Payment Header"; _Pozitiv: Boolean; _LineNo: Integer)
@@ -1165,8 +1150,6 @@ codeunit 70500 "SSA Payment Management"
         //SSM729<<
     end;
 
-
-
     [IntegrationEvent(true, false)]
     local procedure OnBeforePostGenJnlLine(var _PaymentHeader: Record "SSA Payment Header"; var _InvPostingBuffer: record "SSA Payment Post. Buffer"; var GenJnlLine: Record "Gen. Journal Line")
     begin
@@ -1177,4 +1160,3 @@ codeunit 70500 "SSA Payment Management"
     begin
     end;
 }
-

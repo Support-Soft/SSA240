@@ -2,7 +2,7 @@ table 71502 "SSA VIES Line"
 {
     // SSA974 SSCAT 11.10.2019 40.Rapoarte legale-Declaratia 390
 
-    Caption = 'SSA VIES Line';
+    Caption = 'VIES Line';
 
     fields
     {

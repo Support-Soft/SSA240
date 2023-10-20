@@ -3,8 +3,9 @@ table 70004 "SSA Comment Line"
     // SSA937 SSCAT 16.06.2019 3.Funct. Bonuri de consum-consum intern
 
     Caption = 'Comment Line';
-    DrillDownPageID = "SSA Comment List";
-    LookupPageID = "SSA Comment List";
+    DrillDownPageId = "SSA Comment List";
+    LookupPageId = "SSA Comment List";
+    DataClassification = CustomerContent;
 
     fields
     {
@@ -48,9 +49,6 @@ table 70004 "SSA Comment Line"
         }
     }
 
-    fieldgroups
-    {
-    }
 
     procedure SetUpNewLine()
     var
@@ -59,9 +57,9 @@ table 70004 "SSA Comment Line"
         SSACommentLine.SetRange("Document Type", "Document Type");
         SSACommentLine.SetRange("No.", "No.");
         SSACommentLine.SetRange("Document Line No.", "Document Line No.");
-        SSACommentLine.SetRange(Date, WorkDate);
-        if not SSACommentLine.FindFirst then
-            Date := WorkDate;
+        SSACommentLine.SetRange(Date, WorkDate());
+        if not SSACommentLine.FindFirst() then
+            Date := WorkDate();
     end;
 
     procedure CopyComments(FromDocumentType: Integer; ToDocumentType: Integer; FromNumber: Code[20]; ToNumber: Code[20])
@@ -77,13 +75,13 @@ table 70004 "SSA Comment Line"
 
         SSACommentLine.SetRange("Document Type", FromDocumentType);
         SSACommentLine.SetRange("No.", FromNumber);
-        if SSACommentLine.FindSet then
+        if SSACommentLine.FindSet() then
             repeat
                 SSACommentLine2 := SSACommentLine;
                 SSACommentLine2."Document Type" := ToDocumentType;
                 SSACommentLine2."No." := ToNumber;
-                SSACommentLine2.Insert;
-            until SSACommentLine.Next = 0;
+                SSACommentLine2.Insert();
+            until SSACommentLine.Next() = 0;
     end;
 
     procedure DeleteComments(DocType: Option; DocNo: Code[20])
@@ -91,7 +89,7 @@ table 70004 "SSA Comment Line"
         SetRange("Document Type", DocType);
         SetRange("No.", DocNo);
         if not IsEmpty then
-            DeleteAll;
+            DeleteAll();
     end;
 
     procedure ShowComments(DocType: Option; DocNo: Code[20]; DocLineNo: Integer)
@@ -103,7 +101,7 @@ table 70004 "SSA Comment Line"
         SetRange("Document Line No.", DocLineNo);
         Clear(SSACommentSheet);
         SSACommentSheet.SetTableView(Rec);
-        SSACommentSheet.RunModal;
+        SSACommentSheet.RunModal();
     end;
 
     [IntegrationEvent(false, false)]
@@ -111,4 +109,3 @@ table 70004 "SSA Comment Line"
     begin
     end;
 }
-

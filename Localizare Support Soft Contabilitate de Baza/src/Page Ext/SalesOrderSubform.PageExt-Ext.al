@@ -4,14 +4,12 @@ pageextension 70055 "SSA Sales Order Subform" extends "Sales Order Subform" //46
     {
         addlast(Control1)
         {
-            field("SSA Tax Group Code"; "Tax Group Code")
+            field("SSA Tax Group Code"; Rec."Tax Group Code")
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies the tax group that is used to calculate and post sales tax.';
             }
         }
     }
 
-    actions
-    {
-    }
 }

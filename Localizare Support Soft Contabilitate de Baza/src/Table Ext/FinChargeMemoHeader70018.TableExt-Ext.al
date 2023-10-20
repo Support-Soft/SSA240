@@ -6,9 +6,8 @@ tableextension 70018 "SSA FinChargeMemoHeader70018" extends "Finance Charge Memo
         field(70000; "SSA Commerce Trade No."; Code[20])
         {
             Caption = 'Commerce Trade No.';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA968';
         }
     }
 }
-

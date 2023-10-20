@@ -17,65 +17,80 @@ page 70509 "SSA Payment Status"
             repeater(Control1)
             {
                 ShowCaption = false;
-                field(Name; Name)
+                field(Name; Rec.Name)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Name field.';
                 }
-                field(RIB; RIB)
+                field(RIB; Rec.RIB)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the RIB field.';
                 }
-                field(Look; Look)
+                field(Look; Rec.Look)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Look field.';
                 }
-                field(ReportMenu; ReportMenu)
+                field(ReportMenu; Rec.ReportMenu)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Report field.';
                 }
-                field("Acceptation Code"; "Acceptation Code")
+                field("Acceptation Code"; Rec."Acceptation Code")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Acceptation Code field.';
                 }
-                field(Amount; Amount)
+                field(Amount; Rec.Amount)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Amount field.';
                 }
-                field(Debit; Debit)
+                field(Debit; Rec.Debit)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Debit field.';
                 }
-                field(Credit; Credit)
+                field(Credit; Rec.Credit)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Credit field.';
                 }
-                field("Bank Account"; "Bank Account")
+                field("Bank Account"; Rec."Bank Account")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Bank Account field.';
                 }
-                field("Payment in progress"; "Payment in progress")
+                field("Payment in progress"; Rec."Payment in progress")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Payment in progress field.';
                 }
-                field("Archiving authorized"; "Archiving authorized")
+                field("Archiving authorized"; Rec."Archiving authorized")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Archiving authorized field.';
                 }
-                field("Payment Finished"; "Payment Finished")
+                field("Payment Finished"; Rec."Payment Finished")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Payment Finished field.';
                 }
-                field("Auto Archive"; "Auto Archive")
+                field("Auto Archive"; Rec."Auto Archive")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Auto Archive field.';
                 }
-                field("Canceled/Refused"; "Canceled/Refused")
+                field("Canceled/Refused"; Rec."Canceled/Refused")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Canceled/Refused field.';
                 }
-                field("Allow Edit Payment No."; "Allow Edit Payment No.")
+                field("Allow Edit Payment No."; Rec."Allow Edit Payment No.")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Allow Edit Payment No. field.';
                 }
             }
         }
@@ -85,4 +100,3 @@ page 70509 "SSA Payment Status"
     {
     }
 }
-

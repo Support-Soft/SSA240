@@ -2,7 +2,6 @@ report 70500 "SSA Payment List"
 {
     DefaultLayout = RDLC;
     RDLCLayout = './src/rdlc/Payment List.rdlc';
-
     Caption = 'Payments lists';
 
     dataset
@@ -96,7 +95,6 @@ report 70500 "SSA Payment List"
 
     requestpage
     {
-
         layout
         {
         }
@@ -133,4 +131,3 @@ report 70500 "SSA Payment List"
         pagCaption: Label 'Page';
         DueDate: Text;
 }
-

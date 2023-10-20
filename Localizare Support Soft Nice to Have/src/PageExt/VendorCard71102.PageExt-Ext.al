@@ -14,6 +14,7 @@ pageextension 71102 "SSA Vendor Card 71102" extends "Vendor Card"
                 PromotedCategory = Process;
                 PromotedIsBig = true;
                 Ellipsis = false;
+                ToolTip = 'Executes the Verificare CUI action.';
                 trigger OnAction()
                 var
                     VerificareTVA: Codeunit "SSA VerificareTVA.ro";
@@ -30,11 +31,12 @@ pageextension 71102 "SSA Vendor Card 71102" extends "Vendor Card"
                 PromotedCategory = Process;
                 PromotedIsBig = true;
                 Ellipsis = false;
+                ToolTip = 'Executes the Verificare ANAF action.';
                 trigger OnAction()
                 var
                     InterogareTVAAnaf: Codeunit "SSA Interogare TVA Anaf";
                 begin
-                    InterogareTVAAnaf.ValidatePartner("No.", "VAT Registration No.", Database::Vendor);
+                    InterogareTVAAnaf.ValidatePartner(Rec."No.", Rec."VAT Registration No.", Database::Vendor);
                 end;
             }
         }
@@ -49,7 +51,7 @@ pageextension 71102 "SSA Vendor Card 71102" extends "Vendor Card"
 
     var
         SSASetup: Record "SSA Localization Setup";
-        [InDataSet]
+
         ANAFVATVisible: Boolean;
 }
 

@@ -613,7 +613,6 @@ table 70507 "SSA Payment Line"
         }
         field(45007662; "IBAN Emitent (Girat)"; Text[30])
         {
-
             trigger OnValidate()
             begin
                 CompanyInfo.CheckIBAN("IBAN Emitent (Girat)");
@@ -788,7 +787,6 @@ table 70507 "SSA Payment Line"
           DocDimensions.SETTABLEVIEW(DocDim);
           DocDimensions.RUNMODAL;
         END;  */
-
     end;
 
     procedure GetCurrency()
@@ -829,7 +827,6 @@ table 70507 "SSA Payment Line"
         */
         CreateDim(DimMgt.TypeToTableID1("Account Type"), "Account No.", DATABASE::"Salesperson/Purchaser", "Salesperson/Purchaser Code");
         //SSM729<<
-
     end;
 
     procedure DimensionCreate()
@@ -846,7 +843,7 @@ table 70507 "SSA Payment Line"
             INSERT;
           END;
         UNTIL DefaultDimension.NEXT = 0;
-        
+
         HeaderDimension.SETRANGE("Table ID", DATABASE::"SSA Payment Header");
         HeaderDimension.SETRANGE("Document Type", HeaderDimension."Document Type"::" ");
         HeaderDimension.SETRANGE("Document No.", "No.");
@@ -865,7 +862,6 @@ table 70507 "SSA Payment Line"
             END;
           UNTIL HeaderDimension.NEXT = 0;
           */
-
     end;
 
     procedure DimensionDelete()
@@ -875,7 +871,6 @@ table 70507 "SSA Payment Line"
         DocumentDimension.SETRANGE("Document No.", "No.");
         DocumentDimension.SETRANGE("Line No.", "Line No.");
         DocumentDimension.DELETEALL;   */
-
     end;
 
     procedure UpdateDueDate(DocumentDate: Date)
@@ -908,7 +903,6 @@ table 70507 "SSA Payment Line"
             end;
         if PaymentTerms.Code <> '' then
             "Due Date" := CALCDATE(PaymentTerms."Due Date Calculation", DocumentDate);
-
     end;
 
     procedure UpdateEntry()
@@ -1143,7 +1137,6 @@ table 70507 "SSA Payment Line"
             END ELSE*/
             VALIDATE(Amount);
         end;
-
     end;
 
     procedure GetVendLedgerEntry()
@@ -1191,7 +1184,6 @@ table 70507 "SSA Payment Line"
              END ELSE      */
             VALIDATE(Amount);
         end;
-
     end;
 
     procedure GetShowCurrencyCode(CurrencyCode: Code[10]): Code[10]
@@ -1438,4 +1430,3 @@ table 70507 "SSA Payment Line"
         //SSM729<<
     end;
 }
-

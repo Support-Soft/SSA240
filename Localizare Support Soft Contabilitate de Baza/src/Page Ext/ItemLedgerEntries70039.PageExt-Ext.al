@@ -4,16 +4,12 @@ pageextension 70039 "SSA Item Ledger Entries 70039" extends "Item Ledger Entries
     {
         addlast(Control1)
         {
-            field("SSA Document Type"; "SSA Document Type")
+            field("SSA Document Type"; Rec."SSA Document Type")
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the SSA Document Type field.';
             }
         }
-    }
-
-    actions
-    {
-        // Add changes to page actions here
     }
 
 }

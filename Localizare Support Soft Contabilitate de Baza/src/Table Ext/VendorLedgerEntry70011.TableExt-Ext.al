@@ -6,13 +6,13 @@ tableextension 70011 "SSA Vendor Ledger Entry70011" extends "Vendor Ledger Entry
         field(70000; "SSA Custom Invoice No."; Code[20])
         {
             Caption = 'Custom Invoice No.';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA946';
         }
         field(70001; "SSA Stare Factura"; Option)
         {
             Caption = 'Stare Factura';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA1505';
             OptionCaption = ' ,0-Factura Emisa,1-Factura Stornata,2-Factura Anulata,3-Autofactura,4-In calidate de beneficiar in numele furnizorului';
             OptionMembers = " ","0-Factura Emisa","1-Factura Stornata","2-Factura Anulata","3-Autofactura","4-In calidate de beneficiar in numele furnizorului";
@@ -28,4 +28,3 @@ tableextension 70011 "SSA Vendor Ledger Entry70011" extends "Vendor Ledger Entry
         }
     }
 }
-

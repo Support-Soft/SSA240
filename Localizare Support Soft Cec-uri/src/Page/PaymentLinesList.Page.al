@@ -15,94 +15,114 @@ page 70516 "SSA Payment Lines List"
             repeater(Control1)
             {
                 ShowCaption = false;
-                field("No."; "No.")
+                field("No."; Rec."No.")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the No. field.';
                 }
-                field("Line No."; "Line No.")
+                field("Line No."; Rec."Line No.")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Line No. field.';
                 }
-                field("Document ID"; "Document ID")
+                field("Document ID"; Rec."Document ID")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Document ID field.';
                 }
-                field("Currency Code"; "Currency Code")
+                field("Currency Code"; Rec."Currency Code")
                 {
                     ApplicationArea = All;
                     Visible = false;
+                    ToolTip = 'Specifies the value of the Currency Code field.';
                 }
-                field(Amount; Amount)
+                field(Amount; Rec.Amount)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Amount field.';
                 }
-                field("Amount (LCY)"; "Amount (LCY)")
-                {
-                    ApplicationArea = All;
-                    Visible = false;
-                }
-                field("Account Type"; "Account Type")
-                {
-                    ApplicationArea = All;
-                }
-                field("Account No."; "Account No.")
-                {
-                    ApplicationArea = All;
-                }
-                field("Due Date"; "Due Date")
-                {
-                    ApplicationArea = All;
-                }
-                field("Payment Class"; "Payment Class")
-                {
-                    ApplicationArea = All;
-                }
-                field("Status Name"; "Status Name")
-                {
-                    ApplicationArea = All;
-                }
-                field("Status No."; "Status No.")
+                field("Amount (LCY)"; Rec."Amount (LCY)")
                 {
                     ApplicationArea = All;
                     Visible = false;
+                    ToolTip = 'Specifies the value of the Amount (LCY) field.';
                 }
-                field("Acceptation Code"; "Acceptation Code")
+                field("Account Type"; Rec."Account Type")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Account Type field.';
                 }
-                field("Drawee Reference"; "Drawee Reference")
+                field("Account No."; Rec."Account No.")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Account No. field.';
                 }
-                field("Bank Account Name"; "Bank Account Name")
+                field("Due Date"; Rec."Due Date")
                 {
                     ApplicationArea = All;
-                    Visible = false;
+                    ToolTip = 'Specifies the value of the Due Date field.';
                 }
-                field("Bank Branch No."; "Bank Branch No.")
+                field("Payment Class"; Rec."Payment Class")
                 {
                     ApplicationArea = All;
-                    Visible = false;
+                    ToolTip = 'Specifies the value of the Payment Class field.';
                 }
-                field("Agency Code"; "Agency Code")
+                field("Status Name"; Rec."Status Name")
                 {
                     ApplicationArea = All;
-                    Visible = false;
+                    ToolTip = 'Specifies the value of the Status Name field.';
                 }
-                field("Bank Account No."; "Bank Account No.")
-                {
-                    ApplicationArea = All;
-                    Visible = false;
-                }
-                field("RIB Key"; "RIB Key")
-                {
-                    ApplicationArea = All;
-                    Visible = false;
-                }
-                field("Payment in progress"; "Payment in progress")
+                field("Status No."; Rec."Status No.")
                 {
                     ApplicationArea = All;
                     Visible = false;
+                    ToolTip = 'Specifies the value of the Status field.';
+                }
+                field("Acceptation Code"; Rec."Acceptation Code")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Acceptation Code field.';
+                }
+                field("Drawee Reference"; Rec."Drawee Reference")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Drawee Reference field.';
+                }
+                field("Bank Account Name"; Rec."Bank Account Name")
+                {
+                    ApplicationArea = All;
+                    Visible = false;
+                    ToolTip = 'Specifies the value of the Bank Account Name field.';
+                }
+                field("Bank Branch No."; Rec."Bank Branch No.")
+                {
+                    ApplicationArea = All;
+                    Visible = false;
+                    ToolTip = 'Specifies the value of the Bank Branch No. field.';
+                }
+                field("Agency Code"; Rec."Agency Code")
+                {
+                    ApplicationArea = All;
+                    Visible = false;
+                    ToolTip = 'Specifies the value of the Agency Code field.';
+                }
+                field("Bank Account No."; Rec."Bank Account No.")
+                {
+                    ApplicationArea = All;
+                    Visible = false;
+                    ToolTip = 'Specifies the value of the Bank Account No. field.';
+                }
+                field("RIB Key"; Rec."RIB Key")
+                {
+                    ApplicationArea = All;
+                    Visible = false;
+                    ToolTip = 'Specifies the value of the RIB Key field.';
+                }
+                field("Payment in progress"; Rec."Payment in progress")
+                {
+                    ApplicationArea = All;
+                    Visible = false;
+                    ToolTip = 'Specifies the value of the Payment in progress field.';
                 }
             }
         }
@@ -121,14 +141,14 @@ page 70516 "SSA Payment Lines List"
                     Caption = 'Card';
                     Image = EditLines;
                     ShortCutKey = 'Shift+F7';
-
+                    ToolTip = 'Executes the Card action.';
                     trigger OnAction()
                     var
                         Statement: Record "SSA Payment Header";
                         StatementForm: Page "SSA Payment Headers";
                     begin
-                        if Statement.Get("No.") then begin
-                            Statement.SetRange("No.", "No.");
+                        if Statement.Get(Rec."No.") then begin
+                            Statement.SetRange("No.", Rec."No.");
                             StatementForm.SetTableView(Statement);
                             StatementForm.Run;
                         end;
@@ -146,15 +166,15 @@ page 70516 "SSA Payment Lines List"
                     ApplicationArea = All;
                     Caption = 'Modify';
                     Image = EditFilter;
-
+                    ToolTip = 'Executes the Modify action.';
                     trigger OnAction()
                     var
                         PaymentLine: Record "SSA Payment Line";
                         Consult: Page "SSA Payment Line Modification";
                     begin
                         PaymentLine.Copy(Rec);
-                        PaymentLine.SetRange("No.", "No.");
-                        PaymentLine.SetRange("Line No.", "Line No.");
+                        PaymentLine.SetRange("No.", Rec."No.");
+                        PaymentLine.SetRange("Line No.", Rec."Line No.");
                         Consult.SetTableView(PaymentLine);
                         Consult.RunModal;
                     end;
@@ -187,7 +207,6 @@ page 70516 "SSA Payment Lines List"
         /* PS12301 start deletion
         CurrForm.OK.VISIBLE(FALSE);
         PS12301 end deletion */
-
     end;
 
     procedure SetSelection(var PaymentLine: Record "SSA Payment Line")
@@ -195,4 +214,3 @@ page 70516 "SSA Payment Lines List"
         CurrPage.SetSelectionFilter(PaymentLine);
     end;
 }
-

@@ -26,9 +26,9 @@ report 70008 "SSA Generare cor 6D 7C"
                     if (("G/L Account"."Debit/Credit" = "G/L Account"."Debit/Credit"::Debit) and
                        ("G/L Entry"."Credit Amount" <> 0)) or
                        (("G/L Account"."Debit/Credit" = "G/L Account"."Debit/Credit"::Credit) and ("G/L Entry"."Debit Amount" <> 0))
-                    then begin
+                    then
                         if nr <> 0 then begin
-                            for i := 1 to nr do begin
+                            for i := 1 to nr do
                                 if (Cont[i] = "G/L Entry"."G/L Account No.") and
                                    (DimSetID[i] = "G/L Entry"."Dimension Set ID")
                                 then begin
@@ -37,7 +37,6 @@ report 70008 "SSA Generare cor 6D 7C"
                                     credit[i] += "G/L Entry"."Credit Amount";
                                     ok := true;
                                 end;
-                            end;
                             if not ok then begin
                                 nr += 1;
                                 Cont[nr] := "G/L Entry"."G/L Account No.";
@@ -47,7 +46,8 @@ report 70008 "SSA Generare cor 6D 7C"
                                 debit[nr] := "G/L Entry"."Debit Amount";
                                 credit[nr] := "G/L Entry"."Credit Amount";
                             end;
-                        end else begin
+                        end
+                        else begin
                             nr += 1;
                             Cont[nr] := "G/L Entry"."G/L Account No.";
                             GlobalDim[nr] [1] := "G/L Entry"."Global Dimension 1 Code";
@@ -56,7 +56,6 @@ report 70008 "SSA Generare cor 6D 7C"
                             debit[nr] := "G/L Entry"."Debit Amount";
                             credit[nr] := "G/L Entry"."Credit Amount";
                         end;
-                    end;
                 end;
             }
         }
@@ -64,23 +63,24 @@ report 70008 "SSA Generare cor 6D 7C"
 
     requestpage
     {
-
         layout
         {
-            area(content)
+            area(Content)
             {
                 group(Parameter)
                 {
+                    Caption = 'Parameter';
                     field(Template; Template)
                     {
                         TableRelation = "Gen. Journal Template";
                         ApplicationArea = All;
+                        ToolTip = 'Specifies the value of the Template field.';
                     }
                     field(Lot; Batch)
                     {
                         TableRelation = "Gen. Journal Batch".Name;
                         ApplicationArea = All;
-
+                        ToolTip = 'Specifies the value of the Batch field.';
                         trigger OnLookup(var Text: Text): Boolean
                         var
                             GenJnlTemplate: Record "Gen. Journal Template";
@@ -89,22 +89,19 @@ report 70008 "SSA Generare cor 6D 7C"
 
                             GenJnlTemplate.Get(Template);
                             GenJnlBatch.SetRange("Journal Template Name", Template);
-                            if PAGE.RunModal(0, GenJnlBatch) = ACTION::LookupOK then begin
+                            if Page.RunModal(0, GenJnlBatch) = Action::LookupOK then
                                 Batch := GenJnlBatch.Name;
-                            end;
                         end;
                     }
                     field("Data inregistrare"; postingDate)
                     {
                         ApplicationArea = All;
+                        ToolTip = 'Specifies the value of the postingDate field.';
                     }
                 }
             }
         }
 
-        actions
-        {
-        }
     }
 
     labels
@@ -120,12 +117,12 @@ report 70008 "SSA Generare cor 6D 7C"
 
         GenJnlLine.SetRange(GenJnlLine."Journal Template Name", Template);
         GenJnlLine.SetRange(GenJnlLine."Journal Batch Name", Batch);
-        if GenJnlLine.FindLast then
+        if GenJnlLine.FindLast() then
             nextLine := GenJnlLine."Line No.";
         if nr <> 0 then
-            for i := 1 to nr do begin
+            for i := 1 to nr do
                 if not ((debit[i] = 0) and (credit[i] = 0)) then begin
-                    GenJnlLine.Init;
+                    GenJnlLine.Init();
                     GenJnlLine."Journal Template Name" := Template;
                     GenJnlLine."Journal Batch Name" := Batch;
                     nextLine += 10000;
@@ -140,22 +137,21 @@ report 70008 "SSA Generare cor 6D 7C"
                         GenJnlLine.Validate("Debit Amount", -debit[i]);
                     if credit[i] <> 0 then
                         GenJnlLine.Validate("Credit Amount", -credit[i]);
-                    GenJnlLine.Insert;
+                    GenJnlLine.Insert();
 
                     if GlobalDim[i] [1] <> '' then
                         GenJnlLine.Validate("Shortcut Dimension 1 Code", GlobalDim[i] [1]);
                     if GlobalDim[i] [2] <> '' then
                         GenJnlLine.Validate("Shortcut Dimension 2 Code", GlobalDim[i] [2]);
                     GenJnlLine.Validate("Dimension Set ID", DimSetID[i]);
-                    GenJnlLine.Modify;
+                    GenJnlLine.Modify();
                 end;
-            end;
         Message('corectii rulaje generate. Trebuie inregistrate');
     end;
 
     trigger OnPreReport()
     begin
-        GLSetup.Get;
+        GLSetup.Get();
         filtrudata := "G/L Account".GetFilter("Date Filter");
         if filtrudata = '' then
             Error('Nu ati specificat perioada');
@@ -174,4 +170,3 @@ report 70008 "SSA Generare cor 6D 7C"
         DimSetID: array[2000] of Integer;
         GlobalDim: array[2000, 2] of Code[20];
 }
-

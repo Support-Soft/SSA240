@@ -19,5 +19,4 @@ tableextension 70501 "SSA Vendor Bank Account70501" extends "Vendor Bank Account
             Caption = 'From Payment No.';
         }
     }
-
 }

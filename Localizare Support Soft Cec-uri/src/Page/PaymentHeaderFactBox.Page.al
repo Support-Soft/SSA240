@@ -8,43 +8,52 @@ page 70503 "SSA Payment Header FactBox"
     {
         area(content)
         {
-            field("No."; "No.")
+            field("No."; Rec."No.")
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the No. field.';
             }
-            field("Line No."; "Line No.")
+            field("Line No."; Rec."Line No.")
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Line No. field.';
             }
             field(BalanceLCY; BalanceLCY)
             {
                 ApplicationArea = All;
                 Caption = 'Balance (LCY)';
+                ToolTip = 'Specifies the value of the Balance (LCY) field.';
             }
             field(OutstandingInvoice; OutstandingInvoice)
             {
                 ApplicationArea = All;
                 Caption = 'Outstanding invoices';
+                ToolTip = 'Specifies the value of the Outstanding invoices field.';
             }
-            field("Bank Account"; "Bank Account")
+            field("Bank Account"; Rec."Bank Account")
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Bank Account field.';
             }
-            field("Bank Account No."; "Bank Account No.")
+            field("Bank Account No."; Rec."Bank Account No.")
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Bank Account No. field.';
             }
-            field("Applies-to Doc. Type"; "Applies-to Doc. Type")
+            field("Applies-to Doc. Type"; Rec."Applies-to Doc. Type")
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Applies-to Doc. Type field.';
             }
-            field("Applies-to Doc. No."; "Applies-to Doc. No.")
+            field("Applies-to Doc. No."; Rec."Applies-to Doc. No.")
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Applies-to Doc. No. field.';
             }
-            field("External Document No."; "External Document No.")
+            field("External Document No."; Rec."External Document No.")
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the External Document No. field.';
             }
         }
     }
@@ -78,18 +87,18 @@ page 70503 "SSA Payment Header FactBox"
         Customer: Record Customer;
         Vendor: Record Vendor;
     begin
-        case "Account Type" of
-            "Account Type"::Vendor:
+        case Rec."Account Type" of
+            Rec."Account Type"::Vendor:
                 begin
-                    if Vendor.Get("Account No.") then begin
+                    if Vendor.Get(Rec."Account No.") then begin
                         Vendor.CalcFields("Balance (LCY)", "Outstanding Invoices");
                         BalanceLCY := Vendor."Balance (LCY)";
                         OutstandingInvoice := Vendor."Outstanding Invoices";
                     end;
                 end;
-            "Account Type"::Customer:
+            Rec."Account Type"::Customer:
                 begin
-                    if Customer.Get("Account No.") then begin
+                    if Customer.Get(Rec."Account No.") then begin
                         Customer.CalcFields("Balance (LCY)", "Outstanding Invoices");
                         BalanceLCY := Customer."Balance (LCY)";
                         OutstandingInvoice := Customer."Outstanding Invoices";
@@ -104,4 +113,3 @@ page 70503 "SSA Payment Header FactBox"
         CalcBalance;
     end;
 }
-

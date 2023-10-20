@@ -1,18 +1,15 @@
 codeunit 70021 "SSA User Setup Management"
 {
-    trigger OnRun()
-    begin
 
-    end;
 
     procedure GetIntConsumptionFilter(): Code[10]
     begin
         //SSA937>>
         if not HasGotSalesUserSetup then begin
-            CompanyInfo.GET;
+            CompanyInfo.Get();
             UserRespCenter := CompanyInfo."Responsibility Center";
             UserLocation := CompanyInfo."Location Code";
-            if (UserSetup.GET(USERID)) and (USERID <> '') then
+            if (UserSetup.Get(UserId)) and (UserId <> '') then
                 if UserSetup."Sales Resp. Ctr. Filter" <> '' then
                     UserRespCenter := UserSetup."Sales Resp. Ctr. Filter";
             HasGotSalesUserSetup := true;

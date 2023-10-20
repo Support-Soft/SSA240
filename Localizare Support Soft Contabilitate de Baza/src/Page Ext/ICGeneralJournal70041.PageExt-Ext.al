@@ -5,11 +5,11 @@ pageextension 70041 "SSA IC General Journal70041" extends "IC General Journal"
     {
         addafter(ShortcutDimCode8)
         {
-            field("SSA Custom Invoice No."; "SSA Custom Invoice No.")
+            field("SSA Custom Invoice No."; Rec."SSA Custom Invoice No.")
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Custom Invoice No. field.';
             }
         }
     }
 }
-

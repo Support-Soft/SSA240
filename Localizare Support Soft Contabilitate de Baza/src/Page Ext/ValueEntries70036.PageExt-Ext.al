@@ -5,11 +5,11 @@ pageextension 70036 "SSA Value Entries70036" extends "Value Entries"
     {
         addafter("Dimension Set ID")
         {
-            field("SSA Custom Invoice No."; "SSA Custom Invoice No.")
+            field("SSA Custom Invoice No."; Rec."SSA Custom Invoice No.")
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Custom Invoice No. field.';
             }
         }
     }
 }
-

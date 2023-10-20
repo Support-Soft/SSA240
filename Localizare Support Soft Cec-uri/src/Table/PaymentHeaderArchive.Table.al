@@ -231,4 +231,3 @@ table 70508 "SSA Payment Header Archive"
         }
     }
 }
-

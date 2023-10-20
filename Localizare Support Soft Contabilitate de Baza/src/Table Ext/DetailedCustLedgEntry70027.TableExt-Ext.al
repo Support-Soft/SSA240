@@ -6,10 +6,9 @@ tableextension 70027 "SSA DetailedCustLedgEntry70027" extends "Detailed Cust. Le
         field(70000; "SSA Customer Posting Group"; Code[20])
         {
             Caption = 'Customer Posting Group';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA960';
             TableRelation = "Customer Posting Group";
         }
     }
 }
-

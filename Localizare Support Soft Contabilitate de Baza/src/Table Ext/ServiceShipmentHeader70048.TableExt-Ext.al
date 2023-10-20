@@ -6,9 +6,8 @@ tableextension 70048 "SSA ServiceShipmentHeader70048" extends "Service Shipment 
         field(70000; "SSA Commerce Trade No."; Code[20])
         {
             Caption = 'Commerce Trade No.';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA968';
         }
     }
 }
-

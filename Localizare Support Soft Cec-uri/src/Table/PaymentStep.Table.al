@@ -135,4 +135,3 @@ table 70503 "SSA Payment Step"
         Text000: Label 'Deleting default report not allowed';
         Text001: Label 'The series'' nos must not be greater than 10.';
 }
-

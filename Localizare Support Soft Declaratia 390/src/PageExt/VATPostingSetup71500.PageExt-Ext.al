@@ -7,11 +7,11 @@ pageextension 71500 "SSA VAT Posting Setup 71500" extends "VAT Posting Setup"
     {
         addafter("Tax Category")
         {
-            field("SSA VIES Purchases"; "SSA VIES Purchases")
+            field("SSA VIES Purchases"; Rec."SSA VIES Purchases")
             {
                 ApplicationArea = All;
             }
-            field("SSA VIES Sales"; "SSA VIES Sales")
+            field("SSA VIES Sales"; Rec."SSA VIES Sales")
             {
                 ApplicationArea = All;
             }

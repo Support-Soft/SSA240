@@ -347,7 +347,5 @@ table 70509 "SSA Payment Line Archive"
         PostedDocDim.SETRANGE("Line No.","Line No.");
         PostedDocDimensions.SETTABLEVIEW(PostedDocDim);
         PostedDocDimensions.RUNMODAL;  */
-
     end;
 }
-

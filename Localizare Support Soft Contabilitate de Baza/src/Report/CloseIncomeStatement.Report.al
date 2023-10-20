@@ -31,13 +31,13 @@ report 70003 "SSA Close Income Statement"
                         Window.Update(3, Round(EntryCount / MaxEntry * 10000, 1));
                     end;
 
-                    if GroupSum then begin
+                    if GroupSum() then begin
                         CalcSumsInFilter("G/L Entry", RowOffset);
                         GetGLEntryDimensions("Entry No.", TempDimBuf, "Dimension Set ID");
                     end;
 
                     if (Amount <> 0) or ("Additional-Currency Amount" <> 0) then begin
-                        if not GroupSum then begin
+                        if not GroupSum() then begin
                             TotalAmount += Amount;
                             if GLSetup."Additional Reporting Currency" <> '' then
                                 TotalAmountAddCurr += "Additional-Currency Amount";
@@ -47,35 +47,36 @@ report 70003 "SSA Close Income Statement"
 
                         if TempSelectedDim.Find('-') then
                             repeat
-                                if TempDimBuf.Get(DATABASE::"G/L Entry", "Entry No.", TempSelectedDim."Dimension Code")
+                                if TempDimBuf.Get(Database::"G/L Entry", "Entry No.", TempSelectedDim."Dimension Code")
                                 then begin
                                     TempDimBuf2."Table ID" := TempDimBuf."Table ID";
                                     TempDimBuf2."Dimension Code" := TempDimBuf."Dimension Code";
                                     TempDimBuf2."Dimension Value Code" := TempDimBuf."Dimension Value Code";
-                                    TempDimBuf2.Insert;
+                                    TempDimBuf2.Insert();
                                 end;
-                            until TempSelectedDim.Next = 0;
+                            until TempSelectedDim.Next() = 0;
 
                         DimensionBufferID := DimBufMgt.GetDimensionId(TempDimBuf2);
 
-                        EntryNoAmountBuf.Reset;
+                        EntryNoAmountBuf.Reset();
                         if ClosePerBusUnit and FieldActive("Business Unit Code") then
                             EntryNoAmountBuf."Business Unit Code" := "Business Unit Code"
                         else
                             EntryNoAmountBuf."Business Unit Code" := '';
                         EntryNoAmountBuf."Entry No." := DimensionBufferID;
-                        if EntryNoAmountBuf.Find then begin
+                        if EntryNoAmountBuf.Find() then begin
                             EntryNoAmountBuf.Amount := EntryNoAmountBuf.Amount + Amount;
                             EntryNoAmountBuf.Amount2 := EntryNoAmountBuf.Amount2 + "Additional-Currency Amount";
-                            EntryNoAmountBuf.Modify;
-                        end else begin
+                            EntryNoAmountBuf.Modify();
+                        end
+                        else begin
                             EntryNoAmountBuf.Amount := Amount;
                             EntryNoAmountBuf.Amount2 := "Additional-Currency Amount";
-                            EntryNoAmountBuf.Insert;
+                            EntryNoAmountBuf.Insert();
                         end;
                     end;
 
-                    if GroupSum then
+                    if GroupSum() then
                         Next(RowOffset);
                 end;
 
@@ -86,7 +87,7 @@ report 70003 "SSA Close Income Statement"
                     GlobalDimVal2: Code[20];
                     NewDimensionID: Integer;
                 begin
-                    EntryNoAmountBuf.Reset;
+                    EntryNoAmountBuf.Reset();
                     MaxEntry := EntryNoAmountBuf.Count;
                     EntryCount := 0;
                     Window.Update(2, Text012);
@@ -118,16 +119,15 @@ report 70003 "SSA Close Income Statement"
                                 GenJnlLine."Source Code" := SourceCodeSetup."Close Income Statement";
                                 GenJnlLine."Reason Code" := GenJnlBatch."Reason Code";
 
-
                                 GenJnlLine."Business Unit Code" := EntryNoAmountBuf."Business Unit Code";
 
                                 if GLSetup."Additional Reporting Currency" = '' then
-                                    InsertGenJnlLine
+                                    InsertGenJnlLine()
                                 else
-                                    InsertFirstGenJnlLine;
+                                    InsertFirstGenJnlLine();
                                 //SSA955<<
 
-                                TempDimBuf2.DeleteAll;
+                                TempDimBuf2.DeleteAll();
                                 DimBufMgt.RetrieveDimensions(EntryNoAmountBuf."Entry No.", TempDimBuf2);
                                 NewDimensionID := DimMgt.CreateDimSetIDFromDimBuf(TempDimBuf2);
                                 GenJnlLine."Dimension Set ID" := NewDimensionID;
@@ -145,9 +145,9 @@ report 70003 "SSA Close Income Statement"
                                 end;
 
                                 //SSA955>>
-                                HandleGenJnlLine;
+                                HandleGenJnlLine();
                                 if GLSetup."Additional Reporting Currency" <> '' then begin
-                                    InsertSecondGenJnlLine;
+                                    InsertSecondGenJnlLine();
 
                                     GenJnlLine."Business Unit Code" := '';
                                     //TempJnlLineDim.DELETEALL;
@@ -157,13 +157,13 @@ report 70003 "SSA Close Income Statement"
                                     GenJnlLine."Source Code" := SourceCodeSetup."Close Income Statement";
                                     GenJnlLine."Reason Code" := GenJnlBatch."Reason Code";
 
-                                    HandleGenJnlLine;
+                                    HandleGenJnlLine();
                                 end;
                                 //SSA955<<
                             end;
-                        until EntryNoAmountBuf.Next = 0;
+                        until EntryNoAmountBuf.Next() = 0;
 
-                    EntryNoAmountBuf.DeleteAll;
+                    EntryNoAmountBuf.DeleteAll();
                 end;
 
                 trigger OnPreDataItem()
@@ -189,7 +189,7 @@ report 70003 "SSA Close Income Statement"
 
                     MaxEntry := Count;
 
-                    EntryNoAmountBuf.DeleteAll;
+                    EntryNoAmountBuf.DeleteAll();
                     EntryCount := 0;
 
                     LastWindowUpdateDateTime := CurrentDateTime;
@@ -227,7 +227,6 @@ report 70003 "SSA Close Income Statement"
                 */
                 Window.Update(1, GenJnlLine."Account No.");
                 //SSA955<<
-
             end;
 
             trigger OnPreDataItem()
@@ -243,7 +242,7 @@ report 70003 "SSA Close Income Statement"
 
         layout
         {
-            area(content)
+            area(Content)
             {
                 group(Options)
                 {
@@ -288,7 +287,7 @@ report 70003 "SSA Close Income Statement"
                             GenJnlBatch.FilterGroup(0);
                             GenJnlBatch."Journal Template Name" := GenJnlLine."Journal Template Name";
                             GenJnlBatch.Name := GenJnlLine."Journal Batch Name";
-                            if PAGE.RunModal(0, GenJnlBatch) = ACTION::LookupOK then begin
+                            if Page.RunModal(0, GenJnlBatch) = Action::LookupOK then begin
                                 Text := GenJnlBatch.Name;
                                 exit(true);
                             end;
@@ -300,7 +299,7 @@ report 70003 "SSA Close Income Statement"
                                 GenJnlLine.TestField("Journal Template Name");
                                 GenJnlBatch.Get(GenJnlLine."Journal Template Name", GenJnlLine."Journal Batch Name");
                             end;
-                            ValidateJnl;
+                            ValidateJnl();
                         end;
                     }
                     field(DocumentNo; DocNo)
@@ -322,8 +321,8 @@ report 70003 "SSA Close Income Statement"
                         trigger OnValidate()
                         begin
                             if RetainedEarningsGLAcc."No." <> '' then begin
-                                RetainedEarningsGLAcc.Find;
-                                RetainedEarningsGLAcc.CheckGLAcc;
+                                RetainedEarningsGLAcc.Find();
+                                RetainedEarningsGLAcc.CheckGLAcc();
                             end;
                         end;
                     }
@@ -361,16 +360,16 @@ report 70003 "SSA Close Income Statement"
                                 TempSelectedDim2: Record "Selected Dimension" temporary;
                                 s: Text[1024];
                             begin
-                                DimSelectionBuf.SetDimSelectionMultiple(3, REPORT::"Close Income Statement", ColumnDim);
+                                DimSelectionBuf.SetDimSelectionMultiple(3, Report::"Close Income Statement", ColumnDim);
 
-                                SelectedDim.GetSelectedDim(UserId, 3, REPORT::"Close Income Statement", '', TempSelectedDim2);
+                                SelectedDim.GetSelectedDim(UserId, 3, Report::"Close Income Statement", '', TempSelectedDim2);
                                 s := CheckDimPostingRules(TempSelectedDim2);
                                 if s <> '' then
                                     Message(s);
                             end;
                         }
                     }
-                    field(InventoryPeriodClosed; IsInvtPeriodClosed)
+                    field(InventoryPeriodClosed; IsInvtPeriodClosed())
                     {
                         ApplicationArea = All;
                         Caption = 'Inventory Period Closed';
@@ -380,9 +379,6 @@ report 70003 "SSA Close Income Statement"
             }
         }
 
-        actions
-        {
-        }
 
         trigger OnOpenPage()
         var
@@ -391,12 +387,11 @@ report 70003 "SSA Close Income Statement"
         begin
             if PostingDescription = '' then
                 PostingDescription :=
-                  CopyStr(ObjTransl.TranslateObject(ObjTransl."Object Type"::Report, REPORT::"Close Income Statement"), 1, 30);
+                  CopyStr(ObjTransl.TranslateObject(ObjTransl."Object Type"::Report, Report::"Close Income Statement"), 1, 30);
 
             //
             /*
-            
-            
+
             AccountingPeriod.SETRANGE("Date Locked",TRUE);
             IF AccountingPeriod.FINDLAST THEN BEGIN
               EndDateReq := AccountingPeriod."Starting Date" - 1;
@@ -419,19 +414,18 @@ report 70003 "SSA Close Income Statement"
                 EndDateReq := 0D;
             //SSA955<<
 
-            ValidateJnl;
-            ColumnDim := DimSelectionBuf.GetDimSelectionText(3, REPORT::"Close Income Statement", '');
+            ValidateJnl();
+            ColumnDim := DimSelectionBuf.GetDimSelectionText(3, Report::"Close Income Statement", '');
             if RetainedEarningsGLAcc."No." = '' then begin
                 GLAccountCategory.SetRange("Account Category", GLAccountCategory."Account Category"::Equity);
                 GLAccountCategory.SetRange(
                   "Additional Report Definition", GLAccountCategory."Additional Report Definition"::"Retained Earnings");
-                if GLAccountCategory.FindFirst then begin
+                if GLAccountCategory.FindFirst() then begin
                     GLAccount.SetRange("Account Subcategory Entry No.", GLAccountCategory."Entry No.");
-                    if GLAccount.FindFirst then
+                    if GLAccount.FindFirst() then
                         RetainedEarningsGLAcc."No." := GLAccount."No.";
                 end;
             end;
-
         end;
     }
 
@@ -443,12 +437,13 @@ report 70003 "SSA Close Income Statement"
     var
         UpdateAnalysisView: Codeunit "Update Analysis View";
     begin
-        Window.Close;
-        Commit;
+        Window.Close();
+        Commit();
         if GLSetup."Additional Reporting Currency" <> '' then begin
             Message(Text016);
             UpdateAnalysisView.UpdateAll(0, true);
-        end else
+        end
+        else
             Message(Text017);
     end;
 
@@ -464,16 +459,16 @@ report 70003 "SSA Close Income Statement"
             Error(Text45013654);
         //
 
-        SelectedDim.GetSelectedDim(UserId, 3, REPORT::"Close Income Statement", '', TempSelectedDim);
+        SelectedDim.GetSelectedDim(UserId, 3, Report::"Close Income Statement", '', TempSelectedDim);
         s := CheckDimPostingRules(TempSelectedDim);
         if s <> '' then
             if not Confirm(s + Text007, false) then
                 Error('');
 
         GenJnlBatch.Get(GenJnlLine."Journal Template Name", GenJnlLine."Journal Batch Name");
-        SourceCodeSetup.Get;
-        GLSetup.Get;
-        if GLSetup."Additional Reporting Currency" <> '' then begin
+        SourceCodeSetup.Get();
+        GLSetup.Get();
+        if GLSetup."Additional Reporting Currency" <> '' then
             //SSA955>>
             //  IF RetainedEarningsGLAcc."No." = '' THEN
             //    ERROR(Text002);
@@ -484,7 +479,6 @@ report 70003 "SSA Close Income Statement"
                  Text007, false)
             then
                 Error('');
-        end;
 
         Window.Open(Text008 + Text009 + Text019 + Text010 + Text011);
 
@@ -502,12 +496,12 @@ report 70003 "SSA Close Income Statement"
                    (TempSelectedDim."Dimension Code" <> GLSetup."Global Dimension 2 Code")
                 then
                     ClosePerGlobalDimOnly := false;
-            until TempSelectedDim.Next = 0;
+            until TempSelectedDim.Next() = 0;
 
         GenJnlLine.SetRange("Journal Template Name", GenJnlLine."Journal Template Name");
         GenJnlLine.SetRange("Journal Batch Name", GenJnlLine."Journal Batch Name");
-        if not GenJnlLine.FindLast then;
-        GenJnlLine.Init;
+        if not GenJnlLine.FindLast() then;
+        GenJnlLine.Init();
         GenJnlLine."Posting Date" := FiscYearClosingDate;
         GenJnlLine."Document No." := DocNo;
         GenJnlLine.Description := PostingDescription;
@@ -548,8 +542,6 @@ report 70003 "SSA Close Income Statement"
         NoOfAccounts: Integer;
         ThisAccountNo: Integer;
         Text000: Label 'Enter the ending date for the fiscal year.';
-        Text001: Label 'Enter a Document No.';
-        Text002: Label 'Enter Retained Earnings Account No.';
         Text003: Label 'By using an additional reporting currency, this batch job will generate closing entries directly to the general journal.  ';
         Text005: Label 'These closing entries will be transferred to a general journal before the user posts them manually to the general ledger.\\ ';
         Text007: Label '\Do you want to continue?';
@@ -560,8 +552,6 @@ report 70003 "SSA Close Income Statement"
         Text019: Label '                    @4@@@@@@@@@@@@@@@@@@\';
         Text012: Label 'Creating Gen. Journal lines';
         Text013: Label 'Calculating Amounts';
-        Text014: Label 'The fiscal year must be closed before the income statement can be closed.';
-        Text015: Label 'The fiscal year does not exist.';
         Text017: Label 'The journal lines have successfully been created.';
         Text016: Label 'The closing entries have successfully been created.';
         Text020: Label 'The following G/L Accounts have mandatory dimension codes that have not been selected:';
@@ -569,7 +559,6 @@ report 70003 "SSA Close Income Statement"
         MaxEntry: Integer;
         EntryCount: Integer;
         LastWindowUpdateDateTime: DateTime;
-        NoFiscalYearsErr: Label 'No closed fiscal year exists.';
         PostToRetainedEarningsAcc: Option Balance,Details;
         Text45013654: Label 'Enter the ending date for the fiscal month.';
         Text45013655: Label 'The fiscal month does not exist.';
@@ -618,7 +607,6 @@ report 70003 "SSA Close Income Statement"
             //SSA955<<
         end;
         exit(true);
-
     end;
 
     local procedure ValidateJnl()
@@ -637,23 +625,23 @@ report 70003 "SSA Close Income Statement"
           GenJnlLine."Additional-Currency Posting"::None;
         if GLSetup."Additional Reporting Currency" <> '' then begin
             GenJnlLine."Source Currency Code" := GLSetup."Additional Reporting Currency";
-            if ZeroGenJnlAmount then begin
+            if ZeroGenJnlAmount() then begin
                 GenJnlLine."Additional-Currency Posting" :=
                   GenJnlLine."Additional-Currency Posting"::"Additional-Currency Amount Only";
                 GenJnlLine.Validate(Amount, GenJnlLine."Source Currency Amount");
                 GenJnlLine."Source Currency Amount" := 0;
             end;
-            if GenJnlLine.Amount <> 0 then begin
+            if GenJnlLine.Amount <> 0 then
                 /*
                 GenJnlPostLine.Run(GenJnlLine);
                 if DocNo = NoSeriesMgt.GetNextNo(GenJnlBatch."No. Series", EndDateReq, false) then
                     NoSeriesMgt.SaveNoSeries;
                 */
                 GenJnlLine.Insert();
-            end;
-        end else
-            if not ZeroGenJnlAmount then
-                GenJnlLine.Insert;
+        end
+        else
+            if not ZeroGenJnlAmount() then
+                GenJnlLine.Insert();
     end;
 
     local procedure CalcSumsInFilter(var GLEntrySource: Record "G/L Entry"; var Offset: Integer)
@@ -687,14 +675,14 @@ report 70003 "SSA Close Income Statement"
         DimSetEntry: Record "Dimension Set Entry";
     begin
         DimSetEntry.SetRange("Dimension Set ID", DimensionSetID);
-        if DimSetEntry.FindSet then
+        if DimSetEntry.FindSet() then
             repeat
-                DimBuf."Table ID" := DATABASE::"G/L Entry";
+                DimBuf."Table ID" := Database::"G/L Entry";
                 DimBuf."Entry No." := EntryNo;
                 DimBuf."Dimension Code" := DimSetEntry."Dimension Code";
                 DimBuf."Dimension Value Code" := DimSetEntry."Dimension Value Code";
-                DimBuf.Insert;
-            until DimSetEntry.Next = 0;
+                DimBuf.Insert();
+            until DimSetEntry.Next() = 0;
     end;
 
     local procedure CheckDimPostingRules(var SelectedDim: Record "Selected Dimension"): Text[1024]
@@ -709,7 +697,7 @@ report 70003 "SSA Close Income Statement"
         if Handled then
             exit(ErrorText);
 
-        DefaultDim.SetRange("Table ID", DATABASE::"G/L Account");
+        DefaultDim.SetRange("Table ID", Database::"G/L Account");
         DefaultDim.SetFilter(
           "Value Posting", '%1|%2',
           DefaultDim."Value Posting"::"Same Code", DefaultDim."Value Posting"::"Code Mandatory");
@@ -728,7 +716,7 @@ report 70003 "SSA Close Income Statement"
                     end;
                 end;
                 SelectedDim.SetRange("Dimension Code");
-            until (DefaultDim.Next = 0) or (StrLen(ErrorText) > MaxStrLen(ErrorText) - MaxStrLen(DefaultDim."No.") - StrLen(Text021) - 1);
+            until (DefaultDim.Next() = 0) or (StrLen(ErrorText) > MaxStrLen(ErrorText) - MaxStrLen(DefaultDim."No.") - StrLen(Text021) - 1);
         if ErrorText <> '' then
             ErrorText := CopyStr(ErrorText + Text021 + DimText, 1, MaxStrLen(ErrorText));
         exit(ErrorText);
@@ -750,7 +738,7 @@ report 70003 "SSA Close Income Statement"
     begin
         EndDateReq := EndDate;
         GenJnlLine := GenJournalLine;
-        ValidateJnl;
+        ValidateJnl();
         //SSA955>>
         //RetainedEarningsGLAcc := GLAccount;
         //SSA955<<
@@ -933,4 +921,3 @@ report 70003 "SSA Close Income Statement"
         //SSA955<<
     end;
 }
-

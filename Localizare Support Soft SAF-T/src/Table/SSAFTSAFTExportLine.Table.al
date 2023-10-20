@@ -73,6 +73,7 @@ table 71904 "SSAFTSAFT Export Line"
         field(50010; "Export File"; Boolean)
         {
             DataClassification = ToBeClassified;
+            Caption = 'Export File';
         }
         field(50020; "Segment Index"; Integer)
         {

@@ -14,20 +14,20 @@ codeunit 70017 "SSA VAT Registration No."
         Check := true;
         TextString := '';
         VATRegNo := DelChr(VATRegNo, '=', 'roRO');
-        Vend.SETCURRENTKEY("VAT Registration No.");
-        Vend.SetFilter("VAT Registration No.", STRSUBSTNO('*%1*', VATRegNo));
-        Vend.SETFILTER("No.", '<>%1', Number);
-        if Vend.FINDSET then begin
+        Vend.SetCurrentKey("VAT Registration No.");
+        Vend.SetFilter("VAT Registration No.", StrSubstNo('*%1*', VATRegNo));
+        Vend.SetFilter("No.", '<>%1', Number);
+        if Vend.FindSet() then begin
             Check := false;
             Finish := false;
             repeat
                 AppendString(TextString, Finish, Vend."No.");
-            until (Vend.NEXT = 0) or Finish;
+            until (Vend.Next() = 0) or Finish;
         end;
         if not Check then
             //SSA964>>
             //OC MESSAGE(STRSUBSTNO(Text003,TextString));
-            ERROR(STRSUBSTNO(Text003, TextString));
+            Error(StrSubstNo(Text003, TextString));
         //SSA964<<
     end;
 
@@ -38,7 +38,7 @@ codeunit 70017 "SSA VAT Registration No."
                 exit;
             String = '':
                 String := AppendText;
-            STRLEN(String) + STRLEN(AppendText) + 5 <= 250:
+            StrLen(String) + StrLen(AppendText) + 5 <= 250:
                 String += ', ' + AppendText;
             else begin
                 String += '...';

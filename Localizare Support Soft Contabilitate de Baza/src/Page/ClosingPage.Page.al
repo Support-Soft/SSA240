@@ -9,26 +9,28 @@ page 70015 "SSA Closing Page"
 
     layout
     {
-        area(content)
+        area(Content)
         {
-            field(Picture; Picture)
+            field(Picture; Rec.Picture)
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies the picture that has been set up for the company, such as a company logo.';
             }
         }
     }
 
     actions
     {
-        area(navigation)
+        area(Navigation)
         {
             action("<Action1000000025>")
             {
                 Caption = 'Recurring Journals';
                 Promoted = true;
                 PromotedIsBig = true;
-                RunObject = Page "Recurring General Journal";
+                RunObject = page "Recurring General Journal";
                 ApplicationArea = All;
+                ToolTip = 'Executes the Recurring Journals action.';
             }
             separator("2. Rulare reevaluare")
             {
@@ -41,8 +43,9 @@ page 70015 "SSA Closing Page"
                 Promoted = true;
                 PromotedCategory = Process;
                 PromotedIsBig = true;
-                RunObject = Page Currencies;
+                RunObject = page Currencies;
                 ApplicationArea = All;
+                ToolTip = 'Executes the Currencies action.';
             }
             action("Adjust Exchange Rates")
             {
@@ -51,8 +54,9 @@ page 70015 "SSA Closing Page"
                 Promoted = true;
                 PromotedCategory = Process;
                 PromotedIsBig = true;
-                RunObject = Report "SSA Adjust Exchange Rates";
+                RunObject = report "SSA Adjust Exchange Rates";
                 ApplicationArea = All;
+                ToolTip = 'Executes the Adjust Exchange Rates action.';
             }
             separator("3. Rulare amortizare")
             {
@@ -65,9 +69,10 @@ page 70015 "SSA Closing Page"
                 Promoted = true;
                 PromotedCategory = "Report";
                 PromotedIsBig = true;
-                RunObject = Report "Calculate Depreciation";
+                RunObject = report "Calculate Depreciation";
                 RunPageMode = Create;
                 ApplicationArea = All;
+                ToolTip = 'Executes the Calculate Depreciation... action.';
             }
             action("<Action1000000026>")
             {
@@ -76,8 +81,9 @@ page 70015 "SSA Closing Page"
                 Promoted = true;
                 PromotedCategory = "Report";
                 PromotedIsBig = true;
-                RunObject = Page "Fixed Asset G/L Journal";
+                RunObject = page "Fixed Asset G/L Journal";
                 ApplicationArea = All;
+                ToolTip = 'Executes the FA G/L Journals action.';
             }
             separator("4. Correction Procedures")
             {
@@ -92,8 +98,9 @@ page 70015 "SSA Closing Page"
                 Promoted = true;
                 PromotedCategory = Category4;
                 PromotedIsBig = true;
-                RunObject = Page "General Journal";
+                RunObject = page "General Journal";
                 ApplicationArea = All;
+                ToolTip = 'Executes the General Journals action.';
             }
             separator("5. Cheltuieli Productie")
             {
@@ -106,8 +113,9 @@ page 70015 "SSA Closing Page"
                 Promoted = true;
                 PromotedCategory = Category5;
                 PromotedIsBig = true;
-                RunObject = Page "Analysis by Dimensions";
+                RunObject = page "Analysis by Dimensions";
                 ApplicationArea = All;
+                ToolTip = 'Executes the Analysis by Dimensions action.';
             }
             action("<Action1000000016>")
             {
@@ -116,8 +124,9 @@ page 70015 "SSA Closing Page"
                 Promoted = true;
                 PromotedCategory = Category5;
                 PromotedIsBig = true;
-                RunObject = Page "Account Schedule";
+                RunObject = page "Account Schedule";
                 ApplicationArea = All;
+                ToolTip = 'Executes the Account Schedules action.';
             }
             action("<Action1000000017>")
             {
@@ -126,8 +135,9 @@ page 70015 "SSA Closing Page"
                 Promoted = true;
                 PromotedCategory = Category5;
                 PromotedIsBig = true;
-                RunObject = Page "General Journal";
+                RunObject = page "General Journal";
                 ApplicationArea = All;
+                ToolTip = 'Executes the General Journals action.';
             }
             separator("6. Inchidere lunara")
             {
@@ -140,8 +150,9 @@ page 70015 "SSA Closing Page"
                 Promoted = true;
                 PromotedCategory = Category6;
                 PromotedIsBig = true;
-                RunObject = Report "SSA Close Income Statement";
+                RunObject = report "SSA Close Income Statement";
                 ApplicationArea = All;
+                ToolTip = 'Executes the Close Income Statement... action.';
             }
             action("<Action1000000020>")
             {
@@ -150,8 +161,9 @@ page 70015 "SSA Closing Page"
                 Promoted = true;
                 PromotedCategory = Category6;
                 PromotedIsBig = true;
-                RunObject = Page "General Journal";
+                RunObject = page "General Journal";
                 ApplicationArea = All;
+                ToolTip = 'Executes the General Journals action.';
             }
             action(CloseVAT)
             {
@@ -162,6 +174,7 @@ page 70015 "SSA Closing Page"
                 PromotedIsBig = true;
                 RunObject = report "Calc. and Post VAT Settlement";
                 ApplicationArea = All;
+                ToolTip = 'Executes the Calculate and Post VAT Settlement action.';
             }
 
             separator("7. Declaratii catre stat")
@@ -176,11 +189,12 @@ page 70015 "SSA Closing Page"
                 Promoted = true;
                 PromotedCategory = Category7;
                 PromotedIsBig = true;
-                RunObject = Page "VAT Statement";
+                RunObject = page "VAT Statement";
                 ApplicationArea = All;
+                ToolTip = 'Executes the VAT Statement action.';
             }
         }
-        area(reporting)
+        area(Reporting)
         {
             separator(Reports)
             {
@@ -192,11 +206,10 @@ page 70015 "SSA Closing Page"
                 Promoted = true;
                 PromotedCategory = Category8;
                 PromotedIsBig = true;
-                RunObject = Report "Inventory Valuation";
+                RunObject = report "Inventory Valuation";
                 ApplicationArea = All;
+                ToolTip = 'Executes the Inventory Valuation action.';
             }
-
         }
     }
 }
-

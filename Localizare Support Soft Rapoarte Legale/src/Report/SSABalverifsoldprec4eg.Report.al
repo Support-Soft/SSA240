@@ -10,7 +10,7 @@ report 71302 "SSABal. verif. sold prec(4 eg)"
     {
         dataitem("G/L Account"; "G/L Account")
         {
-            DataItemTableView = SORTING ("No.");
+            DataItemTableView = SORTING("No.");
             RequestFilterFields = "No.", "Account Type", "Date Filter", "Global Dimension 1 Filter", "Global Dimension 2 Filter";
             column(CompName; txtSociety + CompanyInfo.Name)
             {
@@ -71,7 +71,7 @@ report 71302 "SSABal. verif. sold prec(4 eg)"
             }
             dataitem(NrCrtGol; "Integer")
             {
-                DataItemTableView = SORTING (Number);
+                DataItemTableView = SORTING(Number);
 
                 trigger OnPreDataItem()
                 begin
@@ -80,7 +80,7 @@ report 71302 "SSABal. verif. sold prec(4 eg)"
             }
             dataitem("Integer"; "Integer")
             {
-                DataItemTableView = SORTING (Number) WHERE (Number = CONST (1));
+                DataItemTableView = SORTING(Number) WHERE(Number = CONST(1));
                 column(ShowLine; ShowLine)
                 {
                 }
@@ -786,9 +786,9 @@ report 71302 "SSABal. verif. sold prec(4 eg)"
         Text19006072: Label 'Analytic / Synthetic1 / Synthetic2';
         Title_Report: Label 'Trial Balance (4 eq.)';
         Text17: Label 'Page:';
-        [InDataSet]
+
         all: Boolean;
-        [InDataSet]
+
         CreateExcel: Boolean;
         txtPrintAll: Label 'Print Chart of Accounts';
         ExcelTemplate: Text[250];

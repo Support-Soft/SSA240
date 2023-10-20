@@ -4,14 +4,12 @@ pageextension 70054 "SSA Item Charges" extends "Item Charges" //5800
     {
         addlast(Control1)
         {
-            field("SSA Type"; "SSA Type")
+            field("SSA Type"; Rec."SSA Type")
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Type field.';
             }
         }
     }
 
-    actions
-    {
-    }
 }

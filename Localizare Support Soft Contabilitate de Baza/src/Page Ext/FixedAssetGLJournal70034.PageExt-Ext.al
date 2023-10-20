@@ -6,39 +6,46 @@ pageextension 70034 "SSA FixedAssetG/LJournal70034" extends "Fixed Asset G/L Jou
     {
         addafter(ShortcutDimCode8)
         {
-            field("SSA Transaction Type"; "SSA Transaction Type")
+            field("SSA Transaction Type"; Rec."SSA Transaction Type")
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Transaction Type field.';
             }
-            field("SSA Transport Method"; "SSA Transport Method")
+            field("SSA Transport Method"; Rec."SSA Transport Method")
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Transport Method field.';
             }
-            field("SSA Entry/Exit Point"; "SSA Entry/Exit Point")
+            field("SSA Entry/Exit Point"; Rec."SSA Entry/Exit Point")
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Entry/Exit Point field.';
             }
-            field("SSA Area"; "SSA Area")
+            field("SSA Area"; Rec."SSA Area")
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Area field.';
             }
-            field("SSA Transaction Specification"; "SSA Transaction Specification")
+            field("SSA Transaction Specification"; Rec."SSA Transaction Specification")
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Transaction Specification field.';
             }
-            field("SSA Shpt. Method Code"; "SSA Shpt. Method Code")
+            field("SSA Shpt. Method Code"; Rec."SSA Shpt. Method Code")
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Shpt. Method Code field.';
             }
-            field("SSA Country/Region Code"; "Country/Region Code")
+            field("SSA Country/Region Code"; Rec."Country/Region Code")
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Country/Region Code field.';
             }
-            field("SSA Custom Invoice No."; "SSA Custom Invoice No.")
+            field("SSA Custom Invoice No."; Rec."SSA Custom Invoice No.")
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Custom Invoice No. field.';
             }
         }
     }
 }
-

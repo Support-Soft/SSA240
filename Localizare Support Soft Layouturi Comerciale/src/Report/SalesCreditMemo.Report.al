@@ -1083,7 +1083,7 @@ report 70902 "SSA Sales - Credit Memo"
         TotalInvDiscAmount: Decimal;
         TotalPaymentDiscOnVAT: Decimal;
         TransHeaderAmount: Decimal;
-        [InDataSet]
+
         LogInteractionEnable: Boolean;
         DisplayAssemblyInformation: Boolean;
         DisplayShipmentInformation: Boolean;
@@ -1163,7 +1163,7 @@ report 70902 "SSA Sales - Credit Memo"
         exit(SalesCreditMemoNoLbl);
     end;
 
-    
+
     procedure InitializeRequest(NewLogInteraction: Boolean; DisplayAsmInfo: Boolean)
     begin
         LogInteraction := NewLogInteraction;

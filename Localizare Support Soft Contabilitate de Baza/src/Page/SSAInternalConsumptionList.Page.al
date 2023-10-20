@@ -4,7 +4,7 @@ page 70002 "SSAInternal Consumption List"
 
     ApplicationArea = All;
     Caption = 'Internal Consumption List';
-    CardPageID = "SSA Internal Consumptions";
+    CardPageId = "SSA Internal Consumptions";
     Editable = false;
     PageType = List;
     SourceTable = "SSAInternal Consumption Header";
@@ -12,49 +12,53 @@ page 70002 "SSAInternal Consumption List"
 
     layout
     {
-        area(content)
+        area(Content)
         {
             repeater(Control1390000)
             {
                 ShowCaption = false;
-                field("No."; "No.")
+                field("No."; Rec."No.")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the No. field.';
                 }
-                field("Your Reference"; "Your Reference")
+                field("Your Reference"; Rec."Your Reference")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Your Reference field.';
                 }
-                field("Order Date"; "Order Date")
+                field("Order Date"; Rec."Order Date")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Order Date field.';
                 }
-                field("Posting Date"; "Posting Date")
+                field("Posting Date"; Rec."Posting Date")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Posting Date field.';
                 }
-                field("Location Code"; "Location Code")
+                field("Location Code"; Rec."Location Code")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Location Code field.';
                 }
-                field("Shortcut Dimension 1 Code"; "Shortcut Dimension 1 Code")
+                field("Shortcut Dimension 1 Code"; Rec."Shortcut Dimension 1 Code")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Shortcut Dimension 1 Code field.';
                 }
-                field("Shortcut Dimension 2 Code"; "Shortcut Dimension 2 Code")
+                field("Shortcut Dimension 2 Code"; Rec."Shortcut Dimension 2 Code")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Shortcut Dimension 2 Code field.';
                 }
-                field("Responsibility Center"; "Responsibility Center")
+                field("Responsibility Center"; Rec."Responsibility Center")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Responsibility Center field.';
                 }
             }
         }
     }
 
-    actions
-    {
-    }
 }
-

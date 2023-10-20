@@ -5,11 +5,11 @@ pageextension 70046 "SSA Assembly Order 70046" extends "Assembly Order"
     {
         addafter(Status)
         {
-            field("SSA Gen. Bus. Posting Group"; "SSA Gen. Bus. Posting Group")
+            field("SSA Gen. Bus. Posting Group"; Rec."SSA Gen. Bus. Posting Group")
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Gen. Bus. Posting Group field.';
             }
         }
     }
 }
-

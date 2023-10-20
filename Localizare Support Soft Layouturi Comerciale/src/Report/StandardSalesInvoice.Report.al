@@ -1369,7 +1369,7 @@ report 70901 "SSA Standard Sales - Invoice"
         TotalPaymentDiscOnVAT: Decimal;
         RemainingAmount: Decimal;
         TransHeaderAmount: Decimal;
-        [InDataSet]
+
         LogInteractionEnable: Boolean;
         DisplayAssemblyInformation: Boolean;
         DisplayShipmentInformation: Boolean;
@@ -1461,7 +1461,7 @@ report 70901 "SSA Standard Sales - Invoice"
         exit(SalesInvoiceLbl);
     end;
 
-    
+
     procedure InitializeRequest(NewLogInteraction: Boolean; DisplayAsmInfo: Boolean)
     begin
         LogInteraction := NewLogInteraction;

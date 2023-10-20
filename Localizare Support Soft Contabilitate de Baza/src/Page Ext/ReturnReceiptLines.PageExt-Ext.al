@@ -4,16 +4,14 @@ pageextension 70050 "SSA Return Receipt Lines" extends "Return Receipt Lines" //
     {
         addlast(Control1)
         {
-            field("SSA Gen. Prod. Posting Group"; "Gen. Prod. Posting Group")
+            field("SSA Gen. Prod. Posting Group"; Rec."Gen. Prod. Posting Group")
             {
                 ApplicationArea = All;
                 Editable = false;
                 Style = Strong;
+                ToolTip = 'Specifies the value of the Gen. Prod. Posting Group field.';
             }
         }
     }
 
-    actions
-    {
-    }
 }

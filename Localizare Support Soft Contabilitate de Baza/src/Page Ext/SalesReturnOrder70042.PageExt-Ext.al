@@ -5,15 +5,16 @@ pageextension 70042 "SSA Sales Return Order70042" extends "Sales Return Order"
     {
         addafter("Applies-to ID")
         {
-            field("SSA Tip Document D394"; "SSA Tip Document D394")
+            field("SSA Tip Document D394"; Rec."SSA Tip Document D394")
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Tip Document D394 field.';
             }
-            field("SSA Stare Factura"; "SSA Stare Factura")
+            field("SSA Stare Factura"; Rec."SSA Stare Factura")
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Stare Factura field.';
             }
         }
     }
 }
-

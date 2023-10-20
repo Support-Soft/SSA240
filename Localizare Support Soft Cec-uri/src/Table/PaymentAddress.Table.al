@@ -123,4 +123,3 @@ table 70510 "SSA Payment Address"
     var
         PostCode: Record "Post Code";
 }
-

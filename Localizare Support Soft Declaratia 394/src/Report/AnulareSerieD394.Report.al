@@ -2,6 +2,7 @@ report 71700 "SSA Anulare Serie D394"
 {
     // SSA973 SSCAT 06.09.2019 39.Rapoarte legale- Localizare Declaratia 394
     ProcessingOnly = true;
+    ApplicationArea = All;
     dataset
     {
     }

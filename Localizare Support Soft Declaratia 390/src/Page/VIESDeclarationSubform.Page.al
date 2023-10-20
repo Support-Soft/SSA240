@@ -16,81 +16,81 @@ page 71503 "SSA VIES Declaration Subform"
             repeater(Control1470000)
             {
                 ShowCaption = false;
-                field("Trade Type"; "Trade Type")
+                field("Trade Type"; Rec."Trade Type")
                 {
                     ApplicationArea = All;
                 }
-                field("Line Type"; "Line Type")
+                field("Line Type"; Rec."Line Type")
                 {
                     ApplicationArea = All;
                 }
-                field("Country/Region Code"; "Country/Region Code")
+                field("Country/Region Code"; Rec."Country/Region Code")
                 {
                     ApplicationArea = All;
                 }
-                field("EU Service"; "EU Service")
+                field("EU Service"; Rec."EU Service")
                 {
                     ApplicationArea = All;
                 }
-                field("VAT Registration No."; "VAT Registration No.")
+                field("VAT Registration No."; Rec."VAT Registration No.")
                 {
                     ApplicationArea = All;
                     trigger OnLookup(var Text: Text): Boolean
                     begin
-                        case "Trade Type" of
-                            "Trade Type"::Sale:
+                        case Rec."Trade Type" of
+                            Rec."Trade Type"::Sale:
                                 begin
                                     Clear(CustList);
                                     CustList.LookupMode(true);
                                     Cust.SetCurrentKey("Country/Region Code");
-                                    Cust.SetRange("Country/Region Code", "Country/Region Code");
+                                    Cust.SetRange("Country/Region Code", Rec."Country/Region Code");
                                     CustList.SetTableView(Cust);
                                     if CustList.RunModal = ACTION::LookupOK then begin
                                         CustList.GetRecord(Cust);
                                         Cust.TestField("VAT Registration No.");
-                                        Validate("Country/Region Code", Cust."Country/Region Code");
-                                        Validate("VAT Registration No.", Cust."VAT Registration No.");
+                                        Rec.Validate("Country/Region Code", Cust."Country/Region Code");
+                                        Rec.Validate("VAT Registration No.", Cust."VAT Registration No.");
                                     end;
                                 end;
-                            "Trade Type"::Purchase:
+                            Rec."Trade Type"::Purchase:
                                 begin
                                     Clear(VendList);
                                     Vend.SetCurrentKey("Country/Region Code");
-                                    Vend.SetRange("Country/Region Code", "Country/Region Code");
+                                    Vend.SetRange("Country/Region Code", Rec."Country/Region Code");
                                     VendList.SetTableView(Vend);
                                     VendList.LookupMode(true);
                                     if VendList.RunModal = ACTION::LookupOK then begin
                                         VendList.GetRecord(Vend);
                                         Vend.TestField("VAT Registration No.");
-                                        Validate("Country/Region Code", Vend."Country/Region Code");
-                                        Validate("VAT Registration No.", Vend."VAT Registration No.");
+                                        Rec.Validate("Country/Region Code", Vend."Country/Region Code");
+                                        Rec.Validate("VAT Registration No.", Vend."VAT Registration No.");
                                     end;
                                 end;
                         end;
                     end;
                 }
-                field("Number of Supplies"; "Number of Supplies")
+                field("Number of Supplies"; Rec."Number of Supplies")
                 {
                     ApplicationArea = All;
                 }
-                field("Amount (LCY)"; "Amount (LCY)")
+                field("Amount (LCY)"; Rec."Amount (LCY)")
                 {
                     ApplicationArea = All;
 
                     trigger OnDrillDown()
                     begin
-                        DrillDownAmountLCY;
+                        Rec.DrillDownAmountLCY;
                     end;
                 }
-                field("Trade Role Type"; "Trade Role Type")
+                field("Trade Role Type"; Rec."Trade Role Type")
                 {
                     ApplicationArea = All;
                 }
-                field("Cust/Vend Name"; "Cust/Vend Name")
+                field("Cust/Vend Name"; Rec."Cust/Vend Name")
                 {
                     ApplicationArea = All;
                 }
-                field("Tax Group Code"; "Tax Group Code")
+                field("Tax Group Code"; Rec."Tax Group Code")
                 {
                     ApplicationArea = All;
                 }
@@ -106,8 +106,8 @@ page 71503 "SSA VIES Declaration Subform"
     var
         VIESDeclarationHeader: Record "SSA VIES Header";
     begin
-        if VIESDeclarationHeader.Get("VIES Declaration No.") then
-            "Trade Type" := VIESDeclarationHeader."Trade Type";
+        if VIESDeclarationHeader.Get(Rec."VIES Declaration No.") then
+            Rec."Trade Type" := VIESDeclarationHeader."Trade Type";
     end;
 
     var

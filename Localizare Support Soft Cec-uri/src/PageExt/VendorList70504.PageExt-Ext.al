@@ -2,7 +2,6 @@ pageextension 70504 "SSA Vendor List 70504" extends "Vendor List" //27
 {
     layout
     {
-
     }
 
     actions
@@ -19,6 +18,7 @@ pageextension 70504 "SSA Vendor List 70504" extends "Vendor List" //27
                 RunObject = page "SSA CEC & BO Vendor";
                 RunPageView = sorting("Entry No.") order(ascending) where(Open = filter(true));
                 RunPageLink = "Vendor No." = field("No."), "Document Type" = filter(Invoice);
+                ToolTip = 'Executes the CEC/BO action.';
             }
         }
     }

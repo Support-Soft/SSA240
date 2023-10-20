@@ -4,6 +4,7 @@ table 70200 "SSA Adjust Exch. Rate Buffer"
 
     Caption = 'Adjust Exchange Rate Buffer';
     ReplicateData = false;
+    DataClassification = CustomerContent;
 
     fields
     {
@@ -71,20 +72,19 @@ table 70200 "SSA Adjust Exch. Rate Buffer"
         field(70000; "SSA Source Type"; Option)
         {
             Caption = 'Source Type';
-            DataClassification = ToBeClassified;
             Description = 'SSA960';
             OptionCaption = ' ,Customer,Vendor,Bank Account,Fixed Asset';
             OptionMembers = " ",Customer,Vendor,"Bank Account","Fixed Asset";
         }
         field(70001; "SSA Source No."; Code[20])
         {
-            DataClassification = ToBeClassified;
             Description = 'SSA960';
+            Caption = 'Source No.';
         }
         field(70002; "Entry No."; Integer)
         {
-            DataClassification = ToBeClassified;
             Description = 'SSA960';
+            Caption = 'Entry No.';
         }
     }
 
@@ -96,8 +96,4 @@ table 70200 "SSA Adjust Exch. Rate Buffer"
         }
     }
 
-    fieldgroups
-    {
-    }
 }
-

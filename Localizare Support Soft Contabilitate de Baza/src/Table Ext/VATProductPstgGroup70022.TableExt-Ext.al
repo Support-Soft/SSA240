@@ -6,9 +6,8 @@ tableextension 70022 "SSA VATProductPstgGroup70022" extends "VAT Product Posting
         field(70000; "SSA Non-Deductible VAT"; Boolean)
         {
             Caption = 'Non-Deductible VAT';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA948';
         }
     }
 }
-

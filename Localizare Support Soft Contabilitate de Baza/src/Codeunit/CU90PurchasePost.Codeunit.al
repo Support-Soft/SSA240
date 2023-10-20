@@ -1,13 +1,6 @@
 codeunit 70015 "SSA CU90 Purchase-Post"
 {
-    // SSA958 SSCAT 23.08.2019 24.Funct. verificare sa nu posteze sell to diferit de bill to
-    // SSA946 SSCAT 26.09.2019 12.Funct. functionalitate DVI la achizitii
-    // SSA948 SSCAT 08.10.2019 14.Funct. Functionalitatea deductibilitate cheltuieli 50% /100%
 
-
-    trigger OnRun()
-    begin
-    end;
 
     [EventSubscriber(ObjectType::Codeunit, 90, 'OnBeforePostPurchaseDoc', '', false, false)]
     local procedure OnBeforePostPurchaseDoc(var Sender: Codeunit "Purch.-Post"; var PurchaseHeader: Record "Purchase Header"; PreviewMode: Boolean; CommitIsSupressed: Boolean)
@@ -16,7 +9,7 @@ codeunit 70015 "SSA CU90 Purchase-Post"
         IntrastatTransaction: Boolean;
     begin
         //SSA954>>
-        SSASetup.Get;
+        SSASetup.Get();
         IntrastatTransaction := IsIntrastatTransaction(PurchaseHeader);
         if IntrastatTransaction then begin
             if SSASetup."Transaction Type Mandatory" then
@@ -53,7 +46,7 @@ codeunit 70015 "SSA CU90 Purchase-Post"
         //SSA946>>
         if not Sender.Invoice then
             exit;
-        SSASetup.Get;
+        SSASetup.Get();
         if SSASetup."Custom Invoice No. Mandatory" then
             Sender.TestField("SSA Custom Invoice No.");
         //SSA946<<
@@ -75,62 +68,58 @@ codeunit 70015 "SSA CU90 Purchase-Post"
         if not VATPostingSetup.Get(InvoicePostBuffer."VAT Bus. Posting Group", InvoicePostBuffer."VAT Prod. Posting Group") then
             Clear(VATPostingSetup);
 
-        with GenJnlLine do begin
-            InitNewLine(
-              PurchHeader."Posting Date", PurchHeader."Document Date", PurchHeader."Posting Description",
-              InvoicePostBuffer."Global Dimension 1 Code", InvoicePostBuffer."Global Dimension 2 Code",
-              InvoicePostBuffer."Dimension Set ID", PurchHeader."Reason Code");
+        GenJnlLine.InitNewLine(
+  PurchHeader."Posting Date", PurchHeader."Document Date", PurchHeader."Posting Description",
+  InvoicePostBuffer."Global Dimension 1 Code", InvoicePostBuffer."Global Dimension 2 Code",
+  InvoicePostBuffer."Dimension Set ID", PurchHeader."Reason Code");
 
-            CopyDocumentFields(OldGenJnlLine."Document Type", OldGenJnlLine."Document No.", OldGenJnlLine."External Document No.", OldGenJnlLine."Source Code", '');
-            CopyFromPurchHeader(PurchHeader);
-            CopyFromInvoicePostBuffer(InvoicePostBuffer);
+        GenJnlLine.CopyDocumentFields(OldGenJnlLine."Document Type", OldGenJnlLine."Document No.", OldGenJnlLine."External Document No.", OldGenJnlLine."Source Code", '');
+        GenJnlLine.CopyFromPurchHeader(PurchHeader);
+        GenJnlLine.CopyFromInvoicePostBuffer(InvoicePostBuffer);
 
-            "Account Type" := GenJnlLine."Account Type"::"G/L Account";
-            "Account No." := InvoicePostBuffer."SSA Non-Ded VAT Expense Acc 1";
-            "Gen. Posting Type" := "Gen. Posting Type"::" ";
-            "Gen. Bus. Posting Group" := '';
-            "Gen. Prod. Posting Group" := '';
-            "VAT Calculation Type" := 0;
-            "VAT Bus. Posting Group" := '';
-            "VAT Prod. Posting Group" := '';
-            "Posting Group" := '';
-            "Bal. Account Type" := "Bal. Account Type"::"G/L Account";
-            "Bal. Account No." := VATPostingSetup."Purchase VAT Account";
-            "Currency Code" := OldGenJnlLine."Currency Code";
-            Amount := Round(InvoicePostBuffer."VAT Amount" / 2, 0.01);
-            FirstLineAmount := Round(InvoicePostBuffer."VAT Amount" / 2, 0.01);
-            "Amount (LCY)" := Round(InvoicePostBuffer."VAT Amount" / 2, 0.01);
-            "Allow Zero-Amount Posting" := true;
-            GenJnlPostLine.RunWithCheck(GenJnlLine);
-        end;
+        GenJnlLine."Account Type" := GenJnlLine."Account Type"::"G/L Account";
+        GenJnlLine."Account No." := InvoicePostBuffer."SSA Non-Ded VAT Expense Acc 1";
+        GenJnlLine."Gen. Posting Type" := GenJnlLine."Gen. Posting Type"::" ";
+        GenJnlLine."Gen. Bus. Posting Group" := '';
+        GenJnlLine."Gen. Prod. Posting Group" := '';
+        GenJnlLine."VAT Calculation Type" := 0;
+        GenJnlLine."VAT Bus. Posting Group" := '';
+        GenJnlLine."VAT Prod. Posting Group" := '';
+        GenJnlLine."Posting Group" := '';
+        GenJnlLine."Bal. Account Type" := GenJnlLine."Bal. Account Type"::"G/L Account";
+        GenJnlLine."Bal. Account No." := VATPostingSetup."Purchase VAT Account";
+        GenJnlLine."Currency Code" := OldGenJnlLine."Currency Code";
+        GenJnlLine.Amount := Round(InvoicePostBuffer."VAT Amount" / 2, 0.01);
+        FirstLineAmount := Round(InvoicePostBuffer."VAT Amount" / 2, 0.01);
+        GenJnlLine."Amount (LCY)" := Round(InvoicePostBuffer."VAT Amount" / 2, 0.01);
+        GenJnlLine."Allow Zero-Amount Posting" := true;
+        GenJnlPostLine.RunWithCheck(GenJnlLine);
 
-        with GenJnlLine do begin
-            InitNewLine(
-              PurchHeader."Posting Date", PurchHeader."Document Date", PurchHeader."Posting Description",
-              InvoicePostBuffer."Global Dimension 1 Code", InvoicePostBuffer."Global Dimension 2 Code",
-              InvoicePostBuffer."Dimension Set ID", PurchHeader."Reason Code");
+        GenJnlLine.InitNewLine(
+  PurchHeader."Posting Date", PurchHeader."Document Date", PurchHeader."Posting Description",
+  InvoicePostBuffer."Global Dimension 1 Code", InvoicePostBuffer."Global Dimension 2 Code",
+  InvoicePostBuffer."Dimension Set ID", PurchHeader."Reason Code");
 
-            CopyDocumentFields(OldGenJnlLine."Document Type", OldGenJnlLine."Document No.", OldGenJnlLine."External Document No.", OldGenJnlLine."Source Code", '');
-            CopyFromPurchHeader(PurchHeader);
-            CopyFromInvoicePostBuffer(InvoicePostBuffer);
+        GenJnlLine.CopyDocumentFields(OldGenJnlLine."Document Type", OldGenJnlLine."Document No.", OldGenJnlLine."External Document No.", OldGenJnlLine."Source Code", '');
+        GenJnlLine.CopyFromPurchHeader(PurchHeader);
+        GenJnlLine.CopyFromInvoicePostBuffer(InvoicePostBuffer);
 
-            "Account Type" := GenJnlLine."Account Type"::"G/L Account";
-            "Account No." := InvoicePostBuffer."SSA Non-Ded VAT Expense Acc 2";
-            "Gen. Posting Type" := 0;
-            "Gen. Bus. Posting Group" := '';
-            "Gen. Prod. Posting Group" := '';
-            "VAT Calculation Type" := 0;
-            "VAT Bus. Posting Group" := '';
-            "VAT Prod. Posting Group" := '';
-            "Posting Group" := '';
-            "Bal. Account Type" := "Bal. Account Type"::"G/L Account";
-            "Bal. Account No." := VATPostingSetup."Purchase VAT Account";
-            "Currency Code" := OldGenJnlLine."Currency Code";
-            Amount := InvoicePostBuffer."VAT Amount" - FirstLineAmount;
-            "Amount (LCY)" := InvoicePostBuffer."VAT Amount" - FirstLineAmount;
-            "Allow Zero-Amount Posting" := true;
-            GenJnlPostLine.RunWithCheck(GenJnlLine);
-        end;
+        GenJnlLine."Account Type" := GenJnlLine."Account Type"::"G/L Account";
+        GenJnlLine."Account No." := InvoicePostBuffer."SSA Non-Ded VAT Expense Acc 2";
+        GenJnlLine."Gen. Posting Type" := 0;
+        GenJnlLine."Gen. Bus. Posting Group" := '';
+        GenJnlLine."Gen. Prod. Posting Group" := '';
+        GenJnlLine."VAT Calculation Type" := 0;
+        GenJnlLine."VAT Bus. Posting Group" := '';
+        GenJnlLine."VAT Prod. Posting Group" := '';
+        GenJnlLine."Posting Group" := '';
+        GenJnlLine."Bal. Account Type" := GenJnlLine."Bal. Account Type"::"G/L Account";
+        GenJnlLine."Bal. Account No." := VATPostingSetup."Purchase VAT Account";
+        GenJnlLine."Currency Code" := OldGenJnlLine."Currency Code";
+        GenJnlLine.Amount := InvoicePostBuffer."VAT Amount" - FirstLineAmount;
+        GenJnlLine."Amount (LCY)" := InvoicePostBuffer."VAT Amount" - FirstLineAmount;
+        GenJnlLine."Allow Zero-Amount Posting" := true;
+        GenJnlPostLine.RunWithCheck(GenJnlLine);
         //SSA948<<
     end;
 
@@ -140,4 +129,3 @@ codeunit 70015 "SSA CU90 Purchase-Post"
         PurchRcptHeader."SSA Vendor Invoice No." := PurchaseHeader."Vendor Invoice No.";
     end;
 }
-

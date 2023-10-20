@@ -3,8 +3,8 @@ report 70000 "SSAPosted Internal Consumption"
     // SSA937 SSCAT 16.06.2019 3.Funct. Bonuri de consum-consum intern
     DefaultLayout = RDLC;
     RDLCLayout = './src/rdlc/SSAPostedInternalConsumption.rdlc';
-
     Caption = 'Posted Internal Consumption';
+    ApplicationArea = All;
 
     dataset
     {
@@ -136,15 +136,15 @@ report 70000 "SSAPosted Internal Consumption"
                 trigger OnAfterGetRecord()
                 begin
                     if Number > 1 then begin
-                        CopyText := FormatDocument.GetCOPYText;
+                        CopyText := FormatDocument.GetCOPYText();
                         OutputNo += 1;
                     end;
                 end;
 
                 trigger OnPostDataItem()
                 begin
-                    if not IsReportInPreviewMode then
-                        CODEUNIT.Run(CODEUNIT::"SSA Int. Consumption-Printed", PstdIntConsHeader);
+                    if not IsReportInPreviewMode() then
+                        Codeunit.Run(Codeunit::"SSA Int. Consumption-Printed", PstdIntConsHeader);
                 end;
 
                 trigger OnPreDataItem()
@@ -170,10 +170,9 @@ report 70000 "SSAPosted Internal Consumption"
 
     requestpage
     {
-
         layout
         {
-            area(content)
+            area(Content)
             {
                 group(Options)
                 {
@@ -188,9 +187,6 @@ report 70000 "SSAPosted Internal Consumption"
             }
         }
 
-        actions
-        {
-        }
     }
 
     labels
@@ -199,7 +195,7 @@ report 70000 "SSAPosted Internal Consumption"
 
     trigger OnPreReport()
     begin
-        CompanyInfo.Get;
+        CompanyInfo.Get();
         CompanyInfo.CalcFields(Picture);
     end;
 
@@ -232,7 +228,6 @@ report 70000 "SSAPosted Internal Consumption"
     var
         MailManagement: Codeunit "Mail Management";
     begin
-        exit(CurrReport.Preview or MailManagement.IsHandlingGetEmailBody);
+        exit(CurrReport.Preview or MailManagement.IsHandlingGetEmailBody());
     end;
 }
-

@@ -6,23 +6,26 @@ pageextension 70007 "SSA PostedPurchaseInvoice70007" extends "Posted Purchase In
     {
         addafter("Vendor Order No.")
         {
-            field("SSA Custom Invoice No."; "SSA Custom Invoice No.")
+            field("SSA Custom Invoice No."; Rec."SSA Custom Invoice No.")
             {
                 Editable = false;
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Custom Invoice No. field.';
             }
         }
         addafter("Creditor No.")
         {
-            field("SSA Tip Document D394"; "SSA Tip Document D394")
+            field("SSA Tip Document D394"; Rec."SSA Tip Document D394")
             {
                 ApplicationArea = All;
                 Editable = false;
+                ToolTip = 'Specifies the value of the Tip Document D394 field.';
             }
-            field("SSA Stare Factura"; "SSA Stare Factura")
+            field("SSA Stare Factura"; Rec."SSA Stare Factura")
             {
                 ApplicationArea = All;
                 Editable = false;
+                ToolTip = 'Specifies the value of the Stare Factura field.';
             }
         }
     }
@@ -41,4 +44,3 @@ pageextension 70007 "SSA PostedPurchaseInvoice70007" extends "Posted Purchase In
         }
     }
 }
-

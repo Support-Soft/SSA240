@@ -2,11 +2,8 @@ codeunit 70020 "SSA Item-Check Avail."
 {
     // SSA937 SSCAT 16.06.2019 3.Funct. Bonuri de consum-consum intern
 
-    Permissions = TableData "My Notifications" = rimd;
+    Permissions = tabledata "My Notifications" = rimd;
 
-    trigger OnRun()
-    begin
-    end;
 
     var
         Text000: Label 'The update has been interrupted to respect the warning.';
@@ -35,15 +32,13 @@ codeunit 70020 "SSA Item-Check Avail."
         ItemAvailabilityNotificationTxt: Label 'Item availability is low.';
         ItemAvailabilityNotificationDescriptionTxt: Label 'Show a warning when someone creates a sales order or sales invoice for an item that is out of stock.';
 
-
     procedure ItemJnlCheckLine(ItemJnlLine: Record "Item Journal Line") Rollback: Boolean
     begin
         NotificationLifecycleMgt.RecallNotificationsForRecordWithAdditionalContext(
-          ItemJnlLine.RecordId, GetItemAvailabilityNotificationId, true);
+          ItemJnlLine.RecordId, GetItemAvailabilityNotificationId(), true);
         if ItemJnlLineShowWarning(ItemJnlLine) then
             Rollback := ShowAndHandleAvailabilityPage(ItemJnlLine.RecordId);
     end;
-
 
     procedure SalesLineCheck(SalesLine: Record "Sales Line") Rollback: Boolean
     var
@@ -52,7 +47,7 @@ codeunit 70020 "SSA Item-Check Avail."
         ATOLink: Record "Assemble-to-Order Link";
     begin
         NotificationLifecycleMgt.RecallNotificationsForRecordWithAdditionalContext(
-          SalesLine.RecordId, GetItemAvailabilityNotificationId, true);
+          SalesLine.RecordId, GetItemAvailabilityNotificationId(), true);
         if SalesLineShowWarning(SalesLine) then
             Rollback := ShowAndHandleAvailabilityPage(SalesLine.RecordId);
 
@@ -61,42 +56,37 @@ codeunit 70020 "SSA Item-Check Avail."
                 Rollback := ShowAsmWarningYesNo(TempAsmHeader, TempAsmLine);
     end;
 
-
     procedure TransferLineCheck(TransLine: Record "Transfer Line") Rollback: Boolean
     begin
         NotificationLifecycleMgt.RecallNotificationsForRecordWithAdditionalContext(
-          TransLine.RecordId, GetItemAvailabilityNotificationId, true);
+          TransLine.RecordId, GetItemAvailabilityNotificationId(), true);
         if TransferLineShowWarning(TransLine) then
             Rollback := ShowAndHandleAvailabilityPage(TransLine.RecordId);
     end;
 
-
     procedure ServiceInvLineCheck(ServInvLine: Record "Service Line") Rollback: Boolean
     begin
         NotificationLifecycleMgt.RecallNotificationsForRecordWithAdditionalContext(
-          ServInvLine.RecordId, GetItemAvailabilityNotificationId, true);
+          ServInvLine.RecordId, GetItemAvailabilityNotificationId(), true);
         if ServiceInvLineShowWarning(ServInvLine) then
             Rollback := ShowAndHandleAvailabilityPage(ServInvLine.RecordId);
     end;
 
-
     procedure JobPlanningLineCheck(JobPlanningLine: Record "Job Planning Line") Rollback: Boolean
     begin
         NotificationLifecycleMgt.RecallNotificationsForRecordWithAdditionalContext(
-          JobPlanningLine.RecordId, GetItemAvailabilityNotificationId, true);
+          JobPlanningLine.RecordId, GetItemAvailabilityNotificationId(), true);
         if JobPlanningLineShowWarning(JobPlanningLine) then
             Rollback := ShowAndHandleAvailabilityPage(JobPlanningLine.RecordId);
     end;
 
-
     procedure AssemblyLineCheck(AssemblyLine: Record "Assembly Line") Rollback: Boolean
     begin
         NotificationLifecycleMgt.RecallNotificationsForRecordWithAdditionalContext(
-          AssemblyLine.RecordId, GetItemAvailabilityNotificationId, true);
+          AssemblyLine.RecordId, GetItemAvailabilityNotificationId(), true);
         if AsmOrderLineShowWarning(AssemblyLine) then
             Rollback := ShowAndHandleAvailabilityPage(AssemblyLine.RecordId);
     end;
-
 
     procedure ShowAsmWarningYesNo(var AsmHeader: Record "Assembly Header"; var AsmLine: Record "Assembly Line") Rollback: Boolean
     var
@@ -104,7 +94,6 @@ codeunit 70020 "SSA Item-Check Avail."
     begin
         Rollback := AsmLineMgt.ShowAvailability(false, AsmHeader, AsmLine);
     end;
-
 
     procedure ItemJnlLineShowWarning(ItemJnlLine: Record "Item Journal Line"): Boolean
     begin
@@ -130,7 +119,6 @@ codeunit 70020 "SSA Item-Check Avail."
             0D));
     end;
 
-
     procedure SalesLineShowWarning(SalesLine: Record "Sales Line"): Boolean
     var
         OldSalesLine: Record "Sales Line";
@@ -139,9 +127,9 @@ codeunit 70020 "SSA Item-Check Avail."
     begin
         if SalesLine."Drop Shipment" then
             exit(false);
-        if SalesLine.IsNonInventoriableItem then
+        if SalesLine.IsNonInventoriableItem() then
             exit(false);
-        if SalesLine.FullQtyIsForAsmToOrder then
+        if SalesLine.FullQtyIsForAsmToOrder() then
             exit(false);
         if not ShowWarningForThisItem(SalesLine."No.") then
             exit(false);
@@ -150,8 +138,8 @@ codeunit 70020 "SSA Item-Check Avail."
 
         OldItemNetChange := 0;
         OldSalesLine := SalesLine;
-        if OldSalesLine.Find then begin // Find previous quantity within Check-Avail. Period
-            CompanyInfo.Get;
+        if OldSalesLine.Find() then begin // Find previous quantity within Check-Avail. Period
+            CompanyInfo.Get();
             LookAheadDate :=
               AvailableToPromise.GetLookAheadPeriodEndDate(
                 CompanyInfo."Check-Avail. Period Calc.", CompanyInfo."Check-Avail. Time Bucket", SalesLine."Shipment Date");
@@ -172,7 +160,7 @@ codeunit 70020 "SSA Item-Check Avail."
                 end;
         end;
 
-        NewItemNetResChange := -(SalesLine."Qty. to Asm. to Order (Base)" - OldSalesLine.QtyBaseOnATO);
+        NewItemNetResChange := -(SalesLine."Qty. to Asm. to Order (Base)" - OldSalesLine.QtyBaseOnATO());
 
         if SalesLine."Document Type" = SalesLine."Document Type"::Order then
             UseOrderPromise := true;
@@ -220,14 +208,14 @@ codeunit 70020 "SSA Item-Check Avail."
         if UseOrderPromise then
             Item.SetRange("Date Filter", 0D, ShipmentDate)
         else
-            Item.SetRange("Date Filter", 0D, WorkDate);
+            Item.SetRange("Date Filter", 0D, WorkDate());
     end;
 
     local procedure Calculate(var Item: Record Item)
     var
         CompanyInfo: Record "Company Information";
     begin
-        CompanyInfo.Get;
+        CompanyInfo.Get();
         QtyAvailToPromise(Item, CompanyInfo);
         EarliestAvailDate := EarliestAvailabilityDate(Item, CompanyInfo);
 
@@ -292,7 +280,6 @@ codeunit 70020 "SSA Item-Check Avail."
         exit(Round(Qty * QtyPerUnitOfMeasure, 0.00001));
     end;
 
-
     procedure TransferLineShowWarning(TransLine: Record "Transfer Line"): Boolean
     var
         OldTransLine: Record "Transfer Line";
@@ -303,7 +290,7 @@ codeunit 70020 "SSA Item-Check Avail."
         UseOrderPromise := true;
 
         OldTransLine := TransLine;
-        if OldTransLine.Find then // Find previous quantity
+        if OldTransLine.Find() then // Find previous quantity
             if (OldTransLine."Item No." = TransLine."Item No.") and
                (OldTransLine."Variant Code" = TransLine."Variant Code") and
                (OldTransLine."Transfer-from Code" = TransLine."Transfer-from Code")
@@ -326,7 +313,6 @@ codeunit 70020 "SSA Item-Check Avail."
             OldTransLine."Shipment Date"));
     end;
 
-
     procedure ServiceInvLineShowWarning(ServLine: Record "Service Line"): Boolean
     var
         OldServLine: Record "Service Line";
@@ -338,7 +324,7 @@ codeunit 70020 "SSA Item-Check Avail."
 
         OldServLine := ServLine;
 
-        if OldServLine.Find then // Find previous quantity
+        if OldServLine.Find() then // Find previous quantity
             if (OldServLine."Document Type" = OldServLine."Document Type"::Order) and
                (OldServLine."No." = ServLine."No.") and
                (OldServLine."Variant Code" = ServLine."Variant Code") and
@@ -364,7 +350,6 @@ codeunit 70020 "SSA Item-Check Avail."
             OldServLine."Needed by Date"));
     end;
 
-
     procedure JobPlanningLineShowWarning(JobPlanningLine: Record "Job Planning Line"): Boolean
     var
         OldJobPlanningLine: Record "Job Planning Line";
@@ -376,7 +361,7 @@ codeunit 70020 "SSA Item-Check Avail."
 
         OldJobPlanningLine := JobPlanningLine;
 
-        if OldJobPlanningLine.Find then // Find previous quantity
+        if OldJobPlanningLine.Find() then // Find previous quantity
             if (OldJobPlanningLine.Type = OldJobPlanningLine.Type::Item) and
                (OldJobPlanningLine."No." = JobPlanningLine."No.") and
                (OldJobPlanningLine."Variant Code" = JobPlanningLine."Variant Code") and
@@ -402,7 +387,6 @@ codeunit 70020 "SSA Item-Check Avail."
             OldJobPlanningLine."Planning Date"));
     end;
 
-
     procedure AsmOrderLineShowWarning(AssemblyLine: Record "Assembly Line"): Boolean
     var
         OldAssemblyLine: Record "Assembly Line";
@@ -416,7 +400,7 @@ codeunit 70020 "SSA Item-Check Avail."
 
         OldAssemblyLine := AssemblyLine;
 
-        if OldAssemblyLine.Find then // Find previous quantity
+        if OldAssemblyLine.Find() then // Find previous quantity
             if (OldAssemblyLine."Document Type" = OldAssemblyLine."Document Type"::Order) and
                (OldAssemblyLine.Type = OldAssemblyLine.Type::Item) and
                (OldAssemblyLine."No." = AssemblyLine."No.") and
@@ -446,39 +430,35 @@ codeunit 70020 "SSA Item-Check Avail."
             OldAssemblyLine."Due Date"));
     end;
 
-
     procedure AsmOrderCalculate(AssemblyHeader: Record "Assembly Header"; var InventoryQty2: Decimal; var GrossReq2: Decimal; var ReservedReq2: Decimal; var SchedRcpt2: Decimal; var ReservedRcpt2: Decimal)
     var
         OldAssemblyHeader: Record "Assembly Header";
         Item: Record Item;
         CompanyInfo: Record "Company Information";
     begin
-        with AssemblyHeader do begin
-            UseOrderPromise := true;
+        UseOrderPromise := true;
 
-            if "Due Date" = 0D then
-                "Due Date" := WorkDate;
-            SetFilterOnItem(Item, "Item No.", "Variant Code", "Location Code", "Due Date");
-            CompanyInfo.Get;
-            QtyAvailToPromise(Item, CompanyInfo);
+        if AssemblyHeader."Due Date" = 0D then
+            AssemblyHeader."Due Date" := WorkDate();
+        SetFilterOnItem(Item, AssemblyHeader."Item No.", AssemblyHeader."Variant Code", AssemblyHeader."Location Code", AssemblyHeader."Due Date");
+        CompanyInfo.Get();
+        QtyAvailToPromise(Item, CompanyInfo);
 
-            OldAssemblyHeader := AssemblyHeader;
-            if OldAssemblyHeader.Find then // Find previous quantity
-                if (OldAssemblyHeader."Document Type" = OldAssemblyHeader."Document Type"::Order) and
-                   (OldAssemblyHeader."No." = "No.") and
-                   (OldAssemblyHeader."Item No." = "Item No.") and
-                   (OldAssemblyHeader."Variant Code" = "Variant Code") and
-                   (OldAssemblyHeader."Location Code" = "Location Code") and
-                   (OldAssemblyHeader."Bin Code" = "Bin Code")
-                then begin
-                    OldAssemblyHeader.CalcFields("Reserved Qty. (Base)");
-                    SchedRcpt :=
-                      SchedRcpt - ConvertQty(OldAssemblyHeader."Remaining Quantity (Base)" - OldAssemblyHeader."Reserved Qty. (Base)");
-                end;
-        end;
+        OldAssemblyHeader := AssemblyHeader;
+        if OldAssemblyHeader.Find() then // Find previous quantity
+            if (OldAssemblyHeader."Document Type" = OldAssemblyHeader."Document Type"::Order) and
+               (OldAssemblyHeader."No." = AssemblyHeader."No.") and
+               (OldAssemblyHeader."Item No." = AssemblyHeader."Item No.") and
+               (OldAssemblyHeader."Variant Code" = AssemblyHeader."Variant Code") and
+               (OldAssemblyHeader."Location Code" = AssemblyHeader."Location Code") and
+               (OldAssemblyHeader."Bin Code" = AssemblyHeader."Bin Code")
+            then begin
+                OldAssemblyHeader.CalcFields("Reserved Qty. (Base)");
+                SchedRcpt :=
+                  SchedRcpt - ConvertQty(OldAssemblyHeader."Remaining Quantity (Base)" - OldAssemblyHeader."Reserved Qty. (Base)");
+            end;
         FetchCalculation2(InventoryQty2, GrossReq2, ReservedReq2, SchedRcpt2, ReservedRcpt2);
     end;
-
 
     procedure FetchCalculation(var ItemNo2: Code[20]; var UnitOfMeasureCode2: Code[10]; var InventoryQty2: Decimal; var GrossReq2: Decimal; var ReservedReq2: Decimal; var SchedRcpt2: Decimal; var ReservedRcpt2: Decimal; var CurrentQuantity2: Decimal; var CurrentReservedQty2: Decimal; var TotalQuantity2: Decimal; var EarliestAvailDate2: Date)
     begin
@@ -500,13 +480,12 @@ codeunit 70020 "SSA Item-Check Avail."
         ReservedRcpt2 := ReservedRcpt;
     end;
 
-
     procedure RaiseUpdateInterruptedError()
     begin
         Error(Text000);
     end;
 
-    local procedure ShowAndHandleAvailabilityPage(RecordId: RecordID) Rollback: Boolean
+    local procedure ShowAndHandleAvailabilityPage(RecordId: RecordId) Rollback: Boolean
     var
         ItemNo2: Code[20];
         UnitOfMeasureCode2: Code[10];
@@ -532,23 +511,22 @@ codeunit 70020 "SSA Item-Check Avail."
             CurrentQuantity2, CurrentReservedQty2, TotalQuantity2, EarliestAvailDate2, RecordId, ItemLocationCode);
     end;
 
-    local procedure CreateAndSendNotification(UnitOfMeasureCode: Code[20]; InventoryQty: Decimal; GrossReq: Decimal; ReservedReq: Decimal; SchedRcpt: Decimal; ReservedRcpt: Decimal; CurrentQuantity: Decimal; CurrentReservedQty: Decimal; TotalQuantity: Decimal; EarliestAvailDate: Date; RecordId: RecordID; LocationCode: Code[10]): Boolean
+    local procedure CreateAndSendNotification(UnitOfMeasureCode: Code[20]; InventoryQty: Decimal; GrossReq: Decimal; ReservedReq: Decimal; SchedRcpt: Decimal; ReservedRcpt: Decimal; CurrentQuantity: Decimal; CurrentReservedQty: Decimal; TotalQuantity: Decimal; EarliestAvailDate: Date; RecordId: RecordId; LocationCode: Code[10]): Boolean
     var
         ItemAvailabilityCheck: Page "Item Availability Check";
         AvailabilityCheckNotification: Notification;
     begin
-        AvailabilityCheckNotification.Id(CreateGuid);
+        AvailabilityCheckNotification.Id(CreateGuid());
         AvailabilityCheckNotification.Message(StrSubstNo(NotificationMsg, ItemNo));
-        AvailabilityCheckNotification.Scope(NOTIFICATIONSCOPE::LocalScope);
-        AvailabilityCheckNotification.AddAction(DetailsTxt, CODEUNIT::"SSA Item-Check Avail.", 'ShowNotificationDetails');
+        AvailabilityCheckNotification.Scope(NotificationScope::LocalScope);
+        AvailabilityCheckNotification.AddAction(DetailsTxt, Codeunit::"SSA Item-Check Avail.", 'ShowNotificationDetails');
         ItemAvailabilityCheck.PopulateDataOnNotification(AvailabilityCheckNotification, ItemNo, UnitOfMeasureCode,
           InventoryQty, GrossReq, ReservedReq, SchedRcpt, ReservedRcpt, CurrentQuantity, CurrentReservedQty,
           TotalQuantity, EarliestAvailDate, LocationCode);
         NotificationLifecycleMgt.SendNotificationWithAdditionalContext(
-          AvailabilityCheckNotification, RecordId, GetItemAvailabilityNotificationId);
+          AvailabilityCheckNotification, RecordId, GetItemAvailabilityNotificationId());
         exit(false);
     end;
-
 
     procedure ShowWarningForThisItem(ItemNo: Code[20]): Boolean
     var
@@ -558,7 +536,7 @@ codeunit 70020 "SSA Item-Check Avail."
         if not Item.Get(ItemNo) then
             exit(false);
 
-        if Item.IsNonInventoriableType then
+        if Item.IsNonInventoriableType() then
             exit(false);
 
         if not IsItemAvailabilityNotificationEnabled(Item) then
@@ -571,14 +549,13 @@ codeunit 70020 "SSA Item-Check Avail."
                 exit(true);
             Item."Stockout Warning"::Default:
                 begin
-                    SalesSetup.Get;
+                    SalesSetup.Get();
                     if SalesSetup."Stockout Warning" then
                         exit(true);
                     exit(false);
                 end;
         end;
     end;
-
 
     procedure GetItemAvailabilityNotificationId(): Guid
     begin
@@ -589,7 +566,7 @@ codeunit 70020 "SSA Item-Check Avail."
     var
         MyNotifications: Record "My Notifications";
     begin
-        exit(MyNotifications.IsEnabledForRecord(GetItemAvailabilityNotificationId, Item));
+        exit(MyNotifications.IsEnabledForRecord(GetItemAvailabilityNotificationId(), Item));
     end;
 
     [IntegrationEvent(false, false)]
@@ -602,27 +579,21 @@ codeunit 70020 "SSA Item-Check Avail."
     var
         MyNotifications: Record "My Notifications";
     begin
-        MyNotifications.InsertDefaultWithTableNum(GetItemAvailabilityNotificationId,
+        MyNotifications.InsertDefaultWithTableNum(GetItemAvailabilityNotificationId(),
           ItemAvailabilityNotificationTxt,
           ItemAvailabilityNotificationDescriptionTxt,
-          DATABASE::Item);
+          Database::Item);
     end;
 
-
     procedure IntConsLineCheck(_IntConsLine: Record "SSAInternal Consumption Line") Rollback: Boolean
-    var
-        TempAsmHeader: Record "Assembly Header" temporary;
-        TempAsmLine: Record "Assembly Line" temporary;
-        ATOLink: Record "Assemble-to-Order Link";
     begin
         //SSA937>>
         NotificationLifecycleMgt.RecallNotificationsForRecordWithAdditionalContext(
-          _IntConsLine.RecordId, GetItemAvailabilityNotificationId, true);
+          _IntConsLine.RecordId, GetItemAvailabilityNotificationId(), true);
         if IntConsLineShowWarning(_IntConsLine) then
             Rollback := ShowAndHandleAvailabilityPage(_IntConsLine.RecordId);
         //SSA937<<
     end;
-
 
     procedure IntConsLineShowWarning(_IntConsLine: Record "SSAInternal Consumption Line"): Boolean
     var
@@ -635,7 +606,7 @@ codeunit 70020 "SSA Item-Check Avail."
         UseOrderPromise := true;
 
         OldIntConsLine := _IntConsLine;
-        if OldIntConsLine.Find then // Find previous quantity
+        if OldIntConsLine.Find() then // Find previous quantity
             if (OldIntConsLine."Item No." = _IntConsLine."Item No.") and
                (OldIntConsLine."Variant Code" = _IntConsLine."Variant Code") and
                (OldIntConsLine."Location Code" = _IntConsLine."Location Code")
@@ -658,4 +629,3 @@ codeunit 70020 "SSA Item-Check Avail."
         //SSA937<<
     end;
 }
-

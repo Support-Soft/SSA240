@@ -8,20 +8,22 @@ pageextension 70033 "SSA Fixed Asset Card70033" extends "Fixed Asset Card"
             group("SSA Intrastat")
             {
                 Caption = 'Intrastat';
-                field("SSA Net Weight"; "SSA Net Weight")
+                field("SSA Net Weight"; Rec."SSA Net Weight")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Net Weight field.';
                 }
-                field("SSA Tariff No."; "SSA Tariff No.")
+                field("SSA Tariff No."; Rec."SSA Tariff No.")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Tariff No. field.';
                 }
-                field("SSA Country/Region of Origin"; "SSA Country/Region of Origin")
+                field("SSA Country/Region of Origin"; Rec."SSA Country/Region of Origin")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Country/Region of Origin Code field.';
                 }
             }
         }
     }
 }
-

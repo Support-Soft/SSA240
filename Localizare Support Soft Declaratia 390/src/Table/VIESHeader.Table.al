@@ -2,7 +2,7 @@ table 71501 "SSA VIES Header"
 {
     // SSA974 SSCAT 11.10.2019 40.Rapoarte legale-Declaratia 390
 
-    Caption = 'SSA VIES Header';
+    Caption = 'VIES Header';
     DrillDownPageID = "SSA VIES Declarations";
     LookupPageID = "SSA VIES Declarations";
 

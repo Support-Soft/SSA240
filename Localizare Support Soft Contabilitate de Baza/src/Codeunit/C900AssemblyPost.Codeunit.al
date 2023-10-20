@@ -1,18 +1,13 @@
 codeunit 70008 "SSA C900 Assembly-Post"
 {
-    // SSA938 SSCAT 16.06.2019 4.Funct. business posting group obligatoriu la transferuri si asamblari
 
-
-    trigger OnRun()
-    begin
-    end;
 
     [EventSubscriber(ObjectType::Table, 900, 'OnBeforeInsertEvent', '', false, false)]
     local procedure OnBeforeInsertEvent(var Rec: Record "Assembly Header"; RunTrigger: Boolean)
     var
         SSASetup: Record "SSA Localization Setup";
     begin
-        SSASetup.Get;
+        SSASetup.Get();
         Rec."SSA Gen. Bus. Posting Group" := SSASetup."Assembly Gen. Bus. Pstg. Group";
     end;
 
@@ -22,7 +17,7 @@ codeunit 70008 "SSA C900 Assembly-Post"
         SSASetup: Record "SSA Localization Setup";
     begin
         //SSA938>>
-        SSASetup.Get;
+        SSASetup.Get();
         AssemblyHeader.TestField("SSA Gen. Bus. Posting Group");
         //SSA938<<
     end;
@@ -62,4 +57,3 @@ codeunit 70008 "SSA C900 Assembly-Post"
         //SSA938<<
     end;
 }
-

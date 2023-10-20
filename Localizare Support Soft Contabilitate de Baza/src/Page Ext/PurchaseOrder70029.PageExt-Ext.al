@@ -9,23 +9,24 @@ pageextension 70029 "SSA Purchase Order70029" extends "Purchase Order"
             group("SSA Localizare")
             {
                 Caption = 'Localization SS';
-                field("SSA Custom Invoice No."; "SSA Custom Invoice No.")
+                field("SSA Custom Invoice No."; Rec."SSA Custom Invoice No.")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Custom Invoice No. field.';
                 }
-
-                field("SSA Tip Document D394"; "SSA Tip Document D394")
+                field("SSA Tip Document D394"; Rec."SSA Tip Document D394")
                 {
                     Importance = Promoted;
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Tip Document D394 field.';
                 }
-                field("SSA Stare Factura"; "SSA Stare Factura")
+                field("SSA Stare Factura"; Rec."SSA Stare Factura")
                 {
                     Importance = Promoted;
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Stare Factura field.';
                 }
             }
         }
     }
 }
-

@@ -6,9 +6,8 @@ tableextension 70033 "SSA Invt. Posting Buffer70033" extends "Invt. Posting Buff
         field(70000; "SSA Correction Cost"; Boolean)
         {
             Caption = 'Correction Cost';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA935';
         }
     }
 }
-

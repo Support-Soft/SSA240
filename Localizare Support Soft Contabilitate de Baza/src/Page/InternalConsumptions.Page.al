@@ -5,79 +5,93 @@ page 70000 "SSA Internal Consumptions"
     Caption = 'Internal Consumptions';
     PageType = Document;
     SourceTable = "SSAInternal Consumption Header";
+    ApplicationArea = All;
 
     layout
     {
-        area(content)
+        area(Content)
         {
             group(General)
             {
                 Caption = 'General';
-                field("No."; "No.")
+                field("No."; Rec."No.")
                 {
                     ApplicationArea = All;
-
+                    ToolTip = 'Specifies the value of the No. field.';
                     trigger OnAssistEdit()
                     begin
-                        if AssistEdit(xRec) then
-                            CurrPage.Update;
+                        if Rec.AssistEdit(xRec) then
+                            CurrPage.Update();
                     end;
                 }
-                field(Control1390028; Comment)
+                field(Control1390028; Rec.Comment)
                 {
                     ApplicationArea = All;
                     Editable = false;
+                    ToolTip = 'Specifies the value of the Comment field.';
                 }
-                field("Responsibility Center"; "Responsibility Center")
+                field("Responsibility Center"; Rec."Responsibility Center")
                 {
                     ApplicationArea = All;
                     Visible = false;
+                    ToolTip = 'Specifies the value of the Responsibility Center field.';
                 }
-                field("Location Code"; "Location Code")
+                field("Location Code"; Rec."Location Code")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Location Code field.';
                 }
-                field("Your Reference"; "Your Reference")
+                field("Your Reference"; Rec."Your Reference")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Your Reference field.';
                 }
-                field("Posting Date"; "Posting Date")
+                field("Posting Date"; Rec."Posting Date")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Posting Date field.';
                 }
-                field("Document Date"; "Document Date")
+                field("Document Date"; Rec."Document Date")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Document Date field.';
                 }
-                field("External Document No."; "External Document No.")
+                field("External Document No."; Rec."External Document No.")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the External Document No. field.';
                 }
-                field("Posting No."; "Posting No.")
+                field("Posting No."; Rec."Posting No.")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Posting No. field.';
                 }
-                field("Shortcut Dimension 1 Code"; "Shortcut Dimension 1 Code")
+                field("Shortcut Dimension 1 Code"; Rec."Shortcut Dimension 1 Code")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Shortcut Dimension 1 Code field.';
                 }
-                field("Shortcut Dimension 2 Code"; "Shortcut Dimension 2 Code")
+                field("Shortcut Dimension 2 Code"; Rec."Shortcut Dimension 2 Code")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Shortcut Dimension 2 Code field.';
                 }
-                field("Gen. Bus. Posting Group"; "Gen. Bus. Posting Group")
+                field("Gen. Bus. Posting Group"; Rec."Gen. Bus. Posting Group")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Gen. Bus. Posting Group field.';
                 }
-                field(Cancelled; Cancelled)
+                field(Cancelled; Rec.Cancelled)
                 {
                     ApplicationArea = All;
                     Editable = false;
+                    ToolTip = 'Specifies the value of the Cancelled field.';
                 }
-                field("Cancelled from No."; "Cancelled from No.")
+                field("Cancelled from No."; Rec."Cancelled from No.")
                 {
                     ApplicationArea = All;
                     Editable = false;
+                    ToolTip = 'Specifies the value of the Cancelled from No. field.';
                 }
             }
             part(InternalConsumptionLine; "SSAInt. Consumption Subform")
@@ -87,7 +101,7 @@ page 70000 "SSA Internal Consumptions"
                 SubPageLink = "Document No." = field("No.");
             }
         }
-        area(factboxes)
+        area(FactBoxes)
         {
             part("Int. Consumption FactBox"; "SSAInt. Consumption FactBox")
             {
@@ -103,7 +117,7 @@ page 70000 "SSA Internal Consumptions"
 
     actions
     {
-        area(navigation)
+        area(Navigation)
         {
             group("&Internal Consumption")
             {
@@ -113,35 +127,36 @@ page 70000 "SSA Internal Consumptions"
                     ApplicationArea = All;
                     Caption = 'Co&mments';
                     Image = ViewComments;
-                    RunObject = Page "SSA Comment Sheet";
+                    RunObject = page "SSA Comment Sheet";
                     RunPageLink = "Document Type" = filter("Internal Consumption"),
                                   "No." = field("No.");
+                    ToolTip = 'Executes the Co&mments action.';
                 }
                 action(Dimensions)
                 {
                     ApplicationArea = All;
                     Caption = 'Dimensions';
                     Image = Dimensions;
-
+                    ToolTip = 'Executes the Dimensions action.';
                     trigger OnAction()
                     begin
-                        ShowDocDim;
-                        CurrPage.SaveRecord;
+                        Rec.ShowDocDim();
+                        CurrPage.SaveRecord();
                     end;
                 }
                 action("Storno from...")
                 {
                     ApplicationArea = All;
                     Caption = 'Storno from...';
-
+                    ToolTip = 'Executes the Storno from... action.';
                     trigger OnAction()
                     begin
-                        StornoFrom; //SSA1097
+                        Rec.StornoFrom(); //SSA1097
                     end;
                 }
             }
         }
-        area(processing)
+        area(Processing)
         {
             group("Po&sting")
             {
@@ -154,10 +169,11 @@ page 70000 "SSA Internal Consumptions"
                     Promoted = true;
                     PromotedCategory = Process;
                     PromotedIsBig = true;
-                    ShortCutKey = 'F9';
+                    ShortcutKey = 'F9';
+                    ToolTip = 'Executes the P&ost action.';
                     trigger OnAction()
                     begin
-                        Post(CODEUNIT::"SSA Int. Cons-Post (Yes/No)", NavigateAfterPost::"Posted Document");
+                        Post(Codeunit::"SSA Int. Cons-Post (Yes/No)", NavigateAfterPost::"Posted Document");
                     end;
                 }
                 action(PostAndNew)
@@ -168,11 +184,12 @@ page 70000 "SSA Internal Consumptions"
                     Promoted = true;
                     PromotedCategory = Process;
                     PromotedIsBig = false;
-                    ShortCutKey = 'Shift+F9';
+                    ShortcutKey = 'Shift+F9';
                     Ellipsis = true;
+                    ToolTip = 'Executes the Post and New action.';
                     trigger OnAction()
                     begin
-                        Post(CODEUNIT::"SSA Int. Cons-Post (Yes/No)", NavigateAfterPost::"New Document");
+                        Post(Codeunit::"SSA Int. Cons-Post (Yes/No)", NavigateAfterPost::"New Document");
                     end;
                 }
                 action("Post and &Print")
@@ -183,9 +200,10 @@ page 70000 "SSA Internal Consumptions"
                     Promoted = true;
                     PromotedCategory = Process;
                     PromotedIsBig = true;
+                    ToolTip = 'Executes the Post and &Print action.';
                     trigger OnAction()
                     begin
-                        Post(CODEUNIT::"SSA Int. Cons-Post + Print", NavigateAfterPost::Nowhere);
+                        Post(Codeunit::"SSA Int. Cons-Post + Print", NavigateAfterPost::Nowhere);
                     end;
                 }
             }
@@ -195,7 +213,7 @@ page 70000 "SSA Internal Consumptions"
                 Caption = 'Comment';
                 Promoted = true;
                 PromotedCategory = Process;
-                RunObject = Page "SSA Comment Sheet";
+                RunObject = page "SSA Comment Sheet";
                 RunPageLink = "Document Type" = const("Internal Consumption"),
                               "No." = field("No.");
                 ToolTip = 'Comment';
@@ -207,58 +225,51 @@ page 70000 "SSA Internal Consumptions"
 
     trigger OnDeleteRecord(): Boolean
     begin
-        CurrPage.SaveRecord;
-        exit(ConfirmDeletion);
+        CurrPage.SaveRecord();
+        exit(Rec.ConfirmDeletion());
     end;
 
     trigger OnNewRecord(BelowxRec: Boolean)
     begin
-        "Responsibility Center" := SSAUserMgt.GetIntConsumptionFilter();
+        Rec."Responsibility Center" := SSAUserMgt.GetIntConsumptionFilter();
     end;
 
     trigger OnOpenPage()
     begin
         if SSAUserMgt.GetIntConsumptionFilter() <> '' then begin
-            FilterGroup(2);
-            SetRange("Responsibility Center", SSAUserMgt.GetIntConsumptionFilter());
-            FilterGroup(0);
+            Rec.FilterGroup(2);
+            Rec.SetRange("Responsibility Center", SSAUserMgt.GetIntConsumptionFilter());
+            Rec.FilterGroup(0);
         end;
     end;
 
     var
-        SalesSetup: Record "Sales & Receivables Setup";
         PostedIntConsHeader: Record "SSA Pstd. Int. Cons. Header";
-        PostedIntConsLine: Record "SSAPstd. Int. Consumption Line";
-        NewLine: Record "SSAInternal Consumption Line";
-        UserSetup: Record "User Setup";
         IntConsHeader: Record "SSAInternal Consumption Header";
-        ReportPrint: Codeunit "Test Report-Print";
-        UserMgt: Codeunit "User Setup Management";
         SSAUserMgt: Codeunit "SSA User Setup Management";
         InstructionMgt: Codeunit "Instruction Mgt.";
-        Text16100: Label 'Storno Consumption %1';
         OpenPostedSalesOrderQst: Label 'The order is posted as number %1 and moved to the Posted Internal Consumption window.\\Do you want to open the Posted Internal Consumption?';
 
     local procedure Post(_PostingCodeunitID: Integer; Navigate: Option)
     var
         DocumentIsPosted: Boolean;
     begin
-        SendToPosting(_PostingCodeunitID);
-        DocumentIsPosted := (not IntConsHeader.GET("No."));
-        CurrPage.UPDATE(false);
+        Rec.SendToPosting(_PostingCodeunitID);
+        DocumentIsPosted := (not IntConsHeader.Get(Rec."No."));
+        CurrPage.Update(false);
 
-        if _PostingCodeunitID <> CODEUNIT::"SSA Int. Cons-Post (Yes/No)" then
+        if _PostingCodeunitID <> Codeunit::"SSA Int. Cons-Post (Yes/No)" then
             exit;
 
         case Navigate of
             NavigateAfterPost::"Posted Document":
-                if InstructionMgt.IsEnabled(InstructionMgt.ShowPostedConfirmationMessageCode) then
-                    ShowPostedConfirmationMessage;
+                if InstructionMgt.IsEnabled(InstructionMgt.ShowPostedConfirmationMessageCode()) then
+                    ShowPostedConfirmationMessage();
             NavigateAfterPost::"New Document":
                 if DocumentIsPosted then begin
-                    IntConsHeader.INIT;
-                    IntConsHeader.INSERT(true);
-                    PAGE.RUN(PAGE::"SSA Internal Consumptions", IntConsHeader);
+                    IntConsHeader.Init();
+                    IntConsHeader.Insert(true);
+                    Page.Run(Page::"SSA Internal Consumptions", IntConsHeader);
                 end;
         end;
     end;
@@ -266,16 +277,15 @@ page 70000 "SSA Internal Consumptions"
     local procedure ShowPostedConfirmationMessage()
 
     begin
-        if not IntConsHeader.GET("No.") then begin
-            PostedIntConsHeader.SETRANGE("No.", "Last Posting No.");
-            if PostedIntConsHeader.FINDFIRST then
-                if InstructionMgt.ShowConfirm(STRSUBSTNO(OpenPostedSalesOrderQst, PostedIntConsHeader."No."),
-                     InstructionMgt.ShowPostedConfirmationMessageCode)
+        if not IntConsHeader.Get(Rec."No.") then begin
+            PostedIntConsHeader.SetRange("No.", Rec."Last Posting No.");
+            if PostedIntConsHeader.FindFirst() then
+                if InstructionMgt.ShowConfirm(StrSubstNo(OpenPostedSalesOrderQst, PostedIntConsHeader."No."),
+                     InstructionMgt.ShowPostedConfirmationMessageCode())
                 then begin
-                    PAGE.RUN(PAGE::"SSA Posted Int. Consumptions", PostedIntConsHeader);
+                    Page.Run(Page::"SSA Posted Int. Consumptions", PostedIntConsHeader);
                     CurrPage.Close();
                 end;
         end;
     end;
 }
-

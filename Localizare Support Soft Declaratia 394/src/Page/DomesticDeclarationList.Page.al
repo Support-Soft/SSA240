@@ -18,35 +18,35 @@ page 71702 "SSA Domestic Declaration List"
             repeater(Control1390000)
             {
                 ShowCaption = false;
-                field("Code"; Code)
+                field("Code"; Rec.Code)
                 {
                     ApplicationArea = All;
                 }
-                field(Description; Description)
+                field(Description; Rec.Description)
                 {
                     ApplicationArea = All;
                 }
-                field(Reported; Reported)
+                field(Reported; Rec.Reported)
                 {
                     ApplicationArea = All;
                 }
-                field(Type; Type)
+                field(Type; Rec.Type)
                 {
                     ApplicationArea = All;
                 }
-                field(Period; Period)
+                field(Period; Rec.Period)
                 {
                     ApplicationArea = All;
                 }
-                field(Year; Year)
+                field(Year; Rec.Year)
                 {
                     ApplicationArea = All;
                 }
-                field("Starting Date"; "Starting Date")
+                field("Starting Date"; Rec."Starting Date")
                 {
                     ApplicationArea = All;
                 }
-                field("Ending Date"; "Ending Date")
+                field("Ending Date"; Rec."Ending Date")
                 {
                     ApplicationArea = All;
                 }
@@ -74,11 +74,11 @@ page 71702 "SSA Domestic Declaration List"
                 begin
                     clear(DomesticDeclPage);
                     DomesticDeclarationLine.reset;
-                    DomesticDeclarationLine.setrange("Domestic Declaration Code", Code);
-                    DomesticDeclarationLine."Domestic Declaration Code" := Code;
+                    DomesticDeclarationLine.setrange("Domestic Declaration Code", Rec.Code);
+                    DomesticDeclarationLine."Domestic Declaration Code" := Rec.Code;
                     DomesticDeclarationLine.SetRecFilter();
                     DomesticDeclPage.SetTableView(DomesticDeclarationLine);
-                    DomesticDeclPage.SetCurrentDeclarationCode(Code);
+                    DomesticDeclPage.SetCurrentDeclarationCode(Rec.Code);
                     DomesticDeclPage.Run();
                 end;
             }
@@ -90,9 +90,9 @@ page 71702 "SSA Domestic Declaration List"
         DomesticDecl: Record "SSA Domestic Declaration";
     begin
         if not CurrPage.LookupMode then
-            if GetFilter(Code) <> '' then
-                if GetRangeMin(Code) = GetRangeMax(Code) then
-                    if DomesticDecl.Get(GetRangeMin(Code)) then
+            if Rec.GetFilter(Code) <> '' then
+                if Rec.GetRangeMin(Code) = Rec.GetRangeMax(Code) then
+                    if DomesticDecl.Get(Rec.GetRangeMin(Code)) then
                         exit(DomesticDecl.Code + ' ' + DomesticDecl.Description);
     end;
 }

@@ -4,6 +4,7 @@ report 70005 "SSA NIR Achizitii"
     RDLCLayout = './src/rdlc/SSANIRAchizitii.rdlc';
     Caption = 'NIR Achizitii';
     PreviewMode = PrintLayout;
+    ApplicationArea = All;
 
     dataset
     {
@@ -250,7 +251,7 @@ report 70005 "SSA NIR Achizitii"
                         NrCrt += 1;
                         DescriereLinie := "Purch. Rcpt. Line".Description;
                         Valuenotax := 0;
-                        ValueEntry.Reset;
+                        ValueEntry.Reset();
                         ValueEntry.SetCurrentKey("Item Ledger Entry No.");
                         //ValueEntry.SETFILTER("Item Charge No.", '<>%1', '');
                         ValueEntry.SetRange("Item Ledger Entry No.", "Entry No.");
@@ -272,7 +273,7 @@ report 70005 "SSA NIR Achizitii"
                                             ArrTax[4] := ArrTax[4] + ValueEntry."Cost Amount (Actual)";
                                     end
                                 end
-                            until ValueEntry.Next = 0;
+                            until ValueEntry.Next() = 0;
                         if "Item Ledger Entry"."Serial No." <> '' then
                             DescriereLinie := "Purch. Rcpt. Line".Description + "Purch. Rcpt. Line"."Description 2" + ' Nr. serie: ' + "Item Ledger Entry"."Serial No."
                         else
@@ -297,7 +298,7 @@ report 70005 "SSA NIR Achizitii"
                     if InventoryPostingSetup.Find('-') then; //Cont debitor
                     CalcFields("Purch. Rcpt. Line"."Currency Code");
                     if not (Type in [Type::Item, Type::"Fixed Asset"]) then
-                        CurrReport.Skip;
+                        CurrReport.Skip();
                 end;
             }
 
@@ -314,20 +315,8 @@ report 70005 "SSA NIR Achizitii"
 
             trigger OnPreDataItem()
             begin
-                CompanyInfo.Get;
+                CompanyInfo.Get();
             end;
-        }
-    }
-
-    requestpage
-    {
-
-        layout
-        {
-        }
-
-        actions
-        {
         }
     }
 
@@ -347,12 +336,8 @@ report 70005 "SSA NIR Achizitii"
         ValueEntry: Record "Value Entry";
         ItemCharges: Record "Item Charge";
         VendorPostingGroup: Record "Vendor Posting Group";
-        InventoryPostingGroup: Record "Inventory Posting Group";
         WaybillNo: Code[35];
-        ArrItemChargeName: array[10] of Code[20];
         ArrTax: array[4] of Decimal;
-        ArrTaxTotal: array[4] of Decimal;
-        ArrItemCharge: array[10] of Decimal;
         NrCrt: Integer;
         Pagelbl: Label 'Page';
         Fromlbl: Label 'of';
@@ -403,4 +388,3 @@ report 70005 "SSA NIR Achizitii"
         CustomsValuelbl: Label 'Duty Value';
         OtherTaxValuelbl: Label 'Other Taxes Value ';
 }
-

@@ -1,6 +1,5 @@
 report 70501 "SSA Duplicate parameter"
 {
-
     Caption = 'Duplicate parameter';
     ProcessingOnly = true;
 
@@ -83,7 +82,6 @@ report 70501 "SSA Duplicate parameter"
 
     requestpage
     {
-
         layout
         {
             area(content)
@@ -91,15 +89,18 @@ report 70501 "SSA Duplicate parameter"
                 field("Ce nume atribuiţi noului parametru?"; '')
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the '''' field.';
                 }
                 field("Numele vechi"; OldName)
                 {
                     Caption = 'Old name';
                     Editable = false;
+                    ToolTip = 'Specifies the value of the Old name field.';
                 }
                 field("Numele nou"; NewName)
                 {
                     Caption = 'New name';
+                    ToolTip = 'Specifies the value of the New name field.';
                 }
             }
         }
@@ -138,4 +139,3 @@ report 70501 "SSA Duplicate parameter"
             ERROR(Text001 + NewName + Text002);
     end;
 }
-

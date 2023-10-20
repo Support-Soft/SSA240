@@ -19,5 +19,4 @@ tableextension 70502 "SSA Bank Account70502" extends "Bank Account" //270
             Caption = 'From Payment No.';
         }
     }
-
 }

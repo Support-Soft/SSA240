@@ -13,13 +13,15 @@ page 70504 "SSA Payment Class List"
             repeater(Control1)
             {
                 ShowCaption = false;
-                field("Code"; Code)
+                field("Code"; Rec.Code)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Code field.';
                 }
-                field(Name; Name)
+                field(Name; Rec.Name)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Name field.';
                 }
             }
         }
@@ -29,4 +31,3 @@ page 70504 "SSA Payment Class List"
     {
     }
 }
-

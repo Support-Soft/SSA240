@@ -5,10 +5,12 @@ tableextension 70032 "SSA Employee" extends Employee
         field(70000; "SSA ID No."; Code[10])
         {
             Caption = 'ID No.';
+            DataClassification = CustomerContent;
         }
         field(70001; "SSA ID Series"; Code[10])
         {
             Caption = 'ID Series';
+            DataClassification = CustomerContent;
         }
     }
 }

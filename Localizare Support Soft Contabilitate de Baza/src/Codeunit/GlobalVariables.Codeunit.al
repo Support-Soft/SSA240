@@ -2,10 +2,7 @@ codeunit 70011 "SSA Global Variables"
 
 {
     SingleInstance = true;
-    trigger OnRun()
-    begin
 
-    end;
 
     var
         DeferralCorrection: Boolean;

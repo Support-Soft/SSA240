@@ -8,7 +8,7 @@ tableextension 70004 "SSA Purch. Rcpt. Header70004" extends "Purch. Rcpt. Header
         field(70000; "SSA Tip Document D394"; Option)
         {
             Caption = 'Tip Document D394';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA973';
             OptionCaption = ' ,Factura Fiscala,Bon Fiscal,Factura Simplificata,Borderou,File Carnet,Contract,Alte Documente';
             OptionMembers = " ","Factura Fiscala","Bon Fiscal","Factura Simplificata",Borderou,"File Carnet",Contract,"Alte Documente";
@@ -16,7 +16,7 @@ tableextension 70004 "SSA Purch. Rcpt. Header70004" extends "Purch. Rcpt. Header
         field(70001; "SSA Stare Factura"; Option)
         {
             Caption = 'Stare Factura';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA973';
             OptionCaption = ' ,0-Factura Emisa,1-Factura Stornata,2-Factura Anulata,3-Autofactura,4-In calidate de beneficiar in numele furnizorului';
             OptionMembers = " ","0-Factura Emisa","1-Factura Stornata","2-Factura Anulata","3-Autofactura","4-In calidate de beneficiar in numele furnizorului";
@@ -24,19 +24,19 @@ tableextension 70004 "SSA Purch. Rcpt. Header70004" extends "Purch. Rcpt. Header
         field(70002; "SSA Custom Invoice No."; Code[20])
         {
             Caption = 'Custom Invoice No.';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA946';
         }
         field(70004; "SSA Commerce Trade No."; Code[20])
         {
             Caption = 'Commerce Trade No.';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA968';
         }
         field(70100; "SSA Vendor Invoice No."; Code[35])
         {
             Caption = 'Vendor Invoice No.';
+            DataClassification = CustomerContent;
         }
     }
 }
-

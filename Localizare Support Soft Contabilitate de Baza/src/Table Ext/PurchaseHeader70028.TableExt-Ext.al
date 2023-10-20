@@ -9,7 +9,7 @@ tableextension 70028 "SSA Purchase Header70028" extends "Purchase Header"
         field(70000; "SSA Tip Document D394"; Option)
         {
             Caption = 'Tip Document D394';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA973';
             OptionCaption = ' ,Factura Fiscala,Bon Fiscal,Factura Simplificata,Borderou,File Carnet,Contract,Alte Documente';
             OptionMembers = " ","Factura Fiscala","Bon Fiscal","Factura Simplificata",Borderou,"File Carnet",Contract,"Alte Documente";
@@ -17,7 +17,7 @@ tableextension 70028 "SSA Purchase Header70028" extends "Purchase Header"
         field(70001; "SSA Stare Factura"; Option)
         {
             Caption = 'Stare Factura';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA973';
             OptionCaption = ' ,0-Factura Emisa,1-Factura Stornata,2-Factura Anulata,3-Autofactura,4-In calidate de beneficiar in numele furnizorului';
             OptionMembers = " ","0-Factura Emisa","1-Factura Stornata","2-Factura Anulata","3-Autofactura","4-In calidate de beneficiar in numele furnizorului";
@@ -25,13 +25,13 @@ tableextension 70028 "SSA Purchase Header70028" extends "Purchase Header"
         field(70002; "SSA Custom Invoice No."; Code[20])
         {
             Caption = 'Custom Invoice No.';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA946';
         }
         field(70003; "SSA VAT to Pay"; Boolean)
         {
             Caption = 'VAT to pay';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA947';
 
             trigger OnValidate()
@@ -40,13 +40,13 @@ tableextension 70028 "SSA Purchase Header70028" extends "Purchase Header"
                 CompanyInformation: Record "Company Information";
             begin
                 //SSA947>>
-                CompanyInformation.Get;
+                CompanyInformation.Get();
                 if "Buy-from Country/Region Code" <> CompanyInformation."Country/Region Code" then
                     exit;
 
                 if xRec."SSA VAT to Pay" = "SSA VAT to Pay" then
                     exit;
-                SSASetup.Get;
+                SSASetup.Get();
                 SSASetup.TestField("Vendor Neex. VAT Posting Group");
                 SSASetup.TestField("Vendor Ex. VAT Posting Group");
                 if "SSA VAT to Pay" then
@@ -60,9 +60,8 @@ tableextension 70028 "SSA Purchase Header70028" extends "Purchase Header"
         field(70004; "SSA Commerce Trade No."; Code[20])
         {
             Caption = 'Commerce Trade No.';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA968';
         }
     }
 }
-

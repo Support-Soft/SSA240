@@ -5,11 +5,11 @@ pageextension 70027 "SSA VATProductPstgGroups70027" extends "VAT Product Posting
     {
         addafter(Description)
         {
-            field("SSA Non-Deductible VAT"; "SSA Non-Deductible VAT")
+            field("SSA Non-Deductible VAT"; Rec."SSA Non-Deductible VAT")
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Non-Deductible VAT field.';
             }
         }
     }
 }
-

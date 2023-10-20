@@ -133,4 +133,3 @@ table 70501 "SSA Payment Class"
         TimeStep: Record "SSA Payment Step" temporary;
         Text002: Label 'The series'' nos must not be greater than 10.';
 }
-

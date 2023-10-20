@@ -6,10 +6,9 @@ tableextension 70026 "SSA Payment Buffer70026" extends "Payment Buffer"
         field(70000; "SSA Vendor Posting Group"; Code[20])
         {
             Caption = 'Vendor Posting Group';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA969';
             TableRelation = "Vendor Posting Group";
         }
     }
 }
-

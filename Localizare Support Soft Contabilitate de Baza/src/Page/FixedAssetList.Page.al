@@ -5,7 +5,7 @@ page 70011 "SSA Fixed Asset List"
     AdditionalSearchTerms = 'fa list';
     ApplicationArea = All;
     Caption = 'Fixed Assets';
-    CardPageID = "SSA Fixed Asset Card";
+    CardPageId = "SSA Fixed Asset Card";
     Editable = false;
     PageType = List;
     SourceTable = "Fixed Asset";
@@ -15,72 +15,72 @@ page 70011 "SSA Fixed Asset List"
 
     layout
     {
-        area(content)
+        area(Content)
         {
             repeater(Control1)
             {
                 ShowCaption = false;
-                field("No."; "No.")
+                field("No."; Rec."No.")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the number of the involved entry or record, according to the specified number series.';
                 }
-                field(Description; Description)
+                field(Description; Rec.Description)
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies a description of the fixed asset.';
                 }
-                field("Vendor No."; "Vendor No.")
+                field("Vendor No."; Rec."Vendor No.")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the number of the vendor from which you purchased this fixed asset.';
                     Visible = false;
                 }
-                field("Maintenance Vendor No."; "Maintenance Vendor No.")
+                field("Maintenance Vendor No."; Rec."Maintenance Vendor No.")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the number of the vendor who performs repairs and maintenance on the fixed asset.';
                     Visible = false;
                 }
-                field("Responsible Employee"; "Responsible Employee")
+                field("Responsible Employee"; Rec."Responsible Employee")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies which employee is responsible for the fixed asset.';
                 }
-                field("FA Class Code"; "FA Class Code")
+                field("FA Class Code"; Rec."FA Class Code")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the class that the fixed asset belongs to.';
                 }
-                field("FA Subclass Code"; "FA Subclass Code")
+                field("FA Subclass Code"; Rec."FA Subclass Code")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the subclass of the class that the fixed asset belongs to.';
                 }
-                field("FA Location Code"; "FA Location Code")
+                field("FA Location Code"; Rec."FA Location Code")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the location, such as a building, where the fixed asset is located.';
                 }
-                field("Budgeted Asset"; "Budgeted Asset")
+                field("Budgeted Asset"; Rec."Budgeted Asset")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies if the asset is for budgeting purposes.';
                     Visible = false;
                 }
-                field("Search Description"; "Search Description")
+                field("Search Description"; Rec."Search Description")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies a search description for the fixed asset.';
                 }
-                field(Acquired; Acquired)
+                field(Acquired; Rec.Acquired)
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies that the fixed asset has been acquired.';
                 }
             }
         }
-        area(factboxes)
+        area(FactBoxes)
         {
             systempart(Control1900383207; Links)
             {
@@ -96,7 +96,7 @@ page 70011 "SSA Fixed Asset List"
 
     actions
     {
-        area(navigation)
+        area(Navigation)
         {
             group("Fixed &Asset")
             {
@@ -107,7 +107,7 @@ page 70011 "SSA Fixed Asset List"
                     ApplicationArea = All;
                     Caption = 'Depreciation &Books';
                     Image = DepreciationBooks;
-                    RunObject = Page "FA Depreciation Books";
+                    RunObject = page "FA Depreciation Books";
                     RunPageLink = "FA No." = field("No.");
                     ToolTip = 'View or edit the depreciation book or books that must be used for each of the fixed assets. Here you also specify the way depreciation must be calculated.';
                 }
@@ -118,9 +118,9 @@ page 70011 "SSA Fixed Asset List"
                     Image = Statistics;
                     Promoted = true;
                     PromotedCategory = Process;
-                    RunObject = Page "Fixed Asset Statistics";
+                    RunObject = page "Fixed Asset Statistics";
                     RunPageLink = "FA No." = field("No.");
-                    ShortCutKey = 'F7';
+                    ShortcutKey = 'F7';
                     ToolTip = 'View detailed historical information about the fixed asset.';
                 }
                 group(Dimensions)
@@ -134,15 +134,15 @@ page 70011 "SSA Fixed Asset List"
                         Image = Dimensions;
                         Promoted = true;
                         PromotedCategory = Process;
-                        RunObject = Page "Default Dimensions";
+                        RunObject = page "Default Dimensions";
                         RunPageLink = "Table ID" = const(5600),
                                       "No." = field("No.");
-                        ShortCutKey = 'Shift+Ctrl+D';
+                        ShortcutKey = 'Shift+Ctrl+D';
                         ToolTip = 'View or edit the single set of dimensions that are set up for the selected record.';
                     }
                     action("Dimensions-&Multiple")
                     {
-                        AccessByPermission = TableData Dimension = R;
+                        AccessByPermission = tabledata Dimension = R;
                         ApplicationArea = All;
                         Caption = 'Dimensions-&Multiple';
                         Image = DimensionSets;
@@ -156,8 +156,8 @@ page 70011 "SSA Fixed Asset List"
                             DefaultDimMultiple: Page "Default Dimensions-Multiple";
                         begin
                             CurrPage.SetSelectionFilter(FA);
-                            DefaultDimMultiple.SetMultiRecord(FA, FieldNo("No."));
-                            DefaultDimMultiple.RunModal;
+                            DefaultDimMultiple.SetMultiRecord(FA, Rec.FieldNo("No."));
+                            DefaultDimMultiple.RunModal();
                         end;
                     }
                 }
@@ -166,7 +166,7 @@ page 70011 "SSA Fixed Asset List"
                     ApplicationArea = All;
                     Caption = 'Main&tenance Ledger Entries';
                     Image = MaintenanceLedgerEntries;
-                    RunObject = Page "Maintenance Ledger Entries";
+                    RunObject = page "Maintenance Ledger Entries";
                     RunPageLink = "FA No." = field("No.");
                     RunPageView = sorting("FA No.");
                     ToolTip = 'View all the maintenance ledger entries for a fixed asset. ';
@@ -176,7 +176,7 @@ page 70011 "SSA Fixed Asset List"
                     ApplicationArea = All;
                     Caption = 'Picture';
                     Image = Picture;
-                    RunObject = Page "Fixed Asset Picture";
+                    RunObject = page "Fixed Asset Picture";
                     RunPageLink = "No." = field("No.");
                     ToolTip = 'Add or view a picture of the fixed asset.';
                 }
@@ -187,7 +187,7 @@ page 70011 "SSA Fixed Asset List"
                     Image = ShowMatrix;
                     Promoted = true;
                     PromotedCategory = Process;
-                    RunObject = Page "FA Posting Types Overview";
+                    RunObject = page "FA Posting Types Overview";
                     ToolTip = 'View accumulated amounts for each field, such as book value, acquisition cost, and depreciation, and for each fixed asset. For every fixed asset, a separate line is shown for each depreciation book linked to the asset.';
                 }
                 action("Co&mments")
@@ -195,7 +195,7 @@ page 70011 "SSA Fixed Asset List"
                     ApplicationArea = All;
                     Caption = 'Co&mments';
                     Image = ViewComments;
-                    RunObject = Page "Comment Sheet";
+                    RunObject = page "Comment Sheet";
                     RunPageLink = "Table Name" = const("Fixed Asset"),
                                   "No." = field("No.");
                     ToolTip = 'View or add comments for the record.';
@@ -210,7 +210,7 @@ page 70011 "SSA Fixed Asset List"
                     ApplicationArea = All;
                     Caption = 'M&ain Asset Components';
                     Image = Components;
-                    RunObject = Page "Main Asset Components";
+                    RunObject = page "Main Asset Components";
                     RunPageLink = "Main Asset No." = field("No.");
                     ToolTip = 'View or edit fixed asset components of the main fixed asset that is represented by the fixed asset card.';
                 }
@@ -219,7 +219,7 @@ page 70011 "SSA Fixed Asset List"
                     ApplicationArea = All;
                     Caption = 'Ma&in Asset Statistics';
                     Image = StatisticsDocument;
-                    RunObject = Page "Main Asset Statistics";
+                    RunObject = page "Main Asset Statistics";
                     RunPageLink = "FA No." = field("No.");
                     ToolTip = 'View detailed historical information about all the components that make up the main asset.';
                 }
@@ -237,11 +237,11 @@ page 70011 "SSA Fixed Asset List"
                     ApplicationArea = All;
                     Caption = 'Ledger E&ntries';
                     Image = FixedAssetLedger;
-                    RunObject = Page "FA Ledger Entries";
+                    RunObject = page "FA Ledger Entries";
                     RunPageLink = "FA No." = field("No.");
                     RunPageView = sorting("FA No.")
                                   order(descending);
-                    ShortCutKey = 'Ctrl+F7';
+                    ShortcutKey = 'Ctrl+F7';
                     ToolTip = 'View the history of transactions that have been posted for the selected record.';
                 }
                 action("Error Ledger Entries")
@@ -249,7 +249,7 @@ page 70011 "SSA Fixed Asset List"
                     ApplicationArea = All;
                     Caption = 'Error Ledger Entries';
                     Image = ErrorFALedgerEntries;
-                    RunObject = Page "FA Error Ledger Entries";
+                    RunObject = page "FA Error Ledger Entries";
                     RunPageLink = "Canceled from FA No." = field("No.");
                     RunPageView = sorting("Canceled from FA No.")
                                   order(descending);
@@ -260,20 +260,20 @@ page 70011 "SSA Fixed Asset List"
                     ApplicationArea = All;
                     Caption = 'Maintenance &Registration';
                     Image = MaintenanceRegistrations;
-                    RunObject = Page "Maintenance Registration";
+                    RunObject = page "Maintenance Registration";
                     RunPageLink = "FA No." = field("No.");
                     ToolTip = 'View or edit maintenance codes for the various types of maintenance, repairs, and services performed on your fixed assets. You can then enter the code in the Maintenance Code field on journals.';
                 }
             }
         }
-        area(processing)
+        area(Processing)
         {
             action("Fixed Asset Journal")
             {
                 ApplicationArea = All;
                 Caption = 'Fixed Asset Journal';
                 Image = Journal;
-                RunObject = Page "Fixed Asset Journal";
+                RunObject = page "Fixed Asset Journal";
                 ToolTip = 'Post fixed asset transactions with a depreciation book that is not integrated with the general ledger, for internal management. Only fixed asset ledger entries are created. ';
             }
             action("Fixed Asset G/L Journal")
@@ -284,7 +284,7 @@ page 70011 "SSA Fixed Asset List"
                 Promoted = true;
                 PromotedCategory = Process;
                 PromotedIsBig = true;
-                RunObject = Page "Fixed Asset G/L Journal";
+                RunObject = page "Fixed Asset G/L Journal";
                 ToolTip = 'Post fixed asset transactions with a depreciation book that is integrated with the general ledger, for financial reporting. Both fixed asset ledger entries are general ledger entries are created. ';
             }
             action("Fixed Asset Reclassification Journal")
@@ -292,7 +292,7 @@ page 70011 "SSA Fixed Asset List"
                 ApplicationArea = All;
                 Caption = 'Fixed Asset Reclassification Journal';
                 Image = Journal;
-                RunObject = Page "FA Reclass. Journal";
+                RunObject = page "FA Reclass. Journal";
                 ToolTip = 'Transfer, split, or combine fixed assets.';
             }
             action("Recurring Fixed Asset Journal")
@@ -300,7 +300,7 @@ page 70011 "SSA Fixed Asset List"
                 ApplicationArea = All;
                 Caption = 'Recurring Fixed Asset Journal';
                 Image = Journal;
-                RunObject = Page "Recurring Fixed Asset Journal";
+                RunObject = page "Recurring Fixed Asset Journal";
                 ToolTip = 'Post recurring entries to a depreciation book without integration with general ledger.';
             }
             action(CalculateDepreciation)
@@ -316,7 +316,7 @@ page 70011 "SSA Fixed Asset List"
 
                 trigger OnAction()
                 begin
-                    REPORT.RunModal(REPORT::"Calculate Depreciation", true, false, Rec);
+                    Report.RunModal(Report::"Calculate Depreciation", true, false, Rec);
                 end;
             }
             action("C&opy Fixed Asset")
@@ -331,12 +331,12 @@ page 70011 "SSA Fixed Asset List"
                 var
                     CopyFA: Report "Copy Fixed Asset";
                 begin
-                    CopyFA.SetFANo("No.");
-                    CopyFA.RunModal;
+                    CopyFA.SetFANo(Rec."No.");
+                    CopyFA.RunModal();
                 end;
             }
         }
-        area(reporting)
+        area(Reporting)
         {
             action("Fixed Assets List")
             {
@@ -345,7 +345,7 @@ page 70011 "SSA Fixed Asset List"
                 Image = "Report";
                 Promoted = true;
                 PromotedCategory = "Report";
-                RunObject = Report "Fixed Asset - List";
+                RunObject = report "Fixed Asset - List";
                 ToolTip = 'View the list of fixed assets that exist in the system .';
             }
             action("Acquisition List")
@@ -355,7 +355,7 @@ page 70011 "SSA Fixed Asset List"
                 Image = "Report";
                 Promoted = true;
                 PromotedCategory = "Report";
-                RunObject = Report "Fixed Asset - Acquisition List";
+                RunObject = report "Fixed Asset - Acquisition List";
                 ToolTip = 'View the related acquisitions.';
             }
             action(Details)
@@ -365,7 +365,7 @@ page 70011 "SSA Fixed Asset List"
                 Image = View;
                 Promoted = true;
                 PromotedCategory = "Report";
-                RunObject = Report "Fixed Asset - Details";
+                RunObject = report "Fixed Asset - Details";
                 ToolTip = 'View detailed information about the fixed asset ledger entries that have been posted to a specified depreciation book for each fixed asset.';
             }
             action("FA Book Value")
@@ -373,7 +373,7 @@ page 70011 "SSA Fixed Asset List"
                 ApplicationArea = All;
                 Caption = 'FA Book Value';
                 Image = "Report";
-                RunObject = Report "Fixed Asset - Book Value 01";
+                RunObject = report "Fixed Asset - Book Value 01";
                 ToolTip = 'View detailed information about acquisition cost, depreciation and book value for both individual assets and groups of assets. For each of these three amount types, amounts are calculated at the beginning and at the end of a specified period as well as for the period itself.';
             }
             action("FA Book Val. - Appr. & Write-D")
@@ -381,7 +381,7 @@ page 70011 "SSA Fixed Asset List"
                 ApplicationArea = All;
                 Caption = 'FA Book Val. - Appr. & Write-D';
                 Image = "Report";
-                RunObject = Report "Fixed Asset - Book Value 02";
+                RunObject = report "Fixed Asset - Book Value 02";
                 ToolTip = 'View detailed information about acquisition cost, depreciation, appreciation, write-down and book value for both individual assets and groups of assets. For each of these categories, amounts are calculated at the beginning and at the end of a specified period, as well as for the period itself.';
             }
             action(Analysis)
@@ -391,7 +391,7 @@ page 70011 "SSA Fixed Asset List"
                 Image = "Report";
                 Promoted = true;
                 PromotedCategory = "Report";
-                RunObject = Report "Fixed Asset - Analysis";
+                RunObject = report "Fixed Asset - Analysis";
                 ToolTip = 'View an analysis of your fixed assets with various types of data for both individual assets and groups of fixed assets.';
             }
             action("Projected Value")
@@ -401,7 +401,7 @@ page 70011 "SSA Fixed Asset List"
                 Image = "Report";
                 Promoted = true;
                 PromotedCategory = "Report";
-                RunObject = Report "Fixed Asset - Projected Value";
+                RunObject = report "Fixed Asset - Projected Value";
                 ToolTip = 'View the calculated future depreciation and book value. You can print the report for one depreciation book at a time.';
             }
             action("G/L Analysis")
@@ -409,7 +409,7 @@ page 70011 "SSA Fixed Asset List"
                 ApplicationArea = All;
                 Caption = 'G/L Analysis';
                 Image = "Report";
-                RunObject = Report "Fixed Asset - G/L Analysis";
+                RunObject = report "Fixed Asset - G/L Analysis";
                 ToolTip = 'View an analysis of your fixed assets with various types of data for individual assets and/or groups of fixed assets.';
             }
             action(Register)
@@ -417,7 +417,7 @@ page 70011 "SSA Fixed Asset List"
                 ApplicationArea = All;
                 Caption = 'Register';
                 Image = Confirm;
-                RunObject = Report "Fixed Asset Register";
+                RunObject = report "Fixed Asset Register";
                 ToolTip = 'View registers containing all the fixed asset entries that are created. Each register shows the first and last entry number of its entries.';
             }
         }
@@ -425,7 +425,7 @@ page 70011 "SSA Fixed Asset List"
 
     trigger OnNewRecord(BelowxRec: Boolean)
     begin
-        "SSA Type" := "SSA Type"::"Fixed Asset";
+        Rec."SSA Type" := Rec."SSA Type"::"Fixed Asset";
     end;
 
     procedure GetSelectionFilter(): Text
@@ -437,4 +437,3 @@ page 70011 "SSA Fixed Asset List"
         exit(SelectionFilterManagement.GetSelectionFilterForFixedAsset(FixedAsset));
     end;
 }
-

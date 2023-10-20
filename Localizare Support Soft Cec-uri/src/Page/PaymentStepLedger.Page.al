@@ -12,120 +12,127 @@ page 70518 "SSA Payment Step Ledger"
             group(Control1)
             {
                 ShowCaption = false;
-                field("Payment Class"; "Payment Class")
+                field("Payment Class"; Rec."Payment Class")
                 {
                     ApplicationArea = All;
                     Enabled = false;
+                    ToolTip = 'Specifies the value of the Payment Class field.';
                 }
-                field(Line; Line)
+                field(Line; Rec.Line)
                 {
                     ApplicationArea = All;
                     Enabled = false;
+                    ToolTip = 'Specifies the value of the Line field.';
                 }
-                field(Sign; Sign)
+                field(Sign; Rec.Sign)
                 {
                     ApplicationArea = All;
                     Enabled = SignEnable;
+                    ToolTip = 'Specifies the value of the Sign field.';
                 }
-                field(Description; Description)
+                field(Description; Rec.Description)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Description field.';
                 }
-                field("Accounting Type"; "Accounting Type")
+                field("Accounting Type"; Rec."Accounting Type")
                 {
                     ApplicationArea = All;
                     Enabled = "Accounting TypeEnable";
-
+                    ToolTip = 'Specifies the value of the Accounting Type field.';
                     trigger OnValidate()
                     begin
                         DisableFields;
                     end;
                 }
-                field("Account Type"; "Account Type")
+                field("Account Type"; Rec."Account Type")
                 {
                     ApplicationArea = All;
                     Enabled = "Account TypeEnable";
-
+                    ToolTip = 'Specifies the value of the Account Type field.';
                     trigger OnValidate()
                     begin
                         DisableFields;
                     end;
                 }
-                field("Account No."; "Account No.")
+                field("Account No."; Rec."Account No.")
                 {
                     ApplicationArea = All;
                     Enabled = "Account No.Enable";
-
+                    ToolTip = 'Specifies the value of the Account No. field.';
                     trigger OnValidate()
                     begin
                         DisableFields;
                     end;
                 }
-                field("Customer Posting Group"; "Customer Posting Group")
+                field("Customer Posting Group"; Rec."Customer Posting Group")
                 {
                     ApplicationArea = All;
                     Enabled = "Customer Posting GroupEnable";
-
+                    ToolTip = 'Specifies the value of the Customer Posting Group field.';
                     trigger OnValidate()
                     begin
                         DisableFields;
                     end;
                 }
-                field("Vendor Posting Group"; "Vendor Posting Group")
+                field("Vendor Posting Group"; Rec."Vendor Posting Group")
                 {
                     ApplicationArea = All;
                     Enabled = "Vendor Posting GroupEnable";
-
+                    ToolTip = 'Specifies the value of the Vendor Posting Group field.';
                     trigger OnValidate()
                     begin
                         DisableFields;
                     end;
                 }
-                field(Root; Root)
+                field(Root; Rec.Root)
                 {
                     ApplicationArea = All;
                     Enabled = RootEnable;
-
+                    ToolTip = 'Specifies the value of the Root field.';
                     trigger OnValidate()
                     begin
                         DisableFields;
                     end;
                 }
-                field("Memorize Entry"; "Memorize Entry")
+                field("Memorize Entry"; Rec."Memorize Entry")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Memorize Entry field.';
                     trigger OnValidate()
                     begin
                         DisableFields;
                     end;
                 }
-                field(Application; Application)
+                field(Application; Rec.Application)
                 {
                     ApplicationArea = All;
                     Enabled = ApplicationEnable;
-
+                    ToolTip = 'Specifies the value of the Application field.';
                     trigger OnValidate()
                     begin
                         DisableFields;
                     end;
                 }
-                field("Detail Level"; "Detail Level")
+                field("Detail Level"; Rec."Detail Level")
                 {
                     ApplicationArea = All;
                     Enabled = "Detail LevelEnable";
-
+                    ToolTip = 'Specifies the value of the Detail Level field.';
                     trigger OnValidate()
                     begin
                         DisableFields;
                     end;
                 }
-                field("Document Type"; "Document Type")
+                field("Document Type"; Rec."Document Type")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Document Type field.';
                 }
-                field("Document No."; "Document No.")
+                field("Document No."; Rec."Document No.")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Document No. field.';
                 }
             }
         }
@@ -154,23 +161,23 @@ page 70518 "SSA Payment Step Ledger"
     end;
 
     var
-        [InDataSet]
+
         "Accounting TypeEnable": Boolean;
-        [InDataSet]
+
         SignEnable: Boolean;
-        [InDataSet]
+
         ApplicationEnable: Boolean;
-        [InDataSet]
+
         "Account TypeEnable": Boolean;
-        [InDataSet]
+
         "Account No.Enable": Boolean;
-        [InDataSet]
+
         "Customer Posting GroupEnable": Boolean;
-        [InDataSet]
+
         "Vendor Posting GroupEnable": Boolean;
-        [InDataSet]
+
         RootEnable: Boolean;
-        [InDataSet]
+
         "Detail LevelEnable": Boolean;
 
     procedure DisableFields()
@@ -178,14 +185,14 @@ page 70518 "SSA Payment Step Ledger"
         "Accounting TypeEnable" := true;
         SignEnable := true;
         ApplicationEnable := true;
-        if "Accounting Type" = "Accounting Type"::"Below Account" then begin
+        if Rec."Accounting Type" = Rec."Accounting Type"::"Below Account" then begin
             "Account TypeEnable" := true;
             "Account No.Enable" := true;
-            if "Account Type" = "Account Type"::Customer then begin
+            if Rec."Account Type" = Rec."Account Type"::Customer then begin
                 "Customer Posting GroupEnable" := true;
                 "Vendor Posting GroupEnable" := false;
             end else
-                if "Account Type" = "Account Type"::Vendor then begin
+                if Rec."Account Type" = Rec."Account Type"::Vendor then begin
                     "Customer Posting GroupEnable" := false;
                     "Vendor Posting GroupEnable" := true;
                 end else begin
@@ -196,8 +203,8 @@ page 70518 "SSA Payment Step Ledger"
         end else begin
             "Account TypeEnable" := false;
             "Account No.Enable" := false;
-            if "Accounting Type" in ["Accounting Type"::"G/L Account / Month",
-                                   "Accounting Type"::"G/L Account / Week"] then begin
+            if Rec."Accounting Type" in [Rec."Accounting Type"::"G/L Account / Month",
+                                   Rec."Accounting Type"::"G/L Account / Week"] then begin
                 RootEnable := true;
                 "Customer Posting GroupEnable" := false;
                 "Vendor Posting GroupEnable" := false;
@@ -207,16 +214,15 @@ page 70518 "SSA Payment Step Ledger"
                 "Vendor Posting GroupEnable" := true;
             end;
         end;
-        if "Accounting Type" = "Accounting Type"::"Bal. Account Previous Entry" then begin
+        if Rec."Accounting Type" = Rec."Accounting Type"::"Bal. Account Previous Entry" then begin
             "Customer Posting GroupEnable" := false;
             "Vendor Posting GroupEnable" := false;
         end;
-        if ("Memorize Entry") or (Application <> Application::None) then begin
-            "Detail Level" := "Detail Level"::Line;
+        if (Rec."Memorize Entry") or (Rec.Application <> Rec.Application::None) then begin
+            Rec."Detail Level" := Rec."Detail Level"::Line;
             "Detail LevelEnable" := false;
         end else begin
             "Detail LevelEnable" := true;
         end;
     end;
 }
-

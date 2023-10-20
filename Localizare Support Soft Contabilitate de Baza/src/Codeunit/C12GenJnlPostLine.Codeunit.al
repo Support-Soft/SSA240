@@ -1,12 +1,6 @@
 codeunit 70009 "SSA C12 Gen. Jnl.-Post Line"
 {
-    // SSA960 SSCAT 17.06.2019 26.Funct. reevaluare solduri valutare
-    // SSA946 SSCAT 26.09.2019 12.Funct. functionalitate DVI la achizitii
 
-
-    trigger OnRun()
-    begin
-    end;
 
     var
         Text001: Label 'You cannot apply %1 with %2 journal line %3! Try to apply %1 with %1!';
@@ -32,7 +26,7 @@ codeunit 70009 "SSA C12 Gen. Jnl.-Post Line"
     begin
         //SSA944>>
         TempOldVendLedgEntry.SetFilter("Vendor Posting Group", '<>%1', GenJournalLine."Posting Group");
-        if TempOldVendLedgEntry.FindFirst then
+        if TempOldVendLedgEntry.FindFirst() then
             Error(Text001, GenJournalLine."Posting Group", TempOldVendLedgEntry."Vendor Posting Group", GenJournalLine."Line No.")
         else
             TempOldVendLedgEntry.SetRange("Vendor Posting Group");
@@ -44,7 +38,7 @@ codeunit 70009 "SSA C12 Gen. Jnl.-Post Line"
     begin
         //SSA944>>
         TempOldCustLedgEntry.SetFilter("Customer Posting Group", '<>%1', GenJournalLine."Posting Group");
-        if TempOldCustLedgEntry.FindFirst then
+        if TempOldCustLedgEntry.FindFirst() then
             Error(Text001, GenJournalLine."Posting Group", TempOldCustLedgEntry."Customer Posting Group", GenJournalLine."Line No.")
         else
             TempOldCustLedgEntry.SetRange("Customer Posting Group");
@@ -75,7 +69,7 @@ codeunit 70009 "SSA C12 Gen. Jnl.-Post Line"
         //SSA946>>
         VendorLedgerEntry."SSA Custom Invoice No." := GenJournalLine."SSA Custom Invoice No.";
 
-        SSASetup.Get;
+        SSASetup.Get();
         if (GenJournalLine."Document Type" in [GenJournalLine."Document Type"::Invoice, GenJournalLine."Document Type"::"Credit Memo"]) and
            SSASetup."Custom Invoice No. Mandatory"
         then

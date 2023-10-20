@@ -7,7 +7,7 @@ codeunit 70005 "SSA Int. Cons-Post + Print"
     trigger OnRun()
     begin
         IntConsumptionHeader.Copy(Rec);
-        Code;
+        Code();
         Rec := IntConsumptionHeader;
     end;
 
@@ -20,36 +20,33 @@ codeunit 70005 "SSA Int. Cons-Post + Print"
 
     local procedure "Code"()
     begin
-        with IntConsumptionHeader do begin
-            if not
-                 Confirm(
-                    Text000, false,
-                    "No.")
-            then
-                exit;
+        if not
+     Confirm(
+        Text000, false,
+        IntConsumptionHeader."No.")
+then
+            exit;
 
-            IntConsumptionPost.Run(IntConsumptionHeader);
+        IntConsumptionPost.Run(IntConsumptionHeader);
 
-            if "Last Posting No." = '' then
-                PostedIntConsumptionHeader."No." := "No."
-            else
-                PostedIntConsumptionHeader."No." := "Last Posting No.";
-            PostedIntConsumptionHeader.SetRecFilter;
-            PrintReport(PostedIntConsumptionHeader, SSAReportSelections.Usage::"P.I.Cons", false);
+        if IntConsumptionHeader."Last Posting No." = '' then
+            PostedIntConsumptionHeader."No." := IntConsumptionHeader."No."
+        else
+            PostedIntConsumptionHeader."No." := IntConsumptionHeader."Last Posting No.";
+        PostedIntConsumptionHeader.SetRecFilter();
+        PrintReport(PostedIntConsumptionHeader, SSAReportSelections.Usage::"P.I.Cons", false);
 
-            Commit;
-        end;
+        Commit();
     end;
 
     procedure PrintReport(var _PostedIntConsumptionHeader: Record "SSA Pstd. Int. Cons. Header"; _ReportUsage: Integer; _ShowReqPage: Boolean)
     begin
-        SSAReportSelections.Reset;
+        SSAReportSelections.Reset();
         SSAReportSelections.SetRange(Usage, _ReportUsage);
         SSAReportSelections.Find('-');
         repeat
             SSAReportSelections.TestField("Report ID");
-            REPORT.Run(SSAReportSelections."Report ID", _ShowReqPage, false, _PostedIntConsumptionHeader);
-        until SSAReportSelections.Next = 0;
+            Report.Run(SSAReportSelections."Report ID", _ShowReqPage, false, _PostedIntConsumptionHeader);
+        until SSAReportSelections.Next() = 0;
     end;
 }
-

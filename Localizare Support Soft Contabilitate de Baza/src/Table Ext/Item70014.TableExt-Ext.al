@@ -5,9 +5,8 @@ tableextension 70014 "SSA Item70014" extends Item
         field(70000; "SSA Full Description"; Text[250])
         {
             Caption = 'Full Description';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA962';
         }
     }
 }
-

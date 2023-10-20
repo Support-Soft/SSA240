@@ -6,9 +6,8 @@ tableextension 70017 "SSA IssuedReminderHeader70017" extends "Issued Reminder He
         field(70000; "SSA Commerce Trade No."; Code[20])
         {
             Caption = 'Commerce Trade No.';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA968';
         }
     }
 }
-

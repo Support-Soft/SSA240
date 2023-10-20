@@ -2,7 +2,7 @@ page 71504 "SSA VIES Lines"
 {
     // SSA974 SSCAT 11.10.2019 40.Rapoarte legale-Declaratia 390
 
-    Caption = 'SSA VIES Lines';
+    Caption = 'VIES Lines';
     Editable = false;
     PageType = List;
     SourceTable = "SSA VIES Line";
@@ -14,31 +14,31 @@ page 71504 "SSA VIES Lines"
             repeater(Control1470000)
             {
                 ShowCaption = false;
-                field("Trade Type"; "Trade Type")
+                field("Trade Type"; Rec."Trade Type")
                 {
                     ApplicationArea = All;
                 }
-                field("Country/Region Code"; "Country/Region Code")
+                field("Country/Region Code"; Rec."Country/Region Code")
                 {
                     ApplicationArea = All;
                 }
-                field("VAT Registration No."; "VAT Registration No.")
+                field("VAT Registration No."; Rec."VAT Registration No.")
                 {
                     ApplicationArea = All;
                 }
-                field("EU Service"; "EU Service")
+                field("EU Service"; Rec."EU Service")
                 {
                     ApplicationArea = All;
                 }
-                field("Amount (LCY)"; "Amount (LCY)")
+                field("Amount (LCY)"; Rec."Amount (LCY)")
                 {
                     ApplicationArea = All;
                     trigger OnDrillDown()
                     begin
-                        DrillDownAmountLCY;
+                        Rec.DrillDownAmountLCY;
                     end;
                 }
-                field("Trade Role Type"; "Trade Role Type")
+                field("Trade Role Type"; Rec."Trade Role Type")
                 {
                     ApplicationArea = All;
                 }
@@ -52,8 +52,8 @@ page 71504 "SSA VIES Lines"
 
     trigger OnOpenPage()
     begin
-        SetRange("VIES Declaration No.", VIESHeader."Corrected Declaration No.");
-        SetRange("Line Type", "Line Type"::New);
+        Rec.SetRange("VIES Declaration No.", VIESHeader."Corrected Declaration No.");
+        Rec.SetRange("Line Type", Rec."Line Type"::New);
     end;
 
     var
@@ -77,31 +77,29 @@ page 71504 "SSA VIES Lines"
         CurrPage.SetSelectionFilter(VIESLine);
         if VIESLine.FindSet then
             repeat
-                with VIESLine2 do begin
-                    Reset;
-                    "VIES Declaration No." := VIESHeader."No.";
-                    "Line No." := LastLineNo + 10000;
-                    LastLineNo += 10000;
-                    "Trade Type" := VIESLine."Trade Type";
-                    "Line Type" := VIESLine."Line Type"::Cancellation;
-                    "Related Line No." := VIESLine."Line No.";
-                    "Country/Region Code" := VIESLine."Country/Region Code";
-                    "VAT Registration No." := VIESLine."VAT Registration No.";
-                    "Cust/Vend Name" := VIESLine."Cust/Vend Name";
-                    "Amount (LCY)" := VIESLine."Amount (LCY)";
-                    "EU 3-Party Trade" := VIESLine."EU 3-Party Trade";
-                    "EU Service" := VIESLine."EU Service";
-                    "EU 3-Party Intermediate Role" := VIESLine."EU 3-Party Intermediate Role";
-                    "Trade Role Type" := VIESLine."Trade Role Type";
-                    "Number of Supplies" := VIESLine."Number of Supplies";
-                    "System-Created" := true;
-                    Insert;
-                    "Line No." := LastLineNo + 10000;
-                    LastLineNo += 10000;
-                    "Line Type" := VIESLine."Line Type"::Correction;
-                    "System-Created" := false;
-                    Insert;
-                end;
+                VIESLine2.Reset;
+                VIESLine2."VIES Declaration No." := VIESHeader."No.";
+                VIESLine2."Line No." := LastLineNo + 10000;
+                LastLineNo += 10000;
+                VIESLine2."Trade Type" := VIESLine."Trade Type";
+                VIESLine2."Line Type" := VIESLine."Line Type"::Cancellation;
+                VIESLine2."Related Line No." := VIESLine."Line No.";
+                VIESLine2."Country/Region Code" := VIESLine."Country/Region Code";
+                VIESLine2."VAT Registration No." := VIESLine."VAT Registration No.";
+                VIESLine2."Cust/Vend Name" := VIESLine."Cust/Vend Name";
+                VIESLine2."Amount (LCY)" := VIESLine."Amount (LCY)";
+                VIESLine2."EU 3-Party Trade" := VIESLine."EU 3-Party Trade";
+                VIESLine2."EU Service" := VIESLine."EU Service";
+                VIESLine2."EU 3-Party Intermediate Role" := VIESLine."EU 3-Party Intermediate Role";
+                VIESLine2."Trade Role Type" := VIESLine."Trade Role Type";
+                VIESLine2."Number of Supplies" := VIESLine."Number of Supplies";
+                VIESLine2."System-Created" := true;
+                VIESLine2.Insert;
+                VIESLine2."Line No." := LastLineNo + 10000;
+                LastLineNo += 10000;
+                VIESLine2."Line Type" := VIESLine."Line Type"::Correction;
+                VIESLine2."System-Created" := false;
+                VIESLine2.Insert;
             until VIESLine.Next = 0;
     end;
 }

@@ -4,13 +4,13 @@ pageextension 70500 "SSA Cust. Ledger Entry 70500" extends "Customer Ledger Entr
     {
         addlast(Control1)
         {
-            field("SSA Applied Amount CEC/BO"; "SSA Applied Amount CEC/BO")
+            field("SSA Applied Amount CEC/BO"; Rec."SSA Applied Amount CEC/BO")
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Applied Amount CEC/BO field.';
             }
         }
     }
-
 
     actions
     {

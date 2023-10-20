@@ -18,6 +18,25 @@
             "schemaUpdateMode": "Synchronize"
         },
         {
+            "name": "Publish: Milca220",
+            "type": "al",
+            "request": "launch",
+            "environmentType": "OnPrem",
+            "server": "http://192.168.13.201:8080/BC220Milca",
+            "serverInstance": "BC220Milca",
+            "authentication": "Windows",
+            "breakOnError": "All",
+            "breakOnRecordWrite": "None",
+            "launchBrowser": true,
+            "enableSqlInformationDebugger": true,
+            "enableLongRunningSqlStatements": true,
+            "longRunningSqlStatementsThreshold": 500,
+            "numberOfSqlStatements": 10,
+            "tenant": "default",
+            "port": 22089,
+            "schemaUpdateMode": "ForceSync"
+        },
+        {
             "name": "Attach: Your own server",
             "type": "al",
             "request": "attach",

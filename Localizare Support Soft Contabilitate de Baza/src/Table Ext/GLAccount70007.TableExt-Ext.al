@@ -9,44 +9,43 @@ tableextension 70007 "SSA G/L Account70007" extends "G/L Account"
         field(70000; "SSA Closing Account"; Code[20])
         {
             Caption = 'Closing Account';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA955';
             TableRelation = "G/L Account";
         }
         field(70001; "SSA Check Posting Debit/Credit"; Boolean)
         {
             Caption = 'Check Posting Debit/Credit';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA940';
         }
         field(70002; "SSA Distribute Non-Ded VAT"; Boolean)
         {
             Caption = 'Distribute Non-Deductible VAT';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA948';
         }
         field(70003; "SSA Non-Ded VAT Expense Acc 1"; Code[20])
         {
             Caption = 'Non-Ded VAT Expense Account 1';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA948';
             TableRelation = "G/L Account";
         }
         field(70004; "SSA Non-Ded VAT Expense Acc 2"; Code[20])
         {
             Caption = 'Non-Ded VAT Expense Account 2';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA948';
             TableRelation = "G/L Account";
         }
         field(70005; "SSA Analytic/Synth1/Synth2"; Option)
         {
             Caption = 'Analytic/Synthetic1/Synthetic2';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA978';
             OptionCaption = 'Analytic,Synthetic1,Synthetic2, ';
             OptionMembers = Analytic,Synthetic1,Synthetic2," ";
         }
     }
 }
-

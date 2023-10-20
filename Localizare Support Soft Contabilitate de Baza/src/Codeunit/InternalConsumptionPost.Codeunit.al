@@ -10,99 +10,94 @@ codeunit 70003 "SSA Internal Consumption Post"
         Window.Open(
               '#1#################################\\' +
               Text000);
-        Window.Update(1, StrSubstNo('%1', "No."));
+        Window.Update(1, StrSubstNo('%1', Rec."No."));
 
-        if ("No. Series" <> '') then
-            TestField("Posting No. Series");
-        if ("No. Series" <> "Posting No. Series") then begin
-            "Posting No." := NoSeriesMgt.GetNextNo("Posting No. Series", "Posting Date", true);
-            Modify;
+        if (Rec."No. Series" <> '') then
+            Rec.TestField("Posting No. Series");
+        if (Rec."No. Series" <> Rec."Posting No. Series") then begin
+            Rec."Posting No." := NoSeriesMgt.GetNextNo(Rec."Posting No. Series", Rec."Posting Date", true);
+            Rec.Modify();
         end;
 
-        SSASetup.Get;
+        SSASetup.Get();
 
         IntConsHeader := Rec;
-        with IntConsHeader do begin
-            TestField("Gen. Bus. Posting Group");
-            "Last Posting No." := "Posting No.";
-            IntPostedConsHeader.Init;
-            IntPostedConsHeader.TransferFields(Rec);
-            if "Posting No." <> '' then
-                IntPostedConsHeader."No." := "Posting No.";
-            IntPostedConsHeader.Insert;
+        IntConsHeader.TestField("Gen. Bus. Posting Group");
+        IntConsHeader."Last Posting No." := IntConsHeader."Posting No.";
+        IntPostedConsHeader.Init();
+        IntPostedConsHeader.TransferFields(Rec);
+        if IntConsHeader."Posting No." <> '' then
+            IntPostedConsHeader."No." := IntConsHeader."Posting No.";
+        IntPostedConsHeader.Insert();
 
-            CheckDim;
+        CheckDim();
 
-            IntConsLine.SetRange("Document No.", IntConsHeader."No.");
-            if IntConsLine.Find('-') then
-                repeat
-                    IntConsLine.TestField("Unit of Measure Code");
+        IntConsLine.SetRange("Document No.", IntConsHeader."No.");
+        if IntConsLine.Find('-') then
+            repeat
+                IntConsLine.TestField("Unit of Measure Code");
 
-                    IntPostedConsLine.Init;
-                    IntPostedConsLine.TransferFields(IntConsLine);
-                    IntPostedConsLine."Document No." := IntPostedConsHeader."No.";
-                    IntPostedConsLine.Insert;
+                IntPostedConsLine.Init();
+                IntPostedConsLine.TransferFields(IntConsLine);
+                IntPostedConsLine."Document No." := IntPostedConsHeader."No.";
+                IntPostedConsLine.Insert();
 
-                    with ItemJnlLine do begin
-                        Validate("Item No.", IntConsLine."Item No.");
-                        Validate("Posting Date", IntConsHeader."Posting Date");
-                        Validate("Entry Type", "Entry Type"::"Negative Adjmt.");
-                        "Shortcut Dimension 1 Code" := IntConsLine."Shortcut Dimension 1 Code";
-                        "Shortcut Dimension 2 Code" := IntConsLine."Shortcut Dimension 2 Code";
-                        Validate("Location Code", IntConsLine."Location Code");
-                        Validate("Variant Code", IntConsLine."Variant Code");
-                        Validate("Document No.", IntPostedConsHeader."No.");
-                        Validate(Quantity, IntConsLine.Quantity);
-                        "Applies-to Entry" := IntConsLine."Appl.-to Item Entry";
-                        if IntConsLine.Quantity <> 0 then begin
-                            Validate("Unit Amount", IntConsLine."Unit Cost (LCY)");
-                            Validate("Unit Cost", IntConsLine."Unit Cost (LCY)");
-                        end;
-                        if IntConsLine."Appl.-from Item Entry" <> 0 then
-                            Validate("Applies-from Entry", IntConsLine."Appl.-from Item Entry");
-                        Validate("Gen. Bus. Posting Group", IntConsLine."Gen. Bus. Posting Group");
-                        Validate("Gen. Prod. Posting Group", IntConsLine."Gen. Prod. Posting Group");
-                        Description := IntConsHeader."Responsibility Center";
-                        "SSA Document Type" := "SSA Document Type"::"Internal Consumption";
-                        Validate("Item Shpt. Entry No.", 0);
-                        "Dimension Set ID" := IntConsLine."Dimension Set ID";
+                ItemJnlLine.Validate("Item No.", IntConsLine."Item No.");
+                ItemJnlLine.Validate("Posting Date", IntConsHeader."Posting Date");
+                ItemJnlLine.Validate("Entry Type", ItemJnlLine."Entry Type"::"Negative Adjmt.");
+                ItemJnlLine."Shortcut Dimension 1 Code" := IntConsLine."Shortcut Dimension 1 Code";
+                ItemJnlLine."Shortcut Dimension 2 Code" := IntConsLine."Shortcut Dimension 2 Code";
+                ItemJnlLine.Validate("Location Code", IntConsLine."Location Code");
+                ItemJnlLine.Validate("Variant Code", IntConsLine."Variant Code");
+                ItemJnlLine.Validate("Document No.", IntPostedConsHeader."No.");
+                ItemJnlLine.Validate(Quantity, IntConsLine.Quantity);
+                ItemJnlLine."Applies-to Entry" := IntConsLine."Appl.-to Item Entry";
+                if IntConsLine.Quantity <> 0 then begin
+                    ItemJnlLine.Validate("Unit Amount", IntConsLine."Unit Cost (LCY)");
+                    ItemJnlLine.Validate("Unit Cost", IntConsLine."Unit Cost (LCY)");
+                end;
+                if IntConsLine."Appl.-from Item Entry" <> 0 then
+                    ItemJnlLine.Validate("Applies-from Entry", IntConsLine."Appl.-from Item Entry");
+                ItemJnlLine.Validate("Gen. Bus. Posting Group", IntConsLine."Gen. Bus. Posting Group");
+                ItemJnlLine.Validate("Gen. Prod. Posting Group", IntConsLine."Gen. Prod. Posting Group");
+                ItemJnlLine.Description := IntConsHeader."Responsibility Center";
+                ItemJnlLine."SSA Document Type" := ItemJnlLine."SSA Document Type"::"Internal Consumption";
+                ItemJnlLine.Validate("Item Shpt. Entry No.", 0);
+                ItemJnlLine."Dimension Set ID" := IntConsLine."Dimension Set ID";
 
-                        "SSA Correction Cost" := IntConsHeader."Correction Cost";
-                        "SSA Correction Cost Inv. Val." := IntConsHeader."Correction Cost";
+                ItemJnlLine."SSA Correction Cost" := IntConsHeader."Correction Cost";
+                ItemJnlLine."SSA Correction Cost Inv. Val." := IntConsHeader."Correction Cost";
 
-                        ItemJnlPostLine.RunWithCheck(ItemJnlLine);
+                ItemJnlPostLine.RunWithCheck(ItemJnlLine);
 
-                        IntPostedConsLine."Item Shpt. Entry No." := ItemJnlLine."Item Shpt. Entry No.";
-                        IntPostedConsLine.Modify;
-                        Window.Update(1, StrSubstNo('%1', "No."));
-                    end;
-                until IntConsLine.Next = 0;
+                IntPostedConsLine."Item Shpt. Entry No." := ItemJnlLine."Item Shpt. Entry No.";
+                IntPostedConsLine.Modify();
+                Window.Update(1, StrSubstNo('%1', ItemJnlLine."No."));
+            until IntConsLine.Next() = 0;
 
-            SSACommentLine.Reset;
-            SSACommentLine.SetRange("Document Type", SSACommentLine."Document Type"::"Internal Consumption");
-            SSACommentLine.SetRange("No.", "No.");
-            if SSACommentLine.Find('-') then
-                repeat
-                    NewSSACommentLine.Init;
-                    NewSSACommentLine.Validate("Document Type", SSACommentLine."Document Type"::"Internal Consumption");
-                    NewSSACommentLine.Validate("No.", IntPostedConsHeader."No.");
-                    NewSSACommentLine.Validate("Line No.", SSACommentLine."Line No.");
-                    NewSSACommentLine.Validate(Date, IntPostedConsHeader."Posting Date");
-                    NewSSACommentLine.Validate(Code, SSACommentLine.Code);
-                    NewSSACommentLine.Validate(Comment, SSACommentLine.Comment);
-                    if NewSSACommentLine.Insert then
-                        SSACommentLine.Delete;
-                until SSACommentLine.Next = 0;
+        SSACommentLine.Reset();
+        SSACommentLine.SetRange("Document Type", SSACommentLine."Document Type"::"Internal Consumption");
+        SSACommentLine.SetRange("No.", IntConsHeader."No.");
+        if SSACommentLine.Find('-') then
+            repeat
+                NewSSACommentLine.Init();
+                NewSSACommentLine.Validate("Document Type", SSACommentLine."Document Type"::"Internal Consumption");
+                NewSSACommentLine.Validate("No.", IntPostedConsHeader."No.");
+                NewSSACommentLine.Validate("Line No.", SSACommentLine."Line No.");
+                NewSSACommentLine.Validate(Date, IntPostedConsHeader."Posting Date");
+                NewSSACommentLine.Validate(Code, SSACommentLine.Code);
+                NewSSACommentLine.Validate(Comment, SSACommentLine.Comment);
+                if NewSSACommentLine.Insert() then
+                    SSACommentLine.Delete();
+            until SSACommentLine.Next() = 0;
 
-            IntConsLine.Reset;
-            IntConsLine.SetRange("Document No.", "No.");
-            IntConsLine.DeleteAll;
+        IntConsLine.Reset();
+        IntConsLine.SetRange("Document No.", IntConsHeader."No.");
+        IntConsLine.DeleteAll();
 
-            Delete;
-        end;
+        IntConsHeader.Delete();
 
-
-        Commit;
+        Commit();
         Rec := IntConsHeader;
     end;
 
@@ -114,7 +109,6 @@ codeunit 70003 "SSA Internal Consumption Post"
         IntConsLine: Record "SSAInternal Consumption Line";
         IntPostedConsHeader: Record "SSA Pstd. Int. Cons. Header";
         IntPostedConsLine: Record "SSAPstd. Int. Consumption Line";
-        InventorySetup: Record "Inventory Setup";
         ItemJnlLine: Record "Item Journal Line";
         SSACommentLine: Record "SSA Comment Line";
         NewSSACommentLine: Record "SSA Comment Line";
@@ -123,55 +117,45 @@ codeunit 70003 "SSA Internal Consumption Post"
         DimMgt: Codeunit DimensionManagement;
         NoSeriesMgt: Codeunit NoSeriesManagement;
         Text000: Label 'Posting lines              #2######';
-        Text001: Label 'The combination of dimensions used in Internal Consumption %1 is blocked. %2';
-        Text002: Label 'The combination of dimensions used in Internal Consumption %1, line no. %2 is blocked. %3';
-        Text003: Label 'The dimensions used in Internal Consumption %1 are invalid. %2';
-        Text004: Label 'The dimensions used in Internal Consumption %1, line no. %2 are invalid. %3';
         Text005: Label 'The combination of dimensions used in transfer order %1 is blocked. %2';
         Text006: Label 'The combination of dimensions used in transfer order %1, line no. %2 is blocked. %3';
         Text007: Label 'The dimensions that are used in transfer order %1, line no. %2 are not valid. %3.';
 
     procedure TestDeleteHeader(IntConsumptionHeader: Record "SSAInternal Consumption Header"; var PostedIntConsumptionHeader: Record "SSA Pstd. Int. Cons. Header")
     begin
-        with IntConsumptionHeader do begin
-            Clear(PostedIntConsumptionHeader);
-            SourceCodeSetup.Get;
-            SourceCodeSetup.TestField("Deleted Document");
-            SourceCode.Get(SourceCodeSetup."Deleted Document");
+        Clear(PostedIntConsumptionHeader);
+        SourceCodeSetup.Get();
+        SourceCodeSetup.TestField("Deleted Document");
+        SourceCode.Get(SourceCodeSetup."Deleted Document");
 
-            if ("Posting No." <> '') and
-              ("No. Series" = "Posting No. Series")
-            then begin
-                PostedIntConsumptionHeader.TransferFields(IntConsumptionHeader);
-                if "Posting No." <> '' then
-                    IntPostedConsHeader."No." := "Posting No."
-                else
-                    IntPostedConsHeader."No." := "No.";
-                IntPostedConsHeader."Pre-Assigned No. Series" := "No. Series";
-                IntPostedConsHeader."Pre-Assigned No." := "No.";
-                IntPostedConsHeader."Posting Date" := Today;
-                IntPostedConsHeader."User ID" := UserId;
-                IntPostedConsHeader."Source Code" := SourceCode.Code;
-            end;
-
+        if (IntConsumptionHeader."Posting No." <> '') and
+          (IntConsumptionHeader."No. Series" = IntConsumptionHeader."Posting No. Series")
+        then begin
+            PostedIntConsumptionHeader.TransferFields(IntConsumptionHeader);
+            if IntConsumptionHeader."Posting No." <> '' then
+                IntPostedConsHeader."No." := IntConsumptionHeader."Posting No."
+            else
+                IntPostedConsHeader."No." := IntConsumptionHeader."No.";
+            IntPostedConsHeader."Pre-Assigned No. Series" := IntConsumptionHeader."No. Series";
+            IntPostedConsHeader."Pre-Assigned No." := IntConsumptionHeader."No.";
+            IntPostedConsHeader."Posting Date" := Today;
+            IntPostedConsHeader."User ID" := UserId;
+            IntPostedConsHeader."Source Code" := SourceCode.Code;
         end;
     end;
 
     procedure DeleteHeader(IntConsHeader: Record "SSAInternal Consumption Header"; var PostedIntConsHeader: Record "SSA Pstd. Int. Cons. Header")
     begin
-        with IntConsHeader do begin
-            TestDeleteHeader(IntConsHeader, PostedIntConsHeader);
-            if PostedIntConsHeader."No." <> '' then begin
-                if not PostedIntConsHeader.Get("No.") then begin
-                    IntPostedConsHeader.Insert;
-                    IntPostedConsLine.Init;
-                    IntPostedConsLine."Document No." := IntConsHeader."No.";
-                    IntPostedConsLine."Line No." := 10000;
-                    IntPostedConsLine.Description := SourceCode.Description;
-                    IntPostedConsLine.Insert;
-                end;
+        TestDeleteHeader(IntConsHeader, PostedIntConsHeader);
+        if PostedIntConsHeader."No." <> '' then
+            if not PostedIntConsHeader.Get(IntConsHeader."No.") then begin
+                IntPostedConsHeader.Insert();
+                IntPostedConsLine.Init();
+                IntPostedConsLine."Document No." := IntConsHeader."No.";
+                IntPostedConsLine."Line No." := 10000;
+                IntPostedConsLine.Description := SourceCode.Description;
+                IntPostedConsLine.Insert();
             end;
-        end;
     end;
 
     local procedure CheckDim()
@@ -181,7 +165,7 @@ codeunit 70003 "SSA Internal Consumption Post"
         CheckDimValuePosting(IntConsHeader, IntConsLine);
 
         IntConsLine.SetRange("Document No.", IntConsHeader."No.");
-        if IntConsLine.FindFirst then begin
+        if IntConsLine.FindFirst() then begin
             CheckDimComb(IntConsHeader, IntConsLine);
             CheckDimValuePosting(IntConsHeader, IntConsLine);
         end;
@@ -193,12 +177,12 @@ codeunit 70003 "SSA Internal Consumption Post"
             if not DimMgt.CheckDimIDComb(_IntConsHeader."Dimension Set ID") then
                 Error(
                   Text005,
-                  _IntConsHeader."No.", DimMgt.GetDimCombErr);
+                  _IntConsHeader."No.", DimMgt.GetDimCombErr());
         if _IntConsLine."Line No." <> 0 then
             if not DimMgt.CheckDimIDComb(_IntConsLine."Dimension Set ID") then
                 Error(
                   Text006,
-                  _IntConsHeader."No.", _IntConsLine."Line No.", DimMgt.GetDimCombErr);
+                  _IntConsHeader."No.", _IntConsLine."Line No.", DimMgt.GetDimCombErr());
     end;
 
     local procedure CheckDimValuePosting(_IntConsHeader: Record "SSAInternal Consumption Header"; _IntConsLine: Record "SSAInternal Consumption Line")
@@ -206,15 +190,14 @@ codeunit 70003 "SSA Internal Consumption Post"
         TableIDArr: array[10] of Integer;
         NumberArr: array[10] of Code[20];
     begin
-        TableIDArr[1] := DATABASE::Item;
+        TableIDArr[1] := Database::Item;
         NumberArr[1] := _IntConsLine."Item No.";
         if _IntConsLine."Line No." = 0 then
             if not DimMgt.CheckDimValuePosting(TableIDArr, NumberArr, _IntConsHeader."Dimension Set ID") then
-                Error(Text007, _IntConsHeader."No.", _IntConsLine."Line No.", DimMgt.GetDimValuePostingErr);
+                Error(Text007, _IntConsHeader."No.", _IntConsLine."Line No.", DimMgt.GetDimValuePostingErr());
 
         if _IntConsLine."Line No." <> 0 then
             if not DimMgt.CheckDimValuePosting(TableIDArr, NumberArr, _IntConsLine."Dimension Set ID") then
-                Error(Text007, _IntConsHeader."No.", _IntConsLine."Line No.", DimMgt.GetDimValuePostingErr);
+                Error(Text007, _IntConsHeader."No.", _IntConsLine."Line No.", DimMgt.GetDimValuePostingErr());
     end;
 }
-

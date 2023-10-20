@@ -9,11 +9,11 @@ report 71500 "SSA Suggest VIES Lines"
     {
         dataitem("SSA VIES Header"; "SSA VIES Header")
         {
-            DataItemTableView = SORTING ("No.");
+            DataItemTableView = SORTING("No.");
             PrintOnlyIfDetail = true;
             dataitem(VATEntrySale; "VAT Entry")
             {
-                DataItemTableView = SORTING (Type, "Country/Region Code", "VAT Registration No.", "VAT Bus. Posting Group", "VAT Prod. Posting Group", "Posting Date") WHERE (Type = CONST (Sale));
+                DataItemTableView = SORTING(Type, "Country/Region Code", "VAT Registration No.", "VAT Bus. Posting Group", "VAT Prod. Posting Group", "Posting Date") WHERE(Type = CONST(Sale));
 
                 trigger OnAfterGetRecord()
                 begin
@@ -35,7 +35,7 @@ report 71500 "SSA Suggest VIES Lines"
             }
             dataitem(VATEntryPurchase; "VAT Entry")
             {
-                DataItemTableView = SORTING (Type, "Country/Region Code", "VAT Registration No.", "VAT Bus. Posting Group", "VAT Prod. Posting Group", "Posting Date") WHERE (Type = CONST (Purchase));
+                DataItemTableView = SORTING(Type, "Country/Region Code", "VAT Registration No.", "VAT Bus. Posting Group", "VAT Prod. Posting Group", "Posting Date") WHERE(Type = CONST(Purchase));
 
                 trigger OnAfterGetRecord()
                 begin
@@ -256,40 +256,39 @@ report 71500 "SSA Suggest VIES Lines"
         VATPostingSetup.Get(VATEntry."VAT Bus. Posting Group", VATEntry."VAT Prod. Posting Group");
         if ((VATEntry.Type = VATEntry.Type::Sale) and VATPostingSetup."SSA VIES Sales" or
            (VATEntry.Type = VATEntry.Type::Purchase) and VATPostingSetup."SSA VIES Purchases")
-        then
-            with VIESLine do begin
-                Init;
-                "VIES Declaration No." := "SSA VIES Header"."No.";
-                case VATEntry.Type of
-                    VATEntry.Type::Sale:
-                        begin
-                            "Trade Type" := "Trade Type"::Sale;
-                            if Cust.Get(VATEntry."Bill-to/Pay-to No.") then begin
-                                "Cust/Vend Name" := Cust.Name;
-                                "Commerce Trade No." := Cust."SSA Commerce Trade No.";
-                            end;
+        then begin
+            VIESLine.Init;
+            VIESLine."VIES Declaration No." := "SSA VIES Header"."No.";
+            case VATEntry.Type of
+                VATEntry.Type::Sale:
+                    begin
+                        VIESLine."Trade Type" := VIESLine."Trade Type"::Sale;
+                        if Cust.Get(VATEntry."Bill-to/Pay-to No.") then begin
+                            VIESLine."Cust/Vend Name" := Cust.Name;
+                            VIESLine."Commerce Trade No." := Cust."SSA Commerce Trade No.";
                         end;
-                    VATEntry.Type::Purchase:
-                        begin
-                            "Trade Type" := "Trade Type"::Purchase;
-                            if Vend.Get(VATEntry."Bill-to/Pay-to No.") then begin
-                                "Cust/Vend Name" := Vend.Name;
-                                "Commerce Trade No." := Vend."SSA Commerce Trade No.";
-                            end;
+                    end;
+                VATEntry.Type::Purchase:
+                    begin
+                        VIESLine."Trade Type" := VIESLine."Trade Type"::Purchase;
+                        if Vend.Get(VATEntry."Bill-to/Pay-to No.") then begin
+                            VIESLine."Cust/Vend Name" := Vend.Name;
+                            VIESLine."Commerce Trade No." := Vend."SSA Commerce Trade No.";
                         end;
-                end;
-                "Country/Region Code" := GetCountryCode(VATEntry);
-                "VAT Registration No." := VATEntry."VAT Registration No.";
-
-                "Amount (LCY)" := -VATEntry.Base;
-                "EU 3-Party Trade" := VATEntry."EU 3-Party Trade";
-                //"EU 3-Party Intermediate Role" := VATEntry."EU 3-Party Intermediate Role";
-                "Trade Role Type" := GetTradeRoleType(VATEntry."EU 3-Party Trade");
-                "EU Service" := VATEntry."EU Service";
-                "System-Created" := true;
-                "Tax Group Code" := VATEntry."Tax Group Code";
-                AddBuffer(VATEntry."Transaction No.");
+                    end;
             end;
+            VIESLine."Country/Region Code" := GetCountryCode(VATEntry);
+            VIESLine."VAT Registration No." := VATEntry."VAT Registration No.";
+
+            VIESLine."Amount (LCY)" := -VATEntry.Base;
+            VIESLine."EU 3-Party Trade" := VATEntry."EU 3-Party Trade";
+            //"EU 3-Party Intermediate Role" := VATEntry."EU 3-Party Intermediate Role";
+            VIESLine."Trade Role Type" := GetTradeRoleType(VATEntry."EU 3-Party Trade");
+            VIESLine."EU Service" := VATEntry."EU Service";
+            VIESLine."System-Created" := true;
+            VIESLine."Tax Group Code" := VATEntry."Tax Group Code";
+            AddBuffer(VATEntry."Transaction No.");
+        end;
     end;
 
     local
@@ -310,15 +309,13 @@ report 71500 "SSA Suggest VIES Lines"
     local
     procedure SetFilters(var VATEntry: Record "VAT Entry")
     begin
-        with "SSA VIES Header" do begin
-            case "EU Goods/Services" of
-                "EU Goods/Services"::Goods:
-                    VATEntry.SetRange("EU Service", false);
-                "EU Goods/Services"::Services:
-                    VATEntry.SetRange("EU Service", true);
-            end;
-            VATEntry.SetRange("Posting Date", "Start Date", "End Date");
+        case "SSA VIES Header"."EU Goods/Services" of
+            "SSA VIES Header"."EU Goods/Services"::Goods:
+                VATEntry.SetRange("EU Service", false);
+            "SSA VIES Header"."EU Goods/Services"::Services:
+                VATEntry.SetRange("EU Service", true);
         end;
+        VATEntry.SetRange("Posting Date", "SSA VIES Header"."Start Date", "SSA VIES Header"."End Date");
     end;
 }
 

@@ -1,9 +1,5 @@
 pageextension 70053 "SSA Currencies" extends Currencies  //5
 {
-    layout
-    {
-
-    }
 
     actions
     {
@@ -21,6 +17,7 @@ pageextension 70053 "SSA Currencies" extends Currencies  //5
                 Promoted = true;
                 PromotedCategory = Process;
                 RunObject = report "SSA Adjust Exchange Rates";
+                ToolTip = 'Executes the Adjust Exchange Rate action.';
             }
         }
     }

@@ -12,53 +12,65 @@ page 70519 "SSA Payment Addresses"
             repeater(Control1120000)
             {
                 ShowCaption = false;
-                field("Code"; Code)
+                field("Code"; Rec.Code)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Code field.';
                 }
-                field("Default value"; "Default value")
+                field("Default value"; Rec."Default value")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Default value field.';
                 }
-                field(Name; Name)
+                field(Name; Rec.Name)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Name field.';
                 }
-                field("Search Name"; "Search Name")
+                field("Search Name"; Rec."Search Name")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Search Name field.';
                 }
-                field("Name 2"; "Name 2")
+                field("Name 2"; Rec."Name 2")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Name 2 field.';
                 }
-                field(Address; Address)
+                field(Address; Rec.Address)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Address field.';
                 }
-                field("Address 2"; "Address 2")
+                field("Address 2"; Rec."Address 2")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Address 2 field.';
                 }
-                field("Post Code"; "Post Code")
+                field("Post Code"; Rec."Post Code")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Post Code field.';
                 }
-                field(City; City)
+                field(City; Rec.City)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the City field.';
                 }
-                field(Contact; Contact)
+                field(Contact; Rec.Contact)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Contact field.';
                 }
-                field("Country/Region Code"; "Country/Region Code")
+                field("Country/Region Code"; Rec."Country/Region Code")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Country/Region Code field.';
                 }
-                field(County; County)
+                field(County; Rec.County)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the County field.';
                 }
             }
         }
@@ -88,13 +100,12 @@ page 70519 "SSA Payment Addresses"
     local procedure OnAfterGetCurrRecordTrigger()
     begin
         xRec := Rec;
-        if "Account Type" = "Account Type"::Customer then begin
-            Cust.Get("Account No.");
-            Legend := Text001 + ' ' + Format("Account No.") + ' ' + Cust.Name;
+        if Rec."Account Type" = Rec."Account Type"::Customer then begin
+            Cust.Get(Rec."Account No.");
+            Legend := Text001 + ' ' + Format(Rec."Account No.") + ' ' + Cust.Name;
         end else begin
-            Vend.Get("Account No.");
-            Legend := Text002 + ' ' + Format("Account No.") + ' ' + Vend.Name;
+            Vend.Get(Rec."Account No.");
+            Legend := Text002 + ' ' + Format(Rec."Account No.") + ' ' + Vend.Name;
         end;
     end;
 }
-

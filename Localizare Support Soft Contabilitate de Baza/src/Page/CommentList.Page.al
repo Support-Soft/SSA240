@@ -8,24 +8,25 @@ page 70009 "SSA Comment List"
     LinksAllowed = false;
     PageType = List;
     SourceTable = "SSA Comment Line";
+    ApplicationArea = All;
     layout
     {
-        area(content)
+        area(Content)
         {
             repeater(Control1)
             {
                 ShowCaption = false;
-                field("No."; "No.")
+                field("No."; Rec."No.")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the number of the involved entry or record, according to the specified number series.';
                 }
-                field("Date"; Date)
+                field("Date"; Rec.Date)
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the date the comment was created.';
                 }
-                field(Comment; Comment)
+                field(Comment; Rec.Comment)
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the comment itself.';
@@ -34,8 +35,4 @@ page 70009 "SSA Comment List"
         }
     }
 
-    actions
-    {
-    }
 }
-

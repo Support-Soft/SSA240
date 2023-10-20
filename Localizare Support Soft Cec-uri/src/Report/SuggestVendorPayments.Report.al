@@ -1,6 +1,5 @@
 report 70503 "SSA Suggest Vendor Payments"
 {
-
     Caption = 'Suggest Vendor Payments';
     Permissions = TableData "Vendor Ledger Entry" = rm;
     ProcessingOnly = true;
@@ -122,21 +121,24 @@ report 70503 "SSA Suggest Vendor Payments"
                     field(LastDueDateToPayReq; LastDueDateToPayReq)
                     {
                         Caption = 'Last Payment Date';
+                        ToolTip = 'Specifies the value of the Last Payment Date field.';
                     }
                     field(UsePaymentDisc; UsePaymentDisc)
                     {
                         Caption = 'Find Payment Discounts';
                         MultiLine = true;
+                        ToolTip = 'Specifies the value of the Find Payment Discounts field.';
                     }
                     field(SummarizePer; SummarizePer)
                     {
                         Caption = 'Summarize per';
                         OptionCaption = ' ,Vendor,Due date';
+                        ToolTip = 'Specifies the value of the Summarize per field.';
                     }
                     field(UsePriority; UsePriority)
                     {
                         Caption = 'Use Vendor Priority';
-
+                        ToolTip = 'Specifies the value of the Use Vendor Priority field.';
                         trigger OnValidate()
                         begin
                             if not UsePriority and (AmountAvailable <> 0) then
@@ -146,7 +148,7 @@ report 70503 "SSA Suggest Vendor Payments"
                     field(AmountAvailable; AmountAvailable)
                     {
                         Caption = 'Available Amount (LCY)';
-
+                        ToolTip = 'Specifies the value of the Available Amount (LCY) field.';
                         trigger OnValidate()
                         begin
                             AmountAvailableOnAfterValidate;
@@ -157,6 +159,7 @@ report 70503 "SSA Suggest Vendor Payments"
                         Caption = 'Currency Filter';
                         Editable = false;
                         TableRelation = Currency;
+                        ToolTip = 'Specifies the value of the Currency Filter field.';
                     }
                 }
             }
@@ -259,23 +262,21 @@ report 70503 "SSA Suggest Vendor Payments"
 
     local procedure SaveAmount()
     begin
-        with GenPayLine do begin
-            "Account Type" := "Account Type"::Vendor;
-            VALIDATE("Account No.", VendLedgEntry."Vendor No.");
-            "Posting Date" := VendLedgEntry."Posting Date";
-            "Currency Factor" := VendLedgEntry."Adjusted Currency Factor";
-            if "Currency Factor" = 0 then
-                "Currency Factor" := 1;
-            VALIDATE("Currency Code", VendLedgEntry."Currency Code");
-            VendLedgEntry.CALCFIELDS("Remaining Amount");
-            if (VendLedgEntry."Document Type" = VendLedgEntry."Document Type"::Invoice) and
-               (PostingDate <= VendLedgEntry."Pmt. Discount Date")
-            then
-                Amount := -(VendLedgEntry."Remaining Amount" - VendLedgEntry."Original Pmt. Disc. Possible")
-            else
-                Amount := -VendLedgEntry."Remaining Amount";
-            VALIDATE(Amount);
-        end;
+        GenPayLine."Account Type" := GenPayLine."Account Type"::Vendor;
+        GenPayLine.VALIDATE("Account No.", VendLedgEntry."Vendor No.");
+        GenPayLine."Posting Date" := VendLedgEntry."Posting Date";
+        GenPayLine."Currency Factor" := VendLedgEntry."Adjusted Currency Factor";
+        if GenPayLine."Currency Factor" = 0 then
+            GenPayLine."Currency Factor" := 1;
+        GenPayLine.VALIDATE("Currency Code", VendLedgEntry."Currency Code");
+        VendLedgEntry.CALCFIELDS("Remaining Amount");
+        if (VendLedgEntry."Document Type" = VendLedgEntry."Document Type"::Invoice) and
+           (PostingDate <= VendLedgEntry."Pmt. Discount Date")
+        then
+            GenPayLine.Amount := -(VendLedgEntry."Remaining Amount" - VendLedgEntry."Original Pmt. Disc. Possible")
+        else
+            GenPayLine.Amount := -VendLedgEntry."Remaining Amount";
+        GenPayLine.VALIDATE(Amount);
 
         if UsePriority then
             PayableVendLedgEntry.Priority := Vendor.Priority
@@ -416,56 +417,54 @@ report 70503 "SSA Suggest Vendor Payments"
         TempPaymentPostBuffer.SETCURRENTKEY("Document No.");
         if TempPaymentPostBuffer.FIND('-') then
             repeat
-                with GenPayLine do begin
-                    INIT;
-                    Window.UPDATE(1, TempPaymentPostBuffer."Account No.");
-                    if SummarizePer = SummarizePer::" " then begin
-                        LastLineNo := LastLineNo + 10000;
-                        "Line No." := LastLineNo;
-                        if PaymentClass."Line No. Series" = '' then
-                            NextDocNo := GenPayHead."No." + '/' + FORMAT(GenPayLine."Line No.")
-                        else
-                            NextDocNo := NoSeriesMgt.GetNextNo(PaymentClass."Line No. Series", PostingDate, false);
-                    end else begin
-                        "Line No." := TempPaymentPostBuffer."Payment Line No.";
-                        NextDocNo := TempPaymentPostBuffer."Document No.";
-                    end;
-                    "Document ID" := NextDocNo;
-                    GenPayLine."Applies-to ID" := "Document ID";
-                    OldTempPaymentPostBuffer := TempPaymentPostBuffer;
-                    OldTempPaymentPostBuffer."Document No." := "Document ID";
-                    if SummarizePer = SummarizePer::" " then begin
-                        VendLedgEntry.GET(TempPaymentPostBuffer."Auxiliary Entry No.");
-                        VendLedgEntry."Applies-to ID" := NextDocNo;
-                        VendLedgEntry.MODIFY;
-                    end;
-                    "Account Type" := "Account Type"::Vendor;
-                    VALIDATE("Account No.", TempPaymentPostBuffer."Account No.");
-                    "Currency Code" := TempPaymentPostBuffer."Currency Code";
-                    Amount := TempPaymentPostBuffer.Amount;
-                    if Amount > 0 then
-                        "Debit Amount" := Amount
+                GenPayLine.INIT;
+                Window.UPDATE(1, TempPaymentPostBuffer."Account No.");
+                if SummarizePer = SummarizePer::" " then begin
+                    LastLineNo := LastLineNo + 10000;
+                    GenPayLine."Line No." := LastLineNo;
+                    if PaymentClass."Line No. Series" = '' then
+                        NextDocNo := GenPayHead."No." + '/' + FORMAT(GenPayLine."Line No.")
                     else
-                        "Credit Amount" := -Amount;
-                    "Amount (LCY)" := TempPaymentPostBuffer."Amount (LCY)";
-                    "Currency Factor" := TempPaymentPostBuffer."Currency Factor";
-                    if ("Currency Factor" = 0) and (Amount <> 0) then
-                        "Currency Factor" := Amount / "Amount (LCY)";
-                    Vend2.GET(GenPayLine."Account No.");
-                    VALIDATE(GenPayLine."Bank Account", Vend2."SSA Default Bank Account Code");
-                    "Payment Class" := GenPayHead."Payment Class";
-                    if SummarizePer = SummarizePer::" " then begin
-                        "Applies-to Doc. Type" := VendLedgEntry."Document Type";
-                        "Applies-to Doc. No." := VendLedgEntry."Document No.";
-                    end;
-                    if SummarizePer in [SummarizePer::" ", SummarizePer::Vendor] then
-                        "Due Date" := VendLedgEntry."Due Date"
-                    else
-                        "Due Date" := TempPaymentPostBuffer."Due Date";
-                    if Amount <> 0 then
-                        INSERT;
-                    GenPayLineInserted := true;
+                        NextDocNo := NoSeriesMgt.GetNextNo(PaymentClass."Line No. Series", PostingDate, false);
+                end else begin
+                    GenPayLine."Line No." := TempPaymentPostBuffer."Payment Line No.";
+                    NextDocNo := TempPaymentPostBuffer."Document No.";
                 end;
+                GenPayLine."Document ID" := NextDocNo;
+                GenPayLine."Applies-to ID" := GenPayLine."Document ID";
+                OldTempPaymentPostBuffer := TempPaymentPostBuffer;
+                OldTempPaymentPostBuffer."Document No." := GenPayLine."Document ID";
+                if SummarizePer = SummarizePer::" " then begin
+                    VendLedgEntry.GET(TempPaymentPostBuffer."Auxiliary Entry No.");
+                    VendLedgEntry."Applies-to ID" := NextDocNo;
+                    VendLedgEntry.MODIFY;
+                end;
+                GenPayLine."Account Type" := GenPayLine."Account Type"::Vendor;
+                GenPayLine.VALIDATE("Account No.", TempPaymentPostBuffer."Account No.");
+                GenPayLine."Currency Code" := TempPaymentPostBuffer."Currency Code";
+                GenPayLine.Amount := TempPaymentPostBuffer.Amount;
+                if GenPayLine.Amount > 0 then
+                    GenPayLine."Debit Amount" := GenPayLine.Amount
+                else
+                    GenPayLine."Credit Amount" := -GenPayLine.Amount;
+                GenPayLine."Amount (LCY)" := TempPaymentPostBuffer."Amount (LCY)";
+                GenPayLine."Currency Factor" := TempPaymentPostBuffer."Currency Factor";
+                if (GenPayLine."Currency Factor" = 0) and (GenPayLine.Amount <> 0) then
+                    GenPayLine."Currency Factor" := GenPayLine.Amount / GenPayLine."Amount (LCY)";
+                Vend2.GET(GenPayLine."Account No.");
+                GenPayLine.VALIDATE(GenPayLine."Bank Account", Vend2."SSA Default Bank Account Code");
+                GenPayLine."Payment Class" := GenPayHead."Payment Class";
+                if SummarizePer = SummarizePer::" " then begin
+                    GenPayLine."Applies-to Doc. Type" := VendLedgEntry."Document Type";
+                    GenPayLine."Applies-to Doc. No." := VendLedgEntry."Document No.";
+                end;
+                if SummarizePer in [SummarizePer::" ", SummarizePer::Vendor] then
+                    GenPayLine."Due Date" := VendLedgEntry."Due Date"
+                else
+                    GenPayLine."Due Date" := TempPaymentPostBuffer."Due Date";
+                if GenPayLine.Amount <> 0 then
+                    GenPayLine.INSERT;
+                GenPayLineInserted := true;
             until TempPaymentPostBuffer.NEXT = 0;
     end;
 
@@ -481,4 +480,3 @@ report 70503 "SSA Suggest Vendor Payments"
             UsePriority := true;
     end;
 }
-

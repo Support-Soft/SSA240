@@ -13,45 +13,55 @@ page 70523 "SSA Payment Archive List"
             repeater(Control1)
             {
                 ShowCaption = false;
-                field("No."; "No.")
+                field("No."; Rec."No.")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the No. field.';
                 }
-                field("Currency Code"; "Currency Code")
+                field("Currency Code"; Rec."Currency Code")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Currency Code field.';
                 }
-                field("Posting Date"; "Posting Date")
+                field("Posting Date"; Rec."Posting Date")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Posting Date field.';
                 }
-                field("Payment Class"; "Payment Class")
+                field("Payment Class"; Rec."Payment Class")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Payment Class field.';
                 }
-                field("Status Name"; "Status Name")
+                field("Status Name"; Rec."Status Name")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Status Name field.';
                 }
-                field("Document Date"; "Document Date")
+                field("Document Date"; Rec."Document Date")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Document Date field.';
                 }
-                field(Amount; Amount)
+                field(Amount; Rec.Amount)
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Amount field.';
                 }
-                field("Payment Series"; "Payment Series")
+                field("Payment Series"; Rec."Payment Series")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Payment Series field.';
                 }
-                field("Payment Number"; "Payment Number")
+                field("Payment Number"; Rec."Payment Number")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Payment Number field.';
                 }
-                field("Suma Aplicata"; "Suma Aplicata")
+                field("Suma Aplicata"; Rec."Suma Aplicata")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Suma Aplicata field.';
                 }
             }
         }
@@ -61,4 +71,3 @@ page 70523 "SSA Payment Archive List"
     {
     }
 }
-

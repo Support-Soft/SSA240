@@ -7,15 +7,15 @@ tableextension 70021 "SSA Item Ledger Entry 70021" extends "Item Ledger Entry"
         field(70000; "SSA Custom Invoice No."; Code[20])
         {
             Caption = 'Custom Invoice No.';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA946';
         }
         field(70001; "SSA Document Type"; Option)
         {
-            Caption = 'SSA Document Type';
+            Caption = 'Document Type';
             OptionMembers = ,"Internal Consumption";
             OptionCaption = ',Internal Consumption';
+            DataClassification = CustomerContent;
         }
     }
 }
-

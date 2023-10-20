@@ -120,7 +120,6 @@ report 70001 "SSA Export XML Intrastat"
                                 XMLDOMMgt.AddElement(XMLCurrNode, 'CountryOfDestination', "Country/Region Code", XMLRootNode.NamespaceURI, XMLReturnedNode);
                             end;
                     end;
-
                 end;
 
                 trigger OnPreDataItem()

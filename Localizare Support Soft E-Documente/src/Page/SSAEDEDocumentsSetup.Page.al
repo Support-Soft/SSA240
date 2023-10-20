@@ -155,8 +155,8 @@ page 72001 "SSAEDEDocuments Setup"
                 var
                     ANAFAPIMgt: Codeunit "SSAEDANAF API Mgt";
                 begin
-                    IF NOT CONFIRM('Update Token using Refresh Token?') THEN
-                        EXIT;
+                    if not CONFIRM('Update Token using Refresh Token?') then
+                        exit;
                     ANAFAPIMgt.RefreshToken(Rec);
                     CurrPage.UPDATE;
 

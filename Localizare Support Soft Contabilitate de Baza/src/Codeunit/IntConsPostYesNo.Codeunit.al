@@ -8,7 +8,7 @@ codeunit 70004 "SSA Int. Cons-Post (Yes/No)"
     begin
 
         IntConsumptionHeader.Copy(Rec);
-        Code;
+        Code();
         Rec := IntConsumptionHeader;
     end;
 
@@ -19,12 +19,9 @@ codeunit 70004 "SSA Int. Cons-Post (Yes/No)"
 
     local procedure "Code"()
     begin
-        with IntConsumptionHeader do begin
-            if not Confirm(Text000, false, "No.") then
-                exit;
-            IntConsumptionPost.Run(IntConsumptionHeader);
-            Commit;
-        end;
+        if not Confirm(Text000, false, IntConsumptionHeader."No.") then
+            exit;
+        IntConsumptionPost.Run(IntConsumptionHeader);
+        Commit();
     end;
 }
-

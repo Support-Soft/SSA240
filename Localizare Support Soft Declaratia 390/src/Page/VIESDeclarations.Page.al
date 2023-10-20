@@ -16,39 +16,39 @@ page 71502 "SSA VIES Declarations"
             repeater(Control1470000)
             {
                 ShowCaption = false;
-                field("No."; "No.")
+                field("No."; Rec."No.")
                 {
                     ApplicationArea = All;
                 }
-                field("Document Date"; "Document Date")
+                field("Document Date"; Rec."Document Date")
                 {
                     ApplicationArea = All;
                 }
-                field("Declaration Type"; "Declaration Type")
+                field("Declaration Type"; Rec."Declaration Type")
                 {
                     ApplicationArea = All;
                 }
-                field("Corrected Declaration No."; "Corrected Declaration No.")
+                field("Corrected Declaration No."; Rec."Corrected Declaration No.")
                 {
                     ApplicationArea = All;
                 }
-                field("Declaration Period"; "Declaration Period")
+                field("Declaration Period"; Rec."Declaration Period")
                 {
                     ApplicationArea = All;
                 }
-                field("Period No."; "Period No.")
+                field("Period No."; Rec."Period No.")
                 {
                     ApplicationArea = All;
                 }
-                field(Year; Year)
+                field(Year; Rec.Year)
                 {
                     ApplicationArea = All;
                 }
-                field(Status; Status)
+                field(Status; Rec.Status)
                 {
                     ApplicationArea = All;
                 }
-                field("VAT Registration No."; "VAT Registration No.")
+                field("VAT Registration No."; Rec."VAT Registration No.")
                 {
                     ApplicationArea = All;
                 }

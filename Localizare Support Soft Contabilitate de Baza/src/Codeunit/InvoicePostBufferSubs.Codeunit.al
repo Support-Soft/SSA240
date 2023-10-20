@@ -1,9 +1,6 @@
 codeunit 70031 "SSA Invoice Post. Buffer Subs"
 {
-    trigger OnRun()
-    begin
 
-    end;
 
     [EventSubscriber(ObjectType::Table, Database::"Invoice Post. Buffer", 'OnAfterInvPostBufferPrepareSales', '', true, false)]
     local procedure OnAfterInvPostBufferPrepareSales(var SalesLine: Record "Sales Line"; var InvoicePostBuffer: Record "Invoice Post. Buffer")

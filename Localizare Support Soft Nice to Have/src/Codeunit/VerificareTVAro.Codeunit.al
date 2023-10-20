@@ -36,53 +36,51 @@ codeunit 71101 "SSA VerificareTVA.ro"
         SSASetup.Get;
         SSASetup.TestField("Cust. Neex. VAT Posting Group");
 
-        with _Customer do begin
-            cui := "VAT Registration No.";
-            cui := DelChr(cui, '=', 'R');
-            cui := DelChr(cui, '=', 'r');
-            cui := DelChr(cui, '=', 'O');
-            cui := DelChr(cui, '=', 'o');
-            cui := DelChr(cui, '=', ' ');
+        cui := _Customer."VAT Registration No.";
+        cui := DelChr(cui, '=', 'R');
+        cui := DelChr(cui, '=', 'r');
+        cui := DelChr(cui, '=', 'O');
+        cui := DelChr(cui, '=', 'o');
+        cui := DelChr(cui, '=', ' ');
 
-            SendRequest(cui, Today);
-            if G_Raspuns = 'valid' then begin
-                Validate(Name, CopyStr(G_Nume, 1, 50));
-                Validate("Name 2", CopyStr(G_Nume, 51, 50));
-                Validate("SSA Commerce Trade No.", G_NrInmtr);
-                Validate(County, G_Judet);
-                Validate(City, CopyStr(G_Localitate, 1, 30));
-                Validate(Address, CopyStr(G_Adresa, 1, 50));
-                Validate("Address 2", CopyStr(G_Adresa, 51, 50));
-                Validate("SSA Not VAT Registered", not G_TVA);
-                Validate("SSA Last Date Modified VAT", Today);
-                Validate("SSA Cod Judet D394", GetJudet);
-                if G_TVA then begin
-                    Validate("SSA Tip Partener", "SSA Tip Partener"::"1-CUI Valid din RO si din afara inreg. in scopuri de TVA in RO");
-                    Validate("VAT Registration No.", 'RO' + cui);
-                end else begin
-                    Validate("SSA Tip Partener", "SSA Tip Partener"::"2-CNP PFA din RO sau CUI neinregistrat in scopuri de TVA");
-                    Validate("VAT Registration No.", cui);
-                end;
-
+        SendRequest(cui, Today);
+        if G_Raspuns = 'valid' then begin
+            _Customer.Validate(Name, CopyStr(G_Nume, 1, 50));
+            _Customer.Validate("Name 2", CopyStr(G_Nume, 51, 50));
+            _Customer.Validate("SSA Commerce Trade No.", G_NrInmtr);
+            _Customer.Validate(County, G_Judet);
+            _Customer.Validate(City, CopyStr(G_Localitate, 1, 30));
+            _Customer.Validate(Address, CopyStr(G_Adresa, 1, 50));
+            _Customer.Validate("Address 2", CopyStr(G_Adresa, 51, 50));
+            _Customer.Validate("SSA Not VAT Registered", not G_TVA);
+            _Customer.Validate("SSA Last Date Modified VAT", Today);
+            _Customer.Validate("SSA Cod Judet D394", GetJudet);
+            if G_TVA then begin
+                _Customer.Validate("SSA Tip Partener", _Customer."SSA Tip Partener"::"1-CUI Valid din RO si din afara inreg. in scopuri de TVA in RO");
+                _Customer.Validate("VAT Registration No.", 'RO' + cui);
             end else begin
-                CountryRegion.Get("Country/Region Code");
-                if CountryRegion."EU Country/Region Code" <> '' then
-                    if CountryRegion."EU Country/Region Code" <> 'RO' then
-                        Validate("SSA Tip Partener", "SSA Tip Partener"::"3-Fara CUI valid din UE fara RO")
-                    else
-                        Validate("SSA Tip Partener", "SSA Tip Partener"::"2-CNP PFA din RO sau CUI neinregistrat in scopuri de TVA")
-                else
-                    Validate("SSA Tip Partener", "SSA Tip Partener"::"4-Fara CUI valid din afara UE fara RO");
+                _Customer.Validate("SSA Tip Partener", _Customer."SSA Tip Partener"::"2-CNP PFA din RO sau CUI neinregistrat in scopuri de TVA");
+                _Customer.Validate("VAT Registration No.", cui);
             end;
-            if SSASetup."Sistem TVA" = SSASetup."Sistem TVA"::"Sistem de TVA la Incasare" then
-                if SSASetup."Cust. Neex. VAT Posting Group" <> "VAT Bus. Posting Group" then
-                    Validate("VAT Bus. Posting Group", SSASetup."Cust. Neex. VAT Posting Group");
-            if SSASetup."Sistem TVA" = SSASetup."Sistem TVA"::"Neplatitor de TVA" then
-                if SSASetup."Cust. Nepl. VAT Posting Group" <> "VAT Bus. Posting Group" then
-                    Validate("VAT Bus. Posting Group", SSASetup."Cust. Nepl. VAT Posting Group");
-            Validate("SSA Last Date Modified VAT", Today);
-            Modify(true);
+
+        end else begin
+            CountryRegion.Get(_Customer."Country/Region Code");
+            if CountryRegion."EU Country/Region Code" <> '' then
+                if CountryRegion."EU Country/Region Code" <> 'RO' then
+                    _Customer.Validate("SSA Tip Partener", _Customer."SSA Tip Partener"::"3-Fara CUI valid din UE fara RO")
+                else
+                    _Customer.Validate("SSA Tip Partener", _Customer."SSA Tip Partener"::"2-CNP PFA din RO sau CUI neinregistrat in scopuri de TVA")
+            else
+                _Customer.Validate("SSA Tip Partener", _Customer."SSA Tip Partener"::"4-Fara CUI valid din afara UE fara RO");
         end;
+        if SSASetup."Sistem TVA" = SSASetup."Sistem TVA"::"Sistem de TVA la Incasare" then
+            if SSASetup."Cust. Neex. VAT Posting Group" <> _Customer."VAT Bus. Posting Group" then
+                _Customer.Validate("VAT Bus. Posting Group", SSASetup."Cust. Neex. VAT Posting Group");
+        if SSASetup."Sistem TVA" = SSASetup."Sistem TVA"::"Neplatitor de TVA" then
+            if SSASetup."Cust. Nepl. VAT Posting Group" <> _Customer."VAT Bus. Posting Group" then
+                _Customer.Validate("VAT Bus. Posting Group", SSASetup."Cust. Nepl. VAT Posting Group");
+        _Customer.Validate("SSA Last Date Modified VAT", Today);
+        _Customer.Modify(true);
         ShowConfirmationMessage;
     end;
 
@@ -95,60 +93,58 @@ codeunit 71101 "SSA VerificareTVA.ro"
         SSASetup.TestField("Vendor Ex. VAT Posting Group");
         SSASetup.TestField("Vendor Neex. VAT Posting Group");
 
-        with _Vendor do begin
-            TestField(_Vendor."Country/Region Code", 'RO');
-            cui := "VAT Registration No.";
-            cui := DelChr(cui, '=', 'R');
-            cui := DelChr(cui, '=', 'r');
-            cui := DelChr(cui, '=', 'O');
-            cui := DelChr(cui, '=', 'o');
-            cui := DelChr(cui, '=', ' ');
+        _Vendor.TestField(_Vendor."Country/Region Code", 'RO');
+        cui := _Vendor."VAT Registration No.";
+        cui := DelChr(cui, '=', 'R');
+        cui := DelChr(cui, '=', 'r');
+        cui := DelChr(cui, '=', 'O');
+        cui := DelChr(cui, '=', 'o');
+        cui := DelChr(cui, '=', ' ');
 
-            SendRequest(cui, Today);
-            if G_Raspuns = 'valid' then begin
-                Validate(Name, CopyStr(G_Nume, 1, 50));
-                Validate("Name 2", CopyStr(G_Nume, 51, 50));
-                Validate("SSA Commerce Trade No.", G_NrInmtr);
-                Validate(County, G_Judet);
-                Validate(City, CopyStr(G_Localitate, 1, 30));
-                Validate(Address, CopyStr(G_Adresa, 1, 50));
-                Validate("Address 2", CopyStr(G_Adresa, 51, 50));
-                Validate("SSA Not VAT Registered", not G_TVA);
-                if G_TVAIncasare then
-                    Validate("VAT Bus. Posting Group", SSASetup."Vendor Neex. VAT Posting Group")
-                else
-                    Validate("VAT Bus. Posting Group", SSASetup."Vendor Ex. VAT Posting Group");
+        SendRequest(cui, Today);
+        if G_Raspuns = 'valid' then begin
+            _Vendor.Validate(Name, CopyStr(G_Nume, 1, 50));
+            _Vendor.Validate("Name 2", CopyStr(G_Nume, 51, 50));
+            _Vendor.Validate("SSA Commerce Trade No.", G_NrInmtr);
+            _Vendor.Validate(County, G_Judet);
+            _Vendor.Validate(City, CopyStr(G_Localitate, 1, 30));
+            _Vendor.Validate(Address, CopyStr(G_Adresa, 1, 50));
+            _Vendor.Validate("Address 2", CopyStr(G_Adresa, 51, 50));
+            _Vendor.Validate("SSA Not VAT Registered", not G_TVA);
+            if G_TVAIncasare then
+                _Vendor.Validate("VAT Bus. Posting Group", SSASetup."Vendor Neex. VAT Posting Group")
+            else
+                _Vendor.Validate("VAT Bus. Posting Group", SSASetup."Vendor Ex. VAT Posting Group");
 
-                Validate("SSA Cod Judet D394", GetJudet);
-                if G_TVA then begin
-                    Validate("SSA Tip Partener", "SSA Tip Partener"::"1-CUI Valid din RO si din afara inreg. in scopuri de TVA in RO");
-                    Validate("VAT Registration No.", 'RO' + cui);
-                end else begin
-                    Validate("SSA Tip Partener", "SSA Tip Partener"::"2-CNP PFA din RO sau CUI neinregistrat in scopuri de TVA");
-                    Validate("VAT Registration No.", cui);
-                end;
-
+            _Vendor.Validate("SSA Cod Judet D394", GetJudet);
+            if G_TVA then begin
+                _Vendor.Validate("SSA Tip Partener", _Vendor."SSA Tip Partener"::"1-CUI Valid din RO si din afara inreg. in scopuri de TVA in RO");
+                _Vendor.Validate("VAT Registration No.", 'RO' + cui);
             end else begin
-                CountryRegion.Get("Country/Region Code");
-                if CountryRegion."EU Country/Region Code" <> '' then
-                    if CountryRegion."EU Country/Region Code" <> 'RO' then
-                        Validate("SSA Tip Partener", "SSA Tip Partener"::"3-Fara CUI valid din UE fara RO")
-                    else
-                        Validate("SSA Tip Partener", "SSA Tip Partener"::"2-CNP PFA din RO sau CUI neinregistrat in scopuri de TVA")
-                else
-                    Validate("SSA Tip Partener", "SSA Tip Partener"::"4-Fara CUI valid din afara UE fara RO");
+                _Vendor.Validate("SSA Tip Partener", _Vendor."SSA Tip Partener"::"2-CNP PFA din RO sau CUI neinregistrat in scopuri de TVA");
+                _Vendor.Validate("VAT Registration No.", cui);
             end;
-            Validate("SSA Last Date Modified VAT", Today);
-            Validate("SSA Split VAT", G_TVASplit);
-            Validate("SSA VAT to Pay", G_TVAIncasare);
-            if SSASetup."Sistem TVA" = SSASetup."Sistem TVA"::"Sistem de TVA la Incasare" then
-                if SSASetup."Vendor Neex. VAT Posting Group" <> "VAT Bus. Posting Group" then
-                    Validate("VAT Bus. Posting Group", SSASetup."Vendor Neex. VAT Posting Group");
-            if SSASetup."Sistem TVA" = SSASetup."Sistem TVA"::"Neplatitor de TVA" then
-                if SSASetup."Vendor Nepl. VAT Posting Group" <> "VAT Bus. Posting Group" then
-                    Validate("VAT Bus. Posting Group", SSASetup."Vendor Nepl. VAT Posting Group");
-            Modify(true);
+
+        end else begin
+            CountryRegion.Get(_Vendor."Country/Region Code");
+            if CountryRegion."EU Country/Region Code" <> '' then
+                if CountryRegion."EU Country/Region Code" <> 'RO' then
+                    _Vendor.Validate("SSA Tip Partener", _Vendor."SSA Tip Partener"::"3-Fara CUI valid din UE fara RO")
+                else
+                    _Vendor.Validate("SSA Tip Partener", _Vendor."SSA Tip Partener"::"2-CNP PFA din RO sau CUI neinregistrat in scopuri de TVA")
+            else
+                _Vendor.Validate("SSA Tip Partener", _Vendor."SSA Tip Partener"::"4-Fara CUI valid din afara UE fara RO");
         end;
+        _Vendor.Validate("SSA Last Date Modified VAT", Today);
+        _Vendor.Validate("SSA Split VAT", G_TVASplit);
+        _Vendor.Validate("SSA VAT to Pay", G_TVAIncasare);
+        if SSASetup."Sistem TVA" = SSASetup."Sistem TVA"::"Sistem de TVA la Incasare" then
+            if SSASetup."Vendor Neex. VAT Posting Group" <> _Vendor."VAT Bus. Posting Group" then
+                _Vendor.Validate("VAT Bus. Posting Group", SSASetup."Vendor Neex. VAT Posting Group");
+        if SSASetup."Sistem TVA" = SSASetup."Sistem TVA"::"Neplatitor de TVA" then
+            if SSASetup."Vendor Nepl. VAT Posting Group" <> _Vendor."VAT Bus. Posting Group" then
+                _Vendor.Validate("VAT Bus. Posting Group", SSASetup."Vendor Nepl. VAT Posting Group");
+        _Vendor.Modify(true);
         ShowConfirmationMessage;
     end;
 

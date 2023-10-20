@@ -3,15 +3,15 @@ codeunit 70007 "SSA Correct Documents"
     // SSA936 SSCAT 16.06.2019 936: 2.Funct. anulare/stornare automata de documente (vanzare, cumparare)
     // SSA973 SSCAT 06.09.2019 39.Rapoarte legale- Localizare Declaratia 394
 
-    Permissions = TableData "Sales Invoice Header" = rm,
-                  TableData "Sales Cr.Memo Header" = rm,
-                  TableData "Purch. Inv. Header" = rm,
-                  TableData "Purch. Cr. Memo Hdr." = rm,
-                  TableData "VAT Entry" = rm,
+    Permissions = tabledata "Sales Invoice Header" = rm,
+                  tabledata "Sales Cr.Memo Header" = rm,
+                  tabledata "Purch. Inv. Header" = rm,
+                  tabledata "Purch. Cr. Memo Hdr." = rm,
+                  tabledata "VAT Entry" = rm,
                   tabledata "Cust. Ledger Entry" = rm,
                   tabledata "Vendor Ledger Entry" = rm;
 
-    [EventSubscriber(ObjectType::Table, database::"Cancelled Document", 'OnAfterInsertEvent', '', false, false)]
+    [EventSubscriber(ObjectType::Table, Database::"Cancelled Document", 'OnAfterInsertEvent', '', false, false)]
     local procedure T1900OnAfterInsertEvent(var Rec: Record "Cancelled Document"; RunTrigger: Boolean)
     var
         VATEntry: Record "VAT Entry";
@@ -22,7 +22,7 @@ codeunit 70007 "SSA Correct Documents"
         CustLedgerEntry: Record "Cust. Ledger Entry";
         VendLedgerEntry: Record "Vendor Ledger Entry";
     begin
-        VATEntry.Reset;
+        VATEntry.Reset();
         VATEntry.SetCurrentKey("Document No.", "Posting Date");
         VATEntry.SetRange("Document No.", Rec."Cancelled Doc. No.");
 
@@ -33,9 +33,9 @@ codeunit 70007 "SSA Correct Documents"
                     SalesCrMemoHeader.Get(Rec."Cancelled By Doc. No.");
                     if SalesCrMemoHeader."SSA Stare Factura" = SalesCrMemoHeader."SSA Stare Factura"::"2-Factura Anulata" then begin
                         SalesInvoiceHeader."SSA Stare Factura" := SalesCrMemoHeader."SSA Stare Factura";
-                        SalesInvoiceHeader.Modify;
+                        SalesInvoiceHeader.Modify();
                         VATEntry.ModifyAll("SSA Stare Factura", SalesCrMemoHeader."SSA Stare Factura");
-                        CustLedgerEntry.reset;
+                        CustLedgerEntry.Reset();
                         CustLedgerEntry.SetCurrentKey("Document No.");
                         CustLedgerEntry.SetFilter("Document No.", '%1|%2', SalesCrMemoHeader."No.", SalesInvoiceHeader."No.");
                         CustLedgerEntry.ModifyAll("SSA Stare Factura", SalesCrMemoHeader."SSA Stare Factura");
@@ -47,9 +47,9 @@ codeunit 70007 "SSA Correct Documents"
                     SalesInvoiceHeader.Get(Rec."Cancelled By Doc. No.");
                     if SalesInvoiceHeader."SSA Stare Factura" = SalesInvoiceHeader."SSA Stare Factura"::"2-Factura Anulata" then begin
                         SalesCrMemoHeader."SSA Stare Factura" := SalesInvoiceHeader."SSA Stare Factura";
-                        SalesCrMemoHeader.Modify;
+                        SalesCrMemoHeader.Modify();
                         VATEntry.ModifyAll("SSA Stare Factura", SalesInvoiceHeader."SSA Stare Factura");
-                        CustLedgerEntry.reset;
+                        CustLedgerEntry.Reset();
                         CustLedgerEntry.SetCurrentKey("Document No.");
                         CustLedgerEntry.SetFilter("Document No.", '%1|%2', SalesCrMemoHeader."No.", SalesInvoiceHeader."No.");
                         CustLedgerEntry.ModifyAll("SSA Stare Factura", SalesInvoiceHeader."SSA Stare Factura");
@@ -61,9 +61,9 @@ codeunit 70007 "SSA Correct Documents"
                     PurchCrMemoHeader.Get(Rec."Cancelled By Doc. No.");
                     if PurchCrMemoHeader."SSA Stare Factura" = PurchCrMemoHeader."SSA Stare Factura"::"2-Factura Anulata" then begin
                         PurchInvoiceHeader."SSA Stare Factura" := PurchCrMemoHeader."SSA Stare Factura";
-                        PurchInvoiceHeader.Modify;
+                        PurchInvoiceHeader.Modify();
                         VATEntry.ModifyAll("SSA Stare Factura", PurchCrMemoHeader."SSA Stare Factura");
-                        VendLedgerEntry.reset;
+                        VendLedgerEntry.Reset();
                         VendLedgerEntry.SetCurrentKey("Document No.");
                         VendLedgerEntry.SetFilter("Document No.", '%1|%2', PurchCrMemoHeader."No.", PurchInvoiceHeader."No.");
                         VendLedgerEntry.ModifyAll("SSA Stare Factura", PurchCrMemoHeader."SSA Stare Factura");
@@ -75,9 +75,9 @@ codeunit 70007 "SSA Correct Documents"
                     PurchInvoiceHeader.Get(Rec."Cancelled By Doc. No.");
                     if PurchInvoiceHeader."SSA Stare Factura" = PurchInvoiceHeader."SSA Stare Factura"::"2-Factura Anulata" then begin
                         PurchCrMemoHeader."SSA Stare Factura" := PurchInvoiceHeader."SSA Stare Factura";
-                        PurchCrMemoHeader.Modify;
+                        PurchCrMemoHeader.Modify();
                         VATEntry.ModifyAll("SSA Stare Factura", PurchInvoiceHeader."SSA Stare Factura");
-                        VendLedgerEntry.reset;
+                        VendLedgerEntry.Reset();
                         VendLedgerEntry.SetCurrentKey("Document No.");
                         VendLedgerEntry.SetFilter("Document No.", '%1|%2', PurchCrMemoHeader."No.", PurchInvoiceHeader."No.");
                         VendLedgerEntry.ModifyAll("SSA Stare Factura", PurchInvoiceHeader."SSA Stare Factura");
@@ -94,7 +94,8 @@ codeunit 70007 "SSA Correct Documents"
             ToSalesHeader."SSA Tip Document D394" := OldSalesHeader."SSA Tip Document D394";
             if ToSalesHeader."Document Type" = ToSalesHeader."Document Type"::Invoice then
                 ToSalesHeader."Due Date" := OldSalesHeader."Posting Date";
-        end else begin
+        end
+        else begin
             ToSalesHeader."SSA Stare Factura" := OldSalesHeader."SSA Stare Factura"::"0-Factura Emisa";
             ToSalesHeader."SSA Tip Document D394" := OldSalesHeader."SSA Tip Document D394"::"Factura Fiscala";
         end;
@@ -109,7 +110,8 @@ codeunit 70007 "SSA Correct Documents"
             if ToPurchHeader."Document Type" = ToPurchHeader."Document Type"::Invoice then
                 ToPurchHeader."Due Date" := OldPurchHeader."Posting Date";
 
-        end else begin
+        end
+        else begin
             ToPurchHeader."SSA Stare Factura" := OldPurchHeader."SSA Stare Factura"::"0-Factura Emisa";
             ToPurchHeader."SSA Tip Document D394" := OldPurchHeader."SSA Tip Document D394"::"Factura Fiscala";
             ToPurchHeader."Posting Description" := OldPurchHeader."Posting Description";
@@ -128,11 +130,12 @@ codeunit 70007 "SSA Correct Documents"
             SalesHeader."SSA Stare Factura" := SalesHeader."SSA Stare Factura"::"2-Factura Anulata"; //SSM973
             SalesHeader."Posting No." := SalesInvoiceHeader."No.";
             SalesHeader."Posting No. Series" := SalesInvoiceHeader."No. Series";
-        end else begin
+        end
+        else begin
             SalesHeader."SSA Tip Document D394" := SalesHeader."SSA Tip Document D394"::"Factura Fiscala"; //SSM973
             SalesHeader."SSA Stare Factura" := SalesHeader."SSA Stare Factura"::"1-Factura Stornata"; //SSM973
         end;
-        SalesHeader.Modify;
+        SalesHeader.Modify();
         SalesInvoiceHeader."SSA Cancelling Type" := SalesInvoiceHeader."SSA Cancelling Type"::" ";
     end;
 
@@ -146,11 +149,12 @@ codeunit 70007 "SSA Correct Documents"
             ToSalesHeader."SSA Stare Factura" := ToSalesHeader."SSA Stare Factura"::"2-Factura Anulata"; //SSM973
             ToSalesHeader."Posting No." := SalesCrMemoHeader."No.";
             ToSalesHeader."Posting No. Series" := SalesCrMemoHeader."No. Series";
-        end else begin
+        end
+        else begin
             ToSalesHeader."SSA Tip Document D394" := ToSalesHeader."SSA Tip Document D394"::"Factura Fiscala"; //SSM973
             ToSalesHeader."SSA Stare Factura" := ToSalesHeader."SSA Stare Factura"::"1-Factura Stornata"; //SSM973
         end;
-        ToSalesHeader.Modify;
+        ToSalesHeader.Modify();
         SalesCrMemoHeader."SSA Cancelling Type" := SalesCrMemoHeader."SSA Cancelling Type"::" ";
     end;
 
@@ -200,7 +204,6 @@ codeunit 70007 "SSA Correct Documents"
         IsHandled := true;
     end;
 
-
     [EventSubscriber(ObjectType::Codeunit, 1313, 'OnAfterCreateCorrectivePurchCrMemo', '', false, false)]
     local procedure OnAfterCreateCorrectivePurchaseCrMemo(PurchInvHeader: Record "Purch. Inv. Header"; var PurchaseHeader: Record "Purchase Header")
     begin
@@ -209,11 +212,12 @@ codeunit 70007 "SSA Correct Documents"
             PurchaseHeader."SSA Stare Factura" := PurchaseHeader."SSA Stare Factura"::"2-Factura Anulata"; //SSM973
             PurchaseHeader."Posting No." := PurchInvHeader."No.";
             PurchaseHeader."Posting No. Series" := PurchInvHeader."No. Series";
-        end else begin
+        end
+        else begin
             PurchaseHeader."SSA Tip Document D394" := PurchaseHeader."SSA Tip Document D394"::"Factura Fiscala"; //SSM973
             PurchaseHeader."SSA Stare Factura" := PurchaseHeader."SSA Stare Factura"::"1-Factura Stornata"; //SSM973
         end;
-        PurchaseHeader.Modify;
+        PurchaseHeader.Modify();
         PurchInvHeader."SSA Cancelling Type" := PurchInvHeader."SSA Cancelling Type"::" ";
     end;
 
@@ -246,11 +250,12 @@ codeunit 70007 "SSA Correct Documents"
             ToPurchaseHeader."SSA Stare Factura" := ToPurchaseHeader."SSA Stare Factura"::"2-Factura Anulata"; //SSM973
             ToPurchaseHeader."Posting No." := PurchInvHeader."No.";
             ToPurchaseHeader."Posting No. Series" := PurchInvHeader."No. Series";
-        end else begin
+        end
+        else begin
             ToPurchaseHeader."SSA Tip Document D394" := ToPurchaseHeader."SSA Tip Document D394"::"Factura Fiscala"; //SSM973
             ToPurchaseHeader."SSA Stare Factura" := ToPurchaseHeader."SSA Stare Factura"::"1-Factura Stornata"; //SSM973
         end;
-        ToPurchaseHeader.Modify;
+        ToPurchaseHeader.Modify();
         PurchInvHeader."SSA Cancelling Type" := PurchInvHeader."SSA Cancelling Type"::" ";
     end;
 
@@ -297,7 +302,7 @@ codeunit 70007 "SSA Correct Documents"
         SalesInvoiceHeader: Record "Sales Invoice Header";
         SalesCrMemoHeader: Record "Sales Cr.Memo Header";
         CustLedgerEntry: Record "Cust. Ledger Entry";
-        CancelledDocNo: code[20];
+        CancelledDocNo: Code[20];
     begin
         if SalesHeader."SSA Stare Factura" <> SalesHeader."SSA Stare Factura"::"2-Factura Anulata" then
             exit;
@@ -308,29 +313,27 @@ codeunit 70007 "SSA Correct Documents"
         if SalesCrMemoHdrNo <> '' then
             CancelledDocNo := SalesCrMemoHdrNo;
 
-        VATEntry.Reset;
+        VATEntry.Reset();
         VATEntry.SetCurrentKey("Document No.", "Posting Date");
         VATEntry.SetRange("Document No.", CancelledDocNo);
-
 
         if SalesInvHdrNo <> '' then begin
             SalesCrMemoHeader.Get(CancelledDocNo);
             SalesCrMemoHeader."SSA Stare Factura" := SalesCrMemoHeader."SSA Stare Factura"::"2-Factura Anulata";
-            SalesCrMemoHeader.Modify;
+            SalesCrMemoHeader.Modify();
             VATEntry.ModifyAll("SSA Stare Factura", SalesCrMemoHeader."SSA Stare Factura");
-            CustLedgerEntry.reset;
+            CustLedgerEntry.Reset();
             CustLedgerEntry.SetCurrentKey("Document No.");
             CustLedgerEntry.SetRange("Document No.", SalesCrMemoHeader."No.");
             CustLedgerEntry.ModifyAll("SSA Stare Factura", SalesCrMemoHeader."SSA Stare Factura");
-
         end;
 
         if SalesCrMemoHdrNo <> '' then begin
             SalesInvoiceHeader.Get(CancelledDocNo);
             SalesInvoiceHeader."SSA Stare Factura" := SalesInvoiceHeader."SSA Stare Factura"::"2-Factura Anulata";
-            SalesInvoiceHeader.Modify;
+            SalesInvoiceHeader.Modify();
             VATEntry.ModifyAll("SSA Stare Factura", SalesInvoiceHeader."SSA Stare Factura");
-            CustLedgerEntry.reset;
+            CustLedgerEntry.Reset();
             CustLedgerEntry.SetCurrentKey("Document No.");
             CustLedgerEntry.SetRange("Document No.", SalesInvoiceHeader."No.");
             CustLedgerEntry.ModifyAll("SSA Stare Factura", SalesInvoiceHeader."SSA Stare Factura");
@@ -344,7 +347,7 @@ codeunit 70007 "SSA Correct Documents"
         PurchInvHeader: Record "Purch. Inv. Header";
         PurchCrMemoHdr: Record "Purch. Cr. Memo Hdr.";
         VendLedgerEntry: Record "Vendor Ledger Entry";
-        CancelledDocNo: code[20];
+        CancelledDocNo: Code[20];
     begin
         if PurchaseHeader."SSA Stare Factura" <> PurchaseHeader."SSA Stare Factura"::"2-Factura Anulata" then
             exit;
@@ -355,33 +358,30 @@ codeunit 70007 "SSA Correct Documents"
         if PurchCrMemoHdrNo <> '' then
             CancelledDocNo := PurchCrMemoHdrNo;
 
-        VATEntry.Reset;
+        VATEntry.Reset();
         VATEntry.SetCurrentKey("Document No.", "Posting Date");
         VATEntry.SetRange("Document No.", CancelledDocNo);
-
 
         if PurchInvHdrNo <> '' then begin
             PurchCrMemoHdr.Get(CancelledDocNo);
             PurchCrMemoHdr."SSA Stare Factura" := PurchCrMemoHdr."SSA Stare Factura"::"2-Factura Anulata";
-            PurchCrMemoHdr.Modify;
+            PurchCrMemoHdr.Modify();
             VATEntry.ModifyAll("SSA Stare Factura", PurchCrMemoHdr."SSA Stare Factura");
-            VendLedgerEntry.reset;
+            VendLedgerEntry.Reset();
             VendLedgerEntry.SetCurrentKey("Document No.");
             VendLedgerEntry.SetRange("Document No.", PurchCrMemoHdr."No.");
             VendLedgerEntry.ModifyAll("SSA Stare Factura", PurchCrMemoHdr."SSA Stare Factura");
-
         end;
 
         if PurchCrMemoHdrNo <> '' then begin
             PurchInvHeader.Get(CancelledDocNo);
             PurchInvHeader."SSA Stare Factura" := PurchInvHeader."SSA Stare Factura"::"2-Factura Anulata";
-            PurchInvHeader.Modify;
+            PurchInvHeader.Modify();
             VATEntry.ModifyAll("SSA Stare Factura", PurchInvHeader."SSA Stare Factura");
-            VendLedgerEntry.reset;
+            VendLedgerEntry.Reset();
             VendLedgerEntry.SetCurrentKey("Document No.");
             VendLedgerEntry.SetRange("Document No.", PurchInvHeader."No.");
             VendLedgerEntry.ModifyAll("SSA Stare Factura", PurchInvHeader."SSA Stare Factura");
         end;
     end;
 }
-

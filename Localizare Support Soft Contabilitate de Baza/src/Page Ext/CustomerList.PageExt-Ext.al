@@ -4,15 +4,12 @@ pageextension 70066 "SSA Customer List" extends "Customer List"
     {
         addlast(Control1)
         {
-            field("SSA Commerce Trade No."; "SSA Commerce Trade No.")
+            field("SSA Commerce Trade No."; Rec."SSA Commerce Trade No.")
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Commerce Trade No. field.';
             }
         }
     }
-    actions
-    {
-    }
 
 }
-

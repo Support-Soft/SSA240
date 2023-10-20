@@ -41,50 +41,48 @@ codeunit 70503 "SSA Gen. Jnl.-Post"
         PaymentStep: Record "SSA Payment Step";
         PaymentMgt: Codeunit "SSA Payment Management";
     begin
-        with _GenJnlLine do begin
-            if "SSA Applies-to CEC No." = '' then
-                exit;
+        if _GenJnlLine."SSA Applies-to CEC No." = '' then
+            exit;
 
-            if not PaymentHeader.GET("SSA Applies-to CEC No.") then
-                exit;
+        if not PaymentHeader.GET(_GenJnlLine."SSA Applies-to CEC No.") then
+            exit;
 
-            TESTFIELD("Posting Date");
-            TESTFIELD("Document No.");
-            TESTFIELD("Account Type");
-            TESTFIELD("Account No.");
-            TESTFIELD("Bal. Account No.");
+        _GenJnlLine.TESTFIELD("Posting Date");
+        _GenJnlLine.TESTFIELD("Document No.");
+        _GenJnlLine.TESTFIELD("Account Type");
+        _GenJnlLine.TESTFIELD("Account No.");
+        _GenJnlLine.TESTFIELD("Bal. Account No.");
 
-            PaymentHeader.CALCFIELDS(Amount);
-            if Amount <> PaymentHeader.Amount then
-                ERROR('Suma introdusa difera de suma din CEC = %1', PaymentHeader.Amount);
+        PaymentHeader.CALCFIELDS(Amount);
+        if _GenJnlLine.Amount <> PaymentHeader.Amount then
+            ERROR('Suma introdusa difera de suma din CEC = %1', PaymentHeader.Amount);
 
-            PaymentLine.RESET;
-            PaymentLine.SETRANGE("No.", PaymentHeader."No.");
-            if PaymentLine.FINDFIRST then begin
-                if "Account Type" <> PaymentLine."Account Type" then
-                    ERROR('Tip cont introdus este diferit de cel din CEC = %1.', PaymentLine."Account Type");
-                if "Account No." <> PaymentLine."Account No." then
-                    ERROR('Nr. cont introdus este diferit de cel din CEC = %1.', PaymentLine."Account No.");
-                repeat
-                    PaymentLine."External Document No." := "Document No.";
-                    PaymentLine.MODIFY
-                until PaymentLine.NEXT = 0;
-            end;
-            PaymentHeader."Account No." := "Bal. Account No.";
-            PaymentHeader.VALIDATE("Posting Date", "Posting Date");
-            PaymentHeader.MODIFY;
-
-            PaymentStep.RESET;
-            PaymentStep.SETRANGE("Payment Class", PaymentHeader."Payment Class");
-            PaymentStep.SETRANGE("Previous Status", PaymentHeader."Status No.");
-            PaymentStep.SETFILTER("Action Type",
-              '<>%1&<>%2&<>%3',
-              PaymentStep."Action Type"::Report,
-              PaymentStep."Action Type"::File,
-              PaymentStep."Action Type"::"Create new Document");
-            PaymentStep.FINDFIRST;
-            PaymentMgt.Valbord(PaymentHeader, PaymentStep);
-            DELETE;
+        PaymentLine.RESET;
+        PaymentLine.SETRANGE("No.", PaymentHeader."No.");
+        if PaymentLine.FINDFIRST then begin
+            if _GenJnlLine."Account Type" <> PaymentLine."Account Type" then
+                ERROR('Tip cont introdus este diferit de cel din CEC = %1.', PaymentLine."Account Type");
+            if _GenJnlLine."Account No." <> PaymentLine."Account No." then
+                ERROR('Nr. cont introdus este diferit de cel din CEC = %1.', PaymentLine."Account No.");
+            repeat
+                PaymentLine."External Document No." := _GenJnlLine."Document No.";
+                PaymentLine.MODIFY
+            until PaymentLine.NEXT = 0;
         end;
+        PaymentHeader."Account No." := _GenJnlLine."Bal. Account No.";
+        PaymentHeader.VALIDATE("Posting Date", _GenJnlLine."Posting Date");
+        PaymentHeader.MODIFY;
+
+        PaymentStep.RESET;
+        PaymentStep.SETRANGE("Payment Class", PaymentHeader."Payment Class");
+        PaymentStep.SETRANGE("Previous Status", PaymentHeader."Status No.");
+        PaymentStep.SETFILTER("Action Type",
+          '<>%1&<>%2&<>%3',
+          PaymentStep."Action Type"::Report,
+          PaymentStep."Action Type"::File,
+          PaymentStep."Action Type"::"Create new Document");
+        PaymentStep.FINDFIRST;
+        PaymentMgt.Valbord(PaymentHeader, PaymentStep);
+        _GenJnlLine.DELETE;
     end;
 }

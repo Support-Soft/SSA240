@@ -10,25 +10,26 @@ page 70008 "SSA Comment Sheet"
     MultipleNewLines = true;
     PageType = List;
     SourceTable = "SSA Comment Line";
+    ApplicationArea = All;
 
     layout
     {
-        area(content)
+        area(Content)
         {
             repeater(Control1)
             {
                 ShowCaption = false;
-                field("Date"; Date)
+                field("Date"; Rec.Date)
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the date the comment was created.';
                 }
-                field(Comment; Comment)
+                field(Comment; Rec.Comment)
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the comment itself.';
                 }
-                field("Code"; Code)
+                field("Code"; Rec.Code)
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies a code for the comment.';
@@ -38,13 +39,9 @@ page 70008 "SSA Comment Sheet"
         }
     }
 
-    actions
-    {
-    }
 
     trigger OnNewRecord(BelowxRec: Boolean)
     begin
-        SetUpNewLine;
+        Rec.SetUpNewLine();
     end;
 }
-

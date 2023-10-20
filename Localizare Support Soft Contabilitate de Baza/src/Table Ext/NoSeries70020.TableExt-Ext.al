@@ -6,26 +6,27 @@ tableextension 70020 "SSA No. Series70020" extends "No. Series"
         field(70000; "SSA Tip Serie"; Option)
         {
             Caption = 'Tip Serie';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA973';
             OptionMembers = " ",,,"Emise de Beneficiari","Emise de Terti",Autofactura;
         }
         field(70001; "SSA Denumire Beneficiar/Tert"; Text[100])
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA973';
+            Caption = 'Denumire Beneficiar/Tert';
         }
         field(70002; "SSA CUI Beneficiar Tert"; Code[10])
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA973';
+            Caption = 'CUI Beneficiar Tert';
         }
         field(70003; "SSA Export D394"; Boolean)
         {
             Caption = 'Export D394';
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Description = 'SSA973';
         }
     }
 }
-

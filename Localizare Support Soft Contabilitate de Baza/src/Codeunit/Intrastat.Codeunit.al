@@ -1,12 +1,6 @@
 codeunit 70012 "SSA Intrastat"
 {
-    // SSA953 SSCAT 05.07.2019 19.Funct. intrastat
-    // SSA954 SSCAT 04.09.2019 20.Funct. Localizare Intrastat pentru Jobs
 
-
-    trigger OnRun()
-    begin
-    end;
 
     [EventSubscriber(ObjectType::Report, 70007, 'OnBeforeInsertItemJnlLine', '', false, false)]
     local procedure OnBeforeInsertItemJnlLine(var IntrastatJnlLine: Record "Intrastat Jnl. Line"; ItemLedgerEntry: Record "Item Ledger Entry")
@@ -45,15 +39,13 @@ codeunit 70012 "SSA Intrastat"
     local procedure OnAfterCopyFromGenJnlLine(var FALedgerEntry: Record "FA Ledger Entry"; GenJournalLine: Record "Gen. Journal Line")
     begin
         //SSA953>>
-        with FALedgerEntry do begin
-            "SSA Transaction Type" := GenJournalLine."SSA Transaction Type";
-            "SSA Transport Method" := GenJournalLine."SSA Transport Method";
-            "SSA Country/Region Code" := GenJournalLine."Country/Region Code";
-            "SSA Entry/Exit Point" := GenJournalLine."SSA Entry/Exit Point";
-            "SSA Area" := GenJournalLine."SSA Area";
-            "SSA Transaction Specification" := GenJournalLine."SSA Transaction Specification";
-            "SSA Shpt. Method Code" := GenJournalLine."SSA Shpt. Method Code";
-        end;
+        FALedgerEntry."SSA Transaction Type" := GenJournalLine."SSA Transaction Type";
+        FALedgerEntry."SSA Transport Method" := GenJournalLine."SSA Transport Method";
+        FALedgerEntry."SSA Country/Region Code" := GenJournalLine."Country/Region Code";
+        FALedgerEntry."SSA Entry/Exit Point" := GenJournalLine."SSA Entry/Exit Point";
+        FALedgerEntry."SSA Area" := GenJournalLine."SSA Area";
+        FALedgerEntry."SSA Transaction Specification" := GenJournalLine."SSA Transaction Specification";
+        FALedgerEntry."SSA Shpt. Method Code" := GenJournalLine."SSA Shpt. Method Code";
         //SSA953<<
     end;
 
@@ -70,11 +62,10 @@ codeunit 70012 "SSA Intrastat"
         if CountryRegion."Intrastat Code" = '' then
             exit(false);
 
-        CompanyInfo.Get;
+        CompanyInfo.Get();
         if ShipTo then
             exit(CountryRegionCode <> CompanyInfo."Ship-to Country/Region Code");
         exit(CountryRegionCode <> CompanyInfo."Country/Region Code");
         //SSA954<<
     end;
 }
-

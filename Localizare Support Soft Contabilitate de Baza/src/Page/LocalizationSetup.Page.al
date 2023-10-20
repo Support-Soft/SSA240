@@ -18,156 +18,186 @@ page 70006 "SSA Localization Setup"
 
     layout
     {
-        area(content)
+        area(Content)
         {
             group(General)
             {
+                Caption = 'General';
             }
             group("Sales & Receivables Setup")
             {
-                field("Sales Negative Line Correction"; "Sales Negative Line Correction")
+                Caption = 'Sales & Receivables Setup';
+                field("Sales Negative Line Correction"; Rec."Sales Negative Line Correction")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Sales Negative Line Correction field.';
                 }
-                field("Allow Diff. Sell-to Bill-to"; "Allow Diff. Sell-to Bill-to")
+                field("Allow Diff. Sell-to Bill-to"; Rec."Allow Diff. Sell-to Bill-to")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Allow Diff. Sell-to Bill-to field.';
                 }
             }
             group("Purchase Setup")
             {
-                field("Purch Negative Line Correction"; "Purch Negative Line Correction")
+                Caption = 'Purchase Setup';
+                field("Purch Negative Line Correction"; Rec."Purch Negative Line Correction")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Purch Negative Line Correction field.';
                 }
-                field("Allow Diff. Buy-from Pay-to"; "Allow Diff. Buy-from Pay-to")
+                field("Allow Diff. Buy-from Pay-to"; Rec."Allow Diff. Buy-from Pay-to")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Allow Diff. Buy-from Pay-to field.';
                 }
-                field("Custom Invoice No. Mandatory"; "Custom Invoice No. Mandatory")
+                field("Custom Invoice No. Mandatory"; Rec."Custom Invoice No. Mandatory")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Custom Invoice No. Mandatory field.';
                 }
             }
             group("Inventory Setup")
             {
-                field("Internal Consumption Nos."; "Internal Consumption Nos.")
+                Caption = 'Inventory Setup';
+                field("Internal Consumption Nos."; Rec."Internal Consumption Nos.")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Internal Consumption Nos. field.';
                 }
-                field("Posted Int. Consumption Nos."; "Posted Int. Consumption Nos.")
+                field("Posted Int. Consumption Nos."; Rec."Posted Int. Consumption Nos.")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Posted Int. Consumption Nos. field.';
                 }
-                field("Outbound Whse. Handling Time"; "Outbound Whse. Handling Time")
+                field("Outbound Whse. Handling Time"; Rec."Outbound Whse. Handling Time")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Outbound Whse. Handling Time field.';
                 }
-                field("Transfer Gen. Bus. Pstg. Group"; "Transfer Gen. Bus. Pstg. Group")
+                field("Transfer Gen. Bus. Pstg. Group"; Rec."Transfer Gen. Bus. Pstg. Group")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Transfer Gen. Bus. Pstg. Group field.';
                 }
-                field("Assembly Gen. Bus. Pstg. Group"; "Assembly Gen. Bus. Pstg. Group")
+                field("Assembly Gen. Bus. Pstg. Group"; Rec."Assembly Gen. Bus. Pstg. Group")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Assembly Gen. Bus. Pstg. Group field.';
                 }
-                field("Unit of Measure Mandatory"; "Unit of Measure Mandatory")
+                field("Unit of Measure Mandatory"; Rec."Unit of Measure Mandatory")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Unit of Measure Mandatory field.';
                 }
-                field("Rounding Dimension Set ID"; "Rounding Dimension Set ID")
+                field("Rounding Dimension Set ID"; Rec."Rounding Dimension Set ID")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Rounding Dimension Set ID field.';
                 }
             }
             group(Intrastat)
             {
                 Caption = 'Intrastat';
-                field("Transaction Type Mandatory"; "Transaction Type Mandatory")
+                field("Transaction Type Mandatory"; Rec."Transaction Type Mandatory")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Transaction Type Mandatory field.';
                 }
-                field("Transaction Spec. Mandatory"; "Transaction Spec. Mandatory")
+                field("Transaction Spec. Mandatory"; Rec."Transaction Spec. Mandatory")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Transaction Spec. Mandatory field.';
                 }
-                field("Transport Method Mandatory"; "Transport Method Mandatory")
+                field("Transport Method Mandatory"; Rec."Transport Method Mandatory")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Transport Method Mandatory field.';
                 }
-                field("Shipment Method Mandatory"; "Shipment Method Mandatory")
+                field("Shipment Method Mandatory"; Rec."Shipment Method Mandatory")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Shipment Method Mandatory field.';
                 }
             }
             group("Fixed Asset")
             {
                 Caption = 'Fixed Asset';
-                field("Fixed Asset Nos."; "Fixed Asset Nos.")
+                field("Fixed Asset Nos."; Rec."Fixed Asset Nos.")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Fixed Asset Nos. field.';
                 }
-                field("Fixed Asset Inventory Nos."; "Fixed Asset Inventory Nos.")
+                field("Fixed Asset Inventory Nos."; Rec."Fixed Asset Inventory Nos.")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Fixed Asset Inventory Nos. field.';
                 }
             }
             group(D394)
             {
                 Caption = '394';
-                field("Sistem TVA"; "Sistem TVA")
+                field("Sistem TVA"; Rec."Sistem TVA")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the VAT System field.';
                 }
-                field("Skip Errors before date"; "Skip Errors before date")
+                field("Skip Errors before date"; Rec."Skip Errors before date")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Skip Errors before date field.';
                 }
-                field("CAEN Code"; "CAEN Code")
+                field("CAEN Code"; Rec."CAEN Code")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the CAEN Code field.';
                 }
             }
             group("General Ledger Setup")
             {
                 Caption = 'General Ledger Setup';
-                field("Vendor Neex. VAT Posting Group"; "Vendor Neex. VAT Posting Group")
+                field("Vendor Neex. VAT Posting Group"; Rec."Vendor Neex. VAT Posting Group")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Vendor Neex. VAT Posting Group field.';
                 }
-                field("Vendor Ex. VAT Posting Group"; "Vendor Ex. VAT Posting Group")
+                field("Vendor Ex. VAT Posting Group"; Rec."Vendor Ex. VAT Posting Group")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Vendor Ex. VAT Posting Group field.';
                 }
-                field("Cust. Neex. VAT Posting Group"; "Cust. Neex. VAT Posting Group")
+                field("Cust. Neex. VAT Posting Group"; Rec."Cust. Neex. VAT Posting Group")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Cust. Neex. VAT Posting Group field.';
                 }
-                field("Cust. Ex. VAT Posting Group"; "Cust. Ex. VAT Posting Group")
+                field("Cust. Ex. VAT Posting Group"; Rec."Cust. Ex. VAT Posting Group")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Cust. Ex. VAT Posting Group field.';
                 }
-                field("Leasing Journal Template"; "Leasing Journal Template")
+                field("Leasing Journal Template"; Rec."Leasing Journal Template")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Leasing Journal Template 2 field.';
                 }
-                field("Advance Journal Template"; "Advance Journal Template")
+                field("Advance Journal Template"; Rec."Advance Journal Template")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Advance Journal Template field.';
                 }
-                field("Vendor Nepl. VAT Posting Group"; "Vendor Nepl. VAT Posting Group")
+                field("Vendor Nepl. VAT Posting Group"; Rec."Vendor Nepl. VAT Posting Group")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Vendor Nepl. VAT Posting Group field.';
                 }
-                field("Cust. Nepl. VAT Posting Group"; "Cust. Nepl. VAT Posting Group")
+                field("Cust. Nepl. VAT Posting Group"; Rec."Cust. Nepl. VAT Posting Group")
                 {
                     ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Cust. Nepl. VAT Posting Group field.';
                 }
             }
         }
     }
-    actions
-    {
-    }
-}
 
+}

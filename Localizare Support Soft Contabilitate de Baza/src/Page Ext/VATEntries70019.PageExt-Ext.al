@@ -5,27 +5,31 @@ pageextension 70019 "SSA VAT Entries70019" extends "VAT Entries"
     {
         addlast(Control1)
         {
-            field("SSA Tip Document D394"; "SSA Tip Document D394")
+            field("SSA Tip Document D394"; Rec."SSA Tip Document D394")
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Tip Document D394 field.';
             }
-            field("SSA Stare Factura"; "SSA Stare Factura")
+            field("SSA Stare Factura"; Rec."SSA Stare Factura")
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Stare Factura field.';
             }
-            field("SSA Tip Partener"; "SSA Tip Partener")
+            field("SSA Tip Partener"; Rec."SSA Tip Partener")
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Tip Partener field.';
             }
-            field("SSA Realized Amount"; "SSA Realized Amount")
+            field("SSA Realized Amount"; Rec."SSA Realized Amount")
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Realized Amount field.';
             }
-            field("SSA Realized Base"; "SSA Realized Base")
+            field("SSA Realized Base"; Rec."SSA Realized Base")
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Realized Base field.';
             }
         }
     }
 }
-

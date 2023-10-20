@@ -5,11 +5,11 @@ pageextension 70022 "SSA Shipping Agents70022" extends "Shipping Agents"
     {
         addafter("Account No.")
         {
-            field("SSA Delivery Info Mandatory"; "SSA Delivery Info Mandatory")
+            field("SSA Delivery Info Mandatory"; Rec."SSA Delivery Info Mandatory")
             {
                 ApplicationArea = All;
+                ToolTip = 'Specifies the value of the Delivery Info Mandatory field.';
             }
         }
     }
 }
-

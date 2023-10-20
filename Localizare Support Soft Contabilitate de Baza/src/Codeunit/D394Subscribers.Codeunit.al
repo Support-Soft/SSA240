@@ -1,11 +1,6 @@
 codeunit 70028 "SSA D394 Subscribers"
 {
-    // SSA973 SSCAT 06.09.2019 39.Rapoarte legale- Localizare Declaratia 394
 
-
-    trigger OnRun()
-    begin
-    end;
 
     var
         Text001: Label 'Cancelled documents should have the same amount.';
@@ -13,20 +8,18 @@ codeunit 70028 "SSA D394 Subscribers"
     [EventSubscriber(ObjectType::Table, 36, 'OnBeforeInitRecord', '', false, false)]
     local procedure T36OnBeforeInitRecord(var SalesHeader: Record "Sales Header"; var IsHandled: Boolean)
     begin
-        with SalesHeader do begin
-            if "SSA Tip Document D394" = "SSA Tip Document D394"::" " then
-                if "Document Type" in ["Document Type"::Order, "Document Type"::Invoice, "Document Type"::"Credit Memo",
-                  "Document Type"::"Return Order"]
-                then
-                    "SSA Tip Document D394" := "SSA Tip Document D394"::"Factura Fiscala";
+        if SalesHeader."SSA Tip Document D394" = SalesHeader."SSA Tip Document D394"::" " then
+            if SalesHeader."Document Type" in [SalesHeader."Document Type"::Order, SalesHeader."Document Type"::Invoice, SalesHeader."Document Type"::"Credit Memo",
+              SalesHeader."Document Type"::"Return Order"]
+            then
+                SalesHeader."SSA Tip Document D394" := SalesHeader."SSA Tip Document D394"::"Factura Fiscala";
 
-            if "SSA Stare Factura" = "SSA Stare Factura"::" " then begin
-                if "Document Type" in ["Document Type"::Order, "Document Type"::Invoice] then
-                    "SSA Stare Factura" := "SSA Stare Factura"::"0-Factura Emisa";
+        if SalesHeader."SSA Stare Factura" = SalesHeader."SSA Stare Factura"::" " then begin
+            if SalesHeader."Document Type" in [SalesHeader."Document Type"::Order, SalesHeader."Document Type"::Invoice] then
+                SalesHeader."SSA Stare Factura" := SalesHeader."SSA Stare Factura"::"0-Factura Emisa";
 
-                if "Document Type" in ["Document Type"::"Credit Memo", "Document Type"::"Return Order"] then
-                    "SSA Stare Factura" := "SSA Stare Factura"::"1-Factura Stornata";
-            end;
+            if SalesHeader."Document Type" in [SalesHeader."Document Type"::"Credit Memo", SalesHeader."Document Type"::"Return Order"] then
+                SalesHeader."SSA Stare Factura" := SalesHeader."SSA Stare Factura"::"1-Factura Stornata";
         end;
     end;
 
@@ -37,15 +30,13 @@ codeunit 70028 "SSA D394 Subscribers"
             PurchaseHeader."SSA Tip Document D394" := PurchaseHeader."SSA Tip Document D394"::"Factura Fiscala";
         if PurchaseHeader."SSA Stare Factura" = PurchaseHeader."SSA Stare Factura"::" " then
             PurchaseHeader."SSA Stare Factura" := PurchaseHeader."SSA Stare Factura"::"0-Factura Emisa";
-
     end;
 
     [EventSubscriber(ObjectType::Table, 81, 'OnBeforeValidateGenPostingType', '', false, false)]
     local procedure T81OnBeforeValidateGenPostingType(var GenJournalLine: Record "Gen. Journal Line"; var CheckIfFieldIsEmpty: Boolean)
     begin
-        with GenJournalLine do
-            if "Gen. Posting Type" = "Gen. Posting Type"::Purchase then
-                "SSA Stare Factura" := "SSA Stare Factura"::"0-Factura Emisa";
+        if GenJournalLine."Gen. Posting Type" = GenJournalLine."Gen. Posting Type"::Purchase then
+            GenJournalLine."SSA Stare Factura" := GenJournalLine."SSA Stare Factura"::"0-Factura Emisa";
     end;
 
     [EventSubscriber(ObjectType::Table, 81, 'OnAfterCopyGenJnlLineFromPurchHeader', '', false, false)]
@@ -108,24 +99,21 @@ codeunit 70028 "SSA D394 Subscribers"
         SSASetup: Record "SSA Localization Setup";
         Cust: Record Customer;
     begin
-        with Sender do begin
-            SSASetup.Get;
-            SSASetup.TestField("Skip Errors before date");
-            if (SSASetup."Skip Errors before date" < "Posting Date") and Invoice then begin
-                TestField("SSA Tip Document D394");
-                TestField("SSA Stare Factura");
-                CheckApplicationSales(Sender);
+        SSASetup.Get();
+        SSASetup.TestField("Skip Errors before date");
+        if (SSASetup."Skip Errors before date" < Sender."Posting Date") and Sender.Invoice then begin
+            Sender.TestField("SSA Tip Document D394");
+            Sender.TestField("SSA Stare Factura");
+            CheckApplicationSales(Sender);
 
-                TestField("Posting No. Series");
+            Sender.TestField("Posting No. Series");
 
-                Cust.Get(Sender."Sell-to Customer No.");
-                Cust.TestField("SSA Tip Partener");
-                if (Cust."SSA Tip Partener" = Cust."SSA Tip Partener"::"2-CNP PFA din RO sau CUI neinregistrat in scopuri de TVA") and
-                  (Cust."VAT Registration No." = '')
-                then begin
-                    Cust.TestField("SSA Cod Judet D394");
-                end;
-            end;
+            Cust.Get(Sender."Sell-to Customer No.");
+            Cust.TestField("SSA Tip Partener");
+            if (Cust."SSA Tip Partener" = Cust."SSA Tip Partener"::"2-CNP PFA din RO sau CUI neinregistrat in scopuri de TVA") and
+              (Cust."VAT Registration No." = '')
+            then
+                Cust.TestField("SSA Cod Judet D394");
         end;
     end;
 
@@ -153,7 +141,6 @@ codeunit 70028 "SSA D394 Subscribers"
                     if SalesCrMemoHeader."Amount Including VAT" <> _SalesHeader."Amount Including VAT" then
                         Error(Text001);
                 end;
-
         end;
     end;
 
@@ -163,24 +150,21 @@ codeunit 70028 "SSA D394 Subscribers"
         SSASetup: Record "SSA Localization Setup";
         Vendor: Record Vendor;
     begin
-        with Sender do begin
-            SSASetup.Get;
-            SSASetup.TestField("Skip Errors before date");
-            if (SSASetup."Skip Errors before date" < "Posting Date") and Invoice then begin
-                TestField("SSA Tip Document D394");
-                TestField("SSA Stare Factura");
-                CheckApplicationPurchase(Sender);
+        SSASetup.Get();
+        SSASetup.TestField("Skip Errors before date");
+        if (SSASetup."Skip Errors before date" < Sender."Posting Date") and Sender.Invoice then begin
+            Sender.TestField("SSA Tip Document D394");
+            Sender.TestField("SSA Stare Factura");
+            CheckApplicationPurchase(Sender);
 
-                TestField("Posting No. Series");
+            Sender.TestField("Posting No. Series");
 
-                Vendor.Get(Sender."Buy-from Vendor No.");
-                Vendor.TestField("SSA Tip Partener");
-                if (Vendor."SSA Tip Partener" = Vendor."SSA Tip Partener"::"2-CNP PFA din RO sau CUI neinregistrat in scopuri de TVA") and
-                  (Vendor."VAT Registration No." = '')
-                then begin
-                    Vendor.TestField("SSA Cod Judet D394");
-                end;
-            end;
+            Vendor.Get(Sender."Buy-from Vendor No.");
+            Vendor.TestField("SSA Tip Partener");
+            if (Vendor."SSA Tip Partener" = Vendor."SSA Tip Partener"::"2-CNP PFA din RO sau CUI neinregistrat in scopuri de TVA") and
+              (Vendor."VAT Registration No." = '')
+            then
+                Vendor.TestField("SSA Cod Judet D394");
         end;
     end;
 
@@ -209,7 +193,6 @@ codeunit 70028 "SSA D394 Subscribers"
                     if PurchCrMemoHeader."Amount Including VAT" <> _PurchHeader."Amount Including VAT" then
                         Error(Text001);
                 end;
-
         end;
     end;
 
@@ -219,35 +202,31 @@ codeunit 70028 "SSA D394 Subscribers"
         SSASetup: Record "SSA Localization Setup";
         NoSeries: Record "No. Series";
     begin
-        SSASetup.Get;
+        SSASetup.Get();
         SSASetup.TestField("Skip Errors before date");
-        if SSASetup."Skip Errors before date" < GenJournalLine."Posting Date" then begin
-            with GenJournalLine do
-                if FindSet then
-                    repeat
-                        if (("VAT Bus. Posting Group" <> '') and ("VAT Prod. Posting Group" <> '')) or
-                          (("Bal. VAT Bus. Posting Group" <> '') and ("Bal. VAT Prod. Posting Group" <> ''))
-                        then begin
-                            if ("Document Type" in ["Document Type"::Invoice, "Document Type"::"Credit Memo"]) then begin
-                                if ("Gen. Posting Type" = "Gen. Posting Type"::Sale) or
-                                  ("Bal. Gen. Posting Type" = "Bal. Gen. Posting Type"::Sale)
-                                then begin //Seria doar la vanzare
-                                    NoSeries.Get("Posting No. Series");
+        if SSASetup."Skip Errors before date" < GenJournalLine."Posting Date" then
+            if GenJournalLine.FindSet() then
+                repeat
+                    if ((GenJournalLine."VAT Bus. Posting Group" <> '') and (GenJournalLine."VAT Prod. Posting Group" <> '')) or
+                      ((GenJournalLine."Bal. VAT Bus. Posting Group" <> '') and (GenJournalLine."Bal. VAT Prod. Posting Group" <> ''))
+                    then
+                        if (GenJournalLine."Document Type" in [GenJournalLine."Document Type"::Invoice, GenJournalLine."Document Type"::"Credit Memo"]) then begin
+                            if (GenJournalLine."Gen. Posting Type" = GenJournalLine."Gen. Posting Type"::Sale) or
+                              (GenJournalLine."Bal. Gen. Posting Type" = GenJournalLine."Bal. Gen. Posting Type"::Sale)
+                            then begin //Seria doar la vanzare
+                                NoSeries.Get(GenJournalLine."Posting No. Series");
 
-                                    if NoSeries."SSA Tip Serie" = NoSeries."SSA Tip Serie"::Autofactura then
-                                        "SSA Stare Factura" := "SSA Stare Factura"::"3-Autofactura";
-                                    if NoSeries."SSA Tip Serie" = NoSeries."SSA Tip Serie"::"Emise de Beneficiari" then
-                                        "SSA Stare Factura" := "SSA Stare Factura"::"4-In calidate de beneficiar in numele furnizorului";
-                                    Modify;
-                                end;
-                                TestField("SSA Tip Partener");
-                                TestField("SSA Tip Document D394");
-                                TestField("SSA Stare Factura");
+                                if NoSeries."SSA Tip Serie" = NoSeries."SSA Tip Serie"::Autofactura then
+                                    GenJournalLine."SSA Stare Factura" := GenJournalLine."SSA Stare Factura"::"3-Autofactura";
+                                if NoSeries."SSA Tip Serie" = NoSeries."SSA Tip Serie"::"Emise de Beneficiari" then
+                                    GenJournalLine."SSA Stare Factura" := GenJournalLine."SSA Stare Factura"::"4-In calidate de beneficiar in numele furnizorului";
+                                GenJournalLine.Modify();
                             end;
+                            GenJournalLine.TestField("SSA Tip Partener");
+                            GenJournalLine.TestField("SSA Tip Document D394");
+                            GenJournalLine.TestField("SSA Stare Factura");
                         end;
-
-                    until Next = 0;
-        end;
+                until GenJournalLine.Next() = 0;
     end;
 
     [EventSubscriber(ObjectType::Codeunit, 338, 'OnBeforeVATEntryModify', '', false, false)]
@@ -258,4 +237,3 @@ codeunit 70028 "SSA D394 Subscribers"
         VATEntry."SSA Tip Partener" := FromVATEntry."SSA Tip Partener";
     end;
 }
-
