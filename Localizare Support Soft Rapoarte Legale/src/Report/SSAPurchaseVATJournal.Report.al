@@ -690,7 +690,6 @@ report 71313 "SSA Purchase VAT Journal"
         gTxcVendor: Label 'Furnizorul/Prestatorul';
         gTxcRegNo: Label 'Codul de inregistrare in scopuri de T.V.A. al furnizorului/prestatorului';
         gTxcDocAmount: Label 'Total  document (inclusiv T.V.A.)';
-        gTxcCapitalGoods: Label 'Capital goods';
         gTxc19: Label 'Cota de 19%';
         gTxc20: Label 'Cota de 20%|5%';
         gTxc9: Label 'Cota de 9%';
@@ -699,7 +698,6 @@ report 71313 "SSA Purchase VAT Journal"
         gTxcAquisition: Label 'Achizitii de bunuri din tara si din import scutite, alte achizitii neimpozabile in Romania';
         gTxcIntracomAquisition: Label 'Achizitii intracomunitare de bunuri';
         gTxcForResale: Label 'Taxabile';
-        gTxcCompanyNeeds: Label 'For company needs';
         gTxcExempt: Label 'Scutite';
         gTxcGoodsServices: Label 'Bunuri si servicii pentru care cumparatorul este obligat la plata taxei cf. art. 160';
         gTxcGoodsServices150: Label 'Bunuri si servicii pentru care cumparatorul este obligat la plata taxei cf. art. 150';

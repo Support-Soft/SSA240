@@ -245,7 +245,6 @@ report 71300 "SSA Petty Cash Register In LCY"
     var
         InitialDebitBalance: Decimal;
         TotalBalance: Decimal;
-        DebitCredit: Text;
         DebitMovements: Decimal;
         CreditMovements: Decimal;
         nrcrt: Integer;

@@ -131,6 +131,5 @@ table 70501 "SSA Payment Class"
     var
         Text000: Label 'XXXXXX';
         Text001: Label 'Deleting is not allowed because this Payment Class is already used.';
-        TimeStep: Record "SSA Payment Step" temporary;
         Text002: Label 'The series'' nos must not be greater than 10.';
 }

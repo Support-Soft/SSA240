@@ -367,7 +367,6 @@ report 71316 "SSACustomer - Detail Trial Bal"
         Text000: Label 'Period: %1';
         GeneralLedgerSetup: Record "General Ledger Setup";
         CLE: Record "Cust. Ledger Entry";
-        DCLE: Record "Detailed Cust. Ledg. Entry";
         PrintDebitCredit: Boolean;
         PrintAmountsInLCY: Boolean;
         PrintOnlyOnePerPage: Boolean;

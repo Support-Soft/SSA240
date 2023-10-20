@@ -1053,7 +1053,6 @@ report 70902 "SSA Sales - Credit Memo"
         SalesSetup: Record "Sales & Receivables Setup";
         Cust: Record Customer;
         RespCenter: Record "Responsibility Center";
-        Language: Record Language;
         VATClause: Record "VAT Clause";
         FormatAddr: Codeunit "Format Address";
         FormatDocument: Codeunit "Format Document";

@@ -313,7 +313,6 @@ report 71315 "SSA Trial Balance (5 eq.)"
 
             trigger OnAfterGetRecord()
             var
-                lrGLEntry: Record "G/L Entry";
                 ldInitialDebitMovements: Decimal;
                 ldInitialCreditMovements: Decimal;
             begin
@@ -729,9 +728,7 @@ report 71315 "SSA Trial Balance (5 eq.)"
     var
         GLAcc1: Record "G/L Account";
         CompanyInfo: Record "Company Information";
-        grGLEntry: Record "G/L Entry";
         GLSetup: Record "General Ledger Setup";
-        Language: Record Language;
         GLFilter: Text[250];
         PeriodText: Text[30];
         Savefilter: Text[30];
@@ -761,7 +758,6 @@ report 71315 "SSA Trial Balance (5 eq.)"
         AccountTriaBalance: Option Analitical,Synthetic1,Synthetic2;
         gcCurrency: Code[10];
         gcCurr: Code[10];
-        LangCode: Code[10];
         Firstdayprevyear: Date;
         TotalDebitMovements: Decimal;
         TotalCreditMovements: Decimal;
@@ -769,44 +765,19 @@ report 71315 "SSA Trial Balance (5 eq.)"
         TotalCreditBalancePerClass: Decimal;
         fdp: Date;
         AccountType: Text[30];
-        PageGroupNo: Integer;
         XTotalInitDebitBalance: Decimal;
         XTotalInitCreditBalance: Decimal;
-        Title_Curr: Label 'Currency: ';
         Title_Period: Label 'Period: ';
         Title_BalType: Label 'Trial Balance Type: ';
         Title_Analytical: Label 'Analytical';
         Title_Synthetic1: Label 'Synthetic1';
         Title_Synthetic2: Label 'Synthetic2';
-        Col_AccountNo: Label 'Acc. No.';
-        Col_AccountName: Label 'Account Name';
-        Col_Debit: Label 'Debit';
-        Col_Credit: Label 'Credit';
-        Col_InitialBalance: Label 'Initial Balance';
-        Col_PrevMovements: Label 'Previous Movements';
-        Col_CurrMonthMov: Label 'Current Movements';
-        Col_TotalAmounts: Label 'Total Amounts';
-        Col_EndingBalance: Label 'Ending Balance';
-        Col_AccountType: Label 'Account Type';
         txtSociety: Label 'Company:';
-        txtFilters: Label 'Filters:';
         txtWithClosing: Label 'With Closing:';
-        txtCurrency: Label 'Amounts in:';
-        Text19006072: Label 'Analytic / Synthetic1 / Synthetic2';
         Title_Report: Label 'Trial Balance (5 eq.)';
         Text17: Label 'Page:';
 
         all: Boolean;
-
-        CreateExcel: Boolean;
-        txtPrintAll: Label 'Print Chart of Accounts';
-        ExcelTemplate: Text[250];
-        ExcelBook: Text[250];
-        ExcelSheet: Text[250];
-        ExcelRange: Text[250];
-        ExcelBookIsNew: Boolean;
-        i: Integer;
-        j: Integer;
         txtDate: Label 'Report Date:';
         txtUser: Label 'User:';
         ShowLine: Integer;
@@ -814,5 +785,4 @@ report 71315 "SSA Trial Balance (5 eq.)"
         FontItalic: Integer;
         GlobalDim1: Text[20];
         GlobalDim2: Text[20];
-        Col_Init: Text[30];
 }

@@ -365,9 +365,6 @@ report 71305 "SSA Customer Partner Report"
             }
 
             trigger OnAfterGetRecord()
-            var
-                DtlCustLedgEntry: Record "Detailed Cust. Ledg. Entry";
-                CustomerLedgEntry: Record "Cust. Ledger Entry";
             begin
 
                 StartBalanceLCY := 0;
@@ -489,13 +486,8 @@ report 71305 "SSA Customer Partner Report"
 
     var
         Text000: Label 'Period:';
-        Text50007: Label '(LCY)';
         Text50008: Label '(%1)';
         Text50005: Label 'Initial Balance At Date';
-        Text50006: Label 'Received Invoice';
-        Text50004: Label 'Remaining Amount!';
-        Text50002: Label 'Cheque paid at %1';
-        Text50003: Label 'Cheque unpaid';
         ClosingDocCaption: Label 'Closing Document No.';
         SumeDebitCaption: Label 'Debit Amount';
         SumeCreditCaption: Label 'Credit Amount';
@@ -513,28 +505,20 @@ report 71305 "SSA Customer Partner Report"
         CustLedgEntry: Record "Cust. Ledger Entry";
         PrintAmountsInLCY: Boolean;
         PrintOnlyOnePerPage: Boolean;
-        PrintAllHavingBal: Boolean;
         CustFilter: Text[250];
         CustDateFilter: Text[30];
         AmountCaption: Text[30];
         CustAmount: Decimal;
-        CustRemainAmount: Decimal;
         CustBalanceLCY: Decimal;
-        CustCurrencyCode: Code[10];
         CustEntryDueDate: Date;
-        StartDate: Date;
-        EndingDate: Date;
         StartBalanceLCY: Decimal;
         StartBalAdjLCY: Decimal;
         Correction: Decimal;
         CustLedgEntryExists: Boolean;
         CreateCustLedgEntry: Record "Cust. Ledger Entry";
         MarkedCustLedgerEntry: Record "Cust. Ledger Entry";
-        ApplDescription: Text[60];
         StartingDate: Date;
-        ApplAmount: Decimal;
         DetCustLE: Record "Detailed Cust. Ledg. Entry";
-        ApplAmountLCY: Decimal;
         CustAmountLCY: Decimal;
         SoldValuta: Boolean;
         Moneda: Text[30];
@@ -557,9 +541,6 @@ report 71305 "SSA Customer Partner Report"
         CustPostGrFilter: Text[250];
         StartBalAdjLCYAppl: Decimal;
         SourceCodeSetup: Record "Source Code Setup";
-        ExportToExcel: Boolean;
-        RowNo: Integer;
-        ExcelBuf: Record "Excel Buffer";
         TCustBalanceLCY: Decimal;
         TCustBalance: Decimal;
         EntryIdx: Integer;

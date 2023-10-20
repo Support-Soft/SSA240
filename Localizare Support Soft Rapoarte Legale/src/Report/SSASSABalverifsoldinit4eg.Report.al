@@ -628,7 +628,6 @@ report 71301 "SSABal. verif. sold init(4eg)"
         WithClosing: Boolean;
 
         ShowACY: Boolean;
-        i: Integer;
         Year: Integer;
         Text000: Label 'Trial Balance Type: ';
         AccountTriaBalance: Option Analitical,Synthetic1,Synthetic2;

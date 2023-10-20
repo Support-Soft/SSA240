@@ -1,4 +1,4 @@
-permissionset 70500 "SSA SSSCec"
+permissionset 70500 "SSA Cec"
 {
     Assignable = true;
     Permissions = tabledata "SSA Payment Address" = RIMD,

@@ -10,7 +10,6 @@ codeunit 71102 "SSA Interogare TVA Anaf"
     var
         Customer: Record Customer;
         Vendor: Record Vendor;
-        SalesHeader: Record "Sales Header";
         JSONBuffer: Record "JSON Buffer" temporary;
         PName: Text;
         PAddress: Text;
@@ -21,7 +20,6 @@ codeunit 71102 "SSA Interogare TVA Anaf"
         PCounty: Text;
         PstatusSplitTVA: Boolean;
         PCuiText: Text;
-        BoolAsText: Text;
         UpdateScpTVA: Boolean;
         UpdateStatusTVAIncasare: Boolean;
         UpdateStatusSplitTVA: Boolean;
@@ -211,7 +209,6 @@ codeunit 71102 "SSA Interogare TVA Anaf"
     local procedure ParseResponseJSON(_ResponseText: Text; var _JSONBuffer: Record "JSON Buffer" temporary)
     var
         JsonTextReaderWriter: Codeunit "Json Text Reader/Writer";
-        ErrorText: Text;
     begin
         //SSM2160>>
         _JSONBuffer.Reset;

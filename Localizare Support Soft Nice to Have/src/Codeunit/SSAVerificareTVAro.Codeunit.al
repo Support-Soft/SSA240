@@ -378,11 +378,6 @@ codeunit 71101 "SSA VerificareTVA.ro"
     end;
 
     procedure IsCNP(_InText: Text): Boolean
-    var
-        Done: Boolean;
-        CNPLen: Integer;
-        i: Integer;
-        IntVar: Integer;
     begin
         if StrPos(_InText, '/') > 0 then
             exit(false);

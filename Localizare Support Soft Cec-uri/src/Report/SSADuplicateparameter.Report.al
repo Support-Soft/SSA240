@@ -120,9 +120,6 @@ report 70501 "SSA Duplicate parameter"
     var
         OldName: Text[30];
         NewName: Text[30];
-        Text19061124: Label 'Which name do you want to attribute to the new parameter?';
-        Text19034794: Label 'Old name :';
-        Text19058282: Label 'New name :';
 
     procedure InitParameter("Code": Text[30])
     begin

@@ -181,8 +181,6 @@ page 70522 "SSA Payment Lines Archive"
     end;
 
     var
-        Header: Record "SSA Payment Header";
-        Status: Record "SSA Payment Status";
 
         "Account No.Emphasize": Boolean;
 

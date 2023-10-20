@@ -327,8 +327,6 @@ page 70502 "SSA CEC & BO Vendor"
                     PromotedCategory = Process;
                     ToolTip = 'Executes the Distribuie suma action.';
                     trigger OnAction()
-                    var
-                        Text001_ES: Label 'You need to fill all the fields that are mandatory (*)!';
                     begin
                         DistribuieSuma(Rec, Rec."Vendor No.");
                     end;

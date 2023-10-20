@@ -623,7 +623,6 @@ report 71314 "SSA Sales VAT Journal"
         gRecGLE: Record "G/L Entry";
         gIntiRow: Integer;
         ginticol: Integer;
-        i: Integer;
         gTxcCrtNo: Label 'Nr. Crt';
         gTxcOrderNo: Label 'Nr. document';
         gTxcDate: Label 'Data';
@@ -646,10 +645,8 @@ report 71314 "SSA Sales VAT Journal"
         gTxcOtherDelivery: Label 'Alte livrari de bunuri si prestari de servicii scutite cu drept de deducere';
         gTxcExemptP: Label 'Scutite conform art. 143 alin. (2) lit. a) si d) din Codul Fiscal';
         gTxcExemptQ: Label 'Scutite conform art. 143 alin. (2) lit. b) si c) din Codul Fiscal';
-        gTxcWithWOSimplifiedVAT: Label 'Purchases without Simplified VAT';
         gTxcValue: Label 'Valoarea';
         gTxcIntracomAquisition: Label 'Bunuri si servicii pentru care s-a aplicat un regim special, conform art. 152/1 sau 152/2 din Codul fiscal';
-        gTxcDeliveryT4: Label 'Alte livrari de bunuri si prestari de servicii scutite cu drept de deducere';
         gTxcWDedRights: Label 'Cu drept de deducere';
         gTxcWODedRights: Label 'Fara drept de deducere';
         gTxcValue1: Label 'Valoarea de impozitare';

@@ -128,7 +128,6 @@ report 70500 "SSA Payment List"
         DueDateCaption: Label 'Due date';
         NumeStareCaption: Label 'Status name';
         ExtDocCaption: Label 'External document no.';
-        TotalCaption: Label 'Total';
         pagCaption: Label 'Page';
         DueDate: Text;
 }

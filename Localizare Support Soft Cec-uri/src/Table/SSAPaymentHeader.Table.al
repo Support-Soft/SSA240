@@ -542,30 +542,22 @@ table 70506 "SSA Payment Header"
         Text000: Label 'Deleting not allowed';
         Text001: Label 'There is no line to treat';
         Text002: Label 'You cannot modify Currency Code because the Payment Header contains lines';
-        Text003: Label 'Payment';
         ReglHeader: Record "SSA Payment Header";
         GetProcess: Record "SSA Payment Class";
         CurrExchRate: Record "Currency Exchange Rate";
         RegLine: Record "SSA Payment Line";
         CompanyBank: Record "Bank Account";
-        PostCode: Record "Post Code";
         DefaultDimension: Record "Default Dimension";
         Process: Record "SSA Payment Class";
         NoSeriesMgt: Codeunit NoSeriesManagement;
         DimManagement: Codeunit DimensionManagement;
         DimMgt: Codeunit DimensionManagement;
-        ListeProcess: Page "SSA Payment Class List";
         CurrencyDate: Date;
-        Text004: Label 'You have changed a dimension.\\';
-        Text005: Label 'Do you want to update the lines?';
-        ConfirmDialog: Boolean;
-        DoOperation: Boolean;
         Text006: Label 'The document''s currency code is the LCY Code.\\You can only choose a bank which currency code is the LCY Code.';
         Text007: Label 'The document''s currency code is %1.\\You can only choose a bank which currency code is %1 or the LCY Code.';
         Text008: Label 'Your bank''s currency code is %1.\\You must change the bank account code before modifying the currency code.';
         Coding: Label 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
         Uncoding: Label '12345678912345678923456789';
-        Text50000: Label 'Your identification is set up to process from %1 %2 only.';
         Text50002: Label 'You may have changed a dimension.\\Do you want to update the lines?';
 
     procedure LookupShortcutDimCode(FieldNo: Integer; var ShortcutDimCode: Code[20])
@@ -661,8 +653,6 @@ table 70506 "SSA Payment Header"
     end;
 
     procedure InitHeader()
-    var
-        CompanyInformation: Record "Company Information";
     begin
         "Posting Date" := WORKDATE;
         "Document Date" := WORKDATE;
@@ -674,18 +664,12 @@ table 70506 "SSA Payment Header"
     end;
 
     procedure DimensionSetup()
-    var
-        PaymentManagement: Codeunit "SSA Payment Management";
     begin
         CLEAR(DefaultDimension);
         DimensionCreate;
     end;
 
     procedure DimensionCreate()
-    var
-        TableID: array[10] of Integer;
-        No: array[10] of Code[20];
-        PaymentManagement: Codeunit "SSA Payment Management";
     begin
         /*TableID[1] := DimManagement.TypeToTableID1("Account Type");
         No[1] := "Account No.";

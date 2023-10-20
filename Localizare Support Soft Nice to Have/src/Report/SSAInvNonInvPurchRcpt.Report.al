@@ -126,7 +126,6 @@ report 71100 "SSA Inv. Non-Inv Purch. Rcpt."
         PurchPost: Codeunit "Purch.-Post";
         PurchCalcDisc: Codeunit "Purch.-Calc.Discount";
         ReplaceDocumentDate: Boolean;
-        ReplacePostingDate: Boolean;
         CounterTotal: Integer;
         Window: Dialog;
         Text001: Label 'Posting invoices  #1########## @2@@@@@@@@@@@@@';

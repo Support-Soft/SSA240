@@ -141,34 +141,17 @@ report 70504 "SSA Suggest Customer Payments"
     var
         Text000: Label 'Please enter the last payment date.';
         Text001: Label 'Please enter the posting date.';
-        Text002: Label 'Please enter a Starting Document No.';
         Text003: Label 'The selected last due date is earlier than %1.\\';
         Text004: Label 'Do you still want to run the batch job?';
         Text005: Label 'The batch job was interrupted.';
         Text006: Label 'Processing customers     #1##########';
         Text007: Label 'Processing customers for payment discounts #1##########';
         Text008: Label 'Inserting payment journal lines #1##########';
-        Text009: Label '%1 must be G/L Account or Bank Account.';
-        Text010: Label '%1 must be filled only when %2 is Bank Account.';
-        Text011: Label 'Use Customer Priority must be activated when the value in the Amount Available field is not 0.';
-        Text012: Label 'Starting Document No. must contain a number.';
-        Text013: Label 'Use Customer Priority must be activated when the value in the Amount Available Amount (LCY) field is not 0.';
-        Text014: Label 'Payment to customer %1';
-        Text015: Label 'Payment of %1 %2';
         Text016: Label ' is already applied to %1 %2 for customer %3.';
-        Text017: Label 'When %1 = %2 and you have not placed a check mark in the Summarize per Customer field,\';
-        Text018: Label 'then you must place a check mark in New Doc. No. per Line.';
-        Text019: Label 'You have only created suggested customer payment lines for the %1 %2.\';
-        Text020: Label 'There are, however, other open customer ledger entries in currencies other than %2.';
-        Text021: Label 'There are no other open customer ledger entries in other currencies.';
-        Text022: Label 'You have created suggested customer payment lines for all currencies.';
-        Text023: Label ' ,Computer Check,Manual Check';
         Cust2: Record Customer;
         GenPayHead: Record "SSA Payment Header";
         GenPayLine: Record "SSA Payment Line";
         CustLedgEntry: Record "Cust. Ledger Entry";
-        GLAcc: Record "G/L Account";
-        BankAcc: Record "Bank Account";
         PayableCustLedgEntry: Record "Payable Vendor Ledger Entry" temporary;
         TempPaymentPostBuffer: Record "SSA Payment Post. Buffer" temporary;
         OldTempPaymentPostBuffer: Record "SSA Payment Post. Buffer" temporary;
@@ -283,7 +266,6 @@ report 70504 "SSA Suggest Customer Payments"
     local procedure MakeGenPayLines()
     var
         GenPayLine3: Record "Gen. Journal Line";
-        EntryNo: Integer;
     begin
         TempPaymentPostBuffer.DELETEALL;
 

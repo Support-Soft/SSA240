@@ -783,8 +783,6 @@ codeunit 70500 "SSA Payment Management"
     end;
 
     procedure CreatePaymentHeaders()
-    var
-        Ok: Boolean;
     begin
         Step.SETRANGE(Step."Action Type", Step."Action Type"::"Create new Document");
 
@@ -939,10 +937,6 @@ codeunit 70500 "SSA Payment Management"
     end;
 
     local procedure CheckDimValuePosting(LineNo: Integer)
-    var
-        TheSalesLine: Record "Sales Line";
-        TableIDArr: array[10] of Integer;
-        NumberArr: array[10] of Code[20];
     begin
         /*IF LineNo = 0 THEN BEGIN
           TableIDArr[1] := DATABASE::Customer;
@@ -974,8 +968,6 @@ codeunit 70500 "SSA Payment Management"
     end;
 
     local procedure CopyAndCheckDocDimToTempDocDim()
-    var
-        CurrLineNo: Integer;
     begin
         /*TempDocDim.RESET;
         TempDocDim.DELETEALL;
@@ -1066,8 +1058,6 @@ codeunit 70500 "SSA Payment Management"
         ArchiveHeader: Record "SSA Payment Header Archive";
         ArchiveLine: Record "SSA Payment Line Archive";
         PaymentLine: Record "SSA Payment Line";
-        DimensionManagement: Codeunit DimensionManagement;
-        DocType: Option Quote,"Order",Invoice,"Credit Memo","Blanket Order","Return Order"," ";
     begin
         Document.CALCFIELDS("Archiving authorized");
         if not Document."Archiving authorized" then

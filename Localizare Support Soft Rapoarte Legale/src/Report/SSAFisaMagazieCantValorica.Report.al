@@ -330,8 +330,6 @@ report 71308 "SSA Fisa Magazie Cant-Valorica"
         FiltruAux: Text[250];
         DataAux: Date;
         StocTot: Decimal;
-        nr_crt: Integer;
-        StocLocatie: Decimal;
         FiltruLoc: Text[250];
         Stoc_i_lbl: Label 'Stoc initial';
         Lot_lbl: Label 'Nr. lot';
@@ -346,8 +344,6 @@ report 71308 "SSA Fisa Magazie Cant-Valorica"
         NumeVendorClient: Text[250];
         Vendor: Record Vendor;
         Customer: Record Customer;
-        LocatieTransfer: Text[250];
-        TSH: Record "Transfer Shipment Header";
         Serie_lbl: Label 'Serie';
         VE: Record "Value Entry";
         DocumentExt: Code[35];

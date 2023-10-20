@@ -231,8 +231,6 @@ report 71303 "SSA Depreciation Register"
 
     var
         CompInfo: Record "Company Information";
-        LastFieldNo: Integer;
-        FooterPrinted: Boolean;
         Filtru1: Text[200];
         AFP: Decimal;
         AFC: Decimal;
@@ -244,26 +242,13 @@ report 71303 "SSA Depreciation Register"
         DataRaport: Date;
         CA: Decimal;
         Filtru2: Date;
-        Procent: Decimal;
-        sTotal: Decimal;
         FixedAsset: Record "Fixed Asset";
         Text01: Label 'Company:';
-        Text02: Label 'Filters';
         Text03: Label 'DEPRECIATION REGISTER';
-        Text04: Label 'Date';
-        Text05: Label 'Aquisition cost';
-        Text06: Label 'Previous depreciation';
-        Text07: Label 'Current depreciation';
-        Text08: Label 'Cumulated depreciation';
-        Text09: Label 'Remaining Value';
         Text10: Label 'Report date';
         Text11: Label 'User';
-        Text12: Label 'Total Group';
-        Text13: Label 'Total Report ';
         Text14: Label 'Please specify a filter for the Report Date Filter field.';
-        Text15: Label 'Register depreciation must be filled!';
         Text00: Label 'Please specify a filter for the Depreciation Book Code  field in the   FA Ledger Entry table.                                                                                          For information about entering filters, see the online Help.';
-        Text002: Label 'Please specify a filter for the Ending Date Filter field.';
         Text16: Label 'At date:';
         Text17: Label 'Page:';
         Inactive: Boolean;

@@ -288,7 +288,6 @@ report 71304 "SSA FA Phys. Inventory List"
         Text26501: Label 'FIXED ASSET PHYSICAL INVENTORY DOCUMENT No.';
         Text26502: Label 'Depreciation Book Code must not be empty.';
         Text26503: Label 'Totals for';
-        FASetup: Record "FA Setup";
         FADeprBook: Record "FA Depreciation Book";
         PrintFAValues: Boolean;
         DocumentNo: Code[10];
@@ -297,7 +296,6 @@ report 71304 "SSA FA Phys. Inventory List"
         HeaderText: Text[60];
         DeprBookCode: Code[10];
         GroupBy: Option "None","FA Location Code Only","Responsible Employee Only","FA Location and Responsible","Responsible and Location";
-        ChangePage: Boolean;
         Member: array[3] of Text[100];
         DocumentDate: Date;
         PrintZeroBookValue: Boolean;

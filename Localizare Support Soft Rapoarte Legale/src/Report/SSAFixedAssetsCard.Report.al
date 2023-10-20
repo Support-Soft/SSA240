@@ -444,8 +444,6 @@ report 71309 "SSA Fixed Assets Card"
         FAStartBalanceLCY: Decimal;
         AcquisitionCost: Decimal;
         TotalFALocation: array[3] of Decimal;
-        TotalGlobalDim1: array[3] of Decimal;
-        TotalClassCode: array[3] of Decimal;
         Total: array[3] of Decimal;
         TotalFALocationAfis: array[3] of Decimal;
         TotalGlobalDim1Afis: array[3] of Decimal;

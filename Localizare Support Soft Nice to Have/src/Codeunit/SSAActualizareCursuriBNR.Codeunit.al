@@ -11,7 +11,6 @@ codeunit 71100 "SSA Actualizare Cursuri BNR"
 
     var
         Text50000: Label 'Currency Exchange Rate is missing for: %1';
-        Text50001: Label 'BNR Exchange Rates not imported.';
 
     [EventSubscriber(ObjectType::Codeunit, codeunit::"System Initialization", OnAfterLogin, '', false, false)]
     local procedure OnAfterLogin()
@@ -107,10 +106,8 @@ codeunit 71100 "SSA Actualizare Cursuri BNR"
 
         XMLBuffer: Record "XML Buffer" temporary;
         XMLBuffer2: Record "XML Buffer" temporary;
-        TempBlob: Codeunit "Temp Blob";
         GeneralFunctions: Codeunit "SSA General Functions";
         ImportRatesLbl: Label 'BNR Rates could not be imported.';
-        TestBNRLabel: Label '<?xml version="1.0" encoding="utf-8"?><DataSet xmlns="http://www.bnr.ro/xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bnr.ro/xsd nbrfxrates.xsd"><Header><Publisher>National Bank of Romania</Publisher><PublishingDate>2023-05-18</PublishingDate><MessageType>DR</MessageType></Header><Body><Subject>Reference rates</Subject><OrigCurrency>RON</OrigCurrency><Cube date="2023-05-18"><Rate currency="AED">1.2521</Rate><Rate currency="AUD">3.0515</Rate><Rate currency="BGN">2.5427</Rate><Rate currency="BRL">0.9308</Rate><Rate currency="CAD">3.4124</Rate><Rate currency="CHF">5.1061</Rate><Rate currency="CNY">0.6539</Rate><Rate currency="CZK">0.2098</Rate><Rate currency="DKK">0.6677</Rate><Rate currency="EGP">0.1488</Rate><Rate currency="EUR">4.9731</Rate><Rate currency="GBP">5.7169</Rate><Rate currency="HUF" multiplier="100">1.3335</Rate><Rate currency="INR">0.0557</Rate><Rate currency="JPY" multiplier="100">3.3370</Rate><Rate currency="KRW" multiplier="100">0.3442</Rate><Rate currency="MDL">0.2589</Rate><Rate currency="MXN">0.2598</Rate><Rate currency="NOK">0.4238</Rate><Rate currency="NZD">2.8697</Rate><Rate currency="PLN">1.0958</Rate><Rate currency="RSD">0.0424</Rate><Rate currency="RUB">0.0575</Rate><Rate currency="SEK">0.4382</Rate><Rate currency="THB">0.1338</Rate><Rate currency="TRY">0.2326</Rate><Rate currency="UAH">0.1245</Rate><Rate currency="USD">4.5975</Rate><Rate currency="XAU">292.2952</Rate><Rate currency="XDR">6.1469</Rate><Rate currency="ZAR">0.2371</Rate></Cube></Body></DataSet>';
         HTTPReq: HttpClient;
         HTTPResponse: HttpResponseMessage;
         CurrencyCode: Code[10];

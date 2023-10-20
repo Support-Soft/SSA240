@@ -284,7 +284,6 @@ page 71700 "SSA Domestic Declaration"
                 ToolTip = 'Executes the Get Entries action.';
                 trigger OnAction()
                 var
-                    DomesticDeclarationLine: Record "SSA Domestic Declaration Line";
                     GetVATEntries: Report "SSA Get VAT Entries D394";
                 begin
                     DomesticDeclaration.Get(CurrentDeclarationCode);
@@ -329,8 +328,6 @@ page 71700 "SSA Domestic Declaration"
         CurrentDeclarationCode: Code[10];
         TotalVATBase: Decimal;
         TotalVATAmount: Decimal;
-        DomesticDeclaration1: Record "SSA Domestic Declaration";
-        GetDomesticDeclaration: Report "SSA Get VAT Entries D394";
 
     local procedure CalcBalance()
     var

@@ -206,7 +206,6 @@ report 71702 "SSA Get VAT Entries D394"
         VATPostingSetup: Record "VAT Posting Setup";
         CurrentDeclarationNo: Code[10];
         LineNo: Integer;
-        Text001: Label 'There are no VAT entries within the filter';
         w: Dialog;
         Text002: Label 'Getting Lines... @1@@@@@@@@';
         RecNo: Integer;
@@ -226,16 +225,12 @@ report 71702 "SSA Get VAT Entries D394"
         NoSeries: Record "No. Series";
         NoSeriesLine: Record "No. Series Line";
         NoSeriesMgt: Codeunit NoSeriesManagement;
-        StartNo: Code[20];
-        EndNo: Code[20];
-        LastNoUsed: Code[20];
         StartDate: Date;
         EndDate: Date;
         StartDocNo: Code[20];
         EndDocNo: Code[20];
         DocNo: Code[20];
         LineNo: Integer;
-        DocNoToFilter: Code[20];
     begin
 
         if SerieBuffer.Get(0, 0, '', _NoSeries) then

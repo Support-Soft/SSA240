@@ -257,8 +257,6 @@ report 70900 "SSA Cash receipt"
     end;
 
     var
-        GLAcc: Record "G/L Account";
-        SSASetup: Record "SSA Localization Setup";
         GLRegFilter: Text[250];
         CompanyInfo: Record "Company Information";
         CompanyAddr: array[8] of Text[50];
@@ -270,13 +268,10 @@ report 70900 "SSA Cash receipt"
         CustAddr: array[8] of Text[50];
         Customer: Record Customer;
         Reprezentand: Text[1000];
-        Reprezentand2: Text;
         PaymentDoc: Code[20];
         PaymentDate: Date;
         PostingDate: Text;
-        PostingDate2: Text;
         AmountLCYTxt: Text[1000];
-        AmountLCYTxt2: Text[1000];
         ComTradeNoCaption: Label 'Commerce Trade No';
         VATRegNoCaption: Label 'VAT REg. No.';
         CapSocialCaption: Label 'Capital Stock';

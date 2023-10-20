@@ -348,8 +348,6 @@ table 71702 "SSA Domestic Declaration Line"
     procedure CheckName(var CurrentDeclarationNo: Code[10]; var DomesticDeclarationLine: Record "SSA Domestic Declaration Line")
     var
         DomesticDeclaration: Record "SSA Domestic Declaration";
-        "Text 001": Label 'DEFAULT';
-        "Text 002": Label 'Default Domestic Declaration';
     begin
         if not DomesticDeclaration.Get(CurrentDeclarationNo) then begin
             if not DomesticDeclaration.Find('-') then begin

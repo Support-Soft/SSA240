@@ -16,8 +16,6 @@ report 71701 "SSA Domestic Declaration 2016"
                 DataItemTableView = sorting("Domestic Declaration Code", "Line No.");
 
                 trigger OnAfterGetRecord()
-                var
-                    TaxGroupCode: Code[10];
                 begin
                     if "Stare Factura" <> "Stare Factura"::"2-Factura Anulata" then begin //2504
                         if "Cod CAEN" = '' then begin
@@ -236,8 +234,6 @@ report 71701 "SSA Domestic Declaration 2016"
 
     local
     procedure CreateDeclaration394()
-    var
-        OpEfectuate: Text[30];
     begin
 
         //CreateDeclaration394
@@ -416,11 +412,6 @@ report 71701 "SSA Domestic Declaration 2016"
 
     local
     procedure GetVATNo(InText: Text[30]): Text[30]
-    var
-        Loop: Boolean;
-        IntVal: Integer;
-        CharVal: Text;
-        TextValue: Text;
     begin
         //GetVATNo
         InText := DelChr(InText, '=', 'rRoO');
@@ -876,8 +867,6 @@ report 71701 "SSA Domestic Declaration 2016"
     local
     procedure InsertInfo(DecLine: Record "SSA Domestic Declaration Line")
     var
-        InsertRec: Boolean;
-        VATEntry: Record "VAT Entry";
         CountRec: Boolean;
     begin
         //InsertInfo
@@ -948,7 +937,6 @@ report 71701 "SSA Domestic Declaration 2016"
     local
     procedure UpdateInfo()
     var
-        InsertRec: Boolean;
         VATPostingSetup: Record "VAT Posting Setup";
         DecLine: Record "SSA Domestic Declaration Line";
     begin
@@ -1082,7 +1070,6 @@ report 71701 "SSA Domestic Declaration 2016"
     procedure InsertListaCAENBuffer(DecLine: Record "SSA Domestic Declaration Line")
     var
         InsertRec: Boolean;
-        InsertOp11: Boolean;
     begin
         //InsertListaCAENBuffer
 
@@ -1114,8 +1101,6 @@ report 71701 "SSA Domestic Declaration 2016"
 
     local
     procedure InsertFacturiBuffer(DecLine: Record "SSA Domestic Declaration Line")
-    var
-        InsertRec: Boolean;
     begin
         //InsertFacturiBuffer
 
@@ -1132,7 +1117,6 @@ report 71701 "SSA Domestic Declaration 2016"
     var
         InsertRec: Boolean;
         InsertOp11: Boolean;
-        SkipCount: Boolean;
     begin
         //InsertOpBuffer
         //Skip Facturi Simplificate

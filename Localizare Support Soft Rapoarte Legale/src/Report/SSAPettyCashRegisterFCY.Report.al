@@ -322,7 +322,6 @@ report 71312 "SSA Petty Cash Register FCY"
 
     var
         Currency: Record Currency;
-        Number: Integer;
         InitialBalanceLCY: Decimal;
         InitialBalance: Decimal;
         TotalBalanceLCY: Decimal;
@@ -331,8 +330,6 @@ report 71312 "SSA Petty Cash Register FCY"
         CreditAmount: Decimal;
         DebitCredit: Text;
         nrcrt: Integer;
-        DebitAmountLCY: Decimal;
-        CreditAmountLCY: Decimal;
         BankFilter: Text;
         DebitMovementsLCY: Decimal;
         DebitMovements: Decimal;

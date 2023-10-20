@@ -299,7 +299,6 @@ page 70512 "SSA Payment Headers"
                     ToolTip = 'Executes the Archive action.';
                     trigger OnAction()
                     var
-                        Archive: Boolean;
                         PaymtManagt: Codeunit "SSA Payment Management";
                     begin
                         if Rec."No." = '' then
@@ -457,7 +456,6 @@ page 70512 "SSA Payment Headers"
         Navigate: Page Navigate;
         Steps: Record "SSA Payment Step";
         PaymentStep: Record "SSA Payment Step";
-        UserMgt: Codeunit "User Setup Management";
         PaymentManagement: Codeunit "SSA Payment Management";
 
         PaymentEditable: Boolean;
@@ -465,10 +463,6 @@ page 70512 "SSA Payment Headers"
         Text002: Label 'This payment class doesn''t authorize customer suggestions';
         Text003: Label 'We cannot do suggestion on a validated header';
         Text004: Label 'We cannot do attribution no. on a validated header';
-        Text005: Label 'This document has no line. You cannot archive it. You must delete it.';
-        Text006: Label 'One line is not posted. Are you sure you wants to archive this document?';
-        Text007: Label 'Some lines are not posted. Are you sure you wants to archive this document?';
-        Text008: Label 'Are you sure you want to archive this document?';
         Text009: Label 'Do you wish to archive this document?';
         Text010: Label 'You cannot perform this action for this step. Please choose a valid option.';
 

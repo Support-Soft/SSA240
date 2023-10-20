@@ -165,9 +165,6 @@ report 71311 "SSA Jurnal auxiliar"
                 }
 
                 trigger OnAfterGetRecord()
-                var
-                    GLE: Record "G/L Entry";
-                    GLEntry2: Record "G/L Entry";
                 begin
                     if "Debit Amount" <> 0 then begin
                         DebitMovements1 := DebitMovements1 + "Debit Amount";
@@ -219,8 +216,6 @@ report 71311 "SSA Jurnal auxiliar"
                 }
 
                 trigger OnAfterGetRecord()
-                var
-                    VE: Record "Value Entry";
                 begin
                     if Integer.Number > 1 then begin
                         INDEX := Integer.Number;
@@ -260,7 +255,6 @@ report 71311 "SSA Jurnal auxiliar"
 
             trigger OnAfterGetRecord()
             var
-                VE: Record "Value Entry";
                 DebitEntryNo: Integer;
                 CreditEntryNo: Integer;
                 TransactionNo: Integer;
@@ -489,7 +483,6 @@ report 71311 "SSA Jurnal auxiliar"
         indexcredit: Integer;
         show1: Boolean;
         INDEX: Integer;
-        total: Boolean;
         GLFilter: Text[250];
         CompInfo: Record "Company Information";
         CompName: Text;

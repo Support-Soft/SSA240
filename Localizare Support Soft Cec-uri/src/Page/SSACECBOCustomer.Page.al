@@ -332,8 +332,6 @@ page 70500 "SSA CEC & BO Customer"
                     PromotedCategory = Process;
                     ToolTip = 'Executes the Distribuie suma action.';
                     trigger OnAction()
-                    var
-                        Text001_ES: Label 'You need to fill all the fields that are mandatory (*)!';
                     begin
                         DistribuieSuma(Rec, Rec."Customer No.");
                     end;

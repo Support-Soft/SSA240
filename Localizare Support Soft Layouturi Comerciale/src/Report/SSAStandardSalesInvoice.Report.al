@@ -1130,7 +1130,6 @@ report 70901 "SSA Standard Sales - Invoice"
             var
                 CurrencyExchangeRate: Record "Currency Exchange Rate";
                 PaymentServiceSetup: Record "Payment Service Setup";
-                O365SalesInvoiceMgmt: Codeunit "O365 Sales Invoice Mgmt";
             begin
 
                 FillLeftHeader;
@@ -1329,7 +1328,6 @@ report 70901 "SSA Standard Sales - Invoice"
         SalesSetup: Record "Sales & Receivables Setup";
         Cust: Record Customer;
         RespCenter: Record "Responsibility Center";
-        Language: Record Language;
         VATClause: Record "VAT Clause";
         TempLineFeeNoteOnReportHist: Record "Line Fee Note on Report Hist." temporary;
         FormatAddr: Codeunit "Format Address";

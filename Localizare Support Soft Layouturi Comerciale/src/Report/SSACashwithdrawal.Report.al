@@ -343,7 +343,6 @@ report 70903 "SSA Cash withdrawal."
         PaymentDoc: Code[20];
         PaymentDate: Date;
         PostingDate: Text;
-        PostingDate2: Text;
         AmountLCYTxt: Text[1000];
         ComTradeNoCaption: Label 'Commerce Trade No';
         VATRegNoCaption: Label 'Cod unic de indentificare';

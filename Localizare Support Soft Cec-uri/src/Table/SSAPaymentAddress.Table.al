@@ -102,7 +102,4 @@ table 70510 "SSA Payment Address"
     fieldgroups
     {
     }
-
-    var
-        PostCode: Record "Post Code";
 }

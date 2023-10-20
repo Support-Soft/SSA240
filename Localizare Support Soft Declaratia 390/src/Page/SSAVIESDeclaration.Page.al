@@ -230,7 +230,6 @@ page 71501 "SSA VIES Declaration"
                     ToolTip = 'Executes the &Get Lines for Correction action.';
                     trigger OnAction()
                     var
-                        VIESDeclarationLine: Record "SSA VIES Line";
                         VIESDeclarationLines: Page "SSA VIES Lines";
                     begin
                         Rec.TestField(Status, Rec.Status::Open);
@@ -270,8 +269,6 @@ page 71501 "SSA VIES Declaration"
                     PromotedCategory = Process;
                     ToolTip = 'Executes the Re&open action.';
                     trigger OnAction()
-                    var
-                        ReleaseSalesDoc: Codeunit "Release Sales Document";
                     begin
                         Release.Reopen(Rec);
                     end;
@@ -317,9 +314,7 @@ page 71501 "SSA VIES Declaration"
     end;
 
     var
-        Country: Record "Country/Region";
         VIESHeader: Record "SSA VIES Header";
-        Countries: Page "Countries/Regions";
         Release: Codeunit "SSA Release VIES Declaration";
 
         CorrectedDeclarationNoEditable: Boolean;

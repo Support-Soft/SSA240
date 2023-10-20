@@ -127,8 +127,6 @@ report 71101 "SSA Inv. Non-Inv Sales Shpt."
         SalesCalcDisc: Codeunit "Sales-Calc. Discount";
         SalesPost: Codeunit "Sales-Post";
         Window: Dialog;
-        ShipReq: Boolean;
-        InvReq: Boolean;
         CounterTotal: Integer;
         Counter: Integer;
         CounterOK: Integer;

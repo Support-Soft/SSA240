@@ -536,7 +536,6 @@ report 71310 "SSA GL Acc. Det. Trial Bal."
     end;
 
     var
-        Company: Record Company;
         DebitGLEntry: Record "G/L Entry";
         CreditGLEntry: Record "G/L Entry";
         FirstDay: Date;
@@ -561,7 +560,6 @@ report 71310 "SSA GL Acc. Det. Trial Bal."
         SaveFilter: Text[30];
         GLFilter: Text[250];
         DebitCredit: Text[1];
-        Text000: Label '<+7D>';
         Text001: Label 'Account No.';
         DM: Decimal;
         CM: Decimal;

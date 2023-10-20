@@ -247,7 +247,7 @@ table 70507 "SSA Payment Line"
                 "RIB Checked" := Check("Bank Branch No.", "Agency Code", "Bank Account No.", "RIB Key");
             end;
         }
-        field(27; "Bank Account No."; Text[30])
+        field(27; "Bank Account No."; Text[50])
         {
             Caption = 'Bank Account No.';
 
@@ -484,7 +484,7 @@ table 70507 "SSA Payment Line"
                 VALIDATE("Status Aplicare", "Status Aplicare"::Neaplicat);//SSM729
             end;
         }
-        field(43; "External Document No."; Code[20])
+        field(43; "External Document No."; Code[35])
         {
             Caption = 'External Document No.';
         }
@@ -543,8 +543,6 @@ table 70507 "SSA Payment Line"
             TableRelation = "Salesperson/Purchaser";
 
             trigger OnValidate()
-            var
-                ApprovalEntry: Record "Approval Entry";
             begin
                 DimensionSetup;//SSM729
             end;
@@ -743,8 +741,6 @@ table 70507 "SSA Payment Line"
         PaymentClass: Record "SSA Payment Class";
         Customer: Record Customer;
         Vendor: Record Vendor;
-        DefaultDimension: Record "Default Dimension";
-        PaymentToleranceMgt: Codeunit "Payment Tolerance Management";
         CompanyInfo: Record "Company Information";
         Coding: Label 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
         Uncoding: Label '12345678912345678923456789';
@@ -760,7 +756,6 @@ table 70507 "SSA Payment Line"
         ToCurrencyCode: Code[10];
         SourceCode: Code[10];
         DimMgt: Codeunit DimensionManagement;
-        CurrencyCode: Code[10];
         Text015: Label 'You are not allowed to apply and post an entry to an entry with an earlier posting date.\\Instead, post %1 %2 and then apply it to %3 %4.';
         Text50001: Label 'Nu puteti aplica %1 cu %2 in linie jurnal %3! Incercati sa aplicati %1 cu %1!';
         Text50002: Label 'Line cannot be deleted because amout aplied is different than 0.';
@@ -826,8 +821,6 @@ table 70507 "SSA Payment Line"
     end;
 
     procedure DimensionSetup()
-    var
-        DimManagt: Codeunit DimensionManagement;
     begin
         /*//SSM729 original
         IF "Line No." <> 0 THEN BEGIN
@@ -1015,7 +1008,6 @@ table 70507 "SSA Payment Line"
         TempVendLedgEntry: Record "Vendor Ledger Entry";
         CustEntryEdit: Codeunit "Cust. Entry-Edit";
         VendEntryEdit: Codeunit "Vend. Entry-Edit";
-        AccType: Option "G/L Account",Customer,Vendor,"Bank Account","Fixed Asset";
         AccNo: Code[20];
     begin
         case "Account Type" of
@@ -1206,8 +1198,6 @@ table 70507 "SSA Payment Line"
     end;
 
     procedure ValidateApplyRequirements(TempGenJnlLine: Record "SSA Payment Line" temporary)
-    var
-        ExchAccGLJnlLine: Codeunit "Exchange Acc. G/L Journal Line";
     begin
 
         if TempGenJnlLine."Account Type" = TempGenJnlLine."Account Type"::Customer then begin
