@@ -50,26 +50,26 @@ codeunit 70015 "SSA CU90 Purchase-Post"
         //SSA946<<
     end;
 
-    [EventSubscriber(ObjectType::Codeunit, 90, 'OnAfterPostInvPostBuffer', '', false, false)]
-    local procedure OnAfterPostInvPostBuffer(var GenJnlLine: Record "Gen. Journal Line"; var InvoicePostBuffer: Record "Invoice Post. Buffer" temporary; PurchHeader: Record "Purchase Header"; GLEntryNo: Integer; CommitIsSupressed: Boolean; var GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line")
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Purch. Post Invoice Events", 'OnPostLinesOnAfterGenJnlLinePost', '', false, false)]
+    local procedure OnAfterPostInvPostBuffer(var GenJnlLine: Record "Gen. Journal Line"; PurchHeader: Record "Purchase Header"; GLEntryNo: Integer; var GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line"; TempInvoicePostingBuffer: Record "Invoice Posting Buffer" temporary)
     var
         OldGenJnlLine: Record "Gen. Journal Line";
         VATPostingSetup: Record "VAT Posting Setup";
         FirstLineAmount: Decimal;
     begin
         //SSA948>>
-        if not InvoicePostBuffer."SSA Distribute Non-Ded VAT" then
+        if not TempInvoicePostingBuffer."SSA Distribute Non-Ded VAT" then
             exit;
-        InvoicePostBuffer.TestField("SSA Non-Ded VAT Expense Acc 1");
-        InvoicePostBuffer.TestField("SSA Non-Ded VAT Expense Acc 2");
+        TempInvoicePostingBuffer.TestField("SSA Non-Ded VAT Expense Acc 1");
+        TempInvoicePostingBuffer.TestField("SSA Non-Ded VAT Expense Acc 2");
         OldGenJnlLine := GenJnlLine;
-        if not VATPostingSetup.Get(InvoicePostBuffer."VAT Bus. Posting Group", InvoicePostBuffer."VAT Prod. Posting Group") then
+        if not VATPostingSetup.Get(TempInvoicePostingBuffer."VAT Bus. Posting Group", TempInvoicePostingBuffer."VAT Prod. Posting Group") then
             Clear(VATPostingSetup);
 
         GenJnlLine.InitNewLine(
   PurchHeader."Posting Date", PurchHeader."Document Date", PurchHeader."Posting Description",
-  InvoicePostBuffer."Global Dimension 1 Code", InvoicePostBuffer."Global Dimension 2 Code",
-  InvoicePostBuffer."Dimension Set ID", PurchHeader."Reason Code");
+  TempInvoicePostingBuffer."Global Dimension 1 Code", TempInvoicePostingBuffer."Global Dimension 2 Code",
+  TempInvoicePostingBuffer."Dimension Set ID", PurchHeader."Reason Code");
 
         GenJnlLine.CopyDocumentFields(OldGenJnlLine."Document Type", OldGenJnlLine."Document No.", OldGenJnlLine."External Document No.", OldGenJnlLine."Source Code", '');
         GenJnlLine.CopyFromPurchHeader(PurchHeader);

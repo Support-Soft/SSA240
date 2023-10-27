@@ -5,8 +5,8 @@
             "type": "al",
             "request": "launch",
             "name": "LocalizareAL",
-            "server": "http://192.168.13.201:8080/BC220Localizare",
-            "serverInstance": "BC220Localizare",
+            "server": "http://192.168.13.201:8080/BC230",
+            "serverInstance": "BC230",
             "authentication": "Windows",
             "startupObjectId": 22,
             "startupObjectType": "Page",
@@ -14,17 +14,18 @@
             "launchBrowser": true,
             "enableLongRunningSqlStatements": true,
             "enableSqlInformationDebugger": true,
-            "port": 22079,
+            "port": 23049,
             "schemaUpdateMode": "Synchronize"
         },
         {
-            "name": "Publish: Milca220",
+            "name": "Publish: Your own server",
             "type": "al",
             "request": "launch",
             "environmentType": "OnPrem",
-            "server": "http://192.168.13.201:8080/BC220Milca",
-            "serverInstance": "BC220Milca",
-            "authentication": "Windows",
+            "server": "http://sandbox23/BC",
+            "serverInstance": "BC",
+            "authentication": "UserPassword",
+            "startupObjectId": 22,
             "breakOnError": "All",
             "breakOnRecordWrite": "None",
             "launchBrowser": true,
@@ -33,26 +34,7 @@
             "longRunningSqlStatementsThreshold": 500,
             "numberOfSqlStatements": 10,
             "tenant": "default",
-            "port": 22089,
-            "schemaUpdateMode": "ForceSync"
-        },
-        {
-            "name": "Attach: Your own server",
-            "type": "al",
-            "request": "attach",
-            "environmentType": "OnPrem",
-            "server": "http://192.168.13.201:8080/BC220Localizare",
-            "serverInstance": "BC220Localizare",
-            "authentication": "UserPassword",
-            "breakOnError": "All",
-            "breakOnRecordWrite": "None",
-            "enableSqlInformationDebugger": true,
-            "enableLongRunningSqlStatements": true,
-            "longRunningSqlStatementsThreshold": 500,
-            "numberOfSqlStatements": 10,
-            "breakOnNext": "WebServiceClient",
-            "tenant": "default",
-            "sessionId": 2537
+            "usePublicURLFromServer": true
         }
     ]
 }

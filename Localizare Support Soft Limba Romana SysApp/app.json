@@ -2,7 +2,7 @@
     "id":  "c27a8ce0-a6f1-40e2-900c-cbf0964fb1f2",
     "name":  "Localizare Support Soft Limba Romana SysApp",
     "publisher":  "Support-Soft SRL",
-    "version":  "22.0.0.1",
+    "version":  "23.0.0.0",
     "dependencies":  [
 
                      ],
@@ -14,13 +14,13 @@
     "EULA":  "https://www.microsoft.com/en-us/download/details.aspx?id=56765",
     "help":  "https://go.microsoft.com/fwlink/?linkid=2115116",
     "url":  "https://www.microsoft.com/en-us/dynamics365/contact-us",
-    "application":  "22.0.0.0",
-    "platform": "22.0.0.0",
+    "application":  "23.0.0.0",
+    "platform": "23.0.0.0",
     "supportedLocales": ["en-US","ro-RO"],
     "resourceExposurePolicy": {
         "allowDebugging": true,
         "allowDownloadingSource": false,
         "includeSourceInSymbolFile": false
       },
-    "runtime": "11.0"
+    "runtime": "12.0"
 }
