@@ -1929,35 +1929,35 @@
         </trans-unit>
         <trans-unit id="Page 612582322 - Control 1712410168 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Custom Invoice No. field.</source>
-          <target/>
+          <target state="translated">Specifică valoarea câmpului Nr. Document Vamal.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Bank Journal - Control SSA Custom Invoice No. - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 612582322 - Control 1325002386 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Custom Posting Group field.</source>
-          <target/>
+          <target state="translated">Specifică valoarea câmpului Cod Grupa Inregistrare Vama</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Bank Journal - Control SSA Posting Group - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 612582322 - Control 2646786634 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Stare Factura field.</source>
-          <target/>
+          <target state="translated">Specifica valoarea campului Stare Factura</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Bank Journal - Control SSA Stare Factura - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 612582322 - Control 3711553163 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Tip Document D394 field.</source>
-          <target/>
+          <target state="translated">Specifica Valoarea campului Tip Document 394.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Bank Journal - Control SSA Tip Document D394 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 612582322 - Control 3928886457 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Tip Partener field.</source>
-          <target/>
+          <target state="translated">Specifică valoarea câmpului Tip Partener.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Bank Journal - Control SSA Tip Partener - Property ToolTip</note>
@@ -2048,7 +2048,7 @@
         </trans-unit>
         <trans-unit id="Page 612582322 - Control 2372132292 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Bal Acc Balance field.</source>
-          <target/>
+          <target state="translated">Specifică valoarea câmpului Bal Acc Balance.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Bank Journal - Control BalAccBalance - Property ToolTip</note>
@@ -2061,7 +2061,7 @@
         </trans-unit>
         <trans-unit id="Page 612582322 - Control 1170569679 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Bal Acc Balance -1D field.</source>
-          <target/>
+          <target state="translated">Specifică valoarea câmpului Bal Acc Balance -1D.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Bank Journal - Control BalAccBalance1D - Property ToolTip</note>
@@ -2074,7 +2074,7 @@
         </trans-unit>
         <trans-unit id="Page 612582322 - Control 1693769149 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Bal Acc Balance -1D (LCY) field.</source>
-          <target/>
+          <target state="translated">Specifică valoarea câmpului Bal Acc Balance -1D (MN).</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Bank Journal - Control BalAccBalance1DLCY - Property ToolTip</note>
@@ -2087,7 +2087,7 @@
         </trans-unit>
         <trans-unit id="Page 612582322 - Control 3694790290 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Bal Acc Balance (LCY) field.</source>
-          <target/>
+          <target state="translated">Specifică valoarea câmpului Bal Acc Balance (LCY).</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Bank Journal - Control BalAccBalanceLCY - Property ToolTip</note>
@@ -2100,7 +2100,7 @@
         </trans-unit>
         <trans-unit id="Page 612582322 - Control 13739397 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Date of Balance field.</source>
-          <target/>
+          <target state="translated">Specifica valoarea campului Data Sold</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Bank Journal - Control DateOfBalance - Property ToolTip</note>
@@ -2876,7 +2876,7 @@
         </trans-unit>
         <trans-unit id="Page 842692675 - Action 3733912327 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Executes the Currencies action.</source>
-          <target/>
+          <target state="translated">Executie actiune Valute.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Closing Page - Action &lt;Action1000000011&gt; - Property ToolTip</note>
@@ -2889,7 +2889,7 @@
         </trans-unit>
         <trans-unit id="Page 842692675 - Action 120776298 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Executes the Calculate Depreciation... action.</source>
-          <target/>
+          <target state="translated">Calculare Amortizare...</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Closing Page - Action &lt;Action1000000012&gt; - Property ToolTip</note>
@@ -2902,7 +2902,7 @@
         </trans-unit>
         <trans-unit id="Page 842692675 - Action 2526000041 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Executes the General Journals action.</source>
-          <target/>
+          <target state="translated">Executie Actiune Jurnal General</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Closing Page - Action &lt;Action1000000013&gt; - Property ToolTip</note>
@@ -2915,7 +2915,7 @@
         </trans-unit>
         <trans-unit id="Page 842692675 - Action 1318087755 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Executes the Analysis by Dimensions action.</source>
-          <target/>
+          <target state="translated">Executie Actiune Analiza dupa Dimensiuni.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Closing Page - Action &lt;Action1000000015&gt; - Property ToolTip</note>
@@ -2928,7 +2928,7 @@
         </trans-unit>
         <trans-unit id="Page 842692675 - Action 1979130670 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Executes the Account Schedules action.</source>
-          <target/>
+          <target state="translated">Executie Actiune Indicatori economici.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Closing Page - Action &lt;Action1000000016&gt; - Property ToolTip</note>
@@ -2941,7 +2941,7 @@
         </trans-unit>
         <trans-unit id="Page 842692675 - Action 110175469 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Executes the General Journals action.</source>
-          <target/>
+          <target state="translated">Executie Actiune Jurnal General</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Closing Page - Action &lt;Action1000000017&gt; - Property ToolTip</note>
@@ -2954,7 +2954,7 @@
         </trans-unit>
         <trans-unit id="Page 842692675 - Action 4291382527 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Executes the Close Income Statement... action.</source>
-          <target/>
+          <target state="translated">Executa actiuni Inchidere Cont Rezultat.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Closing Page - Action &lt;Action1000000019&gt; - Property ToolTip</note>
@@ -2967,7 +2967,7 @@
         </trans-unit>
         <trans-unit id="Page 842692675 - Action 837476961 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Executes the General Journals action.</source>
-          <target/>
+          <target state="translated">Executie Actiune Jurnal General</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Closing Page - Action &lt;Action1000000020&gt; - Property ToolTip</note>
@@ -2980,7 +2980,7 @@
         </trans-unit>
         <trans-unit id="Page 842692675 - Action 2716619685 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Executes the VAT Statement action.</source>
-          <target/>
+          <target state="translated">Executie Actiune Decont TVA</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Closing Page - Action &lt;Action1000000024&gt; - Property ToolTip</note>
@@ -2993,7 +2993,7 @@
         </trans-unit>
         <trans-unit id="Page 842692675 - Action 290607590 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Executes the Recurring Journals action.</source>
-          <target/>
+          <target state="translated">Executie Actiune Jurnal Recurent</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Closing Page - Action &lt;Action1000000025&gt; - Property ToolTip</note>
@@ -3006,7 +3006,7 @@
         </trans-unit>
         <trans-unit id="Page 842692675 - Action 3924531971 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Executes the FA G/L Journals action.</source>
-          <target/>
+          <target state="translated">Jurnale contabile MF</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Closing Page - Action &lt;Action1000000026&gt; - Property ToolTip</note>
@@ -3019,7 +3019,7 @@
         </trans-unit>
         <trans-unit id="Page 842692675 - Action 2375503865 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Executes the Adjust Exchange Rates action.</source>
-          <target/>
+          <target state="translated">Ajustare cursuri de schimb</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Closing Page - Action Adjust Exchange Rates - Property ToolTip</note>
@@ -3032,7 +3032,7 @@
         </trans-unit>
         <trans-unit id="Page 842692675 - Action 1075796839 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Executes the Calculate and Post VAT Settlement action.</source>
-          <target/>
+          <target state="translated">Calc. si inreg. inchidere TVA</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Closing Page - Action CloseVAT - Property ToolTip</note>
@@ -3045,7 +3045,7 @@
         </trans-unit>
         <trans-unit id="Page 842692675 - Action 1529169841 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Executes the Inventory Valuation action.</source>
-          <target/>
+          <target state="translated">Executie Actiune Evaluare Stoc</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Closing Page - Action &lt;Action1000000002&gt; - Property ToolTip</note>
@@ -3310,7 +3310,7 @@
         </trans-unit>
         <trans-unit id="Page 3307893909 - Control 3439236327 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Full Description field.</source>
-          <target/>
+          <target state="translated">Specifica valoarea campului Descriere Articol</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Fixed Asset Card - Control Full Description - Property ToolTip</note>
@@ -3359,21 +3359,21 @@
         </trans-unit>
         <trans-unit id="Page 3307893909 - Control 2533846317 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Country/Region of Origin Code field.</source>
-          <target/>
+          <target state="translated">Specifica valoarea campului Cod Tara Origine.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Fixed Asset Card - Control SSA Country/Region of Origin - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3307893909 - Control 3774151322 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Net Weight field.</source>
-          <target/>
+          <target state="translated">Specifica greutatea neta a articolului.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Fixed Asset Card - Control SSA Net Weight - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3307893909 - Control 2563762844 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Tariff No. field.</source>
-          <target/>
+          <target state="translated">Specifica numele nr. tarif care este asociat cu articolul.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Fixed Asset Card - Control SSA Tariff No. - Property ToolTip</note>
@@ -3933,7 +3933,7 @@
         </trans-unit>
         <trans-unit id="Page 791085139 - Control 3439236327 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Full Description field.</source>
-          <target/>
+          <target state="translated">Specifica valoarea campului Descriere Articol</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Fixed Asset Inventory Card - Control Full Description - Property ToolTip</note>
@@ -3982,21 +3982,21 @@
         </trans-unit>
         <trans-unit id="Page 791085139 - Control 2533846317 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Country/Region of Origin Code field.</source>
-          <target/>
+          <target state="translated">Specifica valoarea campului Cod Tara Origine.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Fixed Asset Inventory Card - Control SSA Country/Region of Origin - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 791085139 - Control 3774151322 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Net Weight field.</source>
-          <target/>
+          <target state="translated">Specifica greutatea neta a articolului.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Fixed Asset Inventory Card - Control SSA Net Weight - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 791085139 - Control 2563762844 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Tariff No. field.</source>
-          <target/>
+          <target state="translated">Specifica numele nr. tarif care este asociat cu articolul.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Fixed Asset Inventory Card - Control SSA Tariff No. - Property ToolTip</note>
@@ -5267,35 +5267,35 @@
         </trans-unit>
         <trans-unit id="Page 2664412772 - Control 721340182 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Cancelled from No. field.</source>
-          <target/>
+          <target state="translated">Specifica valoarea campului Anulat de la.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Internal Consumptions - Control Cancelled from No. - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2664412772 - Control 4130418866 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Comment field.</source>
-          <target/>
+          <target state="translated">Specifica valoarea campului Comentariu.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Internal Consumptions - Control Control1390028 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2664412772 - Control 580412389 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Document Date field.</source>
-          <target/>
+          <target state="translated">Specifica valoarea campului Data Document</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Internal Consumptions - Control Document Date - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2664412772 - Control 1527563463 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the External Document No. field.</source>
-          <target/>
+          <target state="translated">Specifica valoarea campului Nr. Document Extern.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Internal Consumptions - Control External Document No. - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2664412772 - Control 633819257 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Gen. Bus. Posting Group field.</source>
-          <target/>
+          <target state="translated">Specifica valoarea campului Gr. inreg. contab. op. ec.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Internal Consumptions - Control Gen. Bus. Posting Group - Property ToolTip</note>
@@ -5316,35 +5316,35 @@
         </trans-unit>
         <trans-unit id="Page 2664412772 - Control 3710982960 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Posting Date field.</source>
-          <target/>
+          <target state="translated">Specifica valoarea campului Data Inreg.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Internal Consumptions - Control Posting Date - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2664412772 - Control 514695969 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Posting No. field.</source>
-          <target/>
+          <target state="translated">Specifica valoarea campului Nr. Inreg.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Internal Consumptions - Control Posting No. - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2664412772 - Control 2247850105 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Responsibility Center field.</source>
-          <target/>
+          <target state="translated">Specifica codul centrului de responsabilitate.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Internal Consumptions - Control Responsibility Center - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2664412772 - Control 1577567912 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Shortcut Dimension 1 Code field.</source>
-          <target/>
+          <target state="translated">Specifica codul valorii dimensiunii 1</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Internal Consumptions - Control Shortcut Dimension 1 Code - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2664412772 - Control 1003760969 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Shortcut Dimension 2 Code field.</source>
-          <target/>
+          <target state="translated">Specifica codul valorii dimensiunii 2</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Internal Consumptions - Control Shortcut Dimension 2 Code - Property ToolTip</note>
@@ -5376,7 +5376,7 @@
         </trans-unit>
         <trans-unit id="Page 2664412772 - Action 3000180178 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Executes the Co&amp;mments action.</source>
-          <target/>
+          <target state="translated">Executie actiune Comentarii.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Internal Consumptions - Action Co&amp;mments - Property ToolTip</note>
@@ -5389,7 +5389,7 @@
         </trans-unit>
         <trans-unit id="Page 2664412772 - Action 2173385693 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Executes the Dimensions action.</source>
-          <target/>
+          <target state="translated">Executie actiune Dimensiuni.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Internal Consumptions - Action Dimensions - Property ToolTip</note>
@@ -5402,7 +5402,7 @@
         </trans-unit>
         <trans-unit id="Page 2664412772 - Action 3440390661 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Executes the Storno from... action.</source>
-          <target/>
+          <target state="translated">Executie actiune Stornare din.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Internal Consumptions - Action Storno from... - Property ToolTip</note>
@@ -5433,7 +5433,7 @@
         </trans-unit>
         <trans-unit id="Page 2664412772 - Action 4236135242 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Executes the P&amp;ost action.</source>
-          <target/>
+          <target state="translated">Executie actiune Inregistrare.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Internal Consumptions - Action P&amp;ost - Property ToolTip</note>
@@ -5446,7 +5446,7 @@
         </trans-unit>
         <trans-unit id="Page 2664412772 - Action 1333595352 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Executes the Post and &amp;Print action.</source>
-          <target/>
+          <target state="translated">Executie actiune Inregistrare si Imprimare.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Internal Consumptions - Action Post and &amp;Print - Property ToolTip</note>
@@ -5459,7 +5459,7 @@
         </trans-unit>
         <trans-unit id="Page 2664412772 - Action 3001607129 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Executes the Post and New action.</source>
-          <target/>
+          <target state="translated">Executie actiune Inregistrare si Nou.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Internal Consumptions - Action PostAndNew - Property ToolTip</note>
@@ -5580,7 +5580,7 @@
         </trans-unit>
         <trans-unit id="Page 1516409109 - Control 866715734 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the deferral template that governs how expenses or revenue are deferred to the different accounting periods when the expenses or revenue were incurred.</source>
-          <target>[NAB: SUGGESTION]Specifica sablonul de amanare care guverneaza modul in care cheltuielile sau veniturile sunt amanate in diferite perioade contabile cand au fost suportate cheltuielile sau veniturile.</target>
+          <target state="translated">Specifica sablonul de amanare care guverneaza modul in care cheltuielile sau veniturile sunt amanate in diferite perioade contabile cand au fost suportate cheltuielile sau veniturile.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Leasing Journal - Control Deferral Code - Property ToolTip</note>
@@ -5623,7 +5623,7 @@
         </trans-unit>
         <trans-unit id="Page 1516409109 - Control 1527563463 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies a document number that refers to the customer's or vendor's numbering system.</source>
-          <target>[NAB: SUGGESTION]Specifica un numar de document care se refera la sistemul de numerotare al clientului sau furnizorului.</target>
+          <target state="translated">Specifica un numar de document care se refera la sistemul de numerotare al clientului sau furnizorului.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Leasing Journal - Control External Document No. - Property ToolTip</note>
@@ -5756,35 +5756,35 @@
         </trans-unit>
         <trans-unit id="Page 1516409109 - Control 3650609454 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Distribute Non-Deductible VAT field.</source>
-          <target/>
+          <target state="translated">Specifica valoarea campului Distributie TVA Nedeductibila.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Leasing Journal - Control SSA Distribute Non-Ded VAT - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1516409109 - Control 1719229151 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Non-Ded VAT Expense Account 1 field.</source>
-          <target/>
+          <target state="translated">Specifica valoarea campului Cont TVA Cheltuiala Neded 1.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Leasing Journal - Control SSA Non-Ded VAT Expense Acc 1 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1516409109 - Control 3632319002 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Non-Ded VAT Expense Account 2 field.</source>
-          <target/>
+          <target state="translated">Specifica valoarea campului Cont TVA Cheltuiala Neded 2</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Leasing Journal - Control SSA Non-Ded VAT Expense Acc 2 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1516409109 - Control 1325002386 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Custom Posting Group field.</source>
-          <target/>
+          <target state="translated">Specifică valoarea câmpului Cod Grupa Inregistrare Vama</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Leasing Journal - Control SSA Posting Group - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1516409109 - Control 2646786634 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Stare Factura field.</source>
-          <target/>
+          <target state="translated">Specifica valoarea campului Stare Factura</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Leasing Journal - Control SSA Stare Factura - Property ToolTip</note>
@@ -5798,14 +5798,14 @@
         </trans-unit>
         <trans-unit id="Page 1516409109 - Control 3711553163 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Tip Document D394 field.</source>
-          <target/>
+          <target state="translated">Specifica Valoarea campului Tip Document 394.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Leasing Journal - Control SSA Tip Document D394 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1516409109 - Control 3928886457 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Tip Partener field.</source>
-          <target/>
+          <target state="translated">Specifica valoarea campului Tip Partener.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Leasing Journal - Control SSA Tip Partener - Property ToolTip</note>
@@ -6054,21 +6054,21 @@
         </trans-unit>
         <trans-unit id="Page 262200983 - Control 1098869608 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the CAEN Code field.</source>
-          <target/>
+          <target state="translated">Specifica valoarea campului Cod CAEN.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Localization Setup - Control CAEN Code - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 262200983 - Control 1539036842 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the VAT System field.</source>
-          <target/>
+          <target state="translated">Specifica valoarea campului Sistem TVA.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Localization Setup - Control Sistem TVA - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 262200983 - Control 2542462889 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Skip Errors before date field.</source>
-          <target/>
+          <target state="translated">Specifica valoarea campului Fara Erori inainte de</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Localization Setup - Control Skip Errors before date - Property ToolTip</note>
@@ -6081,21 +6081,21 @@
         </trans-unit>
         <trans-unit id="Page 262200983 - Control 1917704052 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Fixed Asset Inventory Nos. field.</source>
-          <target/>
+          <target state="translated">Specifica valoarea campului Numere Mijloce Fixe Ob. Inventar.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Localization Setup - Control Fixed Asset Inventory Nos. - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 262200983 - Control 537507574 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Fixed Asset Nos. field.</source>
-          <target/>
+          <target state="translated">Specifica valoarea campului Numere Mijloce Fixe.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Localization Setup - Control Fixed Asset Nos. - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 262200983 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>General</source>
-          <target>[NAB: SUGGESTION]General</target>
+          <target>General</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Localization Setup - Control General - Property Caption</note>
@@ -6108,56 +6108,56 @@
         </trans-unit>
         <trans-unit id="Page 262200983 - Control 1170553861 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Advance Journal Template field.</source>
-          <target/>
+          <target state="translated">Specifica valoarea campului Sablon Jurnal Avans.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Localization Setup - Control Advance Journal Template - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 262200983 - Control 2393460932 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Cust. Ex. VAT Posting Group field.</source>
-          <target/>
+          <target state="translated">Specifica valoarea campului Cust. Ex. VAT Posting Group</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Localization Setup - Control Cust. Ex. VAT Posting Group - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 262200983 - Control 3329696253 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Cust. Neex. VAT Posting Group field.</source>
-          <target/>
+          <target state="translated">Specifica valoarea campului Cust. Neex. VAT Posting Group</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Localization Setup - Control Cust. Neex. VAT Posting Group - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 262200983 - Control 35993734 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Cust. Nepl. VAT Posting Group field.</source>
-          <target/>
+          <target state="translated">Specifica valoarea campului Cust. Nepl. VAT Posting Group</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Localization Setup - Control Cust. Nepl. VAT Posting Group - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 262200983 - Control 3505063062 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Leasing Journal Template 2 field.</source>
-          <target/>
+          <target state="translated">Specifica valoarea campului Sablon Jurnal Leasing 2.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Localization Setup - Control Leasing Journal Template - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 262200983 - Control 2629213549 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Vendor Ex. VAT Posting Group field.</source>
-          <target/>
+          <target state="translated">Specifica valoarea campului Vendor Ex. VAT Posting Group</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Localization Setup - Control Vendor Ex. VAT Posting Group - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 262200983 - Control 2238271540 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Vendor Neex. VAT Posting Group field.</source>
-          <target/>
+          <target state="translated">Specifica valoarea campului Vendor Neex. VAT Posting Group</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Localization Setup - Control Vendor Neex. VAT Posting Group - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 262200983 - Control 3615234123 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Vendor Nepl. VAT Posting Group field.</source>
-          <target/>
+          <target state="translated">Specifica valoarea campului Vendor Nepl. VAT Posting Group</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Localization Setup - Control Vendor Nepl. VAT Posting Group - Property ToolTip</note>
@@ -6170,21 +6170,21 @@
         </trans-unit>
         <trans-unit id="Page 262200983 - Control 2485677908 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Shipment Method Mandatory field.</source>
-          <target/>
+          <target state="translated">Specifica valoarea campului Metoda Livrare Obligatoriu.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Localization Setup - Control Shipment Method Mandatory - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 262200983 - Control 1944353844 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Transaction Spec. Mandatory field.</source>
-          <target/>
+          <target state="translated">Specifica valoarea campului Transaction Spec. Obligatoriu.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Localization Setup - Control Transaction Spec. Mandatory - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 262200983 - Control 110094621 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Transaction Type Mandatory field.</source>
-          <target/>
+          <target state="translated">Specifica valoarea campului Transaction Type Obligatoriu.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Localization Setup - Control Transaction Type Mandatory - Property ToolTip</note>
@@ -6254,7 +6254,7 @@
         </trans-unit>
         <trans-unit id="Page 262200983 - Control 985886656 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Purchase Setup</source>
-          <target/>
+          <target state="translated">Parametrizare cumparari si datorii</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Localization Setup - Control Purchase Setup - Property Caption</note>
@@ -6315,14 +6315,14 @@
         </trans-unit>
         <trans-unit id="Page 1092074261 - Control 580412389 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Document Date field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica valoarea campului Data Document</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Posted Int. Consumptions - Control Document Date - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1092074261 - Control 1527563463 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the External Document No. field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica valoarea campului Nr. Document Extern.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Posted Int. Consumptions - Control External Document No. - Property ToolTip</note>
@@ -6343,7 +6343,7 @@
         </trans-unit>
         <trans-unit id="Page 1092074261 - Control 3710982960 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Posting Date field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica valoarea campului Data Inreg.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Posted Int. Consumptions - Control Posting Date - Property ToolTip</note>
@@ -6357,14 +6357,14 @@
         </trans-unit>
         <trans-unit id="Page 1092074261 - Control 1577567912 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Shortcut Dimension 1 Code field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica codul valorii dimensiunii 1</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Posted Int. Consumptions - Control Shortcut Dimension 1 Code - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1092074261 - Control 1003760969 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Shortcut Dimension 2 Code field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica codul valorii dimensiunii 2</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Posted Int. Consumptions - Control Shortcut Dimension 2 Code - Property ToolTip</note>
@@ -6390,7 +6390,7 @@
         </trans-unit>
         <trans-unit id="Page 1092074261 - Action 3000180178 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Executes the Co&amp;mments action.</source>
-          <target/>
+          <target state="needs-l10n">Executie actiune Comentarii.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Posted Int. Consumptions - Action Co&amp;mments - Property ToolTip</note>
@@ -6403,7 +6403,7 @@
         </trans-unit>
         <trans-unit id="Page 1092074261 - Action 2173385693 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Executes the Dimensions action.</source>
-          <target/>
+          <target state="needs-l10n">Executie actiune Dimensiuni.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Posted Int. Consumptions - Action Dimensions - Property ToolTip</note>
@@ -6832,35 +6832,35 @@
         </trans-unit>
         <trans-unit id="Page 1996989201 - Control 1712410168 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Custom Invoice No. field.</source>
-          <target/>
+          <target state="needs-l10n">Specifică valoarea câmpului Nr. Document Vamal.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Pretty Cash Journal - Control SSA Custom Invoice No. - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1996989201 - Control 1325002386 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Custom Posting Group field.</source>
-          <target/>
+          <target state="needs-l10n">Specifică valoarea câmpului Cod Grupa Inregistrare Vama</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Pretty Cash Journal - Control SSA Posting Group - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1996989201 - Control 2646786634 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Stare Factura field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica valoarea campului Stare Factura</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Pretty Cash Journal - Control SSA Stare Factura - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1996989201 - Control 3711553163 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Tip Document D394 field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica Valoarea campului Tip Document 394.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Pretty Cash Journal - Control SSA Tip Document D394 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1996989201 - Control 3928886457 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Tip Partener field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica valoarea campului Tip Partener.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Pretty Cash Journal - Control SSA Tip Partener - Property ToolTip</note>
@@ -6964,7 +6964,7 @@
         </trans-unit>
         <trans-unit id="Page 1996989201 - Control 3972230265 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Bal Acc Balance -1D (LCY) field.</source>
-          <target/>
+          <target state="needs-l10n">Specifică valoarea câmpului Bal Acc Balance -1D (MN).</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Pretty Cash Journal - Control Bal Acc Balance -1D (LCY) - Property ToolTip</note>
@@ -7003,7 +7003,7 @@
         </trans-unit>
         <trans-unit id="Page 1996989201 - Control 13739397 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Date of Balance field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica valoarea campului Data Sold</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Pretty Cash Journal - Control DateOfBalance - Property ToolTip</note>
@@ -7774,7 +7774,7 @@
         </trans-unit>
         <trans-unit id="Page 2988051910 - Control 3710982960 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Posting Date field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica valoarea campului Data Inreg.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Pstd Int. Cons. List - Control Posting Date - Property ToolTip</note>
@@ -7795,14 +7795,14 @@
         </trans-unit>
         <trans-unit id="Page 2988051910 - Control 1577567912 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Shortcut Dimension 1 Code field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica codul valorii dimensiunii 1</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Pstd Int. Cons. List - Control Shortcut Dimension 1 Code - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2988051910 - Control 1003760969 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Shortcut Dimension 2 Code field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica codul valorii dimensiunii 2</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSA Pstd Int. Cons. List - Control Shortcut Dimension 2 Code - Property ToolTip</note>
@@ -8054,7 +8054,7 @@
         </trans-unit>
         <trans-unit id="Page 2478106341 - Control 1003760969 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Shortcut Dimension 2 Code field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica codul valorii dimensiunii 2</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSAInt. Consumption Subform - Control Shortcut Dimension 2 Code - Property ToolTip</note>
@@ -8067,7 +8067,7 @@
         </trans-unit>
         <trans-unit id="Page 2478106341 - Action 2173385693 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Executes the Dimensions action.</source>
-          <target/>
+          <target state="needs-l10n">Executie actiune Dimensiuni.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSAInt. Consumption Subform - Action Dimensions - Property ToolTip</note>
@@ -8152,7 +8152,7 @@
         </trans-unit>
         <trans-unit id="Page 3780344259 - Control 3710982960 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Posting Date field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica valoarea campului Data Inreg.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSAInternal Consumption List - Control Posting Date - Property ToolTip</note>
@@ -8166,14 +8166,14 @@
         </trans-unit>
         <trans-unit id="Page 3780344259 - Control 1577567912 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Shortcut Dimension 1 Code field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica codul valorii dimensiunii 1</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSAInternal Consumption List - Control Shortcut Dimension 1 Code - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3780344259 - Control 1003760969 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Shortcut Dimension 2 Code field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica codul valorii dimensiunii 2</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSAInternal Consumption List - Control Shortcut Dimension 2 Code - Property ToolTip</note>
@@ -8255,7 +8255,7 @@
         </trans-unit>
         <trans-unit id="Page 690457656 - Action 2173385693 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Executes the Dimensions action.</source>
-          <target/>
+          <target state="needs-l10n">Executie actiune Dimensiuni.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSAPstd. Int. Cons. Subform - Action Dimensions - Property ToolTip</note>
@@ -9562,14 +9562,14 @@
         </trans-unit>
         <trans-unit id="XmlPort 1024028300 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
           <source>Microsoft Dynamics NAV</source>
-          <target>[NAB: SUGGESTION]Microsoft Dynamics NAV</target>
+          <target>Microsoft Dynamics NAV</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">XmlPort SSAExport Intrast Jnl to XML - NamedType Text003</note>
         </trans-unit>
         <trans-unit id="XmlPort 1024028300 - NamedType 1664139952" size-unit="char" translate="yes" xml:space="preserve">
           <source>You must specify %1 for %2 %3</source>
-          <target>[NAB: SUGGESTION]Trebuie să specificaţi %1 pentru %2 %3</target>
+          <target>Trebuie să specificaţi %1 pentru %2 %3</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">XmlPort SSAExport Intrast Jnl to XML - NamedType Text010</note>
@@ -9583,7 +9583,7 @@
         </trans-unit>
         <trans-unit id="XmlPort 1024028300 - Control 2123104825 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Options</source>
-          <target>[NAB: SUGGESTION]Op“úiuni</target>
+          <target>Op“úiuni</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">XmlPort SSAExport Intrast Jnl to XML - Control &lt;Control1900000002&gt; - Property Caption</note>
@@ -9597,7 +9597,7 @@
         </trans-unit>
         <trans-unit id="XmlPort 1024028300 - Control 2491592591 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Creation Date</source>
-          <target>[NAB: SUGGESTION]Data creare</target>
+          <target>Data creare</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">XmlPort SSAExport Intrast Jnl to XML - Control &lt;Control11&gt; - Property Caption</note>
@@ -9618,7 +9618,7 @@
         </trans-unit>
         <trans-unit id="XmlPort 1024028300 - Control 736810934 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Last Name</source>
-          <target>[NAB: SUGGESTION]Nume de familie</target>
+          <target>Nume de familie</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">XmlPort SSAExport Intrast Jnl to XML - Control &lt;Control16&gt; - Property Caption</note>
@@ -9632,7 +9632,7 @@
         </trans-unit>
         <trans-unit id="XmlPort 1024028300 - Control 3823865944 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>First Name</source>
-          <target>[NAB: SUGGESTION]Prenume</target>
+          <target>Prenume</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">XmlPort SSAExport Intrast Jnl to XML - Control &lt;Control18&gt; - Property Caption</note>
@@ -9646,7 +9646,7 @@
         </trans-unit>
         <trans-unit id="XmlPort 1024028300 - Control 1785162200 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>E-Mail</source>
-          <target>[NAB: SUGGESTION]Poştă electronică</target>
+          <target>Poştă electronică</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">XmlPort SSAExport Intrast Jnl to XML - Control &lt;Control1&gt; - Property Caption</note>
@@ -9660,7 +9660,7 @@
         </trans-unit>
         <trans-unit id="XmlPort 1024028300 - Control 1660243721 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Position</source>
-          <target>[NAB: SUGGESTION]Poziţie</target>
+          <target>Poziţie</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">XmlPort SSAExport Intrast Jnl to XML - Control &lt;Control20&gt; - Property Caption</note>
@@ -9674,7 +9674,7 @@
         </trans-unit>
         <trans-unit id="XmlPort 1024028300 - Control 2982473657 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Phone No.</source>
-          <target>[NAB: SUGGESTION]Nr. telefon</target>
+          <target state="translated">Nr. telefon</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">XmlPort SSAExport Intrast Jnl to XML - Control &lt;Control2&gt; - Property Caption</note>
@@ -9688,7 +9688,7 @@
         </trans-unit>
         <trans-unit id="XmlPort 1024028300 - Control 1774561371 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Fax</source>
-          <target>[NAB: SUGGESTION]Fax</target>
+          <target>Fax</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">XmlPort SSAExport Intrast Jnl to XML - Control &lt;Control4&gt; - Property Caption</note>
@@ -9702,14 +9702,14 @@
         </trans-unit>
         <trans-unit id="XmlPort 1024028300 - Control 2868156007 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>File Name</source>
-          <target>[NAB: SUGGESTION]Nume fişier</target>
+          <target>Nume fişier</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">XmlPort SSAExport Intrast Jnl to XML - Control &lt;Control22&gt; - Property Caption</note>
         </trans-unit>
         <trans-unit id="XmlPort 1024028300 - Control 2217713921 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Code Versions</source>
-          <target>[NAB: SUGGESTION]Versiuni Coduri</target>
+          <target>Versiuni Coduri</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">XmlPort SSAExport Intrast Jnl to XML - Control &lt;Control28&gt; - Property Caption</note>
@@ -9723,7 +9723,7 @@
         </trans-unit>
         <trans-unit id="XmlPort 1024028300 - Control 2481730978 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Country</source>
-          <target>[NAB: SUGGESTION]Ţară</target>
+          <target>Ţară</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">XmlPort SSAExport Intrast Jnl to XML - Control &lt;Control30&gt; - Property Caption</note>
@@ -9737,7 +9737,7 @@
         </trans-unit>
         <trans-unit id="XmlPort 1024028300 - Control 3689643264 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Nature of Transaction A</source>
-          <target>[NAB: SUGGESTION]Natura Tranzacţiei A</target>
+          <target>Natura Tranzacţiei A</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">XmlPort SSAExport Intrast Jnl to XML - Control &lt;Control32&gt; - Property Caption</note>
@@ -9751,7 +9751,7 @@
         </trans-unit>
         <trans-unit id="XmlPort 1024028300 - Control 45118054 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>EU Country</source>
-          <target>[NAB: SUGGESTION]Ţară din UE</target>
+          <target>Ţară din UE</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">XmlPort SSAExport Intrast Jnl to XML - Control &lt;Control34&gt; - Property Caption</note>
@@ -9765,7 +9765,7 @@
         </trans-unit>
         <trans-unit id="XmlPort 1024028300 - Control 1273818692 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Nature of Transaction B</source>
-          <target>[NAB: SUGGESTION]Natura Tranzacţiei B</target>
+          <target>Natura Tranzacţiei B</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">XmlPort SSAExport Intrast Jnl to XML - Control &lt;Control36&gt; - Property Caption</note>
@@ -9779,7 +9779,7 @@
         </trans-unit>
         <trans-unit id="XmlPort 1024028300 - Control 1924260778 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Company</source>
-          <target>[NAB: SUGGESTION]Firmă</target>
+          <target>Firmă</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">XmlPort SSAExport Intrast Jnl to XML - Control &lt;Control38&gt; - Property Caption</note>
@@ -9793,7 +9793,7 @@
         </trans-unit>
         <trans-unit id="XmlPort 1024028300 - Control 131803867 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>County</source>
-          <target>[NAB: SUGGESTION]Judeţ</target>
+          <target>Judeţ</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">XmlPort SSAExport Intrast Jnl to XML - Control &lt;Control40&gt; - Property Caption</note>
@@ -9807,7 +9807,7 @@
         </trans-unit>
         <trans-unit id="XmlPort 1024028300 - Control 3198070525 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Mode of Transport</source>
-          <target>[NAB: SUGGESTION]Mod de Transport</target>
+          <target>Mod de Transport</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">XmlPort SSAExport Intrast Jnl to XML - Control &lt;Control42&gt; - Property Caption</note>
@@ -9821,7 +9821,7 @@
         </trans-unit>
         <trans-unit id="XmlPort 1024028300 - Control 2547628439 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>City</source>
-          <target>[NAB: SUGGESTION]Localitate</target>
+          <target>Localitate</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">XmlPort SSAExport Intrast Jnl to XML - Control &lt;Control44&gt; - Property Caption</note>
@@ -9835,7 +9835,7 @@
         </trans-unit>
         <trans-unit id="XmlPort 1024028300 - Control 1339716153 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Delivery Terms</source>
-          <target>[NAB: SUGGESTION]Termeni Livrare</target>
+          <target>Termeni Livrare</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">XmlPort SSAExport Intrast Jnl to XML - Control &lt;Control46&gt; - Property Caption</note>
@@ -9849,14 +9849,14 @@
         </trans-unit>
         <trans-unit id="XmlPort 1024028300 - Control 689274067 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Unit</source>
-          <target>[NAB: SUGGESTION]Unităţi Supl.</target>
+          <target state="translated">Unităţi Supl.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">XmlPort SSAExport Intrast Jnl to XML - Control &lt;Control48&gt; - Property Caption</note>
         </trans-unit>
         <trans-unit id="XmlPort 1024028300 - Control 556461562 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Declaration Type</source>
-          <target>[NAB: SUGGESTION]Tip declaratie</target>
+          <target>Tip declaratie</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">XmlPort SSAExport Intrast Jnl to XML - Control &lt;Control3&gt; - Property Caption</note>
@@ -9870,7 +9870,7 @@
         </trans-unit>
         <trans-unit id="XmlPort 1024028300 - Control 463083586 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
           <source>New,Corrective,Nil</source>
-          <target/>
+          <target state="translated">Nou,Corectie,Nil</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">XmlPort SSAExport Intrast Jnl to XML - Control DecTypeNew - Property OptionCaption</note>
@@ -9891,7 +9891,7 @@
         </trans-unit>
         <trans-unit id="XmlPort 1024028300 - Control 3173423858 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Intrastat Journal Batch</source>
-          <target>[NAB: SUGGESTION]Lot jurnal intrastat</target>
+          <target>Lot jurnal intrastat</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">XmlPort SSAExport Intrast Jnl to XML - Control &lt;Control12&gt; - Property Caption</note>
@@ -9905,7 +9905,7 @@
         </trans-unit>
         <trans-unit id="XmlPort 1024028300 - Control 3518598093 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Intrastat Journal Template</source>
-          <target>[NAB: SUGGESTION]Şablon jurnal intrastat</target>
+          <target>Şablon jurnal intrastat</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">XmlPort SSAExport Intrast Jnl to XML - Control &lt;Control24&gt; - Property Caption</note>
@@ -9919,7 +9919,7 @@
         </trans-unit>
         <trans-unit id="XmlPort 1024028300 - Control 3819526884 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Document Type</source>
-          <target>[NAB: SUGGESTION]Tip Document</target>
+          <target>Tip Document</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">XmlPort SSAExport Intrast Jnl to XML - Control DocType - Property Caption</note>
@@ -9933,14 +9933,14 @@
         </trans-unit>
         <trans-unit id="PageExtension 3926098880 - Control 2617435530 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1662713252">
           <source>Specifies the value of the Gen. Bus. Posting Group field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica valoarea campului Gr. inreg. contab. op. ec.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Assembly Order 70046 - Control SSA Gen. Bus. Posting Group - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 4261163260 - Control 1712410168 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1638686336">
           <source>Specifies the value of the Custom Invoice No. field.</source>
-          <target/>
+          <target state="needs-l10n">Specifică valoarea câmpului Nr. Document Vamal.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Cash Receipt Journal70013 - Control SSA Custom Invoice No. - Property ToolTip</note>
@@ -10003,7 +10003,7 @@
         </trans-unit>
         <trans-unit id="PageExtension 2701473570 - Control 3012351755 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 105737358">
           <source>Specifies the value of the Cust. Ex. VAT Posting Group field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica valoarea campului Cust. Ex. VAT Posting Group</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Countries/Regions 70002 - Control SSA Cust. Ex. VATPstgGroup - Property ToolTip</note>
@@ -10017,7 +10017,7 @@
         </trans-unit>
         <trans-unit id="PageExtension 2701473570 - Control 3662485342 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 105737358">
           <source>Specifies the value of the Cust. Neex. VAT Posting Group field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica valoarea campului Cust. Neex. VAT Posting Group</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Countries/Regions 70002 - Control SSA Cust. Neex. VATPstgGroup - Property ToolTip</note>
@@ -10031,7 +10031,7 @@
         </trans-unit>
         <trans-unit id="PageExtension 2701473570 - Control 2729781014 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 105737358">
           <source>Specifies the value of the Vendor Ex. VAT Posting Group field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica valoarea campului Vendor Ex. VAT Posting Group</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Countries/Regions 70002 - Control SSA Vendor Ex. VATPstgGroup - Property ToolTip</note>
@@ -10045,7 +10045,7 @@
         </trans-unit>
         <trans-unit id="PageExtension 2701473570 - Control 1638335251 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 105737358">
           <source>Specifies the value of the Vendor Neex. VAT Posting Group field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica valoarea campului Vendor Neex. VAT Posting Group</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Countries/Regions 70002 - Control SSA Vendor Neex. VATPstgGroup - Property ToolTip</note>
@@ -10072,7 +10072,7 @@
         </trans-unit>
         <trans-unit id="PageExtension 1948058577 - Control 2646786634 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2393537757">
           <source>Specifies the value of the Stare Factura field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica valoarea campului Stare Factura</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Cust. Ledger Entry 70061 - Control SSA Stare Factura - Property ToolTip</note>
@@ -10128,7 +10128,7 @@
         </trans-unit>
         <trans-unit id="PageExtension 3819991353 - Control 3928886457 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 523354100">
           <source>Specifies the value of the Tip Partener field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica valoarea campului Tip Partener.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Customer Card 70010 - Control SSA Tip Partener - Property ToolTip</note>
@@ -10190,35 +10190,35 @@
         </trans-unit>
         <trans-unit id="PageExtension 1339740986 - Action 226650734 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4105562392">
           <source>Localization Support-Soft</source>
-          <target/>
+          <target state="translated">Localizare Support-Soft</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Finance Role Center - Action SSA LocalizationSS - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1339740986 - Action 2209516100 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4105562392">
           <source>Correction Procedures</source>
-          <target/>
+          <target state="translated">Proceduri Corectie</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Finance Role Center - Action CorrectionProcedures - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1339740986 - Action 2526000041 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4105562392">
           <source>Executes the General Journals action.</source>
-          <target/>
+          <target state="translated">Executie Actiune Jurnal General</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Finance Role Center - Action &lt;Action1000000013&gt; - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1339740986 - Action 2526000041 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4105562392">
           <source>General Journals</source>
-          <target>[NAB: SUGGESTION]Jurnale generale</target>
+          <target>Jurnale generale</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Finance Role Center - Action &lt;Action1000000013&gt; - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1339740986 - Action 267022291 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4105562392">
           <source>Depreciation</source>
-          <target state="needs-l10n">[NAB: SUGGESTION]Amortizare</target>
+          <target state="translated">Amortizare</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Finance Role Center - Action Depreciation - Property Caption</note>
@@ -10232,7 +10232,7 @@
         </trans-unit>
         <trans-unit id="PageExtension 1339740986 - Action 2071674152 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4105562392">
           <source>Calculate Depreciation...</source>
-          <target>[NAB: SUGGESTION]Calculare Amortizare...</target>
+          <target>Calculare Amortizare...</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Finance Role Center - Action SSA CalculateDepreciation - Property Caption</note>
@@ -10246,154 +10246,154 @@
         </trans-unit>
         <trans-unit id="PageExtension 1339740986 - Action 2405340796 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4105562392">
           <source>FA G/L Journals</source>
-          <target>[NAB: SUGGESTION]Jurnale contabile MF</target>
+          <target>Jurnale contabile MF</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Finance Role Center - Action SSA FA G/L Journals - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1339740986 - Action 1253423180 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4105562392">
           <source>Production Expenses</source>
-          <target/>
+          <target state="translated">Cheltuieli Productie</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Finance Role Center - Action ProductionExpenses - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1339740986 - Action 1979130670 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4105562392">
           <source>Executes the Account Schedules action.</source>
-          <target/>
+          <target state="needs-l10n">Executie Actiune Indicatori economici.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Finance Role Center - Action &lt;Action1000000016&gt; - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1339740986 - Action 1979130670 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4105562392">
           <source>Account Schedules</source>
-          <target>[NAB: SUGGESTION]Indicatori economici</target>
+          <target>Indicatori economici</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Finance Role Center - Action &lt;Action1000000016&gt; - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1339740986 - Action 110175469 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4105562392">
           <source>Executes the General Journals action.</source>
-          <target/>
+          <target state="needs-l10n">Executie Actiune Jurnal General</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Finance Role Center - Action &lt;Action1000000017&gt; - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1339740986 - Action 110175469 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4105562392">
           <source>General Journals</source>
-          <target>[NAB: SUGGESTION]Jurnale generale</target>
+          <target>Jurnale generale</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Finance Role Center - Action &lt;Action1000000017&gt; - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1339740986 - Action 3778681125 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4105562392">
           <source>Executes the Analysis by Dimensions action.</source>
-          <target/>
+          <target state="needs-l10n">Executie Actiune Analiza dupa Dimensiuni.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Finance Role Center - Action SSA AnalysisbyDimensions - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1339740986 - Action 3778681125 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4105562392">
           <source>Analysis by Dimensions</source>
-          <target>[NAB: SUGGESTION]Analiza pe Dimensiuni</target>
+          <target>Analiza pe Dimensiuni</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Finance Role Center - Action SSA AnalysisbyDimensions - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1339740986 - Action 265675786 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4105562392">
           <source>Executes the Adjust Exchange Rates action.</source>
-          <target/>
+          <target state="translated">Ajustare cursuri de schimb</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Finance Role Center - Action SSA Adjust Exchange Rates - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1339740986 - Action 265675786 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4105562392">
           <source>Adjust Exchange Rates</source>
-          <target>[NAB: SUGGESTION]Ajustare cursuri de schimb</target>
+          <target>Ajustare cursuri de schimb</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Finance Role Center - Action SSA Adjust Exchange Rates - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1339740986 - Action 726667185 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4105562392">
           <source>Checking</source>
-          <target/>
+          <target state="translated">Verificari</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Finance Role Center - Action SSA Checking - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1339740986 - Action 2731473692 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4105562392">
           <source>Executes the Inventory Valuation action.</source>
-          <target/>
+          <target state="needs-l10n">Executie Actiune Evaluare Stoc</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Finance Role Center - Action SSA InventoryValuation - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1339740986 - Action 2731473692 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4105562392">
           <source>Inventory Valuation</source>
-          <target>[NAB: SUGGESTION]Evaluare stocuri</target>
+          <target>Evaluare stocuri</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Finance Role Center - Action SSA InventoryValuation - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1339740986 - Action 3122098756 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4105562392">
           <source>Executes the Currencies action.</source>
-          <target/>
+          <target state="needs-l10n">Executie actiune Valute.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Finance Role Center - Action SSA Currencies - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1339740986 - Action 3122098756 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4105562392">
           <source>Currencies</source>
-          <target>[NAB: SUGGESTION]Valute</target>
+          <target>Valute</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Finance Role Center - Action SSA Currencies - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1339740986 - Action 1600995057 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4105562392">
           <source>Monthly Closing</source>
-          <target/>
+          <target state="translated">Inchidere Lunara</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Finance Role Center - Action SSA MonthlyClosing - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1339740986 - Action 4291382527 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4105562392">
           <source>Executes the Close Income Statement... action.</source>
-          <target/>
+          <target state="needs-l10n">Executa actiuni Inchidere Cont Rezultat.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Finance Role Center - Action &lt;Action1000000019&gt; - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1339740986 - Action 4291382527 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4105562392">
           <source>Close Income Statement...</source>
-          <target>[NAB: SUGGESTION]Inchidere cont rezultat...</target>
+          <target>Inchidere cont rezultat...</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Finance Role Center - Action &lt;Action1000000019&gt; - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1339740986 - Action 1304459168 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4105562392">
           <source>Executes the Calculate and Post VAT Settlement action.</source>
-          <target/>
+          <target state="translated">Calc. si inreg. inchidere TVA</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Finance Role Center - Action SSA CloseVAT - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1339740986 - Action 1304459168 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4105562392">
           <source>Calculate and Post VAT Settlement</source>
-          <target>[NAB: SUGGESTION]Calc. si inreg. inchidere TVA</target>
+          <target>Calc. si inreg. inchidere TVA</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Finance Role Center - Action SSA CloseVAT - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1339740986 - Action 3123548567 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4105562392">
           <source>Executes the General Journals action.</source>
-          <target/>
+          <target state="needs-l10n">Executie Actiune Jurnal General</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Finance Role Center - Action SSA GeneralJournals - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1339740986 - Action 3123548567 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4105562392">
           <source>General Journals</source>
-          <target>[NAB: SUGGESTION]Jurnale generale</target>
+          <target>Jurnale generale</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Finance Role Center - Action SSA GeneralJournals - Property Caption</note>
@@ -10407,35 +10407,35 @@
         </trans-unit>
         <trans-unit id="PageExtension 1339740986 - Action 1392524577 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4105562392">
           <source>Executes the VAT Statement action.</source>
-          <target/>
+          <target state="needs-l10n">Executie Actiune Decont TVA</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Finance Role Center - Action SSA VATStatement - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1339740986 - Action 1392524577 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4105562392">
           <source>VAT Statement</source>
-          <target>[NAB: SUGGESTION]Decont TVA</target>
+          <target>Decont TVA</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Finance Role Center - Action SSA VATStatement - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1339740986 - Action 3535473896 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4105562392">
           <source>Payroll</source>
-          <target state="needs-l10n">[NAB: NOT TRANSLATED]</target>
+          <target state="translated">State Salarii</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Finance Role Center - Action SSA Payroll - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1339740986 - Action 2142165838 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4105562392">
           <source>Executes the Recurring Journals action.</source>
-          <target/>
+          <target state="needs-l10n">Executie Actiune Jurnal Recurent</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Finance Role Center - Action SSA RecurringJournals - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1339740986 - Action 2142165838 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4105562392">
           <source>Recurring Journals</source>
-          <target>[NAB: SUGGESTION]Jurnale recurente</target>
+          <target>Jurnale recurente</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Finance Role Center - Action SSA RecurringJournals - Property Caption</note>
@@ -10448,7 +10448,7 @@
         </trans-unit>
         <trans-unit id="PageExtension 504813264 - Control 2533846317 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3133908286">
           <source>Specifies the value of the Country/Region of Origin Code field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica valoarea campului Cod Tara Origine.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Fixed Asset Card70033 - Control SSA Country/Region of Origin - Property ToolTip</note>
@@ -10483,7 +10483,7 @@
         </trans-unit>
         <trans-unit id="PageExtension 2492046750 - Control 1712410168 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 714858205">
           <source>Specifies the value of the Custom Invoice No. field.</source>
-          <target/>
+          <target state="needs-l10n">Specifică valoarea câmpului Nr. Document Vamal.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA FixedAssetG/LJournal70034 - Control SSA Custom Invoice No. - Property ToolTip</note>
@@ -10552,56 +10552,56 @@
         </trans-unit>
         <trans-unit id="PageExtension 3232349770 - Control 3650609454 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4219821699">
           <source>Specifies the value of the Distribute Non-Deductible VAT field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica valoarea campului Distributie TVA Nedeductibila.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA G/L Account Card70009 - Control SSA Distribute Non-Ded VAT - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3232349770 - Control 1719229151 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4219821699">
           <source>Specifies the value of the Non-Ded VAT Expense Account 1 field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica valoarea campului Cont TVA Cheltuiala Neded 1.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA G/L Account Card70009 - Control SSA Non-Ded VAT Expense Acc 1 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3232349770 - Control 3632319002 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4219821699">
           <source>Specifies the value of the Non-Ded VAT Expense Account 2 field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica valoarea campului Cont TVA Cheltuiala Neded 2</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA G/L Account Card70009 - Control SSA Non-Ded VAT Expense Acc 2 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3167181197 - Control 1712410168 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2583272393">
           <source>Specifies the value of the Custom Invoice No. field.</source>
-          <target/>
+          <target state="needs-l10n">Specifică valoarea câmpului Nr. Document Vamal.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA General Journal70020 - Control SSA Custom Invoice No. - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3167181197 - Control 1325002386 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2583272393">
           <source>Specifies the value of the Custom Posting Group field.</source>
-          <target/>
+          <target state="needs-l10n">Specifică valoarea câmpului Cod Grupa Inregistrare Vama</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA General Journal70020 - Control SSA Posting Group - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3167181197 - Control 2646786634 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2583272393">
           <source>Specifies the value of the Stare Factura field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica valoarea campului Stare Factura</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA General Journal70020 - Control SSA Stare Factura - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3167181197 - Control 3711553163 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2583272393">
           <source>Specifies the value of the Tip Document D394 field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica Valoarea campului Tip Document 394.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA General Journal70020 - Control SSA Tip Document D394 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3167181197 - Control 3928886457 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2583272393">
           <source>Specifies the value of the Tip Partener field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica valoarea campului Tip Partener.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA General Journal70020 - Control SSA Tip Partener - Property ToolTip</note>
@@ -10615,7 +10615,7 @@
         </trans-unit>
         <trans-unit id="PageExtension 1574493714 - Control 1712410168 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 103426671">
           <source>Specifies the value of the Custom Invoice No. field.</source>
-          <target/>
+          <target state="needs-l10n">Specifică valoarea câmpului Nr. Document Vamal.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA IC General Journal70041 - Control SSA Custom Invoice No. - Property ToolTip</note>
@@ -10745,7 +10745,7 @@
         </trans-unit>
         <trans-unit id="PageExtension 1100642844 - Control 1712410168 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3196174509">
           <source>Specifies the value of the Custom Invoice No. field.</source>
-          <target/>
+          <target state="needs-l10n">Specifică valoarea câmpului Nr. Document Vamal.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Payment Journal70014 - Control SSA Custom Invoice No. - Property ToolTip</note>
@@ -10766,70 +10766,70 @@
         </trans-unit>
         <trans-unit id="PageExtension 3577042706 - Control 2646786634 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4135951594">
           <source>Specifies the value of the Stare Factura field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica valoarea campului Stare Factura</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Purch. Credit Memos - Control SSA Stare Factura - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3577042706 - Control 3711553163 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4135951594">
           <source>Specifies the value of the Tip Document D394 field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica Valoarea campului Tip Document 394.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Purch. Credit Memos - Control SSA Tip Document D394 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1974655539 - Control 2646786634 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 407220332">
           <source>Specifies the value of the Stare Factura field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica valoarea campului Stare Factura</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Purchase Invoices - Control SSA Stare Factura - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1974655539 - Control 3711553163 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 407220332">
           <source>Specifies the value of the Tip Document D394 field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica Valoarea campului Tip Document 394.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Purchase Invoices - Control SSA Tip Document D394 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1245189244 - Control 2646786634 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 52957233">
           <source>Specifies the value of the Stare Factura field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica valoarea campului Stare Factura</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Return Receipt70045 - Control SSA Stare Factura - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1245189244 - Control 3711553163 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 52957233">
           <source>Specifies the value of the Tip Document D394 field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica Valoarea campului Tip Document 394.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Return Receipt70045 - Control SSA Tip Document D394 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 985531471 - Control 2646786634 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1514853781">
           <source>Specifies the value of the Stare Factura field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica valoarea campului Stare Factura</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted ReturnShipment70044 - Control SSA Stare Factura - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 985531471 - Control 3711553163 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1514853781">
           <source>Specifies the value of the Tip Document D394 field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica Valoarea campului Tip Document 394.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted ReturnShipment70044 - Control SSA Tip Document D394 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1690934640 - Control 2646786634 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2557560783">
           <source>Specifies the value of the Stare Factura field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica valoarea campului Stare Factura</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Sales Credit Memos - Control SSA Stare Factura - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1690934640 - Control 3711553163 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2557560783">
           <source>Specifies the value of the Tip Document D394 field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica Valoarea campului Tip Document 394.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Sales Credit Memos - Control SSA Tip Document D394 - Property ToolTip</note>
@@ -10843,28 +10843,28 @@
         </trans-unit>
         <trans-unit id="PageExtension 2708396269 - Control 2646786634 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2420212404">
           <source>Specifies the value of the Stare Factura field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica valoarea campului Stare Factura</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Sales Invoice 70005 - Control SSA Stare Factura - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2708396269 - Control 3711553163 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2420212404">
           <source>Specifies the value of the Tip Document D394 field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica Valoarea campului Tip Document 394.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Sales Invoice 70005 - Control SSA Tip Document D394 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3763351734 - Control 2646786634 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3434938165">
           <source>Specifies the value of the Stare Factura field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica valoarea campului Stare Factura</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Sales Invoices - Control SSA Stare Factura - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3763351734 - Control 3711553163 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3434938165">
           <source>Specifies the value of the Tip Document D394 field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica Valoarea campului Tip Document 394.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Sales Invoices - Control SSA Tip Document D394 - Property ToolTip</note>
@@ -10892,42 +10892,42 @@
         </trans-unit>
         <trans-unit id="PageExtension 3556008262 - Control 1712410168 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4048657685">
           <source>Specifies the value of the Custom Invoice No. field.</source>
-          <target/>
+          <target state="needs-l10n">Specifică valoarea câmpului Nr. Document Vamal.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA PostedPurchaseInvoice70007 - Control SSA Custom Invoice No. - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3556008262 - Control 2646786634 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4048657685">
           <source>Specifies the value of the Stare Factura field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica valoarea campului Stare Factura</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA PostedPurchaseInvoice70007 - Control SSA Stare Factura - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3556008262 - Control 3711553163 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4048657685">
           <source>Specifies the value of the Tip Document D394 field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica Valoarea campului Tip Document 394.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA PostedPurchaseInvoice70007 - Control SSA Tip Document D394 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3951819128 - Control 1712410168 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2854365759">
           <source>Specifies the value of the Custom Invoice No. field.</source>
-          <target/>
+          <target state="needs-l10n">Specifică valoarea câmpului Nr. Document Vamal.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA PostedPurchCreditMemo70008 - Control SSA Custom Invoice No. - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3951819128 - Control 2646786634 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2854365759">
           <source>Specifies the value of the Stare Factura field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica valoarea campului Stare Factura</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA PostedPurchCreditMemo70008 - Control SSA Stare Factura - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3951819128 - Control 3711553163 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2854365759">
           <source>Specifies the value of the Tip Document D394 field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica Valoarea campului Tip Document 394.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA PostedPurchCreditMemo70008 - Control SSA Tip Document D394 - Property ToolTip</note>
@@ -10941,42 +10941,42 @@
         </trans-unit>
         <trans-unit id="PageExtension 1188764866 - Control 2646786634 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2716593954">
           <source>Specifies the value of the Stare Factura field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica valoarea campului Stare Factura</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA PostedSalesCreditMemo70006 - Control SSA Stare Factura - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1188764866 - Control 3711553163 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2716593954">
           <source>Specifies the value of the Tip Document D394 field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica Valoarea campului Tip Document 394.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA PostedSalesCreditMemo70006 - Control SSA Tip Document D394 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1196509360 - Control 3650609454 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1521900543">
           <source>Specifies the value of the Distribute Non-Deductible VAT field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica valoarea campului Distributie TVA Nedeductibila.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Purch. Cr. Memo Subform - Control SSA Distribute Non-Ded VAT - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1196509360 - Control 1719229151 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1521900543">
           <source>Specifies the value of the Non-Ded VAT Expense Account 1 field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica valoarea campului Cont TVA Cheltuiala Neded 1.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Purch. Cr. Memo Subform - Control SSA Non-Ded VAT Expense Acc 1 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1196509360 - Control 3632319002 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1521900543">
           <source>Specifies the value of the Non-Ded VAT Expense Account 2 field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica valoarea campului Cont TVA Cheltuiala Neded 2</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Purch. Cr. Memo Subform - Control SSA Non-Ded VAT Expense Acc 2 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 594977046 - Control 1712410168 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1198681581">
           <source>Specifies the value of the Custom Invoice No. field.</source>
-          <target/>
+          <target state="needs-l10n">Specifică valoarea câmpului Nr. Document Vamal.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Purch. Receipt Lines - Control SSA Custom Invoice No. - Property ToolTip</note>
@@ -11004,21 +11004,21 @@
         </trans-unit>
         <trans-unit id="PageExtension 1127916316 - Control 1712410168 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4042331808">
           <source>Specifies the value of the Custom Invoice No. field.</source>
-          <target/>
+          <target state="needs-l10n">Specifică valoarea câmpului Nr. Document Vamal.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Purchase Credit Memo70031 - Control SSA Custom Invoice No. - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1127916316 - Control 2646786634 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4042331808">
           <source>Specifies the value of the Stare Factura field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica valoarea campului Stare Factura</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Purchase Credit Memo70031 - Control SSA Stare Factura - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1127916316 - Control 3711553163 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4042331808">
           <source>Specifies the value of the Tip Document D394 field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica Valoarea campului Tip Document 394.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Purchase Credit Memo70031 - Control SSA Tip Document D394 - Property ToolTip</note>
@@ -11032,21 +11032,21 @@
         </trans-unit>
         <trans-unit id="PageExtension 3982306705 - Control 1712410168 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2437096118">
           <source>Specifies the value of the Custom Invoice No. field.</source>
-          <target/>
+          <target state="needs-l10n">Specifică valoarea câmpului Nr. Document Vamal.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Purchase Invoice70030 - Control SSA Custom Invoice No. - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3982306705 - Control 2646786634 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2437096118">
           <source>Specifies the value of the Stare Factura field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica valoarea campului Stare Factura</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Purchase Invoice70030 - Control SSA Stare Factura - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3982306705 - Control 3711553163 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2437096118">
           <source>Specifies the value of the Tip Document D394 field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica Valoarea campului Tip Document 394.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Purchase Invoice70030 - Control SSA Tip Document D394 - Property ToolTip</note>
@@ -11060,7 +11060,7 @@
         </trans-unit>
         <trans-unit id="PageExtension 899176449 - Control 1712410168 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3580867622">
           <source>Specifies the value of the Custom Invoice No. field.</source>
-          <target/>
+          <target state="needs-l10n">Specifică valoarea câmpului Nr. Document Vamal.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Purchase Journal70012 - Control SSA Custom Invoice No. - Property ToolTip</note>
@@ -11080,63 +11080,63 @@
         </trans-unit>
         <trans-unit id="PageExtension 2055432868 - Control 1712410168 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 387971303">
           <source>Specifies the value of the Custom Invoice No. field.</source>
-          <target/>
+          <target state="needs-l10n">Specifică valoarea câmpului Nr. Document Vamal.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Purchase Order70029 - Control SSA Custom Invoice No. - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2055432868 - Control 2646786634 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 387971303">
           <source>Specifies the value of the Stare Factura field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica valoarea campului Stare Factura</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Purchase Order70029 - Control SSA Stare Factura - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2055432868 - Control 3711553163 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 387971303">
           <source>Specifies the value of the Tip Document D394 field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica Valoarea campului Tip Document 394.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Purchase Order70029 - Control SSA Tip Document D394 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3651150666 - Control 1712410168 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1555938241">
           <source>Specifies the value of the Custom Invoice No. field.</source>
-          <target/>
+          <target state="needs-l10n">Specifică valoarea câmpului Nr. Document Vamal.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Purchase Return Order70043 - Control SSA Custom Invoice No. - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3651150666 - Control 2646786634 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1555938241">
           <source>Specifies the value of the Stare Factura field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica valoarea campului Stare Factura</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Purchase Return Order70043 - Control SSA Stare Factura - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3651150666 - Control 3711553163 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1555938241">
           <source>Specifies the value of the Tip Document D394 field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica Valoarea campului Tip Document 394.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Purchase Return Order70043 - Control SSA Tip Document D394 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1847128172 - Control 3650609454 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 896930563">
           <source>Specifies the value of the Distribute Non-Deductible VAT field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica valoarea campului Distributie TVA Nedeductibila.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA PurchInvoiceSubform70032 - Control SSA Distribute Non-Ded VAT - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1847128172 - Control 1719229151 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 896930563">
           <source>Specifies the value of the Non-Ded VAT Expense Account 1 field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica valoarea campului Cont TVA Cheltuiala Neded 1.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA PurchInvoiceSubform70032 - Control SSA Non-Ded VAT Expense Acc 1 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1847128172 - Control 3632319002 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 896930563">
           <source>Specifies the value of the Non-Ded VAT Expense Account 2 field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica valoarea campului Cont TVA Cheltuiala Neded 2</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA PurchInvoiceSubform70032 - Control SSA Non-Ded VAT Expense Acc 2 - Property ToolTip</note>
@@ -11171,14 +11171,14 @@
         </trans-unit>
         <trans-unit id="PageExtension 1794041865 - Control 2646786634 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1708100201">
           <source>Specifies the value of the Stare Factura field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica valoarea campului Stare Factura</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Sales Credit Memo70024 - Control SSA Stare Factura - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1794041865 - Control 3711553163 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1708100201">
           <source>Specifies the value of the Tip Document D394 field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica Valoarea campului Tip Document 394.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Sales Credit Memo70024 - Control SSA Tip Document D394 - Property ToolTip</note>
@@ -11212,21 +11212,21 @@
         </trans-unit>
         <trans-unit id="PageExtension 3240693058 - Control 2646786634 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4034894651">
           <source>Specifies the value of the Stare Factura field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica valoarea campului Stare Factura</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Sales Invoice70023 - Control SSA Stare Factura - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3240693058 - Control 3711553163 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4034894651">
           <source>Specifies the value of the Tip Document D394 field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica Valoarea campului Tip Document 394.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Sales Invoice70023 - Control SSA Tip Document D394 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2216738945 - Control 1712410168 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1727838235">
           <source>Specifies the value of the Custom Invoice No. field.</source>
-          <target/>
+          <target state="needs-l10n">Specifică valoarea câmpului Nr. Document Vamal.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Sales Journal70011 - Control SSA Custom Invoice No. - Property ToolTip</note>
@@ -11247,14 +11247,14 @@
         </trans-unit>
         <trans-unit id="PageExtension 2821797445 - Control 2646786634 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
           <source>Specifies the value of the Stare Factura field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica valoarea campului Stare Factura</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Sales Order70021 - Control SSA Stare Factura - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2821797445 - Control 3711553163 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
           <source>Specifies the value of the Tip Document D394 field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica Valoarea campului Tip Document 394.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Sales Order70021 - Control SSA Tip Document D394 - Property ToolTip</note>
@@ -11275,14 +11275,14 @@
         </trans-unit>
         <trans-unit id="PageExtension 1489618112 - Control 2646786634 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1598289728">
           <source>Specifies the value of the Stare Factura field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica valoarea campului Stare Factura</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Sales Return Order70042 - Control SSA Stare Factura - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1489618112 - Control 3711553163 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1598289728">
           <source>Specifies the value of the Tip Document D394 field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica Valoarea campului Tip Document 394.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Sales Return Order70042 - Control SSA Tip Document D394 - Property ToolTip</note>
@@ -11303,7 +11303,7 @@
         </trans-unit>
         <trans-unit id="PageExtension 697065638 - Control 1712410168 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2513602899">
           <source>Specifies the value of the Custom Invoice No. field.</source>
-          <target/>
+          <target state="needs-l10n">Specifică valoarea câmpului Nr. Document Vamal.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Value Entries70036 - Control SSA Custom Invoice No. - Property ToolTip</note>
@@ -11324,21 +11324,21 @@
         </trans-unit>
         <trans-unit id="PageExtension 1537939985 - Control 2646786634 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2248515987">
           <source>Specifies the value of the Stare Factura field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica valoarea campului Stare Factura</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA VAT Entries70019 - Control SSA Stare Factura - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1537939985 - Control 3711553163 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2248515987">
           <source>Specifies the value of the Tip Document D394 field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica Valoarea campului Tip Document 394.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA VAT Entries70019 - Control SSA Tip Document D394 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 1537939985 - Control 3928886457 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2248515987">
           <source>Specifies the value of the Tip Partener field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica valoarea campului Tip Partener.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA VAT Entries70019 - Control SSA Tip Partener - Property ToolTip</note>
@@ -11456,7 +11456,7 @@
         </trans-unit>
         <trans-unit id="PageExtension 349289022 - Control 3928886457 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4055858012">
           <source>Specifies the value of the Tip Partener field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica valoarea campului Tip Partener.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Vendor Card70015 - Control SSA Tip Partener - Property ToolTip</note>
@@ -11484,14 +11484,14 @@
         </trans-unit>
         <trans-unit id="PageExtension 3392396542 - Control 1712410168 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1567633909">
           <source>Specifies the value of the Custom Invoice No. field.</source>
-          <target/>
+          <target state="needs-l10n">Specifică valoarea câmpului Nr. Document Vamal.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA VendorLedgerEntries70016 - Control SSA Custom Invoice No. - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3392396542 - Control 2646786634 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1567633909">
           <source>Specifies the value of the Stare Factura field.</source>
-          <target/>
+          <target state="needs-l10n">Specifica valoarea campului Stare Factura</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA VendorLedgerEntries70016 - Control SSA Stare Factura - Property ToolTip</note>
@@ -11708,14 +11708,14 @@
         </trans-unit>
         <trans-unit id="TableExtension 3914587128 - Field 3711553163 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2733917450">
           <source>Tip Document D394</source>
-          <target>[NAB: SUGGESTION]Tip document D394</target>
+          <target>Tip document D394</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Cust.LedgEntry 70030 - Field SSA Tip Document D394 - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3914587128 - Field 3711553163 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2733917450">
           <source> ,Factura Fiscala,Bon Fiscal,Factura Simplificata,Borderou,File Carnet,Contract,Alte Documente</source>
-          <target>[NAB: SUGGESTION] ,Factura Fiscala,Bon Fiscal,Factura Simplificata,Borderou,File Carnet,Contract,Alte Documente</target>
+          <target state="translated"> ,Factura Fiscala,Bon Fiscal,Factura Simplificata,Borderou,File Carnet,Contract,Alte Documente</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Cust.LedgEntry 70030 - Field SSA Tip Document D394 - Property OptionCaption</note>
@@ -13429,14 +13429,14 @@
         </trans-unit>
         <trans-unit id="TableExtension 481465029 - Field 3711553163 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 406314583">
           <source>Tip Document D394</source>
-          <target>[NAB: SUGGESTION]Tip document D394</target>
+          <target>Tip document D394</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Vendor Ledger Entry70011 - Field SSA Tip Document D394 - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 481465029 - Field 3711553163 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 406314583">
           <source> ,Factura Fiscala,Bon Fiscal,Factura Simplificata,Borderou,File Carnet,Contract,Alte Documente</source>
-          <target>[NAB: SUGGESTION] ,Factura Fiscala,Bon Fiscal,Factura Simplificata,Borderou,File Carnet,Contract,Alte Documente</target>
+          <target state="translated"> ,Factura Fiscala,Bon Fiscal,Factura Simplificata,Borderou,File Carnet,Contract,Alte Documente</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Vendor Ledger Entry70011 - Field SSA Tip Document D394 - Property OptionCaption</note>

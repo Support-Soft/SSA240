@@ -135,7 +135,7 @@ report 71100 "SSA Inv. Non-Inv Purch. Rcpt."
         CalcInvDisc: Boolean;
         InvPostingDate: Date;
         Text003: Label 'The specified invoice posting date is already overdue for some receipts. Do you still want to post the invoices?';
-        Text004: Label '<CM+15D>';
+        Text004: Label '<CM+15D>', Locked = true;
         IncDate: Boolean;
         Text005: Label 'Please enter the posting date.';
 

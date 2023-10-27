@@ -137,7 +137,7 @@ report 71101 "SSA Inv. Non-Inv Sales Shpt."
         Text001: Label 'Posting invoices  #1########## @2@@@@@@@@@@@@@';
         Text002: Label '%1 invoices out of a total of %2 have now been posted.';
         Text003: Label 'The specified invoice posting date is already overdue for some shipments. Do you still want to post the invoices?';
-        Text004: Label '<CM+15D>';
+        Text004: Label '<CM+15D>', Locked = true;
         Text005: Label 'Please enter the posting date.';
 
     procedure CalculateInvoiceDiscount()

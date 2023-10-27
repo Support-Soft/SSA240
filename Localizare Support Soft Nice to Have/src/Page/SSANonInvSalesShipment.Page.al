@@ -387,7 +387,7 @@ page 71101 "SSA Non-Inv Sales Shipment"
         PostNonInvSalesShpt: Report "SSA Inv. Non-Inv Sales Shpt.";
         SalesPost: Codeunit "Sales-Post";
         Text000: Label 'Do you want to post the invoice?';
-        Text001: Label '<CM+15D>';
+        Text001: Label '<CM+15D>', Locked = true;
         Text002: Label 'There is nothing to post.';
         Text003: Label 'The specified invoice posting date is overdue already. Do you still want to post the invoice?';
         InvPostingDate: Date;

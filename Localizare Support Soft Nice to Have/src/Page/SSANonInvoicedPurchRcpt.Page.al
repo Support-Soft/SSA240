@@ -394,7 +394,7 @@ page 71102 "SSA Non-Invoiced Purch. Rcpt."
         SugNonInvPurchRcpt: Report "SSA Sug. Non-Inv Purch. Rcpt.";
         PurchPost: Codeunit "Purch.-Post";
         InvPostingDate: Date;
-        Text001: Label '<CM+15D>';
+        Text001: Label '<CM+15D>', Locked = true;
         Text002: Label 'There is nothing to post.';
         Text003: Label 'The specified invoice posting date is overdue already. Do you still want to post the invoice?';
         Text004: Label 'Please enter the posting date.';
