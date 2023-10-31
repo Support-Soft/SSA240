@@ -248,23 +248,7 @@ table 70506 "SSA Payment Header"
                     InitBankAccount;
 
                 //SSM729>>
-                case "Account Type" of
-                    "Account Type"::Customer:
-                        CreateDim(
-                          DATABASE::Customer, "Account No.");
-                    "Account Type"::Vendor:
-                        CreateDim(
-                          DATABASE::Vendor, "Account No.");
-                    "Account Type"::"Fixed Asset":
-                        CreateDim(
-                          DATABASE::"Fixed Asset", "Account No.");
-                    "Account Type"::"G/L Account":
-                        CreateDim(
-                          DATABASE::"G/L Account", "Account No.");
-                    "Account Type"::"Bank Account":
-                        CreateDim(
-                          DATABASE::"Bank Account", "Account No.");
-                end;
+                CreateDimFromDefaultDim(FieldNo("Account No."));
                 //SSM729<<
             end;
         }
@@ -776,32 +760,16 @@ table 70506 "SSA Payment Header"
         exit(Remaining = 0);
     end;
 
-    procedure CreateDim(Type1: Integer; No1: Code[20])
-    var
-        SourceCodeSetup: Record "Source Code Setup";
-        TableID: array[10] of Integer;
-        No: array[10] of Code[20];
-        OldDimSetID: Integer;
+    procedure CreateDim(DefaultDimSource: List of [Dictionary of [Integer, Code[20]]])
     begin
-        //SSM729>>
-        SourceCodeSetup.GET;
-        TableID[1] := Type1;
-        No[1] := No1;
-        // TableID[2] := Type2;
-        // No[2] := No2;
-
         "Shortcut Dimension 1 Code" := '';
         "Shortcut Dimension 2 Code" := '';
-        OldDimSetID := "Dimension Set ID";
         "Dimension Set ID" :=
-          DimMgt.GetDefaultDimID(TableID, No, SourceCodeSetup.Sales, "Shortcut Dimension 1 Code", "Shortcut Dimension 2 Code", 0, 0);
+          DimMgt.GetRecDefaultDimID(
+            Rec, CurrFieldNo, DefaultDimSource, "Source Code", "Shortcut Dimension 1 Code", "Shortcut Dimension 2 Code", 0, 0);
 
-        if (OldDimSetID <> "Dimension Set ID") and PaymentLinesExist then begin
-            MODIFY;
-            UpdateAllLineDim("Dimension Set ID", OldDimSetID);
-        end;
-        //SSM729<<
     end;
+
 
     procedure PaymentLinesExist(): Boolean
     var
@@ -862,5 +830,18 @@ table 70506 "SSA Payment Header"
                 UpdateAllLineDim("Dimension Set ID", OldDimSetID);
         end;
         //SSM729<<
+    end;
+
+    procedure CreateDimFromDefaultDim(FromFieldNo: Integer)
+    var
+        DefaultDimSource: List of [Dictionary of [Integer, Code[20]]];
+    begin
+        InitDefaultDimensionSources(DefaultDimSource, FromFieldNo);
+        CreateDim(DefaultDimSource);
+    end;
+
+    local procedure InitDefaultDimensionSources(var DefaultDimSource: List of [Dictionary of [Integer, Code[20]]]; FromFieldNo: Integer)
+    begin
+        DimMgt.AddDimSource(DefaultDimSource, DimMgt.TypeToTableID1("Account Type"), Rec."Account No.", FromFieldNo = Rec.Fieldno("Account No."));
     end;
 }

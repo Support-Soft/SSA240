@@ -1896,19 +1896,19 @@ report 70002 "SSA Adjust Exchange Rates"
     local procedure GetJnlLineDefDim(var GenJnlLine: Record "Gen. Journal Line"; var DimSetEntry: Record "Dimension Set Entry")
     var
         DimSetID: Integer;
-        TableID: array[10] of Integer;
-        No: array[10] of Code[20];
+        DefaultDimSource: List of [Dictionary of [Integer, Code[20]]];
     begin
         case GenJnlLine."Account Type" of
             GenJnlLine."Account Type"::"G/L Account":
-                TableID[1] := Database::"G/L Account";
+                DimMgt.AddDimSource(DefaultDimSource, Database::"G/L Account", GenJnlLine."Account No.");
             GenJnlLine."Account Type"::"Bank Account":
-                TableID[1] := Database::"Bank Account";
+                DimMgt.AddDimSource(DefaultDimSource, Database::"Bank Account", GenJnlLine."Account No.");
         end;
-        No[1] := GenJnlLine."Account No.";
         DimSetID :=
-          DimMgt.GetDefaultDimID(
-            TableID, No, GenJnlLine."Source Code", GenJnlLine."Shortcut Dimension 1 Code", GenJnlLine."Shortcut Dimension 2 Code", GenJnlLine."Dimension Set ID", 0);
+            DimMgt.GetDefaultDimID(
+                DefaultDimSource, GenJnlLine."Source Code",
+                GenJnlLine."Shortcut Dimension 1 Code", GenJnlLine."Shortcut Dimension 2 Code",
+                GenJnlLine."Dimension Set ID", 0);
         DimMgt.GetDimensionSet(DimSetEntry, DimSetID);
     end;
 
@@ -2672,7 +2672,7 @@ report 70002 "SSA Adjust Exchange Rates"
         Text45013656: Label 'Exchange Rate Adjmt. of %1 %2 %3 %4';
         Text45013657: Label 'Gain';
         Text45013658: Label 'Loss';
-        GainsOrLossAccNo: Code[10];
+        GainsOrLossAccNo: Code[20];
         /*
         GainOrLoss: Text[30];
         AdjDebit: Decimal;

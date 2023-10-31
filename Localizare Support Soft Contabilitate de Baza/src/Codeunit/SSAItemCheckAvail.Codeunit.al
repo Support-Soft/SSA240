@@ -140,7 +140,7 @@ codeunit 70020 "SSA Item-Check Avail."
         if OldSalesLine.Find() then begin // Find previous quantity within Check-Avail. Period
             CompanyInfo.Get();
             LookAheadDate :=
-              AvailableToPromise.GetLookAheadPeriodEndDate(
+              AvailableToPromise.GetForwardPeriodEndDate(
                 CompanyInfo."Check-Avail. Period Calc.", CompanyInfo."Check-Avail. Time Bucket", SalesLine."Shipment Date");
             if (OldSalesLine."Document Type" = OldSalesLine."Document Type"::Order) and
                (OldSalesLine."No." = SalesLine."No.") and
@@ -241,7 +241,7 @@ codeunit 70020 "SSA Item-Check Avail."
 
     local procedure QtyAvailToPromise(var Item: Record Item; CompanyInfo: Record "Company Information")
     begin
-        AvailableToPromise.QtyAvailabletoPromise(
+        AvailableToPromise.CalcQtyAvailabletoPromise(
           Item, GrossReq, SchedRcpt, Item.GetRangeMax("Date Filter"),
           CompanyInfo."Check-Avail. Time Bucket", CompanyInfo."Check-Avail. Period Calc.");
         InventoryQty := ConvertQty(AvailableToPromise.CalcAvailableInventory(Item));
@@ -260,7 +260,7 @@ codeunit 70020 "SSA Item-Check Avail."
         NewItemNetChangeBase := ConvertQtyToBaseQty(NewItemNetChange);
         OldItemNetChangeBase := ConvertQtyToBaseQty(OldItemNetChange);
         exit(
-          AvailableToPromise.EarliestAvailabilityDate(
+          AvailableToPromise.CalcEarliestAvailabilityDate(
             Item, -NewItemNetChangeBase, Item.GetRangeMax("Date Filter"), -OldItemNetChangeBase, OldItemShipmentDate, AvailableQty,
             CompanyInfo."Check-Avail. Time Bucket", CompanyInfo."Check-Avail. Period Calc."));
     end;

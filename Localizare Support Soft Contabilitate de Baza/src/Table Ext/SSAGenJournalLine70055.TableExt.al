@@ -156,7 +156,7 @@ tableextension 70055 "SSA Gen. Journal Line70055" extends "Gen. Journal Line"
             Editable = false;
             FieldClass = FlowField;
         }
-        field(70020; "SSA Posting Group"; Code[10])
+        field(70020; "SSA Posting Group"; Code[20])
         {
             Caption = 'Custom Posting Group';
             TableRelation = if ("Account Type" = const(Customer)) "Customer Posting Group" else

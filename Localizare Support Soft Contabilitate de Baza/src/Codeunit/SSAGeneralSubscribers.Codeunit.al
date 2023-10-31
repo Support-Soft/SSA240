@@ -22,7 +22,7 @@ codeunit 70023 "SSA General Subscribers"
             Clear(VATPostingSetup);
 
         GenJnlLine.InitNewLine(
-  GenJournalLine."Posting Date", GenJournalLine."Document Date", GenJournalLine.Description,
+  GenJournalLine."Posting Date", GenJournalLine."Document Date", GenJnlLine."VAT Reporting Date", GenJournalLine.Description,
   GenJournalLine."Shortcut Dimension 1 Code", GenJournalLine."Shortcut Dimension 2 Code",
   GenJournalLine."Dimension Set ID", GenJournalLine."Reason Code");
 
@@ -92,7 +92,7 @@ codeunit 70023 "SSA General Subscribers"
         GenJnlPostLine.RunWithCheck(GenJnlLine);
 
         GenJnlLine.InitNewLine(
-  GenJournalLine."Posting Date", GenJournalLine."Document Date", GenJournalLine.Description,
+  GenJournalLine."Posting Date", GenJournalLine."Document Date", GenJournalLine."VAT Reporting Date", GenJournalLine.Description,
   GenJournalLine."Shortcut Dimension 1 Code", GenJournalLine."Shortcut Dimension 2 Code",
   GenJournalLine."Dimension Set ID", GenJournalLine."Reason Code");
 
@@ -215,7 +215,7 @@ codeunit 70023 "SSA General Subscribers"
     end;
 
     [EventSubscriber(ObjectType::Report, 393, 'OnUpdateTempBufferFromVendorLedgerEntry', '', false, false)]
-    local procedure R393OnUpdateTempBufferFromVendorLedgerEntry(var TempPaymentBuffer: Record "Payment Buffer" temporary; VendorLedgerEntry: Record "Vendor Ledger Entry")
+    local procedure R393OnUpdateTempBufferFromVendorLedgerEntry_OLD(var TempPaymentBuffer: Record "Payment Buffer" temporary; VendorLedgerEntry: Record "Vendor Ledger Entry")
     begin
         //SSA969>>
         TempPaymentBuffer."SSA Vendor Posting Group" := VendorLedgerEntry."Vendor Posting Group";
@@ -231,6 +231,29 @@ codeunit 70023 "SSA General Subscribers"
     end;
 
     [EventSubscriber(ObjectType::Report, Report::"Adjust Exchange Rates", 'OnBeforeOnInitReport', '', false, false)]
+    local procedure Error_AdjustExchangeRates_OLD(var IsHandled: Boolean)
+    begin
+        //Error(Text001, Report::"Adjust Exchange Rates", report::"SSA Adjust Exchange Rates");
+        IsHandled := true;
+    end;
+
+    [EventSubscriber(ObjectType::Report, 393, 'OnUpdateVendorPaymentBufferFromVendorLedgerEntry', '', false, false)]
+    local procedure R393OnUpdateTempBufferFromVendorLedgerEntry(var TempVendorPaymentBuffer: Record "Vendor Payment Buffer" temporary; VendorLedgerEntry: Record "Vendor Ledger Entry")
+    begin
+        //SSA969>>
+        TempVendorPaymentBuffer."SSA Vendor Posting Group" := VendorLedgerEntry."Vendor Posting Group";
+        //SSA969<<
+    end;
+
+    [EventSubscriber(ObjectType::Report, 393, 'OnBeforeUpdateGnlJnlLineDimensionsFromVendorPaymentBuffer', '', false, false)]
+    local procedure R393OnBeforeUpdateGnlJnlLineDimensionsFromVendorPaymentBuffer(var GenJournalLine: Record "Gen. Journal Line"; TempVendorPaymentBuffer: Record "Vendor Payment Buffer" temporary)
+    begin
+        //SSA969>>
+        GenJournalLine."Posting Group" := TempVendorPaymentBuffer."SSA Vendor Posting Group";
+        //SSA969<<
+    end;
+
+    [EventSubscriber(ObjectType::Report, Report::"Exch. Rate Adjustment", 'OnBeforeOnInitReport', '', false, false)]
     local procedure Error_AdjustExchangeRates(var IsHandled: Boolean)
     begin
         //Error(Text001, Report::"Adjust Exchange Rates", report::"SSA Adjust Exchange Rates");

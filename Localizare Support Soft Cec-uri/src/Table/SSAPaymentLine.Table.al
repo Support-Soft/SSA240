@@ -829,7 +829,7 @@ table 70507 "SSA Payment Line"
           DimensionCreate;
         END;
         */
-        CreateDim(DimMgt.TypeToTableID1("Account Type"), "Account No.", DATABASE::"Salesperson/Purchaser", "Salesperson/Purchaser Code");
+        CreateDimFromDefaultDim(FieldNo("Account No."));
         //SSM729<<
     end;
 
@@ -1395,25 +1395,17 @@ table 70507 "SSA Payment Line"
         end;
     end;
 
-    procedure CreateDim(Type1: Integer; No1: Code[20]; Type2: Integer; No2: Code[20])
+    procedure CreateDim(DefaultDimSource: List of [Dictionary of [Integer, Code[20]]])
     var
-        TableID: array[10] of Integer;
-        No: array[10] of Code[20];
-        DimMgt: Codeunit DimensionManagement;
-        OldDimSetID: Integer;
+        SourceCode_local: Code[10];
     begin
-        //SSM729>>
-        GetSourceCode(Rec, SourceCode);
-        TableID[1] := Type1;
-        No[1] := No1;
-        TableID[2] := Type2;
-        No[2] := No2;
+        GetSourceCode(PaymentLine, SourceCode_local);
         "Shortcut Dimension 1 Code" := '';
         "Shortcut Dimension 2 Code" := '';
-        OldDimSetID := "Dimension Set ID";
         "Dimension Set ID" :=
-          DimMgt.GetDefaultDimID(TableID, No, SourceCode, "Shortcut Dimension 1 Code", "Shortcut Dimension 2 Code", 0, 0);
-        //SSM729<<
+          DimMgt.GetRecDefaultDimID(
+            Rec, CurrFieldNo, DefaultDimSource, SourceCode_local, "Shortcut Dimension 1 Code", "Shortcut Dimension 2 Code", 0, 0);
+
     end;
 
     procedure GetSourceCode(PaymentLine: Record "SSA Payment Line"; var SourceCode_Local: Code[10])
@@ -1429,5 +1421,18 @@ table 70507 "SSA Payment Line"
             end
         end;
         //SSM729<<
+    end;
+
+    procedure CreateDimFromDefaultDim(FromFieldNo: Integer)
+    var
+        DefaultDimSource: List of [Dictionary of [Integer, Code[20]]];
+    begin
+        InitDefaultDimensionSources(DefaultDimSource, FromFieldNo);
+        CreateDim(DefaultDimSource);
+    end;
+
+    local procedure InitDefaultDimensionSources(var DefaultDimSource: List of [Dictionary of [Integer, Code[20]]]; FromFieldNo: Integer)
+    begin
+        DimMgt.AddDimSource(DefaultDimSource, DimMgt.TypeToTableID1("Account Type"), Rec."Account No.", FromFieldNo = Rec.Fieldno("Account No."));
     end;
 }

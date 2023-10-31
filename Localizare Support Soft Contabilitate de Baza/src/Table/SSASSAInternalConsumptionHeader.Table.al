@@ -213,8 +213,7 @@ table 70000 "SSAInternal Consumption Header"
                     if SSASetup.Get() then
                         "Outbound Whse. Handling Time" := SSASetup."Outbound Whse. Handling Time";
 
-                CreateDim(
-                  Database::"Responsibility Center", "Responsibility Center");
+                CreateDimFromDefaultDim(FieldNo("Responsibility Center"));
 
                 if (xRec."Responsibility Center" <> "Responsibility Center") then
                     RecreateConsumptionLines(FieldCaption("Responsibility Center"));
@@ -365,6 +364,7 @@ table 70000 "SSAInternal Consumption Header"
         Text16100: Label 'Internal Consumption';
         Text064: Label 'You may have changed a dimension.\\Do you want to update the lines?';
         Text45013654: Label 'Cancel Internal Consumption %1';
+        DoYouWantToKeepExistingDimensionsQst: Label 'This will change the dimension specified on the document. Do you want to recalculate/update dimensions?';
 
     local
     procedure InitRecord()
@@ -502,23 +502,27 @@ table 70000 "SSAInternal Consumption Header"
         end;
     end;
 
-    procedure CreateDim(Type1: Integer; No1: Code[20])
+    procedure CreateDim(DefaultDimSource: List of [Dictionary of [Integer, Code[20]]])
     var
         SourceCodeSetup: Record "Source Code Setup";
-        TableID: array[10] of Integer;
-        No: array[10] of Code[20];
         OldDimSetID: Integer;
     begin
+
         SourceCodeSetup.Get();
-        TableID[1] := Type1;
-        No[1] := No1;
 
         "Shortcut Dimension 1 Code" := '';
         "Shortcut Dimension 2 Code" := '';
         OldDimSetID := "Dimension Set ID";
         "Dimension Set ID" :=
           DimMgt.GetRecDefaultDimID(
-            Rec, CurrFieldNo, TableID, No, SourceCodeSetup.Sales, "Shortcut Dimension 1 Code", "Shortcut Dimension 2 Code", 0, 0);
+            Rec, CurrFieldNo, DefaultDimSource, SourceCodeSetup.Purchases, "Shortcut Dimension 1 Code", "Shortcut Dimension 2 Code", 0, 0);
+
+        if (OldDimSetID <> "Dimension Set ID") and (OldDimSetID <> 0) and GuiAllowed and not GetHideValidationDialog() then
+            if CouldDimensionsBeKept() then
+                if not ConfirmKeepExistingDimensions(OldDimSetID) then begin
+                    "Dimension Set ID" := OldDimSetID;
+                    DimMgt.UpdateGlobalDimFromDimSetID(Rec."Dimension Set ID", Rec."Shortcut Dimension 1 Code", Rec."Shortcut Dimension 2 Code");
+                end;
 
         if (OldDimSetID <> "Dimension Set ID") and ConsumptionLinesExist() then begin
             Modify();
@@ -645,5 +649,42 @@ table 70000 "SSAInternal Consumption Header"
         isSuccess := Codeunit.Run(_PostingCodeunitID, Rec);
         if not isSuccess then
             ErrorMessageHandler.ShowErrors();
+    end;
+
+    procedure GetHideValidationDialog(): Boolean
+    begin
+        exit(HideValidationDialog);
+    end;
+
+    procedure CouldDimensionsBeKept() Result: Boolean;
+    Begin
+        if CurrFieldNo = 0 then
+            exit(false);
+        if (xRec."Responsibility Center" <> '') and (xRec."Responsibility Center" <> Rec."Responsibility Center") then
+            exit(true);
+    end;
+
+    local procedure ConfirmKeepExistingDimensions(OldDimSetID: Integer) Confirmed: Boolean
+    var
+        IsHandled: Boolean;
+    begin
+        IsHandled := false;
+        if IsHandled then
+            exit(Confirmed);
+
+        Confirmed := Confirm(DoYouWantToKeepExistingDimensionsQst);
+    end;
+
+    procedure CreateDimFromDefaultDim(FieldNo: Integer)
+    var
+        DefaultDimSource: List of [Dictionary of [Integer, Code[20]]];
+    begin
+        InitDefaultDimensionSources(DefaultDimSource, FieldNo);
+        CreateDim(DefaultDimSource);
+    end;
+
+    local procedure InitDefaultDimensionSources(var DefaultDimSource: List of [Dictionary of [Integer, Code[20]]]; FieldNo: Integer)
+    begin
+        DimMgt.AddDimSource(DefaultDimSource, Database::"Responsibility Center", Rec."Responsibility Center", FieldNo = Rec.FieldNo("Responsibility Center"));
     end;
 }

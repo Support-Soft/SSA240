@@ -139,15 +139,15 @@ codeunit 70025 "SSA Tables Subscribers"
         //SSA947<<
     end;
 
-    [EventSubscriber(ObjectType::Table, 38, 'OnValidatePurchaseHeaderPayToVendorNo', '', false, false)]
-    local procedure OnValidatePurchaseHeaderPayToVendorNo(var Sender: Record "Purchase Header"; Vendor: Record Vendor)
+    [EventSubscriber(ObjectType::Table, 38, 'OnValidatePurchaseHeaderPayToVendorNoOnBeforeCheckDocType', '', false, false)]
+    local procedure OnValidatePurchaseHeaderPayToVendorNoOnBeforeCheckDocType(var PurchaseHeader: Record "Purchase Header"; Vendor: Record Vendor)
     begin
         //SSA947>>
-        Sender.Validate("SSA VAT to Pay", Vendor."SSA VAT to Pay");
+        PurchaseHeader.Validate("SSA VAT to Pay", Vendor."SSA VAT to Pay");
         //SSA947<<
 
         //SSA968>>
-        Sender.Validate("SSA Commerce Trade No.", Vendor."SSA Commerce Trade No.");
+        PurchaseHeader.Validate("SSA Commerce Trade No.", Vendor."SSA Commerce Trade No.");
         //SSA968<<
     end;
 
@@ -168,6 +168,16 @@ codeunit 70025 "SSA Tables Subscribers"
         InvoicePostBuffer."SSA Distribute Non-Ded VAT" := PurchaseLine."SSA Distribute Non-Ded VAT";
         InvoicePostBuffer."SSA Non-Ded VAT Expense Acc 1" := PurchaseLine."SSA Non-Ded VAT Expense Acc 1";
         InvoicePostBuffer."SSA Non-Ded VAT Expense Acc 2" := PurchaseLine."SSA Non-Ded VAT Expense Acc 2";
+        //SSA948<<
+    end;
+
+    [EventSubscriber(ObjectType::Table, Database::"Invoice Posting Buffer", 'OnAfterPreparePurchase', '', false, false)]
+    local procedure T55OnAfterInvPostBufferPreparePurchase(var PurchaseLine: Record "Purchase Line"; var InvoicePostingBuffer: Record "Invoice Posting Buffer" temporary)
+    begin
+        //SSA948>>
+        InvoicePostingBuffer."SSA Distribute Non-Ded VAT" := PurchaseLine."SSA Distribute Non-Ded VAT";
+        InvoicePostingBuffer."SSA Non-Ded VAT Expense Acc 1" := PurchaseLine."SSA Non-Ded VAT Expense Acc 1";
+        InvoicePostingBuffer."SSA Non-Ded VAT Expense Acc 2" := PurchaseLine."SSA Non-Ded VAT Expense Acc 2";
         //SSA948<<
     end;
 
@@ -236,8 +246,8 @@ codeunit 70025 "SSA Tables Subscribers"
         //SSA969<<
     end;
 
-    [EventSubscriber(ObjectType::Table, Database::"Gen. Journal Line", 'OnAfterCopyGenJnlLineFromInvPostBuffer', '', true, false)]
-    local procedure OnAfterCopyGenJnlLineFromInvPostBuffer(var GenJournalLine: Record "Gen. Journal Line"; InvoicePostBuffer: Record "Invoice Post. Buffer")
+    [EventSubscriber(ObjectType::Table, Database::"Invoice Post. Buffer", 'OnAfterCopyToGenJnlLine', '', true, false)]
+    local procedure OnAfterCopyGenJnlLineFromInvPostBuffer(var GenJnlLine: Record "Gen. Journal Line"; InvoicePostBuffer: Record "Invoice Post. Buffer")
     var
         SSASetup: Record "SSA Localization Setup";
         SourceCodeSetup: Record "Source Code Setup";
@@ -245,17 +255,66 @@ codeunit 70025 "SSA Tables Subscribers"
         //SSA951>>
         SourceCodeSetup.Get();
         SSASetup.Get();
-        if ((GenJournalLine."Source Code" = SourceCodeSetup.Sales) and SSASetup."Sales Negative Line Correction") then begin
-            if (GenJournalLine.Amount > 0) and (GenJournalLine."Document Type" = GenJournalLine."Document Type"::Invoice) then
-                GenJournalLine.Correction := not GenJournalLine.Correction;
-            if (GenJournalLine.Amount < 0) and (GenJournalLine."Document Type" = GenJournalLine."Document Type"::"Credit Memo") then
-                GenJournalLine.Correction := not GenJournalLine.Correction;
+        if ((GenJnlLine."Source Code" = SourceCodeSetup.Sales) and SSASetup."Sales Negative Line Correction") then begin
+            if (GenJnlLine.Amount > 0) and (GenJnlLine."Document Type" = GenJnlLine."Document Type"::Invoice) then
+                GenJnlLine.Correction := not GenJnlLine.Correction;
+            if (GenJnlLine.Amount < 0) and (GenJnlLine."Document Type" = GenJnlLine."Document Type"::"Credit Memo") then
+                GenJnlLine.Correction := not GenJnlLine.Correction;
         end;
-        if ((GenJournalLine."Source Code" = SourceCodeSetup.Purchases) and SSASetup."Purch Negative Line Correction") then begin
-            if (GenJournalLine.Amount < 0) and (GenJournalLine."Document Type" = GenJournalLine."Document Type"::Invoice) then
-                GenJournalLine.Correction := not GenJournalLine.Correction;
-            if (GenJournalLine.Amount > 0) and (GenJournalLine."Document Type" = GenJournalLine."Document Type"::"Credit Memo") then
-                GenJournalLine.Correction := not GenJournalLine.Correction;
+        if ((GenJnlLine."Source Code" = SourceCodeSetup.Purchases) and SSASetup."Purch Negative Line Correction") then begin
+            if (GenJnlLine.Amount < 0) and (GenJnlLine."Document Type" = GenJnlLine."Document Type"::Invoice) then
+                GenJnlLine.Correction := not GenJnlLine.Correction;
+            if (GenJnlLine.Amount > 0) and (GenJnlLine."Document Type" = GenJnlLine."Document Type"::"Credit Memo") then
+                GenJnlLine.Correction := not GenJnlLine.Correction;
+        end;
+        //SSA951<<
+    end;
+
+    [EventSubscriber(ObjectType::Table, Database::"Invoice Posting Buffer", 'OnAfterCopyToGenJnlLine', '', true, false)]
+    local procedure OnAfterCopyToGenJnlLine(var GenJnlLine: Record "Gen. Journal Line"; InvoicePostingBuffer: Record "Invoice Posting Buffer" temporary)
+    var
+        SSASetup: Record "SSA Localization Setup";
+        SourceCodeSetup: Record "Source Code Setup";
+    begin
+        //SSA951>>
+        SourceCodeSetup.Get();
+        SSASetup.Get();
+        if ((GenJnlLine."Source Code" = SourceCodeSetup.Sales) and SSASetup."Sales Negative Line Correction") then begin
+            if (GenJnlLine.Amount > 0) and (GenJnlLine."Document Type" = GenJnlLine."Document Type"::Invoice) then
+                GenJnlLine.Correction := not GenJnlLine.Correction;
+            if (GenJnlLine.Amount < 0) and (GenJnlLine."Document Type" = GenJnlLine."Document Type"::"Credit Memo") then
+                GenJnlLine.Correction := not GenJnlLine.Correction;
+        end;
+        if ((GenJnlLine."Source Code" = SourceCodeSetup.Purchases) and SSASetup."Purch Negative Line Correction") then begin
+            if (GenJnlLine.Amount < 0) and (GenJnlLine."Document Type" = GenJnlLine."Document Type"::Invoice) then
+                GenJnlLine.Correction := not GenJnlLine.Correction;
+            if (GenJnlLine.Amount > 0) and (GenJnlLine."Document Type" = GenJnlLine."Document Type"::"Credit Memo") then
+                GenJnlLine.Correction := not GenJnlLine.Correction;
+        end;
+        //SSA951<<
+    end;
+
+
+    [EventSubscriber(ObjectType::Table, Database::"Invoice Posting Buffer", 'OnAfterCopyToGenJnlLineFA', '', true, false)]
+    local procedure OnAfterCopyToGenJnlLineFA(var GenJnlLine: Record "Gen. Journal Line"; InvoicePostingBuffer: Record "Invoice Posting Buffer" temporary)
+    var
+        SSASetup: Record "SSA Localization Setup";
+        SourceCodeSetup: Record "Source Code Setup";
+    begin
+        //SSA951>>
+        SourceCodeSetup.Get();
+        SSASetup.Get();
+        if ((GenJnlLine."Source Code" = SourceCodeSetup.Sales) and SSASetup."Sales Negative Line Correction") then begin
+            if (GenJnlLine.Amount > 0) and (GenJnlLine."Document Type" = GenJnlLine."Document Type"::Invoice) then
+                GenJnlLine.Correction := not GenJnlLine.Correction;
+            if (GenJnlLine.Amount < 0) and (GenJnlLine."Document Type" = GenJnlLine."Document Type"::"Credit Memo") then
+                GenJnlLine.Correction := not GenJnlLine.Correction;
+        end;
+        if ((GenJnlLine."Source Code" = SourceCodeSetup.Purchases) and SSASetup."Purch Negative Line Correction") then begin
+            if (GenJnlLine.Amount < 0) and (GenJnlLine."Document Type" = GenJnlLine."Document Type"::Invoice) then
+                GenJnlLine.Correction := not GenJnlLine.Correction;
+            if (GenJnlLine.Amount > 0) and (GenJnlLine."Document Type" = GenJnlLine."Document Type"::"Credit Memo") then
+                GenJnlLine.Correction := not GenJnlLine.Correction;
         end;
         //SSA951<<
     end;

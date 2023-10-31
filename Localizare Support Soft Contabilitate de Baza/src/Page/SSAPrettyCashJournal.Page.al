@@ -1334,32 +1334,7 @@ page 70022 "SSA Pretty Cash Journal"
                         end;
                     }
                 }
-                action(CreateFlow)
-                {
-                    ApplicationArea = All;
-                    Caption = 'Create a Flow';
-                    Image = Flow;
-                    ToolTip = 'Create a new Flow from a list of relevant Flow templates.';
-                    Visible = IsSaaS;
 
-                    trigger OnAction()
-                    var
-                        FlowServiceManagement: Codeunit "Flow Service Management";
-                        FlowTemplateSelector: Page "Flow Template Selector";
-                    begin
-                        // Opens page 6400 where the user can use filtered templates to create new flows.
-                        FlowTemplateSelector.SetSearchText(FlowServiceManagement.GetJournalTemplateFilter());
-                        FlowTemplateSelector.Run();
-                    end;
-                }
-                action(SeeFlows)
-                {
-                    ApplicationArea = All;
-                    Caption = 'See my Flows';
-                    Image = Flow;
-                    RunObject = page "Flow Selector";
-                    ToolTip = 'View and configure Flows that you created.';
-                }
             }
             group(Approval)
             {

@@ -57,9 +57,7 @@ table 70001 "SSAInternal Consumption Line"
 
                 Validate(Quantity, xRec.Quantity);
 
-                CreateDim(
-                  Database::Item, "Item No.",
-                  Database::"Responsibility Center", "Responsibility Center");
+                CreateDimFromDefaultDim(FieldNo("Item No."));
             end;
         }
         field(5; "Location Code"; Code[10])
@@ -79,7 +77,7 @@ table 70001 "SSAInternal Consumption Line"
                 GetUnitCost();
             end;
         }
-        field(6; "Posting Group"; Code[10])
+        field(6; "Posting Group"; Code[20])
         {
             Caption = 'Posting Group';
             Editable = false;
@@ -97,7 +95,7 @@ table 70001 "SSAInternal Consumption Line"
         {
             Caption = 'Description 2';
         }
-        field(10; "Unit of Measure"; Text[10])
+        field(10; "Unit of Measure"; Text[50])
         {
             Caption = 'Unit of Measure';
         }
@@ -177,7 +175,7 @@ table 70001 "SSAInternal Consumption Line"
             Caption = 'Gen. Bus. Posting Group';
             TableRelation = "Gen. Business Posting Group";
         }
-        field(17; "Gen. Prod. Posting Group"; Code[10])
+        field(17; "Gen. Prod. Posting Group"; Code[20])
         {
             Caption = 'Gen. Prod. Posting Group';
             TableRelation = "Gen. Product Posting Group";
@@ -284,9 +282,7 @@ table 70001 "SSAInternal Consumption Line"
 
             trigger OnValidate()
             begin
-                CreateDim(
-                  Database::"Responsibility Center", "Responsibility Center",
-                  Database::Item, "Item No.");
+                CreateDimFromDefaultDim(FieldNo("Responsibility Center"));
             end;
         }
         field(27; "Out-of-Stock Substitution"; Boolean)
@@ -435,7 +431,7 @@ table 70001 "SSAInternal Consumption Line"
     var
         IntConsumptionHeader: Record "SSAInternal Consumption Header";
         IntConsumptionLine2: Record "SSAInternal Consumption Line";
-        TempIntConsumptionLine: Record "SSAInternal Consumption Line";
+        TempIntConsumptionLine: Record "SSAInternal Consumption Line" temporary;
         Item: Record Item;
         ItemVariant: Record "Item Variant";
         UnitOfMeasure: Record "Unit of Measure";
@@ -447,9 +443,11 @@ table 70001 "SSAInternal Consumption Line"
         DimMgt: Codeunit DimensionManagement;
         UOMMgt: Codeunit "Unit of Measure Management";
         StatusCheckSuspended: Boolean;
+        HideValidationDialog: Boolean;
         Text001: Label 'You cannot rename a %1.';
         Text004: Label 'Change %1 from %2 to %3?';
         Text005: Label 'You cannot delete the internal consumption line because %1 is not empty.';
+        DoYouWantToKeepExistingDimensionsQst: Label 'This will change the dimension specified on the document. Do you want to recalculate/update dimensions?';
 
     local procedure InitItemAppl(OnlyApplTo: Boolean)
     begin
@@ -489,13 +487,6 @@ table 70001 "SSAInternal Consumption Line"
         end;
     end;
 
-    local
-    procedure SetConsumptionHeader(NewIntConsumptionHeader: Record "SSAInternal Consumption Header")
-    begin
-        IntConsumptionHeader := NewIntConsumptionHeader;
-        Currency.InitRoundingPrecision()
-    end;
-
     local procedure GetConsumptionHeader()
     begin
         TestField("Document No.");
@@ -524,18 +515,6 @@ table 70001 "SSAInternal Consumption Line"
 
         if ((CalledByFieldNo = CurrFieldNo) or (CalledByFieldNo = FieldNo("Shipment Date"))) and ("Item No." <> '') then
             ItemCheckAvail.IntConsLineCheck(Rec);
-    end;
-
-    local
-    procedure GetDate(): Date
-    begin
-        exit(IntConsumptionHeader."Posting Date");
-    end;
-
-    local
-    procedure SignedXX(Value: Decimal): Decimal
-    begin
-        exit(-Value);
     end;
 
     procedure ItemAvailability(AvailabilityType: Option Date,Variant,Location,Bin)
@@ -599,32 +578,6 @@ table 70001 "SSAInternal Consumption Line"
         end;
     end;
 
-    procedure OpenItemTrackingLines()
-    begin
-    end;
-
-    local
-    procedure AssignItemTrackingNo()
-    begin
-    end;
-
-    local procedure GetFieldCaption(FieldNo: Integer): Text[30]
-    var
-        "Field": Record "Field";
-    begin
-        Field.Get(Database::"SSAInternal Consumption Line", FieldNo);
-        exit(Field."Field Caption");
-    end;
-
-    local procedure GetCaptionClass(FieldNo: Integer): Text[80]
-    begin
-        if not IntConsumptionHeader.Get("Document No.") then begin
-            IntConsumptionHeader."Your Reference" := '';
-            IntConsumptionHeader.Init();
-        end;
-        exit('2,0,' + GetFieldCaption(FieldNo));
-    end;
-
     local procedure GetUnitCost()
     begin
         TestField("Item No.");
@@ -680,26 +633,7 @@ table 70001 "SSAInternal Consumption Line"
         DimMgt.UpdateGlobalDimFromDimSetID("Dimension Set ID", "Shortcut Dimension 1 Code", "Shortcut Dimension 2 Code");
     end;
 
-    procedure CreateDim(Type1: Integer; No1: Code[20]; Type2: Integer; No2: Code[20])
-    var
-        SourceCodeSetup: Record "Source Code Setup";
-        TableID: array[10] of Integer;
-        No: array[10] of Code[20];
-    begin
-        SourceCodeSetup.Get();
-        TableID[1] := Type1;
-        No[1] := No1;
 
-        TableID[2] := Type2;
-        No[2] := No2;
-
-        "Shortcut Dimension 1 Code" := '';
-        "Shortcut Dimension 2 Code" := '';
-        "Dimension Set ID" :=
-          DimMgt.GetRecDefaultDimID(
-            Rec, CurrFieldNo, TableID, No, SourceCodeSetup.Transfer,
-            "Shortcut Dimension 1 Code", "Shortcut Dimension 2 Code", IntConsumptionHeader."Dimension Set ID", Database::Item);
-    end;
 
     procedure ValidateShortcutDimCode(FieldNumber: Integer; var ShortcutDimCode: Code[20])
     begin
@@ -715,5 +649,50 @@ table 70001 "SSAInternal Consumption Line"
     procedure ShowShortcutDimCode(var ShortcutDimCode: array[8] of Code[20])
     begin
         DimMgt.GetShortcutDimensions("Dimension Set ID", ShortcutDimCode);
+    end;
+
+    procedure CreateDim(DefaultDimSource: List of [Dictionary of [Integer, Code[20]]])
+    var
+        SourceCodeSetup: Record "Source Code Setup";
+    begin
+
+        SourceCodeSetup.Get();
+
+        "Shortcut Dimension 1 Code" := '';
+        "Shortcut Dimension 2 Code" := '';
+        GetConsumptionHeader();
+        "Dimension Set ID" :=
+          DimMgt.GetRecDefaultDimID(
+            Rec, CurrFieldNo, DefaultDimSource, SourceCodeSetup.Sales,
+            "Shortcut Dimension 1 Code", "Shortcut Dimension 2 Code", IntConsumptionHeader."Dimension Set ID", Database::Customer);
+
+        DimMgt.UpdateGlobalDimFromDimSetID("Dimension Set ID", "Shortcut Dimension 1 Code", "Shortcut Dimension 2 Code");
+    end;
+
+    procedure GetHideValidationDialog(): Boolean
+    begin
+        exit(HideValidationDialog);
+    end;
+
+    procedure CouldDimensionsBeKept() Result: Boolean;
+    Begin
+        if CurrFieldNo = 0 then
+            exit(false);
+        if (xRec."Responsibility Center" <> '') and (xRec."Responsibility Center" <> Rec."Responsibility Center") then
+            exit(true);
+    end;
+
+    procedure CreateDimFromDefaultDim(FieldNo: Integer)
+    var
+        DefaultDimSource: List of [Dictionary of [Integer, Code[20]]];
+    begin
+        InitDefaultDimensionSources(DefaultDimSource, FieldNo);
+        CreateDim(DefaultDimSource);
+    end;
+
+    local procedure InitDefaultDimensionSources(var DefaultDimSource: List of [Dictionary of [Integer, Code[20]]]; FieldNo: Integer)
+    begin
+        DimMgt.AddDimSource(DefaultDimSource, Database::"Responsibility Center", Rec."Responsibility Center", FieldNo = Rec.FieldNo("Responsibility Center"));
+        DimMgt.AddDimSource(DefaultDimSource, Database::Item, Rec."Item No.", FieldNo = Rec.FieldNo("Item No."));
     end;
 }
