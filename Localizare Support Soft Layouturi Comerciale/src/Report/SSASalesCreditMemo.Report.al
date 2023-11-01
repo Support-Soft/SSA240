@@ -1060,7 +1060,7 @@ report 70902 "SSA Sales - Credit Memo"
         CustAddr: array[8] of Text[100];
         ShipToAddr: array[8] of Text[100];
         CompanyAddr: array[8] of Text[100];
-        SalesPersonText: Text[30];
+        SalesPersonText: Text;
         TotalText: Text[50];
         TotalExclVATText: Text[50];
         TotalInclVATText: Text[50];
@@ -1167,7 +1167,7 @@ report 70902 "SSA Sales - Credit Memo"
         DisplayAssemblyInformation := DisplayAsmInfo;
     end;
 
-    local procedure GetUOMText(UOMCode: Code[10]): Text[10]
+    local procedure GetUOMText(UOMCode: Code[10]): Text
     var
         UnitOfMeasure: Record "Unit of Measure";
     begin

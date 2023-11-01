@@ -525,7 +525,7 @@ report 71701 "SSA Domestic Declaration 2016"
     end;
 
     local
-    procedure InserRezumat1Buffer(_TipPartener: Integer; _Cota: Decimal; _TipOperatie: Text[30]; _TipDocument: Text[30]; _Base: Decimal; _Amount: Decimal; _NrFact: Integer)
+    procedure InserRezumat1Buffer(_TipPartener: Integer; _Cota: Decimal; _TipOperatie: Text; _TipDocument: Text; _Base: Decimal; _Amount: Decimal; _NrFact: Integer)
     begin
 
         //InsertRezumat1Buffer
@@ -620,7 +620,7 @@ report 71701 "SSA Domestic Declaration 2016"
     end;
 
     local
-    procedure InsertDetaliuBuffer(_TipPartener: Integer; _Cota: Decimal; _TipOperatie: Text[30]; _TipDocument: Text[30]; _TaxGroupCode: Code[10]; _Base: Decimal; _Amount: Decimal; _NrFact: Integer)
+    procedure InsertDetaliuBuffer(_TipPartener: Integer; _Cota: Decimal; _TipOperatie: Text; _TipDocument: Text; _TaxGroupCode: Code[10]; _Base: Decimal; _Amount: Decimal; _NrFact: Integer)
     begin
         //InsertDetaliuBuffer
 
@@ -722,7 +722,7 @@ report 71701 "SSA Domestic Declaration 2016"
     end;
 
     local
-    procedure InsertRezumat2Buffer(_TipPartener: Integer; _Cota: Decimal; _TipOperatie: Text[30]; _TipDocument: Text[30]; _Base: Decimal; _Amount: Decimal; _NrFact: Integer)
+    procedure InsertRezumat2Buffer(_TipPartener: Integer; _Cota: Decimal; _TipOperatie: Text; _TipDocument: Text; _Base: Decimal; _Amount: Decimal; _NrFact: Integer)
     begin
 
         //InsertRezumat2Buffer
@@ -1003,7 +1003,7 @@ report 71701 "SSA Domestic Declaration 2016"
     procedure UpdateRezumate()
     var
         DecLine: Record "SSA Domestic Declaration Line";
-        TaxGroupCode: Code[20];
+        TaxGroupCode: Code[10];
     begin
 
         NrFactCountBuff.Reset;

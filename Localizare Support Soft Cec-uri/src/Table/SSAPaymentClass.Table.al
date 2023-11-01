@@ -24,7 +24,7 @@ table 70501 "SSA Payment Class"
         {
             Caption = 'Name';
         }
-        field(3; "Header No. Series"; Code[10])
+        field(3; "Header No. Series"; Code[20])
         {
             Caption = 'Header No. Series';
             TableRelation = "No. Series";

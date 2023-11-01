@@ -88,7 +88,7 @@ report 71702 "SSA Get VAT Entries D394"
                                 DomesticDeclarationLine."Cod Judet D394" := Customer."SSA Cod Judet D394";
                                 DomesticDeclarationLine."Persoana Afiliata" := Customer."SSA Persoana Afiliata";
                             end;
-                        end else begin
+                        end else
                             if Vendor.Get("VAT Entry"."Bill-to/Pay-to No.") then begin
                                 DomesticDeclarationLine."Vendor/Customer Name" := Vendor.Name;
                                 DomesticDeclarationLine."Organization type" := Vendor."SSA Organization type";
@@ -98,7 +98,7 @@ report 71702 "SSA Get VAT Entries D394"
                                 DomesticDeclarationLine."Cod Judet D394" := Vendor."SSA Cod Judet D394";
                                 DomesticDeclarationLine."Persoana Afiliata" := Vendor."SSA Persoana Afiliata";
                             end;
-                        end;
+
                     DomesticDeclarationLine."Tip Operatie" := VATPostingSetup."SSA Tip Operatie";
                     DomesticDeclarationLine.Cota := VATPostingSetup."SSA Journals VAT %";
                     DomesticDeclarationLine."Tip Document D394" := "SSA Tip Document D394";

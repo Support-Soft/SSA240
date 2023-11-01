@@ -66,7 +66,7 @@ codeunit 72008 "SSAEDProcess Import E-Doc"
             if STRPOS(ZipEntry, 'semnatura') = 0 then begin
                 Clear(_TempBlobXML);
                 _TempBlobXML.CreateOutStream(XMLOutStream);
-                DataCompression.ExtractEntry(ZipEntry, XMLOutStream, ZipEntryLength);
+                ZipEntryLength := DataCompression.ExtractEntry(ZipEntry, XMLOutStream);
                 exit;
             end;
     end;

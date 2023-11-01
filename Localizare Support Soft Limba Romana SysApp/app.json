@@ -14,8 +14,6 @@
     "EULA":  "https://www.microsoft.com/en-us/download/details.aspx?id=56765",
     "help":  "https://go.microsoft.com/fwlink/?linkid=2115116",
     "url":  "https://www.microsoft.com/en-us/dynamics365/contact-us",
-    "application":  "23.0.0.0",
-    "platform": "23.0.0.0",
     "supportedLocales": ["en-US","ro-RO"],
     "resourceExposurePolicy": {
         "allowDebugging": true,

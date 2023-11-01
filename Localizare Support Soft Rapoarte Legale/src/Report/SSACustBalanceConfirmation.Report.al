@@ -550,8 +550,8 @@ report 71321 "SSA Cust. Balance Confirmation"
         Text005: Label '              The present statement of account pleads for conciliation according to the arbitrary procedure.';
         GeneralManagerNo: Code[20];
         FinancialManagerNo: Code[20];
-        Director: Text[60];
-        Contabil: Text[60];
+        Director: Text;
+        Contabil: Text;
         TxtContabil: Label 'Financial Department Director,';
         TxtDirector: Label 'Director,';
         PageCaptionLbl: Label 'Page';

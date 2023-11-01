@@ -258,7 +258,7 @@ table 70507 "SSA Payment Line"
                 CompanyInfo.CheckIBAN("Bank Account No.");
             end;
         }
-        field(28; "Agency Code"; Text[20])
+        field(28; "Agency Code"; Text[50])
         {
             Caption = 'Agency Code';
 
@@ -344,7 +344,7 @@ table 70507 "SSA Payment Line"
                 VALIDATE(Amount);
             end;
         }
-        field(39; "Bank Account Name"; Text[30])
+        field(39; "Bank Account Name"; Text[100])
         {
             Caption = 'Bank Account Name';
         }
@@ -980,7 +980,7 @@ table 70507 "SSA Payment Line"
             "Payment Address Code" := '';
     end;
 
-    procedure Check(Bank: Text[20]; Agency: Text[20]; Account: Text[30]; RIBKey: Integer): Boolean
+    procedure Check(Bank: Text; Agency: Text; Account: Text; RIBKey: Integer): Boolean
     var
         LongAccountNum: Code[30];
         Index: Integer;

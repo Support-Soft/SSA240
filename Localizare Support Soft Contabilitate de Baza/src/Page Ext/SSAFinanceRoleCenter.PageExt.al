@@ -50,9 +50,6 @@ pageextension 70071 "SSA Finance Role Center" extends "Finance Manager Role Cent
                     {
                         Caption = 'FA G/L Journals';
                         Image = Journal;
-                        Promoted = true;
-                        PromotedCategory = "Report";
-                        PromotedIsBig = true;
                         RunObject = page "Fixed Asset G/L Journal";
                         ApplicationArea = All;
                         ToolTip = 'Executes the FA G/L Journals action.';
@@ -66,9 +63,6 @@ pageextension 70071 "SSA Finance Role Center" extends "Finance Manager Role Cent
                     {
                         Caption = 'General Journals';
                         Image = Journal;
-                        Promoted = true;
-                        PromotedCategory = Category4;
-                        PromotedIsBig = true;
                         RunObject = page "General Journal";
                         ApplicationArea = All;
                         ToolTip = 'Executes the General Journals action.';

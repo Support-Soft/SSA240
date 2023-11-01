@@ -563,7 +563,7 @@ page 70500 "SSA CEC & BO Customer"
         else
             _CLE.MARKEDONLY(false);
 
-        if _CLE.FINDSET then begin
+        if _CLE.FINDSET then
             repeat
                 _CLE.CALCFIELDS("Remaining Amount", "SSA Applied Amount CEC/BO");
                 SumaNeacoperita := (_CLE."Remaining Amount" - _CLE."SSA Applied Amount CEC/BO");
@@ -579,7 +579,6 @@ page 70500 "SSA CEC & BO Customer"
                     SumaAplicata += _CLE."SSA Payment Tools Amount";
                 end;
             until (_CLE.NEXT = 0) or (SumaDeAplicat = 0);
-        end;
 
         if SumaDeAplicat <> 0 then begin
             CLE.RESET;

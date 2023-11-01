@@ -1,7 +1,7 @@
 page 70015 "SSA Closing Page"
 {
     Caption = 'Closing Page';
-    PageType = NavigatePage;
+    PageType = Card;
     PromotedActionCategories = 'Payroll,Currency valuation,Depreciation,Correction Procedures,Production Expenses,Monthly closing,Statements,Checking';
     SourceTable = "Company Information";
     ApplicationArea = All;
