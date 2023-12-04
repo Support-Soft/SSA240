@@ -4521,7 +4521,7 @@
                   <TablixMembers>
                     <TablixMember>
                       <Visibility>
-                        <Hidden>=(Fields!StartBalanceLCY.Value = 0) and (Sum(Fields!DebitAmountLCY.Value) = 0) and (Sum(Fields!CreditAmountLCY.Value) = 0)</Hidden>
+                        <Hidden>=(Fields!StartDebitBalanceLCY.Value = 0) and (Fields!StartCreditBalanceLCY.Value = 0) and (Sum(Fields!DebitAmountLCY.Value) = 0) and (Sum(Fields!CreditAmountLCY.Value) = 0)</Hidden>
                       </Visibility>
                     </TablixMember>
                     <TablixMember>
@@ -4580,12 +4580,12 @@
                     </TablixMember>
                     <TablixMember>
                       <Visibility>
-                        <Hidden>=(Fields!StartBalanceLCY.Value = 0) and (Sum(Fields!DebitAmountLCY.Value) = 0) and (Sum(Fields!CreditAmountLCY.Value) = 0)</Hidden>
+                        <Hidden>=(Fields!StartDebitBalanceLCY.Value = 0) and (Fields!StartCreditBalanceLCY.Value = 0) and (Sum(Fields!DebitAmountLCY.Value) = 0) and (Sum(Fields!CreditAmountLCY.Value) = 0)</Hidden>
                       </Visibility>
                     </TablixMember>
                     <TablixMember>
                       <Visibility>
-                        <Hidden>=(Fields!StartBalanceLCY.Value = 0) and (Sum(Fields!DebitAmountLCY.Value) = 0) and (Sum(Fields!CreditAmountLCY.Value) = 0)</Hidden>
+                        <Hidden>=(Fields!StartDebitBalanceLCY.Value = 0) and (Fields!StartCreditBalanceLCY.Value = 0) and (Sum(Fields!DebitAmountLCY.Value) = 0) and (Sum(Fields!CreditAmountLCY.Value) = 0)</Hidden>
                       </Visibility>
                     </TablixMember>
                   </TablixMembers>
@@ -5211,11 +5211,11 @@ End Function
         <Field Name="SoldMNCaption">
           <DataField>SoldMNCaption</DataField>
         </Field>
-        <Field Name="StartBalance">
-          <DataField>StartBalance</DataField>
+        <Field Name="StartDebitBalance">
+          <DataField>StartDebitBalance</DataField>
         </Field>
-        <Field Name="StartBalanceFormat">
-          <DataField>StartBalanceFormat</DataField>
+        <Field Name="StartDebitBalanceFormat">
+          <DataField>StartDebitBalanceFormat</DataField>
         </Field>
         <Field Name="StartDebitBalanceLCY">
           <DataField>StartDebitBalanceLCY</DataField>

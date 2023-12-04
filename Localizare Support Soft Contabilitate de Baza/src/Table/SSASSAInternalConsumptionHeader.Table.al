@@ -657,7 +657,7 @@ table 70000 "SSAInternal Consumption Header"
     end;
 
     procedure CouldDimensionsBeKept() Result: Boolean;
-    Begin
+    begin
         if CurrFieldNo = 0 then
             exit(false);
         if (xRec."Responsibility Center" <> '') and (xRec."Responsibility Center" <> Rec."Responsibility Center") then

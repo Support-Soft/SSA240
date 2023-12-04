@@ -34,7 +34,7 @@ pageextension 70071 "SSA Finance Role Center" extends "Finance Manager Role Cent
                         ToolTip = 'Executes the Recurring Journals action.';
                     }
                 }
-                Group(Depreciation)
+                group(Depreciation)
                 {
                     Caption = 'Depreciation';
                     action("SSA CalculateDepreciation")
@@ -55,7 +55,7 @@ pageextension 70071 "SSA Finance Role Center" extends "Finance Manager Role Cent
                         ToolTip = 'Executes the FA G/L Journals action.';
                     }
                 }
-                Group(CorrectionProcedures)
+                group(CorrectionProcedures)
                 {
                     Caption = 'Correction Procedures';
 
@@ -68,7 +68,7 @@ pageextension 70071 "SSA Finance Role Center" extends "Finance Manager Role Cent
                         ToolTip = 'Executes the General Journals action.';
                     }
                 }
-                Group(ProductionExpenses)
+                group(ProductionExpenses)
                 {
                     Caption = 'Production Expenses';
                     action("SSA AnalysisbyDimensions")

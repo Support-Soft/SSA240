@@ -74,7 +74,7 @@ report 71306 "SSA Vendor - Partner Report"
             column(SoldMNCaption; SoldMNCaption)
             {
             }
-            column(StartBalance; StartDebitBalance)
+            column(StartDebitBalance; StartDebitBalance)
             {
             }
             column(StartDebitBalanceLCY; StartDebitBalanceLCY)
@@ -103,6 +103,7 @@ report 71306 "SSA Vendor - Partner Report"
             }
             column(CompanyInfo_VATRegistrationNumber; CompanyInfo.GetVATRegistrationNumber())
             {
+
             }
             dataitem("Vendor Ledger Entry"; "Vendor Ledger Entry")
             {
@@ -208,6 +209,7 @@ report 71306 "SSA Vendor - Partner Report"
                 }
                 column(HideLine; HideLine)
                 {
+
                 }
                 dataitem("Detailed Vendor Ledg. Entry"; "Detailed Vendor Ledg. Entry")
                 {
@@ -298,6 +300,7 @@ report 71306 "SSA Vendor - Partner Report"
                         DebitAmountLCY := "Debit Amount (LCY)";
                     end;
 
+
                     if "Vendor Ledger Entry"."Currency Code" <> '' then begin
                         if ("Document Type" = "Document Type"::Payment) then begin
                             DebitAmount := Amount
@@ -366,6 +369,9 @@ report 71306 "SSA Vendor - Partner Report"
             }
 
             trigger OnAfterGetRecord()
+            var
+                DtlVendLedgEntry: Record "Detailed Vendor Ledg. Entry";
+                VendorLedgEntry: Record "Vendor Ledger Entry";
             begin
                 CLEAR(StartDebitBalance);
                 CLEAR(StartDebitBalanceLCY);
@@ -504,9 +510,11 @@ report 71306 "SSA Vendor - Partner Report"
         VendAmount: Decimal;
         VendEntryDueDate: Date;
         Correction: Decimal;
+        PrintAllHavingBal: Boolean;
         PrintOnlyOnePerPage: Boolean;
         VendLedgEntryExists: Boolean;
         AmountCaption: Text[30];
+        VendCurrencyCode: Code[10];
         Moneda: Text[30];
         SoldValuta: Boolean;
         CurrencyFilter: Text[30];
@@ -514,12 +522,16 @@ report 71306 "SSA Vendor - Partner Report"
         VendAmountLCY: Decimal;
         CreateVendLedgEntry: Record "Vendor Ledger Entry";
         MarkedVendLedgerEntry: Record "Vendor Ledger Entry";
+        ApplAmount: Decimal;
+        ApplAmountLCY: Decimal;
         DetVendLE: Record "Detailed Vendor Ledg. Entry";
+        ApplDescription: Text[60];
         TotalDebit: Decimal;
         TotalCredit: Decimal;
         DebitAmount: Decimal;
         CreditAmount: Decimal;
         ClosingDocNo: Text[250];
+        DetVLE: Record "Detailed Vendor Ledg. Entry";
         StartDebitBalance: Decimal;
         StartDebitBalanceLCY: Decimal;
         StartCreditBalance: Decimal;
@@ -538,11 +550,19 @@ report 71306 "SSA Vendor - Partner Report"
         Curs: Decimal;
         StartBalAdjLCYAppl: Decimal;
         SourceCodeSetup: Record "Source Code Setup";
+        ExportToExcel: Boolean;
+        RowNo: Integer;
+        ExcelBuf: Record "Excel Buffer";
         TVendBalanceLCY: Decimal;
         TVendBalance: Decimal;
         Text000: Label 'Period:';
+        Text50007: Label '(LCY)';
         Text50008: Label '(%1)';
         Text50005: Label 'Initial Balance At Date';
+        Text50006: Label 'Received Invoice';
+        Text50004: Label 'Remaining Amount!';
+        Text50002: Label 'Cheque paid at %1';
+        Text50003: Label 'Cheque unpaid';
         ClosingDocCaption: Label 'Closing Document No.';
         SumeDebitCaption: Label 'Debit Amount';
         SumeCreditCaption: Label 'Credit Amount';
@@ -628,3 +648,4 @@ report 71306 "SSA Vendor - Partner Report"
         MarkedVendLedgerEntry.MarkedOnly(true);
     end;
 }
+
