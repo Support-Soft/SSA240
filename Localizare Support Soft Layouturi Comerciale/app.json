@@ -2,7 +2,7 @@
   "id": "dfb745da-ceb0-45ae-9c1f-eb523805e4da",
   "name": "Localizare Support Soft Layouturi Comerciale",
   "publisher": "Support-Soft SRL",
-  "version": "23.0.0.0",
+  "version": "23.0.0.1",
   "brief": "",
   "description": "",
   "privacyStatement": "",
@@ -29,9 +29,10 @@
   ],
   "contextSensitiveHelpUrl": "https://SSA230ContabilitateBaza.com/help/",
   "resourceExposurePolicy": {
-    "allowDebugging": true,
+    "allowDebugging": false,
     "allowDownloadingSource": false,
-    "includeSourceInSymbolFile": false
+    "includeSourceInSymbolFile": false,
+    "applyToDevExtension": true
   },
   "runtime": "12.0",
   "features": ["TranslationFile"],

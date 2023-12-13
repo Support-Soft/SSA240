@@ -2,7 +2,7 @@
   "id": "24eda1b3-9468-4261-9bce-f934cdfbe269",
   "name": "Localizare Support Soft SAF-T",
   "publisher": "Support-Soft SRL",
-  "version": "23.0.0.0",
+  "version": "23.0.0.1",
   "brief": "",
   "description": "",
   "privacyStatement": "",
@@ -29,9 +29,10 @@
   ],
   "contextSensitiveHelpUrl": "https://SSA230SAF-T.com/help/",
   "resourceExposurePolicy": {
-    "allowDebugging": true,
+    "allowDebugging": false,
     "allowDownloadingSource": false,
-    "includeSourceInSymbolFile": false
+    "includeSourceInSymbolFile": false,
+    "applyToDevExtension": true
   },
   "runtime": "12.0",
   "features": [

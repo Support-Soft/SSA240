@@ -2,7 +2,7 @@
   "id": "cd959dd8-152b-4550-a3c2-97b942c719de",
   "name": "Localizare Support Soft Cec-uri",
   "publisher": "Support-Soft SRL",
-  "version": "23.0.0.0",
+  "version": "23.0.0.1",
   "brief": "",
   "description": "",
   "privacyStatement": "",
@@ -14,7 +14,7 @@
     "id": "c0c676db-b6cb-47be-b4cd-128de938af52",
     "name": "Localizare Support Soft Contabilitate de Baza",
     "publisher": "Support-Soft SRL",
-    "version": "23.0.0.0"
+    "version": "23.0.0.1"
     }],
   "screenshots": [],
   "platform": "23.0.0.0",
@@ -27,9 +27,10 @@
   ],
   "contextSensitiveHelpUrl": "https://SSA230ContabilitateBaza.com/help/",
   "resourceExposurePolicy": {
-    "allowDebugging": true,
+    "allowDebugging": false,
     "allowDownloadingSource": false,
-    "includeSourceInSymbolFile": false
+    "includeSourceInSymbolFile": false,
+    "applyToDevExtension": true
   },
   "runtime": "12.0",
   "features": ["TranslationFile"],
