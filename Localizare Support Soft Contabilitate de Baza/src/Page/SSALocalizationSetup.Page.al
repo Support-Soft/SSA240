@@ -95,6 +95,10 @@ page 70006 "SSA Localization Setup"
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Rounding Dimension Set ID field.';
                 }
+                field("Allow Post Inv. Wh Gen Bus."; Rec."Allow Post Inv. Wh Gen Bus.")
+                {
+                    ToolTip = 'Specifies the value of the Allow Post Inv. Wh Gen Bus. Grp field.';
+                }
             }
             group(Intrastat)
             {

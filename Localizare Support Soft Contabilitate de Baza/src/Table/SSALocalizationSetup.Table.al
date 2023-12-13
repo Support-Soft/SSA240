@@ -187,6 +187,10 @@ table 70006 "SSA Localization Setup"
             Caption = 'Cust. Nepl. VAT Posting Group';
             TableRelation = "VAT Business Posting Group";
         }
+        field(510; "Allow Post Inv. Wh Gen Bus."; Boolean)
+        {
+            Caption = 'Allow Post Inv. Wh Gen Bus. Grp';
+        }
     }
 
     keys

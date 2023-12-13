@@ -1,9 +1,25 @@
 codeunit 70000 "SSA C22 Item Jnl.-Post Line"
 {
-    [EventSubscriber(ObjectType::Codeunit, 22, 'OnBeforePostItemJnlLine', '', false, false)]
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Item Jnl.-Post Line", 'OnBeforePostItemJnlLine', '', false, false)]
     local procedure OnBeforePostItemJnlLine(var ItemJournalLine: Record "Item Journal Line")
+    var
+        LocalizationSetup: Record "SSA Localization Setup";
     begin
-        ItemJournalLine.TestField("Gen. Bus. Posting Group"); //SSA938
+        LocalizationSetup.SetLoadFields("Allow Post Inv. Wh Gen Bus.");
+        LocalizationSetup.Get();
+        if not LocalizationSetup."Allow Post Inv. Wh Gen Bus." then
+            ItemJournalLine.TestField("Gen. Bus. Posting Group"); //SSA938
+    end;
+
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Item Jnl.-Post Line", 'OnPostOutputOnBeforePostItem', '', false, false)]
+    local procedure OnPostOutputOnBeforePostItem(var ItemJournalLine: Record "Item Journal Line")
+    var
+        LocalizationSetup: Record "SSA Localization Setup";
+    begin
+        LocalizationSetup.SetLoadFields("Allow Post Inv. Wh Gen Bus.");
+        LocalizationSetup.Get();
+        if not LocalizationSetup."Allow Post Inv. Wh Gen Bus." then
+            ItemJournalLine.TestField("Gen. Bus. Posting Group"); //SSA938
     end;
 
     [EventSubscriber(ObjectType::Codeunit, 22, 'OnAfterInitValueEntry', '', false, false)]
