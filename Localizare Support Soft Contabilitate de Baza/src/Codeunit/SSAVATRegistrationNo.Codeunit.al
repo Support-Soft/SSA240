@@ -8,6 +8,10 @@ codeunit 70017 "SSA VAT Registration No."
         Finish: Boolean;
         TextString: Text;
         Text003: Label 'This VAT registration number has already been entered for the following vendors:\ %1';
+        NewVATRegNo: Text;
+        i: Integer;
+        TextVar: Text;
+        IntVar: Integer;
     begin
         IsHandled := true;
 
@@ -18,10 +22,18 @@ codeunit 70017 "SSA VAT Registration No."
         Vend.SetFilter("VAT Registration No.", StrSubstNo('*%1*', VATRegNo));
         Vend.SetFilter("No.", '<>%1', Number);
         if Vend.FindSet() then begin
-            Check := false;
             Finish := false;
             repeat
-                AppendString(TextString, Finish, Vend."No.");
+                CLEAR(NewVATRegNo);
+                for i := 1 to STRLEN(Vend."VAT Registration No.") do begin
+                    TextVar := COPYSTR(Vend."VAT Registration No.", i, 1);
+                    if EVALUATE(IntVar, TextVar) then
+                        NewVATRegNo += TextVar;
+                end;
+                if (NewVATRegNo = VATRegNo) then begin
+                    Check := false;
+                    AppendString(TextString, Finish, Vend."No.");
+                end;
             until (Vend.Next() = 0) or Finish;
         end;
         if not Check then
