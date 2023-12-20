@@ -562,7 +562,7 @@ codeunit 72003 "SSAEDEFactura Mgt."
     end;
 
 
-    procedure GetTaxSubtotalInfo(VATAmtLine: Record "VAT Amount Line"; SalesHeader: Record "Sales Header"; var TaxableAmount: Text; var TaxAmountCurrencyID: Text; var SubtotalTaxAmount: Text; var TaxSubtotalCurrencyID: Text; var TransactionCurrencyTaxAmount: Text; var TransCurrTaxAmtCurrencyID: Text; var TaxTotalTaxCategoryID: Text; var schemeID: Text; var TaxCategoryPercent: Text; var TaxTotalTaxSchemeID: Text)
+    procedure GetTaxSubtotalInfo(VATAmtLine: Record "VAT Amount Line"; SalesHeader: Record "Sales Header"; var TaxableAmount: Text; var TaxAmountCurrencyID: Text; var SubtotalTaxAmount: Text; var TaxSubtotalCurrencyID: Text; var TransactionCurrencyTaxAmount: Text; var TransCurrTaxAmtCurrencyID: Text; var TaxTotalTaxCategoryID: Text; var schemeID: Text; var TaxCategoryPercent: Text; var TaxTotalTaxSchemeID: Text; var TaxExemptionReason: Text)
     var
         GLSetup: Record "General Ledger Setup";
     begin
@@ -590,6 +590,13 @@ codeunit 72003 "SSAEDEFactura Mgt."
         schemeID := GetUNCL5305ListID;
         TaxCategoryPercent := Format(VATAmtLine."VAT %", 0, 9);
         TaxTotalTaxSchemeID := VATTxt;
+
+        //SSM1991>>
+        IF (TaxTotalTaxCategoryID IN [GetTaxCategoryE, GetTaxCategoryG, GetTaxCategoryK, GetTaxCategoryO, GetTaxCategoryAE]) THEN
+            TaxExemptionReason := FORMAT(VATAmtLine."SSAEDColumn Type")
+        ELSE
+            CLEAR(TaxExemptionReason);
+        //SSM1991<<
     end;
 
 
@@ -885,6 +892,7 @@ codeunit 72003 "SSAEDEFactura Mgt."
             VATAmtLine."Inv. Disc. Base Amount" := SalesLine."Line Amount";
         VATAmtLine."Invoice Discount Amount" := SalesLine."Inv. Discount Amount";
         VATAmtLine."Tax Category" := VATPostingSetup."Tax Category";
+        VATAmtLine."SSAEDColumn Type" := VATPostingSetup."SSA Column Type"; //SSM1991
         //InsertLine;
         VATAmtLine.InsertLineEfactura();
     end;

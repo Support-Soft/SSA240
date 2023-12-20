@@ -16,25 +16,6 @@
             "enableSqlInformationDebugger": true,
             "port": 23029,
             "schemaUpdateMode": "Synchronize"
-        },
-        {
-            "name": "Publish: Your own server",
-            "type": "al",
-            "request": "launch",
-            "environmentType": "OnPrem",
-            "server": "http://sandbox23/BC",
-            "serverInstance": "BC",
-            "authentication": "UserPassword",
-            "startupObjectId": 22,
-            "breakOnError": "All",
-            "breakOnRecordWrite": "None",
-            "launchBrowser": true,
-            "enableSqlInformationDebugger": true,
-            "enableLongRunningSqlStatements": true,
-            "longRunningSqlStatementsThreshold": 500,
-            "numberOfSqlStatements": 10,
-            "tenant": "default",
-            "usePublicURLFromServer": true
         }
     ]
 }

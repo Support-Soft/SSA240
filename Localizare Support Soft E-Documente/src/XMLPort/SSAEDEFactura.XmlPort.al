@@ -994,7 +994,8 @@ xmlport 72001 "SSAEDE-Factura"
                           TaxTotalTaxCategoryID,
                           Dummy,
                           TaxCategoryPercent,
-                          TaxTotalTaxSchemeID);
+                          TaxTotalTaxSchemeID,
+                          TaxExemptionReason);
                     end;
                 }
 
