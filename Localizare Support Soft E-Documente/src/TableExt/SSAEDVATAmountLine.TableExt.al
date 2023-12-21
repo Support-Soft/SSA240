@@ -2,7 +2,7 @@ tableextension 72016 "SSAEDVAT Amount Line" extends "VAT Amount Line"
 {
     fields
     {
-        field(70000; "SSAEDColumn Type"; Option)
+        field(72000; "SSAEDColumn Type"; Option)
         {
             Caption = 'Column Type';
             DataClassification = ToBeClassified;

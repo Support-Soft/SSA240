@@ -2,6 +2,25 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Attach: Your own server",
+            "type": "al",
+            "request": "attach",
+            "environmentType": "OnPrem",
+            "server": "http://192.168.13.201:8080/BC230SupportSoft",
+            "serverInstance": "BC230SupportSoft",
+            "authentication": "Windows",
+            "breakOnError": "All",
+            "breakOnRecordWrite": "None",
+            "enableSqlInformationDebugger": true,
+            "enableLongRunningSqlStatements": true,
+            "longRunningSqlStatementsThreshold": 500,
+            "numberOfSqlStatements": 10,
+            "breakOnNext": "WebServiceClient",
+            "tenant": "default",
+            "port": 23019,
+            "sessionId": 641
+        },
+        {
             "type": "al",
             "request": "launch",
             "name": "LocalizareAL",
