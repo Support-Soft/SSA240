@@ -34,12 +34,37 @@ codeunit 71102 "SSA Interogare TVA Anaf"
                 begin
                     Customer.Get(_PartnerRef);
                     ValidateCustomer(Customer, PCuiText, PName, PAddress, PscpTVA, PnrRegCom, PCity, PCounty, UpdateScpTVA, UpdateStatusTVAIncasare);
+                    Customer.Validate("Partner Type");
+                    Customer.Validate("SSA Tip Partener");
+                    Customer.Validate(Name);
+                    Customer.Validate("Name 2");
+                    Customer.Validate(Address);
+                    Customer.Validate("Address 2");
+                    Customer.Validate("SSA Not VAT Registered");
+                    Customer.Validate("VAT Registration No.");
+                    Customer.Validate("SSA Commerce Trade No.");
+                    Customer.Validate(City);
+                    Customer.Validate(County);
+                    Customer.Validate("VAT Bus. Posting Group");
                     Customer.Modify(true);
                 end;
             DATABASE::Vendor:
                 begin
                     Vendor.Get(_PartnerRef);
                     ValidateVendor(Vendor, PCuiText, PName, PAddress, PscpTVA, PnrRegCom, PstatusTvaIncasare, PCity, PCounty, PstatusSplitTVA, UpdateScpTVA, UpdateStatusTVAIncasare, UpdateStatusSplitTVA);
+                    Vendor.Validate("SSA Tip Partener");
+                    Vendor.Validate(Name);
+                    Vendor.Validate("Name 2");
+                    Vendor.Validate(Address);
+                    Vendor.Validate("Address 2");
+                    Vendor.Validate("SSA Not VAT Registered");
+                    Vendor.Validate("VAT Registration No.");
+                    Vendor.Validate("SSA VAT to Pay");
+                    Vendor.Validate("SSA Split VAT");
+                    Vendor.Validate("SSA Commerce Trade No.");
+                    Vendor.Validate(City);
+                    Vendor.Validate(County);
+                    Vendor.Validate("VAT Bus. Posting Group");
                     Vendor.Modify(true);
                 end;
         end;
@@ -47,50 +72,50 @@ codeunit 71102 "SSA Interogare TVA Anaf"
     end;
 
     [TryFunction]
-    local procedure ValidateCustomer(var _Customer: Record Customer; _PCuiText: Text; _PName: Text; _PAddress: Text; _PscpTVA: Boolean; _PnrRegCom: Text; _PCity: Text; _PCounty: Text; _UpdateScpTVA: Boolean; _UpdateStatusTVAIncasare: Boolean)
+    procedure ValidateCustomer(var _Customer: Record Customer; _PCuiText: Text; _PName: Text; _PAddress: Text; _PscpTVA: Boolean; _PnrRegCom: Text; _PCity: Text; _PCounty: Text; _UpdateScpTVA: Boolean; _UpdateStatusTVAIncasare: Boolean)
     var
         CountryRegion: Record "Country/Region";
         SSASetup: Record "SSA Localization Setup";
     begin
         //SSM2160>>
         SSASetup.Get;
-        _Customer.Validate("Partner Type", _Customer."Partner Type"::Company);
+        _Customer."Partner Type" := _Customer."Partner Type"::Company;
 
         CountryRegion.Get(_Customer."Country/Region Code");
         if CountryRegion."EU Country/Region Code" <> '' then
             if CountryRegion."EU Country/Region Code" <> 'RO' then
-                _Customer.Validate("SSA Tip Partener", _Customer."SSA Tip Partener"::"3-Fara CUI valid din UE fara RO")
+                _Customer."SSA Tip Partener" := _Customer."SSA Tip Partener"::"3-Fara CUI valid din UE fara RO"
             else
-                _Customer.Validate("SSA Tip Partener", _Customer."SSA Tip Partener"::"2-CNP PFA din RO sau CUI neinregistrat in scopuri de TVA")
+                _Customer."SSA Tip Partener" := _Customer."SSA Tip Partener"::"2-CNP PFA din RO sau CUI neinregistrat in scopuri de TVA"
         else
-            _Customer.Validate("SSA Tip Partener", _Customer."SSA Tip Partener"::"4-Fara CUI valid din afara UE fara RO");
+            _Customer."SSA Tip Partener" := _Customer."SSA Tip Partener"::"4-Fara CUI valid din afara UE fara RO";
 
         if _PName <> '' then begin
-            _Customer.Validate(Name, CopyStr(_PName, 1, MaxStrLen(_Customer.Name)));
-            _Customer.Validate("Name 2", CopyStr(_PName, MaxStrLen(_Customer.Name) + 1, MaxStrLen(_Customer."Name 2")));
+            _Customer.Name := CopyStr(_PName, 1, MaxStrLen(_Customer.Name));
+            _Customer."Name 2" := CopyStr(_PName, MaxStrLen(_Customer.Name) + 1, MaxStrLen(_Customer."Name 2"));
         end;
 
         if _PAddress <> '' then begin
-            _Customer.Validate(Address, CopyStr(_PAddress, 1, MaxStrLen(_Customer.Address)));
-            _Customer.Validate("Address 2", CopyStr(_PAddress, MaxStrLen(_Customer.Address) + 1, MaxStrLen(_Customer."Address 2")));
+            _Customer.Address := CopyStr(_PAddress, 1, MaxStrLen(_Customer.Address));
+            _Customer."Address 2" := CopyStr(_PAddress, MaxStrLen(_Customer.Address) + 1, MaxStrLen(_Customer."Address 2"));
         end;
 
         if _UpdateScpTVA then begin
             if _PscpTVA then begin
-                _Customer.Validate("SSA Not VAT Registered", false);
-                _Customer.Validate("SSA Tip Partener", _Customer."SSA Tip Partener"::"1-CUI Valid din RO si din afara inreg. in scopuri de TVA in RO");
+                _Customer."SSA Not VAT Registered" := false;
+                _Customer."SSA Tip Partener" := _Customer."SSA Tip Partener"::"1-CUI Valid din RO si din afara inreg. in scopuri de TVA in RO";
                 if ('RO' + _PCuiText) <> _Customer."VAT Registration No." then
-                    _Customer.Validate("VAT Registration No.", 'RO' + _PCuiText);
+                    _Customer."VAT Registration No." := 'RO' + _PCuiText;
             end else begin
-                _Customer.Validate("SSA Not VAT Registered", true);
-                _Customer.Validate("SSA Tip Partener", _Customer."SSA Tip Partener"::"2-CNP PFA din RO sau CUI neinregistrat in scopuri de TVA");
+                _Customer."SSA Not VAT Registered" := true;
+                _Customer."SSA Tip Partener" := _Customer."SSA Tip Partener"::"2-CNP PFA din RO sau CUI neinregistrat in scopuri de TVA";
                 if _PCuiText <> _Customer."VAT Registration No." then
-                    _Customer.Validate("VAT Registration No.", _PCuiText);
+                    _Customer."VAT Registration No." := _PCuiText;
             end;
         end;
 
         if _PnrRegCom <> '' then begin
-            _Customer.Validate("SSA Commerce Trade No.", CopyStr(_PnrRegCom, 1, MaxStrLen(_Customer."SSA Commerce Trade No.")));
+            _Customer."SSA Commerce Trade No." := CopyStr(_PnrRegCom, 1, MaxStrLen(_Customer."SSA Commerce Trade No."));
         end;
 
         if _PCity <> '' then begin
@@ -98,7 +123,7 @@ codeunit 71102 "SSA Interogare TVA Anaf"
                 _PCity := COPYSTR(_PCity, 1, STRPOS(UPPERCASE(_PCity), 'MUN. BUCURESTI') - 2);
             if STRLEN(_PCity) > MAXSTRLEN(_Customer.City) then
                 MESSAGE('Localitatea a fost trunchiata. Va rog verificati.');
-            _Customer.VALIDATE(City, COPYSTR(_PCity, 1, MAXSTRLEN(_Customer.City)));
+            _Customer.City := COPYSTR(_PCity, 1, MAXSTRLEN(_Customer.City));
         end;
 
         if _PCounty <> '' then begin
@@ -106,16 +131,16 @@ codeunit 71102 "SSA Interogare TVA Anaf"
                 _PCounty := COPYSTR(_PCounty, STRPOS(UPPERCASE(_PCounty), 'MUNICIPIUL') + STRLEN('MUNICIPIUL') + 1);
             if STRLEN(_PCounty) > MAXSTRLEN(_Customer.County) then
                 MESSAGE('Judetul a fost trunchiat. Va rog verificati.');
-            _Customer.VALIDATE(County, COPYSTR(_PCounty, 1, MAXSTRLEN(_Customer.County)));
+            _Customer.County := COPYSTR(_PCounty, 1, MAXSTRLEN(_Customer.County));
         end;
 
         SSASetup.TestField("Cust. Neex. VAT Posting Group");
         if SSASetup."Sistem TVA" = SSASetup."Sistem TVA"::"Sistem de TVA la Incasare" then
             if SSASetup."Cust. Neex. VAT Posting Group" <> _Customer."VAT Bus. Posting Group" then
-                _Customer.Validate("VAT Bus. Posting Group", SSASetup."Cust. Neex. VAT Posting Group");
+                _Customer."VAT Bus. Posting Group" := SSASetup."Cust. Neex. VAT Posting Group";
         if SSASetup."Sistem TVA" = SSASetup."Sistem TVA"::"Neplatitor de TVA" then
             if SSASetup."Cust. Nepl. VAT Posting Group" <> _Customer."VAT Bus. Posting Group" then
-                _Customer.Validate("VAT Bus. Posting Group", SSASetup."Cust. Nepl. VAT Posting Group");
+                _Customer."VAT Bus. Posting Group" := SSASetup."Cust. Nepl. VAT Posting Group";
 
         //SSM2160<<
     end;
@@ -133,52 +158,52 @@ codeunit 71102 "SSA Interogare TVA Anaf"
         CountryRegion.Get(_Vendor."Country/Region Code");
         if CountryRegion."EU Country/Region Code" <> '' then
             if CountryRegion."EU Country/Region Code" <> 'RO' then
-                _Vendor.Validate("SSA Tip Partener", _Vendor."SSA Tip Partener"::"3-Fara CUI valid din UE fara RO")
+                _Vendor."SSA Tip Partener" := _Vendor."SSA Tip Partener"::"3-Fara CUI valid din UE fara RO"
             else
-                _Vendor.Validate("SSA Tip Partener", _Vendor."SSA Tip Partener"::"2-CNP PFA din RO sau CUI neinregistrat in scopuri de TVA")
+                _Vendor."SSA Tip Partener" := _Vendor."SSA Tip Partener"::"2-CNP PFA din RO sau CUI neinregistrat in scopuri de TVA"
         else
-            _Vendor.Validate("SSA Tip Partener", _Vendor."SSA Tip Partener"::"4-Fara CUI valid din afara UE fara RO");
+            _Vendor."SSA Tip Partener" := _Vendor."SSA Tip Partener"::"4-Fara CUI valid din afara UE fara RO";
 
         if _PName <> '' then begin
-            _Vendor.Validate(Name, CopyStr(_PName, 1, MaxStrLen(_Vendor.Name)));
-            _Vendor.Validate("Name 2", CopyStr(_PName, MaxStrLen(_Vendor.Name) + 1, MaxStrLen(_Vendor."Name 2")));
+            _Vendor.Name := CopyStr(_PName, 1, MaxStrLen(_Vendor.Name));
+            _Vendor."Name 2" := CopyStr(_PName, MaxStrLen(_Vendor.Name) + 1, MaxStrLen(_Vendor."Name 2"));
         end;
 
         if _PAddress <> '' then begin
-            _Vendor.Validate(Address, CopyStr(_PAddress, 1, MaxStrLen(_Vendor.Address)));
-            _Vendor.Validate("Address 2", CopyStr(_PAddress, MaxStrLen(_Vendor.Address) + 1, MaxStrLen(_Vendor."Address 2")));
+            _Vendor.Address := CopyStr(_PAddress, 1, MaxStrLen(_Vendor.Address));
+            _Vendor."Address 2" := CopyStr(_PAddress, MaxStrLen(_Vendor.Address) + 1, MaxStrLen(_Vendor."Address 2"));
         end;
 
         if _UpdateScpTVA then begin
             if _PscpTVA then begin
-                _Vendor.Validate("SSA Not VAT Registered", false);
-                _Vendor.Validate("SSA Tip Partener", _Vendor."SSA Tip Partener"::"1-CUI Valid din RO si din afara inreg. in scopuri de TVA in RO");
+                _Vendor."SSA Not VAT Registered" := false;
+                _Vendor."SSA Tip Partener" := _Vendor."SSA Tip Partener"::"1-CUI Valid din RO si din afara inreg. in scopuri de TVA in RO";
                 if ('RO' + _PCuiText) <> _Vendor."VAT Registration No." then
-                    _Vendor.Validate("VAT Registration No.", 'RO' + _PCuiText);
+                    _Vendor."VAT Registration No." := 'RO' + _PCuiText;
             end else begin
-                _Vendor.Validate("SSA Not VAT Registered", true);
-                _Vendor.Validate("SSA Tip Partener", _Vendor."SSA Tip Partener"::"2-CNP PFA din RO sau CUI neinregistrat in scopuri de TVA");
+                _Vendor."SSA Not VAT Registered" := true;
+                _Vendor."SSA Tip Partener" := _Vendor."SSA Tip Partener"::"2-CNP PFA din RO sau CUI neinregistrat in scopuri de TVA";
                 if _PCuiText <> _Vendor."VAT Registration No." then
-                    _Vendor.Validate("VAT Registration No.", _PCuiText);
+                    _Vendor."VAT Registration No." := _PCuiText;
             end;
         end;
 
         if _UpdateStatusTVAIncasare then begin
             if _PstatusTvaIncasare then
-                _Vendor.Validate("SSA VAT to Pay", true)
+                _Vendor."SSA VAT to Pay" := true
             else
-                _Vendor.Validate("SSA VAT to Pay", false);
+                _Vendor."SSA VAT to Pay" := false;
         end;
 
         if _UpdateStatusSplitTVA then begin
             if _PstatusSplitTVA then
-                _Vendor.Validate("SSA Split VAT", true)
+                _Vendor."SSA Split VAT" := true
             else
-                _Vendor.Validate("SSA Split VAT", false);
+                _Vendor."SSA Split VAT" := false;
         end;
 
         if _PnrRegCom <> '' then begin
-            _Vendor.Validate("SSA Commerce Trade No.", CopyStr(_PnrRegCom, 1, MaxStrLen(_Vendor."SSA Commerce Trade No.")));
+            _Vendor."SSA Commerce Trade No." := CopyStr(_PnrRegCom, 1, MaxStrLen(_Vendor."SSA Commerce Trade No."));
         end;
 
         if _PCity <> '' then begin
@@ -186,7 +211,7 @@ codeunit 71102 "SSA Interogare TVA Anaf"
                 _PCity := COPYSTR(_PCity, 1, STRPOS(UPPERCASE(_PCity), 'MUN. BUCURESTI') - 2);
             if STRLEN(_PCity) > MAXSTRLEN(_Vendor.City) then
                 MESSAGE('Localitatea a fost trunchiata. Va rog verificati.');
-            _Vendor.VALIDATE(City, COPYSTR(_PCity, 1, MAXSTRLEN(_Vendor.City)));
+            _Vendor.City := COPYSTR(_PCity, 1, MAXSTRLEN(_Vendor.City));
         end;
 
         if _PCounty <> '' then begin
@@ -194,15 +219,15 @@ codeunit 71102 "SSA Interogare TVA Anaf"
                 _PCounty := COPYSTR(_PCounty, STRPOS(UPPERCASE(_PCounty), 'MUNICIPIUL') + STRLEN('MUNICIPIUL') + 1);
             if STRLEN(_PCounty) > MAXSTRLEN(_Vendor.County) then
                 MESSAGE('Judetul a fost trunchiat. Va rog verificati.');
-            _Vendor.VALIDATE(County, COPYSTR(_PCounty, 1, MAXSTRLEN(_Vendor.County)));
+            _Vendor.County := COPYSTR(_PCounty, 1, MAXSTRLEN(_Vendor.County));
         end;
 
         if SSASetup."Sistem TVA" = SSASetup."Sistem TVA"::"Sistem de TVA la Incasare" then
             if SSASetup."Vendor Neex. VAT Posting Group" <> _Vendor."VAT Bus. Posting Group" then
-                _Vendor.Validate("VAT Bus. Posting Group", SSASetup."Vendor Neex. VAT Posting Group");
+                _Vendor."VAT Bus. Posting Group" := SSASetup."Vendor Neex. VAT Posting Group";
         if SSASetup."Sistem TVA" = SSASetup."Sistem TVA"::"Neplatitor de TVA" then
             if SSASetup."Vendor Nepl. VAT Posting Group" <> _Vendor."VAT Bus. Posting Group" then
-                _Vendor.Validate("VAT Bus. Posting Group", SSASetup."Vendor Nepl. VAT Posting Group");
+                _Vendor."VAT Bus. Posting Group" := SSASetup."Vendor Nepl. VAT Posting Group";
         //SSM2160<<
     end;
 
