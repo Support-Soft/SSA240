@@ -79,6 +79,8 @@ codeunit 72008 "SSAEDProcess Import E-Doc"
         EFTDetails: Record "SSAEDE-Documents Details";
         XMLDOMManagement: Codeunit "XML DOM Management";
         GenFunctions: Codeunit "SSA General Functions";
+        TempBlobXMLProcessed: Codeunit "Temp Blob";
+        XMLOutStreamProcessed: OutStream;
         XMLInStream: InStream;
         XMLText: Text;
         TextVar: Text;
@@ -87,6 +89,7 @@ codeunit 72008 "SSAEDProcess Import E-Doc"
         AmountSign: Integer;
         LinesXPath: Text;
         LinesIDXPath: Text;
+        RecRef: RecordRef;
 
     begin
         _TempBlobXML.CREATEINSTREAM(XMLInStream);
@@ -96,6 +99,15 @@ codeunit 72008 "SSAEDProcess Import E-Doc"
         end;
 
         XmlOutText := XMLDOMManagement.RemoveNamespaces(XMLText); //TextVar
+
+        /*
+        TempBlobXMLProcessed.CREATEOUTSTREAM(XMLOutStreamProcessed);
+        XMLOutStreamProcessed.WriteText(XmlOutText);
+        RecRef.GetTable(GlobalEFTLog);
+        TempBlobXMLProcessed.ToRecordRef(RecRef, GlobalEFTLog.FieldNo("XML Content"));
+        */
+        RecRef.GetTable(GlobalEFTLog);
+        _TempBlobXML.ToRecordRef(RecRef, GlobalEFTLog.FieldNo("XML Content"));
 
         TempXMLBuffer.LoadFromText(XmlOutText);
         TempXMLBufferParrent.LoadFromText(XmlOutText);

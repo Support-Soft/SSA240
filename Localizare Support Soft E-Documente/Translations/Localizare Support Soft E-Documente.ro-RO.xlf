@@ -129,6 +129,13 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSAEDE-Documents Log Entry - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 3931156184 - Method 526863064 - NamedType 3057004766" size-unit="char" translate="yes" xml:space="preserve">
+          <source>XML Content is empty</source>
+          <target state="translated">Conținutul XML este gol</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAEDE-Documents Log Entry - Method DownloadXMLContent - NamedType NoContentLbl</note>
+        </trans-unit>
         <trans-unit id="Table 3931156184 - Field 2696821940 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>ClientFileName</source>
           <target>Cale Fisier Client</target>
@@ -344,6 +351,12 @@
           <target>Suma Incl TVA</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSAEDE-Documents Log Entry - Field Total TaxInclusiveAmount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3931156184 - Field 293311276 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>XML Content</source>
+          <target>Conținut XML</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAEDE-Documents Log Entry - Field XML Content - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1813098594 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>E-Documents Setup</source>
@@ -940,6 +953,20 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Action Download File - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2154388502 - Action 1432536314 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Get XML Content</source>
+          <target state="translated">Obțineți conținutul XML</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Action GetXMLContent - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2154388502 - Action 1432536314 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Get XML Content</source>
+          <target state="translated">Obțineți conținutul XML</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Action GetXMLContent - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2154388502 - Action 4076137915 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Reset Status</source>
           <target>Resetare Status</target>
@@ -1176,16 +1203,14 @@
         </trans-unit>
         <trans-unit id="Page 1813098594 - Action 2719423354 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Update Token using Refresh Token</source>
-          <target state="translated">Actualizarea token-ului folosind Refresh Token</target>
+          <target>Actualizarea token-ului folosind Refresh Token</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDEDocuments Setup - Action RefreshToken - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 1813098594 - Action 2719423354 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Refresh Token</source>
-          <target state="translated">Reimprospatare token</target>
+          <target>Reimprospatare token</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDEDocuments Setup - Action RefreshToken - Property Caption</note>
         </trans-unit>
         <trans-unit id="XmlPort 901964794 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -1651,6 +1676,18 @@
           <target>Permite Editare Document Vanzare Inregistrat</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSAEDUser Setup - Field SSAEDAllow Edit PostedSalesDoc - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2865463155 - Field 84094506 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3353980043">
+          <source>Column Type</source>
+          <target>Tip Coloana</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSAEDVAT Amount Line - Field SSAEDColumn Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2865463155 - Field 84094506 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3353980043">
+          <source>VAT 24%,External Free of VAT Deductible,External Free of VAT Not Deductible,Internal Free of VAT Deductible,Internal Free of VAT Not Deductible,Unrealized VAT,Free of VAT,VAT 9%,Simplified VAT,Drop Ship Ded,Drop Ship Not Ded,ICS Free of VAT AD,ICS Free of VAT BC,Free of VAT Deductible,Free of VAT Not Deductible,Not Taxable,Capital 24%,Resale 24%,Needs 24%,Resale 9%,Needs 9%,ICA Resale,ICA Resale Free of VAT,ICA Resale Not Taxable,ICA Needs,ICA Needs Free of VAT,ICA Needs Not Taxable,Art 150 FC,Special Regime,VAT 5%,ICA Goods Not Registered,ICA Services,ICS Services</source>
+          <target>Cotă 24%,Extern scutite cu drept de ded.,Extern scutite fără drept de ded.,Intern scutite cu drept de ded.,Intern scutite fără drept de ded.,TVA nerealizată,Scutit de TVA,Cotă 9%,TVA simplificată,Livrare directă cu drept de ded.,Livrare directă fără drept de ded.,LIC Scutit de TVA AD,LIC Scutit de TVA BC,Scutite cu drept de deducere,Scutite fără drept de deducere,Neimpozabile,Capital 24%,Destinate revânzării 24%,Nevoile firmei 24%,Destinate revânzării 9%,Nevoile firmei 9%,AIC Revânzare,AIC Revânzare scutit de TVA,AIC Revânzare neimpozabil,AIC Nevoile firmei,AIC Nevoile firmei scutit de TVA,AIC nevoile firmei neimpozabile,Art. 150 CF,Regim special,Cotă 5%,AIC Bunuri neînregistrat,AIC Servicii,LIC Servicii</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSAEDVAT Amount Line - Field SSAEDColumn Type - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2695447208 - Field 1410440842 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4132487568">
           <source>ETransport codTipOperatiune</source>

@@ -12,20 +12,24 @@ codeunit 72002 "SSAEDExport EFactura"
         TempBlob: Codeunit "Temp Blob";
     begin
         Rec.TestField("Entry Type", Rec."Entry Type"::"Export E-Factura");
-        RecordRef.Get(Rec.RecordID);
-        case RecordRef.Number of
-            DATABASE::"Sales Invoice Header":
-                begin
-                    RecordRef.SetTable(SalesInvoiceHeader);
-                    GenerateXMLFile(SalesInvoiceHeader, TempBlob);
-                end;
-            DATABASE::"Sales Cr.Memo Header":
-                begin
-                    RecordRef.SetTable(SalesCrMemoHeader);
-                    GenerateXMLFile(SalesCrMemoHeader, TempBlob);
-                end;
-            else
-                Error('Not allowed %1', RecordRef.Number);
+        if Rec."XML Content".HasValue then
+            TempBlob.FromRecord(Rec, rec.FieldNo("XML Content"))
+        else begin
+            RecordRef.Get(Rec.RecordID);
+            case RecordRef.Number of
+                DATABASE::"Sales Invoice Header":
+                    begin
+                        RecordRef.SetTable(SalesInvoiceHeader);
+                        GenerateXMLFile(SalesInvoiceHeader, TempBlob);
+                    end;
+                DATABASE::"Sales Cr.Memo Header":
+                    begin
+                        RecordRef.SetTable(SalesCrMemoHeader);
+                        GenerateXMLFile(SalesCrMemoHeader, TempBlob);
+                    end;
+                else
+                    Error('Not allowed %1', RecordRef.Number);
+            end;
         end;
         EFacturaSetup.Get();
         if EFacturaSetup."EFactura Enable API" then
@@ -267,5 +271,7 @@ codeunit 72002 "SSAEDExport EFactura"
         SalesCrMemoHeader."Ship-to County" := FromSalesCrMemoHeader."Ship-to County";
         SalesCrMemoHeader."SSAEDShip-to Sector" := FromSalesCrMemoHeader."SSAEDShip-to Sector";
     end;
+
+
 }
 

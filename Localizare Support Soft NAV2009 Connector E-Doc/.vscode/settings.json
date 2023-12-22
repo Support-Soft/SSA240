@@ -1,0 +1,23 @@
+{
+    "CRS.OnSaveAlFileAction": "Rename",
+    "CRS.FileNamePattern": "<ObjectNameShort>.<ObjectTypeShortPascalCase>.al",
+    "CRS.FileNamePatternExtensions": "<ObjectNameShort>.<ObjectTypeShortPascalCase>.al",
+    "CRS.FileNamePatternPageCustomizations": "<ObjectNameShort>.<ObjectTypeShortPascalCase>-PageCust.al",
+    "CRS.RemovePrefixFromFilename": true,
+    "CRS.ObjectNamePrefix": "SSAEDN",
+    "CRS.RenameWithGit": true,
+    "al.codeAnalyzers": [
+        "${UICop}",
+        "${CodeCop}",
+        "${PerTenantExtensionCop}"
+    ],
+    "al.ruleSetPath": ".codeAnalysis\\SSA.ruleset.json",
+    "editor.formatOnSave": true,
+    "al.backgroundCodeAnalysis": true,
+    "al.enableCodeAnalysis": true,
+    "al.enableCodeActions": true,
+    "al.assemblyProbingPaths": [
+        "./.netpackages",
+        "c:/Windows/assembly/"
+    ]
+}

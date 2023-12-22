@@ -10,7 +10,7 @@ page 72000 "SSAEDE-Documents Log Entries"
     {
         area(content)
         {
-            repeater(Group)
+            repeater(Control1)
             {
                 field("Entry No."; Rec."Entry No.")
                 {
@@ -200,6 +200,18 @@ page 72000 "SSAEDE-Documents Log Entries"
                         end;
                     end;
                 }
+                action(GetXMLContent)
+                {
+                    Caption = 'Get XML Content';
+                    Promoted = true;
+                    PromotedCategory = Process;
+                    PromotedIsBig = true;
+                    ToolTip = 'Get XML Content';
+                    trigger OnAction()
+                    begin
+                        Rec.DownloadXMLContent();
+                    end;
+                }
             }
             group(Export)
             {
@@ -283,6 +295,17 @@ page 72000 "SSAEDE-Documents Log Entries"
             }
         }
     }
+    trigger OnAfterGetRecord()
+    begin
+
+        IF Rec."ID Descarcare" = '' THEN BEGIN
+            CLEAR(Rec."Created Purchase Invoice No.");
+            CLEAR(Rec."Posted Purchase Invoice No.");
+            CLEAR(Rec."Posted Purch. Credit Memo No.");
+            CLEAR(Rec."Purchase Invoice Amount");
+            CLEAR(Rec."Purch.Inv Amount Including VAT");
+        END;
+    end;
 }
 
 

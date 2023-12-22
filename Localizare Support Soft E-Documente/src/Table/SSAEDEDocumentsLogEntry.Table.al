@@ -160,6 +160,11 @@ table 72000 "SSAEDE-Documents Log Entry"
             Caption = 'Total TaxExclusiveAmount';
             DataClassification = CustomerContent;
         }
+        field(300; "XML Content"; Blob)
+        {
+            Caption = 'XML Content';
+            DataClassification = CustomerContent;
+        }
         field(10000; "Created Purchase Invoice No."; Code[20])
         {
             Caption = 'Created Purchase Invoice No.';
@@ -239,6 +244,46 @@ table 72000 "SSAEDE-Documents Log Entry"
             _ETransportLogEntry.Modify(true);
 
         until _ETransportLogEntry.Next = 0;
+    end;
+
+    procedure SetXMLContent(XMLContent: Text)
+    var
+        OutStr: OutStream;
+    begin
+        Rec.CalcFields("XML Content");
+        if Rec."XML Content".HasValue then
+            if GuiAllowed then
+                if not Confirm('Do you want to overwrite XML Content?', false) then
+                    exit;
+        Rec."XML Content".CreateOutStream(OutStr);
+        OutStr.WriteText(XMLContent);
+        Rec.Modify();
+    end;
+
+    procedure GetXMLContent() XMLContent: Text
+    var
+        InStr: InStream;
+    begin
+        Rec.CalcFields("XML Content");
+        Rec."XML Content".CreateInStream(InStr);
+        InStr.ReadText(XMLContent);
+        exit(XMLContent);
+    end;
+
+    procedure DownloadXMLContent()
+    var
+        InStr: InStream;
+        FileMgt: Codeunit "File Management";
+        NoContentLbl: Label 'XML Content is empty';
+        FileName: Text;
+    begin
+        Rec.CalcFields("XML Content");
+        if not Rec."XML Content".HasValue then
+            Error(NoContentLbl);
+
+        Rec."XML Content".CreateInStream(InStr);
+        FileName := 'XMLContent.xml';
+        DownloadFromStream(InStr, 'Export', '', 'All Files (*.*)|*.*', FileName);
     end;
 }
 
