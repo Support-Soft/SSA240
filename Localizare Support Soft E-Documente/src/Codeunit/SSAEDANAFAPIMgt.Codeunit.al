@@ -52,7 +52,7 @@ codeunit 72007 "SSAEDANAF API Mgt"
         Headers.Add('Authorization', StrSubstNo('Bearer %1', _Token));
         Headers.Add('Accept-Encoding', 'gzip, deflate, br');
 
-        _TempBlobRequest.CreateInStream(BodyInstr);
+        _TempBlobRequest.CreateInStream(BodyInstr, TextEncoding::UTF8);
         RequestContent.WriteFrom(BodyInstr);
         RequestContent.GetHeaders(ContentHeaders);
         if ContentHeaders.Contains('Content-Type') then
@@ -73,7 +73,7 @@ codeunit 72007 "SSAEDANAF API Mgt"
         TempXML: Record "XML Buffer" temporary;
         InStr: InStream;
     begin
-        _TempBlob.CreateInStream(InStr);
+        _TempBlob.CreateInStream(InStr, TextEncoding::UTF8);
         TempXML.LoadFromStream(InStr);
 
         TempXML.FindNodesByXPath(TempXML, 'dateResponse');
@@ -139,7 +139,7 @@ codeunit 72007 "SSAEDANAF API Mgt"
         TempXML: Record "XML Buffer" temporary;
         InStr: InStream;
     begin
-        _TempBlob.CreateInStream(InStr);
+        _TempBlob.CreateInStream(InStr, TextEncoding::UTF8);
         TempXML.LoadFromStream(InStr);
 
         TempXML.FindNodesByXPath(TempXML, 'stare');
@@ -193,9 +193,62 @@ codeunit 72007 "SSAEDANAF API Mgt"
 
         _TempBlob.CreateInStream(ResponseInStream, TEXTENCODING::UTF8);
         Response.Content.ReadAs(ResponseInStream);
-        _TempBlob.CreateOutStream(ResponseOutStream);
+        _TempBlob.CreateOutStream(ResponseOutStream, TextEncoding::UTF8);
         CopyStream(ResponseOutStream, ResponseInStream);
     end;
+
+    procedure DescarcareMesajPDF(_IDDescarcare: Text; var _TempBlob: Codeunit "Temp Blob")
+    var
+        EFSetup: Record "SSAEDEDocuments Setup";
+        TempBlobZIP: Codeunit "Temp Blob";
+        TempBlobXML: Codeunit "Temp Blob";
+        ProcessEFactura: Codeunit "SSAEDProcess Import E-Doc";
+        URL: Text;
+    begin
+        DescarcareMesaj(_IDDescarcare, TempBlobZIP);
+        ProcessEFactura.UnzippFiles(TempBlobZIP, TempBlobXML);
+        EFSetup.Get;
+
+        EFSetup.TestField("URL EFactura PDF");
+        URL := EFSetup."EFactura Test Descarcare URL";
+
+        SendRequest_DescarcareMesaj(URL, TempBlobXML, _TempBlob);
+    end;
+
+    local procedure SendRequest_DescarcareMesaj(_URL: Text; var _TempBlobRequest: Codeunit "Temp Blob"; var _TempBlobResponse: Codeunit "Temp Blob")
+    var
+        Client: HttpClient;
+        Headers: HttpHeaders;
+        ContentHeaders: HttpHeaders;
+        Response: HttpResponseMessage;
+        ResponseInStream: InStream;
+        ResponseOutStream: OutStream;
+        RequestContent: HttpContent;
+        ContentText: Text;
+        ReqInstream: InStream;
+    begin
+        Headers := Client.DefaultRequestHeaders;
+        Headers.Add('Accept', '*/*');
+        Headers.Add('Connection', 'keep-alive');
+        Headers.Add('Accept-Encoding', 'gzip, deflate, br');
+
+        _TempBlobRequest.CreateInStream(ReqInstream, TextEncoding::UTF8);
+        ReqInstream.Read(ContentText);
+
+        RequestContent.WriteFrom(ContentText);
+        RequestContent.GetHeaders(ContentHeaders);
+        if ContentHeaders.Contains('Content-Type') then
+            ContentHeaders.Remove('Content-Type');
+        ContentHeaders.Add('Content-Type', 'text/plain');
+        if not Client.Post(_URL, RequestContent, Response) or (not Response.IsSuccessStatusCode()) then
+            Error(Response.ReasonPhrase);
+
+        _TempBlobResponse.CreateInStream(ResponseInStream, TEXTENCODING::UTF8);
+        Response.Content.ReadAs(ResponseInStream);
+        _TempBlobResponse.CreateOutStream(ResponseOutStream, TextEncoding::UTF8);
+        CopyStream(ResponseOutStream, ResponseInStream);
+    end;
+
 
     procedure GetListaMesaje()
     var

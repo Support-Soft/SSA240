@@ -49,7 +49,7 @@ codeunit 72008 "SSAEDProcess Import E-Doc"
         ProcessXMLFile(TempBlobXML);
     end;
 
-    local procedure UnzippFiles(var _TempBlobZIP: Codeunit "Temp Blob"; var _TempBlobXML: Codeunit "Temp Blob")
+    procedure UnzippFiles(var _TempBlobZIP: Codeunit "Temp Blob"; var _TempBlobXML: Codeunit "Temp Blob")
     var
         DataCompression: Codeunit "Data Compression";
         XMLOutStream: OutStream;
@@ -79,8 +79,6 @@ codeunit 72008 "SSAEDProcess Import E-Doc"
         EFTDetails: Record "SSAEDE-Documents Details";
         XMLDOMManagement: Codeunit "XML DOM Management";
         GenFunctions: Codeunit "SSA General Functions";
-        TempBlobXMLProcessed: Codeunit "Temp Blob";
-        XMLOutStreamProcessed: OutStream;
         XMLInStream: InStream;
         XMLText: Text;
         TextVar: Text;
@@ -89,7 +87,6 @@ codeunit 72008 "SSAEDProcess Import E-Doc"
         AmountSign: Integer;
         LinesXPath: Text;
         LinesIDXPath: Text;
-        RecRef: RecordRef;
 
     begin
         _TempBlobXML.CREATEINSTREAM(XMLInStream, TextEncoding::UTF8);

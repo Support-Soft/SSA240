@@ -287,7 +287,6 @@ table 72000 "SSAEDE-Documents Log Entry"
     procedure DownloadXMLContent()
     var
         InStr: InStream;
-        FileMgt: Codeunit "File Management";
         NoContentLbl: Label 'XML Content is empty';
         FileName: Text;
     begin

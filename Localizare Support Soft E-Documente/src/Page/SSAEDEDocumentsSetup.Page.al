@@ -133,6 +133,10 @@ page 72001 "SSAEDEDocuments Setup"
                 {
                     ToolTip = 'Specifies the value of the Nr. Zile Preluare ListaMesaje field.';
                 }
+                field("URL EFactura PDF"; Rec."URL EFactura PDF")
+                {
+                    ToolTip = 'Specifies the value of the URL EFactura PDF field.';
+                }
             }
             group(ETransport)
             {

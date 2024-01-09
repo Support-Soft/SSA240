@@ -177,13 +177,13 @@ page 72000 "SSAEDE-Documents Log Entries"
                         Rec.ResetStatus(ROFacturaTransportLogEntry);
                     end;
                 }
-                action("Download File")
+                action("Download ZIP File")
                 {
-                    Caption = 'Download File';
+                    Caption = 'Download ZIP File';
                     Promoted = true;
                     PromotedCategory = Process;
                     PromotedIsBig = true;
-                    ToolTip = 'Download File';
+                    ToolTip = 'Download ZIP File';
 
                     trigger OnAction()
                     var
@@ -208,6 +208,37 @@ page 72000 "SSAEDE-Documents Log Entries"
                             TempBlob.CreateInStream(InStr);
                             FileName := Rec."ID Descarcare" + '.zip';
                             DownloadFromStream(InStr, 'Save file', '', 'Zip File (*.zip)|*.zip', FileName);
+
+                        end;
+                    end;
+                }
+                action("Download PDF File")
+                {
+                    Caption = 'Download PDF File';
+                    Promoted = true;
+                    PromotedCategory = Process;
+                    PromotedIsBig = true;
+                    ToolTip = 'Download PDF File';
+
+                    trigger OnAction()
+                    var
+                        ROFacturaTransportLogEntry: Record "SSAEDE-Documents Log Entry";
+                        ANAFAPIMgt: Codeunit "SSAEDANAF API Mgt";
+                        TempBlob: Codeunit "Temp Blob";
+                        InStr: InStream;
+                        FileName: Text;
+                    begin
+                        ROFacturaTransportLogEntry := Rec;
+                        CurrPage.SetSelectionFilter(ROFacturaTransportLogEntry);
+
+                        if ROFacturaTransportLogEntry."Entry Type" = ROFacturaTransportLogEntry."Entry Type"::"Import E-Factura" then begin
+                            ROFacturaTransportLogEntry := Rec;
+                            CurrPage.SetSelectionFilter(ROFacturaTransportLogEntry);
+                            ROFacturaTransportLogEntry.TestField("ID Descarcare");
+                            ANAFAPIMgt.DescarcareMesajPDF(ROFacturaTransportLogEntry."ID Descarcare", TempBlob);
+                            TempBlob.CreateInStream(InStr);
+                            FileName := Rec."ID Descarcare" + '.pdf';
+                            DownloadFromStream(InStr, 'Save file', '', 'PDF File (*.pdf)|*.pdf', FileName);
 
                         end;
                     end;

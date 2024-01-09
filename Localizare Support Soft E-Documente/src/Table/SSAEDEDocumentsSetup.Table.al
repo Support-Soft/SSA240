@@ -174,6 +174,11 @@ table 72001 "SSAEDEDocuments Setup"
             Caption = 'Nr. Zile Preluare ListaMesaje';
             DataClassification = CustomerContent;
         }
+        field(300; "URL EFactura PDF"; Text[250])
+        {
+            Caption = 'URL EFactura PDF';
+            DataClassification = CustomerContent;
+        }
     }
 
     keys
