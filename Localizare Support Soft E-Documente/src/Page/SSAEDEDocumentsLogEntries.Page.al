@@ -137,6 +137,18 @@ page 72000 "SSAEDE-Documents Log Entries"
                 {
                     ToolTip = 'Specifies the value of the Total TaxInclusiveAmount field.';
                 }
+                field("Data Scadenta"; Rec."Data Scadenta")
+                {
+                    ToolTip = 'Specifies the value of the Data Scadenta field.';
+                }
+                field("Nr. Factura Furnizor"; Rec."Nr. Factura Furnizor")
+                {
+                    ToolTip = 'Specifies the value of the Nr. Factura Furnizor field.';
+                }
+                field("Metoda de Plata"; Rec."Metoda de Plata")
+                {
+                    ToolTip = 'Specifies the value of the Metoda de Plata field.';
+                }
             }
         }
     }
@@ -298,13 +310,13 @@ page 72000 "SSAEDE-Documents Log Entries"
     trigger OnAfterGetRecord()
     begin
 
-        IF Rec."ID Descarcare" = '' THEN BEGIN
+        if Rec."ID Descarcare" = '' then begin
             CLEAR(Rec."Created Purchase Invoice No.");
             CLEAR(Rec."Posted Purchase Invoice No.");
             CLEAR(Rec."Posted Purch. Credit Memo No.");
             CLEAR(Rec."Purchase Invoice Amount");
             CLEAR(Rec."Purch.Inv Amount Including VAT");
-        END;
+        end;
     end;
 }
 

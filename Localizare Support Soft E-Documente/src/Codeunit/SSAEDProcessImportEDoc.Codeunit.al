@@ -92,22 +92,18 @@ codeunit 72008 "SSAEDProcess Import E-Doc"
         RecRef: RecordRef;
 
     begin
-        _TempBlobXML.CREATEINSTREAM(XMLInStream);
+        _TempBlobXML.CREATEINSTREAM(XMLInStream, TextEncoding::UTF8);
+
         while not XMLInStream.EOS do begin
             XMLInStream.READTEXT(TextVar);
             XMLText += TextVar;
         end;
 
-        XmlOutText := XMLDOMManagement.RemoveNamespaces(XMLText); //TextVar
+        //TempBlobXMLProcessed.CREATEOUTSTREAM(XMLOutStreamProcessed);
+        //XMLOutStreamProcessed.WriteText(XMLText);
+        GlobalEFTLog.SetXMLContent(XMLText);
 
-        /*
-        TempBlobXMLProcessed.CREATEOUTSTREAM(XMLOutStreamProcessed);
-        XMLOutStreamProcessed.WriteText(XmlOutText);
-        RecRef.GetTable(GlobalEFTLog);
-        TempBlobXMLProcessed.ToRecordRef(RecRef, GlobalEFTLog.FieldNo("XML Content"));
-        */
-        RecRef.GetTable(GlobalEFTLog);
-        _TempBlobXML.ToRecordRef(RecRef, GlobalEFTLog.FieldNo("XML Content"));
+        XmlOutText := XMLDOMManagement.RemoveNamespaces(XMLText); //TextVar
 
         TempXMLBuffer.LoadFromText(XmlOutText);
         TempXMLBufferParrent.LoadFromText(XmlOutText);
@@ -146,6 +142,18 @@ codeunit 72008 "SSAEDProcess Import E-Doc"
 
         TempXMLBuffer.FindNodesByXPath(TempXMLBuffer, 'LegalMonetaryTotal/TaxExclusiveAmount');
         GlobalEFTLog."Total TaxExclusiveAmount" := GenFunctions.ConvertTextToDecimal(TempXMLBuffer.GetValue());
+
+        //SSM2434>>
+        TempXMLBuffer.FindNodesByXPath(TempXMLBuffer, 'DueDate');
+        Evaluate(GlobalEFTLog."Data Scadenta", TempXMLBuffer.GetValue());
+
+        TempXMLBuffer.FindNodesByXPath(TempXMLBuffer, 'ID');
+        GlobalEFTLog."Nr. Factura Furnizor" := TempXMLBuffer.GetValue();
+
+        TempXMLBuffer.FindNodesByXPath(TempXMLBuffer, 'PaymentMeans/PaymentMeansCode');
+        GlobalEFTLog."Metoda de Plata" := TempXMLBuffer.GetValue();
+        //SSM2434<<
+
         GetVendorNo(GlobalEFTLog."Supplier ID", GlobalEFTLog."NAV Vendor No.", GlobalEFTLog."NAV Vendor Name");
 
         EFTDetails.RESET;

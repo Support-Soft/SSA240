@@ -165,6 +165,21 @@ table 72000 "SSAEDE-Documents Log Entry"
             Caption = 'XML Content';
             DataClassification = CustomerContent;
         }
+        field(310; "Data Scadenta"; Date)
+        {
+            Caption = 'Data Scadenta';
+            DataClassification = CustomerContent;
+        }
+        field(320; "Nr. Factura Furnizor"; Text[50])
+        {
+            Caption = 'Nr. Factura Furnizor';
+            DataClassification = CustomerContent;
+        }
+        field(330; "Metoda de Plata"; Text[30])
+        {
+            Caption = 'Metoda de Plata';
+            DataClassification = CustomerContent;
+        }
         field(10000; "Created Purchase Invoice No."; Code[20])
         {
             Caption = 'Created Purchase Invoice No.';
@@ -239,8 +254,7 @@ table 72000 "SSAEDE-Documents Log Entry"
             _ETransportLogEntry.ServerFilePath := '';
             _ETransportLogEntry.ClientFileName := '';
             _ETransportLogEntry."Stare Mesaj" := '';
-            if _ETransportLogEntry."Entry Type" <> _ETransportLogEntry."Entry Type"::"Import E-Factura" then
-                _ETransportLogEntry."ID Descarcare" := '';
+            _ETransportLogEntry."ID Descarcare" := '';
             _ETransportLogEntry.Modify(true);
 
         until _ETransportLogEntry.Next = 0;
@@ -255,7 +269,7 @@ table 72000 "SSAEDE-Documents Log Entry"
             if GuiAllowed then
                 if not Confirm('Do you want to overwrite XML Content?', false) then
                     exit;
-        Rec."XML Content".CreateOutStream(OutStr);
+        Rec."XML Content".CreateOutStream(OutStr, TextEncoding::UTF8);
         OutStr.WriteText(XMLContent);
         Rec.Modify();
     end;
@@ -265,7 +279,7 @@ table 72000 "SSAEDE-Documents Log Entry"
         InStr: InStream;
     begin
         Rec.CalcFields("XML Content");
-        Rec."XML Content".CreateInStream(InStr);
+        Rec."XML Content".CreateInStream(InStr, TextEncoding::UTF8);
         InStr.ReadText(XMLContent);
         exit(XMLContent);
     end;

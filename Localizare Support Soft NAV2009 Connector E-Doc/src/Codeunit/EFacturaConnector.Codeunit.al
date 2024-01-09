@@ -20,10 +20,10 @@ codeunit 72300 "SSAEDNEFactura Connector"
         EFTDoc.Insert(true);
         EFTDoc.SetXMLContent(XML);
         EFTDoc.Modify(true);
-        exit('OK');
+        exit(Format(EFTDoc."Entry No."));
     end;
 
-    procedure GetData(DateFilter: Date) Response: Text
+    procedure GetDataEntriesList(LastEntryID: Integer) Response: Text
     var
         EFTDoc: Record "SSAEDE-Documents Log Entry";
         XMLBuffer: Record "XML Buffer" temporary;
@@ -33,19 +33,15 @@ codeunit 72300 "SSAEDNEFactura Connector"
     begin
         XMLBuffer.Reset();
         XMLBuffer.DeleteAll();
-        XMLBuffer.AddGroupElement('EFT');
 
         EFTDoc.Reset;
-        EFTDoc.SetCurrentKey("Entry Type", Status, "Stare Mesaj");
+        //EFTDoc.SetCurrentKey("Entry Type", Status, "Stare Mesaj");
+        if LastEntryID <> 0 then
+            EFTDoc.SetFilter("Entry No.", '>%1', LastEntryID);
         EFTDoc.SetRange("Entry Type", EFTDoc."Entry Type"::"Import E-Factura");
 
-        if DateFilter <> 0D then
-            EFTDoc.SetRange("Creation Date", DateFilter)
-
-        else
-            EFTDoc.SetRange("SSAEDNXML Exported", false);
-
-        if EFTDoc.FindSet(true) then
+        if EFTDoc.FindSet() then begin
+            XMLBuffer.AddGroupElement('EFT');
             repeat
                 XMLBuffer.AddGroupElement('EFTDoc');
                 XMLBuffer.AddElement('Id', Format(EFTDoc."Entry No."));
@@ -64,13 +60,25 @@ codeunit 72300 "SSAEDNEFactura Connector"
                 XMLBuffer.AddElement('SupplierID', EFTDoc."Supplier ID");
 
                 XMLBuffer.AddElement('XMLFile', EFTDoc.GetXMLContent());
-                EFTDoc.Validate("SSAEDNXML Exported", true);
-                EFTDoc.Modify(true);
+                XMLBuffer.GetParent();
             until EFTDoc.Next() = 0;
-
+        end;
         XMLBuffer.Save(TempBlob);
-        TempBlob.CreateInStream(InStr);
+        TempBlob.CreateInStream(InStr, TextEncoding::UTF8);
         InStr.Read(Response);
+
+    end;
+
+    procedure GetDataEntry(_EntryNo: Integer) Response: Text
+    var
+        EFTDoc: Record "SSAEDE-Documents Log Entry";
+    begin
+        EFTDoc.Reset;
+        EFTDoc.SetRange("Entry Type", EFTDoc."Entry Type"::"Import E-Factura");
+        EFTDoc.SetRange("Entry No.", _EntryNo);
+
+        if EFTDoc.FindFirst() then
+            Response := EFTDoc.GetXMLContent();
 
     end;
 }

@@ -251,12 +251,17 @@ codeunit 72007 "SSAEDANAF API Mgt"
     local procedure ParseXMLResponse_GetListaMesaje(_JSonText: Text)
     var
         TempJSONBuffer: Record "JSON Buffer" temporary;
+        CompanyInfo: Record "Company Information";
+        CountryRegion: Record "Country/Region";
+        EFacturaMgt: Codeunit "SSAEDEFactura Mgt.";
         MessagesCount: Integer;
         Done: Boolean;
         IndexIncarcare: Text;
         DescriptionText: Text;
         IDDescarcare: Text;
     begin
+        CompanyInfo.GET;
+        CountryRegion.GET(CompanyInfo."Country/Region Code");
 
         TempJSONBuffer.ReadFromText(_JSonText);
         CLEAR(MessagesCount);
@@ -266,7 +271,10 @@ codeunit 72007 "SSAEDANAF API Mgt"
                 TempJSONBuffer.GetPropertyValueAtPath(DescriptionText, 'detalii', STRSUBSTNO('mesaje[%1]*', MessagesCount));
                 CLEAR(IDDescarcare);
                 TempJSONBuffer.GetPropertyValueAtPath(IDDescarcare, 'id', STRSUBSTNO('mesaje[%1]*', MessagesCount));
-                if STRPOS(DescriptionText, 'cif_emitent=6742610') = 0 then
+                if STRPOS(DescriptionText,
+                    STRSUBSTNO('cif_beneficiar=%1',
+                        EFacturaMgt.FormatVATRegitrationNo(CompanyInfo."VAT Registration No.", CountryRegion."ISO Code"))) = 0
+    then
                     CreateLogEntry(IndexIncarcare, DescriptionText, IDDescarcare);
 
                 MessagesCount += 1;
@@ -288,11 +296,14 @@ codeunit 72007 "SSAEDANAF API Mgt"
             EntryNo := 0;
 
 
-        LogEntry.SETCURRENTKEY("Entry Type", Status, "Stare Mesaj");
+        LogEntry.SETCURRENTKEY("Entry Type", Status);
         LogEntry.SETRANGE("Entry Type", LogEntry."Entry Type"::"Import E-Factura");
         LogEntry.SETRANGE("Index Incarcare", _IndexIncarcare);
-        if not LogEntry.ISEMPTY then
-            exit;
+        IF LogEntry.FINDFIRST THEN BEGIN
+            LogEntry."ID Descarcare" := _IDDescarcare;
+            LogEntry.MODIFY;
+            EXIT;
+        END;
 
         CLEAR(LogEntry);
         EntryNo += 1;

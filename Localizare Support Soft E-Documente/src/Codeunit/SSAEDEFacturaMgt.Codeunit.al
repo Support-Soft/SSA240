@@ -592,9 +592,9 @@ codeunit 72003 "SSAEDEFactura Mgt."
         TaxTotalTaxSchemeID := VATTxt;
 
         //SSM1991>>
-        IF (TaxTotalTaxCategoryID IN [GetTaxCategoryE, GetTaxCategoryG, GetTaxCategoryK, GetTaxCategoryO, GetTaxCategoryAE]) THEN
+        if (TaxTotalTaxCategoryID in [GetTaxCategoryE, GetTaxCategoryG, GetTaxCategoryK, GetTaxCategoryO, GetTaxCategoryAE]) then
             TaxExemptionReason := FORMAT(VATAmtLine."SSAEDColumn Type")
-        ELSE
+        else
             CLEAR(TaxExemptionReason);
         //SSM1991<<
     end;
@@ -1025,7 +1025,7 @@ codeunit 72003 "SSAEDEFactura Mgt."
         exit('O');
     end;
 
-    local procedure FormatVATRegitrationNo(VATRegistrartionNo: Text; _ISOCountryCode: Code[10]): Text
+    procedure FormatVATRegitrationNo(VATRegistrartionNo: Text; _ISOCountryCode: Code[10]): Text
     begin
         exit(_ISOCountryCode + DelChr(uppercase(VATRegistrartionNo), '=', _ISOCountryCode));
 
