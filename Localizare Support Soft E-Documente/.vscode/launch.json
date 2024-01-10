@@ -2,7 +2,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Attach: Your own server LocalizareAL",
+            "name": "Attach: LocalizareAL",
             "type": "al",
             "request": "attach",
             "environmentType": "OnPrem",
@@ -18,12 +18,12 @@
             "breakOnNext": "WebServiceClient",
             "tenant": "default",
             "port": 23029,
-            "sessionId": 3
+            "sessionId": 316
         },
         {
             "type": "al",
             "request": "launch",
-            "name": "LocalizareAL",
+            "name": "Publish: LocalizareAL",
             "server": "http://192.168.13.201:8080/BC230Localizare",
             "serverInstance": "BC230Localizare",
             "authentication": "Windows",

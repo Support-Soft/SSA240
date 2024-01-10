@@ -210,7 +210,7 @@ codeunit 72007 "SSAEDANAF API Mgt"
         EFSetup.Get;
 
         EFSetup.TestField("URL EFactura PDF");
-        URL := EFSetup."EFactura Test Descarcare URL";
+        URL := EFSetup."URL EFactura PDF";
 
         SendRequest_DescarcareMesaj(URL, TempBlobXML, _TempBlob);
     end;
