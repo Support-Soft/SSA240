@@ -325,7 +325,7 @@ codeunit 72007 "SSAEDANAF API Mgt"
                 CLEAR(IDDescarcare);
                 TempJSONBuffer.GetPropertyValueAtPath(IDDescarcare, 'id', STRSUBSTNO('mesaje[%1]*', MessagesCount));
                 if STRPOS(DescriptionText,
-                    STRSUBSTNO('cif_beneficiar=%1',
+                    STRSUBSTNO('cif_emitent=%1',
                         EFacturaMgt.FormatVATRegitrationNo(CompanyInfo."VAT Registration No.", CountryRegion."ISO Code"))) = 0
     then
                     CreateLogEntry(IndexIncarcare, DescriptionText, IDDescarcare);
@@ -352,11 +352,11 @@ codeunit 72007 "SSAEDANAF API Mgt"
         LogEntry.SETCURRENTKEY("Entry Type", Status);
         LogEntry.SETRANGE("Entry Type", LogEntry."Entry Type"::"Import E-Factura");
         LogEntry.SETRANGE("Index Incarcare", _IndexIncarcare);
-        IF LogEntry.FINDFIRST THEN BEGIN
+        if LogEntry.FINDFIRST then begin
             LogEntry."ID Descarcare" := _IDDescarcare;
             LogEntry.MODIFY;
-            EXIT;
-        END;
+            exit;
+        end;
 
         CLEAR(LogEntry);
         EntryNo += 1;

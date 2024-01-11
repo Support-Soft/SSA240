@@ -153,6 +153,13 @@ codeunit 72008 "SSAEDProcess Import E-Doc"
 
         GetVendorNo(GlobalEFTLog."Supplier ID", GlobalEFTLog."NAV Vendor No.", GlobalEFTLog."NAV Vendor Name");
 
+        //SSM2434>>
+        if GlobalEFTLog."Total TaxInclusiveAmount" > 0 then
+            GlobalEFTLog."Import Document Type" := GlobalEFTLog."Import Document Type"::Invoice
+        else
+            GlobalEFTLog."Import Document Type" := GlobalEFTLog."Import Document Type"::"Credit Memo";
+        //SSM2434<<
+
         EFTDetails.RESET;
         EFTDetails.SETRANGE("Log Entry No.", GlobalEFTLog."Entry No.");
         EFTDetails.DELETEALL;
@@ -301,11 +308,10 @@ codeunit 72008 "SSAEDProcess Import E-Doc"
                 InsertVBA(_EFTEntry."NAV Vendor No.", EFTDetails.Note, EFTDetails."Item Name");
             until EFTDetails.NEXT = 0;
 
+        _EFTEntry.TESTFIELD("Import Document Type"); //SSM2434
+
         PH.INIT;
-        if _EFTEntry."Total TaxInclusiveAmount" < 0 then
-            PH.VALIDATE("Document Type", PH."Document Type"::"Credit Memo")
-        else
-            PH.VALIDATE("Document Type", PH."Document Type"::Invoice);
+        PH.VALIDATE("Document Type", _EFTEntry."Import Document Type"); //SSM2434
         PH.INSERT(true);
         PH.VALIDATE("Buy-from Vendor No.", _EFTEntry."NAV Vendor No.");
         PH.VALIDATE("SSAEDID Descarcare EFactura", _EFTEntry."ID Descarcare");
@@ -334,11 +340,11 @@ codeunit 72008 "SSAEDProcess Import E-Doc"
                 UOM.SETRANGE("International Standard Code", EFTDetails."Unit Code");
                 if UOM.FINDFIRST then
                     PL.VALIDATE("Unit of Measure Code", UOM.Code);
-                PL.VALIDATE(Quantity, EFTDetails."Invoice Quantity");
                 if PL."Document Type" = PL."Document Type"::"Credit Memo" then
-                    PL.VALIDATE("Direct Unit Cost", -EFTDetails."Price Amount")
+                    PL.VALIDATE(Quantity, -EFTDetails."Invoice Quantity")
                 else
-                    PL.VALIDATE("Direct Unit Cost", EFTDetails."Price Amount");
+                    PL.VALIDATE(Quantity, EFTDetails."Invoice Quantity");
+                PL.VALIDATE("Direct Unit Cost", EFTDetails."Price Amount");
                 PL.VALIDATE("VAT %", EFTDetails."ClassifiedTaxCategory Percent");
                 PL.MODIFY(true);
 

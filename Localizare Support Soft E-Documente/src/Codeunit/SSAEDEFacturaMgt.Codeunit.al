@@ -883,7 +883,7 @@ codeunit 72003 "SSAEDEFactura Mgt."
         VATAmtLine.Init;
         VATAmtLine."VAT Identifier" := VATPostingSetup."VAT Identifier";
         VATAmtLine."VAT Calculation Type" := SalesLine."VAT Calculation Type";
-        VATAmtLine."Tax Group Code" := SalesLine."Tax Group Code";
+        //VATAmtLine."Tax Group Code" := SalesLine."Tax Group Code";
         VATAmtLine."VAT %" := SalesLine."VAT %";
         VATAmtLine."VAT Base" := SalesLine.Amount;
         VATAmtLine."Amount Including VAT" := SalesLine."Amount Including VAT";
@@ -1082,8 +1082,10 @@ codeunit 72003 "SSAEDEFactura Mgt."
                         Found := SalesCrMemoLine.Find('-')
                     else
                         Found := SalesCrMemoLine.Next <> 0;
-                    if Found then
+                    if Found then begin
                         SalesLine.TransferFields(SalesCrMemoLine);
+                        SalesLine.Quantity := -SalesCrMemoLine.Quantity; //SSM2434
+                    end;
                 end;
         end;
 

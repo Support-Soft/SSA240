@@ -180,6 +180,11 @@ table 72000 "SSAEDE-Documents Log Entry"
             Caption = 'Metoda de Plata';
             DataClassification = CustomerContent;
         }
+        field(340; "Import Document Type"; Enum "Sales Document Type")
+        {
+            Caption = 'Import Document Type';
+            DataClassification = CustomerContent;
+        }
         field(10000; "Created Purchase Invoice No."; Code[20])
         {
             Caption = 'Created Purchase Invoice No.';
