@@ -169,21 +169,22 @@ page 72000 "SSAEDE-Documents Log Entries"
                     ToolTip = 'Specifies the value of the Total TaxInclusiveAmount field.';
                     Editable = false;
                 }
-                field("Data Scadenta"; Rec."Data Scadenta")
+                field("Due Date"; Rec."Due Date")
                 {
-                    ToolTip = 'Specifies the value of the Data Scadenta field.';
+                    ToolTip = 'Specifies the value of the Due Date field.';
                     Editable = false;
                 }
-                field("Nr. Factura Furnizor"; Rec."Nr. Factura Furnizor")
+                field("Payment Method Code"; Rec."Payment Method Code")
                 {
-                    ToolTip = 'Specifies the value of the Nr. Factura Furnizor field.';
+                    ToolTip = 'Specifies the value of the Payment Method Code field.';
                     Editable = false;
                 }
-                field("Metoda de Plata"; Rec."Metoda de Plata")
+                field("Vendor Invoice No."; Rec."Vendor Invoice No.")
                 {
-                    ToolTip = 'Specifies the value of the Metoda de Plata field.';
+                    ToolTip = 'Specifies the value of the Vendor Invoice No. field.';
                     Editable = false;
                 }
+
                 field("Import Document Type"; Rec."Import Document Type")
                 {
                     ToolTip = 'Specifies the value of the Import Document Type field.';

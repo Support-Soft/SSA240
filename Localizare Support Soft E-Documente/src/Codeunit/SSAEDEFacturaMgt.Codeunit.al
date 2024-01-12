@@ -514,7 +514,13 @@ codeunit 72003 "SSAEDEFactura Mgt."
         AllowanceChargeReasonCode := AllowanceChargeReasonCodeTxt;
         AllowanceChargeListID := GetUNCL4465ListID;
         AllowanceChargeReason := InvoiceDisAmtTxt;
-        Amount := Format(VATAmtLine."Invoice Discount Amount", 0, 9);
+        //SSM2434>>
+        IF SalesHeader.IsCreditDocType THEN
+            Amount := FORMAT(-VATAmtLine."Invoice Discount Amount", 0, 9)
+        ELSE
+            Amount := FORMAT(VATAmtLine."Invoice Discount Amount", 0, 9);
+
+        //SSM2434<<
         AllowanceChargeCurrencyID := GetSalesDocCurrencyCode(SalesHeader);
         TaxCategoryID := VATAmtLine."Tax Category";
         TaxCategorySchemeID := GetUNCL5305ListID;

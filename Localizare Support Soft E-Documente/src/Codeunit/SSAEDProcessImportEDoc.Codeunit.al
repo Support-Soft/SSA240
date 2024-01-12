@@ -142,13 +142,13 @@ codeunit 72008 "SSAEDProcess Import E-Doc"
 
         //SSM2434>>
         TempXMLBuffer.FindNodesByXPath(TempXMLBuffer, 'DueDate');
-        Evaluate(GlobalEFTLog."Data Scadenta", TempXMLBuffer.GetValue());
+        Evaluate(GlobalEFTLog."Due Date", TempXMLBuffer.GetValue());
 
         TempXMLBuffer.FindNodesByXPath(TempXMLBuffer, 'ID');
-        GlobalEFTLog."Nr. Factura Furnizor" := TempXMLBuffer.GetValue();
+        GlobalEFTLog."Vendor Invoice No." := TempXMLBuffer.GetValue();
 
         TempXMLBuffer.FindNodesByXPath(TempXMLBuffer, 'PaymentMeans/PaymentMeansCode');
-        GlobalEFTLog."Metoda de Plata" := TempXMLBuffer.GetValue();
+        GlobalEFTLog."Payment Method Code" := TempXMLBuffer.GetValue();
         //SSM2434<<
 
         GetVendorNo(GlobalEFTLog."Supplier ID", GlobalEFTLog."NAV Vendor No.", GlobalEFTLog."NAV Vendor Name");
@@ -340,7 +340,7 @@ codeunit 72008 "SSAEDProcess Import E-Doc"
                 UOM.SETRANGE("International Standard Code", EFTDetails."Unit Code");
                 if UOM.FINDFIRST then
                     PL.VALIDATE("Unit of Measure Code", UOM.Code);
-                if PL."Document Type" = PL."Document Type"::"Credit Memo" then
+                if PH.IsCreditDocType() then
                     PL.VALIDATE(Quantity, -EFTDetails."Invoice Quantity")
                 else
                     PL.VALIDATE(Quantity, EFTDetails."Invoice Quantity");
@@ -350,11 +350,18 @@ codeunit 72008 "SSAEDProcess Import E-Doc"
 
             until EFTDetails.NEXT = 0;
 
-        if CONFIRM(STRSUBSTNO(ConfirmMsg, PH."Document Type", PH."No.")) then
-            if PH."Document Type" = PH."Document Type"::Invoice then
-                page.RUN(page::"Purchase Invoice", PH)
-            else
-                page.RUN(page::"Purchase Credit Memo", PH);
+        if GuiAllowed then
+            if CONFIRM(STRSUBSTNO(ConfirmMsg, PH."Document Type", PH."No.")) then
+                CASE PH."Document Type" OF
+                    PH."Document Type"::Order:
+                        PAGE.RUN(PAGE::"Purchase Order", PH);
+                    PH."Document Type"::Invoice:
+                        PAGE.RUN(PAGE::"Purchase Invoice", PH);
+                    PH."Document Type"::"Credit Memo":
+                        PAGE.RUN(PAGE::"Purchase Credit Memo", PH);
+                    PH."Document Type"::"Return Order":
+                        PAGE.RUN(PAGE::"Purchase Return Order", PH);
+                END;
     end;
 
     local procedure InsertVBA(_VendorNo: Code[20]; _IBAN: Text; _Name: Text)

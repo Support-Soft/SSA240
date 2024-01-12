@@ -165,19 +165,19 @@ table 72000 "SSAEDE-Documents Log Entry"
             Caption = 'XML Content';
             DataClassification = CustomerContent;
         }
-        field(310; "Data Scadenta"; Date)
+        field(310; "Due Date"; Date)
         {
-            Caption = 'Data Scadenta';
+            Caption = 'Due Date';
             DataClassification = CustomerContent;
         }
-        field(320; "Nr. Factura Furnizor"; Text[50])
+        field(320; "Vendor Invoice No."; Text[50])
         {
-            Caption = 'Nr. Factura Furnizor';
+            Caption = 'Vendor Invoice No.';
             DataClassification = CustomerContent;
         }
-        field(330; "Metoda de Plata"; Text[30])
+        field(330; "Payment Method Code"; Text[30])
         {
-            Caption = 'Metoda de Plata';
+            Caption = 'Payment Method Code';
             DataClassification = CustomerContent;
         }
         field(340; "Import Document Type"; Enum "Sales Document Type")
