@@ -306,7 +306,6 @@ codeunit 72007 "SSAEDANAF API Mgt"
         TempJSONBuffer: Record "JSON Buffer" temporary;
         CompanyInfo: Record "Company Information";
         CountryRegion: Record "Country/Region";
-        EFacturaMgt: Codeunit "SSAEDEFactura Mgt.";
         MessagesCount: Integer;
         Done: Boolean;
         IndexIncarcare: Text;
@@ -326,7 +325,7 @@ codeunit 72007 "SSAEDANAF API Mgt"
                 TempJSONBuffer.GetPropertyValueAtPath(IDDescarcare, 'id', STRSUBSTNO('mesaje[%1]*', MessagesCount));
                 if STRPOS(DescriptionText,
                     STRSUBSTNO('cif_emitent=%1',
-                        EFacturaMgt.FormatVATRegitrationNo(CompanyInfo."VAT Registration No.", CountryRegion."ISO Code"))) = 0
+                        DELCHR(CompanyInfo."VAT Registration No.", '=', CountryRegion."ISO Code"))) = 0
     then
                     CreateLogEntry(IndexIncarcare, DescriptionText, IDDescarcare);
 

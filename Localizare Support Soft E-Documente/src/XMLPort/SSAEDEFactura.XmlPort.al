@@ -1731,7 +1731,7 @@ xmlport 72001 "SSAEDE-Factura"
                     SalesInvoiceHeader.SetRecFilter;
                     SalesInvoiceLine.SetRange("Document No.", SalesInvoiceHeader."No.");
                     SalesInvoiceLine.SetFilter(Type, '<>%1', SalesInvoiceLine.Type::" ");
-
+                    SalesInvoiceLine.SETFILTER(Quantity, '<>%1', 0);
                     ProcessedDocType := ProcessedDocType::"Sales Invoice";
                 end;
             DATABASE::"Sales Cr.Memo Header":
@@ -1742,7 +1742,7 @@ xmlport 72001 "SSAEDE-Factura"
                     SalesCrMemoHeader.SetRecFilter;
                     SalesCrMemoLine.SetRange("Document No.", SalesCrMemoHeader."No.");
                     SalesCrMemoLine.SetFilter(Type, '<>%1', SalesCrMemoLine.Type::" ");
-
+                    SalesCrMemoLine.SETFILTER(Quantity, '<>%1', 0);
                     ProcessedDocType := ProcessedDocType::"Sales Credit Memo";
                 end;
             else
