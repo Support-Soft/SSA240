@@ -37,23 +37,20 @@
             "schemaUpdateMode": "ForceSync"
         },
         {
-            "name": "Publish: Your own server",
             "type": "al",
             "request": "launch",
-            "environmentType": "OnPrem",
-            "server": "http://sandbox23/BC",
-            "serverInstance": "BC",
-            "authentication": "UserPassword",
+            "name": "Publish: 230SupportSoft",
+            "server": "http://192.168.13.201:8080/BC230SupportSoft",
+            "serverInstance": "BC230SupportSoft",
+            "authentication": "Windows",
             "startupObjectId": 22,
-            "breakOnError": "All",
-            "breakOnRecordWrite": "None",
+            "startupObjectType": "Page",
+            "breakOnError": true,
             "launchBrowser": true,
-            "enableSqlInformationDebugger": true,
             "enableLongRunningSqlStatements": true,
-            "longRunningSqlStatementsThreshold": 500,
-            "numberOfSqlStatements": 10,
-            "tenant": "default",
-            "usePublicURLFromServer": true
+            "enableSqlInformationDebugger": true,
+            "port": 23019,
+            "schemaUpdateMode": "ForceSync"
         }
     ]
 }

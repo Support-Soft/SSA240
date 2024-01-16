@@ -10,12 +10,12 @@ page 72002 "SSAEDE-Documents Details List"
         {
             repeater(Control1)
             {
-
-                field("Line ID"; Rec."Line ID")
+                field("Line ID Decimal"; Rec."Line ID Decimal")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Line ID field.';
                 }
+
                 field(Note; Rec.Note)
                 {
                     ApplicationArea = All;

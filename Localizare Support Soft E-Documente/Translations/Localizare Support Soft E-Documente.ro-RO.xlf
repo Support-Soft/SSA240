@@ -57,6 +57,13 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSAEDE-Documents Details - Field Line ID - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2079753362 - Field 2454946564 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line ID</source>
+          <target state="translated">ID Linie</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table SSAEDE-Documents Details - Field Line ID Decimal - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2079753362 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Line No.</source>
           <target>Nr. Linie</target>
@@ -203,9 +210,8 @@
         </trans-unit>
         <trans-unit id="Table 3931156184 - Field 4085727052 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Due Date</source>
-          <target state="translated">Data scadentei</target>
+          <target>Data scadentei</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSAEDE-Documents Log Entry - Field Due Date - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3931156184 - Field 883711285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -246,9 +252,8 @@
         </trans-unit>
         <trans-unit id="Table 3931156184 - Field 1891772366 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Import Document Type</source>
-          <target state="translated">Import tip de document</target>
+          <target>Import tip de document</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSAEDE-Documents Log Entry - Field Import Document Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3931156184 - Field 1245969624 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -277,9 +282,8 @@
         </trans-unit>
         <trans-unit id="Table 3931156184 - Field 3855271124 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Payment Method Code</source>
-          <target state="translated">Cod metoda de plata</target>
+          <target>Cod metoda de plata</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSAEDE-Documents Log Entry - Field Payment Method Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3931156184 - Field 2774920149 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -374,9 +378,8 @@
         </trans-unit>
         <trans-unit id="Table 3931156184 - Field 3961227134 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Vendor Invoice No.</source>
-          <target state="translated">Nr. factura furnizor</target>
+          <target>Nr. factura furnizor</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table SSAEDE-Documents Log Entry - Field Vendor Invoice No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3931156184 - Field 293311276 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -704,11 +707,12 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Details List - Control Line Amount - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 213828784 - Control 1656078941 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 213828784 - Control 2454946564 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Line ID field.</source>
-          <target>Specifica valoarea campului ID Linie</target>
+          <target state="translated">Specifica valoarea campului ID Linie</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Details List - Control Line ID - Property ToolTip</note>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Details List - Control Line ID Decimal - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 213828784 - Control 3865270442 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the NAV No. field.</source>
@@ -826,9 +830,8 @@
         </trans-unit>
         <trans-unit id="Page 2154388502 - Control 4085727052 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Due Date field.</source>
-          <target state="translated">Specifică valoarea câmpului Data scadentă.</target>
+          <target>Specifică valoarea câmpului Data scadentă.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Control Due Date - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2154388502 - Control 883711285 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
@@ -863,9 +866,8 @@
         </trans-unit>
         <trans-unit id="Page 2154388502 - Control 1891772366 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Import Document Type field.</source>
-          <target state="translated">Specifică valoarea câmpului Import Document Type.</target>
+          <target>Specifică valoarea câmpului Import Document Type.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Control Import Document Type - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2154388502 - Control 1245969624 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
@@ -894,9 +896,8 @@
         </trans-unit>
         <trans-unit id="Page 2154388502 - Control 3855271124 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Payment Method Code field.</source>
-          <target state="translated">Specifică valoarea câmpului Payment Method Code (Cod metodă de plată).</target>
+          <target>Specifică valoarea câmpului Payment Method Code (Cod metodă de plată).</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Control Payment Method Code - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2154388502 - Control 2774920149 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
@@ -973,9 +974,8 @@
         </trans-unit>
         <trans-unit id="Page 2154388502 - Control 3961227134 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Vendor Invoice No. field.</source>
-          <target state="translated">Specifica valoarea campului Nr. Factura Furnizor</target>
+          <target>Specifica valoarea campului Nr. Factura Furnizor</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SSAEDE-Documents Log Entries - Control Vendor Invoice No. - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2154388502 - Action 36190024 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">

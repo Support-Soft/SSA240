@@ -105,29 +105,29 @@ codeunit 72008 "SSAEDProcess Import E-Doc"
         TempXMLBuffer.LoadFromText(XmlOutText);
         TempXMLBufferParrent.LoadFromText(XmlOutText);
 
-        TempXMLBuffer.FindNodesByXPath(TempXMLBuffer, 'IssueDate');
+        TempXMLBuffer.FindNodesByXPath(TempXMLBuffer, '/Invoice/IssueDate');
         Evaluate(GlobalEFTLog."Issue Date", TempXMLBuffer.GetValue());
 
-        if TempXMLBuffer.FindNodesByXPath(TempXMLBuffer, 'InvoiceTypeCode') then begin
+        if TempXMLBuffer.FindNodesByXPath(TempXMLBuffer, '/Invoice/InvoiceTypeCode') then begin
             AmountSign := 1;
             LinesXPath := 'InvoiceLine*';
             LinesIDXPath := '/Invoice/InvoiceLine/ID';
         end;
 
-        if TempXMLBuffer.FindNodesByXPath(TempXMLBuffer, 'CreditNoteTypeCode') then begin
+        if TempXMLBuffer.FindNodesByXPath(TempXMLBuffer, '/Invoice/CreditNoteTypeCode') then begin
             AmountSign := -1;
             LinesXPath := 'CreditNoteLine*';
             LinesIDXPath := '/CreditNote/CreditNoteLine/ID';
         end;
 
-        TempXMLBuffer.FindNodesByXPath(TempXMLBuffer, 'DocumentCurrencyCode');
-        GlobalEFTLog."Document Currency Code" := TempXMLBuffer.GetValue();
+        TempXMLBuffer.FindNodesByXPath(TempXMLBuffer, '/Invoice/DocumentCurrencyCode');
+        GlobalEFTLog."Document Currency Code" := CopyStr(TempXMLBuffer.GetValue(), 1, MaxStrLen(GlobalEFTLog."Document Currency Code"));
 
         TempXMLBuffer.FindNodesByXPath(TempXMLBuffer, 'AccountingSupplierParty/Party/PartyTaxScheme/CompanyID');
-        GlobalEFTLog."Supplier ID" := TempXMLBuffer.GetValue();
+        GlobalEFTLog."Supplier ID" := CopyStr(TempXMLBuffer.GetValue(), 1, MaxStrLen(GlobalEFTLog."Supplier ID"));
 
         TempXMLBuffer.FindNodesByXPath(TempXMLBuffer, 'AccountingSupplierParty/Party/PartyLegalEntity/RegistrationName');
-        GlobalEFTLog."Supplier Name" := TempXMLBuffer.GetValue();
+        GlobalEFTLog."Supplier Name" := CopyStr(TempXMLBuffer.GetValue(), 1, MaxStrLen(GlobalEFTLog."Supplier Name"));
 
         TempXMLBuffer.FindNodesByXPath(TempXMLBuffer, 'TaxTotal/TaxAmount');
         GlobalEFTLog."Total Tax Amount" := GenFunctions.ConvertTextToDecimal(TempXMLBuffer.GetValue());
@@ -141,14 +141,14 @@ codeunit 72008 "SSAEDProcess Import E-Doc"
         GlobalEFTLog."Total TaxExclusiveAmount" := GenFunctions.ConvertTextToDecimal(TempXMLBuffer.GetValue());
 
         //SSM2434>>
-        TempXMLBuffer.FindNodesByXPath(TempXMLBuffer, 'DueDate');
+        TempXMLBuffer.FindNodesByXPath(TempXMLBuffer, '/Invoice/DueDate');
         Evaluate(GlobalEFTLog."Due Date", TempXMLBuffer.GetValue());
 
-        TempXMLBuffer.FindNodesByXPath(TempXMLBuffer, 'ID');
-        GlobalEFTLog."Vendor Invoice No." := TempXMLBuffer.GetValue();
+        TempXMLBuffer.FindNodesByXPath(TempXMLBuffer, '/Invoice/ID');
+        GlobalEFTLog."Vendor Invoice No." := CopyStr(TempXMLBuffer.GetValue(), 1, MaxStrLen(GlobalEFTLog."Vendor Invoice No."));
 
         TempXMLBuffer.FindNodesByXPath(TempXMLBuffer, 'PaymentMeans/PaymentMeansCode');
-        GlobalEFTLog."Payment Method Code" := TempXMLBuffer.GetValue();
+        GlobalEFTLog."Payment Method Code" := CopyStr(TempXMLBuffer.GetValue(), 1, MaxStrLen(GlobalEFTLog."Payment Method Code"));
         //SSM2434<<
 
         GetVendorNo(GlobalEFTLog."Supplier ID", GlobalEFTLog."NAV Vendor No.", GlobalEFTLog."NAV Vendor Name");
@@ -176,11 +176,11 @@ codeunit 72008 "SSAEDProcess Import E-Doc"
                     EFTDetails."Line No." := LineNo;
                     EFTDetails."Type of Line" := EFTDetails."Type of Line"::"PaymentMeans Line";
                     EFTDetails.INSERT(true);
-                    EFTDetails.Note := TempXMLBufferLines.GetValue(); //IBAN
+                    EFTDetails.Note := CopyStr(TempXMLBufferLines.GetValue(), 1, MaxStrLen(EFTDetails.Note)); //IBAN
                     EFTDetails.MODIFY;
                 end;
                 if TempXMLBufferLines.Name = 'Name' then begin
-                    EFTDetails."Item Name" := TempXMLBufferLines.GetValue();
+                    EFTDetails."Item Name" := CopyStr(TempXMLBufferLines.GetValue(), 1, MaxStrLen(EFTDetails."Item Name"));
                     EFTDetails.MODIFY;
                 end;
             until TempXMLBufferLines.Next = 0;
@@ -196,12 +196,12 @@ codeunit 72008 "SSAEDProcess Import E-Doc"
                     EFTDetails.INIT;
                     EFTDetails."Log Entry No." := GlobalEFTLog."Entry No.";
                     EFTDetails."Line No." := LineNo;
-                    EFTDetails."Line ID" := GenFunctions.ConvertTextToDecimal(TempXMLBufferLines.GetValue());
+                    EFTDetails."Line ID Decimal" := GenFunctions.ConvertTextToDecimal(TempXMLBufferLines.GetValue());
                     EFTDetails."Type of Line" := EFTDetails."Type of Line"::"Invoice Line";
                     EFTDetails.INSERT(true);
                 end;
                 if TempXMLBufferLines.Name = 'Note' then begin
-                    EFTDetails.Note := TempXMLBufferLines.GetValue();
+                    EFTDetails.Note := CopyStr(TempXMLBufferLines.GetValue(), 1, MaxStrLen(EFTDetails.Note));
                     EFTDetails.MODIFY;
                 end;
                 if (TempXMLBufferLines.Name = 'InvoicedQuantity') or (TempXMLBufferLines.Name = 'CreditedQuantity') then begin
@@ -209,7 +209,7 @@ codeunit 72008 "SSAEDProcess Import E-Doc"
                     EFTDetails.MODIFY;
                 end;
                 if TempXMLBufferLines.Name = 'unitCode' then begin
-                    EFTDetails."Unit Code" := TempXMLBufferLines.GetValue();
+                    EFTDetails."Unit Code" := CopyStr(TempXMLBufferLines.GetValue(), 1, MaxStrLen(EFTDetails."Unit Code"));
                     EFTDetails.MODIFY;
                 end;
                 if TempXMLBufferLines.Name = 'LineExtensionAmount' then begin
@@ -219,22 +219,22 @@ codeunit 72008 "SSAEDProcess Import E-Doc"
                 if TempXMLBufferLines.Name = 'currencyID' then begin
                     TempXMLBufferParrent.Get(TempXMLBufferLines."Parent Entry No.");
                     if TempXMLBufferParrent.Name = 'LineExtensionAmount' then begin
-                        EFTDetails."Currency ID" := TempXMLBufferLines.GetValue();
+                        EFTDetails."Currency ID" := CopyStr(TempXMLBufferLines.GetValue(), 1, MaxStrLen(EFTDetails."Currency ID"));
                         EFTDetails.MODIFY;
                     end;
                 end;
                 if TempXMLBufferLines.Name = 'Description' then begin
-                    EFTDetails."Item Description" := TempXMLBufferLines.GetValue();
+                    EFTDetails."Item Description" := CopyStr(TempXMLBufferLines.GetValue(), 1, MaxStrLen(EFTDetails."Item Description"));
                     EFTDetails.MODIFY;
                 end;
                 if TempXMLBufferLines.Name = 'Name' then begin
-                    EFTDetails."Item Name" := TempXMLBufferLines.GetValue();
+                    EFTDetails."Item Name" := CopyStr(TempXMLBufferLines.GetValue(), 1, MaxStrLen(EFTDetails."Item Name"));
                     EFTDetails.MODIFY;
                 end;
                 if TempXMLBufferLines.Name = 'ID' then begin
                     TempXMLBufferParrent.Get(TempXMLBufferLines."Parent Entry No.");
                     if TempXMLBufferParrent.Name = 'ClassifiedTaxCategory' then begin
-                        EFTDetails."ClassifiedTaxCategory ID" := TempXMLBufferLines.GetValue();
+                        EFTDetails."ClassifiedTaxCategory ID" := CopyStr(TempXMLBufferLines.GetValue(), 1, MaxStrLen(EFTDetails."ClassifiedTaxCategory ID"));
                         EFTDetails.MODIFY;
                     end;
                 end;
@@ -248,7 +248,7 @@ codeunit 72008 "SSAEDProcess Import E-Doc"
                 if TempXMLBufferLines.Name = 'ID' then begin
                     TempXMLBufferParrent.Get(TempXMLBufferLines."Parent Entry No.");
                     if TempXMLBufferParrent.Name = 'TaxScheme' then begin
-                        EFTDetails."TaxScheme ID" := TempXMLBufferLines.GetValue();
+                        EFTDetails."TaxScheme ID" := CopyStr(TempXMLBufferLines.GetValue(), 1, MaxStrLen(EFTDetails."TaxScheme ID"));
                         EFTDetails.MODIFY;
                     end;
                 end;
@@ -261,7 +261,7 @@ codeunit 72008 "SSAEDProcess Import E-Doc"
                 if TempXMLBufferLines.Name = 'currencyID' then begin
                     TempXMLBufferParrent.Get(TempXMLBufferLines."Parent Entry No.");
                     if TempXMLBufferParrent.Name = 'PriceAmount' then begin
-                        EFTDetails."Price Currency ID" := TempXMLBufferLines.GetValue();
+                        EFTDetails."Price Currency ID" := CopyStr(TempXMLBufferLines.GetValue(), 1, MaxStrLen(EFTDetails."Price Currency ID"));
                         EFTDetails.MODIFY;
                     end;
                 end;

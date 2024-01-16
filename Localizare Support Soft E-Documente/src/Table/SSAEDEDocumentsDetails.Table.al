@@ -25,6 +25,14 @@ table 72002 "SSAEDE-Documents Details"
         {
             Caption = 'Line ID';
             DataClassification = CustomerContent;
+            ObsoleteReason = 'This field is obsolete. Use "Line ID Decimal" instead.';
+            ObsoleteState = Pending;
+        }
+        field(21; "Line ID Decimal"; Decimal)
+        {
+            Caption = 'Line ID';
+            DataClassification = CustomerContent;
+
         }
         field(30; Note; Text[100])
         {
