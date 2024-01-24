@@ -317,7 +317,7 @@ codeunit 72007 "SSAEDANAF API Mgt"
 
         TempJSONBuffer.ReadFromText(_JSonText);
         CLEAR(MessagesCount);
-        while (not Done) and (MessagesCount < 100) do
+        while (not Done) and (MessagesCount <= 500) do
             if TempJSONBuffer.GetPropertyValueAtPath(IndexIncarcare, 'id_solicitare', STRSUBSTNO('mesaje[%1]*', MessagesCount)) then begin
                 CLEAR(DescriptionText);
                 TempJSONBuffer.GetPropertyValueAtPath(DescriptionText, 'detalii', STRSUBSTNO('mesaje[%1]*', MessagesCount));
