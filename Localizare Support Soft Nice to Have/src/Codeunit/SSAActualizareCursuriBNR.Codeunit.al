@@ -115,6 +115,9 @@ codeunit 71100 "SSA Actualizare Cursuri BNR"
         CurrencyExchRateAmount: Decimal;
         ResponseText: Text;
     begin
+        if not (CurrentClientType in [ClientType::Web, ClientType::Desktop]) then
+            exit;
+
         if ExchangeRateIsImported then
             exit;
 
