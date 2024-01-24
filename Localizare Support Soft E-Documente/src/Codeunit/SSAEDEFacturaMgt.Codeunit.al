@@ -21,7 +21,7 @@ codeunit 72003 "SSAEDEFactura Mgt."
         NoUnitOfMeasureErr: Label 'The %1 %2 contains lines on which the %3 field is empty.', Comment = '1: document type, 2: document no 3 Unit of Measure Code';
 
 
-    procedure GetGeneralInfo(SalesHeader: Record "Sales Header"; var ID: Text; var IssueDate: Text; var InvoiceTypeCode: Text; var InvoiceTypeCodeListID: Text; var Note: Text; var TaxPointDate: Text; var DocumentCurrencyCode: Text; var DocumentCurrencyCodeListID: Text; var TaxCurrencyCode: Text; var TaxCurrencyCodeListID: Text; var AccountingCost: Text)
+    procedure GetGeneralInfo(SalesHeader: Record "Sales Header"; var ID: Text; var IssueDate: Text; var InvoiceTypeCode: Text; var InvoiceTypeCodeListID: Text; var Note: Text; var TaxPointDate: Text; var DocumentCurrencyCode: Text; var DocumentCurrencyCodeListID: Text; var TaxCurrencyCode: Text; var TaxCurrencyCodeListID: Text; var AccountingCost: Text; var DueDate: Text)
     var
         GLSetup: Record "General Ledger Setup";
     begin
@@ -39,6 +39,8 @@ codeunit 72003 "SSAEDEFactura Mgt."
         TaxCurrencyCode := DocumentCurrencyCode;
         TaxCurrencyCodeListID := GetISO4217ListID;
         AccountingCost := '';
+
+        DueDate := FORMAT(SalesHeader."Due Date", 0, 9);
     end;
 
 
@@ -492,6 +494,7 @@ codeunit 72003 "SSAEDEFactura Mgt."
     var
         PmtTerms: Record "Payment Terms";
     begin
+        /*
         if SalesHeader."Payment Terms Code" = '' then
             PmtTerms.Init
         else begin
@@ -500,6 +503,7 @@ codeunit 72003 "SSAEDEFactura Mgt."
         end;
 
         PaymentTermsNote := PmtTerms.Description;
+        */
     end;
 
 
@@ -759,8 +763,8 @@ codeunit 72003 "SSAEDEFactura Mgt."
         Name := SalesLine.Description;
         Description := SalesLine."Description 2";
 
-        if (SalesLine.Type = SalesLine.Type::Item) and Item.Get(SalesLine."No.") then begin
-            //SellersItemIdentificationID := SalesLine."No.";
+        if SalesLine.IsInventoriableItem() then begin
+            SellersItemIdentificationID := SalesLine."No.";
             StandardItemIdentificationID := Item.GTIN;
             StdItemIdIDSchemeID := GTINTxt;
         end else begin

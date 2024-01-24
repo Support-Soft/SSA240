@@ -28,6 +28,10 @@ xmlport 72001 "SSAEDE-Factura"
             {
                 NamespacePrefix = 'cbc';
             }
+            textelement(DueDate)
+            {
+                NamespacePrefix = 'cbc';
+            }
             textelement(InvoiceTypeCode)
             {
                 NamespacePrefix = 'cbc';
@@ -1623,7 +1627,8 @@ xmlport 72001 "SSAEDE-Factura"
                   Dummy,
                   TaxCurrencyCode,
                   TaxCurrencyCodeListID,
-                  AccountingCost);
+                  AccountingCost,
+                  DueDate);
 
                 UBLVersionID := GetUBLVersionID;
                 CustomizationID := GetCustomizationID;
