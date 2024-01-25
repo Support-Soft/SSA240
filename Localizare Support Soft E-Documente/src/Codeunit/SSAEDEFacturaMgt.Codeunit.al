@@ -765,7 +765,10 @@ codeunit 72003 "SSAEDEFactura Mgt."
 
         if SalesLine.IsInventoriableItem() then begin
             SellersItemIdentificationID := SalesLine."No.";
-            StandardItemIdentificationID := Item.GTIN;
+            if (SalesLine."Item Reference Type" = SalesLine."Item Reference Type"::"Bar Code") and (SalesLine."Item Reference No." <> '') then
+                StandardItemIdentificationID := SalesLine."Item Reference No."
+            else
+                StandardItemIdentificationID := Item.GTIN;
             StdItemIdIDSchemeID := GTINTxt;
         end else begin
             SellersItemIdentificationID := '';
