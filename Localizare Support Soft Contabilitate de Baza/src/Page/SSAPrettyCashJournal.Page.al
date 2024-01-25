@@ -895,10 +895,6 @@ page 70022 "SSA Pretty Cash Journal"
                     RunObject = codeunit "Adjust Gen. Journal Balance";
                     ToolTip = 'Insert a rounding correction line in the journal. This rounding correction line will balance in LCY when amounts in the foreign currency also balance. You can then post the journal.';
                 }
-                separator("-")
-                {
-                    Caption = '-';
-                }
                 action(GetStandardJournals)
                 {
                     ApplicationArea = All;

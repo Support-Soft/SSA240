@@ -2,7 +2,7 @@
   "id": "c0c676db-b6cb-47be-b4cd-128de938af52",
   "name": "Localizare Support Soft Contabilitate de Baza",
   "publisher": "Support-Soft SRL",
-  "version": "23.0.0.3",
+  "version": "23.0.0.4",
   "brief": "",
   "description": "",
   "privacyStatement": "",
@@ -29,7 +29,7 @@
   ],
   "contextSensitiveHelpUrl": "https://SSA230ContabilitateBaza.com/help/",
   "resourceExposurePolicy": {
-    "allowDebugging": false,
+    "allowDebugging": true,
     "allowDownloadingSource": false,
     "includeSourceInSymbolFile": false,
     "applyToDevExtension": true

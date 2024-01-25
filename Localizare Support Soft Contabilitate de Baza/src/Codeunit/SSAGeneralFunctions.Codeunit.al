@@ -180,9 +180,9 @@ codeunit 70010 "SSA General Functions"
     procedure ReplaceDiacriticeCHR(TotalString: Text): Text;
     var
         finalString: Text;
-        spatiudublu: Label '  ';
-        spatiusimplu: Label ' ';
-        altch: Label ' ';
+        spatiudublu: Label '  ', Locked = true;
+        spatiusimplu: Label ' ', Locked = true;
+        altch: Label ' ', Locked = true;
     begin
 
         finalString := TotalString;

@@ -223,10 +223,6 @@ page 70013 "SSA Fixed Asset Inventory List"
                     RunPageLink = "FA No." = field("No.");
                     ToolTip = 'View detailed historical information about all the components that make up the main asset.';
                 }
-                separator(Separator45)
-                {
-                    Caption = '';
-                }
             }
             group(History)
             {

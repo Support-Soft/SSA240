@@ -440,7 +440,6 @@ page 70024 "SSA Leasing Journal"
                 ShowCaption = false;
                 fixed(Control1902205001)
                 {
-                    Caption = '';
                     ShowCaption = false;
                     group("Account Name")
                     {
@@ -450,7 +449,6 @@ page 70024 "SSA Leasing Journal"
                             ApplicationArea = All;
                             Editable = false;
                             ShowCaption = false;
-                            Caption = '';
                             ToolTip = 'Specifies the name of the account.';
                         }
                     }

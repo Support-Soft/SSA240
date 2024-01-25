@@ -35,6 +35,7 @@ page 70015 "SSA Closing Page"
             separator("2. Rulare reevaluare")
             {
                 IsHeader = true;
+                Caption = '2. Rulare reevaluare';
             }
             action("<Action1000000011>")
             {
@@ -61,6 +62,7 @@ page 70015 "SSA Closing Page"
             separator("3. Rulare amortizare")
             {
                 IsHeader = true;
+                Caption = '3. Rulare amortizare';
             }
             action("<Action1000000012>")
             {
@@ -104,6 +106,7 @@ page 70015 "SSA Closing Page"
             }
             separator("5. Cheltuieli Productie")
             {
+                Caption = '5. Cheltuieli Productie';
                 IsHeader = true;
             }
             action("<Action1000000015>")
@@ -141,6 +144,7 @@ page 70015 "SSA Closing Page"
             }
             separator("6. Inchidere lunara")
             {
+                Caption = '6. Inchidere lunara';
                 IsHeader = true;
             }
             action("<Action1000000019>")
@@ -179,6 +183,7 @@ page 70015 "SSA Closing Page"
 
             separator("7. Declaratii catre stat")
             {
+                Caption = '7. Declaratii catre stat';
                 IsHeader = true;
             }
 
@@ -198,6 +203,7 @@ page 70015 "SSA Closing Page"
         {
             separator(Reports)
             {
+                Caption = 'Reports';
             }
             action("<Action1000000002>")
             {

@@ -522,10 +522,6 @@ page 70010 "SSA Fixed Asset Card"
                     RunPageLink = "FA No." = field("No.");
                     ToolTip = 'View detailed historical information about the fixed asset.';
                 }
-                separator(Separator39)
-                {
-                    Caption = '';
-                }
             }
             group(Insurance)
             {
