@@ -319,6 +319,10 @@ page 72000 "SSAEDE-Documents Log Entries"
                             CODEUNIT.Run(CODEUNIT::"SSAEDExport EFactura", ROFacturaTransportLogEntry);
                     end;
                 }
+                action("Download XML FIle")
+                {
+                    Caption = 'Download XML File';
+                }
             }
             group(Import)
             {

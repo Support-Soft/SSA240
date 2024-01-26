@@ -16,7 +16,7 @@ codeunit 72003 "SSAEDEFactura Mgt."
         LocalPaymentSchemeIDTxt: Label 'LOCAL', locked = true;
         BICTxt: Label 'BIC', locked = true;
         AllowanceChargeReasonCodeTxt: Label '104', locked = true;
-        GTINTxt: Label 'GTIN', locked = true;
+        GTINTxt: Label '0160', locked = true;
         UoMforPieceINUNECERec20ListIDTxt: Label 'EA', Locked = true;
         NoUnitOfMeasureErr: Label 'The %1 %2 contains lines on which the %3 field is empty.', Comment = '1: document type, 2: document no 3 Unit of Measure Code';
 

@@ -34,14 +34,14 @@ codeunit 72007 "SSAEDANAF API Mgt"
 
     local procedure SendRequest_PostEFactura(_URL: Text; _Param: Text; _Token: Text; var _TempBlobRequest: Codeunit "Temp Blob"; var _DateResponse: Text; var _ExecutionStatus: Text; var _index_incarcare: Text)
     var
-        TempBlobResponse: Codeunit "Temp Blob";
         Client: HttpClient;
         RequestContent: HttpContent;
         Headers: HttpHeaders;
         ContentHeaders: HttpHeaders;
         Response: HttpResponseMessage;
         BodyInstr: InStream;
-        ResponseInStream: InStream;
+        ResponseText: Text;
+        RequestText: Text;
     begin
 
         CheckTokenValidity();
@@ -53,28 +53,27 @@ codeunit 72007 "SSAEDANAF API Mgt"
         Headers.Add('Accept-Encoding', 'gzip, deflate, br');
 
         _TempBlobRequest.CreateInStream(BodyInstr, TextEncoding::UTF8);
-        RequestContent.WriteFrom(BodyInstr);
+        BodyInstr.ReadText(RequestText);
+        RequestContent.WriteFrom(RequestText);
         RequestContent.GetHeaders(ContentHeaders);
+
         if ContentHeaders.Contains('Content-Type') then
             ContentHeaders.Remove('Content-Type');
         ContentHeaders.Add('Content-Type', 'application/xml');
         if not Client.Post(_URL + _Param, RequestContent, Response) or (not Response.IsSuccessStatusCode()) then
             Error(Response.ReasonPhrase);
 
-        TempBlobResponse.CreateInStream(ResponseInStream, TEXTENCODING::UTF8);
-        Response.Content.ReadAs(ResponseInStream);
+        Response.Content.ReadAs(ResponseText);
 
-        ParseXMLResponse_PostEFactura(TempBlobResponse, _DateResponse, _ExecutionStatus, _index_incarcare);
+        ParseXMLResponse_PostEFactura(ResponseText, _DateResponse, _ExecutionStatus, _index_incarcare);
 
     end;
 
-    local procedure ParseXMLResponse_PostEFactura(var _TempBlob: Codeunit "Temp Blob"; var _DateResponse: Text; var _ExecutionStatus: Text; var _index_incarcare: Text)
+    local procedure ParseXMLResponse_PostEFactura(_ResponseText: Text; var _DateResponse: Text; var _ExecutionStatus: Text; var _index_incarcare: Text)
     var
         TempXML: Record "XML Buffer" temporary;
-        InStr: InStream;
     begin
-        _TempBlob.CreateInStream(InStr, TextEncoding::UTF8);
-        TempXML.LoadFromStream(InStr);
+        TempXML.LoadFromText(_ResponseText);
 
         TempXML.FindNodesByXPath(TempXML, 'dateResponse');
         _DateResponse := TempXML.GetValue();
@@ -110,11 +109,10 @@ codeunit 72007 "SSAEDANAF API Mgt"
 
     local procedure SendRequest_GetStareMesaj(_URL: Text; _Param: Text; _Token: Text; var _StareMesaj: Text; var _IDDescarcare: Text)
     var
-        TempBlobResponse: Codeunit "Temp Blob";
         Client: HttpClient;
         Headers: HttpHeaders;
         Response: HttpResponseMessage;
-        ResponseInStream: InStream;
+        ResponseText: Text;
     begin
         CheckTokenValidity();
 
@@ -127,20 +125,17 @@ codeunit 72007 "SSAEDANAF API Mgt"
         if not Client.Get(_URL + _Param, Response) or (not Response.IsSuccessStatusCode()) then
             Error(Response.ReasonPhrase);
 
-        TempBlobResponse.CreateInStream(ResponseInStream, TEXTENCODING::UTF8);
-        Response.Content.ReadAs(ResponseInStream);
+        Response.Content.ReadAs(ResponseText);
 
-        ParseXMLResponse_GetStareMesaj(TempBlobResponse, _StareMesaj, _IDDescarcare);
+        ParseXMLResponse_GetStareMesaj(ResponseText, _StareMesaj, _IDDescarcare);
 
     end;
 
-    local procedure ParseXMLResponse_GetStareMesaj(var _TempBlob: Codeunit "Temp Blob"; var _StareMesaj: Text; var _IDDescarcare: Text)
+    local procedure ParseXMLResponse_GetStareMesaj(_ResponseText: Text; var _StareMesaj: Text; var _IDDescarcare: Text)
     var
         TempXML: Record "XML Buffer" temporary;
-        InStr: InStream;
     begin
-        _TempBlob.CreateInStream(InStr, TextEncoding::UTF8);
-        TempXML.LoadFromStream(InStr);
+        TempXML.LoadFromText(_ResponseText);
 
         TempXML.FindNodesByXPath(TempXML, 'stare');
         _StareMesaj := TempXML.GetValue();
@@ -380,8 +375,6 @@ codeunit 72007 "SSAEDANAF API Mgt"
 
     local procedure SendRequest_RefreshToken(var _Rec: Record "SSAEDEDocuments Setup")
     var
-        TempBlobResponse: Codeunit "Temp Blob";
-        ResponseInStream: InStream;
         BearerToken: Label 'Bearer %1', Locked = true;
         Client: HttpClient;
         Headers: HttpHeaders;
@@ -414,9 +407,6 @@ codeunit 72007 "SSAEDANAF API Mgt"
 
         if not Client.Post(_Rec."Authorization URL", RequestContent, Response) or (not Response.IsSuccessStatusCode()) then
             Error(Response.ReasonPhrase);
-
-        TempBlobResponse.CreateInStream(ResponseInStream, TEXTENCODING::UTF8);
-        Response.Content.ReadAs(ResponseInStream);
 
         Response.Content.ReadAs(ResponseText);
 
