@@ -2,7 +2,7 @@
 {
     Caption = 'Inventory Shipment';
     PreviewMode = PrintLayout;
-    DefaultRenderingLayout = "InventoryShipment.rdlc";
+    DefaultRenderingLayout = "AvizInventoryShipment.rdlc";
 
     dataset
     {
@@ -23,10 +23,13 @@
                 dataitem(PageLoop; "Integer")
                 {
                     DataItemTableView = sorting(Number) where(Number = const(1));
-                    column(CompanyInfo2Picture; CompanyInfo2.Picture)
+                    column(CompanyInfoPicture; CompanyInfo.Picture)
                     {
                     }
                     column(CompanyInfo1Picture; CompanyInfo1.Picture)
+                    {
+                    }
+                    column(CompanyInfo2Picture; CompanyInfo2.Picture)
                     {
                     }
                     column(CompanyInfo3Picture; CompanyInfo3.Picture)
@@ -173,6 +176,42 @@
                     column(ExternalDocumentNo_InvtShipmentHeader; "Invt. Shipment Header"."External Document No.")
                     {
                     }
+                    column(DeclaratieConformitate; GetDeclaratieConformitate)
+                    {
+
+                    }
+                    column(CompanyInfo_SSACommerceTradeNo; CompanyInfo."SSA Commerce Trade No.")
+                    {
+
+                    }
+                    column(CompanyInfo_IBAN; CompanyInfo.IBAN)
+                    {
+
+                    }
+                    column(SellToCustomer_CommerceTradeNo; SellToCustomer."SSA Commerce Trade No.")
+                    { }
+                    column(CustomerBankAccount_Name; CustomerBankAccount.Name)
+                    { }
+                    column(CustomerBankAccount_IBAN; CustomerBankAccount.IBAN)
+                    { }
+                    column(CustAddr_1; CustAddr[1])
+                    { }
+                    column(CustAddr_2; CustAddr[2])
+                    { }
+                    column(CustAddr_3; CustAddr[3])
+                    { }
+                    column(CustAddr_4; CustAddr[4])
+                    { }
+                    column(CustAddr_5; CustAddr[5])
+                    { }
+                    column(CustAddr_6; CustAddr[6])
+                    { }
+                    column(CustAddr_7; CustAddr[7])
+                    { }
+                    column(CustAddr_8; CustAddr[8])
+                    { }
+                    column(SellToCustomer_VATRegistrationNo; SellToCustomer."VAT Registration No.")
+                    { }
                     dataitem(DimensionLoop1; "Integer")
                     {
                         DataItemLinkReference = "Invt. Shipment Header";
@@ -265,6 +304,14 @@
                         column(No_InvtShipmentLineCaption; FieldCaption("Item No."))
                         {
                         }
+                        column(NrCrt; NrCrt)
+                        {
+                        }
+                        column(Item_Reference_Type; "Item Reference Type")
+                        {
+
+                        }
+
                         dataitem(DimensionLoop2; "Integer")
                         {
                             DataItemTableView = sorting(Number) where(Number = filter(1 ..));
@@ -313,6 +360,8 @@
                         begin
                             LinNo := "Line No.";
                             DimSetEntry2.SetRange("Dimension Set ID", "Dimension Set ID");
+
+                            NrCrt += 1;
                         end;
 
                         trigger OnPostDataItem()
@@ -498,6 +547,14 @@
                 CompanyBankAccount.CopyBankFieldsFromCompanyInfo(CompanyInfo);
 
                 DimSetEntry1.SetRange("Dimension Set ID", "Dimension Set ID");
+
+                if not SellToCustomer.Get("SSA Sell-to Customer No.") then
+                    Clear(SellToCustomer);
+
+                if not CustomerBankAccount.Get(SellToCustomer."No.", SellToCustomer."Preferred Bank Account Code") then
+                    Clear(CustomerBankAccount);
+
+                Clear(NrCrt);
             end;
 
             trigger OnPostDataItem()
@@ -550,16 +607,44 @@
             Caption = 'Inventory Shipment (RDLC)';
             Summary = 'The Inventory Shipment (RDLC) provides a detailed layout.';
         }
+        layout("AvizInventoryShipment.rdlc")
+        {
+            Type = RDLC;
+            LayoutFile = './src/rdlc/AvizInventoryShipment.rdlc';
+            Caption = 'Aviz Inventory Shipment (RDLC)';
+            Summary = 'The Aviz Inventory Shipment (RDLC) provides a detailed layout.';
+        }
     }
 
     labels
     {
+        AvizLbl = 'Aviz de însoțire a mărfii', Locked = true;
+        NumarLbl = 'Numar:', Locked = true;
+        DataLbl = 'Data:', Locked = true;
+        ComandaLbl = 'Comanda:', Locked = true;
+        FurnzirLbl = 'Furnizor:', Locked = true;
+        CIFLbl = 'CIF:', Locked = true;
+        RegComLbl = 'Reg. Com.:', Locked = true;
+        AdresaLbl = 'Adresa:', Locked = true;
+        BancaLbl = 'Banca:', Locked = true;
+        IBANLbl = 'IBAN:', Locked = true;
+        ClientLbl = 'Client:', Locked = true;
+        AdresaLivrareLbl = 'Adresa de livrare:', Locked = true;
+        NrCrtLbl = 'Nr. Crt.', Locked = true;
+        CodEANLbl = 'Cod EAN', Locked = true;
+        DenumireLbl = 'Denumire', Locked = true;
+        UMLbl = 'UM', Locked = true;
+        CantitateLbl = 'Cantitate', Locked = true;
+
+
+
     }
 
     trigger OnInitReport()
     begin
         CompanyInfo.Get();
         SalesSetup.Get();
+        CompanyInfo.CalcFields(Picture);
         FormatDocument.SetLogoPosition(SalesSetup."Logo Position on Documents", CompanyInfo1, CompanyInfo2, CompanyInfo3);
 
         OnAfterInitReport();
@@ -578,12 +663,14 @@
         DimSetEntry1: Record "Dimension Set Entry";
         DimSetEntry2: Record "Dimension Set Entry";
         RespCenter: Record "Responsibility Center";
+        CustomerBankAccount: Record "Customer Bank Account";
         ItemTrackingAppendix: Report "Item Tracking Appendix";
         Language: Codeunit Language;
         FormatAddr: Codeunit "Format Address";
         SSAFormatAddr: Codeunit "SSA Format Address";
         FormatDocument: Codeunit "Format Document";
         ItemTrackingDocMgt: Codeunit "Item Tracking Doc. Management";
+        SellToCustomer: Record Customer;
         CustAddr: array[8] of Text[100];
         ShipToAddr: array[8] of Text[100];
         CompanyAddr: array[8] of Text[100];
@@ -629,6 +716,7 @@
         PageCaptionCap: Label 'Page %1 of %2';
         OurDocumentNoLbl: Label 'Our Document No.';
         PurchaseOrderNoLbl: Label 'Purchase Order No.';
+        NrCrt: Integer;
 
     protected var
         TempTrackingSpecBuffer: Record "Tracking Specification" temporary;
@@ -652,6 +740,7 @@
 
     local procedure FormatAddressFields(InvtShipmentHeader: Record "Invt. Shipment Header")
     begin
+        SSAFormatAddr.InventoryShptSellTo(CustAddr, InvtShipmentHeader);
         FormatAddr.GetCompanyAddr('', RespCenter, CompanyInfo, CompanyAddr);
         SSAFormatAddr.InvtShptShipTo(ShipToAddr, InvtShipmentHeader);
     end;
@@ -659,6 +748,17 @@
     local procedure FormatDocumentFields(InvtShipmentHeader: Record "Invt. Shipment Header")
     begin
         FormatDocument.SetSalesPerson(SalesPurchPerson, InvtShipmentHeader."Salesperson Code", SalespersonText);
+    end;
+
+    local procedure GetDeclaratieConformitate(): Text
+    begin
+        exit(StrSubstNo('%1, cu domiciliul fiscal %2, nr de inmatriculare la Registrul comertului %3, declara pe ' +
+'propria raspundere ca produsele livrate cu prezentul document, nu pun in pericol viata, sanatatea, securitatea muncii, nu ' +
+'produc un impact negativ asupra mediului si respecta prevederile legale cuprinse in HG147/2015 privind adoptarea unor ' +
+'masuri de aplicare a prevederilor Regulamentului CE nr. 1223/2009 al Parlamentului European si al Consiliului din 30.11.2009 ' +
+'privind produsele cosmetice si in Regulamentul UE nr. 655/2013 al Comisiei din 10.07.2013 de stabilire a unor criterii comune ' +
+'in legatura cu produsele cosmetice.', CompanyInfo.Name, CompanyInfo.City, CompanyInfo."SSA Commerce Trade No."));
+
     end;
 
     [IntegrationEvent(TRUE, false)]

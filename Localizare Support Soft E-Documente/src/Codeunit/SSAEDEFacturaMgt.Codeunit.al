@@ -408,7 +408,8 @@ codeunit 72003 "SSAEDEFactura Mgt."
     var
         PaymentMethod: Record "Payment Method";
     begin
-        PaymentMethod.Get(SalesHeader."Payment Method Code");
+        if not PaymentMethod.Get(SalesHeader."Payment Method Code") then
+            Clear(PaymentMethod);
         PaymentMethod.TestField("SSAEDEFactura ID");
         PaymentMeansCode := PaymentMethod."SSAEDEFactura ID";
         PaymentMeansListID := GetUNCL4461ListID;
@@ -457,7 +458,8 @@ codeunit 72003 "SSAEDEFactura Mgt."
     var
         PaymentMethod: Record "Payment Method";
     begin
-        PaymentMethod.Get(SalesHeader."Payment Method Code");
+        if not PaymentMethod.Get(SalesHeader."Payment Method Code") then
+            Clear(PaymentMethod);
         PaymentMethod.TestField("SSAEDEFactura ID");
         PaymentMeansCode := PaymentMethod."SSAEDEFactura ID";
         PaymentMeansListID := GetUNCL4461ListID;
@@ -519,9 +521,9 @@ codeunit 72003 "SSAEDEFactura Mgt."
         AllowanceChargeListID := GetUNCL4465ListID;
         AllowanceChargeReason := InvoiceDisAmtTxt;
         //SSM2434>>
-        IF SalesHeader.IsCreditDocType THEN
+        if SalesHeader.IsCreditDocType then
             Amount := FORMAT(-VATAmtLine."Invoice Discount Amount", 0, 9)
-        ELSE
+        else
             Amount := FORMAT(VATAmtLine."Invoice Discount Amount", 0, 9);
 
         //SSM2434<<

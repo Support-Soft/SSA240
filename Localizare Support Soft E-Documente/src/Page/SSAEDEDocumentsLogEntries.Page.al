@@ -228,7 +228,6 @@ page 72000 "SSAEDE-Documents Log Entries"
                     trigger OnAction()
                     var
                         ROFacturaTransportLogEntry: Record "SSAEDE-Documents Log Entry";
-                        ExportEFactura: Codeunit "SSAEDExport EFactura";
                         ANAFAPIMgt: Codeunit "SSAEDANAF API Mgt";
                         TempBlob: Codeunit "Temp Blob";
                         InStr: InStream;
@@ -236,20 +235,19 @@ page 72000 "SSAEDE-Documents Log Entries"
                     begin
                         ROFacturaTransportLogEntry := Rec;
                         CurrPage.SetSelectionFilter(ROFacturaTransportLogEntry);
-                        if ROFacturaTransportLogEntry."Entry Type" = ROFacturaTransportLogEntry."Entry Type"::"Export E-Transport" then
-                            CODEUNIT.Run(CODEUNIT::"SSAEDExport ETransport", ROFacturaTransportLogEntry);
-                        if ROFacturaTransportLogEntry."Entry Type" = ROFacturaTransportLogEntry."Entry Type"::"Export E-Factura" then
-                            ExportEFactura.ExportXMLFile(ROFacturaTransportLogEntry);
-                        if ROFacturaTransportLogEntry."Entry Type" = ROFacturaTransportLogEntry."Entry Type"::"Import E-Factura" then begin
-                            ROFacturaTransportLogEntry := Rec;
-                            CurrPage.SetSelectionFilter(ROFacturaTransportLogEntry);
-                            ROFacturaTransportLogEntry.TestField("ID Descarcare");
-                            ANAFAPIMgt.DescarcareMesaj(ROFacturaTransportLogEntry."ID Descarcare", TempBlob);
-                            TempBlob.CreateInStream(InStr);
-                            FileName := Rec."ID Descarcare" + '.zip';
-                            DownloadFromStream(InStr, 'Save file', '', 'Zip File (*.zip)|*.zip', FileName);
-
+                        case ROFacturaTransportLogEntry."Entry Type" of
+                            ROFacturaTransportLogEntry."Entry Type"::"Export E-Transport":
+                                CODEUNIT.Run(CODEUNIT::"SSAEDExport ETransport", ROFacturaTransportLogEntry);
+                            ROFacturaTransportLogEntry."Entry Type"::"Import E-Factura", ROFacturaTransportLogEntry."Entry Type"::"Export E-Factura":
+                                begin
+                                    ROFacturaTransportLogEntry.TestField("ID Descarcare");
+                                    ANAFAPIMgt.DescarcareMesaj(ROFacturaTransportLogEntry."ID Descarcare", TempBlob);
+                                    TempBlob.CreateInStream(InStr);
+                                    FileName := Rec."ID Descarcare" + '.zip';
+                                    DownloadFromStream(InStr, 'Save file', '', 'Zip File (*.zip)|*.zip', FileName);
+                                end;
                         end;
+
                     end;
                 }
                 action("Download PDF File")
@@ -319,9 +317,21 @@ page 72000 "SSAEDE-Documents Log Entries"
                             CODEUNIT.Run(CODEUNIT::"SSAEDExport EFactura", ROFacturaTransportLogEntry);
                     end;
                 }
-                action("Download XML FIle")
+                action("Save XML File")
                 {
-                    Caption = 'Download XML File';
+                    Caption = 'Save XML File';
+                    Promoted = true;
+                    PromotedCategory = Process;
+                    PromotedIsBig = true;
+                    ToolTip = 'Save XML File';
+                    trigger OnAction()
+                    var
+                        ROFacturaTransportLogEntry: Record "SSAEDE-Documents Log Entry";
+                        ExportEFactura: Codeunit "SSAEDExport EFactura";
+                    begin
+                        if ROFacturaTransportLogEntry."Entry Type" = ROFacturaTransportLogEntry."Entry Type"::"Export E-Factura" then
+                            ExportEFactura.ExportXMLFile(ROFacturaTransportLogEntry);
+                    end;
                 }
             }
             group(Import)

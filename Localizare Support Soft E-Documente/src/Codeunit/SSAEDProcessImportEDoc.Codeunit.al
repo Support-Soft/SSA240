@@ -280,6 +280,7 @@ codeunit 72008 "SSAEDProcess Import E-Doc"
         EFTDetails: Record "SSAEDE-Documents Details";
         ConfirmMsg: Label 'A fost creat %1 %2. Doriti sa deschideti?';
         LineNo: Integer;
+        NextNo: Code[20];
     begin
         GLSetup.GET;
 
@@ -305,7 +306,7 @@ codeunit 72008 "SSAEDProcess Import E-Doc"
         EFTDetails.SETRANGE("Type of Line", EFTDetails."Type of Line"::"PaymentMeans Line");
         if EFTDetails.FINDSET then
             repeat
-                InsertVBA(_EFTEntry."NAV Vendor No.", EFTDetails.Note, EFTDetails."Item Name");
+                InsertVBA(_EFTEntry."NAV Vendor No.", EFTDetails.Note, EFTDetails."Item Name", NextNo);
             until EFTDetails.NEXT = 0;
 
         _EFTEntry.TESTFIELD("Import Document Type"); //SSM2434
@@ -352,7 +353,7 @@ codeunit 72008 "SSAEDProcess Import E-Doc"
 
         if GuiAllowed then
             if CONFIRM(STRSUBSTNO(ConfirmMsg, PH."Document Type", PH."No.")) then
-                CASE PH."Document Type" OF
+                case PH."Document Type" of
                     PH."Document Type"::Order:
                         PAGE.RUN(PAGE::"Purchase Order", PH);
                     PH."Document Type"::Invoice:
@@ -361,13 +362,12 @@ codeunit 72008 "SSAEDProcess Import E-Doc"
                         PAGE.RUN(PAGE::"Purchase Credit Memo", PH);
                     PH."Document Type"::"Return Order":
                         PAGE.RUN(PAGE::"Purchase Return Order", PH);
-                END;
+                end;
     end;
 
-    local procedure InsertVBA(_VendorNo: Code[20]; _IBAN: Text; _Name: Text)
+    local procedure InsertVBA(_VendorNo: Code[20]; _IBAN: Text; _Name: Text; _NextNo: Code[20])
     var
         VBA: Record "Vendor Bank Account";
-        NextNo: Code[20];
         IntVar: Integer;
     begin
         VBA.RESET;
@@ -376,16 +376,21 @@ codeunit 72008 "SSAEDProcess Import E-Doc"
         if not VBA.ISEMPTY then
             exit;
 
-        VBA.SETRANGE(IBAN);
-        if VBA.FINDLAST then
-            if EVALUATE(IntVar, VBA.Code) then
-                NextNo := INCSTR(VBA.Code)
+        if _NextNo = '' then begin
+            VBA.SETRANGE(IBAN);
+            if VBA.FINDLAST then
+                if EVALUATE(IntVar, VBA.Code) then
+                    _NextNo := INCSTR(VBA.Code)
+                else
+                    _NextNo := '001'
             else
-                NextNo := '001';
+                _NextNo := '001';
+        end else
+            _NextNo := INCSTR(_NextNo);
 
         VBA.INIT;
         VBA.VALIDATE("Vendor No.", _VendorNo);
-        VBA.VALIDATE(Code, NextNo);
+        VBA.VALIDATE(Code, _NextNo);
         VBA.VALIDATE(Name, _Name);
         VBA.VALIDATE(IBAN, _IBAN);
         VBA.INSERT(true);
