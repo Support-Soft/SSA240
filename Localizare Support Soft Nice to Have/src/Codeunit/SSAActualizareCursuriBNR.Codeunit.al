@@ -17,9 +17,16 @@ codeunit 71100 "SSA Actualizare Cursuri BNR"
     var
         Currency: Record Currency;
         CurrencyExchangeRate: Record "Currency Exchange Rate";
+        SSASetup: Record "SSA Localization Setup";
         ActualizareCursuriBNR: Codeunit "SSA Actualizare Cursuri BNR";
         CurrenciesString: Text;
     begin
+        if SSASetup.Get() then begin
+            if not SSASetup."SSA Import BNR at LogIn" then
+                exit;
+        end else
+            exit;
+
         Clear(CurrenciesString);
         commit;
         ActualizareCursuriBNR.Run;

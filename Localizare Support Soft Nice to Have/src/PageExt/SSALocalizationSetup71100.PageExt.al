@@ -33,6 +33,11 @@ pageextension 71100 "SSA Localization Setup 71100" extends "SSA Localization Set
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Enable ANAF VAT field.';
                 }
+                field("SSA Import BNR at LogIn"; Rec."SSA Import BNR at LogIn")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Import BNR at LogIn field.';
+                }
             }
         }
     }

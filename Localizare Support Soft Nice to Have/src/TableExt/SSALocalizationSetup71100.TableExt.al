@@ -33,5 +33,10 @@ tableextension 71100 "SSA Localization Setup 71100" extends "SSA Localization Se
             Description = 'SSA966';
             ExtendedDatatype = Masked;
         }
+        field(71105; "SSA Import BNR at LogIn"; Boolean)
+        {
+            Caption = 'Import BNR at LogIn';
+            DataClassification = CustomerContent;
+        }
     }
 }

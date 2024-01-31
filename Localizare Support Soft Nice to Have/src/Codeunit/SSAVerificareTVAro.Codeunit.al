@@ -1,7 +1,7 @@
 codeunit 71101 "SSA VerificareTVA.ro"
 {
     var
-        RequestStringTemplate: Label 'nume=%1&pwd=%2&cui=%3&data=%4-%5-%6';
+        RequestStringTemplate: Label 'nume=%1&pwd=%2&cui=%3&data=%4-%5-%6', Locked = true;
         CountryRegion: Record "Country/Region";
         G_Raspuns: Text;
         G_Nume: Text;

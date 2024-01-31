@@ -1,10 +1,10 @@
 codeunit 71102 "SSA Interogare TVA Anaf"
 {
     var
-        Text000: Label '[{"cui":%1,"data":"%2"}]';
+        Text000: Label '[{"cui":%1,"data":"%2"}]', Locked = true;
         HideDialog: Boolean;
-        Text002: Label '"cod":200,';
-        Text003: Label '"message":"SUCCESS",';
+        Text002: Label '"cod":200,', Locked = true;
+        Text003: Label '"message":"SUCCESS",', Locked = true;
 
     procedure ValidatePartner(_PartnerRef: Code[20]; _Cui: Text; _TableID: Integer)
     var
