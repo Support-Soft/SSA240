@@ -703,6 +703,9 @@ xmlport 72001 "SSAEDE-Factura"
                       Dummy,
                       Dummy);
 
+                    if PaymentMeansCode = '' then
+                        currXMLport.Skip;
+
                     EFacturaMgt.GetPaymentMeansPayeeFinancialAcc(
                       payeefinancialaccountid,
                       Dummy,
@@ -743,7 +746,7 @@ xmlport 72001 "SSAEDE-Factura"
 
                 trigger OnBeforePassVariable()
                 begin
-                    EFacturaMgt.GetPaymentMeansInfo1(
+                    EFacturaMgt.GetPaymentMeansInfo(
                       SalesHeader,
                       PaymentMeansCode1,
                       Dummy,
@@ -752,6 +755,8 @@ xmlport 72001 "SSAEDE-Factura"
                       Dummy,
                       Dummy,
                       Dummy);
+                    if PaymentMeansCode1 = '' then
+                        currXMLport.Skip;
 
                     EFacturaMgt.GetPaymentMeansPayeeFinancialAcc1(
                       payeefinancialaccountid1,

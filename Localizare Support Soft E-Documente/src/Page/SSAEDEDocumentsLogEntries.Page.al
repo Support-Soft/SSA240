@@ -329,6 +329,7 @@ page 72000 "SSAEDE-Documents Log Entries"
                         ROFacturaTransportLogEntry: Record "SSAEDE-Documents Log Entry";
                         ExportEFactura: Codeunit "SSAEDExport EFactura";
                     begin
+                        ROFacturaTransportLogEntry := Rec;
                         if ROFacturaTransportLogEntry."Entry Type" = ROFacturaTransportLogEntry."Entry Type"::"Export E-Factura" then
                             ExportEFactura.ExportXMLFile(ROFacturaTransportLogEntry);
                     end;

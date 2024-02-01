@@ -408,8 +408,11 @@ codeunit 72003 "SSAEDEFactura Mgt."
     var
         PaymentMethod: Record "Payment Method";
     begin
-        if not PaymentMethod.Get(SalesHeader."Payment Method Code") then
-            Clear(PaymentMethod);
+        if (SalesHeader."Document Type" = SalesHeader."Document Type"::"Credit Memo") and
+              (SalesHeader."Payment Method Code" = '')
+        then
+            exit;
+        PaymentMethod.Get(SalesHeader."Payment Method Code");
         PaymentMethod.TestField("SSAEDEFactura ID");
         PaymentMeansCode := PaymentMethod."SSAEDEFactura ID";
         PaymentMeansListID := GetUNCL4461ListID;
@@ -452,24 +455,6 @@ codeunit 72003 "SSAEDEFactura Mgt."
         FinancialInstCountryIdCode := '';
         FinancialInstCountryListID := '';
     end;
-
-
-    procedure GetPaymentMeansInfo1(SalesHeader: Record "Sales Header"; var PaymentMeansCode: Text; var PaymentMeansListID: Text; var PaymentDueDate: Text; var PaymentChannelCode: Text; var PaymentID: Text; var PrimaryAccountNumberID: Text; var NetworkID: Text)
-    var
-        PaymentMethod: Record "Payment Method";
-    begin
-        if not PaymentMethod.Get(SalesHeader."Payment Method Code") then
-            Clear(PaymentMethod);
-        PaymentMethod.TestField("SSAEDEFactura ID");
-        PaymentMeansCode := PaymentMethod."SSAEDEFactura ID";
-        PaymentMeansListID := GetUNCL4461ListID;
-        PaymentDueDate := Format(SalesHeader."Due Date", 0, 9);
-        PaymentChannelCode := '';
-        PaymentID := '';
-        PrimaryAccountNumberID := '';
-        NetworkID := '';
-    end;
-
 
     procedure GetPaymentMeansPayeeFinancialAcc1(var PayeeFinancialAccountID: Text; var PaymentMeansSchemeID: Text; var FinancialInstitutionBranchID: Text; var FinancialInstitutionID: Text; var FinancialInstitutionSchemeID: Text; var FinancialInstitutionName: Text)
     var
