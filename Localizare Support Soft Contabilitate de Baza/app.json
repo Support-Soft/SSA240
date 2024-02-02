@@ -2,7 +2,7 @@
   "id": "c0c676db-b6cb-47be-b4cd-128de938af52",
   "name": "Localizare Support Soft Contabilitate de Baza",
   "publisher": "Support-Soft SRL",
-  "version": "23.0.0.6",
+  "version": "23.0.0.7",
   "brief": "",
   "description": "",
   "privacyStatement": "",
@@ -37,7 +37,7 @@
   },
   "runtime": "12.0",
   "features": [
-    "TranslationFile"
+    "TranslationFile","NoImplicitWith"
   ],
   "supportedLocales": [
     "en-US",

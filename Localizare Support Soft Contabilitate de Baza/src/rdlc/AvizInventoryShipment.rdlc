@@ -635,6 +635,7 @@
                                       <TablixCell>
                                         <CellContents>
                                           <Textbox Name="textbox13">
+                                            <CanGrow>true</CanGrow>
                                             <KeepTogether>true</KeepTogether>
                                             <Paragraphs>
                                               <Paragraph>

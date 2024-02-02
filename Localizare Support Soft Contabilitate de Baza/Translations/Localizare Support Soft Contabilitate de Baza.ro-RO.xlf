@@ -8795,114 +8795,98 @@
         </trans-unit>
         <trans-unit id="Report 175005413 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Inventory Shipment</source>
-          <target state="translated">Livrare stoc</target>
+          <target>Livrare stoc</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inventory Shipment - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 175005413 - NamedType 4233096702" size-unit="char" translate="yes" xml:space="preserve">
           <source>Account No.</source>
-          <target state="translated">Nr. cont</target>
+          <target>Nr. cont</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inventory Shipment - NamedType BankAccNoCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 175005413 - NamedType 2728952663" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bank</source>
-          <target state="translated">Banca</target>
+          <target>Banca</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inventory Shipment - NamedType BankNameCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 175005413 - NamedType 852687422" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bill-to Address</source>
-          <target state="translated">Nota de plata la adresa</target>
+          <target>Nota de plata la adresa</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inventory Shipment - NamedType BilltoAddressCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 175005413 - NamedType 817831222" size-unit="char" translate="yes" xml:space="preserve">
           <source>Description</source>
-          <target state="translated">Descriere</target>
+          <target>Descriere</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inventory Shipment - NamedType DescriptionCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 175005413 - NamedType 2728513993" size-unit="char" translate="yes" xml:space="preserve">
           <source>Document Date</source>
-          <target state="translated">Data documentului</target>
+          <target>Data documentului</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inventory Shipment - NamedType DocumentDateCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 175005413 - NamedType 1877430892" size-unit="char" translate="yes" xml:space="preserve">
           <source>Email</source>
-          <target state="translated">Email</target>
+          <target>Email</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inventory Shipment - NamedType EmailCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 175005413 - NamedType 13422290" size-unit="char" translate="yes" xml:space="preserve">
           <source>Giro No.</source>
-          <target state="translated">Nr. giro</target>
+          <target>Nr. giro</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inventory Shipment - NamedType GiroNoCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 175005413 - NamedType 973567044" size-unit="char" translate="yes" xml:space="preserve">
           <source>Header Dimensions</source>
-          <target state="translated">Antet dimensiuni</target>
+          <target>Antet dimensiuni</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inventory Shipment - NamedType HeaderDimensionsCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 175005413 - NamedType 2862688884" size-unit="char" translate="yes" xml:space="preserve">
           <source>Home Page</source>
-          <target state="translated">Pagina de pornire</target>
+          <target>Pagina de pornire</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inventory Shipment - NamedType HomePageCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 175005413 - NamedType 3469170451" size-unit="char" translate="yes" xml:space="preserve">
           <source>Item Tracking - Appendix</source>
-          <target state="translated">Urmarire articol -anexa</target>
+          <target>Urmarire articol -anexa</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inventory Shipment - NamedType ItemTrackingAppendixCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 175005413 - NamedType 3701122699" size-unit="char" translate="yes" xml:space="preserve">
           <source>Line Dimensions</source>
-          <target state="translated">Dimensiuni linii</target>
+          <target>Dimensiuni linii</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inventory Shipment - NamedType LineDimensionsCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 175005413 - NamedType 3926274846" size-unit="char" translate="yes" xml:space="preserve">
           <source>Lot No.</source>
-          <target state="translated">Nr. lot</target>
+          <target>Nr. lot</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inventory Shipment - NamedType LotNoCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 175005413 - NamedType 1292293871" size-unit="char" translate="yes" xml:space="preserve">
           <source>No.</source>
-          <target state="translated">Nr.</target>
+          <target>Nr.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inventory Shipment - NamedType NoCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 175005413 - NamedType 1326846744" size-unit="char" translate="yes" xml:space="preserve">
           <source>Our Document No.</source>
-          <target state="translated">Nr. documentului nostru</target>
+          <target>Nr. documentului nostru</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inventory Shipment - NamedType OurDocumentNoLbl</note>
         </trans-unit>
         <trans-unit id="Report 175005413 - NamedType 4022464961" size-unit="char" translate="yes" xml:space="preserve">
           <source>Page %1 of %2</source>
-          <target state="translated">Pagina %1 din %2</target>
+          <target>Pagina %1 din %2</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inventory Shipment - NamedType PageCaptionCap</note>
         </trans-unit>
         <trans-unit id="Report 175005413 - NamedType 1928308579" size-unit="char" translate="yes" xml:space="preserve">
@@ -8913,65 +8897,56 @@
         </trans-unit>
         <trans-unit id="Report 175005413 - NamedType 4045418794" size-unit="char" translate="yes" xml:space="preserve">
           <source>Purchase Order No.</source>
-          <target state="translated">Nr. comanda cumparare</target>
+          <target>Nr. comanda cumparare</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inventory Shipment - NamedType PurchaseOrderNoLbl</note>
         </trans-unit>
         <trans-unit id="Report 175005413 - NamedType 3246368361" size-unit="char" translate="yes" xml:space="preserve">
           <source>Quantity</source>
-          <target state="translated">Cantitate</target>
+          <target>Cantitate</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inventory Shipment - NamedType QuantityCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 175005413 - NamedType 601422815" size-unit="char" translate="yes" xml:space="preserve">
           <source>Serial No.</source>
-          <target state="translated">Serie</target>
+          <target>Serie</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inventory Shipment - NamedType SerialNoCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 175005413 - NamedType 4217840372" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shipment Date</source>
-          <target state="translated">Data livrarii</target>
+          <target>Data livrarii</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inventory Shipment - NamedType ShipmentDateCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 175005413 - NamedType 2259602087" size-unit="char" translate="yes" xml:space="preserve">
           <source>Shipment No.</source>
-          <target state="translated">Nr. livrare</target>
+          <target>Nr. livrare</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inventory Shipment - NamedType ShipmentNoCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 175005413 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
           <source>Inventory - Shipment %1</source>
-          <target state="translated">Livrare - Stoc %1</target>
+          <target>Livrare - Stoc %1</target>
           <note from="Developer" annotates="general" priority="2">%1 = Document No.</note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inventory Shipment - NamedType Text002</note>
         </trans-unit>
         <trans-unit id="Report 175005413 - NamedType 1306668226" size-unit="char" translate="yes" xml:space="preserve">
           <source>VAT Reg. No.</source>
-          <target state="translated">Cod unic de identificare</target>
+          <target>Cod unic de identificare</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inventory Shipment - NamedType VATRegNoCaptionLbl</note>
         </trans-unit>
         <trans-unit id="Report 175005413 - ReportDataItem 1657534480 - Property 1806354803" size-unit="char" translate="yes" xml:space="preserve">
           <source>Posted Invt Shipment</source>
-          <target state="translated">Livrari Inv. Inreg.</target>
+          <target>Livrari Inv. Inreg.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inventory Shipment - ReportDataItem Invt. Shipment Header - Property RequestFilterHeading</note>
         </trans-unit>
         <trans-unit id="Report 175005413 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Options</source>
-          <target state="translated">Optiuni</target>
+          <target>Optiuni</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inventory Shipment - Control Options - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 175005413 - Control 2578066365 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
@@ -8982,51 +8957,58 @@
         </trans-unit>
         <trans-unit id="Report 175005413 - Control 2578066365 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. of Copies</source>
-          <target state="translated">Nr. duplicate</target>
+          <target>Nr. duplicate</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inventory Shipment - Control NoOfCopies - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 175005413 - Control 316520822 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies if the document shows internal information.</source>
-          <target state="translated">Specifica daca documentul prezinta informatii interne.</target>
+          <target>Specifica daca documentul prezinta informatii interne.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inventory Shipment - Control ShowInternalInfo - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Report 175005413 - Control 316520822 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Show Internal Information</source>
-          <target state="translated">Afisare informatii interne</target>
+          <target>Afisare informatii interne</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inventory Shipment - Control ShowInternalInfo - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 175005413 - Control 3571734211 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies if you want to print an appendix to the Invt shipment report showing the lot and serial numbers in the shipment.</source>
-          <target state="translated">Specifica daca se doreste printarea unei anexe care cuprinde numerele de lot si serial din Livrare.</target>
+          <target>Specifica daca se doreste printarea unei anexe care cuprinde numerele de lot si serial din Livrare.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inventory Shipment - Control ShowLotSN - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Report 175005413 - Control 3571734211 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Show Serial/Lot Number Appendix</source>
-          <target state="translated">Afisare anexa nr. de serie/nr. lot</target>
+          <target>Afisare anexa nr. de serie/nr. lot</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inventory Shipment - Control ShowLotSN - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 175005413 - ReportLayout 1092579235 - Property 2166945456" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The Aviz Inventory Shipment (RDLC) provides a detailed layout.</source>
+          <target state="translated">Aviz Inventory Shipment (RDLC) oferă o prezentare detaliată.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inventory Shipment - Control ShowLotSN - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inventory Shipment - ReportLayout AvizInventoryShipment.rdlc - Property Summary</note>
+        </trans-unit>
+        <trans-unit id="Report 175005413 - ReportLayout 1092579235 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Aviz Inventory Shipment (RDLC)</source>
+          <target state="translated">Aviz de expediere a inventarului (RDLC)</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inventory Shipment - ReportLayout AvizInventoryShipment.rdlc - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 175005413 - ReportLayout 931301759 - Property 2166945456" size-unit="char" translate="yes" xml:space="preserve">
           <source>The Inventory Shipment (RDLC) provides a detailed layout.</source>
-          <target state="translated">Livrare Stoc (RDLC) afiseaza o dispunere detaliata.</target>
+          <target>Livrare Stoc (RDLC) afiseaza o dispunere detaliata.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inventory Shipment - ReportLayout InventoryShipment.rdlc - Property Summary</note>
         </trans-unit>
         <trans-unit id="Report 175005413 - ReportLayout 931301759 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Inventory Shipment (RDLC)</source>
-          <target state="translated">Livrare Stoc (RDLC)</target>
+          <target>Livrare Stoc (RDLC)</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inventory Shipment - ReportLayout InventoryShipment.rdlc - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 2197377612 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -10477,177 +10459,152 @@
         </trans-unit>
         <trans-unit id="PageExtension 179997614 - NamedType 1198625432" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 179997614">
           <source>The Code field can only be empty if you select Custom Address in the Ship-to field.</source>
-          <target state="translated">Campul Cod poate fi gol numai daca selectati Adresa personalizata in campul Livrare- la.</target>
+          <target>Campul Cod poate fi gol numai daca selectati Adresa personalizata in campul Livrare- la.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Invt. Shipment - NamedType EmptyShipToCodeErr</note>
         </trans-unit>
         <trans-unit id="PageExtension 179997614 - Control 479630643 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2589860325">
           <source>Sell-to</source>
-          <target state="translated">Vanzare-la</target>
+          <target>Vanzare-la</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Invt. Shipment - Control SSA Sell-to - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 179997614 - Control 2523369981 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2589860325">
           <source>Specifies the state, province or county of the address.</source>
-          <target state="translated">Specifica statul, provincia sau judetul adresei.</target>
+          <target>Specifica statul, provincia sau judetul adresei.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Invt. Shipment - Control SSA Sell-to County - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 179997614 - Control 2523369981 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2589860325">
           <source>County</source>
-          <target state="translated">Judet</target>
+          <target>Judet</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Invt. Shipment - Control SSA Sell-to County - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 179997614 - Control 1101591449 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2589860325">
           <source>Specifies the address where the customer is located.</source>
-          <target state="translated">Specifica adresa unde se afla clientul.</target>
+          <target>Specifica adresa unde se afla clientul.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Invt. Shipment - Control SSA Sell-to Address - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 179997614 - Control 1101591449 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2589860325">
           <source>Address</source>
-          <target state="translated">Adresa</target>
+          <target>Adresa</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Invt. Shipment - Control SSA Sell-to Address - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 179997614 - Control 3365729335 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2589860325">
           <source>Specifies additional address information.</source>
-          <target state="translated">Informatie Aditionala</target>
+          <target>Informatie Aditionala</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Invt. Shipment - Control SSA Sell-to Address 2 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 179997614 - Control 3365729335 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2589860325">
           <source>Address 2</source>
-          <target state="translated">Adresa 2</target>
+          <target>Adresa 2</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Invt. Shipment - Control SSA Sell-to Address 2 - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 179997614 - Control 383679426 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2589860325">
           <source>Specifies the city of the customer on the sales document.</source>
-          <target state="translated">Specifica orasul clientului pe documentul de vanzare.</target>
+          <target>Specifica orasul clientului pe documentul de vanzare.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Invt. Shipment - Control SSA Sell-to City - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 179997614 - Control 383679426 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2589860325">
           <source>City</source>
-          <target state="translated">Localitate</target>
+          <target>Localitate</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Invt. Shipment - Control SSA Sell-to City - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 179997614 - Control 1140909955 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2589860325">
           <source>Specifies the name of the person to contact at the customer.</source>
-          <target state="translated">Specifica numele persoanei de contactat la client.</target>
+          <target>Specifica numele persoanei de contactat la client.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Invt. Shipment - Control SSA Sell-to Contact - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 179997614 - Control 1140909955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2589860325">
           <source>Contact</source>
-          <target state="translated">Contact</target>
+          <target>Contact</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Invt. Shipment - Control SSA Sell-to Contact - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 179997614 - Control 2333073290 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2589860325">
           <source>Specifies the number of the contact person that the sales document will be sent to.</source>
-          <target state="translated">Specifica numarul persoanei de contact careia ii va fi trimis documentul de vanzare.</target>
+          <target>Specifica numarul persoanei de contact careia ii va fi trimis documentul de vanzare.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Invt. Shipment - Control SSA Sell-to Contact No. - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 179997614 - Control 2333073290 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2589860325">
           <source>Contact No.</source>
-          <target state="translated">Nr. contact</target>
+          <target>Nr. contact</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Invt. Shipment - Control SSA Sell-to Contact No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 179997614 - Control 4288211277 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2589860325">
           <source>Specifies the country or region of the address.</source>
-          <target state="translated">Specifica tara sau regiunea adresei.</target>
+          <target>Specifica tara sau regiunea adresei.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Invt. Shipment - Control SSA Sell-to Country/Region Code - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 179997614 - Control 4288211277 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2589860325">
           <source>Country/Region Code</source>
-          <target state="translated">Cod Tara/Regiune</target>
+          <target>Cod Tara/Regiune</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Invt. Shipment - Control SSA Sell-to Country/Region Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 179997614 - Control 3580877062 - Property 1064389655" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2589860325">
           <source>Who are you selling to?</source>
-          <target state="translated">Cui vinzi?</target>
+          <target>Cui vinzi?</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Invt. Shipment - Control SSA Sell-to Customer Name - Property AboutTitle</note>
         </trans-unit>
         <trans-unit id="PageExtension 179997614 - Control 3580877062 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2589860325">
           <source>Specifies the name of the customer who will receive the products and be billed by default.</source>
-          <target state="translated">Specifica numele clientului care va primi produsele si va fi facturat implicit.</target>
+          <target>Specifica numele clientului care va primi produsele si va fi facturat implicit.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Invt. Shipment - Control SSA Sell-to Customer Name - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 179997614 - Control 3580877062 - Property 247559172" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2589860325">
           <source>You can choose existing customers, or add new customers when you create orders. Orders can automatically choose special prices and discounts that you have set for each customer.</source>
-          <target state="translated">Puteti alege clienti existenti sau puteti adauga clienti noi atunci cand creati comenzi. Comenzile pot alege automat preturi speciale si reduceri pe care le-ati stabilit pentru fiecare client.</target>
+          <target>Puteti alege clienti existenti sau puteti adauga clienti noi atunci cand creati comenzi. Comenzile pot alege automat preturi speciale si reduceri pe care le-ati stabilit pentru fiecare client.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Invt. Shipment - Control SSA Sell-to Customer Name - Property AboutText</note>
         </trans-unit>
         <trans-unit id="PageExtension 179997614 - Control 3580877062 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2589860325">
           <source>Customer Name</source>
-          <target state="translated">Nume Client</target>
+          <target>Nume Client</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Invt. Shipment - Control SSA Sell-to Customer Name - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 179997614 - Control 640710734 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2589860325">
           <source>Specifies the number of the customer who will receive the products and be billed by default.</source>
-          <target state="translated">Specifica numele clientului care va primi produsele si va fi facturat implicit.</target>
+          <target>Specifica numele clientului care va primi produsele si va fi facturat implicit.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Invt. Shipment - Control SSA Sell-to Customer No. - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 179997614 - Control 640710734 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2589860325">
           <source>Customer No.</source>
-          <target state="translated">Nr. client</target>
+          <target>Nr. client</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Invt. Shipment - Control SSA Sell-to Customer No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 179997614 - Control 3300851620 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2589860325">
           <source>Specifies the email address of the contact person that the sales document will be sent to.</source>
-          <target state="translated">Specifica adresa de e-mail a persoanei de contact careia ii va fi trimis documentul de vanzare.</target>
+          <target>Specifica adresa de e-mail a persoanei de contact careia ii va fi trimis documentul de vanzare.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Invt. Shipment - Control SSA Sell-to E-Mail - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 179997614 - Control 3300851620 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2589860325">
           <source>Email</source>
-          <target state="translated">Email</target>
+          <target>Email</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Invt. Shipment - Control SSA Sell-to E-Mail - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 179997614 - Control 1347392118 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2589860325">
           <source>Specifies the telephone number of the contact person that the sales document will be sent to.</source>
-          <target state="translated">Specifica numarul de telefon al persoanei de contact careia i se va trimite documentul de vanzare.</target>
+          <target>Specifica numarul de telefon al persoanei de contact careia i se va trimite documentul de vanzare.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Invt. Shipment - Control SSA Sell-to Phone No. - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 179997614 - Control 1347392118 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2589860325">
@@ -10658,163 +10615,140 @@
         </trans-unit>
         <trans-unit id="PageExtension 179997614 - Control 1006644344 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2589860325">
           <source>Specifies the postal code.</source>
-          <target state="translated">Precizeaza codul postal care este asociat cu un oras.</target>
+          <target>Precizeaza codul postal care este asociat cu un oras.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Invt. Shipment - Control SSA Sell-to Post Code - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 179997614 - Control 1006644344 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2589860325">
           <source>Post Code</source>
-          <target state="translated">Cod postal</target>
+          <target>Cod postal</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Invt. Shipment - Control SSA Sell-to Post Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 179997614 - Control 2545440925 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2589860325">
           <source>Shipping</source>
-          <target state="translated">Livrare</target>
+          <target>Livrare</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Invt. Shipment - Control SSA Shipping - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 179997614 - Control 3260608337 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2589860325">
           <source>Specifies the state, province or county of the address.</source>
-          <target state="translated">Specifica statul, provincia sau judetul adresei.</target>
+          <target>Specifica statul, provincia sau judetul adresei.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Invt. Shipment - Control SSA Ship-to County - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 179997614 - Control 3260608337 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2589860325">
           <source>County</source>
-          <target state="translated">Judet</target>
+          <target>Judet</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Invt. Shipment - Control SSA Ship-to County - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 179997614 - Control 1397558085 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2589860325">
           <source>Specifies the address that products on the sales document will be shipped to.</source>
-          <target state="translated">Specifica adresa la care vor fi expediate produsele din documentul de vanzare.</target>
+          <target>Specifica adresa la care vor fi expediate produsele din documentul de vanzare.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Invt. Shipment - Control SSA Ship-to Address - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 179997614 - Control 1397558085 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2589860325">
           <source>Address</source>
-          <target state="translated">Adresa</target>
+          <target>Adresa</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Invt. Shipment - Control SSA Ship-to Address - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 179997614 - Control 1737919875 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2589860325">
           <source>Specifies additional address information.</source>
-          <target state="translated">Informatie Aditionala</target>
+          <target>Informatie Aditionala</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Invt. Shipment - Control SSA Ship-to Address 2 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 179997614 - Control 1737919875 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2589860325">
           <source>Address 2</source>
-          <target state="translated">Adresa 2</target>
+          <target>Adresa 2</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Invt. Shipment - Control SSA Ship-to Address 2 - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 179997614 - Control 3277523726 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2589860325">
           <source>Specifies the city of the customer on the sales document.</source>
-          <target state="translated">Specifica orasul clientului pe documentul de vanzare.</target>
+          <target>Specifica orasul clientului pe documentul de vanzare.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Invt. Shipment - Control SSA Ship-to City - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 179997614 - Control 3277523726 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2589860325">
           <source>City</source>
-          <target state="translated">Localitate</target>
+          <target>Localitate</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Invt. Shipment - Control SSA Ship-to City - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 179997614 - Control 3073631428 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2589860325">
           <source>Specifies the code for another shipment address than the customer's own address, which is entered by default.</source>
-          <target state="translated">Specifica codul pentru o alta adresa de livrare decat adresa proprie a clientului, care este introdusa implicit.</target>
+          <target>Specifica codul pentru o alta adresa de livrare decat adresa proprie a clientului, care este introdusa implicit.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Invt. Shipment - Control SSA Ship-to Code - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 179997614 - Control 3073631428 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2589860325">
           <source>Code</source>
-          <target state="translated">Cod</target>
+          <target>Cod</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Invt. Shipment - Control SSA Ship-to Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 179997614 - Control 3244604721 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2589860325">
           <source>Specifies the customer's country/region.</source>
-          <target state="translated">Specifica tara/regiunea clientului.</target>
+          <target>Specifica tara/regiunea clientului.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Invt. Shipment - Control SSA Ship-to Country/Region Code - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 179997614 - Control 3244604721 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2589860325">
           <source>Country/Region</source>
-          <target state="translated">Tara/Regiune</target>
+          <target>Tara/Regiune</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Invt. Shipment - Control SSA Ship-to Country/Region Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 179997614 - Control 971088254 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2589860325">
           <source>Specifies the name that products on the sales document will be shipped to.</source>
-          <target state="translated">Specifica numele la care vor fi livrate produsele din documentul de vanzare.</target>
+          <target>Specifica numele la care vor fi livrate produsele din documentul de vanzare.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Invt. Shipment - Control SSA Ship-to Name - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 179997614 - Control 971088254 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2589860325">
           <source>Name</source>
-          <target state="translated">Nume</target>
+          <target>Nume</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Invt. Shipment - Control SSA Ship-to Name - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 179997614 - Control 3509169380 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2589860325">
           <source>Specifies the postal code.</source>
-          <target state="translated">Precizeaza codul postal care este asociat cu un oras.</target>
+          <target>Precizeaza codul postal care este asociat cu un oras.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Invt. Shipment - Control SSA Ship-to Post Code - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 179997614 - Control 3509169380 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2589860325">
           <source>Post Code</source>
-          <target state="translated">Cod postal</target>
+          <target>Cod postal</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Invt. Shipment - Control SSA Ship-to Post Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 179997614 - Control 1764100039 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2589860325">
           <source>Specifies the name of the contact person at the address that products on the sales document will be shipped to.</source>
-          <target state="translated">Specifica numele persoanei de contact la adresa la care vor fi livrate produsele din documentul de vanzare.</target>
+          <target>Specifica numele persoanei de contact la adresa la care vor fi livrate produsele din documentul de vanzare.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Invt. Shipment - Control SSA Ship-to Contact - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 179997614 - Control 1764100039 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2589860325">
           <source>Contact</source>
-          <target state="translated">Contact</target>
+          <target>Contact</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Invt. Shipment - Control SSA Ship-to Contact - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 179997614 - Control 4167007253 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2589860325">
           <source>Specifies the address that the products on the sales document are shipped to. Default (Sell-to Address): The same as the customer's sell-to address. Alternate Ship-to Address: One of the customer's alternate ship-to addresses. Custom Address: Any ship-to address that you specify in the fields below.</source>
-          <target state="translated">Specifica adresa la care sunt expediate produsele din documentul de vanzare. Implicit (adresa de vanzare): La fel ca adresa de vanzare a clientului. Adresa alternativa de expediere: una dintre adresele alternative de expediere ale clientului. Adresa personalizata: orice adresa de expediere pe care o specificati in campurile de mai jos.</target>
+          <target>Specifica adresa la care sunt expediate produsele din documentul de vanzare. Implicit (adresa de vanzare): La fel ca adresa de vanzare a clientului. Adresa alternativa de expediere: una dintre adresele alternative de expediere ale clientului. Adresa personalizata: orice adresa de expediere pe care o specificati in campurile de mai jos.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Invt. Shipment - Control SSA ShippingOptions - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 179997614 - Control 4167007253 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2589860325">
           <source>Ship-to</source>
-          <target state="translated">Livreaza la</target>
+          <target>Livreaza la</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Invt. Shipment - Control SSA ShippingOptions - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1433444211 - Control 928055456 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1434786627">
@@ -10909,170 +10843,146 @@
         </trans-unit>
         <trans-unit id="PageExtension 2516049621 - Control 479630643 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1251096278">
           <source>Sell-to</source>
-          <target state="translated">Vanzare-la</target>
+          <target>Vanzare-la</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipment - Control SSA Sell-to - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 2516049621 - Control 2523369981 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1251096278">
           <source>Specifies the state, province or county of the address.</source>
-          <target state="translated">Specifica statul, provincia sau judetul adresei.</target>
+          <target>Specifica statul, provincia sau judetul adresei.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipment - Control SSA Sell-to County - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2516049621 - Control 2523369981 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1251096278">
           <source>County</source>
-          <target state="translated">Judet</target>
+          <target>Judet</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipment - Control SSA Sell-to County - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 2516049621 - Control 1101591449 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1251096278">
           <source>Specifies the address where the customer is located.</source>
-          <target state="translated">Specifica adresa unde se afla clientul.</target>
+          <target>Specifica adresa unde se afla clientul.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipment - Control SSA Sell-to Address - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2516049621 - Control 1101591449 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1251096278">
           <source>Address</source>
-          <target state="translated">Adresa</target>
+          <target>Adresa</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipment - Control SSA Sell-to Address - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 2516049621 - Control 3365729335 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1251096278">
           <source>Specifies additional address information.</source>
-          <target state="translated">Informatie Aditionala</target>
+          <target>Informatie Aditionala</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipment - Control SSA Sell-to Address 2 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2516049621 - Control 3365729335 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1251096278">
           <source>Address 2</source>
-          <target state="translated">Adresa 2</target>
+          <target>Adresa 2</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipment - Control SSA Sell-to Address 2 - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 2516049621 - Control 383679426 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1251096278">
           <source>Specifies the city of the customer on the sales document.</source>
-          <target state="translated">Specifica orasul clientului pe documentul de vanzare.</target>
+          <target>Specifica orasul clientului pe documentul de vanzare.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipment - Control SSA Sell-to City - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2516049621 - Control 383679426 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1251096278">
           <source>City</source>
-          <target state="translated">Localitate</target>
+          <target>Localitate</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipment - Control SSA Sell-to City - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 2516049621 - Control 1140909955 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1251096278">
           <source>Specifies the name of the person to contact at the customer.</source>
-          <target state="translated">Specifica numele persoanei de contactat la client.</target>
+          <target>Specifica numele persoanei de contactat la client.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipment - Control SSA Sell-to Contact - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2516049621 - Control 1140909955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1251096278">
           <source>Contact</source>
-          <target state="translated">Contact</target>
+          <target>Contact</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipment - Control SSA Sell-to Contact - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 2516049621 - Control 2333073290 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1251096278">
           <source>Specifies the number of the contact person that the sales document will be sent to.</source>
-          <target state="translated">Specifica numarul persoanei de contact careia ii va fi trimis documentul de vanzare.</target>
+          <target>Specifica numarul persoanei de contact careia ii va fi trimis documentul de vanzare.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipment - Control SSA Sell-to Contact No. - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2516049621 - Control 2333073290 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1251096278">
           <source>Contact No.</source>
-          <target state="translated">Nr. contact</target>
+          <target>Nr. contact</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipment - Control SSA Sell-to Contact No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 2516049621 - Control 4288211277 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1251096278">
           <source>Specifies the country or region of the address.</source>
-          <target state="translated">Specifica tara sau regiunea adresei.</target>
+          <target>Specifica tara sau regiunea adresei.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipment - Control SSA Sell-to Country/Region Code - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2516049621 - Control 4288211277 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1251096278">
           <source>Country/Region Code</source>
-          <target state="translated">Cod Tara/Regiune</target>
+          <target>Cod Tara/Regiune</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipment - Control SSA Sell-to Country/Region Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 2516049621 - Control 3580877062 - Property 1064389655" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1251096278">
           <source>Who are you selling to?</source>
-          <target state="translated">Cui vinzi?</target>
+          <target>Cui vinzi?</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipment - Control SSA Sell-to Customer Name - Property AboutTitle</note>
         </trans-unit>
         <trans-unit id="PageExtension 2516049621 - Control 3580877062 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1251096278">
           <source>Specifies the name of the customer who will receive the products and be billed by default.</source>
-          <target state="translated">Specifica numele clientului care va primi produsele si va fi facturat implicit.</target>
+          <target>Specifica numele clientului care va primi produsele si va fi facturat implicit.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipment - Control SSA Sell-to Customer Name - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2516049621 - Control 3580877062 - Property 247559172" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1251096278">
           <source>You can choose existing customers, or add new customers when you create orders. Orders can automatically choose special prices and discounts that you have set for each customer.</source>
-          <target state="translated">Puteti alege clienti existenti sau puteti adauga clienti noi atunci cand creati comenzi. Comenzile pot alege automat preturi speciale si reduceri pe care le-ati stabilit pentru fiecare client.</target>
+          <target>Puteti alege clienti existenti sau puteti adauga clienti noi atunci cand creati comenzi. Comenzile pot alege automat preturi speciale si reduceri pe care le-ati stabilit pentru fiecare client.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipment - Control SSA Sell-to Customer Name - Property AboutText</note>
         </trans-unit>
         <trans-unit id="PageExtension 2516049621 - Control 3580877062 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1251096278">
           <source>Customer Name</source>
-          <target state="translated">Nume Client</target>
+          <target>Nume Client</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipment - Control SSA Sell-to Customer Name - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 2516049621 - Control 640710734 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1251096278">
           <source>Specifies the number of the customer who will receive the products and be billed by default.</source>
-          <target state="translated">Specifica numele clientului care va primi produsele si va fi facturat implicit.</target>
+          <target>Specifica numele clientului care va primi produsele si va fi facturat implicit.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipment - Control SSA Sell-to Customer No. - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2516049621 - Control 640710734 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1251096278">
           <source>Customer No.</source>
-          <target state="translated">Nr. client</target>
+          <target>Nr. client</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipment - Control SSA Sell-to Customer No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 2516049621 - Control 3300851620 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1251096278">
           <source>Specifies the email address of the contact person that the sales document will be sent to.</source>
-          <target state="translated">Specifica adresa de e-mail a persoanei de contact careia ii va fi trimis documentul de vanzare.</target>
+          <target>Specifica adresa de e-mail a persoanei de contact careia ii va fi trimis documentul de vanzare.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipment - Control SSA Sell-to E-Mail - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2516049621 - Control 3300851620 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1251096278">
           <source>Email</source>
-          <target state="translated">Email</target>
+          <target>Email</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipment - Control SSA Sell-to E-Mail - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 2516049621 - Control 1347392118 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1251096278">
           <source>Specifies the telephone number of the contact person that the sales document will be sent to.</source>
-          <target state="translated">Specifica numarul de telefon al persoanei de contact careia i se va trimite documentul de vanzare.</target>
+          <target>Specifica numarul de telefon al persoanei de contact careia i se va trimite documentul de vanzare.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipment - Control SSA Sell-to Phone No. - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2516049621 - Control 1347392118 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1251096278">
@@ -11083,150 +10993,143 @@
         </trans-unit>
         <trans-unit id="PageExtension 2516049621 - Control 1006644344 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1251096278">
           <source>Specifies the postal code.</source>
-          <target state="translated">Precizeaza codul postal care este asociat cu un oras.</target>
+          <target>Precizeaza codul postal care este asociat cu un oras.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipment - Control SSA Sell-to Post Code - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2516049621 - Control 1006644344 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1251096278">
           <source>Post Code</source>
-          <target state="translated">Cod postal</target>
+          <target>Cod postal</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipment - Control SSA Sell-to Post Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 2516049621 - Control 2545440925 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1251096278">
           <source>Shipping</source>
-          <target state="translated">Livrare</target>
+          <target>Livrare</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipment - Control SSA Shipping - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 2516049621 - Control 3260608337 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1251096278">
           <source>Specifies the state, province or county of the address.</source>
-          <target state="translated">Specifica statul, provincia sau judetul adresei.</target>
+          <target>Specifica statul, provincia sau judetul adresei.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipment - Control SSA Ship-to County - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2516049621 - Control 3260608337 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1251096278">
           <source>County</source>
-          <target state="translated">Judet</target>
+          <target>Judet</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipment - Control SSA Ship-to County - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 2516049621 - Control 1397558085 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1251096278">
           <source>Specifies the address that products on the sales document will be shipped to.</source>
-          <target state="translated">Specifica adresa la care vor fi expediate produsele din documentul de vanzare.</target>
+          <target>Specifica adresa la care vor fi expediate produsele din documentul de vanzare.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipment - Control SSA Ship-to Address - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2516049621 - Control 1397558085 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1251096278">
           <source>Address</source>
-          <target state="translated">Adresa</target>
+          <target>Adresa</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipment - Control SSA Ship-to Address - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 2516049621 - Control 1737919875 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1251096278">
           <source>Specifies additional address information.</source>
-          <target state="translated">Informatie Aditionala</target>
+          <target>Informatie Aditionala</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipment - Control SSA Ship-to Address 2 - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2516049621 - Control 1737919875 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1251096278">
           <source>Address 2</source>
-          <target state="translated">Adresa 2</target>
+          <target>Adresa 2</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipment - Control SSA Ship-to Address 2 - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 2516049621 - Control 3277523726 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1251096278">
           <source>Specifies the city of the customer on the sales document.</source>
-          <target state="translated">Specifica orasul clientului pe documentul de vanzare.</target>
+          <target>Specifica orasul clientului pe documentul de vanzare.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipment - Control SSA Ship-to City - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2516049621 - Control 3277523726 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1251096278">
           <source>City</source>
-          <target state="translated">Localitate</target>
+          <target>Localitate</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipment - Control SSA Ship-to City - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 2516049621 - Control 3073631428 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1251096278">
           <source>Specifies the code for another shipment address than the customer's own address, which is entered by default.</source>
-          <target state="translated">Specifica codul pentru o alta adresa de livrare decat adresa proprie a clientului, care este introdusa implicit.</target>
+          <target>Specifica codul pentru o alta adresa de livrare decat adresa proprie a clientului, care este introdusa implicit.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipment - Control SSA Ship-to Code - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2516049621 - Control 3073631428 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1251096278">
           <source>Code</source>
-          <target state="translated">Cod</target>
+          <target>Cod</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipment - Control SSA Ship-to Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 2516049621 - Control 1764100039 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1251096278">
           <source>Specifies the name of the contact person at the address that products on the sales document will be shipped to.</source>
-          <target state="translated">Specifica numele persoanei de contact la adresa la care vor fi livrate produsele din documentul de vanzare.</target>
+          <target>Specifica numele persoanei de contact la adresa la care vor fi livrate produsele din documentul de vanzare.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipment - Control SSA Ship-to Contact - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2516049621 - Control 1764100039 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1251096278">
           <source>Contact</source>
-          <target state="translated">Contact</target>
+          <target>Contact</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipment - Control SSA Ship-to Contact - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 2516049621 - Control 3244604721 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1251096278">
           <source>Specifies the customer's country/region.</source>
-          <target state="translated">Specifica tara/regiunea clientului.</target>
+          <target>Specifica tara/regiunea clientului.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipment - Control SSA Ship-to Country/Region Code - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2516049621 - Control 3244604721 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1251096278">
           <source>Country/Region</source>
-          <target state="translated">Tara/Regiune</target>
+          <target>Tara/Regiune</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipment - Control SSA Ship-to Country/Region Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 2516049621 - Control 971088254 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1251096278">
           <source>Specifies the name that products on the sales document will be shipped to.</source>
-          <target state="translated">Specifica numele la care vor fi livrate produsele din documentul de vanzare.</target>
+          <target>Specifica numele la care vor fi livrate produsele din documentul de vanzare.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipment - Control SSA Ship-to Name - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2516049621 - Control 971088254 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1251096278">
           <source>Name</source>
-          <target state="translated">Nume</target>
+          <target>Nume</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipment - Control SSA Ship-to Name - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 2516049621 - Control 3509169380 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1251096278">
           <source>Specifies the postal code.</source>
-          <target state="translated">Precizeaza codul postal care este asociat cu un oras.</target>
+          <target>Precizeaza codul postal care este asociat cu un oras.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipment - Control SSA Ship-to Post Code - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 2516049621 - Control 3509169380 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1251096278">
           <source>Post Code</source>
-          <target state="translated">Cod postal</target>
+          <target>Cod postal</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipment - Control SSA Ship-to Post Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3725521836 - Control 3580877062 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 155881795">
+          <source>The Sell-to Customer Name field is used to specify the name of the customer who is to receive the shipment.</source>
+          <target state="translated">Câmpul Sell-to Customer Name (Nume client de vânzare) este utilizat pentru a specifica numele clientului care va primi transportul.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipment - Control SSA Ship-to Post Code - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipments - Control SSA Sell-to Customer Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3725521836 - Control 640710734 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 155881795">
+          <source>The Sell-to Customer No. field is used to specify the customer number of the customer who is to receive the shipment.</source>
+          <target state="translated">Câmpul Sell-to Customer No. este utilizat pentru a specifica numărul de client al clientului care urmează să primească transportul.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipments - Control SSA Sell-to Customer No. - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3577042706 - Control 2646786634 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4135951594">
           <source>Specifies the value of the Stare Factura field.</source>
@@ -12730,212 +12633,182 @@
         </trans-unit>
         <trans-unit id="TableExtension 2819205462 - NamedType 2551427998" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 2819205462">
           <source>Do you want to change %1?</source>
-          <target state="translated">Modificati %1?</target>
+          <target>Modificati %1?</target>
           <note from="Developer" annotates="general" priority="2">%1 = a Field Caption like Currency Code</note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Document Header - NamedType ConfirmChangeQst</note>
         </trans-unit>
         <trans-unit id="TableExtension 2819205462 - NamedType 3826440826" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 2819205462">
           <source>Don't show again</source>
-          <target state="translated">Nu mai afisa</target>
+          <target>Nu mai afisa</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Document Header - NamedType DontShowAgainActionLbl</note>
         </trans-unit>
         <trans-unit id="TableExtension 2819205462 - NamedType 414834695" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 2819205462">
           <source>Update the address</source>
-          <target state="translated">Actualizati adresa</target>
+          <target>Actualizati adresa</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Document Header - NamedType ModifyCustomerAddressNotificationLbl</note>
         </trans-unit>
         <trans-unit id="TableExtension 2819205462 - NamedType 2504623218" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 2819205462">
           <source>The address you entered for %1 is different from the customer's existing address.</source>
-          <target state="translated">Adresa pe care ati introdus-o pentru %1 este diferita de adresa existenta a clientului.</target>
+          <target>Adresa pe care ati introdus-o pentru %1 este diferita de adresa existenta a clientului.</target>
           <note from="Developer" annotates="general" priority="2">%1=customer name</note>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Document Header - NamedType ModifyCustomerAddressNotificationMsg</note>
         </trans-unit>
         <trans-unit id="TableExtension 2819205462 - NamedType 49602008" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 2819205462">
           <source>You cannot enter letters in this field.</source>
-          <target state="translated">Nu puteti introduce litere in acest camp.</target>
+          <target>Nu puteti introduce litere in acest camp.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Document Header - NamedType PhoneNoCannotContainLettersErr</note>
         </trans-unit>
         <trans-unit id="TableExtension 2819205462 - NamedType 3413947875" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 2819205462">
           <source>Sell-to Customer</source>
-          <target state="translated">Vanzare-la client</target>
+          <target>Vanzare-la client</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Document Header - NamedType SellToCustomerTxt</note>
         </trans-unit>
         <trans-unit id="TableExtension 2819205462 - NamedType 1370456556" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 2819205462">
           <source>You cannot reset %1 because the document still has one or more lines.</source>
-          <target state="translated">Nu puteti reseta %1 deoarece documentul are una sau mai multe linii.</target>
+          <target>Nu puteti reseta %1 deoarece documentul are una sau mai multe linii.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Document Header - NamedType Text005</note>
         </trans-unit>
         <trans-unit id="TableExtension 2819205462 - Field 1101591449 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2199490085">
           <source>Sell-to Address</source>
-          <target state="translated">Vanzare-la adresa</target>
+          <target>Vanzare-la adresa</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Document Header - Field SSA Sell-to Address - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2819205462 - Field 3365729335 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2199490085">
           <source>Sell-to Address 2</source>
-          <target state="translated">Vanzare-la adresa 2</target>
+          <target>Vanzare-la adresa 2</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Document Header - Field SSA Sell-to Address 2 - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2819205462 - Field 383679426 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2199490085">
           <source>Sell-to City</source>
-          <target state="translated">Vanzare-la Localitate</target>
+          <target>Vanzare-la Localitate</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Document Header - Field SSA Sell-to City - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2819205462 - Field 1140909955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2199490085">
           <source>Sell-to Contact</source>
-          <target state="translated">Vanzare-la contact</target>
+          <target>Vanzare-la contact</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Document Header - Field SSA Sell-to Contact - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2819205462 - Field 2333073290 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2199490085">
           <source>Sell-to Contact No.</source>
-          <target state="translated">Vanzare-la contact nr.</target>
+          <target>Vanzare-la contact nr.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Document Header - Field SSA Sell-to Contact No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2819205462 - Field 2301745557 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2199490085">
           <source>Sell-to Country/Region Code</source>
-          <target state="translated">Vanzare-la cod tara/regiune</target>
+          <target>Vanzare-la cod tara/regiune</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Document Header - Field SSA Sell-to Country/Reg Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2819205462 - Field 2523369981 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2199490085">
           <source>Sell-to County</source>
-          <target state="translated">Vanzare-la judet</target>
+          <target>Vanzare-la judet</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Document Header - Field SSA Sell-to County - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2819205462 - Field 3580877062 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2199490085">
           <source>Sell-to Customer Name</source>
-          <target state="translated">Vanzare-la nume client</target>
+          <target>Vanzare-la nume client</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Document Header - Field SSA Sell-to Customer Name - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2819205462 - Field 3373669396 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2199490085">
           <source>Sell-to Customer Name 2</source>
-          <target state="translated">Vanzare-la nume 2 client</target>
+          <target>Vanzare-la nume 2 client</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Document Header - Field SSA Sell-to Customer Name 2 - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2819205462 - Field 640710734 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2199490085">
           <source>Sell-to Customer No.</source>
-          <target state="translated">Vanzare-la client nr.</target>
+          <target>Vanzare-la client nr.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Document Header - Field SSA Sell-to Customer No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2819205462 - Field 3300851620 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2199490085">
           <source>Email</source>
-          <target state="translated">Email</target>
+          <target>Email</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Document Header - Field SSA Sell-to E-Mail - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2819205462 - Field 1347392118 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2199490085">
           <source>Sell-to Phone No.</source>
-          <target state="translated">Vanzare-la nr. telefon</target>
+          <target>Vanzare-la nr. telefon</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Document Header - Field SSA Sell-to Phone No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2819205462 - Field 1006644344 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2199490085">
           <source>Sell-to Post Code</source>
-          <target state="translated">Vanzare-la cod postal</target>
+          <target>Vanzare-la cod postal</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Document Header - Field SSA Sell-to Post Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2819205462 - Field 1397558085 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2199490085">
           <source>Ship-to Address</source>
-          <target state="translated">Livrare-la adresa</target>
+          <target>Livrare-la adresa</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Document Header - Field SSA Ship-to Address - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2819205462 - Field 1737919875 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2199490085">
           <source>Ship-to Address 2</source>
-          <target state="translated">Livrare la adresa 2</target>
+          <target>Livrare la adresa 2</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Document Header - Field SSA Ship-to Address 2 - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2819205462 - Field 3277523726 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2199490085">
           <source>Ship-to City</source>
-          <target state="translated">Livrare la oras</target>
+          <target>Livrare la oras</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Document Header - Field SSA Ship-to City - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2819205462 - Field 3073631428 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2199490085">
           <source>Ship-to Code</source>
-          <target state="translated">Livrare-la cod</target>
+          <target>Livrare-la cod</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Document Header - Field SSA Ship-to Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2819205462 - Field 1764100039 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2199490085">
           <source>Ship-to Contact</source>
-          <target state="translated">Livrare-la contact</target>
+          <target>Livrare-la contact</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Document Header - Field SSA Ship-to Contact - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2819205462 - Field 485479017 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2199490085">
           <source>Ship-to Country/Region Code</source>
-          <target state="translated">Livrare-la cod tara/regiune</target>
+          <target>Livrare-la cod tara/regiune</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Document Header - Field SSA Ship-to Country/Reg Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2819205462 - Field 3260608337 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2199490085">
           <source>Ship-to County</source>
-          <target state="translated">Livrare la judet</target>
+          <target>Livrare la judet</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Document Header - Field SSA Ship-to County - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2819205462 - Field 971088254 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2199490085">
           <source>Ship-to Name</source>
-          <target state="translated">Livrare-la nume</target>
+          <target>Livrare-la nume</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Document Header - Field SSA Ship-to Name - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2819205462 - Field 1586114508 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2199490085">
           <source>Ship-to Name 2</source>
-          <target state="translated">Livrare la nume 2</target>
+          <target>Livrare la nume 2</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Document Header - Field SSA Ship-to Name 2 - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2819205462 - Field 3509169380 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2199490085">
           <source>Ship-to Post Code</source>
-          <target state="translated">Livrare-la cod postal</target>
+          <target>Livrare-la cod postal</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Document Header - Field SSA Ship-to Post Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3402177647 - Field 235675904 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1001880325">
@@ -12946,163 +12819,140 @@
         </trans-unit>
         <trans-unit id="TableExtension 192063679 - Field 1101591449 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1657534480">
           <source>Sell-to Address</source>
-          <target state="translated">Vanzare-la adresa</target>
+          <target>Vanzare-la adresa</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Shipment Header - Field SSA Sell-to Address - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 192063679 - Field 3365729335 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1657534480">
           <source>Sell-to Address 2</source>
-          <target state="translated">Vanzare-la adresa 2</target>
+          <target>Vanzare-la adresa 2</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Shipment Header - Field SSA Sell-to Address 2 - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 192063679 - Field 383679426 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1657534480">
           <source>Sell-to City</source>
-          <target state="translated">Vanzare-la Localitate</target>
+          <target>Vanzare-la Localitate</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Shipment Header - Field SSA Sell-to City - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 192063679 - Field 1140909955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1657534480">
           <source>Sell-to Contact</source>
-          <target state="translated">Vanzare-la contact</target>
+          <target>Vanzare-la contact</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Shipment Header - Field SSA Sell-to Contact - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 192063679 - Field 2333073290 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1657534480">
           <source>Sell-to Contact No.</source>
-          <target state="translated">Vanzare-la contact nr.</target>
+          <target>Vanzare-la contact nr.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Shipment Header - Field SSA Sell-to Contact No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 192063679 - Field 2301745557 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1657534480">
           <source>Sell-to Country/Region Code</source>
-          <target state="translated">Vanzare-la cod tara/regiune</target>
+          <target>Vanzare-la cod tara/regiune</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Shipment Header - Field SSA Sell-to Country/Reg Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 192063679 - Field 2523369981 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1657534480">
           <source>Sell-to County</source>
-          <target state="translated">Vanzare-la judet</target>
+          <target>Vanzare-la judet</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Shipment Header - Field SSA Sell-to County - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 192063679 - Field 3580877062 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1657534480">
           <source>Sell-to Customer Name</source>
-          <target state="translated">Vanzare-la nume client</target>
+          <target>Vanzare-la nume client</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Shipment Header - Field SSA Sell-to Customer Name - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 192063679 - Field 3373669396 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1657534480">
           <source>Sell-to Customer Name 2</source>
-          <target state="translated">Vanzare-la nume 2 client</target>
+          <target>Vanzare-la nume 2 client</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Shipment Header - Field SSA Sell-to Customer Name 2 - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 192063679 - Field 640710734 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1657534480">
           <source>Sell-to Customer No.</source>
-          <target state="translated">Vanzare-la client nr.</target>
+          <target>Vanzare-la client nr.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Shipment Header - Field SSA Sell-to Customer No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 192063679 - Field 3300851620 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1657534480">
           <source>Email</source>
-          <target state="translated">Email</target>
+          <target>Email</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Shipment Header - Field SSA Sell-to E-Mail - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 192063679 - Field 1347392118 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1657534480">
           <source>Sell-to Phone No.</source>
-          <target state="translated">Vanzare-la nr. telefon</target>
+          <target>Vanzare-la nr. telefon</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Shipment Header - Field SSA Sell-to Phone No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 192063679 - Field 1006644344 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1657534480">
           <source>Sell-to Post Code</source>
-          <target state="translated">Vanzare-la cod postal</target>
+          <target>Vanzare-la cod postal</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Shipment Header - Field SSA Sell-to Post Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 192063679 - Field 1397558085 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1657534480">
           <source>Ship-to Address</source>
-          <target state="translated">Livrare-la adresa</target>
+          <target>Livrare-la adresa</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Shipment Header - Field SSA Ship-to Address - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 192063679 - Field 1737919875 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1657534480">
           <source>Ship-to Address 2</source>
-          <target state="translated">Livrare la adresa 2</target>
+          <target>Livrare la adresa 2</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Shipment Header - Field SSA Ship-to Address 2 - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 192063679 - Field 3277523726 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1657534480">
           <source>Ship-to City</source>
-          <target state="translated">Livrare la oras</target>
+          <target>Livrare la oras</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Shipment Header - Field SSA Ship-to City - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 192063679 - Field 3073631428 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1657534480">
           <source>Ship-to Code</source>
-          <target state="translated">Livrare-la cod</target>
+          <target>Livrare-la cod</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Shipment Header - Field SSA Ship-to Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 192063679 - Field 1764100039 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1657534480">
           <source>Ship-to Contact</source>
-          <target state="translated">Livrare-la contact</target>
+          <target>Livrare-la contact</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Shipment Header - Field SSA Ship-to Contact - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 192063679 - Field 485479017 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1657534480">
           <source>Ship-to Country/Region Code</source>
-          <target state="translated">Livrare-la cod tara/regiune</target>
+          <target>Livrare-la cod tara/regiune</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Shipment Header - Field SSA Ship-to Country/Reg Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 192063679 - Field 3260608337 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1657534480">
           <source>Ship-to County</source>
-          <target state="translated">Livrare la judet</target>
+          <target>Livrare la judet</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Shipment Header - Field SSA Ship-to County - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 192063679 - Field 971088254 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1657534480">
           <source>Ship-to Name</source>
-          <target state="translated">Livrare-la nume</target>
+          <target>Livrare-la nume</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Shipment Header - Field SSA Ship-to Name - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 192063679 - Field 1586114508 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1657534480">
           <source>Ship-to Name 2</source>
-          <target state="translated">Livrare la nume 2</target>
+          <target>Livrare la nume 2</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Shipment Header - Field SSA Ship-to Name 2 - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 192063679 - Field 3509169380 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1657534480">
           <source>Ship-to Post Code</source>
-          <target state="translated">Livrare-la cod postal</target>
+          <target>Livrare-la cod postal</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension SSA Invt. Shipment Header - Field SSA Ship-to Post Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2136431396 - Field 1460373919 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2675224487">
