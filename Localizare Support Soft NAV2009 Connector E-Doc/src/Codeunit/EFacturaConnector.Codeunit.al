@@ -48,12 +48,12 @@ codeunit 72300 "SSAEDNEFactura Connector"
                 XMLBuffer.AddElement('Id', Format(EFTDoc."Entry No."));
                 XMLBuffer.AddElement('Status', Format(EFTDoc."Status"));
                 XMLBuffer.AddElement('ErrorMessage', EFTDoc."Error Message");
-                XMLBuffer.AddElement('CreationDate', Format(EFTDoc."Creation Date"));
-                XMLBuffer.AddElement('CreationTime', Format(EFTDoc."Creation Time"));
+                XMLBuffer.AddElement('CreationDate', Format(EFTDoc."Creation Date", 0, 9));
+                XMLBuffer.AddElement('CreationTime', Format(EFTDoc."Creation Time", 0, 9));
                 XMLBuffer.AddElement('IndexIncarcare', Format(EFTDoc."Index Incarcare"));
                 XMLBuffer.AddElement('IDDescarcare', Format(EFTDoc."ID Descarcare"));
                 XMLBuffer.AddElement('Description', EFTDoc."Description");
-                XMLBuffer.AddElement('IssueDate', Format(EFTDoc."Issue Date"));
+                XMLBuffer.AddElement('IssueDate', Format(EFTDoc."Issue Date", 0, 9));
                 XMLBuffer.AddElement('DocumentCurrency', EFTDoc."Document Currency Code");
                 XMLBuffer.AddElement('SupplierID', EFTDoc."Supplier ID");
                 XMLBuffer.AddElement('SupplierName', EFTDoc."Supplier Name");
@@ -62,7 +62,7 @@ codeunit 72300 "SSAEDNEFactura Connector"
                 XMLBuffer.AddElement('TotalTaxAmount', Format(EFTDoc."Total Tax Amount", 0, 9));
                 XMLBuffer.AddElement('TotalTaxInclAmount', Format(EFTDoc."Total TaxInclusiveAmount", 0, 9));
                 XMLBuffer.AddElement('TotalTaxExclAmount', Format(EFTDoc."Total TaxExclusiveAmount", 0, 9));
-                XMLBuffer.AddElement('DueDate', Format(EFTDoc."Due Date"));
+                XMLBuffer.AddElement('DueDate', Format(EFTDoc."Due Date", 0, 9));
                 XMLBuffer.AddElement('VendorInvoiceNo', EFTDoc."Vendor Invoice No.");
                 XMLBuffer.AddElement('PaymentMethod', Format(EFTDoc."Payment Method Code"));
                 XMLBuffer.AddElement('XMLFile', EFTDoc.GetXMLContent());
