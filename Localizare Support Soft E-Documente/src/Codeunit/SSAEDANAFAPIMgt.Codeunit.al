@@ -267,7 +267,7 @@ codeunit 72007 "SSAEDANAF API Mgt"
         CompanyInfo.GET;
         CountryRegion.GET(CompanyInfo."Country/Region Code");
 
-        Parameters := STRSUBSTNO('?zile=%1&cif=%2', EFSetup."Nr. Zile Preluare ListaMesaje", DELCHR(UPPERCASE(CompanyInfo."VAT Registration No."), '=', CountryRegion."ISO Code"));
+        Parameters := STRSUBSTNO('?zile=%1&cif=%2&filtru=P', EFSetup."Nr. Zile Preluare ListaMesaje", DELCHR(UPPERCASE(CompanyInfo."VAT Registration No."), '=', CountryRegion."ISO Code"));
         SendRequest_GetListaMesaje(URL, Parameters, EFSetup."Access Token");
     end;
 
