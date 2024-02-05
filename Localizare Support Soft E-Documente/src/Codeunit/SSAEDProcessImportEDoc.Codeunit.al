@@ -169,7 +169,7 @@ codeunit 72008 "SSAEDProcess Import E-Doc"
         TempXMLBuffer.FindNodesByXPath(TempXMLBufferLines, 'PaymentMeans*');
         if TempXMLBufferLines.FindSet() then
             repeat
-                if TempXMLBufferLines.Name = 'ID' then begin
+                if TempXMLBufferLines.Name = '/Invoice/PaymentMeans/PayeeFinancialAccount/ID' then begin
                     LineNo += 10000;
                     EFTDetails.INIT;
                     EFTDetails."Log Entry No." := GlobalEFTLog."Entry No.";
@@ -179,7 +179,7 @@ codeunit 72008 "SSAEDProcess Import E-Doc"
                     EFTDetails.Note := CopyStr(TempXMLBufferLines.GetValue(), 1, MaxStrLen(EFTDetails.Note)); //IBAN
                     EFTDetails.MODIFY;
                 end;
-                if TempXMLBufferLines.Name = 'Name' then begin
+                if TempXMLBufferLines.Name = '/Invoice/PaymentMeans/PayeeFinancialAccount/Name' then begin
                     EFTDetails."Item Name" := CopyStr(TempXMLBufferLines.GetValue(), 1, MaxStrLen(EFTDetails."Item Name"));
                     EFTDetails.MODIFY;
                 end;
