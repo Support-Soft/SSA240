@@ -184,8 +184,8 @@ codeunit 72002 "SSAEDExport EFactura"
 
     end;
 
-    [EventSubscriber(ObjectType::Codeunit, 80, 'OnBeforePostSalesDoc', '', false, false)]
-    local procedure TestAnulare_OnBeforePostSalesDoc(var Sender: Codeunit "Sales-Post"; var SalesHeader: Record "Sales Header"; CommitIsSuppressed: Boolean; PreviewMode: Boolean)
+    [EventSubscriber(ObjectType::Codeunit, 80, 'OnAfterFinalizePostingOnBeforeCommit', '', false, false)]
+    local procedure TestAnulare_OnAfterFinalizePostingOnBeforeCommit(VAR SalesHeader: Record "Sales Header"; VAR SalesShipmentHeader: Record "Sales Shipment Header"; VAR SalesInvoiceHeader: Record "Sales Invoice Header"; VAR SalesCrMemoHeader: Record "Sales Cr.Memo Header"; VAR ReturnReceiptHeader: Record "Return Receipt Header"; VAR GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line"; CommitIsSuppressed: Boolean; PreviewMode: Boolean)
     var
         ROFacturaTransportLogEntry: Record "SSAEDE-Documents Log Entry";
     begin
@@ -205,19 +205,17 @@ codeunit 72002 "SSAEDExport EFactura"
 
     end;
 
-    [EventSubscriber(ObjectType::Codeunit, 80, 'OnAfterPostSalesDoc', '', false, false)]
-    local procedure SendDocuments_OnAfterPostSalesDoc(var SalesHeader: Record "Sales Header"; var GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line"; SalesShptHdrNo: Code[20]; RetRcpHdrNo: Code[20]; SalesInvHdrNo: Code[20]; SalesCrMemoHdrNo: Code[20]; CommitIsSuppressed: Boolean)
+    [EventSubscriber(ObjectType::Codeunit, 80, 'OnAfterFinalizePostingOnBeforeCommit', '', false, false)]
+    local procedure SendDocuments_OnAfterPostSalesDoc(VAR SalesHeader: Record "Sales Header"; VAR SalesShipmentHeader: Record "Sales Shipment Header"; VAR SalesInvoiceHeader: Record "Sales Invoice Header"; VAR SalesCrMemoHeader: Record "Sales Cr.Memo Header"; VAR ReturnReceiptHeader: Record "Return Receipt Header"; VAR GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line"; CommitIsSuppressed: Boolean; PreviewMode: Boolean)
     var
-        SalesInvoiceHeader: Record "Sales Invoice Header";
-        SalesCrMemoHeader: Record "Sales Cr.Memo Header";
         Customer: Record Customer;
     begin
         if SalesHeader."Sell-to Customer No." <> SalesHeader."Bill-to Customer No." then
             exit;
         if SalesHeader."SSA Stare Factura" = SalesHeader."SSA Stare Factura"::"2-Factura Anulata" then
             exit;
-        if SalesInvHdrNo <> '' then begin
-            SalesInvoiceHeader.Get(SalesInvHdrNo);
+        if SalesInvoiceHeader."No." <> '' then begin
+            SalesInvoiceHeader.Get(SalesInvoiceHeader."No.");
             SalesInvoiceHeader.CalcFields("SSAEDProdus cu Risc");
             Customer.Get(SalesInvoiceHeader."Sell-to Customer No.");
             if Customer."SSAEDPrin EFactura" or SalesInvoiceHeader."SSAEDProdus cu Risc" then begin
@@ -226,8 +224,8 @@ codeunit 72002 "SSAEDExport EFactura"
             end;
         end;
 
-        if SalesCrMemoHdrNo <> '' then begin
-            SalesCrMemoHeader.Get(SalesCrMemoHdrNo);
+        if SalesCrMemoHeader."No." <> '' then begin
+            SalesCrMemoHeader.Get(SalesCrMemoHeader."No.");
             SalesCrMemoHeader.CalcFields("SSAEDProdus cu Risc");
             Customer.Get(SalesCrMemoHeader."Sell-to Customer No.");
             if Customer."SSAEDPrin EFactura" or SalesCrMemoHeader."SSAEDProdus cu Risc" then begin
