@@ -17,6 +17,7 @@ table 72001 "SSAEDEDocuments Setup"
         {
             Caption = 'Client Secret';
             DataClassification = CustomerContent;
+            ExtendedDatatype = Masked;
         }
         field(30; "Redirect URL"; Text[250])
         {
@@ -66,6 +67,7 @@ table 72001 "SSAEDEDocuments Setup"
         {
             Caption = 'Access Token';
             DataClassification = CustomerContent;
+            ExtendedDatatype = Masked;
             trigger OnValidate()
             begin
                 Validate("Authorization Time", CurrentDateTime);
@@ -77,6 +79,7 @@ table 72001 "SSAEDEDocuments Setup"
         {
             Caption = 'Refresh Token';
             DataClassification = CustomerContent;
+            ExtendedDatatype = Masked;
         }
         field(110; "Authorization Time"; DateTime)
         {
@@ -108,6 +111,7 @@ table 72001 "SSAEDEDocuments Setup"
         {
             Caption = 'Password';
             DataClassification = CustomerContent;
+            ExtendedDatatype = Masked;
         }
         field(170; "EFactura Stare Mesaj URL"; Text[250])
         {

@@ -724,49 +724,6 @@ xmlport 72001 "SSAEDE-Factura"
                       Dummy);
                 end;
             }
-            textelement(PaymentMeans1)
-            {
-                XmlName = 'PaymentMeans';
-                NamespacePrefix = 'cac';
-                textelement(PaymentMeansCode1)
-                {
-                    XmlName = 'PaymentMeansCode';
-                    NamespacePrefix = 'cbc';
-                }
-                textelement(PayeeFinancialAccount1)
-                {
-                    XmlName = 'PayeeFinancialAccount';
-                    NamespacePrefix = 'cac';
-                    textelement(payeefinancialaccountid1)
-                    {
-                        NamespacePrefix = 'cbc';
-                        XmlName = 'ID';
-                    }
-                }
-
-                trigger OnBeforePassVariable()
-                begin
-                    EFacturaMgt.GetPaymentMeansInfo(
-                      SalesHeader,
-                      PaymentMeansCode1,
-                      Dummy,
-                      Dummy,
-                      Dummy,
-                      Dummy,
-                      Dummy,
-                      Dummy);
-                    if PaymentMeansCode1 = '' then
-                        currXMLport.Skip;
-
-                    EFacturaMgt.GetPaymentMeansPayeeFinancialAcc1(
-                      payeefinancialaccountid1,
-                      Dummy,
-                      Dummy,
-                      Dummy,
-                      Dummy,
-                      Dummy);
-                end;
-            }
             tableelement(pmttermsloop; Integer)
             {
                 NamespacePrefix = 'cac';
