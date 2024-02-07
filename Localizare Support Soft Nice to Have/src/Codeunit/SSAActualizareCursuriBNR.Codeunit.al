@@ -128,7 +128,7 @@ codeunit 71100 "SSA Actualizare Cursuri BNR"
         if ExchangeRateIsImported then
             exit;
 
-        HTTPReq.Get('http://www.bnr.ro/nbrfxrates.xml', HTTPResponse);
+        HTTPReq.Get('https://www.bnr.ro/nbrfxrates.xml', HTTPResponse);
         if not HTTPResponse.IsSuccessStatusCode then begin
             Message(ImportRatesLbl);
             exit;
