@@ -227,23 +227,24 @@ page 72000 "SSAEDE-Documents Log Entries"
 
                     trigger OnAction()
                     var
-                        ROFacturaTransportLogEntry: Record "SSAEDE-Documents Log Entry";
+                        TempEFTLogEntry: Record "SSAEDE-Documents Log Entry" temporary;
                         ANAFAPIMgt: Codeunit "SSAEDANAF API Mgt";
-                        TempBlob: Codeunit "Temp Blob";
                         InStr: InStream;
                         FileName: Text;
                     begin
-                        ROFacturaTransportLogEntry := Rec;
-                        CurrPage.SetSelectionFilter(ROFacturaTransportLogEntry);
-                        case ROFacturaTransportLogEntry."Entry Type" of
-                            ROFacturaTransportLogEntry."Entry Type"::"Export E-Transport":
-                                CODEUNIT.Run(CODEUNIT::"SSAEDExport ETransport", ROFacturaTransportLogEntry);
-                            ROFacturaTransportLogEntry."Entry Type"::"Import E-Factura", ROFacturaTransportLogEntry."Entry Type"::"Export E-Factura":
+                        TempEFTLogEntry.Reset();
+                        TempEFTLogEntry.DeleteAll();
+                        TempEFTLogEntry.TransferFields(Rec);
+                        TempEFTLogEntry.Insert();
+                        case TempEFTLogEntry."Entry Type" of
+                            TempEFTLogEntry."Entry Type"::"Export E-Transport":
+                                CODEUNIT.Run(CODEUNIT::"SSAEDExport ETransport", TempEFTLogEntry);
+                            TempEFTLogEntry."Entry Type"::"Import E-Factura", TempEFTLogEntry."Entry Type"::"Export E-Factura":
                                 begin
-                                    ROFacturaTransportLogEntry.TestField("ID Descarcare");
-                                    ANAFAPIMgt.DescarcareMesaj(ROFacturaTransportLogEntry."ID Descarcare", TempBlob);
-                                    TempBlob.CreateInStream(InStr);
-                                    FileName := Rec."ID Descarcare" + '.zip';
+                                    TempEFTLogEntry.TestField("ID Descarcare");
+                                    ANAFAPIMgt.DescarcareMesaj(TempEFTLogEntry);
+                                    TempEFTLogEntry."ZIP Content".CREATEINSTREAM(InStr);
+                                    FileName := TempEFTLogEntry."Index Incarcare" + '.zip';
                                     DownloadFromStream(InStr, 'Save file', '', 'Zip File (*.zip)|*.zip', FileName);
                                 end;
                         end;
@@ -293,6 +294,18 @@ page 72000 "SSAEDE-Documents Log Entries"
                         Rec.DownloadXMLContent();
                     end;
                 }
+                action(GetZIPContent)
+                {
+                    Caption = 'Get ZIP Content';
+                    Promoted = true;
+                    PromotedCategory = Process;
+                    PromotedIsBig = true;
+                    ToolTip = 'Get ZIP Content';
+                    trigger OnAction()
+                    begin
+                        Rec.DownloadZIPContent();
+                    end;
+                }
             }
             group(Export)
             {
@@ -311,6 +324,7 @@ page 72000 "SSAEDE-Documents Log Entries"
                     begin
                         ROFacturaTransportLogEntry := Rec;
                         CurrPage.SetSelectionFilter(ROFacturaTransportLogEntry);
+                        ROFacturaTransportLogEntry.TestField(Status, ROFacturaTransportLogEntry.Status::new);
                         if ROFacturaTransportLogEntry."Entry Type" = ROFacturaTransportLogEntry."Entry Type"::"Export E-Transport" then
                             CODEUNIT.Run(CODEUNIT::"SSAEDExport ETransport", ROFacturaTransportLogEntry);
                         if ROFacturaTransportLogEntry."Entry Type" = ROFacturaTransportLogEntry."Entry Type"::"Export E-Factura" then

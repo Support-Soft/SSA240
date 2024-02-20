@@ -18,38 +18,15 @@ codeunit 72008 "SSAEDProcess Import E-Doc"
     local procedure Code()
     var
         ANAFAPIMgt: Codeunit "SSAEDANAF API Mgt";
-        TempBlobZip: Codeunit "Temp Blob";
         TempBlobXML: Codeunit "Temp Blob";
     begin
-        ANAFAPIMgt.DescarcareMesaj(GlobalEFTLog."ID Descarcare", TempBlobZip);
-        UnzippFiles(TempBlobZip, TempBlobXML);
+        ANAFAPIMgt.DescarcareMesaj(GlobalEFTLog);
+
+        UnzippFiles(GlobalEFTLog, TempBlobXML);
         ProcessXMLFile(TempBlobXML);
     end;
 
-    local procedure TestCode()
-    var
-        TempBlobZip: Codeunit "Temp Blob";
-        TempBlobXML: Codeunit "Temp Blob";
-        ZipOutStream: OutStream;
-        InStr: InStream;
-        FileName: Text;
-    begin
-        //ANAFAPIMgt.DescarcareMesaj(GlobalEFTLog."ID Descarcare",TempBlobZip);
-        //test
-
-        if not CONFIRM('run test') then
-            exit;
-
-        UploadIntoStream('Select File...', '', '', FileName, InStr);
-
-        TempBlobZip.CREATEOUTSTREAM(ZipOutStream);
-        COPYSTREAM(ZipOutStream, InStr);
-
-        UnzippFiles(TempBlobZip, TempBlobXML);
-        ProcessXMLFile(TempBlobXML);
-    end;
-
-    procedure UnzippFiles(var _TempBlobZIP: Codeunit "Temp Blob"; var _TempBlobXML: Codeunit "Temp Blob")
+    procedure UnzippFiles(var _GlobalEFTLog: Record "SSAEDE-Documents Log Entry"; var _TempBlobXML: Codeunit "Temp Blob")
     var
         DataCompression: Codeunit "Data Compression";
         XMLOutStream: OutStream;
@@ -58,7 +35,7 @@ codeunit 72008 "SSAEDProcess Import E-Doc"
         ZipEntry: Text;
         ZipEntryLength: Integer;
     begin
-        _TempBlobZIP.CreateInStream(ZipInStr);
+        _GlobalEFTLog."ZIP Content".CreateInStream(ZipInStr);
         DataCompression.OpenZipArchive(ZipInStr, false);
         DataCompression.GetEntryList(ZipEntryList);
 
@@ -105,8 +82,8 @@ codeunit 72008 "SSAEDProcess Import E-Doc"
         TempXMLBuffer.LoadFromText(XmlOutText);
         TempXMLBufferParrent.LoadFromText(XmlOutText);
 
-        TempXMLBuffer.FindNodesByXPath(TempXMLBuffer, '/Invoice/IssueDate');
-        Evaluate(GlobalEFTLog."Issue Date", TempXMLBuffer.GetValue());
+        if TempXMLBuffer.FindNodesByXPath(TempXMLBuffer, '/Invoice/IssueDate') then
+            Evaluate(GlobalEFTLog."Issue Date", TempXMLBuffer.GetValue());
 
         if TempXMLBuffer.FindNodesByXPath(TempXMLBuffer, '/Invoice/InvoiceTypeCode') then begin
             AmountSign := 1;
@@ -120,35 +97,35 @@ codeunit 72008 "SSAEDProcess Import E-Doc"
             LinesIDXPath := '/CreditNote/CreditNoteLine/ID';
         end;
 
-        TempXMLBuffer.FindNodesByXPath(TempXMLBuffer, '/Invoice/DocumentCurrencyCode');
-        GlobalEFTLog."Document Currency Code" := CopyStr(TempXMLBuffer.GetValue(), 1, MaxStrLen(GlobalEFTLog."Document Currency Code"));
+        if TempXMLBuffer.FindNodesByXPath(TempXMLBuffer, '/Invoice/DocumentCurrencyCode') then
+            GlobalEFTLog."Document Currency Code" := CopyStr(TempXMLBuffer.GetValue(), 1, MaxStrLen(GlobalEFTLog."Document Currency Code"));
 
-        TempXMLBuffer.FindNodesByXPath(TempXMLBuffer, 'AccountingSupplierParty/Party/PartyTaxScheme/CompanyID');
-        GlobalEFTLog."Supplier ID" := CopyStr(TempXMLBuffer.GetValue(), 1, MaxStrLen(GlobalEFTLog."Supplier ID"));
+        if TempXMLBuffer.FindNodesByXPath(TempXMLBuffer, 'AccountingSupplierParty/Party/PartyTaxScheme/CompanyID') then
+            GlobalEFTLog."Supplier ID" := CopyStr(TempXMLBuffer.GetValue(), 1, MaxStrLen(GlobalEFTLog."Supplier ID"));
 
-        TempXMLBuffer.FindNodesByXPath(TempXMLBuffer, 'AccountingSupplierParty/Party/PartyLegalEntity/RegistrationName');
-        GlobalEFTLog."Supplier Name" := CopyStr(TempXMLBuffer.GetValue(), 1, MaxStrLen(GlobalEFTLog."Supplier Name"));
+        if TempXMLBuffer.FindNodesByXPath(TempXMLBuffer, 'AccountingSupplierParty/Party/PartyLegalEntity/RegistrationName') then
+            GlobalEFTLog."Supplier Name" := CopyStr(TempXMLBuffer.GetValue(), 1, MaxStrLen(GlobalEFTLog."Supplier Name"));
 
-        TempXMLBuffer.FindNodesByXPath(TempXMLBuffer, 'TaxTotal/TaxAmount');
-        GlobalEFTLog."Total Tax Amount" := GenFunctions.ConvertTextToDecimal(TempXMLBuffer.GetValue());
+        if TempXMLBuffer.FindNodesByXPath(TempXMLBuffer, 'TaxTotal/TaxAmount') then
+            GlobalEFTLog."Total Tax Amount" := GenFunctions.ConvertTextToDecimal(TempXMLBuffer.GetValue());
 
         if TempXMLBuffer.FindNodesByXPath(TempXMLBuffer, 'LegalMonetaryTotal/TaxInclusiveAmount') then begin
             GlobalEFTLog."Total TaxInclusiveAmount" := GenFunctions.ConvertTextToDecimal(TempXMLBuffer.GetValue());
             GlobalEFTLog."Total TaxInclusiveAmount" := GlobalEFTLog."Total TaxInclusiveAmount" * AmountSign;
         end;
 
-        TempXMLBuffer.FindNodesByXPath(TempXMLBuffer, 'LegalMonetaryTotal/TaxExclusiveAmount');
-        GlobalEFTLog."Total TaxExclusiveAmount" := GenFunctions.ConvertTextToDecimal(TempXMLBuffer.GetValue());
+        if TempXMLBuffer.FindNodesByXPath(TempXMLBuffer, 'LegalMonetaryTotal/TaxExclusiveAmount') then
+            GlobalEFTLog."Total TaxExclusiveAmount" := GenFunctions.ConvertTextToDecimal(TempXMLBuffer.GetValue());
 
         //SSM2434>>
-        TempXMLBuffer.FindNodesByXPath(TempXMLBuffer, '/Invoice/DueDate');
-        Evaluate(GlobalEFTLog."Due Date", TempXMLBuffer.GetValue());
+        if TempXMLBuffer.FindNodesByXPath(TempXMLBuffer, '/Invoice/DueDate') then
+            Evaluate(GlobalEFTLog."Due Date", TempXMLBuffer.GetValue());
 
-        TempXMLBuffer.FindNodesByXPath(TempXMLBuffer, '/Invoice/ID');
-        GlobalEFTLog."Vendor Invoice No." := CopyStr(TempXMLBuffer.GetValue(), 1, MaxStrLen(GlobalEFTLog."Vendor Invoice No."));
+        if TempXMLBuffer.FindNodesByXPath(TempXMLBuffer, '/Invoice/ID') then
+            GlobalEFTLog."Vendor Invoice No." := CopyStr(TempXMLBuffer.GetValue(), 1, MaxStrLen(GlobalEFTLog."Vendor Invoice No."));
 
-        TempXMLBuffer.FindNodesByXPath(TempXMLBuffer, 'PaymentMeans/PaymentMeansCode');
-        GlobalEFTLog."Payment Method Code" := CopyStr(TempXMLBuffer.GetValue(), 1, MaxStrLen(GlobalEFTLog."Payment Method Code"));
+        if TempXMLBuffer.FindNodesByXPath(TempXMLBuffer, 'PaymentMeans/PaymentMeansCode') then
+            GlobalEFTLog."Payment Method Code" := CopyStr(TempXMLBuffer.GetValue(), 1, MaxStrLen(GlobalEFTLog."Payment Method Code"));
         //SSM2434<<
 
         GetVendorNo(GlobalEFTLog."Supplier ID", GlobalEFTLog."NAV Vendor No.", GlobalEFTLog."NAV Vendor Name");
@@ -166,107 +143,107 @@ codeunit 72008 "SSAEDProcess Import E-Doc"
         CLEAR(LineNo);
 
         TempXMLBuffer.Reset();
-        TempXMLBuffer.FindNodesByXPath(TempXMLBufferLines, 'PaymentMeans*');
-        if TempXMLBufferLines.FindSet() then
-            repeat
-                if TempXMLBufferLines.Path = '/Invoice/PaymentMeans/PayeeFinancialAccount/ID' then begin
-                    LineNo += 10000;
-                    EFTDetails.INIT;
-                    EFTDetails."Log Entry No." := GlobalEFTLog."Entry No.";
-                    EFTDetails."Line No." := LineNo;
-                    EFTDetails."Type of Line" := EFTDetails."Type of Line"::"PaymentMeans Line";
-                    EFTDetails.INSERT(true);
-                    EFTDetails.Note := CopyStr(TempXMLBufferLines.GetValue(), 1, MaxStrLen(EFTDetails.Note)); //IBAN
-                    EFTDetails.MODIFY;
-                end;
-                if TempXMLBufferLines.Path = '/Invoice/PaymentMeans/PayeeFinancialAccount/Name' then begin
-                    EFTDetails."Item Name" := CopyStr(TempXMLBufferLines.GetValue(), 1, MaxStrLen(EFTDetails."Item Name"));
-                    EFTDetails.MODIFY;
-                end;
-            until TempXMLBufferLines.Next = 0;
+        if TempXMLBuffer.FindNodesByXPath(TempXMLBufferLines, 'PaymentMeans*') then
+            if TempXMLBufferLines.FindSet() then
+                repeat
+                    if TempXMLBufferLines.Path = '/Invoice/PaymentMeans/PayeeFinancialAccount/ID' then begin
+                        LineNo += 10000;
+                        EFTDetails.INIT;
+                        EFTDetails."Log Entry No." := GlobalEFTLog."Entry No.";
+                        EFTDetails."Line No." := LineNo;
+                        EFTDetails."Type of Line" := EFTDetails."Type of Line"::"PaymentMeans Line";
+                        EFTDetails.INSERT(true);
+                        EFTDetails.Note := CopyStr(TempXMLBufferLines.GetValue(), 1, MaxStrLen(EFTDetails.Note)); //IBAN
+                        EFTDetails.MODIFY;
+                    end;
+                    if TempXMLBufferLines.Path = '/Invoice/PaymentMeans/PayeeFinancialAccount/Name' then begin
+                        EFTDetails."Item Name" := CopyStr(TempXMLBufferLines.GetValue(), 1, MaxStrLen(EFTDetails."Item Name"));
+                        EFTDetails.MODIFY;
+                    end;
+                until TempXMLBufferLines.Next = 0;
 
         TempXMLBuffer.Reset();
-        TempXMLBuffer.FindNodesByXPath(TempXMLBufferLines, LinesXPath);
-        if TempXMLBufferLines.FindSet() then
-            repeat
+        if TempXMLBuffer.FindNodesByXPath(TempXMLBufferLines, LinesXPath) then
+            if TempXMLBufferLines.FindSet() then
+                repeat
 
 
-                if TempXMLBufferLines.Path = LinesIDXPath then begin
-                    LineNo += 10000;
-                    EFTDetails.INIT;
-                    EFTDetails."Log Entry No." := GlobalEFTLog."Entry No.";
-                    EFTDetails."Line No." := LineNo;
-                    EFTDetails."Line ID Decimal" := GenFunctions.ConvertTextToDecimal(TempXMLBufferLines.GetValue());
-                    EFTDetails."Type of Line" := EFTDetails."Type of Line"::"Invoice Line";
-                    EFTDetails.INSERT(true);
-                end;
-                if TempXMLBufferLines.Name = 'Note' then begin
-                    EFTDetails.Note := CopyStr(TempXMLBufferLines.GetValue(), 1, MaxStrLen(EFTDetails.Note));
-                    EFTDetails.MODIFY;
-                end;
-                if (TempXMLBufferLines.Name = 'InvoicedQuantity') or (TempXMLBufferLines.Name = 'CreditedQuantity') then begin
-                    EFTDetails."Invoice Quantity" := GenFunctions.ConvertTextToDecimal(TempXMLBufferLines.GetValue());
-                    EFTDetails.MODIFY;
-                end;
-                if TempXMLBufferLines.Name = 'unitCode' then begin
-                    EFTDetails."Unit Code" := CopyStr(TempXMLBufferLines.GetValue(), 1, MaxStrLen(EFTDetails."Unit Code"));
-                    EFTDetails.MODIFY;
-                end;
-                if TempXMLBufferLines.Name = 'LineExtensionAmount' then begin
-                    EFTDetails."Line Amount" := GenFunctions.ConvertTextToDecimal(TempXMLBufferLines.GetValue());
-                    EFTDetails.MODIFY;
-                end;
-                if TempXMLBufferLines.Name = 'currencyID' then begin
-                    TempXMLBufferParrent.Get(TempXMLBufferLines."Parent Entry No.");
-                    if TempXMLBufferParrent.Name = 'LineExtensionAmount' then begin
-                        EFTDetails."Currency ID" := CopyStr(TempXMLBufferLines.GetValue(), 1, MaxStrLen(EFTDetails."Currency ID"));
+                    if TempXMLBufferLines.Path = LinesIDXPath then begin
+                        LineNo += 10000;
+                        EFTDetails.INIT;
+                        EFTDetails."Log Entry No." := GlobalEFTLog."Entry No.";
+                        EFTDetails."Line No." := LineNo;
+                        EFTDetails."Line ID Decimal" := GenFunctions.ConvertTextToDecimal(TempXMLBufferLines.GetValue());
+                        EFTDetails."Type of Line" := EFTDetails."Type of Line"::"Invoice Line";
+                        EFTDetails.INSERT(true);
+                    end;
+                    if TempXMLBufferLines.Name = 'Note' then begin
+                        EFTDetails.Note := CopyStr(TempXMLBufferLines.GetValue(), 1, MaxStrLen(EFTDetails.Note));
                         EFTDetails.MODIFY;
                     end;
-                end;
-                if TempXMLBufferLines.Name = 'Description' then begin
-                    EFTDetails."Item Description" := CopyStr(TempXMLBufferLines.GetValue(), 1, MaxStrLen(EFTDetails."Item Description"));
-                    EFTDetails.MODIFY;
-                end;
-                if TempXMLBufferLines.Name = 'Name' then begin
-                    EFTDetails."Item Name" := CopyStr(TempXMLBufferLines.GetValue(), 1, MaxStrLen(EFTDetails."Item Name"));
-                    EFTDetails.MODIFY;
-                end;
-                if TempXMLBufferLines.Name = 'ID' then begin
-                    TempXMLBufferParrent.Get(TempXMLBufferLines."Parent Entry No.");
-                    if TempXMLBufferParrent.Name = 'ClassifiedTaxCategory' then begin
-                        EFTDetails."ClassifiedTaxCategory ID" := CopyStr(TempXMLBufferLines.GetValue(), 1, MaxStrLen(EFTDetails."ClassifiedTaxCategory ID"));
+                    if (TempXMLBufferLines.Name = 'InvoicedQuantity') or (TempXMLBufferLines.Name = 'CreditedQuantity') then begin
+                        EFTDetails."Invoice Quantity" := GenFunctions.ConvertTextToDecimal(TempXMLBufferLines.GetValue());
                         EFTDetails.MODIFY;
                     end;
-                end;
-                if TempXMLBufferLines.Name = 'Percent' then begin
-                    TempXMLBufferParrent.Get(TempXMLBufferLines."Parent Entry No.");
-                    if TempXMLBufferParrent.Name = 'ClassifiedTaxCategory' then begin
-                        EFTDetails."ClassifiedTaxCategory Percent" := GenFunctions.ConvertTextToDecimal(TempXMLBufferLines.GetValue());
+                    if TempXMLBufferLines.Name = 'unitCode' then begin
+                        EFTDetails."Unit Code" := CopyStr(TempXMLBufferLines.GetValue(), 1, MaxStrLen(EFTDetails."Unit Code"));
                         EFTDetails.MODIFY;
                     end;
-                end;
-                if TempXMLBufferLines.Name = 'ID' then begin
-                    TempXMLBufferParrent.Get(TempXMLBufferLines."Parent Entry No.");
-                    if TempXMLBufferParrent.Name = 'TaxScheme' then begin
-                        EFTDetails."TaxScheme ID" := CopyStr(TempXMLBufferLines.GetValue(), 1, MaxStrLen(EFTDetails."TaxScheme ID"));
+                    if TempXMLBufferLines.Name = 'LineExtensionAmount' then begin
+                        EFTDetails."Line Amount" := GenFunctions.ConvertTextToDecimal(TempXMLBufferLines.GetValue());
                         EFTDetails.MODIFY;
                     end;
-                end;
-                if TempXMLBufferLines.Name = 'PriceAmount' then begin
-                    EFTDetails."Price Amount" := GenFunctions.ConvertTextToDecimal(TempXMLBufferLines.GetValue());
-                    EFTDetails."Price Amount" := EFTDetails."Price Amount" * AmountSign;
-                    EFTDetails.MODIFY;
-                end;
+                    if TempXMLBufferLines.Name = 'currencyID' then begin
+                        TempXMLBufferParrent.Get(TempXMLBufferLines."Parent Entry No.");
+                        if TempXMLBufferParrent.Name = 'LineExtensionAmount' then begin
+                            EFTDetails."Currency ID" := CopyStr(TempXMLBufferLines.GetValue(), 1, MaxStrLen(EFTDetails."Currency ID"));
+                            EFTDetails.MODIFY;
+                        end;
+                    end;
+                    if TempXMLBufferLines.Name = 'Description' then begin
+                        EFTDetails."Item Description" := CopyStr(TempXMLBufferLines.GetValue(), 1, MaxStrLen(EFTDetails."Item Description"));
+                        EFTDetails.MODIFY;
+                    end;
+                    if TempXMLBufferLines.Name = 'Name' then begin
+                        EFTDetails."Item Name" := CopyStr(TempXMLBufferLines.GetValue(), 1, MaxStrLen(EFTDetails."Item Name"));
+                        EFTDetails.MODIFY;
+                    end;
+                    if TempXMLBufferLines.Name = 'ID' then begin
+                        TempXMLBufferParrent.Get(TempXMLBufferLines."Parent Entry No.");
+                        if TempXMLBufferParrent.Name = 'ClassifiedTaxCategory' then begin
+                            EFTDetails."ClassifiedTaxCategory ID" := CopyStr(TempXMLBufferLines.GetValue(), 1, MaxStrLen(EFTDetails."ClassifiedTaxCategory ID"));
+                            EFTDetails.MODIFY;
+                        end;
+                    end;
+                    if TempXMLBufferLines.Name = 'Percent' then begin
+                        TempXMLBufferParrent.Get(TempXMLBufferLines."Parent Entry No.");
+                        if TempXMLBufferParrent.Name = 'ClassifiedTaxCategory' then begin
+                            EFTDetails."ClassifiedTaxCategory Percent" := GenFunctions.ConvertTextToDecimal(TempXMLBufferLines.GetValue());
+                            EFTDetails.MODIFY;
+                        end;
+                    end;
+                    if TempXMLBufferLines.Name = 'ID' then begin
+                        TempXMLBufferParrent.Get(TempXMLBufferLines."Parent Entry No.");
+                        if TempXMLBufferParrent.Name = 'TaxScheme' then begin
+                            EFTDetails."TaxScheme ID" := CopyStr(TempXMLBufferLines.GetValue(), 1, MaxStrLen(EFTDetails."TaxScheme ID"));
+                            EFTDetails.MODIFY;
+                        end;
+                    end;
+                    if TempXMLBufferLines.Name = 'PriceAmount' then begin
+                        EFTDetails."Price Amount" := GenFunctions.ConvertTextToDecimal(TempXMLBufferLines.GetValue());
+                        EFTDetails."Price Amount" := EFTDetails."Price Amount" * AmountSign;
+                        EFTDetails.MODIFY;
+                    end;
 
-                if TempXMLBufferLines.Name = 'currencyID' then begin
-                    TempXMLBufferParrent.Get(TempXMLBufferLines."Parent Entry No.");
-                    if TempXMLBufferParrent.Name = 'PriceAmount' then begin
-                        EFTDetails."Price Currency ID" := CopyStr(TempXMLBufferLines.GetValue(), 1, MaxStrLen(EFTDetails."Price Currency ID"));
-                        EFTDetails.MODIFY;
+                    if TempXMLBufferLines.Name = 'currencyID' then begin
+                        TempXMLBufferParrent.Get(TempXMLBufferLines."Parent Entry No.");
+                        if TempXMLBufferParrent.Name = 'PriceAmount' then begin
+                            EFTDetails."Price Currency ID" := CopyStr(TempXMLBufferLines.GetValue(), 1, MaxStrLen(EFTDetails."Price Currency ID"));
+                            EFTDetails.MODIFY;
+                        end;
                     end;
-                end;
 
-            until TempXMLBufferLines.Next = 0;
+                until TempXMLBufferLines.Next = 0;
     end;
 
     procedure ProcessPurchInvoice(var _EFTEntry: Record "SSAEDE-Documents Log Entry")

@@ -185,6 +185,11 @@ table 72000 "SSAEDE-Documents Log Entry"
             Caption = 'Import Document Type';
             DataClassification = CustomerContent;
         }
+        field(350; "ZIP Content"; Blob)
+        {
+            Caption = 'ZIP Content';
+            DataClassification = CustomerContent;
+        }
         field(10000; "Created Purchase Invoice No."; Code[20])
         {
             Caption = 'Created Purchase Invoice No.';
@@ -240,11 +245,13 @@ table 72000 "SSAEDE-Documents Log Entry"
 
     procedure ResetStatus(var _ETransportLogEntry: Record "SSAEDE-Documents Log Entry")
     var
+        ErrorLbl: Label 'Nu este permisa Resetarea liniei de export E-Factura cu statusul "Completed" sau "OK"';
         Confirmed: Boolean;
     begin
         Clear(Confirmed);
         _ETransportLogEntry.FindSet(true);
         repeat
+            /*
             if _ETransportLogEntry.Status <> _ETransportLogEntry.Status::Error then begin
                 if not Confirmed then begin
                     if not Confirm('Sigur resetati status?', false) then
@@ -252,7 +259,16 @@ table 72000 "SSAEDE-Documents Log Entry"
                     Confirmed := true;
                 end;
             end else
-                _ETransportLogEntry.TestField(Status, Status::Error);
+            */
+            case _ETransportLogEntry."Entry Type" of
+                _ETransportLogEntry."Entry Type"::"Export E-Factura":
+                    if (_ETransportLogEntry.Status = _ETransportLogEntry.Status::Completed) and (UpperCase(_ETransportLogEntry."Stare Mesaj") = 'OK') then
+                        Error(ErrorLbl);
+                _ETransportLogEntry."Entry Type"::"Import E-Factura":
+                    _ETransportLogEntry.TestField(Status, Status::Error);
+                _ETransportLogEntry."Entry Type"::"Export E-Transport":
+                    _ETransportLogEntry.TestField(Status, Status::Error);
+            end;
 
             _ETransportLogEntry.Validate(Status, _ETransportLogEntry.Status::New);
             _ETransportLogEntry.Validate("Error Message", '');
@@ -260,6 +276,8 @@ table 72000 "SSAEDE-Documents Log Entry"
             _ETransportLogEntry.ClientFileName := '';
             _ETransportLogEntry."Stare Mesaj" := '';
             _ETransportLogEntry."ID Descarcare" := '';
+            Clear(_ETransportLogEntry."ZIP Content");
+            Clear(_ETransportLogEntry."XML Content");
             _ETransportLogEntry.Modify(true);
 
         until _ETransportLogEntry.Next = 0;
@@ -301,6 +319,22 @@ table 72000 "SSAEDE-Documents Log Entry"
 
         Rec."XML Content".CreateInStream(InStr);
         FileName := 'XMLContent.xml';
+        DownloadFromStream(InStr, 'Export', '', 'All Files (*.*)|*.*', FileName);
+    end;
+
+    procedure DownloadZIPContent()
+    var
+        InStr: InStream;
+        NoContentLbl: Label 'ZIP Content is empty';
+        FileNameLbl: Label '%1.zip', Locked = true;
+        FileName: Text;
+    begin
+        Rec.CalcFields("ZIP Content");
+        if not Rec."ZIP Content".HasValue then
+            Error(NoContentLbl);
+
+        Rec."ZIP Content".CreateInStream(InStr);
+        FileName := StrSubstNo(FileNameLbl, "Index Incarcare");
         DownloadFromStream(InStr, 'Export', '', 'All Files (*.*)|*.*', FileName);
     end;
 }

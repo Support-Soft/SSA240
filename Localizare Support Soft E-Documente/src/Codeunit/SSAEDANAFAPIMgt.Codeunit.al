@@ -146,7 +146,7 @@ codeunit 72007 "SSAEDANAF API Mgt"
     end;
 
 
-    procedure DescarcareMesaj(_IDDescarcare: Text; var _TempBlob: Codeunit "Temp Blob")
+    procedure DescarcareMesaj(var _EFTLogEntry: Record "SSAEDE-Documents Log Entry")
     var
         EFSetup: Record "SSAEDEDocuments Setup";
         URL: Text;
@@ -161,18 +161,19 @@ codeunit 72007 "SSAEDANAF API Mgt"
             URL := EFSetup."EFactura Descarcare URL";
         end;
 
-        Parameters := StrSubstNo('?id=%1', _IDDescarcare);
+        Parameters := StrSubstNo('?id=%1', _EFTLogEntry."ID Descarcare");
 
-        SendRequest_DescarcareMesaj(URL, Parameters, EFSetup."Access Token", _TempBlob);
+        SendRequest_DescarcareMesaj(URL, Parameters, EFSetup."Access Token", _EFTLogEntry);
     end;
 
-    local procedure SendRequest_DescarcareMesaj(_URL: Text; _Param: Text; _Token: Text; var _TempBlob: Codeunit "Temp Blob")
+    local procedure SendRequest_DescarcareMesaj(_URL: Text; _Param: Text; _Token: Text; var _EFTLogEntry: Record "SSAEDE-Documents Log Entry")
     var
         Client: HttpClient;
         Headers: HttpHeaders;
         Response: HttpResponseMessage;
-        ResponseInStream: InStream;
         ResponseOutStream: OutStream;
+        ResponseInStream: InStream;
+        TempBlobResponse: Codeunit "Temp Blob";
     begin
 
         CheckTokenValidity();
@@ -186,31 +187,36 @@ codeunit 72007 "SSAEDANAF API Mgt"
         if not Client.Get(_URL + _Param, Response) or (not Response.IsSuccessStatusCode()) then
             Error(Response.ReasonPhrase);
 
-        _TempBlob.CreateInStream(ResponseInStream, TEXTENCODING::UTF8);
+        Clear(_EFTLogEntry."ZIP Content");
+
+        TempBlobResponse.CreateInStream(ResponseInStream, TEXTENCODING::UTF8);
         Response.Content.ReadAs(ResponseInStream);
-        _TempBlob.CreateOutStream(ResponseOutStream, TextEncoding::UTF8);
+        _EFTLogEntry."ZIP Content".CreateOutStream(ResponseOutStream, TextEncoding::UTF8);
         CopyStream(ResponseOutStream, ResponseInStream);
+        _EFTLogEntry.Modify();
     end;
 
     procedure DescarcareMesajPDF(_IDDescarcare: Text; var _TempBlob: Codeunit "Temp Blob")
     var
+        TempEFTLogEntry: Record "SSAEDE-Documents Log Entry" temporary;
         EFSetup: Record "SSAEDEDocuments Setup";
-        TempBlobZIP: Codeunit "Temp Blob";
         TempBlobXML: Codeunit "Temp Blob";
         ProcessEFactura: Codeunit "SSAEDProcess Import E-Doc";
         URL: Text;
+        OutStr: OutStream;
+        InStr: InStream;
     begin
-        DescarcareMesaj(_IDDescarcare, TempBlobZIP);
-        ProcessEFactura.UnzippFiles(TempBlobZIP, TempBlobXML);
+
+        ProcessEFactura.UnzippFiles(TempEFTLogEntry, TempBlobXML);
         EFSetup.Get;
 
         EFSetup.TestField("URL EFactura PDF");
         URL := EFSetup."URL EFactura PDF";
 
-        SendRequest_DescarcareMesaj(URL, TempBlobXML, _TempBlob);
+        SendRequest_DescarcareMesajPDF(URL, TempEFTLogEntry, _TempBlob);
     end;
 
-    local procedure SendRequest_DescarcareMesaj(_URL: Text; var _TempBlobRequest: Codeunit "Temp Blob"; var _TempBlobResponse: Codeunit "Temp Blob")
+    local procedure SendRequest_DescarcareMesajPDF(_URL: Text; var _EFTLogEntry: Record "SSAEDE-Documents Log Entry"; var _TempBlobResponse: Codeunit "Temp Blob")
     var
         Client: HttpClient;
         Headers: HttpHeaders;
@@ -227,7 +233,7 @@ codeunit 72007 "SSAEDANAF API Mgt"
         Headers.Add('Connection', 'keep-alive');
         Headers.Add('Accept-Encoding', 'gzip, deflate, br');
 
-        _TempBlobRequest.CreateInStream(ReqInstream, TextEncoding::UTF8);
+        _EFTLogEntry."XML Content".CreateInStream(ReqInstream, TextEncoding::UTF8);
         ReqInstream.Read(ContentText);
 
         RequestContent.WriteFrom(ContentText);
