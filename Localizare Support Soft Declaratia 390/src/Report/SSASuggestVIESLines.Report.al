@@ -318,6 +318,7 @@ report 71500 "SSA Suggest VIES Lines"
             "SSA VIES Header"."EU Goods/Services"::Services:
                 VATEntry.SetRange("EU Service", true);
         end;
-        VATEntry.SetRange("Posting Date", "SSA VIES Header"."Start Date", "SSA VIES Header"."End Date");
+        //VATEntry.SetRange("Posting Date", "SSA VIES Header"."Start Date", "SSA VIES Header"."End Date");
+        VATEntry.SetRange("Document Date", "SSA VIES Header"."Start Date", "SSA VIES Header"."End Date");
     end;
 }
