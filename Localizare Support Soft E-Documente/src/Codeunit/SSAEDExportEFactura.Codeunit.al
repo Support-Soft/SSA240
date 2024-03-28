@@ -184,6 +184,23 @@ codeunit 72002 "SSAEDExport EFactura"
 
     end;
 
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", OnBeforePostSalesDoc, '', false, false)]
+    local procedure TestPostingDate_OnBeforePostSalesDoc(var SalesHeader: Record "Sales Header")
+    var
+        EFTSetup: Record "SSAEDEDocuments Setup";
+        ReversedDaysLbl: Label '<-%1D>', Locked = true;
+        ErrorLbl: Label 'You cannot Invoice document older than %1 days.', Comment = '%1 = No. of Days';
+    begin
+        if not SalesHeader.Invoice then
+            exit;
+
+        EFTSetup.SetLoadFields("Block Posting Sales Doc Before");
+        EFTSetup.Get();
+
+        if SalesHeader."Posting Date" < CalcDate(StrSubstNo(ReversedDaysLbl, EFTSetup."Block Posting Sales Doc Before"), Today) then
+            Error(ErrorLbl, EFTSetup."Block Posting Sales Doc Before");
+    end;
+
     [EventSubscriber(ObjectType::Codeunit, 80, 'OnAfterFinalizePostingOnBeforeCommit', '', false, false)]
     local procedure TestAnulare_OnAfterFinalizePostingOnBeforeCommit(VAR SalesHeader: Record "Sales Header"; VAR SalesShipmentHeader: Record "Sales Shipment Header"; VAR SalesInvoiceHeader: Record "Sales Invoice Header"; VAR SalesCrMemoHeader: Record "Sales Cr.Memo Header"; VAR ReturnReceiptHeader: Record "Return Receipt Header"; VAR GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line"; CommitIsSuppressed: Boolean; PreviewMode: Boolean)
     var
@@ -196,7 +213,7 @@ codeunit 72002 "SSAEDExport EFactura"
             ROFacturaTransportLogEntry.SetRange("Document Type", ROFacturaTransportLogEntry."Document Type"::"Sales Credit Memo");
         if SalesHeader."Document Type" = SalesHeader."Document Type"::"Credit Memo" then
             ROFacturaTransportLogEntry.SetRange("Document Type", ROFacturaTransportLogEntry."Document Type"::"Sales Invoice");
-        ROFacturaTransportLogEntry.SetRange("Document No.", SalesHeader."Posting No.");
+        ROFacturaTransportLogEntry.SetRange("Document No.", SalesHeader."Last Posting No.");
         ROFacturaTransportLogEntry.SetRange(Status, ROFacturaTransportLogEntry.Status::Completed);
         if ROFacturaTransportLogEntry.FindFirst() then
             Error('Documentul %1 %2 a fost trimis catre Anaf si nu mai poate fi anulat.', ROFacturaTransportLogEntry."Document Type", ROFacturaTransportLogEntry."Document No.");

@@ -137,6 +137,10 @@ page 72001 "SSAEDEDocuments Setup"
                 {
                     ToolTip = 'Specifies the value of the URL EFactura PDF field.';
                 }
+                field("Block Posting Sales Doc Before"; Rec."Block Posting Sales Doc Before")
+                {
+                    ToolTip = 'Specifies the value of the Block Posting Sales Doc Before field.';
+                }
             }
             group(ETransport)
             {

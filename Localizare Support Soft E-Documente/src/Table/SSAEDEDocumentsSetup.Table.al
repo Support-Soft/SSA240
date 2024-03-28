@@ -183,6 +183,11 @@ table 72001 "SSAEDEDocuments Setup"
             Caption = 'URL EFactura PDF';
             DataClassification = CustomerContent;
         }
+        field(310; "Block Posting Sales Doc Before"; Integer)
+        {
+            Caption = 'Block Posting Sales Doc Before';
+            DataClassification = CustomerContent;
+        }
     }
 
     keys

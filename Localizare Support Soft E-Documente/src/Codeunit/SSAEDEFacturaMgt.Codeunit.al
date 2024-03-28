@@ -430,7 +430,7 @@ codeunit 72003 "SSAEDEFactura Mgt."
     begin
         CompanyInfo.Get;
         if CompanyInfo.IBAN <> '' then begin
-            PayeeFinancialAccountID := DelChr(CompanyInfo."SSA IBAN 2", '=', ' ');
+            PayeeFinancialAccountID := DelChr(CompanyInfo.IBAN, '=', ' ');
             PaymentMeansSchemeID := IBANPaymentSchemeIDTxt;
         end else
             if CompanyInfo."Bank Account No." <> '' then begin
