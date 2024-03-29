@@ -236,6 +236,9 @@ table 72000 "SSAEDE-Documents Log Entry"
         key(Key2; "Entry Type", Status, "Stare Mesaj")
         {
         }
+        key(key3; "Document Type", "Document No.", "Customer No.")
+        {
+        }
     }
 
     fieldgroups

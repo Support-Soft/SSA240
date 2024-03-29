@@ -1205,6 +1205,8 @@ codeunit 72003 "SSAEDEFactura Mgt."
             'MUNICIPIUL BUCUREŞTI',
             'MUNICIPIUL BUCURESTI':
                 exit('RO-B');
+            '':
+                exit('');
             else
                 exit('RO');
         end;
