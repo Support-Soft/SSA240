@@ -202,7 +202,7 @@ codeunit 72002 "SSAEDExport EFactura"
     end;
 
     [EventSubscriber(ObjectType::Codeunit, 80, 'OnAfterFinalizePostingOnBeforeCommit', '', false, false)]
-    local procedure TestAnulare_OnAfterFinalizePostingOnBeforeCommit(VAR SalesHeader: Record "Sales Header"; VAR SalesShipmentHeader: Record "Sales Shipment Header"; VAR SalesInvoiceHeader: Record "Sales Invoice Header"; VAR SalesCrMemoHeader: Record "Sales Cr.Memo Header"; VAR ReturnReceiptHeader: Record "Return Receipt Header"; VAR GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line"; CommitIsSuppressed: Boolean; PreviewMode: Boolean)
+    local procedure TestAnulare_OnAfterFinalizePostingOnBeforeCommit(var SalesHeader: Record "Sales Header"; var SalesShipmentHeader: Record "Sales Shipment Header"; var SalesInvoiceHeader: Record "Sales Invoice Header"; var SalesCrMemoHeader: Record "Sales Cr.Memo Header"; var ReturnReceiptHeader: Record "Return Receipt Header"; var GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line"; CommitIsSuppressed: Boolean; PreviewMode: Boolean)
     var
         ROFacturaTransportLogEntry: Record "SSAEDE-Documents Log Entry";
     begin
@@ -223,7 +223,7 @@ codeunit 72002 "SSAEDExport EFactura"
     end;
 
     [EventSubscriber(ObjectType::Codeunit, 80, 'OnAfterFinalizePostingOnBeforeCommit', '', false, false)]
-    local procedure SendDocuments_OnAfterPostSalesDoc(VAR SalesHeader: Record "Sales Header"; VAR SalesShipmentHeader: Record "Sales Shipment Header"; VAR SalesInvoiceHeader: Record "Sales Invoice Header"; VAR SalesCrMemoHeader: Record "Sales Cr.Memo Header"; VAR ReturnReceiptHeader: Record "Return Receipt Header"; VAR GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line"; CommitIsSuppressed: Boolean; PreviewMode: Boolean)
+    local procedure SendDocuments_OnAfterPostSalesDoc(var SalesHeader: Record "Sales Header"; var SalesShipmentHeader: Record "Sales Shipment Header"; var SalesInvoiceHeader: Record "Sales Invoice Header"; var SalesCrMemoHeader: Record "Sales Cr.Memo Header"; var ReturnReceiptHeader: Record "Return Receipt Header"; var GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line"; CommitIsSuppressed: Boolean; PreviewMode: Boolean)
     var
         Customer: Record Customer;
     begin
@@ -285,6 +285,21 @@ codeunit 72002 "SSAEDExport EFactura"
         SalesCrMemoHeader."Sell-to County" := FromSalesCrMemoHeader."Sell-to County";
         SalesCrMemoHeader."Ship-to County" := FromSalesCrMemoHeader."Ship-to County";
         SalesCrMemoHeader."SSAEDShip-to Sector" := FromSalesCrMemoHeader."SSAEDShip-to Sector";
+    end;
+
+    [EventSubscriber(ObjectType::Table, Database::"Sales Header", 'OnAfterUpdateShipToAddress', '', false, false)]
+    local procedure SalesHeader_OnAfterUpdateShipToAddress(var SalesHeader: Record "Sales Header"; xSalesHeader: Record "Sales Header"; CurrentFieldNo: Integer)
+    var
+        Location: Record "Location";
+    begin
+        if not SalesHeader.IsCreditDocType then
+            exit;
+        if SalesHeader."Location Code" = '' then
+            exit;
+
+        Location.SetLoadFields("SSAEDSector Bucuresti");
+        Location.GET(SalesHeader."Location Code");
+        SalesHeader."SSAEDShip-to Sector" := Location."SSAEDSector Bucuresti";
     end;
 
 
