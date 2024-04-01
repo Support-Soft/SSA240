@@ -274,7 +274,7 @@ page 72000 "SSAEDE-Documents Log Entries"
                             ROFacturaTransportLogEntry := Rec;
                             CurrPage.SetSelectionFilter(ROFacturaTransportLogEntry);
                             ROFacturaTransportLogEntry.TestField("ID Descarcare");
-                            ANAFAPIMgt.DescarcareMesajPDF(ROFacturaTransportLogEntry."ID Descarcare", TempBlob);
+                            ANAFAPIMgt.DescarcareMesajPDF(ROFacturaTransportLogEntry, TempBlob);
                             TempBlob.CreateInStream(InStr);
                             FileName := Rec."ID Descarcare" + '.pdf';
                             DownloadFromStream(InStr, 'Save file', '', 'PDF File (*.pdf)|*.pdf', FileName);

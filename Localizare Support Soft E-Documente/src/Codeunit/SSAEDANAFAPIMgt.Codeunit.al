@@ -196,27 +196,19 @@ codeunit 72007 "SSAEDANAF API Mgt"
         _EFTLogEntry.Modify();
     end;
 
-    procedure DescarcareMesajPDF(_IDDescarcare: Text; var _TempBlob: Codeunit "Temp Blob")
+    procedure DescarcareMesajPDF(_EFTLogEntry: Record "SSAEDE-Documents Log Entry"; var _TempBlob: Codeunit "Temp Blob")
     var
-        TempEFTLogEntry: Record "SSAEDE-Documents Log Entry" temporary;
         EFSetup: Record "SSAEDEDocuments Setup";
-        TempBlobXML: Codeunit "Temp Blob";
-        ProcessEFactura: Codeunit "SSAEDProcess Import E-Doc";
         URL: Text;
-        OutStr: OutStream;
-        InStr: InStream;
     begin
-
-        ProcessEFactura.UnzippFiles(TempEFTLogEntry, TempBlobXML);
-        EFSetup.Get;
-
+        EFSetup.Get();
         EFSetup.TestField("URL EFactura PDF");
         URL := EFSetup."URL EFactura PDF";
 
-        SendRequest_DescarcareMesajPDF(URL, TempEFTLogEntry, _TempBlob);
+        SendRequest_DescarcareMesajPDF(URL, _EFTLogEntry, _TempBlob);
     end;
 
-    local procedure SendRequest_DescarcareMesajPDF(_URL: Text; var _EFTLogEntry: Record "SSAEDE-Documents Log Entry"; var _TempBlobResponse: Codeunit "Temp Blob")
+    local procedure SendRequest_DescarcareMesajPDF(_URL: Text; _EFTLogEntry: Record "SSAEDE-Documents Log Entry"; var _TempBlobResponse: Codeunit "Temp Blob")
     var
         Client: HttpClient;
         Headers: HttpHeaders;
@@ -232,17 +224,16 @@ codeunit 72007 "SSAEDANAF API Mgt"
         Headers.Add('Accept', '*/*');
         Headers.Add('Connection', 'keep-alive');
         Headers.Add('Accept-Encoding', 'gzip, deflate, br');
-
+        _EFTLogEntry.CalcFields("XML Content");
         _EFTLogEntry."XML Content".CreateInStream(ReqInstream, TextEncoding::UTF8);
         ReqInstream.Read(ContentText);
-
         RequestContent.WriteFrom(ContentText);
         RequestContent.GetHeaders(ContentHeaders);
         if ContentHeaders.Contains('Content-Type') then
             ContentHeaders.Remove('Content-Type');
         ContentHeaders.Add('Content-Type', 'text/plain');
         if not Client.Post(_URL, RequestContent, Response) or (not Response.IsSuccessStatusCode()) then
-            Error(Response.ReasonPhrase);
+            Error('%1-%2', Response.HttpStatusCode, Response.ReasonPhrase);
 
         _TempBlobResponse.CreateInStream(ResponseInStream, TEXTENCODING::UTF8);
         Response.Content.ReadAs(ResponseInStream);
