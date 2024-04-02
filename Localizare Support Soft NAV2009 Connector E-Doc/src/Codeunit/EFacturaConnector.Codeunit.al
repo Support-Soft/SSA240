@@ -92,7 +92,8 @@ codeunit 72300 "SSAEDNEFactura Connector"
                 end;
                 XMLBuffer.GetParent();
             until EFTDoc.Next() = 0;
-        end;
+        end else
+            Error('No data found');
         XMLBuffer.Save(TempBlob);
         TempBlob.CreateInStream(InStr, TextEncoding::UTF8);
         InStr.Read(Response);
@@ -168,7 +169,8 @@ codeunit 72300 "SSAEDNEFactura Connector"
                 end;
                 XMLBuffer.GetParent();
             until EFTDoc.Next() = 0;
-        end;
+        end else
+            Error('No data found');
         XMLBuffer.Save(TempBlob);
         TempBlob.CreateInStream(InStr, TextEncoding::UTF8);
         InStr.Read(Response);
@@ -184,7 +186,9 @@ codeunit 72300 "SSAEDNEFactura Connector"
         EFTDoc.SetRange("Entry No.", _EntryNo);
 
         if EFTDoc.FindFirst() then
-            Response := EFTDoc.GetXMLContent();
+            Response := EFTDoc.GetXMLContent()
+        else
+            Error('No data found');
 
     end;
 }
