@@ -100,6 +100,43 @@ codeunit 72300 "SSAEDNEFactura Connector"
 
     end;
 
+    procedure GetToken() Response: Text
+    var
+        EFTSetupLocal: Record "SSAEDEDocuments Setup";
+        EFTSetupToken: Record "SSAEDEDocuments Setup";
+        XMLBuffer: Record "XML Buffer" temporary;
+        TempBlob: Codeunit "Temp Blob";
+        InStr: InStream;
+        DecVar: Decimal;
+        ExpirationDT: DateTime;
+
+    begin
+        XMLBuffer.Reset();
+        XMLBuffer.DeleteAll();
+
+        EFTSetupLocal.GET;
+        if EFTSetupLocal."Master Token Company" <> '' then
+            EFTSetupToken.ChangeCompany(EFTSetupLocal."Master Token Company");
+        EFTSetupToken.GET;
+        ExpirationDT := CurrentDateTime;
+        if EFTSetupToken."Authorization Time" <> 0DT then begin
+            DecVar := EFTSetupToken."Expires In";
+            DecVar := DecVar * 1000;
+            ExpirationDT := EFTSetupToken."Authorization Time" + DecVar;
+        end;
+        XMLBuffer.AddGroupElement('EFTSetup');
+        XMLBuffer.AddElement('TokenType', Format(EFTSetupToken."Token Type"));
+        XMLBuffer.AddElement('Token', EFTSetupToken.GetCurrentToken());
+        XMLBuffer.AddElement('RefreshToken', EFTSetupToken.GetCurrentRefreshToken());
+        XMLBuffer.AddElement('ExpitationDateTime', Format(ExpirationDT, 0, 9));
+        XMLBuffer.GetParent();
+        XMLBuffer.Save(TempBlob);
+        TempBlob.CreateInStream(InStr, TextEncoding::UTF8);
+        InStr.Read(Response);
+
+    end;
+
+    /*
     procedure GetDataAllEntries(LastEntryID: Integer) Response: Text
     var
         EFTDoc: Record "SSAEDE-Documents Log Entry";
@@ -176,6 +213,7 @@ codeunit 72300 "SSAEDNEFactura Connector"
         InStr.Read(Response);
 
     end;
+    
 
     procedure GetDataEntry(_EntryNo: Integer) Response: Text
     var
@@ -191,4 +229,5 @@ codeunit 72300 "SSAEDNEFactura Connector"
             Error('No data found');
 
     end;
+    */
 }

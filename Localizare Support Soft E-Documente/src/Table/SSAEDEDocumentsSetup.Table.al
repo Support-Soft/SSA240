@@ -258,10 +258,11 @@ table 72001 "SSAEDEDocuments Setup"
     begin
         Clear(TxtVar);
         Rec.CalcFields("Access Token JWT");
-        if Rec."Access Token JWT".HasValue then
+        if Rec."Access Token JWT".HasValue then begin
             Rec."Access Token JWT".CreateInStream(InStr);
 
-        InStr.ReadText(TxtVar);
+            InStr.ReadText(TxtVar);
+        end;
     end;
 
     procedure GetRefreshTokenJWT() TxtVar: Text
@@ -270,9 +271,10 @@ table 72001 "SSAEDEDocuments Setup"
     begin
         Clear(TxtVar);
         Rec.CalcFields("Refresh Token JWT");
-        if Rec."Refresh Token JWT".HasValue then
+        if Rec."Refresh Token JWT".HasValue then begin
             Rec."Refresh Token JWT".CreateInStream(InStr);
-        InStr.ReadText(TxtVar);
+            InStr.ReadText(TxtVar);
+        end;
     end;
 
     procedure GetCurrentToken() TxtVar: Text
@@ -282,6 +284,19 @@ table 72001 "SSAEDEDocuments Setup"
                 TxtVar := Rec."Access Token Opaque";
             Rec."Token Type"::JWT:
                 TxtVar := GetTokenJWT();
+            else
+                Error('Invalid Token Type %1', Rec."Token Type");
+        end;
+        exit(TxtVar);
+    end;
+
+    procedure GetCurrentRefreshToken() TxtVar: Text
+    begin
+        case Rec."Token Type" of
+            Rec."Token Type"::Opaque:
+                TxtVar := Rec."Refresh Token Opaque";
+            Rec."Token Type"::JWT:
+                TxtVar := GetRefreshTokenJWT();
             else
                 Error('Invalid Token Type %1', Rec."Token Type");
         end;

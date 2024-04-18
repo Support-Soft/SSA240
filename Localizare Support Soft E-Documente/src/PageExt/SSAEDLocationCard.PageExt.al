@@ -7,7 +7,7 @@ pageextension 72016 "SSAEDLocation Card" extends "Location Card"
             field("SSAEDSector Bucuresti"; Rec."SSAEDSector Bucuresti")
             {
                 ApplicationArea = All;
-                ToolTip = 'Specifies the value of the SSAEDSector Bucuresti field.';
+                ToolTip = 'Specifies the value of the Sector Bucuresti field.';
             }
         }
     }

@@ -470,8 +470,8 @@ codeunit 72007 "SSAEDANAF API Mgt"
         ExpirationDT: DateTime;
     begin
         EFTSetupLocal.GET;
-        EFTSetupLocal.TestField("Master Token Company");
-        EFTSetupToken.ChangeCompany(EFTSetupLocal."Master Token Company");
+        if EFTSetupLocal."Master Token Company" <> '' then
+            EFTSetupToken.ChangeCompany(EFTSetupLocal."Master Token Company");
         EFTSetupToken.GET;
 
         if EFTSetupToken."Authorization Time" <> 0DT then begin
