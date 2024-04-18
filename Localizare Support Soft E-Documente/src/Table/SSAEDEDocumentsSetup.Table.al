@@ -213,6 +213,12 @@ table 72001 "SSAEDEDocuments Setup"
             Caption = 'Refresh Token JWT';
             DataClassification = CustomerContent;
         }
+        field(350; "Master Token Company"; Text[30])
+        {
+            Caption = 'Master Token Company';
+            DataClassification = CustomerContent;
+            TableRelation = Company.Name;
+        }
     }
 
     keys

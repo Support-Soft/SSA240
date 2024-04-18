@@ -187,18 +187,18 @@ codeunit 72002 "SSAEDExport EFactura"
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", OnBeforePostSalesDoc, '', false, false)]
     local procedure TestPostingDate_OnBeforePostSalesDoc(var SalesHeader: Record "Sales Header")
     var
-        EFTSetup: Record "SSAEDEDocuments Setup";
+        EFTSetupLocal: Record "SSAEDEDocuments Setup";
         ReversedDaysLbl: Label '<-%1D>', Locked = true;
         ErrorLbl: Label 'You cannot Invoice document older than %1 days.', Comment = '%1 = No. of Days';
     begin
         if not SalesHeader.Invoice then
             exit;
 
-        EFTSetup.SetLoadFields("Block Posting Sales Doc Before");
-        EFTSetup.Get();
+        EFTSetupLocal.SetLoadFields("Block Posting Sales Doc Before");
+        EFTSetupLocal.Get();
 
-        if SalesHeader."Posting Date" < CalcDate(StrSubstNo(ReversedDaysLbl, EFTSetup."Block Posting Sales Doc Before"), Today) then
-            Error(ErrorLbl, EFTSetup."Block Posting Sales Doc Before");
+        if SalesHeader."Posting Date" < CalcDate(StrSubstNo(ReversedDaysLbl, EFTSetupLocal."Block Posting Sales Doc Before"), Today) then
+            Error(ErrorLbl, EFTSetupLocal."Block Posting Sales Doc Before");
     end;
 
     [EventSubscriber(ObjectType::Codeunit, 80, 'OnAfterFinalizePostingOnBeforeCommit', '', false, false)]

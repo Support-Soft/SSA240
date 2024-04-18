@@ -367,10 +367,15 @@ codeunit 72007 "SSAEDANAF API Mgt"
     end;
 
     procedure RefreshToken(var _Rec: Record "SSAEDEDocuments Setup")
+    var
+        TokenMessage: Label 'Token has been refreshed.';
     begin
         _Rec.TESTFIELD("Access Token URL");
 
         SendRequest_RefreshToken(_Rec);
+
+        if GuiAllowed then
+            MESSAGE(TokenMessage);
     end;
 
     local procedure SendRequest_RefreshToken(var _Rec: Record "SSAEDEDocuments Setup")
@@ -387,7 +392,7 @@ codeunit 72007 "SSAEDANAF API Mgt"
         Token: Text;
     begin
 
-        Token := GetActiveToken();
+        Token := _Rec.GetCurrentToken();
 
         Headers := Client.DefaultRequestHeaders;
         Headers.Add('Accept', '*/*');
@@ -459,24 +464,28 @@ codeunit 72007 "SSAEDANAF API Mgt"
 
     local procedure GetActiveToken(): Text;
     var
-        EFTSetup: Record "SSAEDEDocuments Setup";
+        EFTSetupLocal: Record "SSAEDEDocuments Setup";
+        EFTSetupToken: Record "SSAEDEDocuments Setup";
         DecVar: Decimal;
         ExpirationDT: DateTime;
     begin
-        EFTSetup.GET;
+        EFTSetupLocal.GET;
+        EFTSetupLocal.TestField("Master Token Company");
+        EFTSetupToken.ChangeCompany(EFTSetupLocal."Master Token Company");
+        EFTSetupToken.GET;
 
-        if EFTSetup."Authorization Time" <> 0DT then begin
-            DecVar := EFTSetup."Expires In";
+        if EFTSetupToken."Authorization Time" <> 0DT then begin
+            DecVar := EFTSetupToken."Expires In";
             DecVar := DecVar * 1000;
-            ExpirationDT := EFTSetup."Authorization Time" + DecVar;
+            ExpirationDT := EFTSetupToken."Authorization Time" + DecVar;
             if CALCDATE('<1D>', TODAY) < DT2DATE(ExpirationDT) then
-                exit(EFTSetup.GetCurrentToken);
+                exit(EFTSetupToken.GetCurrentToken);
         end;
 
-        RefreshToken(EFTSetup);
-        EFTSetup.Modify();
+        RefreshToken(EFTSetupToken);
+        EFTSetupToken.Modify();
         Commit();
-        exit(EFTSetup.GetCurrentToken);
+        exit(EFTSetupToken.GetCurrentToken);
     end;
 }
 

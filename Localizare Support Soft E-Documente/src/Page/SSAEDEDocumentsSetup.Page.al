@@ -113,6 +113,10 @@ page 72001 "SSAEDEDocuments Setup"
                         Rec.Modify(true);
                     end;
                 }
+                field("Master Token Company"; Rec."Master Token Company")
+                {
+                    ToolTip = 'Specifies the value of the Master Token Company field.';
+                }
 
             }
             group(EFactura)
