@@ -15,7 +15,6 @@ codeunit 72007 "SSAEDANAF API Mgt"
         Parameters: Text;
     begin
         EFSetup.Get;
-        //EFSetup.TESTFIELD("Access Token"
         if EFSetup."EFactura Mod Test" then begin
             EFSetup.TestField("EFactura Test Upload URL");
             URL := EFSetup."EFactura Test Upload URL";
@@ -29,10 +28,10 @@ codeunit 72007 "SSAEDANAF API Mgt"
 
         Parameters := StrSubstNo('?standard=UBL&cif=%1', DelChr(UpperCase(CompanyInfo."VAT Registration No."), '=', CountryRegion."ISO Code"));
 
-        SendRequest_PostEFactura(URL, Parameters, EFSetup."Access Token", _TempBlobRequest, _DateResponse, _ExecutionStatus, _index_incarcare);
+        SendRequest_PostEFactura(URL, Parameters, _TempBlobRequest, _DateResponse, _ExecutionStatus, _index_incarcare);
     end;
 
-    local procedure SendRequest_PostEFactura(_URL: Text; _Param: Text; _Token: Text; var _TempBlobRequest: Codeunit "Temp Blob"; var _DateResponse: Text; var _ExecutionStatus: Text; var _index_incarcare: Text)
+    local procedure SendRequest_PostEFactura(_URL: Text; _Param: Text; var _TempBlobRequest: Codeunit "Temp Blob"; var _DateResponse: Text; var _ExecutionStatus: Text; var _index_incarcare: Text)
     var
         Client: HttpClient;
         RequestContent: HttpContent;
@@ -42,14 +41,15 @@ codeunit 72007 "SSAEDANAF API Mgt"
         BodyInstr: InStream;
         ResponseText: Text;
         RequestText: Text;
+        Token: Text;
     begin
 
-        CheckTokenValidity();
+        Token := GetActiveToken();
 
         Headers := Client.DefaultRequestHeaders;
         Headers.Add('Accept', '*/*');
         Headers.Add('Connection', 'keep-alive');
-        Headers.Add('Authorization', StrSubstNo('Bearer %1', _Token));
+        Headers.Add('Authorization', StrSubstNo('Bearer %1', Token));
         Headers.Add('Accept-Encoding', 'gzip, deflate, br');
 
         _TempBlobRequest.CreateInStream(BodyInstr, TextEncoding::UTF8);
@@ -104,22 +104,23 @@ codeunit 72007 "SSAEDANAF API Mgt"
 
         Parameters := StrSubstNo('?id_incarcare=%1', _IDIncarcare);
 
-        SendRequest_GetStareMesaj(URL, Parameters, EFSetup."Access Token", _StareMesaj, _IDDescarcare);
+        SendRequest_GetStareMesaj(URL, Parameters, _StareMesaj, _IDDescarcare);
     end;
 
-    local procedure SendRequest_GetStareMesaj(_URL: Text; _Param: Text; _Token: Text; var _StareMesaj: Text; var _IDDescarcare: Text)
+    local procedure SendRequest_GetStareMesaj(_URL: Text; _Param: Text; var _StareMesaj: Text; var _IDDescarcare: Text)
     var
         Client: HttpClient;
         Headers: HttpHeaders;
         Response: HttpResponseMessage;
         ResponseText: Text;
+        Token: Text;
     begin
-        CheckTokenValidity();
+        Token := GetActiveToken();
 
         Headers := Client.DefaultRequestHeaders;
         Headers.Add('Accept', '*/*');
         Headers.Add('Connection', 'keep-alive');
-        Headers.Add('Authorization', StrSubstNo('Bearer %1', _Token));
+        Headers.Add('Authorization', StrSubstNo('Bearer %1', Token));
         Headers.Add('Accept-Encoding', 'gzip, deflate, br');
 
         if not Client.Get(_URL + _Param, Response) or (not Response.IsSuccessStatusCode()) then
@@ -163,10 +164,10 @@ codeunit 72007 "SSAEDANAF API Mgt"
 
         Parameters := StrSubstNo('?id=%1', _EFTLogEntry."ID Descarcare");
 
-        SendRequest_DescarcareMesaj(URL, Parameters, EFSetup."Access Token", _EFTLogEntry);
+        SendRequest_DescarcareMesaj(URL, Parameters, _EFTLogEntry);
     end;
 
-    local procedure SendRequest_DescarcareMesaj(_URL: Text; _Param: Text; _Token: Text; var _EFTLogEntry: Record "SSAEDE-Documents Log Entry")
+    local procedure SendRequest_DescarcareMesaj(_URL: Text; _Param: Text; var _EFTLogEntry: Record "SSAEDE-Documents Log Entry")
     var
         Client: HttpClient;
         Headers: HttpHeaders;
@@ -174,14 +175,15 @@ codeunit 72007 "SSAEDANAF API Mgt"
         ResponseOutStream: OutStream;
         ResponseInStream: InStream;
         TempBlobResponse: Codeunit "Temp Blob";
+        Token: Text;
     begin
 
-        CheckTokenValidity();
+        Token := GetActiveToken();
 
         Headers := Client.DefaultRequestHeaders;
         Headers.Add('Accept', '*/*');
         Headers.Add('Connection', 'keep-alive');
-        Headers.Add('Authorization', StrSubstNo('Bearer %1', _Token));
+        Headers.Add('Authorization', StrSubstNo('Bearer %1', Token));
         Headers.Add('Accept-Encoding', 'gzip, deflate, br');
 
         if not Client.Get(_URL + _Param, Response) or (not Response.IsSuccessStatusCode()) then
@@ -265,23 +267,24 @@ codeunit 72007 "SSAEDANAF API Mgt"
         CountryRegion.GET(CompanyInfo."Country/Region Code");
 
         Parameters := STRSUBSTNO('?zile=%1&cif=%2&filtru=P', EFSetup."Nr. Zile Preluare ListaMesaje", DELCHR(UPPERCASE(CompanyInfo."VAT Registration No."), '=', CountryRegion."ISO Code"));
-        SendRequest_GetListaMesaje(URL, Parameters, EFSetup."Access Token");
+        SendRequest_GetListaMesaje(URL, Parameters);
     end;
 
-    local procedure SendRequest_GetListaMesaje(_URL: Text; _Param: Text; _Token: Text)
+    local procedure SendRequest_GetListaMesaje(_URL: Text; _Param: Text)
     var
         Client: HttpClient;
         Headers: HttpHeaders;
         Response: HttpResponseMessage;
         ResponseText: Text;
+        Token: Text;
     begin
 
-        CheckTokenValidity();
+        Token := GetActiveToken();
 
         Headers := Client.DefaultRequestHeaders;
         Headers.Add('Accept', '*/*');
         Headers.Add('Connection', 'keep-alive');
-        Headers.Add('Authorization', StrSubstNo('Bearer %1', _Token));
+        Headers.Add('Authorization', StrSubstNo('Bearer %1', Token));
         Headers.Add('Accept-Encoding', 'gzip, deflate, br');
 
         if not Client.Get(_URL + _Param, Response) or (not Response.IsSuccessStatusCode()) then
@@ -381,21 +384,35 @@ codeunit 72007 "SSAEDANAF API Mgt"
         TypeHelper: Codeunit "Type Helper";
         ResponseText: Text;
         ContentText: Text;
+        Token: Text;
     begin
 
-        CheckTokenValidity();
+        Token := GetActiveToken();
 
         Headers := Client.DefaultRequestHeaders;
         Headers.Add('Accept', '*/*');
         Headers.Add('Connection', 'keep-alive');
-        Headers.Add('Authorization', StrSubstNo(BearerToken, _Rec."Access Token"));
+        Headers.Add('Authorization', StrSubstNo(BearerToken, Token));
         Headers.Add('Accept-Encoding', 'gzip, deflate, br');
 
+        case _Rec."Token Type" of
+            _Rec."Token Type"::"Opaque":
+                ContentText := 'grant_type=refresh_token' +
+                    '&refresh_token=' + TypeHelper.UriEscapeDataString(_Rec."Refresh Token Opaque") +
+                    '&client_id=' + TypeHelper.UriEscapeDataString(_Rec."Client ID") +
+                    '&client_secret=' + TypeHelper.UriEscapeDataString(_Rec."Client Secret");
+            _Rec."Token Type"::"JWT":
+                ContentText := 'grant_type=refresh_token' +
+                    '&refresh_token=' + TypeHelper.UriEscapeDataString(_Rec.GetRefreshTokenJWT());
+            else
+                Error('Invalid Token Type %1', _Rec."Token Type");
+        end;
+        /*
         ContentText := 'grant_type=refresh_token' +
             '&refresh_token=' + TypeHelper.UriEscapeDataString(_Rec."Refresh Token") +
             '&client_id=' + TypeHelper.UriEscapeDataString(_Rec."Client ID") +
             '&client_secret=' + TypeHelper.UriEscapeDataString(_Rec."Client Secret");
-
+        */
         RequestContent.WriteFrom(contentText);
         RequestContent.GetHeaders(ContentHeaders);
         if ContentHeaders.Contains('Content-Type') then
@@ -414,16 +431,33 @@ codeunit 72007 "SSAEDANAF API Mgt"
     local procedure ParseXMLResponse_RefreshToken(_JSonText: Text; var _Rec: Record "SSAEDEDocuments Setup")
     var
         TempJSONBuffer: Record "JSON Buffer" temporary;
+        TextVar: Text;
     begin
 
         TempJSONBuffer.ReadFromText(_JSonText);
-        TempJSONBuffer.GetPropertyValue(_Rec."Access Token", 'access_token');
-        TempJSONBuffer.GetPropertyValue(_Rec."Refresh Token", 'refresh_token');
-        TempJSONBuffer.GetIntegerPropertyValue(_Rec."Expires In", 'expires_in');
-        _Rec.VALIDATE("Access Token");
+        case _Rec."Token Type" of
+            _Rec."Token Type"::"Opaque":
+                begin
+                    TempJSONBuffer.GetPropertyValue(_Rec."Access Token Opaque", 'access_token');
+                    TempJSONBuffer.GetPropertyValue(_Rec."Refresh Token Opaque", 'refresh_token');
+                    TempJSONBuffer.GetIntegerPropertyValue(_Rec."Expires In", 'expires_in');
+                    _Rec.VALIDATE("Access Token Opaque");
+                end;
+            _Rec."Token Type"::"JWT":
+                begin
+                    TempJSONBuffer.GetPropertyValue(TextVar, 'access_token');
+                    _Rec.SetTokenJWT(TextVar);
+                    TempJSONBuffer.GetPropertyValue(TextVar, 'refresh_token');
+                    _Rec.SetRefreshTokenJWT(TextVar);
+                    TempJSONBuffer.GetIntegerPropertyValue(_Rec."Expires In", 'expires_in');
+                end;
+            else
+                Error('Invalid Token Type %1', _Rec."Token Type");
+        end;
+
     end;
 
-    local procedure CheckTokenValidity()
+    local procedure GetActiveToken(): Text;
     var
         EFTSetup: Record "SSAEDEDocuments Setup";
         DecVar: Decimal;
@@ -436,12 +470,13 @@ codeunit 72007 "SSAEDANAF API Mgt"
             DecVar := DecVar * 1000;
             ExpirationDT := EFTSetup."Authorization Time" + DecVar;
             if CALCDATE('<1D>', TODAY) < DT2DATE(ExpirationDT) then
-                exit;
+                exit(EFTSetup.GetCurrentToken);
         end;
 
         RefreshToken(EFTSetup);
         EFTSetup.Modify();
         Commit();
+        exit(EFTSetup.GetCurrentToken);
     end;
 }
 

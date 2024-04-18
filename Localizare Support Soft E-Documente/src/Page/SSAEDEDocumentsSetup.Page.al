@@ -70,14 +70,50 @@ page 72001 "SSAEDEDocuments Setup"
                 {
                     ToolTip = 'Parola';
                 }
-                field("Access Token"; Rec."Access Token")
+                field("Token Type"; Rec."Token Type")
                 {
+                    ToolTip = 'Specifies the value of the Token Type field.';
+                    trigger OnValidate()
+                    begin
+                        SetTokenVisibility();
+                        CurrPage.Update(true);
+                    end;
+                }
+                field("Access Token"; Rec."Access Token Opaque")
+                {
+                    Enabled = ShowOpaque;
                     ToolTip = 'Token-ul de acces';
                 }
-                field("Refresh Token"; Rec."Refresh Token")
+                field("Refresh Token"; Rec."Refresh Token Opaque")
                 {
+                    Enabled = ShowOpaque;
                     ToolTip = 'Specifies the value of the Refresh Token field.';
                 }
+                field(JWTTokenTextField; JWTTokenText)
+                {
+                    Caption = 'JWT Token';
+                    Enabled = ShowJWT;
+                    ToolTip = 'Token-ul de acces JWT';
+                    ExtendedDatatype = Masked;
+                    trigger OnValidate()
+                    begin
+                        Rec.SetTokenJWT(JWTTokenText);
+                        Rec.Modify(true);
+                    end;
+                }
+                field(JWTRefreshTokenTextField; JWTRefreshTokenText)
+                {
+                    Caption = 'JWT Refresh Token';
+                    Enabled = ShowJWT;
+                    ToolTip = 'Specifies the value of the JWT Refresh Token field.';
+                    ExtendedDatatype = Masked;
+                    trigger OnValidate()
+                    begin
+                        Rec.SetRefreshTokenJWT(JWTRefreshTokenText);
+                        Rec.Modify(true);
+                    end;
+                }
+
             }
             group(EFactura)
             {
@@ -174,6 +210,11 @@ page 72001 "SSAEDEDocuments Setup"
 
         }
     }
+    var
+        JWTTokenText: Text;
+        JWTRefreshTokenText: Text;
+        ShowOpaque: Boolean;
+        ShowJWT: Boolean;
 
     trigger OnOpenPage()
     begin
@@ -181,6 +222,33 @@ page 72001 "SSAEDEDocuments Setup"
         if not Rec.Get then begin
             Rec.Init;
             Rec.Insert;
+        end;
+        SetTokenVisibility;
+    end;
+
+    trigger OnAfterGetRecord()
+    begin
+
+    end;
+
+    local procedure SetTokenVisibility()
+    begin
+        Clear(JWTTokenText);
+        Clear(JWTRefreshTokenText);
+        Clear(ShowOpaque);
+        Clear(ShowJWT);
+        Rec.CalcFields("Access Token JWT", "Refresh Token JWT");
+        case Rec."Token Type" of
+            Rec."Token Type"::Opaque:
+                ShowOpaque := true;
+            Rec."Token Type"::JWT:
+                begin
+                    ShowJWT := true;
+                    if Rec."Access Token JWT".HasValue then
+                        JWTTokenText := '***';
+                    if Rec."Refresh Token JWT".HasValue then
+                        JWTRefreshTokenText := '***';
+                end;
         end;
     end;
 }

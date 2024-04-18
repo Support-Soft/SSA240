@@ -761,12 +761,12 @@
 
     end;
 
-    [IntegrationEvent(TRUE, false)]
+    [IntegrationEvent(true, false)]
     local procedure OnAfterInitReport()
     begin
     end;
 
-    [IntegrationEvent(TRUE, false)]
+    [IntegrationEvent(true, false)]
     local procedure OnAfterPostDataItem(var InvtShipmentHeader: Record "Invt. Shipment Header")
     begin
     end;

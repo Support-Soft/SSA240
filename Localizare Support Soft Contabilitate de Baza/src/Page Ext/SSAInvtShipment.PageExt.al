@@ -179,7 +179,7 @@ pageextension 70072 "SSA Invt. Shipment" extends "Invt. Shipment"
                         group("SSA Control4")
                         {
                             ShowCaption = false;
-                            Visible = NOT (ShipToOptions = ShipToOptions::"Default (Sell-to Address)");
+                            Visible = not (ShipToOptions = ShipToOptions::"Default (Sell-to Address)");
                             field("SSA Ship-to Code"; Rec."SSA Ship-to Code")
                             {
                                 ApplicationArea = All;

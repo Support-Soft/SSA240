@@ -63,23 +63,28 @@ table 72001 "SSAEDEDocuments Setup"
             OptionCaption = ' ,Enabled,Disabled,Connected,Error';
             OptionMembers = " ",Enabled,Disabled,Connected,Error;
         }
-        field(90; "Access Token"; Text[250])
+        field(90; "Access Token Opaque"; Text[250])
         {
-            Caption = 'Access Token';
+            Caption = 'Access Token Opaque';
             DataClassification = CustomerContent;
             ExtendedDatatype = Masked;
             trigger OnValidate()
             begin
+                TestField("Token Type", Rec."Token Type"::Opaque);
                 Validate("Authorization Time", CurrentDateTime);
                 if "Expires In" = 0 then
                     Validate("Expires In", 7776000);
             end;
         }
-        field(100; "Refresh Token"; Text[250])
+        field(100; "Refresh Token Opaque"; Text[250])
         {
-            Caption = 'Refresh Token';
+            Caption = 'Refresh Token Opaque';
             DataClassification = CustomerContent;
             ExtendedDatatype = Masked;
+            trigger OnValidate()
+            begin
+                TestField("Token Type", Rec."Token Type"::Opaque);
+            end;
         }
         field(110; "Authorization Time"; DateTime)
         {
@@ -188,6 +193,26 @@ table 72001 "SSAEDEDocuments Setup"
             Caption = 'Block Posting Sales Doc Before';
             DataClassification = CustomerContent;
         }
+        field(320; "Token Type"; Enum SSAEDTokenType)
+        {
+            Caption = 'Token Type';
+            DataClassification = CustomerContent;
+            trigger OnValidate()
+            begin
+                Clear("Authorization Time");
+                Clear("Expires In");
+            end;
+        }
+        field(330; "Access Token JWT"; Blob)
+        {
+            Caption = 'Access Token JWT';
+            DataClassification = CustomerContent;
+        }
+        field(340; "Refresh Token JWT"; Blob)
+        {
+            Caption = 'Refresh Token JWT';
+            DataClassification = CustomerContent;
+        }
     }
 
     keys
@@ -196,12 +221,65 @@ table 72001 "SSAEDEDocuments Setup"
         {
         }
     }
-
-    fieldgroups
-    {
-    }
-
     var
         WebRequestHelper: Codeunit "Web Request Helper";
+
+    procedure SetTokenJWT(_Text: Text)
+    var
+        OutStr: OutStream;
+    begin
+        TestField("Token Type", Rec."Token Type"::JWT);
+        Rec."Access Token JWT".CreateOutStream(OutStr);
+        OutStr.WriteText(_Text);
+        Validate("Authorization Time", CurrentDateTime);
+        if "Expires In" = 0 then
+            Validate("Expires In", 7776000);
+
+    end;
+
+    procedure SetRefreshTokenJWT(_Text: Text)
+    var
+        OutStr: OutStream;
+    begin
+        TestField("Token Type", Rec."Token Type"::JWT);
+        Rec."Refresh Token JWT".CreateOutStream(OutStr);
+        OutStr.WriteText(_Text);
+    end;
+
+    local procedure GetTokenJWT() TxtVar: Text
+    var
+        InStr: InStream;
+    begin
+        Clear(TxtVar);
+        Rec.CalcFields("Access Token JWT");
+        if Rec."Access Token JWT".HasValue then
+            Rec."Access Token JWT".CreateInStream(InStr);
+
+        InStr.ReadText(TxtVar);
+    end;
+
+    procedure GetRefreshTokenJWT() TxtVar: Text
+    var
+        InStr: InStream;
+    begin
+        Clear(TxtVar);
+        Rec.CalcFields("Refresh Token JWT");
+        if Rec."Refresh Token JWT".HasValue then
+            Rec."Refresh Token JWT".CreateInStream(InStr);
+        InStr.ReadText(TxtVar);
+    end;
+
+    procedure GetCurrentToken() TxtVar: Text
+    begin
+        case Rec."Token Type" of
+            Rec."Token Type"::Opaque:
+                TxtVar := Rec."Access Token Opaque";
+            Rec."Token Type"::JWT:
+                TxtVar := GetTokenJWT();
+            else
+                Error('Invalid Token Type %1', Rec."Token Type");
+        end;
+        exit(TxtVar);
+    end;
 }
 
