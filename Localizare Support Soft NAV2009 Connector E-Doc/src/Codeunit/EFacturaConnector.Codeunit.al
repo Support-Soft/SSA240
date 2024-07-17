@@ -18,7 +18,7 @@ codeunit 72300 "SSAEDNEFactura Connector"
         EFTDoc."Entry No." := LastEntryNo;
         EFTDoc."Entry Type" := EFTDoc."Entry Type"::"Export E-Factura";
         EFTDoc.Insert(true);
-        EFTDoc.SetXMLContent(XML);
+        EFTDoc.SetXMLFactura(XML);
         EFTDoc.Modify(true);
         exit(Format(EFTDoc."Entry No."));
     end;
@@ -65,7 +65,7 @@ codeunit 72300 "SSAEDNEFactura Connector"
                 XMLBuffer.AddElement('DueDate', Format(EFTDoc."Due Date", 0, 9));
                 XMLBuffer.AddElement('VendorInvoiceNo', EFTDoc."Vendor Invoice No.");
                 XMLBuffer.AddElement('PaymentMethod', Format(EFTDoc."Payment Method Code"));
-                XMLBuffer.AddElement('XMLFile', EFTDoc.GetXMLContent());
+                XMLBuffer.AddElement('XMLFile', EFTDoc.GetXMLFactura());
                 EFTDocDetails.SetRange("Log Entry No.", EFTDoc."Entry No.");
                 if EFTDocDetails.FindSet() then begin
                     XMLBuffer.AddGroupElement('EFTLines');

@@ -30,7 +30,7 @@ codeunit 72006 "SSAEDJob EFactura StareMesaj"
         if EFacturaLogEntry.FindSet() then
             repeat
                 EFacturaLogEntry2.Get(EFacturaLogEntry."Entry No.");
-                ANAFAPIMgt.GetStareMesaj(EFacturaLogEntry2."Index Incarcare", EFacturaLogEntry2."Stare Mesaj", EFacturaLogEntry2."ID Descarcare");
+                ANAFAPIMgt.GetStareMesaj(EFacturaLogEntry2);
                 EFacturaLogEntry2.Modify();
                 i += 1;
                 if i >= EFacturaSetup."No. of StareMesaj Requests" then

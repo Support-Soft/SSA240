@@ -4,10 +4,10 @@ pageextension 71903 "SSAFTLocation Card" extends "Location Card"
     {
         addlast(content)
         {
-            group(SSAFTSAFT)
+            group(SSAFT)
             {
                 Caption = 'SAFT';
-                field("SSAFTSAFT Do Not Export"; Rec."SSAFTSAFT Do Not Export")
+                field("SSAFT Do Not Export"; Rec."SSAFT Do Not Export")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the SAFT Do Not Export field.';

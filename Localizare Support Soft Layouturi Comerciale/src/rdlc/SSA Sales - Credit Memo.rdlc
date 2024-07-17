@@ -24,7 +24,7 @@
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>24.02783cm</Height>
+                  <Height>23.02783cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -6981,7 +6981,7 @@
             </TablixRowHierarchy>
             <DataSetName>DataSet_Result</DataSetName>
             <Top>0.22049cm</Top>
-            <Height>24.02783cm</Height>
+            <Height>23.02783cm</Height>
             <Width>18.52485cm</Width>
             <Style>
               <Border>

@@ -10,10 +10,14 @@ codeunit 72002 "SSAEDExport EFactura"
         RecordRef: RecordRef;
         ANAFAPIMgt: Codeunit "SSAEDANAF API Mgt";
         TempBlob: Codeunit "Temp Blob";
+        InStr: InStream;
+        OutStr: OutStream;
     begin
         Rec.TestField("Entry Type", Rec."Entry Type"::"Export E-Factura");
-        if Rec."XML Content".HasValue then
-            TempBlob.FromRecord(Rec, rec.FieldNo("XML Content"))
+        if not (Rec.Status in [Rec.Status::New, Rec.Status::"In Progress"]) then
+            Error('Not allowed %1', Rec.Status);
+        if Rec."XML Factura ANAF".HasValue then
+            TempBlob.FromRecord(Rec, rec.FieldNo("XML Factura ANAF"))
         else begin
             RecordRef.Get(Rec.RecordID);
             case RecordRef.Number of
@@ -30,7 +34,11 @@ codeunit 72002 "SSAEDExport EFactura"
                 else
                     Error('Not allowed %1', RecordRef.Number);
             end;
+            TempBlob.CreateInStream(InStr, TextEncoding::UTF8);
+            Rec."XML Factura ANAF".CreateOutStream(OutStr, TextEncoding::UTF8);
+            CopyStream(OutStr, InStr);
         end;
+
         EFacturaSetup.Get();
         if EFacturaSetup."EFactura Enable API" then
             ANAFAPIMgt.PostEFactura(TempBlob, Rec.DateResponse, Rec."Execution Status", Rec."Index Incarcare");
@@ -67,7 +75,7 @@ codeunit 72002 "SSAEDExport EFactura"
             else
                 Error('Not allowed %1', RecordRef.Number);
         end;
-        TempBlob.CreateInStream(InStr);
+        TempBlob.CreateInStream(InStr, TextEncoding::UTF8);
         DownloadFromStream(InStr, 'Save XML File', '', '', FileName);
         ROFactura.ClientFileName := FileName;
 
@@ -122,7 +130,7 @@ codeunit 72002 "SSAEDExport EFactura"
         EFacturaXML: XmlPort "SSAEDE-Factura";
         OutStream: OutStream;
     begin
-        _TempBlob.CreateOutStream(OutStream);
+        _TempBlob.CreateOutStream(OutStream, TextEncoding::UTF8);
         EFacturaXML.Initialize(VariantRec);
         EFacturaXML.SetDestination(OutStream);
         EFacturaXML.Export;
@@ -142,17 +150,17 @@ codeunit 72002 "SSAEDExport EFactura"
         XSLInStream: InStream;
         FinalOutStream: OutStream;
     begin
-        TempBlobXSL.CreateOutStream(XSLOutStream);
+        TempBlobXSL.CreateOutStream(XSLOutStream, TextEncoding::UTF8);
         XSLOutStream.WriteText(GetXSLText);
-        TempBlobXSL.CreateInStream(XSLInStream);
+        TempBlobXSL.CreateInStream(XSLInStream, TextEncoding::UTF8);
 
-        _TempBlob.CreateInStream(XMLInStream);
-        TempBlobProcessed.CreateOutStream(ProcessedOutStream);
+        _TempBlob.CreateInStream(XMLInStream, TextEncoding::UTF8);
+        TempBlobProcessed.CreateOutStream(ProcessedOutStream, TextEncoding::UTF8);
 
         if not XMLDomManagement.TryTransformXMLToOutStream(XMLInStream, XSLInStream, ProcessedOutStream) then
             Error(GetLastErrorText());
-        TempBlobProcessed.CreateInStream(ProcessedInStream);
-        _TempBlob.CreateOutStream(FinalOutStream);
+        TempBlobProcessed.CreateInStream(ProcessedInStream, TextEncoding::UTF8);
+        _TempBlob.CreateOutStream(FinalOutStream, TextEncoding::UTF8);
         CopyStream(FinalOutStream, ProcessedInStream);
     end;
 

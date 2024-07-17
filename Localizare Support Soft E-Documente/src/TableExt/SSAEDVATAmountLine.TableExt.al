@@ -15,8 +15,8 @@ tableextension 72016 "SSAEDVAT Amount Line" extends "VAT Amount Line"
     var
         VATAmountLine: Record "VAT Amount Line";
     begin
-        if not (("VAT Base" <> 0) or ("Amount Including VAT" <> 0)) then
-            exit(false);
+        //if not (("VAT Base" <> 0) or ("Amount Including VAT" <> 0)) then
+        //    exit(false);
 
         //Cumulate Negative and Positive Lines Efactura Requests Positive := "Line Amount" >= 0;
         VATAmountLine := Rec;

@@ -235,7 +235,7 @@ table 72001 "SSAEDEDocuments Setup"
         OutStr: OutStream;
     begin
         TestField("Token Type", Rec."Token Type"::JWT);
-        Rec."Access Token JWT".CreateOutStream(OutStr);
+        Rec."Access Token JWT".CreateOutStream(OutStr, TextEncoding::UTF8);
         OutStr.WriteText(_Text);
         Validate("Authorization Time", CurrentDateTime);
         if "Expires In" = 0 then
@@ -248,7 +248,7 @@ table 72001 "SSAEDEDocuments Setup"
         OutStr: OutStream;
     begin
         TestField("Token Type", Rec."Token Type"::JWT);
-        Rec."Refresh Token JWT".CreateOutStream(OutStr);
+        Rec."Refresh Token JWT".CreateOutStream(OutStr, TextEncoding::UTF8);
         OutStr.WriteText(_Text);
     end;
 
@@ -259,9 +259,9 @@ table 72001 "SSAEDEDocuments Setup"
         Clear(TxtVar);
         Rec.CalcFields("Access Token JWT");
         if Rec."Access Token JWT".HasValue then begin
-            Rec."Access Token JWT".CreateInStream(InStr);
+            Rec."Access Token JWT".CreateInStream(InStr, TextEncoding::UTF8);
 
-            InStr.ReadText(TxtVar);
+            InStr.Read(TxtVar);
         end;
     end;
 
@@ -272,8 +272,8 @@ table 72001 "SSAEDEDocuments Setup"
         Clear(TxtVar);
         Rec.CalcFields("Refresh Token JWT");
         if Rec."Refresh Token JWT".HasValue then begin
-            Rec."Refresh Token JWT".CreateInStream(InStr);
-            InStr.ReadText(TxtVar);
+            Rec."Refresh Token JWT".CreateInStream(InStr, TextEncoding::UTF8);
+            InStr.Read(TxtVar);
         end;
     end;
 

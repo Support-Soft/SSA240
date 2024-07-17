@@ -21,16 +21,18 @@ codeunit 72003 "SSAEDEFactura Mgt."
         NoUnitOfMeasureErr: Label 'The %1 %2 contains lines on which the %3 field is empty.', Comment = '1: document type, 2: document no 3 Unit of Measure Code';
 
 
-    procedure GetGeneralInfo(SalesHeader: Record "Sales Header"; var ID: Text; var IssueDate: Text; var InvoiceTypeCode: Text; var InvoiceTypeCodeListID: Text; var Note: Text; var TaxPointDate: Text; var DocumentCurrencyCode: Text; var DocumentCurrencyCodeListID: Text; var TaxCurrencyCode: Text; var TaxCurrencyCodeListID: Text; var AccountingCost: Text; var DueDate: Text)
+    procedure GetGeneralInfo(SalesHeader: Record "Sales Header"; var ID: Text; var IssueDate: Text; var InvoiceTypeCode: Text; var InvoiceTypeCodeListID: Text; var Note: array[2] of Text[190]; var TaxPointDate: Text; var DocumentCurrencyCode: Text; var DocumentCurrencyCodeListID: Text; var TaxCurrencyCode: Text; var TaxCurrencyCodeListID: Text; var AccountingCost: Text; var DueDate: Text)
     var
         GLSetup: Record "General Ledger Setup";
+        SSASetup: Record "SSA Localization Setup";
+        i: Integer;
     begin
         ID := SalesHeader."No.";
 
-        IssueDate := Format(SalesHeader."Document Date", 0, 9);
+        IssueDate := Format(SalesHeader."Posting Date", 0, 9);
         InvoiceTypeCode := GetInvoiceTypeCode();
         InvoiceTypeCodeListID := GetUNCL1001ListID;
-        Note := '';
+        Clear(Note);
 
         GLSetup.Get;
         TaxPointDate := '';
@@ -41,6 +43,12 @@ codeunit 72003 "SSAEDEFactura Mgt."
         AccountingCost := '';
 
         DueDate := FORMAT(SalesHeader."Due Date", 0, 9);
+
+        SSASetup.Get();
+        if SSASetup."Sistem TVA" = SSASetup."Sistem TVA"::"Sistem de TVA la Incasare" then begin
+            i := 1;
+            Note[i] := Format(SSASetup."Sistem TVA");
+        end;
     end;
 
 

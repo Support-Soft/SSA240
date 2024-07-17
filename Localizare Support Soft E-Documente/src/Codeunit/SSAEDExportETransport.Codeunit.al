@@ -38,7 +38,7 @@ codeunit 72000 "SSAEDExport ETransport"
         Rec.Status := Rec.Status::Completed;
 
         Rec.Modify;
-        TempBlob.CreateInStream(InStr);
+        TempBlob.CreateInStream(InStr, TextEncoding::UTF8);
         DownloadFromStream(InStr, 'Save XML File', '', '', FileName);
     end;
 
@@ -103,7 +103,7 @@ codeunit 72000 "SSAEDExport ETransport"
         ETransportXML: XmlPort "SSAEDE-Transport";
         OutStream: OutStream;
     begin
-        _TempBlob.CreateOutStream(OutStream);
+        _TempBlob.CreateOutStream(OutStream, TextEncoding::UTF8);
         ETransportXML.Initialize(VariantRec);
         ETransportXML.SetDestination(OutStream);
         ETransportXML.Export;

@@ -187,8 +187,29 @@ pageextension 70073 "SSA Posted Invt. Shipment" extends "Posted Invt. Shipment"
                 }
             }
 
+        }
+    }
+    actions
+    {
+        addlast(processing)
+        {
+            action("SSA Print Int. Cons.")
+            {
+                ApplicationArea = Basic, Suite;
+                Caption = 'Print Int. Cons.';
+                Ellipsis = true;
+                Image = Print;
+                ToolTip = 'Prepare to print the document. A report request window for the document opens where you can specify what to include on the print-out.';
 
-
+                trigger OnAction()
+                var
+                    InvtShptHeader: Record "Invt. Shipment Header";
+                begin
+                    InvtShptHeader := Rec;
+                    CurrPage.SetSelectionFilter(InvtShptHeader);
+                    Report.RunModal(Report::"SSA Invt. Shipment Int. Cons.", true, true, InvtShptHeader);
+                end;
+            }
         }
     }
     var

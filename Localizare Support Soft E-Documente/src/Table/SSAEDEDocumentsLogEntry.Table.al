@@ -160,9 +160,9 @@ table 72000 "SSAEDE-Documents Log Entry"
             Caption = 'Total TaxExclusiveAmount';
             DataClassification = CustomerContent;
         }
-        field(300; "XML Content"; Blob)
+        field(300; "XML Factura ANAF"; Blob)
         {
-            Caption = 'XML Content';
+            Caption = 'XML Factura ANAF';
             DataClassification = CustomerContent;
         }
         field(310; "Due Date"; Date)
@@ -188,6 +188,11 @@ table 72000 "SSAEDE-Documents Log Entry"
         field(350; "ZIP Content"; Blob)
         {
             Caption = 'ZIP Content';
+            DataClassification = CustomerContent;
+        }
+        field(360; "XML Stare Factura ANAF"; Blob)
+        {
+            Caption = 'XML Factura ANAF';
             DataClassification = CustomerContent;
         }
         field(10000; "Created Purchase Invoice No."; Code[20])
@@ -279,48 +284,54 @@ table 72000 "SSAEDE-Documents Log Entry"
             _ETransportLogEntry.ClientFileName := '';
             _ETransportLogEntry."Stare Mesaj" := '';
             _ETransportLogEntry."ID Descarcare" := '';
-            Clear(_ETransportLogEntry."ZIP Content");
-            Clear(_ETransportLogEntry."XML Content");
+            //Clear(_ETransportLogEntry."ZIP Content");
+            Clear(_ETransportLogEntry."XML Factura ANAF");
             _ETransportLogEntry.Modify(true);
 
         until _ETransportLogEntry.Next = 0;
     end;
 
-    procedure SetXMLContent(XMLContent: Text)
+    procedure SetXMLFactura(XMLFactura: Text)
     var
+        OverwriteLbl: Label 'Do you want to overwrite XML Content?';
         OutStr: OutStream;
     begin
-        Rec.CalcFields("XML Content");
-        if Rec."XML Content".HasValue then
+        Rec.CalcFields("XML Factura ANAF");
+        if Rec."XML Factura ANAF".HasValue then
             if GuiAllowed then
-                if not Confirm('Do you want to overwrite XML Content?', false) then
+                if not Confirm(OverwriteLbl, false) then
                     exit;
-        Rec."XML Content".CreateOutStream(OutStr, TextEncoding::UTF8);
-        OutStr.WriteText(XMLContent);
+        Rec."XML Factura ANAF".CreateOutStream(OutStr, TextEncoding::UTF8);
+        OutStr.WriteText(XMLFactura);
         Rec.Modify();
     end;
 
-    procedure GetXMLContent() XMLContent: Text
+    procedure GetXMLFactura() XMLContent: Text
     var
         InStr: InStream;
+        ContentLine: Text;
     begin
-        Rec.CalcFields("XML Content");
-        Rec."XML Content".CreateInStream(InStr, TextEncoding::UTF8);
-        InStr.ReadText(XMLContent);
+        Rec.CalcFields("XML Factura ANAF");
+        Rec."XML Factura ANAF".CreateInStream(InStr, TextEncoding::UTF8);
+        InStr.READ(XMLContent);
+        while not InStr.EOS do begin
+            InStr.READ(ContentLine);
+            XMLContent += ContentLine;
+        end;
         exit(XMLContent);
     end;
 
-    procedure DownloadXMLContent()
+    procedure DownloadXMLFactura()
     var
         InStr: InStream;
         NoContentLbl: Label 'XML Content is empty';
         FileName: Text;
     begin
-        Rec.CalcFields("XML Content");
-        if not Rec."XML Content".HasValue then
+        Rec.CalcFields("XML Factura ANAF");
+        if not Rec."XML Factura ANAF".HasValue then
             Error(NoContentLbl);
 
-        Rec."XML Content".CreateInStream(InStr);
+        Rec."XML Factura ANAF".CreateInStream(InStr, TextEncoding::UTF8);
         FileName := 'XMLContent.xml';
         DownloadFromStream(InStr, 'Export', '', 'All Files (*.*)|*.*', FileName);
     end;
@@ -338,6 +349,51 @@ table 72000 "SSAEDE-Documents Log Entry"
 
         Rec."ZIP Content".CreateInStream(InStr);
         FileName := StrSubstNo(FileNameLbl, "Index Incarcare");
+        DownloadFromStream(InStr, 'Export', '', 'All Files (*.*)|*.*', FileName);
+    end;
+
+    procedure SetXMLMesaj(XMLMesaj: Text)
+    var
+        OverwriteLbl: Label 'Do you want to overwrite XML Content?';
+        OutStr: OutStream;
+    begin
+        Rec.CalcFields("XML Stare Factura ANAF");
+        if Rec."XML Stare Factura ANAF".HasValue then
+            if GuiAllowed then
+                if not Confirm(OverwriteLbl, false) then
+                    exit;
+        Rec."XML Stare Factura ANAF".CreateOutStream(OutStr, TextEncoding::UTF8);
+        OutStr.WriteText(XMLMesaj);
+        Rec.Modify();
+    end;
+
+    procedure GetXMLMesaj() XMLMesaj: Text
+    var
+        InStr: InStream;
+        ContentLine: Text;
+    begin
+        Rec.CalcFields("XML Stare Factura ANAF");
+        Rec."XML Stare Factura ANAF".CreateInStream(InStr, TextEncoding::UTF8);
+        InStr.READ(XMLMesaj);
+        while not InStr.EOS do begin
+            InStr.READ(ContentLine);
+            XMLMesaj += ContentLine;
+        end;
+        exit(XMLMesaj);
+    end;
+
+    procedure DownloadXMLMesaj()
+    var
+        InStr: InStream;
+        NoContentLbl: Label 'XML Content is empty';
+        FileName: Text;
+    begin
+        Rec.CalcFields("XML Stare Factura ANAF");
+        if not Rec."XML Stare Factura ANAF".HasValue then
+            Error(NoContentLbl);
+
+        Rec."XML Stare Factura ANAF".CreateInStream(InStr, TextEncoding::UTF8);
+        FileName := 'XMLContent.xml';
         DownloadFromStream(InStr, 'Export', '', 'All Files (*.*)|*.*', FileName);
     end;
 }

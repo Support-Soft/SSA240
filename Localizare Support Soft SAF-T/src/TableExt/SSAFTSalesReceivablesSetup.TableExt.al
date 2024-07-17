@@ -2,7 +2,7 @@ tableextension 71907 "SSAFTSales & Receivables Setup" extends "Sales & Receivabl
 {
     fields
     {
-        field(71900; "SSAFTSAFT Autofact Cust. No."; Code[20])
+        field(71900; "SSAFT Autofact Cust. No."; Code[20])
         {
             Caption = 'SAFT Autofactura Customer No.';
             DataClassification = CustomerContent;

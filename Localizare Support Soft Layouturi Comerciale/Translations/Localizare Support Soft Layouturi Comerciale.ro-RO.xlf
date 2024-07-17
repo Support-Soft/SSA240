@@ -95,9 +95,8 @@
         </trans-unit>
         <trans-unit id="Report 3057320000 - Control 105728556 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Document Date field.</source>
-          <target/>
+          <target>Specifica valoarea campului Data Document</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash receipt - Control Data plata - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Report 3057320000 - Control 105728556 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -108,9 +107,8 @@
         </trans-unit>
         <trans-unit id="Report 3057320000 - Control 1555365197 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Document No. field.</source>
-          <target/>
+          <target>Specifica valoarea campului Nr. Document</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash receipt - Control Nr document plata - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Report 3057320000 - Control 1555365197 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -301,9 +299,8 @@
         </trans-unit>
         <trans-unit id="Report 4217313267 - Control 105728556 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Data plata field.</source>
-          <target/>
+          <target>Specifică valoarea câmpului Data plata.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash withdrawal. - Control Data plata - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Report 4217313267 - Control 105728556 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -314,9 +311,8 @@
         </trans-unit>
         <trans-unit id="Report 4217313267 - Control 1555365197 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Nr document plata field.</source>
-          <target/>
+          <target>Specifică valoarea câmpului Nr document plata.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Cash withdrawal. - Control Nr document plata - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Report 4217313267 - Control 1555365197 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
@@ -721,11 +717,12 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Standard Sales - Invoice - NamedType EMailLbl</note>
         </trans-unit>
-        <trans-unit id="Report 3327960714 - NamedType 3642584667" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Exchange rate: %1/%2</source>
-          <target>Curs de schimb: %1/%2</target>
-          <note from="Developer" annotates="general" priority="2">%1 and %2 are both amounts.</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Standard Sales - Invoice - NamedType ExchangeRateTxt</note>
+        <trans-unit id="Report 3327960714 - NamedType 3907662388" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Exchange Rate</source>
+          <target state="translated">Curs valutar</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Standard Sales - Invoice - NamedType ExchageRateCpt</note>
         </trans-unit>
         <trans-unit id="Report 3327960714 - NamedType 901740384" size-unit="char" translate="yes" xml:space="preserve">
           <source>From</source>
@@ -780,6 +777,12 @@
           <target>Nr. activitate lucrare</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Standard Sales - Invoice - NamedType JobTaskNoLbl2</note>
+        </trans-unit>
+        <trans-unit id="Report 3327960714 - NamedType 1067596300" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line Amount Excl. VAT</source>
+          <target>Valoare linie Excl. TVA</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Standard Sales - Invoice - NamedType LineAmountLbl</note>
         </trans-unit>
         <trans-unit id="Report 3327960714 - NamedType 1448166496" size-unit="char" translate="yes" xml:space="preserve">
           <source>Payment Discount on VAT</source>
@@ -990,6 +993,102 @@
           <target>Facturi Vanzare Inregistrate</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Standard Sales - Invoice - ReportDataItem Header - Property RequestFilterHeading</note>
+        </trans-unit>
+        <trans-unit id="Report 3327960714 - ReportLabel 4153309407" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Capital Stock</source>
+          <target>Capital social</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Standard Sales - Invoice - ReportLabel CapitalStockCpt</note>
+        </trans-unit>
+        <trans-unit id="Report 3327960714 - ReportLabel 4196385727" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Percent</source>
+          <target>Cota TVA</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Standard Sales - Invoice - ReportLabel CotaTVACpt</note>
+        </trans-unit>
+        <trans-unit id="Report 3327960714 - ReportLabel 173612821" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer</source>
+          <target>Client</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Standard Sales - Invoice - ReportLabel CustomerCpt</note>
+        </trans-unit>
+        <trans-unit id="Report 3327960714 - ReportLabel 1779061401" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Delegate Name</source>
+          <target state="translated">Numele delegatului</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Standard Sales - Invoice - ReportLabel DelegateNameCpt</note>
+        </trans-unit>
+        <trans-unit id="Report 3327960714 - ReportLabel 670926017" size-unit="char" translate="yes" xml:space="preserve">
+          <source>First Name and Last Name</source>
+          <target state="translated">Nume si prenume</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Standard Sales - Invoice - ReportLabel FirstNameLastNameCpt</note>
+        </trans-unit>
+        <trans-unit id="Report 3327960714 - ReportLabel 1306640353" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Denumirea produselor si serviciilor</source>
+          <target>Denumirea produselor si serviciilor</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Standard Sales - Invoice - ReportLabel LineDescriptionCpt</note>
+        </trans-unit>
+        <trans-unit id="Report 3327960714 - ReportLabel 910438062" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reg Com No.</source>
+          <target>Nr. Reg. Com.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Standard Sales - Invoice - ReportLabel NrRegComCpt</note>
+        </trans-unit>
+        <trans-unit id="Report 3327960714 - ReportLabel 760486609" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Workplace</source>
+          <target>Punct de lucru</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Standard Sales - Invoice - ReportLabel PunctDeLucruCpt</note>
+        </trans-unit>
+        <trans-unit id="Report 3327960714 - ReportLabel 2213673219" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Receiving Signature</source>
+          <target state="translated">Semnatura de primire</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Standard Sales - Invoice - ReportLabel ReceivingCpt</note>
+        </trans-unit>
+        <trans-unit id="Report 3327960714 - ReportLabel 1682584084" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Reg.</source>
+          <target state="translated">Regimul de TVA</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Suggested translation inserted.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Standard Sales - Invoice - ReportLabel RegimTVACpt</note>
+        </trans-unit>
+        <trans-unit id="Report 3327960714 - ReportLabel 1421085491" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Headquarter</source>
+          <target>Sediu</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Standard Sales - Invoice - ReportLabel SediuCpt</note>
+        </trans-unit>
+        <trans-unit id="Report 3327960714 - ReportLabel 282441996" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Signatures</source>
+          <target state="translated">Semnaturile</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Standard Sales - Invoice - ReportLabel SignaturesCpt</note>
+        </trans-unit>
+        <trans-unit id="Report 3327960714 - ReportLabel 1897759457" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Signature and stamp of the supplier</source>
+          <target state="translated">Semnatura si stampita furnizorului</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Standard Sales - Invoice - ReportLabel SupplierSignatureCpt</note>
+        </trans-unit>
+        <trans-unit id="Report 3327960714 - ReportLabel 982390108" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT Amount</source>
+          <target>Suma TVA</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Standard Sales - Invoice - ReportLabel VATAmountCpt</note>
+        </trans-unit>
+        <trans-unit id="Report 3327960714 - ReportLabel 3239345725" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Vendor</source>
+          <target>Furnizor</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Standard Sales - Invoice - ReportLabel VendorCpt</note>
         </trans-unit>
         <trans-unit id="Report 3327960714 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Options</source>

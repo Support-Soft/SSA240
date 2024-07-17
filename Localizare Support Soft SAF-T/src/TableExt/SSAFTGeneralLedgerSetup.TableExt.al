@@ -26,6 +26,13 @@ tableextension 71908 "SSAFTGeneral Ledger Setup" extends "General Ledger Setup"
             DataClassification = CustomerContent;
             TableRelation = "VAT Business Posting Group";
         }
+        field(71904; "SSAFTG/L Accounts Payments"; Text[100])
+        {
+            Caption = 'G/L Accounts Payments', Comment = 'Conturi Contabile de Raportat la Payments';
+            DataClassification = CustomerContent;
+            TableRelation = "G/L Account";
+            ValidateTableRelation = false;
+        }
     }
 
 }

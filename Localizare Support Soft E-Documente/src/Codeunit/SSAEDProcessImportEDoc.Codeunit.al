@@ -26,7 +26,7 @@ codeunit 72008 "SSAEDProcess Import E-Doc"
         ProcessXMLFile(TempBlobXML);
     end;
 
-    procedure UnzippFiles(var _GlobalEFTLog: Record "SSAEDE-Documents Log Entry"; var _TempBlobXML: Codeunit "Temp Blob")
+    procedure UnzippFiles(_GlobalEFTLog: Record "SSAEDE-Documents Log Entry"; var _TempBlobXML: Codeunit "Temp Blob")
     var
         DataCompression: Codeunit "Data Compression";
         XMLOutStream: OutStream;
@@ -35,6 +35,7 @@ codeunit 72008 "SSAEDProcess Import E-Doc"
         ZipEntry: Text;
         ZipEntryLength: Integer;
     begin
+        _GlobalEFTLog.CalcFields("ZIP Content");
         _GlobalEFTLog."ZIP Content".CreateInStream(ZipInStr);
         DataCompression.OpenZipArchive(ZipInStr, false);
         DataCompression.GetEntryList(ZipEntryList);
@@ -42,7 +43,7 @@ codeunit 72008 "SSAEDProcess Import E-Doc"
         foreach ZipEntry in ZipEntryList do
             if STRPOS(ZipEntry, 'semnatura') = 0 then begin
                 Clear(_TempBlobXML);
-                _TempBlobXML.CreateOutStream(XMLOutStream);
+                _TempBlobXML.CreateOutStream(XMLOutStream, TextEncoding::UTF8);
                 ZipEntryLength := DataCompression.ExtractEntry(ZipEntry, XMLOutStream);
                 exit;
             end;
@@ -67,16 +68,16 @@ codeunit 72008 "SSAEDProcess Import E-Doc"
 
     begin
         _TempBlobXML.CREATEINSTREAM(XMLInStream, TextEncoding::UTF8);
-
+        XMLInStream.Read(XMLText);
         while not XMLInStream.EOS do begin
-            XMLInStream.READTEXT(TextVar);
+            XMLInStream.READ(TextVar);
             XMLText += TextVar;
         end;
 
         //TempBlobXMLProcessed.CREATEOUTSTREAM(XMLOutStreamProcessed);
         //XMLOutStreamProcessed.WriteText(XMLText);
-        GlobalEFTLog.SetXMLContent(XMLText);
-
+        GlobalEFTLog.SetXMLFactura(XMLText);
+        Commit;
         XmlOutText := XMLDOMManagement.RemoveNamespaces(XMLText); //TextVar
 
         TempXMLBuffer.LoadFromText(XmlOutText);

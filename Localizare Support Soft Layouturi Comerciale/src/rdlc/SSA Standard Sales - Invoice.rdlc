@@ -7307,6 +7307,141 @@
     </ReportSection>
   </ReportSections>
   <ReportParameters>
+    <ReportParameter Name="VendorCpt">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>VendorCpt</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>VendorCpt</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CustomerCpt">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>CustomerCpt</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>CustomerCpt</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CapitalStockCpt">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>CapitalStockCpt</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>CapitalStockCpt</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="NrRegComCpt">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>NrRegComCpt</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>NrRegComCpt</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="SediuCpt">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>SediuCpt</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>SediuCpt</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="PunctDeLucruCpt">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>PunctDeLucruCpt</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>PunctDeLucruCpt</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="LineDescriptionCpt">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>LineDescriptionCpt</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>LineDescriptionCpt</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CotaTVACpt">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>CotaTVACpt</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>CotaTVACpt</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="VATAmountCpt">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>VATAmountCpt</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>VATAmountCpt</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="RegimTVACpt">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>RegimTVACpt</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>RegimTVACpt</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="SupplierSignatureCpt">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>SupplierSignatureCpt</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>SupplierSignatureCpt</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="DelegateNameCpt">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>DelegateNameCpt</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>DelegateNameCpt</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="SignaturesCpt">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>SignaturesCpt</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>SignaturesCpt</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="FirstNameLastNameCpt">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>FirstNameLastNameCpt</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>FirstNameLastNameCpt</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ReceivingCpt">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>ReceivingCpt</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ReceivingCpt</Prompt>
+    </ReportParameter>
     <ReportParameter Name="CompanyInfo_ShipToNameCaption">
       <DataType>String</DataType>
       <DefaultValue>
@@ -7441,15 +7576,6 @@
         </Values>
       </DefaultValue>
       <Prompt>SSA_Commerce_Trade_No_Caption</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="CompanyInfo_SSACapitalStockCaption">
-      <DataType>String</DataType>
-      <DefaultValue>
-        <Values>
-          <Value>CompanyInfo_SSACapitalStockCaption</Value>
-        </Values>
-      </DefaultValue>
-      <Prompt>CompanyInfo_SSACapitalStockCaption</Prompt>
     </ReportParameter>
   </ReportParameters>
   <Code>Public Function BlankZero(ByVal Value As Decimal)
@@ -7812,6 +7938,9 @@ End Function
         <Field Name="LocalCurrency_Lbl">
           <DataField>LocalCurrency_Lbl</DataField>
         </Field>
+        <Field Name="ExchangeRateLblText">
+          <DataField>ExchangeRateLblText</DataField>
+        </Field>
         <Field Name="ExchangeRateAsText">
           <DataField>ExchangeRateAsText</DataField>
         </Field>
@@ -7953,6 +8082,18 @@ End Function
         <Field Name="CompanyInfo_SSACapitalStockFormat">
           <DataField>CompanyInfo_SSACapitalStockFormat</DataField>
         </Field>
+        <Field Name="SSAVATClause">
+          <DataField>SSAVATClause</DataField>
+        </Field>
+        <Field Name="UserRec_FullName">
+          <DataField>UserRec_FullName</DataField>
+        </Field>
+        <Field Name="LozalizationSetup_SistemTVA">
+          <DataField>LozalizationSetup_SistemTVA</DataField>
+        </Field>
+        <Field Name="CotaTVA">
+          <DataField>CotaTVA</DataField>
+        </Field>
         <Field Name="LineNo_Line">
           <DataField>LineNo_Line</DataField>
         </Field>
@@ -8078,6 +8219,12 @@ End Function
         </Field>
         <Field Name="nrcrt">
           <DataField>nrcrt</DataField>
+        </Field>
+        <Field Name="NrCrtText">
+          <DataField>NrCrtText</DataField>
+        </Field>
+        <Field Name="VATAmount">
+          <DataField>VATAmount</DataField>
         </Field>
         <Field Name="DocumentNo_ShipmentLine">
           <DataField>DocumentNo_ShipmentLine</DataField>

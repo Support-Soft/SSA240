@@ -282,16 +282,28 @@ page 72000 "SSAEDE-Documents Log Entries"
                         end;
                     end;
                 }
-                action(GetXMLContent)
+                action(GetXMLInvoiceContent)
                 {
-                    Caption = 'Get XML Content';
+                    Caption = 'Get XML Invoice Content';
                     Promoted = true;
                     PromotedCategory = Process;
                     PromotedIsBig = true;
-                    ToolTip = 'Get XML Content';
+                    ToolTip = 'Get XML Invoice Content';
                     trigger OnAction()
                     begin
-                        Rec.DownloadXMLContent();
+                        Rec.DownloadXMLFactura();
+                    end;
+                }
+                action(GetXMLInvoiceStatusContent)
+                {
+                    Caption = 'Get XML Invoice Status Content';
+                    Promoted = true;
+                    PromotedCategory = Process;
+                    PromotedIsBig = true;
+                    ToolTip = 'Get XML Invoice Status Content';
+                    trigger OnAction()
+                    begin
+                        Rec.DownloadXMLMesaj();
                     end;
                 }
                 action(GetZIPContent)

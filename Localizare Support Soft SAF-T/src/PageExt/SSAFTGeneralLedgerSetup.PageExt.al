@@ -4,7 +4,7 @@ pageextension 71902 "SSAFTGeneral Ledger Setup" extends "General Ledger Setup"
     {
         addlast(content)
         {
-            group(SSAFTSAFT)
+            group(SSAFT)
             {
                 Caption = 'SAFT';
                 field("SSAFTGrupa cu TVA UE Client"; Rec."SSAFTGrupa cu TVA UE Client")
@@ -26,6 +26,11 @@ pageextension 71902 "SSAFTGeneral Ledger Setup" extends "General Ledger Setup"
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Grupa cu TVA NONUE Fz field.';
+                }
+                field("SSAFTG/L Accounts Payments"; Rec."SSAFTG/L Accounts Payments")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the G/L Accounts Payments field.', Comment = 'Conturi Contabile de Raportat la Payments';
                 }
             }
         }

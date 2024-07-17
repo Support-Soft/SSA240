@@ -53,7 +53,7 @@ codeunit 72007 "SSAEDANAF API Mgt"
         Headers.Add('Accept-Encoding', 'gzip, deflate, br');
 
         _TempBlobRequest.CreateInStream(BodyInstr, TextEncoding::UTF8);
-        BodyInstr.ReadText(RequestText);
+        BodyInstr.Read(RequestText);
         RequestContent.WriteFrom(RequestText);
         RequestContent.GetHeaders(ContentHeaders);
 
@@ -87,7 +87,7 @@ codeunit 72007 "SSAEDANAF API Mgt"
     end;
 
 
-    procedure GetStareMesaj(_IDIncarcare: Text; var _StareMesaj: Text; var _IDDescarcare: Text)
+    procedure GetStareMesaj(var _EFTLogEntry: Record "SSAEDE-Documents Log Entry")
     var
         EFSetup: Record "SSAEDEDocuments Setup";
         URL: Text;
@@ -102,12 +102,12 @@ codeunit 72007 "SSAEDANAF API Mgt"
             URL := EFSetup."EFactura Stare Mesaj URL";
         end;
 
-        Parameters := StrSubstNo('?id_incarcare=%1', _IDIncarcare);
+        Parameters := StrSubstNo('?id_incarcare=%1', _EFTLogEntry."Index Incarcare");
 
-        SendRequest_GetStareMesaj(URL, Parameters, _StareMesaj, _IDDescarcare);
+        SendRequest_GetStareMesaj(URL, Parameters, _EFTLogEntry);
     end;
 
-    local procedure SendRequest_GetStareMesaj(_URL: Text; _Param: Text; var _StareMesaj: Text; var _IDDescarcare: Text)
+    local procedure SendRequest_GetStareMesaj(_URL: Text; _Param: Text; var _EFTLogEntry: Record "SSAEDE-Documents Log Entry")
     var
         Client: HttpClient;
         Headers: HttpHeaders;
@@ -128,21 +128,22 @@ codeunit 72007 "SSAEDANAF API Mgt"
 
         Response.Content.ReadAs(ResponseText);
 
-        ParseXMLResponse_GetStareMesaj(ResponseText, _StareMesaj, _IDDescarcare);
+        ParseXMLResponse_GetStareMesaj(ResponseText, _EFTLogEntry);
 
     end;
 
-    local procedure ParseXMLResponse_GetStareMesaj(_ResponseText: Text; var _StareMesaj: Text; var _IDDescarcare: Text)
+    local procedure ParseXMLResponse_GetStareMesaj(_ResponseText: Text; var _EFTLogEntry: Record "SSAEDE-Documents Log Entry")
     var
         TempXML: Record "XML Buffer" temporary;
     begin
+        _EFTLogEntry.SetXMLMesaj(_ResponseText);
         TempXML.LoadFromText(_ResponseText);
 
         TempXML.FindNodesByXPath(TempXML, 'stare');
-        _StareMesaj := TempXML.GetValue();
+        _EFTLogEntry."Stare Mesaj" := TempXML.GetValue();
 
         TempXML.FindNodesByXPath(TempXML, 'id_descarcare');
-        _IDDescarcare := TempXML.GetValue();
+        _EFTLogEntry."ID Descarcare" := TempXML.GetValue();
 
     end;
 
@@ -189,13 +190,16 @@ codeunit 72007 "SSAEDANAF API Mgt"
         if not Client.Get(_URL + _Param, Response) or (not Response.IsSuccessStatusCode()) then
             Error(Response.ReasonPhrase);
 
-        Clear(_EFTLogEntry."ZIP Content");
+        //Clear(_EFTLogEntry."ZIP Content");
 
-        TempBlobResponse.CreateInStream(ResponseInStream, TEXTENCODING::UTF8);
+        TempBlobResponse.CreateInStream(ResponseInStream, TextEncoding::UTF8);
         Response.Content.ReadAs(ResponseInStream);
-        _EFTLogEntry."ZIP Content".CreateOutStream(ResponseOutStream, TextEncoding::UTF8);
-        CopyStream(ResponseOutStream, ResponseInStream);
-        _EFTLogEntry.Modify();
+        _EFTLogEntry.CalcFields("ZIP Content");
+        if not _EFTLogEntry."ZIP Content".HasValue then begin
+            _EFTLogEntry."ZIP Content".CreateOutStream(ResponseOutStream, TextEncoding::UTF8);
+            CopyStream(ResponseOutStream, ResponseInStream);
+            _EFTLogEntry.Modify();
+        end;
     end;
 
     procedure DescarcareMesajPDF(_EFTLogEntry: Record "SSAEDE-Documents Log Entry"; var _TempBlob: Codeunit "Temp Blob")
@@ -226,8 +230,8 @@ codeunit 72007 "SSAEDANAF API Mgt"
         Headers.Add('Accept', '*/*');
         Headers.Add('Connection', 'keep-alive');
         Headers.Add('Accept-Encoding', 'gzip, deflate, br');
-        _EFTLogEntry.CalcFields("XML Content");
-        _EFTLogEntry."XML Content".CreateInStream(ReqInstream, TextEncoding::UTF8);
+        _EFTLogEntry.CalcFields("XML Factura ANAF");
+        _EFTLogEntry."XML Factura ANAF".CreateInStream(ReqInstream, TextEncoding::UTF8);
         ReqInstream.Read(ContentText);
         RequestContent.WriteFrom(ContentText);
         RequestContent.GetHeaders(ContentHeaders);
@@ -237,7 +241,7 @@ codeunit 72007 "SSAEDANAF API Mgt"
         if not Client.Post(_URL, RequestContent, Response) or (not Response.IsSuccessStatusCode()) then
             Error('%1-%2', Response.HttpStatusCode, Response.ReasonPhrase);
 
-        _TempBlobResponse.CreateInStream(ResponseInStream, TEXTENCODING::UTF8);
+        _TempBlobResponse.CreateInStream(ResponseInStream, TextEncoding::UTF8);
         Response.Content.ReadAs(ResponseInStream);
         _TempBlobResponse.CreateOutStream(ResponseOutStream, TextEncoding::UTF8);
         CopyStream(ResponseOutStream, ResponseInStream);

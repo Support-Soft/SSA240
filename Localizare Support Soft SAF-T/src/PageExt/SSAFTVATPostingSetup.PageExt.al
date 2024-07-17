@@ -5,12 +5,12 @@ pageextension 71907 "SSAFTVAT Posting Setup" extends "VAT Posting Setup"
         addlast(Control1)
         {
 
-            field("SSAFTSAFT Tax Code"; Rec."SSAFTSAFT Tax Code")
+            field("SSAFT Tax Code"; Rec."SSAFT Tax Code")
             {
                 ApplicationArea = All;
                 ToolTip = 'Specifies the value of the SAFT Tax Code field.';
             }
-            field("SSAFTSAFT Deductibilitate %"; Rec."SSAFTSAFT Deductibilitate %")
+            field("SSAFT Deductibilitate %"; Rec."SSAFT Deductibilitate %")
             {
                 ApplicationArea = All;
                 ToolTip = 'Specifies the value of the SAFTDeductibilitate % field.';

@@ -4,16 +4,16 @@ pageextension 71901 SSAFTDimensions extends Dimensions
     {
         addlast(content)
         {
-            group(SSAFTSAFT)
+            group(SSAFT)
             {
                 Caption = 'SAFT';
 
-                field("SSAFTSAFT Export"; Rec."SSAFTSAFT Export")
+                field("SSAFT Export"; Rec."SSAFT Export")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the SAFT Export field.';
                 }
-                field("SSAFTSAFT Analysis Type"; Rec."SSAFTSAFT Analysis Type")
+                field("SSAFT Analysis Type"; Rec."SSAFT Analysis Type")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the SAFT Analysis Type field.';

@@ -335,6 +335,10 @@ report 70901 "SSA Standard Sales - Invoice"
             column(LocalCurrency_Lbl; LocalCurrencyLbl)
             {
             }
+            column(ExchangeRateLblText; ExchangeRateLblText)
+            {
+
+            }
             column(ExchangeRateAsText; ExchangeRateText)
             {
             }
@@ -484,8 +488,20 @@ report 70901 "SSA Standard Sales - Invoice"
             }
             column(CompanyInfo_SSACapitalStock; CompanyInfo."SSA Capital Stock")
             {
-                IncludeCaption = true;
             }
+            column(SSAVATClause; SSAVATClause)
+            {
+            }
+            column(UserRec_FullName; UserRec."Full Name")
+            {
+
+            }
+            column(LozalizationSetup_SistemTVA; LozalizationSetup."Sistem TVA")
+            {
+
+            }
+            column(CotaTVA; CotaTVA)
+            { }
             dataitem(Line; "Sales Invoice Line")
             {
                 DataItemLink = "Document No." = field("No.");
@@ -529,7 +545,7 @@ report 70901 "SSA Standard Sales - Invoice"
                     AutoFormatExpression = GetCurrencyCode;
                     AutoFormatType = 1;
                 }
-                column(LineAmount_Line_Lbl; FieldCaption("Line Amount"))
+                column(LineAmount_Line_Lbl; LineAmount_Line_Text)
                 {
                 }
                 column(ItemNo_Line; "No.")
@@ -538,7 +554,7 @@ report 70901 "SSA Standard Sales - Invoice"
                 column(ItemNo_Line_Lbl; FieldCaption("No."))
                 {
                 }
-                column(ShipmentDate_Line; Format("Shipment Date"))
+                column(ShipmentDate_Line; Format("Shipment Date", 0, '<Day,2>.<Month,2>.<Year4>'))
                 {
                 }
                 column(ShipmentDate_Line_Lbl; PostedShipmentDateLbl)
@@ -617,6 +633,14 @@ report 70901 "SSA Standard Sales - Invoice"
                 column(nrcrt; nrcrt)
                 {
                 }
+                column(NrCrtText; NrCrtText)
+                {
+
+                }
+                column(VATAmount; VatAmountText)
+                {
+
+                }
                 dataitem(ShipmentLine; "Sales Shipment Buffer")
                 {
                     DataItemTableView = sorting("Document No.", "Line No.", "Entry No.");
@@ -686,6 +710,11 @@ report 70901 "SSA Standard Sales - Invoice"
                     if Type = Type::"G/L Account" then
                         "No." := '';
 
+                    if Type = Type::" " then
+                        NrCrtText := ''
+                    else
+                        NrCrtText := Format(NrCrt);
+
                     OnBeforeLineOnAfterGetRecord(Header, Line);
 
                     if "Line Discount %" = 0 then
@@ -744,6 +773,11 @@ report 70901 "SSA Standard Sales - Invoice"
                         JobNoLbl := '';
 
                     FormatDocument.SetSalesInvoiceLine(Line, FormattedQuantity, FormattedUnitPrice, FormattedVATPct, FormattedLineAmount);
+
+                    if Quantity = 0 then
+                        VatAmountText := ''
+                    else
+                        VatAmountText := Format("Amount Including VAT" - Amount);
                 end;
 
                 trigger OnPreDataItem()
@@ -1130,6 +1164,10 @@ report 70901 "SSA Standard Sales - Invoice"
             var
                 CurrencyExchangeRate: Record "Currency Exchange Rate";
                 PaymentServiceSetup: Record "Payment Service Setup";
+                VATClause: Record "VAT Clause";
+                VATClauseTranslation: Record "VAT Clause Translation";
+                SIL: Record "Sales Invoice Line";
+                Language: Record Language;
             begin
 
                 FillLeftHeader;
@@ -1149,12 +1187,17 @@ report 70901 "SSA Standard Sales - Invoice"
                 if not Cust.Get("Bill-to Customer No.") then
                     Clear(Cust);
 
+                Clear(ExchangeRateText);
                 if "Currency Code" <> '' then begin
                     CurrencyExchangeRate.FindCurrency("Posting Date", "Currency Code", 1);
-                    CalculatedExchRate :=
-                      Round(1 / "Currency Factor" * CurrencyExchangeRate."Exchange Rate Amount", 0.000001);
-                    ExchangeRateText := StrSubstNo(ExchangeRateTxt, CalculatedExchRate, CurrencyExchangeRate."Exchange Rate Amount");
+                    ExchangeRateLblText := '';
+                    ExchangeRateText := '';
+                end else begin
+                    CurrencyExchangeRate.FindCurrency("Posting Date", 'EUR', 1);
+                    ExchangeRateLblText := ExchageRateCpt;
+                    ExchangeRateText := StrSubstNo(ExchangeRateLbl, GLSetup."Additional Reporting Currency", CurrencyExchangeRate."Relational Exch. Rate Amount", GLSetup."Local Currency Symbol");
                 end;
+
 
                 GetLineFeeNoteOnReportHist("No.");
 
@@ -1179,6 +1222,34 @@ report 70901 "SSA Standard Sales - Invoice"
                 TotalAmountInclVAT := 0;
                 TotalPaymentDiscOnVAT := 0;
                 Clear(NrCrt);
+
+                //SSA>>
+                Clear(SSAVATClause);
+                SIL.Reset();
+                SIL.SetRange("Document No.", "No.");
+                SIL.SetFilter(Quantity, '<>%1', 0);
+                if SIL.FindFirst() then begin
+                    if VATClause.Get(SIL."VAT Clause Code") then begin
+                        SSAVATClause := VATClause.Description;
+                        Language.SetRange("Windows Language ID", CurrReport.Language);
+                        Language.FindFirst();
+                        if VATClauseTranslation.Get(VATClause.Code, Language.Code) then
+                            SSAVATClause := VATClauseTranslation.Description;
+                    end;
+                    CotaTVA := Format(SIL."VAT %") + '%';
+                end;
+                if "Currency Code" <> '' then begin
+                    CompanyInfo."Bank Name" := CompanyInfo."SSA Bank Name 1";
+                    CompanyInfo.IBAN := CompanyInfo."SSA IBAN 1";
+                    CompanyInfo."SWIFT Code" := CompanyInfo."SSA SWIFT Code 1";
+                    LineAmount_Line_Text := LineAmountLbl;
+                end else
+                    LineAmount_Line_Text := LineAmountLbl;
+
+                if not UserRec.Get(SystemCreatedBy) then
+                    Clear(UserRec);
+
+                //SSA<<
             end;
 
             trigger OnPreDataItem()
@@ -1246,6 +1317,21 @@ report 70901 "SSA Standard Sales - Invoice"
 
     labels
     {
+        VendorCpt = 'Vendor';
+        CustomerCpt = 'Customer';
+        CapitalStockCpt = 'Capital Stock';
+        NrRegComCpt = 'Reg Com No.';
+        SediuCpt = 'Headquarter';
+        PunctDeLucruCpt = 'Workplace';
+        LineDescriptionCpt = 'Denumirea produselor si serviciilor';
+        CotaTVACpt = 'VAT Percent';
+        VATAmountCpt = 'VAT Amount';
+        RegimTVACpt = 'VAT Reg.';
+        SupplierSignatureCpt = 'Signature and stamp of the supplier';
+        DelegateNameCpt = 'Delegate Name';
+        SignaturesCpt = 'Signatures';
+        FirstNameLastNameCpt = 'First Name and Last Name';
+        ReceivingCpt = 'Receiving Signature';
     }
 
     trigger OnInitReport()
@@ -1282,6 +1368,8 @@ report 70901 "SSA Standard Sales - Invoice"
             InitLogInteraction;
 
         CompanyLogoPosition := SalesSetup."Logo Position on Documents";
+
+        LozalizationSetup.Get();
     end;
 
     var
@@ -1318,6 +1406,8 @@ report 70901 "SSA Standard Sales - Invoice"
         VATClausesLbl: Label 'VAT Clause';
         VATIdentifierLbl: Label 'VAT Identifier';
         VATPercentageLbl: Label 'VAT %';
+        LineAmountLbl: Label 'Line Amount Excl. VAT';
+        ExchageRateCpt: Label 'Exchange Rate';
         GLSetup: Record "General Ledger Setup";
         ShipmentMethod: Record "Shipment Method";
         PaymentTerms: Record "Payment Terms";
@@ -1333,6 +1423,8 @@ report 70901 "SSA Standard Sales - Invoice"
         FormatAddr: Codeunit "Format Address";
         FormatDocument: Codeunit "Format Document";
         SegManagement: Codeunit SegManagement;
+        UserRec: Record User;
+        LozalizationSetup: Record "SSA Localization Setup";
         WorkDescriptionInstream: InStream;
         JobNo: Code[20];
         JobTaskNo: Code[20];
@@ -1373,10 +1465,10 @@ report 70901 "SSA Standard Sales - Invoice"
         DisplayShipmentInformation: Boolean;
         CompanyLogoPosition: Integer;
         FirstLineHasBeenOutput: Boolean;
-        CalculatedExchRate: Decimal;
         PaymentInstructionsTxt: Text;
         ExchangeRateText: Text;
-        ExchangeRateTxt: Label 'Exchange rate: %1/%2', Comment = '%1 and %2 are both amounts.';
+        ExchangeRateLblText: Text;
+        ExchangeRateLbl: Label '1%1=%2%3', Comment = '%1 and %2 are both amounts.', Locked = true;
         VATBaseLCY: Decimal;
         VATAmountLCY: Decimal;
         TotalVATBaseLCY: Decimal;
@@ -1409,6 +1501,11 @@ report 70901 "SSA Standard Sales - Invoice"
         NrCrt: Integer;
         DateLbl: Label 'Date (dd.mm.yyyy)';
         UnitofMeasureLbl: Label 'Unit of Measure';
+        SSAVATClause: Text;
+        CotaTVA: Text;
+        NrCrtText: Text;
+        LineAmount_Line_Text: Text;
+        VatAmountText: Text;
 
     local procedure InitLogInteraction()
     begin

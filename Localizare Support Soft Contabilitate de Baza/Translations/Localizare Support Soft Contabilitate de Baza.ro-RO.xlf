@@ -8987,16 +8987,14 @@
         </trans-unit>
         <trans-unit id="Report 175005413 - ReportLayout 1092579235 - Property 2166945456" size-unit="char" translate="yes" xml:space="preserve">
           <source>The Aviz Inventory Shipment (RDLC) provides a detailed layout.</source>
-          <target state="translated">Aviz Inventory Shipment (RDLC) oferă o prezentare detaliată.</target>
+          <target>Aviz Inventory Shipment (RDLC) oferă o prezentare detaliată.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inventory Shipment - ReportLayout AvizInventoryShipment.rdlc - Property Summary</note>
         </trans-unit>
         <trans-unit id="Report 175005413 - ReportLayout 1092579235 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Aviz Inventory Shipment (RDLC)</source>
-          <target state="translated">Aviz de expediere a inventarului (RDLC)</target>
+          <target>Aviz de expediere a inventarului (RDLC)</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inventory Shipment - ReportLayout AvizInventoryShipment.rdlc - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 175005413 - ReportLayout 931301759 - Property 2166945456" size-unit="char" translate="yes" xml:space="preserve">
@@ -9010,6 +9008,207 @@
           <target>Livrare Stoc (RDLC)</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report SSA Inventory Shipment - ReportLayout InventoryShipment.rdlc - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3455624940 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posted Inventory Movement</source>
+          <target>Livr. Stoc Inreg.-Bon Consum</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Invt. Shipment Int. Cons. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3455624940 - NamedType 2892291121" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Administrator</source>
+          <target>Administrator</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Invt. Shipment Int. Cons. - NamedType AdministratorCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 3455624940 - NamedType 2882001676" size-unit="char" translate="yes" xml:space="preserve">
+          <source>AdministratorId</source>
+          <target state="translated">AdministratorId</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">Source has been modified.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Invt. Shipment Int. Cons. - NamedType AdministratorCaption_Control1390015Lbl</note>
+        </trans-unit>
+        <trans-unit id="Report 3455624940 - NamedType 3285233284" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amount</source>
+          <target>Suma</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Invt. Shipment Int. Cons. - NamedType AmountCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 3455624940 - NamedType 1996352387" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Chef of Department</source>
+          <target>Sef Departament</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Invt. Shipment Int. Cons. - NamedType Chef_of_DepartmentCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 3455624940 - NamedType 232454281" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Chef of Department</source>
+          <target>Sef Departament</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Invt. Shipment Int. Cons. - NamedType Chef_of_DepartmentCaption_Control1390014Lbl</note>
+        </trans-unit>
+        <trans-unit id="Report 3455624940 - NamedType 395764468" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cost Amount</source>
+          <target>Suma Cost</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Invt. Shipment Int. Cons. - NamedType CostAmountCpt</note>
+        </trans-unit>
+        <trans-unit id="Report 3455624940 - NamedType 4188001841" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Credit Account</source>
+          <target>Cont credit</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Invt. Shipment Int. Cons. - NamedType Credit_AccountCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 3455624940 - NamedType 1640492885" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Date:</source>
+          <target>Data:</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Invt. Shipment Int. Cons. - NamedType DateCpt</note>
+        </trans-unit>
+        <trans-unit id="Report 3455624940 - NamedType 3097957281" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Date and Signature</source>
+          <target>Data si Semnatura</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Invt. Shipment Int. Cons. - NamedType Date_and_SignatureCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 3455624940 - NamedType 2534671034" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Date and Signature</source>
+          <target>Data si Semnatura</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Invt. Shipment Int. Cons. - NamedType Date_and_SignatureCaption_Control1390013Lbl</note>
+        </trans-unit>
+        <trans-unit id="Report 3455624940 - NamedType 817831222" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <target>Descriere</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Invt. Shipment Int. Cons. - NamedType DescriptionCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 3455624940 - NamedType 2673933611" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Gen. Prod. Posting Group</source>
+          <target>Gr. inreg. contab. produse</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Invt. Shipment Int. Cons. - NamedType Gen__Prod__Posting_GroupCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 3455624940 - NamedType 4149675788" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item No.</source>
+          <target>Nr. Articol</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Invt. Shipment Int. Cons. - NamedType Item_No_CaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 3455624940 - NamedType 3156546981" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Location Code</source>
+          <target>Cod locatie</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Invt. Shipment Int. Cons. - NamedType Location_CodeCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 3455624940 - NamedType 2965267292" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Made by</source>
+          <target>Intocmit</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Invt. Shipment Int. Cons. - NamedType MadebyCaption</note>
+        </trans-unit>
+        <trans-unit id="Report 3455624940 - NamedType 293697569" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Necessary Quantity</source>
+          <target>Necesar cantitate</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Invt. Shipment Int. Cons. - NamedType Necessary_QuantityCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 3455624940 - NamedType 1857504466" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No.</source>
+          <target>Nr.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Invt. Shipment Int. Cons. - NamedType NoCpt</note>
+        </trans-unit>
+        <trans-unit id="Report 3455624940 - NamedType 4215579474" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Curr. No.</source>
+          <target>Nr. Crt.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Invt. Shipment Int. Cons. - NamedType NrCrtCpt</note>
+        </trans-unit>
+        <trans-unit id="Report 3455624940 - NamedType 4022464961" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Page %1 of %2</source>
+          <target>Pagina %1 din %2</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Invt. Shipment Int. Cons. - NamedType PageCaptionCap</note>
+        </trans-unit>
+        <trans-unit id="Report 3455624940 - NamedType 650077689" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Page</source>
+          <target>Pagina</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Invt. Shipment Int. Cons. - NamedType PageCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 3455624940 - NamedType 616232385" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Posted Internal Consumption</source>
+          <target>Consum intern înreg.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Invt. Shipment Int. Cons. - NamedType Posted_Internal_ConsumptionCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 3455624940 - NamedType 3246368361" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quantity</source>
+          <target>Cantitate</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Invt. Shipment Int. Cons. - NamedType QuantityCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 3455624940 - NamedType 3578674015" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Receiver</source>
+          <target>Primitor</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Invt. Shipment Int. Cons. - NamedType ReceiverCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 3455624940 - NamedType 1498297867" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Receiver</source>
+          <target>Primitor</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Invt. Shipment Int. Cons. - NamedType ReceiverCaption_Control1390016Lbl</note>
+        </trans-unit>
+        <trans-unit id="Report 3455624940 - NamedType 1161285234" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Internal Consumption</source>
+          <target>Consum intern</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Invt. Shipment Int. Cons. - NamedType ReportNameCpt</note>
+        </trans-unit>
+        <trans-unit id="Report 3455624940 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Head of Financial Accounting Department</source>
+          <target>Conducatorul compartimentului financiar contabil</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Invt. Shipment Int. Cons. - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Report 3455624940 - NamedType 4107814232" size-unit="char" translate="yes" xml:space="preserve">
+          <source>UM</source>
+          <target>UM</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Invt. Shipment Int. Cons. - NamedType UMCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 3455624940 - NamedType 2932282638" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unit Cost</source>
+          <target>Cost Unitar</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Invt. Shipment Int. Cons. - NamedType UnitCostCpt</note>
+        </trans-unit>
+        <trans-unit id="Report 3455624940 - NamedType 935740114" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unit Cost</source>
+          <target>Cost Unitar</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Invt. Shipment Int. Cons. - NamedType Unit_CostCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 3455624940 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Options</source>
+          <target>Optiuni</target>
+          <target>[NAB: SUGGESTION]Optiuni</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Invt. Shipment Int. Cons. - Control Options - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3455624940 - Control 2578066365 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies how many copies of the document to print.</source>
+          <target>Specifica numarul de copii ale documentului de printat.</target>
+          <target>[NAB: SUGGESTION]Specifica numarul de copii ale documentului de printat</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Invt. Shipment Int. Cons. - Control NoOfCopies - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Report 3455624940 - Control 2578066365 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No. of Copies</source>
+          <target>Nr. duplicate</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report SSA Invt. Shipment Int. Cons. - Control NoOfCopies - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 2197377612 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>NIR Achizitii</source>
@@ -10841,6 +11040,18 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Phys. Inv. Journal 70070 - Control SSA Correction Cost Inv. Val. - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="PageExtension 2516049621 - Action 3898291462 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1251096278">
+          <source>Prepare to print the document. A report request window for the document opens where you can specify what to include on the print-out.</source>
+          <target>Pregatiti-va sa imprimati documentul. Se deschide o fereastra de solicitare a raportului pentru document, unde puteti specifica ce sa includeti in imprimare.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipment - Action SSA Print Int. Cons. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2516049621 - Action 3898291462 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1251096278">
+          <source>Print Int. Cons.</source>
+          <target>Imprimare Bon Consum</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipment - Action SSA Print Int. Cons. - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 2516049621 - Control 479630643 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1251096278">
           <source>Sell-to</source>
           <target>Vanzare-la</target>
@@ -11117,18 +11328,28 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipment - Control SSA Ship-to Post Code - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 3725521836 - Action 3898291462 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 155881795">
+          <source>Prepare to print the document. A report request window for the document opens where you can specify what to include on the print-out.</source>
+          <target>Pregatiti-va sa imprimati documentul. Se deschide o fereastra de solicitare a raportului pentru document, unde puteti specifica ce sa includeti in imprimare.</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipments - Action SSA Print Int. Cons. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3725521836 - Action 3898291462 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 155881795">
+          <source>Print Int. Cons.</source>
+          <target>Imprimare Bon Consum</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipments - Action SSA Print Int. Cons. - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 3725521836 - Control 3580877062 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 155881795">
           <source>The Sell-to Customer Name field is used to specify the name of the customer who is to receive the shipment.</source>
-          <target state="translated">Câmpul Sell-to Customer Name (Nume client de vânzare) este utilizat pentru a specifica numele clientului care va primi transportul.</target>
+          <target>Câmpul Sell-to Customer Name (Nume client de vânzare) este utilizat pentru a specifica numele clientului care va primi transportul.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipments - Control SSA Sell-to Customer Name - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3725521836 - Control 640710734 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 155881795">
           <source>The Sell-to Customer No. field is used to specify the customer number of the customer who is to receive the shipment.</source>
-          <target state="translated">Câmpul Sell-to Customer No. este utilizat pentru a specifica numărul de client al clientului care urmează să primească transportul.</target>
+          <target>Câmpul Sell-to Customer No. este utilizat pentru a specifica numărul de client al clientului care urmează să primească transportul.</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="NAB AL Tool Refresh Xlf" annotates="general" priority="3">New translation.</note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SSA Posted Invt. Shipments - Control SSA Sell-to Customer No. - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 3577042706 - Control 2646786634 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4135951594">

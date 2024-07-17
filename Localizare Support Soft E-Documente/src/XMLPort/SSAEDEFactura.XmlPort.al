@@ -36,16 +36,31 @@ xmlport 72001 "SSAEDE-Factura"
             {
                 NamespacePrefix = 'cbc';
             }
-            textelement(Note)
+            textelement(Note1)
             {
                 NamespacePrefix = 'cbc';
+                XmlName = 'Note';
 
                 trigger OnBeforePassVariable()
                 begin
-                    if Note = '' then
+                    Note1 := NotesArray[1];
+                    if Note1 = '' then
                         currXMLport.Skip;
                 end;
             }
+            textelement(Note2)
+            {
+                NamespacePrefix = 'cbc';
+                XmlName = 'Note';
+
+                trigger OnBeforePassVariable()
+                begin
+                    Note2 := NotesArray[2];
+                    if Note2 = '' then
+                        currXMLport.Skip;
+                end;
+            }
+
             textelement(TaxPointDate)
             {
                 NamespacePrefix = 'cbc';
@@ -1583,7 +1598,7 @@ xmlport 72001 "SSAEDE-Factura"
                   IssueDate,
                   InvoiceTypeCode,
                   Dummy,
-                  Note,
+                  NotesArray,
                   TaxPointDate,
                   DocumentCurrencyCode,
                   Dummy,
@@ -1638,6 +1653,7 @@ xmlport 72001 "SSAEDE-Factura"
         ProcessedDocType: Option "Sales Invoice","Sales Credit Memo";
         DefaultUnitCostListID: Text;
         Dummy: Text;
+        NotesArray: array[2] of Text[190];
 
 
     procedure GetTotals()

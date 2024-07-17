@@ -4,11 +4,11 @@ pageextension 71900 "SSAFTCompany Information" extends "Company Information"
     {
         addlast(content)
         {
-            group(SSAFTSAFT)
+            group(SSAFT)
             {
                 Caption = 'SAFT';
 
-                field("SSAFTSAFT Contact No."; Rec."SSAFTSAFT Contact No.")
+                field("SSAFT Contact No."; Rec."SSAFT Contact No.")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the SAFT Contact No. field.';
