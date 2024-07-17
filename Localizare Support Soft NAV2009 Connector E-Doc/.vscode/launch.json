@@ -2,30 +2,11 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Attach: Your own server LocalizareAL",
-            "type": "al",
-            "request": "attach",
-            "environmentType": "OnPrem",
-            "server": "http://192.168.13.201:8080/BC230Localizare",
-            "serverInstance": "BC230Localizare",
-            "authentication": "Windows",
-            "breakOnError": "All",
-            "breakOnRecordWrite": "None",
-            "enableSqlInformationDebugger": true,
-            "enableLongRunningSqlStatements": true,
-            "longRunningSqlStatementsThreshold": 500,
-            "numberOfSqlStatements": 10,
-            "breakOnNext": "WebServiceClient",
-            "tenant": "default",
-            "port": 23029,
-            "sessionId": 3
-        },
-        {
             "type": "al",
             "request": "launch",
             "name": "LocalizareAL",
-            "server": "http://192.168.13.201:8080/BC230Localizare",
-            "serverInstance": "BC230Localizare",
+            "server": "http://192.168.13.201:8080/BC240LocalizareW1",
+            "serverInstance": "BC240LocalizareW1",
             "authentication": "Windows",
             "startupObjectId": 22,
             "startupObjectType": "Page",
@@ -33,27 +14,8 @@
             "launchBrowser": true,
             "enableLongRunningSqlStatements": true,
             "enableSqlInformationDebugger": true,
-            "port": 23029,
-            "schemaUpdateMode": "ForceSync"
-        },
-        {
-            "name": "Publish: Your own server",
-            "type": "al",
-            "request": "launch",
-            "environmentType": "OnPrem",
-            "server": "http://sandbox23/BC",
-            "serverInstance": "BC",
-            "authentication": "UserPassword",
-            "startupObjectId": 22,
-            "breakOnError": "All",
-            "breakOnRecordWrite": "None",
-            "launchBrowser": true,
-            "enableSqlInformationDebugger": true,
-            "enableLongRunningSqlStatements": true,
-            "longRunningSqlStatementsThreshold": 500,
-            "numberOfSqlStatements": 10,
-            "tenant": "default",
-            "usePublicURLFromServer": true
+            "port": 24049,
+            "schemaUpdateMode": "Synchronize"
         }
     ]
 }

@@ -2,7 +2,7 @@
   "id": "af7db1ca-bb73-4f8d-bf61-c1841ad94e86",
   "name": "Localizare Support Soft Rapoarte Legale",
   "publisher": "Support-Soft SRL",
-  "version": "23.0.0.1",
+  "version": "24.0.0.0",
   "brief": "",
   "description": "",
   "privacyStatement": "",
@@ -15,26 +15,26 @@
     "id": "c0c676db-b6cb-47be-b4cd-128de938af52",
     "name": "Localizare Support Soft Contabilitate de Baza",
     "publisher": "Support-Soft SRL",
-    "version": "23.0.0.0"
+    "version": "24.0.0.0"
     }
   ],
   "screenshots": [],
-  "platform": "23.0.0.0",
-  "application": "23.0.0.0",
+  "platform": "24.0.0.0",
+  "application": "24.0.0.0",
   "idRanges": [
     {
       "from": 71300,
       "to": 71499
     }
   ],
-  "contextSensitiveHelpUrl": "https://SSA230ContabilitateBaza.com/help/",
+  "contextSensitiveHelpUrl": "https://SSA240ContabilitateBaza.com/help/",
   "resourceExposurePolicy": {
     "allowDebugging": false,
     "allowDownloadingSource": false,
     "includeSourceInSymbolFile": false,
     "applyToDevExtension": true
   },
-  "runtime": "12.0",
+  "runtime": "13.0",
   "features": ["TranslationFile"],
   "supportedLocales": ["en-US","ro-RO"],
   "target": "Cloud"

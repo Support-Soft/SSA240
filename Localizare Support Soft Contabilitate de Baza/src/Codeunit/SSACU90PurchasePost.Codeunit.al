@@ -50,7 +50,7 @@ codeunit 70015 "SSA CU90 Purchase-Post"
         //SSA946<<
     end;
 
-    [EventSubscriber(ObjectType::Codeunit, 90, 'OnAfterPostInvPostBuffer', '', false, false)]
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Purch.-Post", 'OnAfterPostInvPostBuffer', '', false, false)]
     local procedure CU90_OnAfterPostInvPostBuffer(var GenJnlLine: Record "Gen. Journal Line"; var InvoicePostBuffer: Record "Invoice Post. Buffer" temporary; PurchHeader: Record "Purchase Header"; GLEntryNo: Integer; CommitIsSupressed: Boolean; var GenJnlPostLine: Codeunit "Gen. Jnl.-Post Line")
     var
         OldGenJnlLine: Record "Gen. Journal Line";
@@ -67,7 +67,7 @@ codeunit 70015 "SSA CU90 Purchase-Post"
             Clear(VATPostingSetup);
 
         GenJnlLine.InitNewLine(
-  PurchHeader."Posting Date", PurchHeader."Document Date", PurchHeader."Posting Description",
+  PurchHeader."Posting Date", PurchHeader."Document Date", PurchHeader."VAT Reporting Date", PurchHeader."Posting Description",
   InvoicePostBuffer."Global Dimension 1 Code", InvoicePostBuffer."Global Dimension 2 Code",
   InvoicePostBuffer."Dimension Set ID", PurchHeader."Reason Code");
 
@@ -94,7 +94,7 @@ codeunit 70015 "SSA CU90 Purchase-Post"
         GenJnlPostLine.RunWithCheck(GenJnlLine);
 
         GenJnlLine.InitNewLine(
-  PurchHeader."Posting Date", PurchHeader."Document Date", PurchHeader."Posting Description",
+  PurchHeader."Posting Date", PurchHeader."Document Date", PurchHeader."VAT Reporting Date", PurchHeader."Posting Description",
   InvoicePostBuffer."Global Dimension 1 Code", InvoicePostBuffer."Global Dimension 2 Code",
   InvoicePostBuffer."Dimension Set ID", PurchHeader."Reason Code");
 

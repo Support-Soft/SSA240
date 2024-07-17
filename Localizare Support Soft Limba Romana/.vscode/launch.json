@@ -5,8 +5,8 @@
             "type": "al",
             "request": "launch",
             "name": "LocalizareAL",
-            "server": "http://192.168.13.201:8080/BC230Localizare",
-            "serverInstance": "BC230Localizare",
+            "server": "http://192.168.13.201:8080/BC240LocalizareW1",
+            "serverInstance": "BC240LocalizareW1",
             "authentication": "Windows",
             "startupObjectId": 22,
             "startupObjectType": "Page",
@@ -14,7 +14,7 @@
             "launchBrowser": true,
             "enableLongRunningSqlStatements": true,
             "enableSqlInformationDebugger": true,
-            "port": 23029,
+            "port": 24049,
             "schemaUpdateMode": "Synchronize"
         }
     ]

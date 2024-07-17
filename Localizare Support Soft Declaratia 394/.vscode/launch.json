@@ -5,8 +5,8 @@
             "type": "al",
             "request": "launch",
             "name": "LocalizareAL",
-            "server": "http://192.168.13.201:8080/BC230",
-            "serverInstance": "BC230",
+            "server": "http://192.168.13.201:8080/BC240LocalizareW1",
+            "serverInstance": "BC240LocalizareW1",
             "authentication": "Windows",
             "startupObjectId": 22,
             "startupObjectType": "Page",
@@ -14,27 +14,8 @@
             "launchBrowser": true,
             "enableLongRunningSqlStatements": true,
             "enableSqlInformationDebugger": true,
-            "port": 23049,
+            "port": 24049,
             "schemaUpdateMode": "Synchronize"
-        },
-        {
-            "name": "Publish: Your own server",
-            "type": "al",
-            "request": "launch",
-            "environmentType": "OnPrem",
-            "server": "http://sandbox23/BC",
-            "serverInstance": "BC",
-            "authentication": "UserPassword",
-            "startupObjectId": 22,
-            "breakOnError": "All",
-            "breakOnRecordWrite": "None",
-            "launchBrowser": true,
-            "enableSqlInformationDebugger": true,
-            "enableLongRunningSqlStatements": true,
-            "longRunningSqlStatementsThreshold": 500,
-            "numberOfSqlStatements": 10,
-            "tenant": "default",
-            "usePublicURLFromServer": true
         }
     ]
 }

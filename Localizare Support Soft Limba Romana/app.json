@@ -2,7 +2,7 @@
     "id":  "a4481181-7f13-4d7d-9466-d8739bb3cda9",
     "name":  "Localizare Support Soft Limba Romana",
     "publisher":  "Support-Soft SRL",
-    "version":  "23.0.0.1",
+    "version":  "24.0.0.1",
     "dependencies":  [
 
                      ],
@@ -21,5 +21,5 @@
       "includeSourceInSymbolFile": false,
       "applyToDevExtension": true
       },
-    "runtime": "12.0"
+    "runtime": "13.0"
 }

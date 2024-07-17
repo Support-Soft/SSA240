@@ -2,30 +2,11 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Attach: Your own server",
-            "type": "al",
-            "request": "attach",
-            "environmentType": "OnPrem",
-            "server": "http://192.168.13.201:8080/BC230SupportSoft",
-            "serverInstance": "BC230SupportSoft",
-            "authentication": "Windows",
-            "breakOnError": "All",
-            "breakOnRecordWrite": "None",
-            "enableSqlInformationDebugger": true,
-            "enableLongRunningSqlStatements": true,
-            "longRunningSqlStatementsThreshold": 500,
-            "numberOfSqlStatements": 10,
-            "breakOnNext": "WebServiceClient",
-            "tenant": "default",
-            "port": 23019,
-            "sessionId": 243
-        },
-        {
             "type": "al",
             "request": "launch",
             "name": "LocalizareAL",
-            "server": "http://192.168.13.201:8080/BC230Localizare",
-            "serverInstance": "BC230Localizare",
+            "server": "http://192.168.13.201:8080/BC240LocalizareW1",
+            "serverInstance": "BC240LocalizareW1",
             "authentication": "Windows",
             "startupObjectId": 22,
             "startupObjectType": "Page",
@@ -33,7 +14,7 @@
             "launchBrowser": true,
             "enableLongRunningSqlStatements": true,
             "enableSqlInformationDebugger": true,
-            "port": 23029,
+            "port": 24049,
             "schemaUpdateMode": "Synchronize"
         }
     ]

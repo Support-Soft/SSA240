@@ -2,7 +2,7 @@
   "id": "d28ba0fc-65f5-4e58-be3f-370033b850b6",
   "name": "Localizare Support Soft NAV2009 Connector E-Doc",
   "publisher": "Support-Soft SRL",
-  "version": "23.0.0.4",
+  "version": "24.0.0.0",
   "brief": "",
   "description": "",
   "privacyStatement": "",
@@ -15,32 +15,29 @@
       "id": "5bb109a0-e13d-44a7-afdd-3d484ccab9c0",
       "name": "Localizare Support Soft E-Documente",
       "publisher": "Support-Soft SRL",
-      "version": "23.0.0.0"
+      "version": "24.0.0.0"
       }
   ],
   "screenshots": [],
-  "platform": "23.0.0.0",
-  "application": "23.0.0.0",
+  "platform": "24.0.0.0",
+  "application": "24.0.0.0",
   "idRanges": [
     {
       "from": 72300,
       "to": 72349
     }
   ],
-  "contextSensitiveHelpUrl": "https://SSA230EDN.com/help/",
+  "contextSensitiveHelpUrl": "https://SSA240EDN.com/help/",
   "resourceExposurePolicy": {
     "allowDebugging": false,
     "allowDownloadingSource": false,
     "includeSourceInSymbolFile": false,
     "applyToDevExtension": true
   },
-  "runtime": "12.0",
+  "runtime": "13.0",
   "features": [
     "TranslationFile","NoImplicitWith","GenerateCaptions"
   ],
-  "supportedLocales": [
-    "en-US",
-    "ro-RO"
-  ],
+  "supportedLocales": ["en-US", "ro-RO"],
   "target": "Cloud"
 }
